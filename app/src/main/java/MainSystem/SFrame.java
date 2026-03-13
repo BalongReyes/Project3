@@ -77,6 +77,7 @@ public class SFrame extends JFrame {
         layerMain_Login = new FrameSystem.LayerFolder_Main.Components.LayerMain();
         moduleLogin = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Module.ModuleLogin();
         layerMain_Home = new FrameSystem.LayerFolder_Main.Components.LayerMain();
+        moduleHome1 = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Avida Prime Taft");
@@ -120,11 +121,15 @@ public class SFrame extends JFrame {
         layerMain_Home.setLayout(layerMain_HomeLayout);
         layerMain_HomeLayout.setHorizontalGroup(
             layerMain_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
+            .addGroup(layerMain_HomeLayout.createSequentialGroup()
+                .addComponent(moduleHome1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layerMain_HomeLayout.setVerticalGroup(
             layerMain_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 912, Short.MAX_VALUE)
+            .addGroup(layerMain_HomeLayout.createSequentialGroup()
+                .addComponent(moduleHome1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         layeredPane_Main.setLayer(layerMain_Home, javax.swing.JLayeredPane.PALETTE_LAYER);
@@ -156,6 +161,7 @@ public class SFrame extends JFrame {
     public FrameSystem.LayerFolder_Main.Components.LayerMain layerMain_Home;
     public FrameSystem.LayerFolder_Main.Components.LayerMain layerMain_Login;
     private javax.swing.JLayeredPane layeredPane_Main;
+    private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome moduleHome1;
     public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Module.ModuleLogin moduleLogin;
     // End of variables declaration//GEN-END:variables
 
