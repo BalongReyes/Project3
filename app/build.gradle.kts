@@ -6,8 +6,8 @@
  */
 
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
-    application
+    id("java")
+    id("application")
     id("edu.sc.seis.launch4j") version "3.0.5"
 }
 
@@ -41,17 +41,28 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "MainSystem.Main"
+    mainClass.set("MainSystem.Main")
 }
 
-// Add this configuration anywhere in the file
+// Configure Launch4j
 launch4j {
-    mainClassName.set("MainSystem.Main") // Your Swing entry point
-    outfile.set("Project3App.exe")       // Name of the output launcher
-    headerType.set("gui")                // "gui" ensures no black command prompt opens
+    mainClassName.set("MainSystem.Main")
+    icon.set("${projectDir}/src/main/resources/Icons/mainLogo.png") // Uses your existing icon
+    outfile.set("Project3.exe")
     
-    // Optional: Add an icon
-    // icon.set("${project.projectDir}/src/main/resources/Icons/favicon.ico")
+    // Set to "gui" to hide the background console window for Swing apps
+    headerType.set("gui") 
+    
+    // JVM Settings
+    jreMinVersion.set("21") // Adjust to match your target Java version
+    
+    // Error handling properties
+    windowTitle.set("Project3 System")
+    errTitle.set("Application Launch Error")
+    // customProcName.set(true)
+    
+    // Optional: Include bundled JRE path if you plan to ship Java with your app
+    // bundledJrePath.set("jre") 
 }
 
 tasks.named<Test>("test") {
