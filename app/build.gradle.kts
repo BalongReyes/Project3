@@ -8,7 +8,7 @@
 plugins {
     id("java")
     id("application")
-    id("edu.sc.seis.launch4j") version "3.0.5"
+    id("edu.sc.seis.launch4j") version "4.0.0"
 }
 
 repositories {
@@ -47,7 +47,6 @@ application {
 // Configure Launch4j
 launch4j {
     mainClassName.set("MainSystem.Main")
-    icon.set("${projectDir}/src/main/resources/Icons/mainLogo.png") // Uses your existing icon
     outfile.set("Project3.exe")
     
     // Set to "gui" to hide the background console window for Swing apps
