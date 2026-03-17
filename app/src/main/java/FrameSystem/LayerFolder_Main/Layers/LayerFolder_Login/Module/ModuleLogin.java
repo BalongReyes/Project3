@@ -194,9 +194,9 @@ public class ModuleLogin extends LoginPanelContainer {
         loginPasswordField.setCaretColor(new java.awt.Color(0, 0, 0));
         loginPasswordField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        sTogglePassword1.setDefaultColor(new java.awt.Color(46, 46, 46));
+        sTogglePassword1.setDefaultColor(new java.awt.Color(229, 229, 229));
         sTogglePassword1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sTogglePassword1.setHoverColor(new java.awt.Color(54, 54, 54));
+        sTogglePassword1.setHoverColor(new java.awt.Color(193, 193, 193));
         sTogglePassword1.setPasswordField(loginPasswordField);
         sTogglePassword1.setRadius(31);
         sTogglePassword1.setPreferredSize(new java.awt.Dimension(31, 31));
@@ -228,10 +228,10 @@ public class ModuleLogin extends LoginPanelContainer {
         loginError3.setText("Incorrect Password or Username");
         loginError3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
 
-        loginButton.setDefaultColor(new java.awt.Color(44, 44, 44));
-        loginButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginButton.setDefaultColor(new java.awt.Color(229, 229, 229));
+        loginButton.setForeground(new java.awt.Color(56, 56, 56));
         loginButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loginButton.setHoverColor(new java.awt.Color(75, 75, 75));
+        loginButton.setHoverColor(new java.awt.Color(193, 193, 193));
         loginButton.setRadius(10);
         loginButton.setText("Login");
         loginButton.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -360,9 +360,7 @@ public class ModuleLogin extends LoginPanelContainer {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sPanelLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(sPanelRight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+            .addComponent(sPanelRight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

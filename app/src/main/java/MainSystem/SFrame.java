@@ -46,14 +46,17 @@ public class SFrame extends JFrame {
 
     private boolean fullscreen = false;
 
-    public void toggleFullscreen() {
+    public void toggleFullscreen(){
         fullscreen = !fullscreen;
-
+        
         dispose();
         setUndecorated(fullscreen);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
 
+        moduleHome.menuSwitch_Fullscreen.setActive(fullscreen);
+        moduleHome.menuMinSwitch_Fullscreen.setActive(fullscreen);
+        
         repaint();
     }
 
@@ -77,7 +80,7 @@ public class SFrame extends JFrame {
         layerMain_Login = new FrameSystem.LayerFolder_Main.Components.LayerMain();
         moduleLogin = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Module.ModuleLogin();
         layerMain_Home = new FrameSystem.LayerFolder_Main.Components.LayerMain();
-        moduleHome1 = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome();
+        moduleHome = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Avida Prime Taft");
@@ -122,13 +125,13 @@ public class SFrame extends JFrame {
         layerMain_HomeLayout.setHorizontalGroup(
             layerMain_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerMain_HomeLayout.createSequentialGroup()
-                .addComponent(moduleHome1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(moduleHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layerMain_HomeLayout.setVerticalGroup(
             layerMain_HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerMain_HomeLayout.createSequentialGroup()
-                .addComponent(moduleHome1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(moduleHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -153,15 +156,21 @@ public class SFrame extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        Database.closeConnection();
-        ExecutorDriver.closeExecutor();
+        try{
+            Database.closeConnection();
+        }catch(Exception e){
+        }
+        try{
+            ExecutorDriver.closeExecutor();
+        }catch(Exception e){
+        }
     }//GEN-LAST:event_formWindowClosing
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public FrameSystem.LayerFolder_Main.Components.LayerMain layerMain_Home;
     public FrameSystem.LayerFolder_Main.Components.LayerMain layerMain_Login;
     private javax.swing.JLayeredPane layeredPane_Main;
-    private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome moduleHome1;
+    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome moduleHome;
     public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Module.ModuleLogin moduleLogin;
     // End of variables declaration//GEN-END:variables
 

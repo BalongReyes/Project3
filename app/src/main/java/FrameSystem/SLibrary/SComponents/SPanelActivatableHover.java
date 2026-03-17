@@ -97,10 +97,10 @@ public class SPanelActivatableHover extends SPanelActivatable{
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
         Dimension s = getSize();
         
-        if(active){
-            g2.setColor(activeBackgroundColor);
-        }else if(hovering){
+        if(hovering){
             g2.setColor(hoverBackgroundColor);
+        }else if(active){
+            g2.setColor(activeBackgroundColor);
         }else{
             g2.setColor(inactiveBackgroundColor);
         }
