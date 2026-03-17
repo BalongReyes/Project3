@@ -1,7 +1,6 @@
 
-package FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers;
+package FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components;
 
-import FrameSystem.LayerFolder_Main.Components.*;
 import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
 import FrameSystem.SLibrary.SAbstractComponents.SLayer;

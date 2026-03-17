@@ -7,6 +7,12 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.HeadlessException;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -17,6 +23,7 @@ import java.beans.JavaBean;
 public class SPanelActivatableHover extends SPanelActivatable{
 
     protected MouseListener hoverListener;
+    protected ComponentAdapter componentAdapter;
     
 // Constructor ===============================================================================================
 
@@ -34,7 +41,20 @@ public class SPanelActivatableHover extends SPanelActivatable{
                 setHovering(false);
             }
         });
+        componentAdapter = new ComponentAdapter(){
+            @Override
+            public void componentResized(ComponentEvent e){
+                super.componentResized(e);
+                checkHoverState();
+            }
+            @Override
+            public void componentMoved(ComponentEvent e){
+                super.componentMoved(e);
+                checkHoverState();
+            }
+        };
         super.addMouseListener(hoverListener);
+        super.addComponentListener(componentAdapter);
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
     
@@ -49,6 +69,23 @@ public class SPanelActivatableHover extends SPanelActivatable{
     
     public boolean isHovering(){
         return hovering;
+    }
+    
+// -----------------------------------------------------------------------------------------------------------
+    
+    private void checkHoverState() {
+        if (hovering && isShowing()) {
+            try {
+                Point mousePos = MouseInfo.getPointerInfo().getLocation();
+                Point compPos = getLocationOnScreen();
+                Rectangle bounds = new Rectangle(compPos, getSize());
+                if (!bounds.contains(mousePos)) {
+                    setHovering(false);
+                }
+            } catch (HeadlessException ex) {
+                setHovering(false);
+            }
+        }
     }
     
 // Setters and Getters =======================================================================================

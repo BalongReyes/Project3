@@ -29,14 +29,14 @@ public class ModuleHome extends SPanel{
     private void initComponents() {
 
         layeredPane_Main = new javax.swing.JLayeredPane();
-        layerHome_Dashboard = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerHome();
-        sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
-        layerHome_Settings = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerHome();
-        sLabel3 = new FrameSystem.SLibrary.SComponents.SLabel();
-        layerHome_Units = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerHome();
-        sLabel4 = new FrameSystem.SLibrary.SComponents.SLabel();
-        layerHome_Parking = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerHome();
+        layerHome_Dashboard = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
         sLabel5 = new FrameSystem.SLibrary.SComponents.SLabel();
+        layerHome_Units = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
+        sLabel4 = new FrameSystem.SLibrary.SComponents.SLabel();
+        layerHome_Parking = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
+        sLabel3 = new FrameSystem.SLibrary.SComponents.SLabel();
+        layerHome_Settings = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
+        sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
         sPanelMenu1 = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.SPanelHomeMenu();
         sLabelHover1 = new FrameSystem.SLibrary.SComponents.SLabelHover();
         sPanel3 = new FrameSystem.SLibrary.SComponents.SPanel();
@@ -74,14 +74,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
         layerHome_Dashboard.setBackground(new java.awt.Color(255, 247, 247));
-        layerHome_Dashboard.setForeground(new java.awt.Color(239, 239, 239));
         layerHome_Dashboard.setLayerButton(menuButton_Dashboard);
         layerHome_Dashboard.setName("Dashboard"); // NOI18N
 
-        sLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        sLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        sLabel2.setText("DASHBOARD");
-        sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        sLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel5.setText("Dashboard");
+        sLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_DashboardLayout = new javax.swing.GroupLayout(layerHome_Dashboard);
         layerHome_Dashboard.setLayout(layerHome_DashboardLayout);
@@ -89,57 +88,26 @@ public class ModuleHome extends SPanel{
             layerHome_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerHome_DashboardLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layerHome_DashboardLayout.setVerticalGroup(
             layerHome_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerHome_DashboardLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         layeredPane_Main.add(layerHome_Dashboard, "card1");
 
-        layerHome_Settings.setBackground(new java.awt.Color(255, 247, 247));
-        layerHome_Settings.setForeground(new java.awt.Color(239, 239, 239));
-        layerHome_Settings.setLayerButton(menuButton_Settings);
-        layerHome_Settings.setName("Settings"); // NOI18N
-
-        sLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        sLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        sLabel3.setText("SETTINGS");
-        sLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-
-        javax.swing.GroupLayout layerHome_SettingsLayout = new javax.swing.GroupLayout(layerHome_Settings);
-        layerHome_Settings.setLayout(layerHome_SettingsLayout);
-        layerHome_SettingsLayout.setHorizontalGroup(
-            layerHome_SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layerHome_SettingsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layerHome_SettingsLayout.setVerticalGroup(
-            layerHome_SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerHome_SettingsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        layeredPane_Main.setLayer(layerHome_Settings, javax.swing.JLayeredPane.PALETTE_LAYER);
-        layeredPane_Main.add(layerHome_Settings, "card2");
-
         layerHome_Units.setBackground(new java.awt.Color(255, 247, 247));
-        layerHome_Units.setForeground(new java.awt.Color(239, 239, 239));
         layerHome_Units.setLayerButton(menuButton_Units);
         layerHome_Units.setName("Units"); // NOI18N
 
         sLabel4.setBackground(new java.awt.Color(0, 0, 0));
         sLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        sLabel4.setText("UNITS");
+        sLabel4.setText("Units");
         sLabel4.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_UnitsLayout = new javax.swing.GroupLayout(layerHome_Units);
@@ -160,17 +128,16 @@ public class ModuleHome extends SPanel{
         );
 
         layeredPane_Main.setLayer(layerHome_Units, javax.swing.JLayeredPane.PALETTE_LAYER);
-        layeredPane_Main.add(layerHome_Units, "card3");
+        layeredPane_Main.add(layerHome_Units, "card2");
 
         layerHome_Parking.setBackground(new java.awt.Color(255, 247, 247));
-        layerHome_Parking.setForeground(new java.awt.Color(239, 239, 239));
         layerHome_Parking.setLayerButton(menuButton_Parking);
         layerHome_Parking.setName("Parking"); // NOI18N
 
-        sLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        sLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        sLabel5.setText("PARKINGS");
-        sLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        sLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel3.setText("Parking");
+        sLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_ParkingLayout = new javax.swing.GroupLayout(layerHome_Parking);
         layerHome_Parking.setLayout(layerHome_ParkingLayout);
@@ -178,19 +145,48 @@ public class ModuleHome extends SPanel{
             layerHome_ParkingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerHome_ParkingLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layerHome_ParkingLayout.setVerticalGroup(
             layerHome_ParkingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerHome_ParkingLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         layeredPane_Main.setLayer(layerHome_Parking, javax.swing.JLayeredPane.PALETTE_LAYER);
-        layeredPane_Main.add(layerHome_Parking, "card4");
+        layeredPane_Main.add(layerHome_Parking, "card3");
+
+        layerHome_Settings.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Settings.setLayerButton(menuButton_Settings);
+        layerHome_Settings.setName("Settings"); // NOI18N
+
+        sLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel2.setText("Settings");
+        sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+
+        javax.swing.GroupLayout layerHome_SettingsLayout = new javax.swing.GroupLayout(layerHome_Settings);
+        layerHome_Settings.setLayout(layerHome_SettingsLayout);
+        layerHome_SettingsLayout.setHorizontalGroup(
+            layerHome_SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layerHome_SettingsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layerHome_SettingsLayout.setVerticalGroup(
+            layerHome_SettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerHome_SettingsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        layeredPane_Main.setLayer(layerHome_Settings, javax.swing.JLayeredPane.PALETTE_LAYER);
+        layeredPane_Main.add(layerHome_Settings, "card4");
 
         sPanelMenu1.setBackground(new java.awt.Color(255, 255, 255));
         sPanelMenu1.setBorderColor(new java.awt.Color(228, 228, 235));
@@ -273,9 +269,7 @@ public class ModuleHome extends SPanel{
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(menuButton_Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(menuButton_Units, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(sPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(menuButton_Parking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(menuButton_Parking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sPanel1Layout.setVerticalGroup(
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,7 +288,7 @@ public class ModuleHome extends SPanel{
         logoutButton.setDefaultColor(new java.awt.Color(242, 242, 242));
         logoutButton.setForeground(new java.awt.Color(56, 56, 56));
         logoutButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoutButton.setHoverColor(new java.awt.Color(229, 229, 229));
+        logoutButton.setHoverColor(new java.awt.Color(255, 158, 158));
         logoutButton.setIconSize(15);
         logoutButton.setRadius(15);
         logoutButton.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/logout.png"))); // NOI18N
@@ -516,7 +510,7 @@ public class ModuleHome extends SPanel{
         logoutButton1.setDefaultColor(new java.awt.Color(242, 242, 242));
         logoutButton1.setForeground(new java.awt.Color(56, 56, 56));
         logoutButton1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoutButton1.setHoverColor(new java.awt.Color(229, 229, 229));
+        logoutButton1.setHoverColor(new java.awt.Color(255, 158, 158));
         logoutButton1.setIconSize(17);
         logoutButton1.setRadius(15);
         logoutButton1.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/logout.png"))); // NOI18N
@@ -670,7 +664,7 @@ public class ModuleHome extends SPanel{
                 .addGap(0, 0, 0)
                 .addComponent(sPanelMenu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(layeredPane_Main, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
+                .addComponent(layeredPane_Main)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
@@ -683,10 +677,10 @@ public class ModuleHome extends SPanel{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerHome layerHome_Dashboard;
-    private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerHome layerHome_Parking;
-    private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerHome layerHome_Settings;
-    private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerHome layerHome_Units;
+    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome layerHome_Dashboard;
+    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome layerHome_Parking;
+    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome layerHome_Settings;
+    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome layerHome_Units;
     public javax.swing.JLayeredPane layeredPane_Main;
     public FrameSystem.SLibrary.SComponents.SLabelHover logoutButton;
     public FrameSystem.SLibrary.SComponents.SLabelHover logoutButton1;
