@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 
 import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
 import MainSystem.CustomGraphics;
+import java.awt.FontMetrics;
 
 @JavaBean(description = "A component that displays a jpanel as a layered panel button")
 public class MenuButton extends SLayerButton{
@@ -155,6 +156,52 @@ public class MenuButton extends SLayerButton{
     }
     
 // -----------------------------------------------------------------------------------------------------------
+    
+    private int notificationCount = 0;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Notification count to display")
+    public void setNotificationCount(int notificationCount){
+        this.notificationCount = notificationCount;
+    }
+
+    public int getNotificationCount(){
+        return notificationCount;
+    }
+    
+    private Color notificationForegroundColor = Color.white;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The notification foreground color")
+    public void setNotificationForegroundColor(Color notificationForegroundColor){
+        this.notificationForegroundColor = notificationForegroundColor;
+    }
+
+    public Color getNotificationForegroundColor(){
+        return notificationForegroundColor;
+    }
+    
+    private Color activeNotificationColor = Color.white;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Notification active color to display")
+    public void setActiveNotificationColor(Color activeNotificationColor){
+        this.activeNotificationColor = activeNotificationColor;
+    }
+
+    public Color getActiveNotificationColor(){
+        return activeNotificationColor;
+    }
+    
+    private Color inactiveNotificationColor = Color.white;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Notification inactive color to display")
+    public void setInactiveNotificationColor(Color inactiveNotificationColor){
+        this.inactiveNotificationColor = inactiveNotificationColor;
+    }
+
+    public Color getInactiveNotificationColor(){
+        return inactiveNotificationColor;
+    }
+    
+// -----------------------------------------------------------------------------------------------------------
 
     @Override
     @BeanProperty(hidden = true)
@@ -170,7 +217,7 @@ public class MenuButton extends SLayerButton{
 
         sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
 
-        setMinimumSize(new java.awt.Dimension(0, 45));
+        setMinimumSize(new java.awt.Dimension(0, 40));
         setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(200, 40));
 
@@ -178,6 +225,7 @@ public class MenuButton extends SLayerButton{
         sLabel1.setText(text);
         sLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sLabel1.setIconTextGap(18);
+        sLabel1.setPreferredSize(new java.awt.Dimension(73, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -185,15 +233,12 @@ public class MenuButton extends SLayerButton{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -222,13 +267,61 @@ public class MenuButton extends SLayerButton{
     public void paint(Graphics g){
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
         Dimension s = getSize();
-
-        super.paint(g);
+        
+        if(hovering){
+            g2.setColor(hoverBackgroundColor);
+        }else if(active){
+            g2.setColor(activeBackgroundColor);
+        }else{
+            g2.setColor(inactiveBackgroundColor);
+        }
+        g2.fillRoundRect(0, 0, s.width, s.height, radius, radius);
+        
+        if(!cornerUL){
+            g2.fillRect(0, 0, radius, radius);
+        }
+        if(!cornerUR){
+            g2.fillRect(s.width - radius, 0, s.width, radius);
+        }
+        if(!cornerDL){
+            g2.fillRect(0, s.height - radius, radius, s.height);
+        }
+        if(!cornerDR){
+            g2.fillRect(s.width - radius, s.height - radius, s.width, s.height);
+        }
+        
+        if(notificationCount != 0){
+            g2.setFont(getFont());
+            FontMetrics fm = g.getFontMetrics();
+            String str = String.valueOf(notificationCount);
+            int stringWidth = fm.stringWidth(str);
+            int stringHeight = fm.getHeight() - 4;
+            int heightHalf = (((int)s.getHeight()) / 2);
+            
+            int x = s.width - 15 - stringWidth;
+            int y = heightHalf + (stringHeight / 2);
+            
+            if(active){
+                g2.setColor(activeNotificationColor);
+            }else{
+                g2.setColor(inactiveNotificationColor);
+            }
+            
+            int[] paddding = new int[]{18, 3, 25, 6};
+            g2.fillRoundRect(x - paddding[0], y - stringHeight - paddding[1], stringWidth + paddding[2], stringHeight + paddding[3], 20, 20);
+           
+            g2.setColor(notificationForegroundColor);
+            g2.fillRoundRect(x - 12, y - (stringHeight / 2) - 3, 6, 6, 6, 6);
+            g2.drawString(str, x, y - 1);
+        }
         
         if(active){
             g2.setColor(activeLineColor);
-            g2.fillRoundRect(s.width - 10, 9, 4, (s.height - 18), 4, 4);
+            g2.fillRoundRect(8, 9, 4, (s.height - 18), 4, 4);
+//            g2.fillRoundRect(s.width - 10, 9, 4, (s.height - 18), 4, 4);
         }
+        
+        super.paintOverrideAll(g);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

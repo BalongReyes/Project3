@@ -141,7 +141,7 @@ public class ModuleLogin extends LoginPanelContainer {
         loginError1.setText("*required");
         loginError1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
 
-        loginTextFieldContainer1.setBackground(new java.awt.Color(238, 238, 238));
+        loginTextFieldContainer1.setBackground(new java.awt.Color(255, 255, 255));
         loginTextFieldContainer1.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer1.setForeground(new java.awt.Color(0, 0, 0));
         loginTextFieldContainer1.setRadius(20);
@@ -181,7 +181,7 @@ public class ModuleLogin extends LoginPanelContainer {
         loginError2.setText("*required");
         loginError2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
 
-        loginTextFieldContainer2.setBackground(new java.awt.Color(238, 238, 238));
+        loginTextFieldContainer2.setBackground(new java.awt.Color(255, 255, 255));
         loginTextFieldContainer2.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer2.setForeground(new java.awt.Color(0, 0, 0));
         loginTextFieldContainer2.setRadius(20);

@@ -28,21 +28,168 @@ public class ModuleUnits extends SPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        sPanelHighlight1 = new FrameSystem.SLibrary.SGenericComponents.SPanelHighlight();
+        sPanelHighlight21 = new FrameSystem.SLibrary.SGenericComponents.SPanelHighlight2();
+        sPanelHighlight3 = new FrameSystem.SLibrary.SGenericComponents.SPanelHighlight();
+        sPanelHighlight4 = new FrameSystem.SLibrary.SGenericComponents.SPanelHighlight();
+        sPanelHighlight23 = new FrameSystem.SLibrary.SGenericComponents.SPanelHighlight2();
+        sPanelHighlight24 = new FrameSystem.SLibrary.SGenericComponents.SPanelHighlight2();
+
         setBackground(new java.awt.Color(255, 247, 247));
+
+        sPanelHighlight1.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight1.setBackground(new java.awt.Color(0, 0, 0));
+        sPanelHighlight1.setInactiveBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelHighlight1.setInactiveLineColor(new java.awt.Color(255, 127, 127));
+        sPanelHighlight1.setRadius(15);
+        sPanelHighlight1.setRounded(true);
+
+        javax.swing.GroupLayout sPanelHighlight1Layout = new javax.swing.GroupLayout(sPanelHighlight1);
+        sPanelHighlight1.setLayout(sPanelHighlight1Layout);
+        sPanelHighlight1Layout.setHorizontalGroup(
+            sPanelHighlight1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        sPanelHighlight1Layout.setVerticalGroup(
+            sPanelHighlight1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 41, Short.MAX_VALUE)
+        );
+
+        sPanelHighlight21.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight21.setInactiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight21.setInactiveLineColor(new java.awt.Color(255, 127, 127));
+        sPanelHighlight21.setRadius(15);
+        sPanelHighlight21.setRounded(true);
+
+        javax.swing.GroupLayout sPanelHighlight21Layout = new javax.swing.GroupLayout(sPanelHighlight21);
+        sPanelHighlight21.setLayout(sPanelHighlight21Layout);
+        sPanelHighlight21Layout.setHorizontalGroup(
+            sPanelHighlight21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        sPanelHighlight21Layout.setVerticalGroup(
+            sPanelHighlight21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 41, Short.MAX_VALUE)
+        );
+
+        sPanelHighlight3.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight3.setBackground(new java.awt.Color(0, 0, 0));
+        sPanelHighlight3.setInactiveBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelHighlight3.setRadius(15);
+        sPanelHighlight3.setRounded(true);
+
+        javax.swing.GroupLayout sPanelHighlight3Layout = new javax.swing.GroupLayout(sPanelHighlight3);
+        sPanelHighlight3.setLayout(sPanelHighlight3Layout);
+        sPanelHighlight3Layout.setHorizontalGroup(
+            sPanelHighlight3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        sPanelHighlight3Layout.setVerticalGroup(
+            sPanelHighlight3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 41, Short.MAX_VALUE)
+        );
+
+        sPanelHighlight4.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight4.setBackground(new java.awt.Color(0, 0, 0));
+        sPanelHighlight4.setInactiveBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelHighlight4.setInactiveLineColor(new java.awt.Color(255, 127, 127));
+        sPanelHighlight4.setRadius(15);
+        sPanelHighlight4.setRounded(true);
+
+        javax.swing.GroupLayout sPanelHighlight4Layout = new javax.swing.GroupLayout(sPanelHighlight4);
+        sPanelHighlight4.setLayout(sPanelHighlight4Layout);
+        sPanelHighlight4Layout.setHorizontalGroup(
+            sPanelHighlight4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        sPanelHighlight4Layout.setVerticalGroup(
+            sPanelHighlight4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 41, Short.MAX_VALUE)
+        );
+
+        sPanelHighlight23.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight23.setInactiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight23.setRadius(15);
+        sPanelHighlight23.setRounded(true);
+
+        javax.swing.GroupLayout sPanelHighlight23Layout = new javax.swing.GroupLayout(sPanelHighlight23);
+        sPanelHighlight23.setLayout(sPanelHighlight23Layout);
+        sPanelHighlight23Layout.setHorizontalGroup(
+            sPanelHighlight23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        sPanelHighlight23Layout.setVerticalGroup(
+            sPanelHighlight23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 41, Short.MAX_VALUE)
+        );
+
+        sPanelHighlight24.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight24.setInactiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        sPanelHighlight24.setRadius(15);
+        sPanelHighlight24.setRounded(true);
+
+        javax.swing.GroupLayout sPanelHighlight24Layout = new javax.swing.GroupLayout(sPanelHighlight24);
+        sPanelHighlight24.setLayout(sPanelHighlight24Layout);
+        sPanelHighlight24Layout.setHorizontalGroup(
+            sPanelHighlight24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        sPanelHighlight24Layout.setVerticalGroup(
+            sPanelHighlight24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 41, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 991, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(sPanelHighlight21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sPanelHighlight1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(sPanelHighlight23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(sPanelHighlight24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(sPanelHighlight3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(sPanelHighlight4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(467, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 753, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(sPanelHighlight4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sPanelHighlight24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sPanelHighlight1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sPanelHighlight3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sPanelHighlight21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sPanelHighlight23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(572, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private FrameSystem.SLibrary.SGenericComponents.SPanelHighlight sPanelHighlight1;
+    private FrameSystem.SLibrary.SGenericComponents.SPanelHighlight sPanelHighlight2;
+    private FrameSystem.SLibrary.SGenericComponents.SPanelHighlight2 sPanelHighlight21;
+    private FrameSystem.SLibrary.SGenericComponents.SPanelHighlight2 sPanelHighlight22;
+    private FrameSystem.SLibrary.SGenericComponents.SPanelHighlight2 sPanelHighlight23;
+    private FrameSystem.SLibrary.SGenericComponents.SPanelHighlight2 sPanelHighlight24;
+    private FrameSystem.SLibrary.SGenericComponents.SPanelHighlight sPanelHighlight3;
+    private FrameSystem.SLibrary.SGenericComponents.SPanelHighlight sPanelHighlight4;
     // End of variables declaration//GEN-END:variables
 }
