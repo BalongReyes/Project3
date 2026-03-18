@@ -144,7 +144,7 @@ public class MenuButton extends SLayerButton{
     private MenuMinButton minButton = null;
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "The minimize button of itself")
-    public void setSideBarMinButton(MenuMinButton minButton){
+    public void setManuMinButton(MenuMinButton minButton){
         this.minButton = minButton;
         if(layerPanelMouseListener != null){
             minButton.addLayeredPanelMouseListener(layerPanelMouseListener);
@@ -162,39 +162,42 @@ public class MenuButton extends SLayerButton{
     @BeanProperty(preferred = true, visualUpdate = true, description = "Notification count to display")
     public void setNotificationCount(int notificationCount){
         this.notificationCount = notificationCount;
+        if(minButton != null){
+            minButton.setNotification(notificationCount != 0);
+        }
     }
 
     public int getNotificationCount(){
         return notificationCount;
     }
     
-    private Color notificationForegroundColor = Color.white;
+    private static Color notificationForegroundColor = new Color(0,173,0);
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "The notification foreground color")
     public void setNotificationForegroundColor(Color notificationForegroundColor){
-        this.notificationForegroundColor = notificationForegroundColor;
+        MenuButton.notificationForegroundColor = notificationForegroundColor;
     }
 
     public Color getNotificationForegroundColor(){
         return notificationForegroundColor;
     }
     
-    private Color activeNotificationColor = Color.white;
+    private static Color activeNotificationColor = new Color(242,242,242);
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "Notification active color to display")
     public void setActiveNotificationColor(Color activeNotificationColor){
-        this.activeNotificationColor = activeNotificationColor;
+        MenuButton.activeNotificationColor = activeNotificationColor;
     }
 
     public Color getActiveNotificationColor(){
         return activeNotificationColor;
     }
     
-    private Color inactiveNotificationColor = Color.white;
+    private static Color inactiveNotificationColor = new Color(239,239,239);
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "Notification inactive color to display")
     public void setInactiveNotificationColor(Color inactiveNotificationColor){
-        this.inactiveNotificationColor = inactiveNotificationColor;
+        MenuButton.inactiveNotificationColor = inactiveNotificationColor;
     }
 
     public Color getInactiveNotificationColor(){

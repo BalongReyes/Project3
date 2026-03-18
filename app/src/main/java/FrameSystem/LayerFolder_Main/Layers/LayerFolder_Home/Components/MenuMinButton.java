@@ -10,6 +10,10 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
+import MainSystem.CustomGraphics;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 @JavaBean(description = "A component that displays a jpanel as a layered panel button")
 public class MenuMinButton extends SLayerButton{
@@ -108,6 +112,30 @@ public class MenuMinButton extends SLayerButton{
     }
     
 // -----------------------------------------------------------------------------------------------------------
+    
+    private boolean notification = false;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Show notification")
+    public void setNotification(boolean notification){
+        this.notification = notification;
+    }
+
+    public boolean isNotification(){
+        return notification;
+    }
+    
+    private static Color notificationForegroundColor = new Color(0,173,0);
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The notification foreground color")
+    public void setNotificationForegroundColor(Color notificationForegroundColor){
+        MenuMinButton.notificationForegroundColor = notificationForegroundColor;
+    }
+
+    public Color getNotificationForegroundColor(){
+        return notificationForegroundColor;
+    }
+    
+// -----------------------------------------------------------------------------------------------------------
 
     @Override
     @BeanProperty(hidden = true)
@@ -151,6 +179,43 @@ public class MenuMinButton extends SLayerButton{
     }// </editor-fold>//GEN-END:initComponents
 
 // Overrided Methods =========================================================================================
+    
+    @Override
+    public void paint(Graphics g){
+        Graphics2D g2 = CustomGraphics.getGraphics2D(g);
+        Dimension s = getSize();
+        
+        if(hovering){
+            g2.setColor(hoverBackgroundColor);
+        }else if(active){
+            g2.setColor(activeBackgroundColor);
+        }else{
+            g2.setColor(inactiveBackgroundColor);
+        }
+        g2.fillRoundRect(0, 0, s.width, s.height, radius, radius);
+        
+        if(!cornerUL){
+            g2.fillRect(0, 0, radius, radius);
+        }
+        if(!cornerUR){
+            g2.fillRect(s.width - radius, 0, s.width, radius);
+        }
+        if(!cornerDL){
+            g2.fillRect(0, s.height - radius, radius, s.height);
+        }
+        if(!cornerDR){
+            g2.fillRect(s.width - radius, s.height - radius, s.width, s.height);
+        }
+        
+        if(notification){
+            g2.setColor(notificationForegroundColor);
+            g2.fillRoundRect((int)s.getWidth() - 4, 0 + ((int)s.getHeight()/ 2) - 6, 4, 12, 4, 4);
+        }
+        
+        super.paintOverrideAll(g);
+    }
+    
+// -----------------------------------------------------------------------------------------------------------
     
     @Override
     public void addLayeredPanelMouseListener(MouseListener m){
