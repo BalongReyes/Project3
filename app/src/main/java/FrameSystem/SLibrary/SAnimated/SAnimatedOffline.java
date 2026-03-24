@@ -13,8 +13,20 @@ import java.beans.BeanProperty;
 
 public class SAnimatedOffline extends SPanelAnimated{
 
-    private int angle = 0; // Tracks the rotation state
-    private final int SPEED = 5; // Pixels/degrees to increment per tick
+    // Animation states
+    private float startAngle = 0;
+    private float extent = 10;
+    private boolean growing = true;
+
+    // Google animation physics
+    private final float MAX_EXTENT = 310f;
+    private final float MIN_EXTENT = 30f;
+    private final float SWEEP_SPEED = 3.0f;
+    
+    private float SPIN_SPEED = 2.0f;
+    private final float SPIN_SPEED_MIN = 1.0f;
+    private final float SPIN_SPEED_MAX = 7.0f;
+    private boolean speedup = true;
 
     public SAnimatedOffline() {
         super(10);
@@ -24,13 +36,42 @@ public class SAnimatedOffline extends SPanelAnimated{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Update the rotation angle
-        angle += SPEED;
-        if (angle >= 360) {
-            angle = 0;
+        
+        if(speedup){
+            if(SPIN_SPEED < SPIN_SPEED_MAX){
+                SPIN_SPEED += 0.025f;
+            }else{
+                speedup = false;
+            }
+        }else{
+            if(SPIN_SPEED > SPIN_SPEED_MIN){
+                SPIN_SPEED -= 0.1f;
+            }else{
+                speedup = true;
+            }
+        }
+        
+        // 1. The entire spinner is always rotating at a constant base speed.
+        startAngle += SPIN_SPEED;
+        if (startAngle >= 360) startAngle -= 360;
+
+        // 2. The "sweeping" effect: Growing and catching up
+        if (growing) {
+            extent += SWEEP_SPEED;
+            if (extent >= MAX_EXTENT) {
+                growing = false;
+            }
+        } else {
+            // When shrinking, the tail needs to move much faster to catch up to the head.
+            // We do this by decreasing the extent but pushing the start angle forward.
+            extent -= SWEEP_SPEED;
+            startAngle += SWEEP_SPEED; 
+            
+            if (extent <= MIN_EXTENT) {
+                growing = true;
+            }
         }
 
-        // Request a redraw to show the new position
         repaint();
     }
     
@@ -67,31 +108,20 @@ public class SAnimatedOffline extends SPanelAnimated{
         super.paintComponent(g);
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
 
-        int width = getWidth();
-        int height = getHeight();
+        int size = Math.min(getWidth(), getHeight());
         
-        // Calculate dimensions based on container size
-        // Using a stroke width proportional to the size (e.g., 10% of width)
-        float strokeWidth;
-        if(lineWidth != 0){
-            strokeWidth = lineWidth;
-        }else{
-            strokeWidth = width * 0.1f;
-        }
-        g2.setStroke(new BasicStroke(strokeWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-
-        // Define the bounds of the loading arc (the "line with rounded ends")
-        // Subtract stroke width to ensure the animation stays within the container
-        double x = strokeWidth / 2;
-        double y = strokeWidth / 2;
-        double w = width - strokeWidth;
-        double h = height - strokeWidth;
-
+        g2.setStroke(new BasicStroke(lineWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        
         g2.setColor(lineColor);
-        
-        // Draw a partial arc (90 degrees) that rotates
-        // Start angle is our animated 'angle' variable
-        g2.draw(new Arc2D.Double(x, y, w, h, angle, 90, Arc2D.OPEN));
+
+        // Center the arc in the panel bounds
+        double x = (getWidth() - size) / 2.0 + (lineWidth / 2.0);
+        double y = (getHeight() - size) / 2.0 + (lineWidth / 2.0);
+        double w = size - lineWidth;
+        double h = size - lineWidth;
+
+        // Draw the arc using negative values so it spins Clockwise (Google's standard)
+        g2.draw(new Arc2D.Double(x, y, w, h, -startAngle, -extent, Arc2D.OPEN));
     }
 
 }

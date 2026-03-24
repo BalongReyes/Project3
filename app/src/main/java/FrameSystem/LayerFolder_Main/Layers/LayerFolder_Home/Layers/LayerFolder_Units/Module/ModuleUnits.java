@@ -75,7 +75,7 @@ public class ModuleUnits extends SPanel{
         layerUnitsOffline.setOpaque(false);
 
         sAnimatedOffline1.setLineColor(new java.awt.Color(56, 56, 56));
-        sAnimatedOffline1.setLineWidth(8.0F);
+        sAnimatedOffline1.setLineWidth(10.0F);
         sAnimatedOffline1.setOpaque(false);
         sAnimatedOffline1.setPreferredSize(new java.awt.Dimension(160, 160));
 
@@ -95,9 +95,7 @@ public class ModuleUnits extends SPanel{
         sPanel5Layout.setHorizontalGroup(
             sPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(sLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sPanel5Layout.setVerticalGroup(
             sPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
