@@ -8,25 +8,19 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
-import java.awt.geom.Arc2D;
+import java.awt.geom.Path2D;
 import java.beans.BeanProperty;
 
 public class SAnimatedOffline extends SPanelAnimated{
 
-    // Animation states
-    private float startAngle = 0;
-    private float extent = 10;
+    // Abstract tracking of the Head and Tail of the line (0.0 to 1.0+)
+    private float headPos = 0.05f; 
+    private float tailPos = 0.0f;  
     private boolean growing = true;
 
-    // Google animation physics
-    private final float MAX_EXTENT = 310f;
-    private final float MIN_EXTENT = 30f;
-    private final float SWEEP_SPEED = 3.0f;
-    
-    private float SPIN_SPEED = 2.0f;
-    private final float SPIN_SPEED_MIN = 1.0f;
-    private final float SPIN_SPEED_MAX = 7.0f;
-    private boolean speedup = true;
+    // Google Animation Speeds
+    private final float BASE_SPEED = 0.0025f;  // Base speed traveling the perimeter
+    private final float SWEEP_SPEED = 0.015f; // Speed of growing/shrinking
 
     public SAnimatedOffline() {
         super(10);
@@ -36,40 +30,31 @@ public class SAnimatedOffline extends SPanelAnimated{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        if(speedup){
-            if(SPIN_SPEED < SPIN_SPEED_MAX){
-                SPIN_SPEED += 0.025f;
-            }else{
-                speedup = false;
-            }
-        }else{
-            if(SPIN_SPEED > SPIN_SPEED_MIN){
-                SPIN_SPEED -= 0.1f;
-            }else{
-                speedup = true;
-            }
-        }
-        
-        // 1. The entire spinner is always rotating at a constant base speed.
-        startAngle += SPIN_SPEED;
-        if (startAngle >= 360) startAngle -= 360;
-
-        // 2. The "sweeping" effect: Growing and catching up
+        // The sweep "catch up" effect
         if (growing) {
-            extent += SWEEP_SPEED;
-            if (extent >= MAX_EXTENT) {
+            // Head moves faster, tail moves at base speed
+            headPos += BASE_SPEED + SWEEP_SPEED;
+            tailPos += BASE_SPEED;
+            
+            // Grow until it covers 90% of the triangle
+            if (headPos - tailPos >= 0.85f) {
                 growing = false;
             }
         } else {
-            // When shrinking, the tail needs to move much faster to catch up to the head.
-            // We do this by decreasing the extent but pushing the start angle forward.
-            extent -= SWEEP_SPEED;
-            startAngle += SWEEP_SPEED; 
+            // Head moves at base speed, tail moves faster to catch up
+            headPos += BASE_SPEED;
+            tailPos += BASE_SPEED + SWEEP_SPEED; 
             
-            if (extent <= MIN_EXTENT) {
+            // Shrink down to 5% of the triangle
+            if (headPos - tailPos <= 0.1f) {
                 growing = true;
             }
+        }
+
+        // Prevent floating point numbers from losing precision over time
+        if (tailPos >= 1.0f) {
+            tailPos -= 1.0f;
+            headPos -= 1.0f;
         }
 
         repaint();
@@ -108,20 +93,76 @@ public class SAnimatedOffline extends SPanelAnimated{
         super.paintComponent(g);
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
 
-        int size = Math.min(getWidth(), getHeight());
+        int width = getWidth();
+        int height = getHeight();
+        int size = Math.min(width, height);
+        float strokeWidth = size * 0.1f;
         
-        g2.setStroke(new BasicStroke(lineWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        // Center coordinates
+        double centerX = width / 2.0;
+        double centerY = height / 2.0;
         
+        // Triangle Radius
+        double R = (size / 2.0) - strokeWidth;
+
+        // Calculate the 3 Vertices of a perfectly upright Equilateral Triangle
+        double px1 = centerX;
+        double py1 = centerY - R; // Top
+        
+        double px2 = centerX + R * Math.cos(Math.PI / 6.0);
+        double py2 = centerY + R * Math.sin(Math.PI / 6.0); // Bottom Right
+        
+        double px3 = centerX - R * Math.cos(Math.PI / 6.0);
+        double py3 = centerY + R * Math.sin(Math.PI / 6.0); // Bottom Left
+
+        // Calculations for distance mapping
+        double S = R * Math.sqrt(3); // The exact length of one side
+        double P = 3 * S;            // The total perimeter
+
+        double tailAbsolute = tailPos * P;
+        double headAbsolute = headPos * P;
+
+        // Manually build the path from Tail to Head to guarantee perfect wrapping!
+        Path2D.Double path = new Path2D.Double();
+        
+        // Start drawing at the tail
+        path.moveTo(getX(tailAbsolute, S, px1, px2, px3), getY(tailAbsolute, S, py1, py2, py3));
+
+        // Find and add any intermediate corners the line crosses
+        long nextCornerIdx = (long) Math.floor(tailAbsolute / S) + 1;
+        double nextCornerDist = nextCornerIdx * S;
+
+        while (nextCornerDist < headAbsolute) {
+            path.lineTo(getX(nextCornerDist, S, px1, px2, px3), getY(nextCornerDist, S, py1, py2, py3));
+            nextCornerIdx++;
+            nextCornerDist = nextCornerIdx * S;
+        }
+
+        // Stop drawing at the head
+        path.lineTo(getX(headAbsolute, S, px1, px2, px3), getY(headAbsolute, S, py1, py2, py3));
+
+        // Draw the cleanly wrapped segment
+        g2.setStroke(new BasicStroke(strokeWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         g2.setColor(lineColor);
+        g2.draw(path);
+    }
+    
+    private double getX(double absoluteDistance, double sideLength, double px1, double px2, double px3) {
+        double d = absoluteDistance % (3 * sideLength);
+        if (d < 0) d += 3 * sideLength; 
 
-        // Center the arc in the panel bounds
-        double x = (getWidth() - size) / 2.0 + (lineWidth / 2.0);
-        double y = (getHeight() - size) / 2.0 + (lineWidth / 2.0);
-        double w = size - lineWidth;
-        double h = size - lineWidth;
+        if (d <= sideLength) return px1 + (px2 - px1) * (d / sideLength); // Top to Bottom-Right
+        if (d <= 2 * sideLength) return px2 + (px3 - px2) * ((d - sideLength) / sideLength); // Bottom-Right to Bottom-Left
+        return px3 + (px1 - px3) * ((d - 2 * sideLength) / sideLength); // Bottom-Left back to Top
+    }
 
-        // Draw the arc using negative values so it spins Clockwise (Google's standard)
-        g2.draw(new Arc2D.Double(x, y, w, h, -startAngle, -extent, Arc2D.OPEN));
+    private double getY(double absoluteDistance, double sideLength, double py1, double py2, double py3) {
+        double d = absoluteDistance % (3 * sideLength);
+        if (d < 0) d += 3 * sideLength; 
+
+        if (d <= sideLength) return py1 + (py2 - py1) * (d / sideLength); // Top to Bottom-Right
+        if (d <= 2 * sideLength) return py2 + (py3 - py2) * ((d - sideLength) / sideLength); // Bottom-Right to Bottom-Left
+        return py3 + (py1 - py3) * ((d - 2 * sideLength) / sideLength); // Bottom-Left back to Top
     }
 
 }
