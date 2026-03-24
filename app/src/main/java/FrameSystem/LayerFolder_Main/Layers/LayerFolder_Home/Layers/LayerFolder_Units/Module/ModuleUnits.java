@@ -28,47 +28,21 @@ public class ModuleUnits extends SPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        sPanelBorder1 = new FrameSystem.SLibrary.SComponents.SPanelBorder();
-
         setBackground(new java.awt.Color(255, 247, 247));
-
-        sPanelBorder1.setBackground(new java.awt.Color(255, 255, 255));
-        sPanelBorder1.setBorderColor(new java.awt.Color(240, 240, 240));
-        sPanelBorder1.setBorderLine(1);
-        sPanelBorder1.setRadius(30);
-        sPanelBorder1.setRounded(true);
-
-        javax.swing.GroupLayout sPanelBorder1Layout = new javax.swing.GroupLayout(sPanelBorder1);
-        sPanelBorder1.setLayout(sPanelBorder1Layout);
-        sPanelBorder1Layout.setHorizontalGroup(
-            sPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1029, Short.MAX_VALUE)
-        );
-        sPanelBorder1Layout.setVerticalGroup(
-            sPanelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 695, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(sPanelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
+            .addGap(0, 1149, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(sPanelBorder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+            .addGap(0, 802, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private FrameSystem.SLibrary.SComponents.SPanelBorder sPanelBorder1;
     // End of variables declaration//GEN-END:variables
 }
