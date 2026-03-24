@@ -18,9 +18,14 @@ public class SAnimatedOffline extends SPanelAnimated{
     private float tailPos = 0.0f;  
     private boolean growing = true;
 
-    // Google Animation Speeds
+    // Animation Speeds
     private final float BASE_SPEED = 0.0025f;  // Base speed traveling the perimeter
-    private final float SWEEP_SPEED = 0.015f; // Speed of growing/shrinking
+    private final float SWEEP_SPEED = 0.015f;  // Maximum speed of growing/shrinking
+    private final float ACCELERATION = 0.0005f; // How fast the speed transitions
+
+    // Current speeds for smooth transitions
+    private float currentHeadSweep = SWEEP_SPEED;
+    private float currentTailSweep = 0.0f;
 
     public SAnimatedOffline() {
         super(10);
@@ -30,26 +35,33 @@ public class SAnimatedOffline extends SPanelAnimated{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        // The sweep "catch up" effect
         if (growing) {
-            // Head moves faster, tail moves at base speed
-            headPos += BASE_SPEED + SWEEP_SPEED;
-            tailPos += BASE_SPEED;
+            // Smoothly increase head sweep speed and decrease tail sweep speed
+            if (currentHeadSweep < SWEEP_SPEED) currentHeadSweep += ACCELERATION;
+            if (currentHeadSweep > SWEEP_SPEED) currentHeadSweep = SWEEP_SPEED;
             
-            // Grow until it covers 90% of the triangle
-            if (headPos - tailPos >= 0.85f) {
+            if (currentTailSweep > 0) currentTailSweep -= ACCELERATION;
+            if (currentTailSweep < 0) currentTailSweep = 0;
+            
+            if (headPos - tailPos >= 0.7f) {
                 growing = false;
             }
         } else {
-            // Head moves at base speed, tail moves faster to catch up
-            headPos += BASE_SPEED;
-            tailPos += BASE_SPEED + SWEEP_SPEED; 
+            // Smoothly decrease head sweep speed and increase tail sweep speed
+            if (currentHeadSweep > 0) currentHeadSweep -= ACCELERATION;
+            if (currentHeadSweep < 0) currentHeadSweep = 0;
             
-            // Shrink down to 5% of the triangle
-            if (headPos - tailPos <= 0.1f) {
+            if (currentTailSweep < SWEEP_SPEED) currentTailSweep += ACCELERATION;
+            if (currentTailSweep > SWEEP_SPEED) currentTailSweep = SWEEP_SPEED;
+            
+            if (headPos - tailPos <= 0.2f) {
                 growing = true;
             }
         }
+
+        // Apply calculated speeds
+        headPos += BASE_SPEED + currentHeadSweep;
+        tailPos += BASE_SPEED + currentTailSweep;
 
         // Prevent floating point numbers from losing precision over time
         if (tailPos >= 1.0f) {
@@ -96,7 +108,13 @@ public class SAnimatedOffline extends SPanelAnimated{
         int width = getWidth();
         int height = getHeight();
         int size = Math.min(width, height);
-        float strokeWidth = size * 0.1f;
+        
+        float strokeWidth;
+        if(lineWidth != 0){
+            strokeWidth = lineWidth;
+        }else{
+            strokeWidth = size * 0.1f;
+        }
         
         // Center coordinates
         double centerX = width / 2.0;

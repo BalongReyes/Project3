@@ -69,6 +69,10 @@ public class ModuleLogin extends LoginPanelContainer {
         FrameSystem.SLibrary.SComponents.SLabel sLabel25 = new FrameSystem.SLibrary.SComponents.SLabel();
         FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LoginPanel sPanelRight = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LoginPanel();
         javax.swing.JLayeredPane layeredPane_Login = new javax.swing.JLayeredPane();
+        layerLogin_Offline = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LayerLogin();
+        javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
+        FrameSystem.SLibrary.SComponents.SLabel sLabel3 = new FrameSystem.SLibrary.SComponents.SLabel();
+        FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1 = new FrameSystem.SLibrary.SAnimated.SAnimatedOffline();
         layerLogin_Online = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LayerLogin();
         FrameSystem.SLibrary.SComponents.SLabel sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
         FrameSystem.SLibrary.SComponents.SLabel sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
@@ -82,8 +86,8 @@ public class ModuleLogin extends LoginPanelContainer {
         FrameSystem.SLibrary.SGenericComponents.STogglePassword sTogglePassword1 = new FrameSystem.SLibrary.SGenericComponents.STogglePassword();
         loginError3 = new FrameSystem.SLibrary.SComponents.SLabel();
         loginButton = new FrameSystem.SLibrary.SComponents.SLabelHover();
-        layerLogin_Offline = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LayerLogin();
-        FrameSystem.SLibrary.SComponents.SLabel sLabel3 = new FrameSystem.SLibrary.SComponents.SLabel();
+        layerLogin_Loading = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LayerLogin();
+        FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline2 = new FrameSystem.SLibrary.SAnimated.SAnimatedOffline();
 
         setBackground(new java.awt.Color(255, 209, 209));
         setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/Icons/wave.png"))); // NOI18N
@@ -126,6 +130,76 @@ public class ModuleLogin extends LoginPanelContainer {
 
         layeredPane_Login.setPreferredSize(new java.awt.Dimension(500, 530));
         layeredPane_Login.setLayout(new java.awt.CardLayout());
+
+        layerLogin_Offline.setBackground(new java.awt.Color(255, 243, 243));
+        layerLogin_Offline.setRadius(30);
+        layerLogin_Offline.setRounded(true);
+        layerLogin_Offline.setName("Offline"); // NOI18N
+
+        jPanel1.setOpaque(false);
+
+        sLabel3.setForeground(new java.awt.Color(205, 64, 68));
+        sLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sLabel3.setText("Database Offline");
+        sLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        sAnimatedOffline1.setLineColor(new java.awt.Color(205, 64, 68));
+        sAnimatedOffline1.setLineWidth(5.0F);
+        sAnimatedOffline1.setOpaque(false);
+        sAnimatedOffline1.setPreferredSize(new java.awt.Dimension(160, 160));
+
+        javax.swing.GroupLayout sAnimatedOffline1Layout = new javax.swing.GroupLayout(sAnimatedOffline1);
+        sAnimatedOffline1.setLayout(sAnimatedOffline1Layout);
+        sAnimatedOffline1Layout.setHorizontalGroup(
+            sAnimatedOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 61, Short.MAX_VALUE)
+        );
+        sAnimatedOffline1Layout.setVerticalGroup(
+            sAnimatedOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(sAnimatedOffline1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40))
+                    .addComponent(sLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(sAnimatedOffline1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(sLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layerLogin_OfflineLayout = new javax.swing.GroupLayout(layerLogin_Offline);
+        layerLogin_Offline.setLayout(layerLogin_OfflineLayout);
+        layerLogin_OfflineLayout.setHorizontalGroup(
+            layerLogin_OfflineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layerLogin_OfflineLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layerLogin_OfflineLayout.setVerticalGroup(
+            layerLogin_OfflineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layerLogin_OfflineLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        layeredPane_Login.add(layerLogin_Offline, "card2");
 
         layerLogin_Online.setBackground(new java.awt.Color(255, 243, 243));
         layerLogin_Online.setRadius(30);
@@ -299,37 +373,49 @@ public class ModuleLogin extends LoginPanelContainer {
                 .addGap(104, 104, 104))
         );
 
+        layeredPane_Login.setLayer(layerLogin_Online, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Login.add(layerLogin_Online, "card1");
 
-        layerLogin_Offline.setBackground(new java.awt.Color(255, 243, 243));
-        layerLogin_Offline.setRadius(30);
-        layerLogin_Offline.setRounded(true);
-        layerLogin_Offline.setName("Offline"); // NOI18N
+        layerLogin_Loading.setBackground(new java.awt.Color(255, 243, 243));
+        layerLogin_Loading.setRadius(30);
+        layerLogin_Loading.setRounded(true);
+        layerLogin_Loading.setName("Loading"); // NOI18N
 
-        sLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        sLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        sLabel3.setText("Database is offline");
-        sLabel3.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
+        sAnimatedOffline2.setLineColor(new java.awt.Color(255, 127, 127));
+        sAnimatedOffline2.setLineWidth(5.0F);
+        sAnimatedOffline2.setOpaque(false);
+        sAnimatedOffline2.setPreferredSize(new java.awt.Dimension(160, 160));
 
-        javax.swing.GroupLayout layerLogin_OfflineLayout = new javax.swing.GroupLayout(layerLogin_Offline);
-        layerLogin_Offline.setLayout(layerLogin_OfflineLayout);
-        layerLogin_OfflineLayout.setHorizontalGroup(
-            layerLogin_OfflineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layerLogin_OfflineLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout sAnimatedOffline2Layout = new javax.swing.GroupLayout(sAnimatedOffline2);
+        sAnimatedOffline2.setLayout(sAnimatedOffline2Layout);
+        sAnimatedOffline2Layout.setHorizontalGroup(
+            sAnimatedOffline2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 61, Short.MAX_VALUE)
         );
-        layerLogin_OfflineLayout.setVerticalGroup(
-            layerLogin_OfflineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerLogin_OfflineLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        sAnimatedOffline2Layout.setVerticalGroup(
+            sAnimatedOffline2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
         );
 
-        layeredPane_Login.setLayer(layerLogin_Offline, javax.swing.JLayeredPane.PALETTE_LAYER);
-        layeredPane_Login.add(layerLogin_Offline, "card2");
+        javax.swing.GroupLayout layerLogin_LoadingLayout = new javax.swing.GroupLayout(layerLogin_Loading);
+        layerLogin_Loading.setLayout(layerLogin_LoadingLayout);
+        layerLogin_LoadingLayout.setHorizontalGroup(
+            layerLogin_LoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layerLogin_LoadingLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sAnimatedOffline2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layerLogin_LoadingLayout.setVerticalGroup(
+            layerLogin_LoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerLogin_LoadingLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sAnimatedOffline2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        layeredPane_Login.setLayer(layerLogin_Loading, javax.swing.JLayeredPane.PALETTE_LAYER);
+        layeredPane_Login.add(layerLogin_Loading, "card3");
 
         javax.swing.GroupLayout sPanelRightLayout = new javax.swing.GroupLayout(sPanelRight);
         sPanelRight.setLayout(sPanelRightLayout);
@@ -370,6 +456,7 @@ public class ModuleLogin extends LoginPanelContainer {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LayerLogin layerLogin_Loading;
     public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LayerLogin layerLogin_Offline;
     FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Components.LayerLogin layerLogin_Online;
     public FrameSystem.SLibrary.SComponents.SLabelHover loginButton;

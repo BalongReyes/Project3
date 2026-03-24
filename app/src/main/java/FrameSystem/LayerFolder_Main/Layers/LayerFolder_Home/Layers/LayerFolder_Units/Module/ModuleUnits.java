@@ -33,16 +33,18 @@ public class ModuleUnits extends SPanel{
         sPanel3 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel4 = new FrameSystem.SLibrary.SComponents.SPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        layerUnitsOnline = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits();
         layerUnitsOffline = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits();
         jPanel1 = new javax.swing.JPanel();
         sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
         sAnimatedOffline1 = new FrameSystem.SLibrary.SAnimated.SAnimatedOffline();
-        layerUnitsOnline = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits();
+        layerUnitsLoading = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits();
+        sAnimatedOffline2 = new FrameSystem.SLibrary.SAnimated.SAnimatedOffline();
 
         setBackground(new java.awt.Color(255, 247, 247));
 
         sPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        sPanel1.setRadius(30);
+        sPanel1.setRadius(20);
         sPanel1.setRounded(true);
         sPanel1.setShadowColor(new java.awt.Color(230, 230, 230));
         sPanel1.setShadowOpacity(0.3F);
@@ -52,7 +54,9 @@ public class ModuleUnits extends SPanel{
 
         sPanel2.setOpaque(false);
 
-        sPanel3.setBackground(new java.awt.Color(255, 153, 153));
+        sPanel3.setBackground(new java.awt.Color(240, 240, 240));
+        sPanel3.setRadius(20);
+        sPanel3.setRounded(true);
         sPanel3.setMinimumSize(new java.awt.Dimension(100, 40));
         sPanel3.setPreferredSize(new java.awt.Dimension(100, 40));
 
@@ -71,17 +75,34 @@ public class ModuleUnits extends SPanel{
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
+        layerUnitsOnline.setName("Online"); // NOI18N
+        layerUnitsOnline.setOpaque(false);
+
+        javax.swing.GroupLayout layerUnitsOnlineLayout = new javax.swing.GroupLayout(layerUnitsOnline);
+        layerUnitsOnline.setLayout(layerUnitsOnlineLayout);
+        layerUnitsOnlineLayout.setHorizontalGroup(
+            layerUnitsOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1024, Short.MAX_VALUE)
+        );
+        layerUnitsOnlineLayout.setVerticalGroup(
+            layerUnitsOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 608, Short.MAX_VALUE)
+        );
+
+        jLayeredPane1.add(layerUnitsOnline, "Online");
+
+        layerUnitsOffline.setName("Offline"); // NOI18N
         layerUnitsOffline.setOpaque(false);
 
         jPanel1.setOpaque(false);
 
-        sLabel2.setForeground(new java.awt.Color(178, 24, 3));
+        sLabel2.setForeground(new java.awt.Color(205, 64, 68));
         sLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel2.setText("Database Offline");
-        sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        sAnimatedOffline1.setLineColor(new java.awt.Color(178, 24, 3));
-        sAnimatedOffline1.setLineWidth(10.0F);
+        sAnimatedOffline1.setLineColor(new java.awt.Color(205, 64, 68));
+        sAnimatedOffline1.setLineWidth(5.0F);
         sAnimatedOffline1.setOpaque(false);
         sAnimatedOffline1.setPreferredSize(new java.awt.Dimension(160, 160));
 
@@ -136,23 +157,47 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jLayeredPane1.add(layerUnitsOffline, "card1");
+        jLayeredPane1.setLayer(layerUnitsOffline, javax.swing.JLayeredPane.PALETTE_LAYER);
+        jLayeredPane1.add(layerUnitsOffline, "Offline");
 
-        layerUnitsOnline.setOpaque(false);
+        layerUnitsLoading.setName("Loading"); // NOI18N
+        layerUnitsLoading.setOpaque(false);
 
-        javax.swing.GroupLayout layerUnitsOnlineLayout = new javax.swing.GroupLayout(layerUnitsOnline);
-        layerUnitsOnline.setLayout(layerUnitsOnlineLayout);
-        layerUnitsOnlineLayout.setHorizontalGroup(
-            layerUnitsOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+        sAnimatedOffline2.setLineColor(new java.awt.Color(255, 127, 127));
+        sAnimatedOffline2.setLineWidth(5.0F);
+        sAnimatedOffline2.setOpaque(false);
+        sAnimatedOffline2.setPreferredSize(new java.awt.Dimension(160, 160));
+
+        javax.swing.GroupLayout sAnimatedOffline2Layout = new javax.swing.GroupLayout(sAnimatedOffline2);
+        sAnimatedOffline2.setLayout(sAnimatedOffline2Layout);
+        sAnimatedOffline2Layout.setHorizontalGroup(
+            sAnimatedOffline2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 61, Short.MAX_VALUE)
         );
-        layerUnitsOnlineLayout.setVerticalGroup(
-            layerUnitsOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+        sAnimatedOffline2Layout.setVerticalGroup(
+            sAnimatedOffline2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
-        jLayeredPane1.setLayer(layerUnitsOnline, javax.swing.JLayeredPane.PALETTE_LAYER);
-        jLayeredPane1.add(layerUnitsOnline, "card2");
+        javax.swing.GroupLayout layerUnitsLoadingLayout = new javax.swing.GroupLayout(layerUnitsLoading);
+        layerUnitsLoading.setLayout(layerUnitsLoadingLayout);
+        layerUnitsLoadingLayout.setHorizontalGroup(
+            layerUnitsLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layerUnitsLoadingLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sAnimatedOffline2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layerUnitsLoadingLayout.setVerticalGroup(
+            layerUnitsLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerUnitsLoadingLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sAnimatedOffline2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.setLayer(layerUnitsLoading, javax.swing.JLayeredPane.PALETTE_LAYER);
+        jLayeredPane1.add(layerUnitsLoading, "Loading");
 
         javax.swing.GroupLayout sPanel4Layout = new javax.swing.GroupLayout(sPanel4);
         sPanel4.setLayout(sPanel4Layout);
@@ -175,8 +220,8 @@ public class ModuleUnits extends SPanel{
         sPanel2.setLayout(sPanel2Layout);
         sPanel2Layout.setHorizontalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
             .addComponent(sPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
         );
         sPanel2Layout.setVerticalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,16 +255,16 @@ public class ModuleUnits extends SPanel{
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(10, 10, 10)
                 .addComponent(sPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(15, 15, 15))
+                .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addComponent(sPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(15, 15, 15))
+                .addGap(10, 10, 10))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -227,9 +272,11 @@ public class ModuleUnits extends SPanel{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
+    private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits layerUnitsLoading;
     private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits layerUnitsOffline;
     private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits layerUnitsOnline;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
+    private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel2;
