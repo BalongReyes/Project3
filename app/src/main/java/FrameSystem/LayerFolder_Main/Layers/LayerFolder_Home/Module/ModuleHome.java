@@ -142,6 +142,8 @@ public class ModuleHome extends SPanel{
         menuMinButton_Profile = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinButton();
         menuMinButton_Settings = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinButton();
 
+        setBackground(new java.awt.Color(255, 247, 247));
+
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
         layerHome_Dashboard.setBackground(new java.awt.Color(255, 247, 247));
@@ -487,12 +489,10 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.add(layerHome_Profile, "profile");
 
         sPanelMenu1.setBackground(new java.awt.Color(255, 255, 255));
-        sPanelMenu1.setBorderColor(new java.awt.Color(240, 240, 240));
-        sPanelMenu1.setBorderLine(2);
-        sPanelMenu1.setRounded(true);
         sPanelMenu1.setMaximumSize(new java.awt.Dimension(289, 32767));
-        sPanelMenu1.setMinimumSize(new java.awt.Dimension(269, 100));
-        sPanelMenu1.setPreferredSize(new java.awt.Dimension(269, 0));
+        sPanelMenu1.setMinimumSize(new java.awt.Dimension(274, 0));
+        sPanelMenu1.setOpaque(false);
+        sPanelMenu1.setPreferredSize(new java.awt.Dimension(274, 0));
 
         sLabelHover1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabelHover1.setHoverColor(new java.awt.Color(229, 229, 229));
@@ -941,19 +941,19 @@ public class ModuleHome extends SPanel{
                 .addGap(20, 20, 20)
                 .addGroup(sPanelMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sPanelMenu1Layout.createSequentialGroup()
-                        .addComponent(sScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                        .addComponent(sScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                         .addGap(13, 13, 13))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanelMenu1Layout.createSequentialGroup()
                         .addGroup(sPanelMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(sPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(menuButton_Settings, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(menuButton_Profile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
-                            .addComponent(sPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                            .addComponent(sPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                            .addComponent(sPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                             .addComponent(menuSwitch_Fullscreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                            .addComponent(sPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                             .addGroup(sPanelMenu1Layout.createSequentialGroup()
-                                .addComponent(sLayerPanelButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(sLayerPanelButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(sLabelHover1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(sPanelMenu1Layout.createSequentialGroup()
@@ -998,11 +998,9 @@ public class ModuleHome extends SPanel{
         );
 
         sPanelMenu2.setBackground(new java.awt.Color(255, 255, 255));
-        sPanelMenu2.setBorderColor(new java.awt.Color(240, 240, 240));
-        sPanelMenu2.setBorderLine(2);
-        sPanelMenu2.setRounded(true);
-        sPanelMenu2.setMinimumSize(new java.awt.Dimension(80, 100));
-        sPanelMenu2.setPreferredSize(new java.awt.Dimension(80, 0));
+        sPanelMenu2.setMinimumSize(new java.awt.Dimension(85, 100));
+        sPanelMenu2.setOpaque(false);
+        sPanelMenu2.setPreferredSize(new java.awt.Dimension(85, 0));
 
         sLabelHover2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabelHover2.setHoverColor(new java.awt.Color(229, 229, 229));
@@ -1280,13 +1278,13 @@ public class ModuleHome extends SPanel{
                         .addGroup(sPanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(menuMinButton_Settings, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(menuMinButton_Profile, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(sPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(sPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                             .addComponent(menuMinSwitch_Fullscreen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(sPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(sPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                             .addComponent(logoutButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sPanelHover2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                            .addComponent(sLabelHover2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(sPanelHover2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                            .addComponent(sPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                            .addComponent(sLabelHover2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
                         .addGap(15, 15, 15))))
         );
         sPanelMenu2Layout.setVerticalGroup(

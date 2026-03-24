@@ -28,21 +28,45 @@ public class ModuleUnits extends SPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        sPanel1 = new FrameSystem.SLibrary.SComponents.SPanel();
+
         setBackground(new java.awt.Color(255, 247, 247));
+
+        sPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        sPanel1.setRadius(30);
+        sPanel1.setRounded(true);
+
+        javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);
+        sPanel1.setLayout(sPanel1Layout);
+        sPanel1Layout.setHorizontalGroup(
+            sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 947, Short.MAX_VALUE)
+        );
+        sPanel1Layout.setVerticalGroup(
+            sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 758, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1149, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(sPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 802, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(sPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
     // End of variables declaration//GEN-END:variables
 }

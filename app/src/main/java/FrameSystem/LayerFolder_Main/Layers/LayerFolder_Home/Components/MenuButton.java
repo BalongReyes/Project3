@@ -280,19 +280,6 @@ public class MenuButton extends SLayerButton{
         }
         g2.fillRoundRect(0, 0, s.width, s.height, radius, radius);
         
-        if(!cornerUL){
-            g2.fillRect(0, 0, radius, radius);
-        }
-        if(!cornerUR){
-            g2.fillRect(s.width - radius, 0, s.width, radius);
-        }
-        if(!cornerDL){
-            g2.fillRect(0, s.height - radius, radius, s.height);
-        }
-        if(!cornerDR){
-            g2.fillRect(s.width - radius, s.height - radius, s.width, s.height);
-        }
-        
         if(notificationCount != 0){
             g2.setFont(getFont());
             FontMetrics fm = g.getFontMetrics();
