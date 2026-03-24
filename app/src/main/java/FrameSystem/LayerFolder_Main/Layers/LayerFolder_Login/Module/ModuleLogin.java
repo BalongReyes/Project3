@@ -89,6 +89,11 @@ public class ModuleLogin extends LoginPanelContainer {
         setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/Icons/wave.png"))); // NOI18N
         setRadius(30);
         setRounded(true);
+        setShadowColor(new java.awt.Color(230, 230, 230));
+        setShadowOpacity(0.3F);
+        setShadowSize(5);
+        setShadowX(true);
+        setShadowY(true);
         setMinimumSize(new java.awt.Dimension(830, 540));
         setPreferredSize(new java.awt.Dimension(830, 540));
 
@@ -102,9 +107,9 @@ public class ModuleLogin extends LoginPanelContainer {
         sPanelLeftLayout.setHorizontalGroup(
             sPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanelLeftLayout.createSequentialGroup()
-                .addGap(0, 37, Short.MAX_VALUE)
-                .addComponent(sLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
-                .addGap(0, 37, Short.MAX_VALUE))
+                .addGap(0, 34, Short.MAX_VALUE)
+                .addComponent(sLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                .addGap(0, 33, Short.MAX_VALUE))
         );
         sPanelLeftLayout.setVerticalGroup(
             sPanelLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

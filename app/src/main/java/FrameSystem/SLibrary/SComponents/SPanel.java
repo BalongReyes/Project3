@@ -23,6 +23,7 @@ public class SPanel extends JPanel implements InnerListener{
     public SPanel(){
         super();
         super.setBorder(null);
+        setOpaque(true);
     }
     
 // Setters and Getters =======================================================================================
@@ -50,7 +51,7 @@ public class SPanel extends JPanel implements InnerListener{
     @BeanProperty(preferred = true, visualUpdate = true, description = "If the panel is rounded")
     public void setRounded(boolean rounded){
         this.rounded = rounded;
-        setOpaque(!rounded);
+        if(rounded) setOpaque(false);
     }
 
     public boolean isRounded(){
@@ -78,6 +79,7 @@ public class SPanel extends JPanel implements InnerListener{
     @BeanProperty(preferred = true, visualUpdate = true, description = "The border line width")
     public void setBorderLine(int borderLine){
         this.borderLine = borderLine;
+        if(borderLine != 0) setOpaque(false);
     }
     
     public int getBorderLine(){
@@ -98,6 +100,36 @@ public class SPanel extends JPanel implements InnerListener{
     }
     
 // Drop Shadow ===============================================================================================
+    
+    protected boolean shadowX = false;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    public void setShadowX(boolean shadowX){
+        this.shadowX = shadowX;
+        setBorderPadding();
+        if(shadowX) setOpaque(false);
+    }
+
+    public boolean isShadowX(){
+        return shadowX;
+    }
+    
+// -----------------------------------------------------------------------------------------------------------
+    
+    protected boolean shadowY = false;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    public void setShadowY(boolean shadowY){
+        this.shadowY = shadowY;
+        setBorderPadding();
+        if(shadowY) setOpaque(false);
+    }
+
+    public boolean isShadowY(){
+        return shadowY;
+    }
+    
+// -----------------------------------------------------------------------------------------------------------
     
     protected int shadowSize;
 
@@ -127,7 +159,7 @@ public class SPanel extends JPanel implements InnerListener{
     
 // -----------------------------------------------------------------------------------------------------------
     
-    protected Color shadowColor;
+    protected Color shadowColor = Color.white;
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "")
     public void setShadowColor(Color shadowColor){
@@ -140,61 +172,44 @@ public class SPanel extends JPanel implements InnerListener{
     
 // -----------------------------------------------------------------------------------------------------------
     
-    protected int shadowOffsetLeft;
+    protected int shadowOffsetX;
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "")
-    public void setShadowOffsetLeft(int shadowOffsetLeft){
-        this.shadowOffsetLeft = shadowOffsetLeft;
+    public void setShadowOffsetX(int shadowOffsetX){
+        this.shadowOffsetX = shadowOffsetX;
+        
+        setBorderPadding();
     }
 
-    public int getShadowOffsetLeft(){
-        return shadowOffsetLeft;
+    public int getShadowOffsetX(){
+        return shadowOffsetX;
     }
     
 // -----------------------------------------------------------------------------------------------------------
     
-    protected int shadowOffsetRight;
+    protected int shadowOffsetY;
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "")
-    public void setShadowOffsetRight(int shadowOffsetRight){
-        this.shadowOffsetRight = shadowOffsetRight;
+    public void setShadowOffsetY(int shadowOffsetY){
+        this.shadowOffsetY = shadowOffsetY;
+        
+        setBorderPadding();
     }
 
-    public int getShadowOffsetRight(){
-        return shadowOffsetRight;
+    public int getShadowOffsetY(){
+        return shadowOffsetY;
     }
     
 // -----------------------------------------------------------------------------------------------------------
     
-    protected int shadowOffsetUp;
-
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
-    public void setShadowOffsetUp(int shadowOffsetUp){
-        this.shadowOffsetUp = shadowOffsetUp;
-    }
-
-    public int getShadowOffsetUp(){
-        return shadowOffsetUp;
-    }
-    
-// -----------------------------------------------------------------------------------------------------------
-    
-    protected int shadowOffsetDown;
-
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
-    public void setShadowOffsetDown(int shadowOffsetDown){
-        this.shadowOffsetDown = shadowOffsetDown;
-    }
-
-    public int getShadowOffsetDown(){
-        return shadowOffsetDown;
-    }
-    
-// -----------------------------------------------------------------------------------------------------------
-    
-    private void setBorderPadding(){
+    protected void setBorderPadding(){
         // Top, Left, Bottom, Right
-        setBorder(new EmptyBorder(shadowSize - shadowOffsetUp, shadowSize - shadowOffsetLeft, shadowSize + shadowOffsetDown, shadowSize + shadowOffsetRight));
+        setBorder(new EmptyBorder(
+            shadowY ? shadowSize - shadowOffsetY : 0,
+            shadowX ? shadowSize - shadowOffsetX : 0,
+            shadowY ? shadowSize + shadowOffsetY : 0,
+            shadowX ? shadowSize + shadowOffsetX : 0
+        ));
     }
     
 // Overrided Methods =========================================================================================
@@ -237,28 +252,40 @@ public class SPanel extends JPanel implements InnerListener{
     }
     
     @Override
-    public void paint(Graphics g){
-        if(!rounded){
+    public void paint(Graphics g) {
+        if(!rounded && !(shadowX || shadowY)) {
             super.paint(g);
             return;
         }
         
+        int radiusPaint = 0;
+        if(rounded){
+            radiusPaint = this.radius;
+        }
+
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
-        
-        // ------------
-        
+
         int width = getWidth();
         int height = getHeight();
 
-        // Calculate the actual size of the inner panel content area
-        int x = shadowSize;
-        int y = shadowSize;
-        int w = width - (shadowSize * 2) - shadowOffsetX;
-        int h = height - (shadowSize * 2) - shadowOffsetY;
+        // The main panel's body position, adjusted by shadow size and offsets
+        // This must match the EmptyBorder logic in setBorderPadding()
+        int x = 0;
+        int y = 0;
+        int w = width;
+        int h = height;
+        
+        if(isShadowX()){
+            x = shadowSize - shadowOffsetX;
+            w = width - (shadowSize * 2);
+        }
+        if(isShadowY()){
+            y = shadowSize - shadowOffsetY;
+            h = height - (shadowSize * 2);
+        }
 
         // Draw the drop shadow
         for (int i = 0; i < shadowSize; i++) {
-            // Gradually decrease the alpha to create a blur effect
             float opacity = shadowOpacity * (1.0f - ((float) i / shadowSize));
             g.setColor(new Color(
                 shadowColor.getRed(),
@@ -267,25 +294,32 @@ public class SPanel extends JPanel implements InnerListener{
                 (int) (opacity * 255)
             ));
 
-            // Draw concentric rounded rectangles expanding outwards
+            // Draw shadow rectangles that expand relative to the main body's position
             g.fillRoundRect(
                 x - i + shadowOffsetX, 
                 y - i + shadowOffsetY, 
                 w + (i * 2), 
                 h + (i * 2), 
-                radius + i, 
-                radius + i
+                radiusPaint + i, 
+                radiusPaint + i
             );
         }
 
-        // ------------
-        
+        // Draw Border
         g2.setColor(borderColor);
-        g2.fillRoundRect(x, y, w, h, radius, radius);
-        
+        g2.fillRoundRect(x, y, w, h, radiusPaint, radiusPaint);
+
+        // Draw Background (Inner Body)
         g2.setColor(getBackground());
-        g2.fillRoundRect(x + borderLine, y + borderLine, w - (borderLine * 2), h - (borderLine * 2), radius - borderLine, radius - borderLine);
-        
+        g2.fillRoundRect(
+            x + borderLine, 
+            y + borderLine, 
+            w - (borderLine * 2), 
+            h - (borderLine * 2), 
+            radiusPaint - borderLine, 
+            radiusPaint - borderLine
+        );
+
         paintOverrideAll(g);
     }
     
