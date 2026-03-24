@@ -304,14 +304,15 @@ public class MenuButton extends SLayerButton{
             int x = s.width - 15 - stringWidth;
             int y = heightHalf + (stringHeight / 2);
             
-            if(active){
-                g2.setColor(activeNotificationColor);
-            }else{
-                g2.setColor(inactiveNotificationColor);
+            if(!isHovering() && !isActive()){
+                if(active){
+                    g2.setColor(activeNotificationColor);
+                }else{
+                    g2.setColor(inactiveNotificationColor);
+                }
+                int[] paddding = new int[]{18, 3, 25, 6};
+                g2.fillRoundRect(x - paddding[0], y - stringHeight - paddding[1], stringWidth + paddding[2], stringHeight + paddding[3], 20, 20);
             }
-            
-            int[] paddding = new int[]{18, 3, 25, 6};
-            g2.fillRoundRect(x - paddding[0], y - stringHeight - paddding[1], stringWidth + paddding[2], stringHeight + paddding[3], 20, 20);
            
             g2.setColor(notificationForegroundColor);
             g2.fillRoundRect(x - 12, y - (stringHeight / 2) - 3, 6, 6, 6, 6);

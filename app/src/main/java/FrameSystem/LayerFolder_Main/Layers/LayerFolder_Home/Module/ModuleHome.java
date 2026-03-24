@@ -487,7 +487,7 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.add(layerHome_Profile, "profile");
 
         sPanelMenu1.setBackground(new java.awt.Color(255, 255, 255));
-        sPanelMenu1.setBorderColor(new java.awt.Color(228, 228, 235));
+        sPanelMenu1.setBorderColor(new java.awt.Color(240, 240, 240));
         sPanelMenu1.setBorderLine(2);
         sPanelMenu1.setRounded(true);
         sPanelMenu1.setMaximumSize(new java.awt.Dimension(289, 32767));
@@ -998,7 +998,7 @@ public class ModuleHome extends SPanel{
         );
 
         sPanelMenu2.setBackground(new java.awt.Color(255, 255, 255));
-        sPanelMenu2.setBorderColor(new java.awt.Color(228, 228, 235));
+        sPanelMenu2.setBorderColor(new java.awt.Color(240, 240, 240));
         sPanelMenu2.setBorderLine(2);
         sPanelMenu2.setRounded(true);
         sPanelMenu2.setMinimumSize(new java.awt.Dimension(80, 100));
