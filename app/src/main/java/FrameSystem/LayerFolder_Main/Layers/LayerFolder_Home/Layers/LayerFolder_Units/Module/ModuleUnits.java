@@ -34,9 +34,10 @@ public class ModuleUnits extends SPanel{
         sPanel4 = new FrameSystem.SLibrary.SComponents.SPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         layerUnitsOffline = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits();
+        sAnimatedOffline1 = new FrameSystem.SLibrary.SAnimated.SAnimatedOffline();
         sPanel5 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
         sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
+        sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnitsOnline = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits();
 
         setBackground(new java.awt.Color(255, 247, 247));
@@ -73,32 +74,55 @@ public class ModuleUnits extends SPanel{
 
         layerUnitsOffline.setOpaque(false);
 
-        sPanel5.setOpaque(false);
+        sAnimatedOffline1.setLineColor(new java.awt.Color(56, 56, 56));
+        sAnimatedOffline1.setLineWidth(8.0F);
+        sAnimatedOffline1.setOpaque(false);
+        sAnimatedOffline1.setPreferredSize(new java.awt.Dimension(160, 160));
 
-        sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLabel1.setIconSize(40);
-        sLabel1.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/offline.png"))); // NOI18N
+        sPanel5.setOpaque(false);
 
         sLabel2.setForeground(new java.awt.Color(56, 56, 56));
         sLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel2.setText("Database Offline");
         sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
+        sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sLabel1.setIconSize(40);
+        sLabel1.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/offline.png"))); // NOI18N
+
         javax.swing.GroupLayout sPanel5Layout = new javax.swing.GroupLayout(sPanel5);
         sPanel5.setLayout(sPanel5Layout);
         sPanel5Layout.setHorizontalGroup(
             sPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sPanel5Layout.setVerticalGroup(
             sPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(sLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
+        );
+
+        javax.swing.GroupLayout sAnimatedOffline1Layout = new javax.swing.GroupLayout(sAnimatedOffline1);
+        sAnimatedOffline1.setLayout(sAnimatedOffline1Layout);
+        sAnimatedOffline1Layout.setHorizontalGroup(
+            sAnimatedOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sAnimatedOffline1Layout.createSequentialGroup()
+                .addGap(0, 28, Short.MAX_VALUE)
+                .addComponent(sPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 28, Short.MAX_VALUE))
+        );
+        sAnimatedOffline1Layout.setVerticalGroup(
+            sAnimatedOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sAnimatedOffline1Layout.createSequentialGroup()
+                .addGap(0, 51, Short.MAX_VALUE)
+                .addComponent(sPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layerUnitsOfflineLayout = new javax.swing.GroupLayout(layerUnitsOffline);
@@ -107,14 +131,14 @@ public class ModuleUnits extends SPanel{
             layerUnitsOfflineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerUnitsOfflineLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sAnimatedOffline1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layerUnitsOfflineLayout.setVerticalGroup(
             layerUnitsOfflineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerUnitsOfflineLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sAnimatedOffline1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -210,6 +234,7 @@ public class ModuleUnits extends SPanel{
     private javax.swing.JLayeredPane jLayeredPane1;
     private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits layerUnitsOffline;
     private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits layerUnitsOnline;
+    private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
