@@ -7,6 +7,8 @@ public class ModuleUnits extends SPanel{
     public ModuleUnits(){
         initComponents();
         setOpaque(false);
+        setDoubleBuffered(true);
+        objectUnitWrapper.setDoubleBuffered(true);
     }
 
     @SuppressWarnings("unchecked")

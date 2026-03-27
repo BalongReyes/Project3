@@ -22,12 +22,9 @@ public class ManagerModuleUnits extends Manager{
             if(!evt.alreadyShowing){
                 moduleUnits.sTextField1.requestFocus();
                 LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
+                ManagerObjectUnits.clearFilterObject(false);
+                ManagerObjectUnits.refreshObjects(null, true);
             }
-        });
-        
-        moduleUnits.layerUnitsLoading.addLayeredPanelShowListener(evt -> {
-            ManagerObjectUnits.clearFilterObject(false);
-            ManagerObjectUnits.refreshObjects(null, true);
         });
         
         moduleUnits.sPanelHover2.addMouseListener(new MouseAdapter(){

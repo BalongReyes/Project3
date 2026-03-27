@@ -45,17 +45,8 @@
   <SubComponents>
     <Container class="FrameSystem.SLibrary.SComponents.SPanelHighlight" name="sPanelHighlight1">
       <Properties>
-        <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="34" green="27" red="22" type="rgb"/>
-        </Property>
-        <Property name="dangerBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="11" green="11" red="23" type="rgb"/>
-        </Property>
-        <Property name="dangerForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="ad" type="rgb"/>
-        </Property>
         <Property name="hoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="2e" green="22" red="1e" type="rgb"/>
+          <Color blue="f0" green="f0" red="f0" type="rgb"/>
         </Property>
         <Property name="inactiveForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="36" green="30" red="30" type="rgb"/>

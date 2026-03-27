@@ -10,6 +10,7 @@ import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_U
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Components.ObjectUnit;
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Module.ModuleUnits;
 import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
+import MainSystem.ExecutorDriver;
 import MainSystem.Manager;
 import java.awt.Dimension;
 import java.awt.event.MouseListener;
@@ -99,47 +100,47 @@ public class ManagerObjectUnits extends Manager{
         refreshObjects(currentObject, refresh);
     }
     
-    public static void refreshObjects(ObjectUnit recentObject, boolean refresh){
-        moduleUnits.objectUnitWrapper.removeAll();
-        objects.clear();
-        
-        resetCurrentObject();
-        boolean recentIdFound = false;
+    public static void refreshObjects(ObjectUnit recentObject, boolean refresh) {
+        LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
 
-        try{
-            UnitsDataTable[] dataArray = UnitsDataHandler.getAllDataSorted(refresh, filterSort, filterOrder);
-            for(UnitsDataTable data : dataArray){
-//                if(!filter.equals("") && !data.haveData(filter)) continue;
-//                if(filterCategory != -1 && !data.haveCategory(filterCategory)) continue;
+        ExecutorDriver.execute(() -> {
+            long startTime = System.currentTimeMillis();
+            try {
+                UnitsDataTable[] dataArray = UnitsDataHandler.getAllDataSorted(refresh, filterSort, filterOrder);
 
-                ObjectUnit o = new ObjectUnit(data);
-                objects.add(o);
-                moduleUnits.objectUnitWrapper.add(o);
-                moduleUnits.objectUnitScrollPane.addInnerListeners(o);
+                long elapsedTime = System.currentTimeMillis() - startTime;
+                long minLoadingTime = 3000; // 1 second minimum
 
-                if(!recentIdFound && recentObject != null && o == recentObject){
-                    changeCurrentObject(o);
-                    recentIdFound = true;
+                if (elapsedTime < minLoadingTime) {
+                    try {
+                        Thread.sleep(minLoadingTime - elapsedTime);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                 }
+
+                javax.swing.SwingUtilities.invokeLater(() -> {
+                    moduleUnits.objectUnitWrapper.removeAll();
+                    objects.clear();
+
+                    for (UnitsDataTable data : dataArray) {
+                        ObjectUnit o = new ObjectUnit(data);
+                        objects.add(o);
+                        moduleUnits.objectUnitWrapper.add(o);
+                        moduleUnits.objectUnitScrollPane.addInnerListeners(o);
+                    }
+
+                    resizeContainer();
+                    LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
+                });
+
+            } catch (SQLException e) {
+                javax.swing.SwingUtilities.invokeLater(() -> {
+                    Console.errorOut("Gathering object unit error", e);
+                    ManagerModuleUnits.reconnectMode(() -> refreshObjects(recentObject, true));
+                });
             }
-            LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
-        }catch(SQLException e){
-            Console.errorOut("Gathering object unit error", e);
-            moduleUnits.objectUnitWrapper.removeAll();
-            objects.clear();
-            resizeContainer();
-
-            ManagerModuleUnits.reconnectMode(() -> {
-                refreshObjects(recentObject, true);
-            });
-            return;
-        }
-
-        if(!recentIdFound && !objects.isEmpty()){
-            changeCurrentObject(objects.get(0));
-        }
-
-        resizeContainer();
+        });
     }
     
 // Resize ----------------------------------------------------------------------------------------------------
