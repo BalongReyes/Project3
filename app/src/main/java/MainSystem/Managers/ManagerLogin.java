@@ -17,9 +17,9 @@ public class ManagerLogin extends Manager{
     public static ModuleLogin moduleLogin;
     public static ModuleHome moduleHome;
 
-    public static void initDefault(ModuleLogin initModuleLogin, ModuleHome initModuleHome){
-        moduleLogin = initModuleLogin;
-        moduleHome = initModuleHome;
+    public static void initDefault(){
+        moduleLogin = frame.moduleLogin;
+        moduleHome = frame.moduleHome;
     }
     
 // Methods ===================================================================================================

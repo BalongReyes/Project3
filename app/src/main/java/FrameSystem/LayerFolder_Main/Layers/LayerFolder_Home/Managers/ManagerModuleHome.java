@@ -13,8 +13,8 @@ public class ManagerModuleHome extends Manager{
 
     public static ModuleHome moduleHome;
     
-    public static void initDefault(ModuleHome initModuleHome){
-        moduleHome = initModuleHome;
+    public static void initDefault(){
+        moduleHome = frame.moduleHome;
         
         MouseListener m3 = (MouseClickedAdaptor) evt -> {
             LayerHome.showLayer(moduleHome.layerHome_Dashboard);

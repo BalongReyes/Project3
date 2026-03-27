@@ -1,5 +1,7 @@
 package MainSystem;
 
+import ConsoleSystem.Console;
+import ConsoleSystem.ConsoleColors;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 
@@ -7,7 +9,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import DatabaseSystem.Database;
+import EventSystem.Interface.ReconnectExecute;
 import FrameSystem.LayerFolder_Main.Components.LayerMain;
+import java.sql.SQLException;
+import javax.swing.Timer;
 
 public class SFrame extends JFrame {
 
@@ -60,7 +65,33 @@ public class SFrame extends JFrame {
         repaint();
     }
 
+// -----------------------------------------------------------------------------------------------------------
+    
+    private Timer refreshTimer;
+    
+    private volatile ReconnectExecute currentReconnectExecute;
+    
+    public void reconnectMode(String caller, ReconnectExecute reconnectExecute){
+        currentReconnectExecute = reconnectExecute;
+        
+        if(refreshTimer != null && refreshTimer.isRunning()) return;
+        refreshTimer = new Timer(5000, (evt) -> { // refreshing connection every 5 seconds
+            try{
+                Database.openConnection();
+                if(Database.getConnection() != null && !Database.getConnection().isClosed()){
+                    if(Main.debugDataHandlerRefresh) Console.line().out("RECONNECTION OF " + caller, ConsoleColors.GREEN);
+                    currentReconnectExecute.reconnect();
+                    ((Timer)evt.getSource()).stop();
+                }
+            }catch(SQLException e){
+                Console.errorOut("Reconnecting failed", e);
+            }
+        });
+        refreshTimer.start();
+    }
+    
 // Static Methods ============================================================================================
+    
     private static boolean keyLock = false;
 
     public static void setKeyLock(boolean keyLock) {

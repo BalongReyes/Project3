@@ -12,8 +12,8 @@ public class ManagerModuleLogin extends Manager{
     
     public static ModuleLogin moduleLogin;
 
-    public static void initDefault(ModuleLogin initModuleLogin){
-        moduleLogin = initModuleLogin;
+    public static void initDefault(){
+        moduleLogin = frame.moduleLogin;
         
         ManagerLogin.resetUI();
         frame.layerMain_Login.addLayeredPanelShowListener(evt -> {

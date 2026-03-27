@@ -35,7 +35,7 @@ public class ModuleHome extends SPanel{
         layerHome_Dashboard = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
         sLabel5 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerHome_Units = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
-        moduleUnits1 = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Module.ModuleUnits();
+        moduleUnits = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Module.ModuleUnits();
         layerHome_Parking = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
         sLabel3 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerHome_NewResident = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
@@ -188,14 +188,14 @@ public class ModuleHome extends SPanel{
             layerHome_UnitsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerHome_UnitsLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(moduleUnits1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(moduleUnits, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layerHome_UnitsLayout.setVerticalGroup(
             layerHome_UnitsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerHome_UnitsLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(moduleUnits1, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+                .addComponent(moduleUnits, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -1463,7 +1463,7 @@ public class ModuleHome extends SPanel{
     private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinButton menuMinButton_Visitors;
     public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinSwitch menuMinSwitch_Fullscreen;
     public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuSwitch menuSwitch_Fullscreen;
-    private FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Module.ModuleUnits moduleUnits1;
+    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Module.ModuleUnits moduleUnits;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel11;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel12;

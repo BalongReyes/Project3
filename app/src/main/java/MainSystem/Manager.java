@@ -1,7 +1,9 @@
 package MainSystem;
 
+import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Managers.ManagerModuleUnits;
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Managers.ManagerModuleHome;
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Managers.ManagerModuleLogin;
+import FrameSystem.LayerFolder_Main.Managers.ManagerFilters;
 import MainSystem.Managers.ManagerLogin;
 
 public class Manager {
@@ -11,9 +13,12 @@ public class Manager {
     public static void setDefault(SFrame frame) {
         Manager.frame = frame;
         
-        ManagerLogin.initDefault(frame.moduleLogin, frame.moduleHome);
-        ManagerModuleLogin.initDefault(frame.moduleLogin);
-        ManagerModuleHome.initDefault(frame.moduleHome);
+        ManagerLogin.initDefault();
+        ManagerModuleLogin.initDefault();
+        ManagerModuleHome.initDefault();
+        
+        ManagerModuleUnits.initDefault();
+        ManagerFilters.initDefault();
     }
 
 }

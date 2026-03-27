@@ -1,6 +1,7 @@
 
-package FrameSystem.SLibrary.SComponents;
+package FrameSystem.SLibrary.SAnimated;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;

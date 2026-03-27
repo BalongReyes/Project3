@@ -1,5 +1,6 @@
 package FrameSystem.SLibrary.SGenericComponents;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -17,11 +18,10 @@ import FrameSystem.SLibrary.SComponents.SPanelHover;
 import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A SPanel that targets a SPanel for hovering")
-public class SPanelTarget extends SPanelHover{
+public class STargetPanel extends SPanelHover{
 
-    public SPanelTarget(){
+    public STargetPanel(){
         super();
-        
         initComponents();
         sLabel1.addMouseListener(hoverListener);
     }
@@ -41,10 +41,10 @@ public class SPanelTarget extends SPanelHover{
     
 // -----------------------------------------------------------------------------------------------------------
     
-    private JPanel targetPanel;
+    private SPanel targetPanel;
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "The target panel")
-    public void setTargetPanel(JPanel targetPanel){
+    public void setTargetPanel(SPanel targetPanel){
         this.targetPanel = targetPanel;
         targetPanel.addMouseListener(hoverListener);
     }

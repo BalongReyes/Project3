@@ -1,7 +1,6 @@
 
 package FrameSystem.SLibrary.SAnimated;
 
-import FrameSystem.SLibrary.SComponents.SPanelAnimated;
 import MainSystem.CustomGraphics;
 import java.awt.BasicStroke;
 import java.awt.Color;

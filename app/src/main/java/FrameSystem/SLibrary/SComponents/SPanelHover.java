@@ -4,7 +4,6 @@ package FrameSystem.SLibrary.SComponents;
 import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
@@ -117,17 +116,78 @@ public class SPanelHover extends SPanel{
     
     @Override
     public void paint(Graphics g){
-        Graphics2D g2 = CustomGraphics.getGraphics2D(g);
-        Dimension s = getSize();
+        if(!rounded && !(shadowX || shadowY)) {
+            super.paint(g);
+            return;
+        }
         
+        int radiusPaint = 0;
+        if(rounded){
+            radiusPaint = this.radius;
+        }
+
+        Graphics2D g2 = CustomGraphics.getGraphics2D(g);
+
+        int width = getWidth();
+        int height = getHeight();
+
+        // The main panel's body position, adjusted by shadow size and offsets
+        // This must match the EmptyBorder logic in setBorderPadding()
+        int x = 0;
+        int y = 0;
+        int w = width;
+        int h = height;
+        
+        if(isShadowX()){
+            x = shadowSize - shadowOffsetX;
+            w = width - (shadowSize * 2);
+        }
+        if(isShadowY()){
+            y = shadowSize - shadowOffsetY;
+            h = height - (shadowSize * 2);
+        }
+
+        // Draw the drop shadow
+        for (int i = 0; i < shadowSize; i++) {
+            float opacity = shadowOpacity * (1.0f - ((float) i / shadowSize));
+            g.setColor(new Color(
+                shadowColor.getRed(),
+                shadowColor.getGreen(),
+                shadowColor.getBlue(),
+                (int) (opacity * 255)
+            ));
+
+            // Draw shadow rectangles that expand relative to the main body's position
+            g.fillRoundRect(
+                x - i + shadowOffsetX, 
+                y - i + shadowOffsetY, 
+                w + (i * 2), 
+                h + (i * 2), 
+                radiusPaint + i, 
+                radiusPaint + i
+            );
+        }
+
+        // Draw Border
+        g2.setColor(borderColor);
+        g2.fillRoundRect(x, y, w, h, radiusPaint, radiusPaint);
+
         if(hovering){
             g2.setColor(hoverBackgroundColor);
         }else{
             g2.setColor(getBackground());
         }
-        g2.fillRoundRect(0, 0, s.width, s.height, radius, radius);
-        
-        super.paintOverride(g);
+        g2.fillRoundRect(
+            x + borderLine, 
+            y + borderLine, 
+            w - (borderLine * 2), 
+            h - (borderLine * 2), 
+            radiusPaint - borderLine, 
+            radiusPaint - borderLine
+        );
+
+        paintOverrideAll(g);
+
     }
 
 }
