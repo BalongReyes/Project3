@@ -31,7 +31,7 @@ public class MenuButton extends SLayerButton implements ActionListener{
         initComponents();
         sLabel1.addMouseListener(hoverListener);
         
-        timer = new Timer(5, this);
+        timer = new Timer(1, this);
     }
     
 // ===========================================================================================================

@@ -1,9 +1,8 @@
 
 package FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Managers;
 
-import DatabaseSystem.Database;
 import EventSystem.Interface.ReconnectExecute;
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Layers.LayerUnits;
+import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Components.LayerUnits;
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Module.ModuleUnits;
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome;
 import MainSystem.Manager;
@@ -21,11 +20,14 @@ public class ManagerModuleUnits extends Manager{
         
         moduleHome.layerHome_Units.addLayeredPanelShowListener(evt -> {
             if(!evt.alreadyShowing){
-                if(Database.isOpen()){
-                    LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
-                    offlineMode = false;
-                }
+                moduleUnits.sTextField1.requestFocus();
+                LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
             }
+        });
+        
+        moduleUnits.layerUnitsLoading.addLayeredPanelShowListener(evt -> {
+            ManagerObjectUnits.clearFilterObject(false);
+            ManagerObjectUnits.refreshObjects(null, true);
         });
         
         moduleUnits.sPanelHover2.addMouseListener(new MouseAdapter(){

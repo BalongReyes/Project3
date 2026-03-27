@@ -89,7 +89,7 @@ public class SFilterTitlePanel extends SPanelHover{
         sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
         sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
 
-        sLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        sLabel1.setForeground(new java.awt.Color(56, 56, 56));
         sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         sLabel1.setText("test");
         sLabel1.setPreferredSize(new java.awt.Dimension(0, 30));
@@ -113,7 +113,9 @@ public class SFilterTitlePanel extends SPanelHover{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, 0))
         );

@@ -1,6 +1,7 @@
 package MainSystem;
 
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Managers.ManagerModuleUnits;
+import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Managers.ManagerObjectUnits;
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Managers.ManagerModuleHome;
 import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Managers.ManagerModuleLogin;
 import FrameSystem.LayerFolder_Main.Managers.ManagerFilters;
@@ -18,6 +19,7 @@ public class Manager {
         ManagerModuleHome.initDefault();
         
         ManagerModuleUnits.initDefault();
+        ManagerObjectUnits.initDefault();
         ManagerFilters.initDefault();
     }
 
