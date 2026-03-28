@@ -26,9 +26,6 @@ public class SLabelBeanInfo extends SimpleBeanInfo {
                     case "border", "toolTipText" -> {
                         pd.setHidden(true);
                     }
-                    case "foreground", "background" -> {
-                        pd.setValue("category", "Colors");
-                    }
                     case "font" -> {
                         pd.setValue("category", "Typography");
                     }

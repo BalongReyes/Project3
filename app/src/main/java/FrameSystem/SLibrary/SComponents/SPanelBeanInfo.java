@@ -28,9 +28,6 @@ public class SPanelBeanInfo extends SimpleBeanInfo {
                     case "border", "toolTipText", "name" -> {
                         pd.setHidden(true);
                     }
-                    case "background", "foreground" -> {
-                        pd.setValue("category", "Colors");
-                    } 
                     case "font" -> {
                         pd.setValue("category", "Typography");
                     }

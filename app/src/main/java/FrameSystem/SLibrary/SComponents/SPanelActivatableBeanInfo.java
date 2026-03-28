@@ -19,9 +19,6 @@ public class SPanelActivatableBeanInfo extends SimpleBeanInfo{
             PropertyDescriptor[] superDescriptors = superBeanInfo.getPropertyDescriptors();
 
             for(PropertyDescriptor pd : superDescriptors){
-                if(pd.getName().equals("foreground") || pd.getName().equals("background")){
-                    pd.setValue("category", "Colors");
-                }
             }
             descriptors.addAll(Arrays.asList(superDescriptors));
 

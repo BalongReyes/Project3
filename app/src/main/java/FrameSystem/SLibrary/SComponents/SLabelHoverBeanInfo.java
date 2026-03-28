@@ -22,8 +22,6 @@ public class SLabelHoverBeanInfo extends SimpleBeanInfo {
                 String name = pd.getName();
                 if (name.equals("background")) {
                     pd.setHidden(true);
-                } else if (name.equals("foreground")) {
-                    pd.setValue("category", "Colors");
                 }
             }
             descriptors.addAll(Arrays.asList(superDescriptors));
