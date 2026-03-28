@@ -1,0 +1,42 @@
+package FrameSystem.SLibrary.SComponents;
+
+import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
+import java.beans.SimpleBeanInfo;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class SLabelHoverBeanInfo extends SimpleBeanInfo {
+    @Override
+    public PropertyDescriptor[] getPropertyDescriptors() {
+        try {
+            List<PropertyDescriptor> descriptors = new ArrayList<>();
+            BeanInfo superBeanInfo = Introspector.getBeanInfo(SLabel.class);
+            PropertyDescriptor[] superDescriptors = superBeanInfo.getPropertyDescriptors();
+
+            for (PropertyDescriptor pd : superDescriptors) {
+                if (pd.getName().equals("background")) {
+                    pd.setHidden(true);
+                }
+            }
+            descriptors.addAll(Arrays.asList(superDescriptors));
+
+            PropertyDescriptor defaultColor = new PropertyDescriptor("defaultColor", SLabelHover.class);
+            PropertyDescriptor hoverColor = new PropertyDescriptor("hoverColor", SLabelHover.class);
+            PropertyDescriptor radius = new PropertyDescriptor("radius", SLabelHover.class);
+
+            defaultColor.setValue("category", "Hover Settings");
+            hoverColor.setValue("category", "Hover Settings");
+            radius.setValue("category", "Hover Settings");
+
+            descriptors.addAll(Arrays.asList(defaultColor, hoverColor, radius));
+            return descriptors.toArray(new PropertyDescriptor[0]);
+        } catch (IntrospectionException e) {
+            e.printStackTrace();
+            return super.getPropertyDescriptors();
+        }
+    }
+}

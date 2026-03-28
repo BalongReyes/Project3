@@ -36,20 +36,30 @@ public class SLabel extends JLabel{
     protected ImageIcon scaledImageIcon = null;
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "Scaled icon")
-    public void setScaledIcon(ImageIcon scaledIcon){
-        this.scaledIcon = scaledIcon;
-        if(scaledIcon == null){
+    public void setScaledIcon(Icon icon){ // Changed parameter to Icon to match getter
+        if(icon == null){
+            this.scaledIcon = null;
             setIcon(null);
             return;
         }
-        scaledImageIcon = scaledIcon;
-        if(iconSize > 0){
-            scaledImageIcon = new ImageIcon(scaledIcon.getImage().getScaledInstance(iconSize, iconSize, Image.SCALE_SMOOTH));
+
+        // Check if the passed Icon is an ImageIcon so we can scale it
+        if(icon instanceof ImageIcon imageIcon){
+            this.scaledIcon = imageIcon;
+            scaledImageIcon = this.scaledIcon;
+
+            if(iconSize > 0){
+                scaledImageIcon = new ImageIcon(this.scaledIcon.getImage().getScaledInstance(iconSize, iconSize, Image.SCALE_SMOOTH));
+            }
+            setIcon(scaledImageIcon);
+        }else{
+            // If it's a different type of Icon, just set it normally without scaling
+            this.scaledIcon = null;
+            setIcon(icon);
         }
-        setIcon(scaledImageIcon);
     }
 
-    public Icon getScaledIcon(){
+    public Icon getScaledIcon(){ // Remains as Icon!
         return scaledIcon;
     }
 
