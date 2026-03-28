@@ -28,19 +28,6 @@ public class SPanel extends JPanel implements InnerListener{
     
 // Setters and Getters =======================================================================================
     
-    protected String componentName = "";
-
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
-    public void setComponentName(String componentName){
-        this.componentName = componentName;
-    }
-
-    public String getComponentName(){
-        return componentName;
-    }
-    
-// -----------------------------------------------------------------------------------------------------------
-    
     protected int radius = 0;
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "The corner radius")
