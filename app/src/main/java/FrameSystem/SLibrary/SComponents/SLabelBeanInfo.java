@@ -19,8 +19,19 @@ public class SLabelBeanInfo extends SimpleBeanInfo {
             PropertyDescriptor[] superDescriptors = superBeanInfo.getPropertyDescriptors();
 
             for (PropertyDescriptor pd : superDescriptors) {
-                if (pd.getName().equals("border") || pd.getName().equals("toolTipText")) {
-                    pd.setHidden(true);
+                String name = pd.getName();
+                switch(name){
+                    case "border", "toolTipText" -> {
+                        pd.setHidden(true);
+                    }
+                    case "foreground", "background" -> {
+                        pd.setValue("category", "Colors");
+                    }
+                    case "font" -> {
+                        pd.setValue("category", "Typography");
+                    }
+                    default -> {
+                    }
                 }
             }
             descriptors.addAll(Arrays.asList(superDescriptors));
@@ -28,8 +39,8 @@ public class SLabelBeanInfo extends SimpleBeanInfo {
             PropertyDescriptor scaledIcon = new PropertyDescriptor("scaledIcon", SLabel.class);
             PropertyDescriptor iconSize = new PropertyDescriptor("iconSize", SLabel.class);
 
-            scaledIcon.setValue("category", "Icon Scaling");
-            iconSize.setValue("category", "Icon Scaling");
+            scaledIcon.setValue("category", "Icon Settings");
+            iconSize.setValue("category", "Icon Settings");
 
             descriptors.addAll(Arrays.asList(scaledIcon, iconSize));
             return descriptors.toArray(PropertyDescriptor[]::new);

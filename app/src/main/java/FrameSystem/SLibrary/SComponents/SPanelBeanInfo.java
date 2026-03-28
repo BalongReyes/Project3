@@ -1,4 +1,4 @@
-package FrameSystem.SLibrary.SComponents; // Remember to keep this in the SComponents package!
+package FrameSystem.SLibrary.SComponents;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
@@ -21,10 +21,15 @@ public class SPanelBeanInfo extends SimpleBeanInfo {
             BeanInfo superBeanInfo = Introspector.getBeanInfo(JPanel.class);
             PropertyDescriptor[] superDescriptors = superBeanInfo.getPropertyDescriptors();
 
-            // Loop through superclass properties and hide specific ones overridden in SPanel
+            // Loop through superclass properties and separate default categories
             for (PropertyDescriptor pd : superDescriptors) {
-                if (pd.getName().equals("border") || pd.getName().equals("toolTipText")) {
-                    pd.setHidden(true); // Matches your @BeanProperty(hidden = true)
+                String name = pd.getName();
+                if (name.equals("border") || name.equals("toolTipText")) {
+                    pd.setHidden(true); 
+                } else if (name.equals("background") || name.equals("foreground")) {
+                    pd.setValue("category", "Colors");
+                } else if (name.equals("font")) {
+                    pd.setValue("category", "Typography");
                 }
             }
             descriptors.addAll(Arrays.asList(superDescriptors));
@@ -41,7 +46,7 @@ public class SPanelBeanInfo extends SimpleBeanInfo {
             PropertyDescriptor borderColor = new PropertyDescriptor("borderColor", SPanel.class);
 
             borderLine.setValue("category", "Custom Border");
-            borderColor.setValue("category", "Custom Border");
+            borderColor.setValue("category", "Colors"); // Separated to Colors
 
             // 4. Drop Shadow Properties
             PropertyDescriptor shadowX = new PropertyDescriptor("shadowX", SPanel.class);
@@ -56,7 +61,7 @@ public class SPanelBeanInfo extends SimpleBeanInfo {
             shadowY.setValue("category", "Drop Shadow");
             shadowSize.setValue("category", "Drop Shadow");
             shadowOpacity.setValue("category", "Drop Shadow");
-            shadowColor.setValue("category", "Drop Shadow");
+            shadowColor.setValue("category", "Colors"); // Separated to Colors
             shadowOffsetX.setValue("category", "Drop Shadow");
             shadowOffsetY.setValue("category", "Drop Shadow");
 

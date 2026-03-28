@@ -18,8 +18,11 @@ public class SLabelHoverBeanInfo extends SimpleBeanInfo {
             PropertyDescriptor[] superDescriptors = superBeanInfo.getPropertyDescriptors();
 
             for (PropertyDescriptor pd : superDescriptors) {
-                if (pd.getName().equals("background")) {
+                String name = pd.getName();
+                if (name.equals("background")) {
                     pd.setHidden(true);
+                } else if (name.equals("foreground")) {
+                    pd.setValue("category", "Colors");
                 }
             }
             descriptors.addAll(Arrays.asList(superDescriptors));
@@ -28,9 +31,9 @@ public class SLabelHoverBeanInfo extends SimpleBeanInfo {
             PropertyDescriptor hoverColor = new PropertyDescriptor("hoverColor", SLabelHover.class);
             PropertyDescriptor radius = new PropertyDescriptor("radius", SLabelHover.class);
 
-            defaultColor.setValue("category", "Hover Settings");
-            hoverColor.setValue("category", "Hover Settings");
-            radius.setValue("category", "Hover Settings");
+            defaultColor.setValue("category", "Colors");
+            hoverColor.setValue("category", "Colors");
+            radius.setValue("category", "Rounded Corners");
 
             descriptors.addAll(Arrays.asList(defaultColor, hoverColor, radius));
             return descriptors.toArray(new PropertyDescriptor[0]);
