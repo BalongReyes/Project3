@@ -25,7 +25,7 @@ public class SPanelBeanInfo extends SimpleBeanInfo {
             for (PropertyDescriptor pd : superDescriptors) {
                 String name = pd.getName();
                 switch(name){
-                    case "border", "toolTipText" -> {
+                    case "border", "toolTipText", "name" -> {
                         pd.setHidden(true);
                     }
                     case "background", "foreground" -> {
