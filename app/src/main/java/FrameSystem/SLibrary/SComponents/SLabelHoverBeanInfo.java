@@ -1,13 +1,7 @@
 package FrameSystem.SLibrary.SComponents;
 
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-import java.beans.SimpleBeanInfo;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.beans.*;
+import java.util.*;
 
 public class SLabelHoverBeanInfo extends SimpleBeanInfo {
 
@@ -19,9 +13,8 @@ public class SLabelHoverBeanInfo extends SimpleBeanInfo {
             PropertyDescriptor[] superDescriptors = superBeanInfo.getPropertyDescriptors();
 
             for (PropertyDescriptor pd : superDescriptors) {
-                String name = pd.getName();
-                if (name.equals("background")) {
-                    pd.setHidden(true);
+                if (pd.getName().equals("background")) {
+                    pd.setHidden(true); // Keeping this explicitly hidden as it relies on hover/default colors
                 }
             }
             descriptors.addAll(Arrays.asList(superDescriptors));

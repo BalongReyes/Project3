@@ -1,13 +1,7 @@
 package FrameSystem.SLibrary.SComponents;
 
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-import java.beans.SimpleBeanInfo;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.beans.*;
+import java.util.*;
 
 public class SPanelHoverBeanInfo extends SimpleBeanInfo {
     
@@ -15,17 +9,16 @@ public class SPanelHoverBeanInfo extends SimpleBeanInfo {
     public PropertyDescriptor[] getPropertyDescriptors() {
         try {
             List<PropertyDescriptor> descriptors = new ArrayList<>();
-            
             BeanInfo superBeanInfo = Introspector.getBeanInfo(SPanel.class);
             descriptors.addAll(Arrays.asList(superBeanInfo.getPropertyDescriptors()));
 
             PropertyDescriptor hoverBackgroundColor = new PropertyDescriptor("hoverBackgroundColor", SPanelHover.class);
             hoverBackgroundColor.setValue("category", "Hover Settings");
-            descriptors.add(hoverBackgroundColor);
-
-            return descriptors.toArray(new PropertyDescriptor[0]);
             
+            descriptors.add(hoverBackgroundColor);
+            return descriptors.toArray(new PropertyDescriptor[0]);
         } catch (IntrospectionException e) {
+            e.printStackTrace();
             return super.getPropertyDescriptors();
         }
     }

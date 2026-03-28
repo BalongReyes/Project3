@@ -1,14 +1,7 @@
 package FrameSystem.SLibrary.SComponents;
 
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-import java.beans.SimpleBeanInfo;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import java.beans.*;
+import java.util.*;
 import javax.swing.JLabel;
 
 public class SLabelBeanInfo extends SimpleBeanInfo {
@@ -21,16 +14,9 @@ public class SLabelBeanInfo extends SimpleBeanInfo {
             PropertyDescriptor[] superDescriptors = superBeanInfo.getPropertyDescriptors();
 
             for (PropertyDescriptor pd : superDescriptors) {
-                String name = pd.getName();
-                switch (name) {
-                    case "border", "toolTipText" -> {
-                        pd.setHidden(true);
-                    }
-                    case "font" -> {
-                        pd.setValue("category", "Typography");
-                    }
-                    default -> {
-                    }
+                switch (pd.getName()) {
+                    case "border", "toolTipText" -> pd.setHidden(true);
+                    case "font" -> pd.setValue("category", "Typography");
                 }
             }
             descriptors.addAll(Arrays.asList(superDescriptors));
@@ -42,8 +28,9 @@ public class SLabelBeanInfo extends SimpleBeanInfo {
             iconSize.setValue("category", "Icon Settings");
 
             descriptors.addAll(Arrays.asList(scaledIcon, iconSize));
-            return descriptors.toArray(PropertyDescriptor[]::new);
+            return descriptors.toArray(new PropertyDescriptor[0]);
         } catch (IntrospectionException e) {
+            e.printStackTrace();
             return super.getPropertyDescriptors();
         }
     }

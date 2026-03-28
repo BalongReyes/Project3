@@ -1,22 +1,26 @@
 package FrameSystem.SLibrary.SComponents;
 
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-import java.beans.SimpleBeanInfo;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.beans.*;
+import java.util.*;
 import javax.swing.JTextField;
 
 public class STextFieldBeanInfo extends SimpleBeanInfo {
+    
     @Override
     public PropertyDescriptor[] getPropertyDescriptors() {
         try {
             List<PropertyDescriptor> descriptors = new ArrayList<>();
             BeanInfo superBeanInfo = Introspector.getBeanInfo(JTextField.class);
-            descriptors.addAll(Arrays.asList(superBeanInfo.getPropertyDescriptors()));
+            PropertyDescriptor[] superDescriptors = superBeanInfo.getPropertyDescriptors();
+
+            for (PropertyDescriptor pd : superDescriptors) {
+                switch (pd.getName()) {
+                    case "border", "toolTipText" -> pd.setHidden(true);
+                    case "font" -> pd.setValue("category", "Typography");
+                    case "caretColor" -> pd.setValue("category", "Colors");
+                }
+            }
+            descriptors.addAll(Arrays.asList(superDescriptors));
 
             PropertyDescriptor hint = new PropertyDescriptor("hint", STextField.class);
             PropertyDescriptor hintColor = new PropertyDescriptor("hintColor", STextField.class);
