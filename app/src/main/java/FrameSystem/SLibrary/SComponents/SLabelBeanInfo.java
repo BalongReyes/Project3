@@ -8,9 +8,11 @@ import java.beans.SimpleBeanInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import javax.swing.JLabel;
 
 public class SLabelBeanInfo extends SimpleBeanInfo {
+
     @Override
     public PropertyDescriptor[] getPropertyDescriptors() {
         try {
@@ -20,7 +22,7 @@ public class SLabelBeanInfo extends SimpleBeanInfo {
 
             for (PropertyDescriptor pd : superDescriptors) {
                 String name = pd.getName();
-                switch(name){
+                switch (name) {
                     case "border", "toolTipText" -> {
                         pd.setHidden(true);
                     }

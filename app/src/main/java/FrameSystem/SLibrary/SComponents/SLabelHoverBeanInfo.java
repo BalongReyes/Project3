@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SLabelHoverBeanInfo extends SimpleBeanInfo {
+
     @Override
     public PropertyDescriptor[] getPropertyDescriptors() {
         try {

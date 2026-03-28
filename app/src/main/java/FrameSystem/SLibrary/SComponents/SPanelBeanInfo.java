@@ -24,12 +24,18 @@ public class SPanelBeanInfo extends SimpleBeanInfo {
             // Loop through superclass properties and separate default categories
             for (PropertyDescriptor pd : superDescriptors) {
                 String name = pd.getName();
-                if (name.equals("border") || name.equals("toolTipText")) {
-                    pd.setHidden(true); 
-                } else if (name.equals("background") || name.equals("foreground")) {
-                    pd.setValue("category", "Colors");
-                } else if (name.equals("font")) {
-                    pd.setValue("category", "Typography");
+                switch(name){
+                    case "border", "toolTipText" -> {
+                        pd.setHidden(true);
+                    }
+                    case "background", "foreground" -> {
+                        pd.setValue("category", "Colors");
+                    } 
+                    case "font" -> {
+                        pd.setValue("category", "Typography");
+                    }
+                    default -> {
+                    }
                 }
             }
             descriptors.addAll(Arrays.asList(superDescriptors));
