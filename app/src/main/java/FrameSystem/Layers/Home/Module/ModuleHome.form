@@ -1733,7 +1733,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuSwitch" name="menuSwitch_Fullscreen">
+            <Component class="FrameSystem.Layers.Home.Components.MenuSwitch" name="menuSwitch_Fullscreen">
               <Properties>
                 <Property name="foregroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="38" green="38" red="38" type="rgb"/>
@@ -2260,7 +2260,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinSwitch" name="menuMinSwitch_Fullscreen">
+            <Component class="FrameSystem.Layers.Home.Components.MenuMinSwitch" name="menuMinSwitch_Fullscreen">
               <Properties>
                 <Property name="activeIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/fullscreenActive.png"/>

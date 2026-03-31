@@ -601,7 +601,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
                   <SubComponents>
-                    <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Components.LayerUnits" name="layerUnitsOffline">
+                    <Container class="FrameSystem.Layers.Units.Components.LayerUnits" name="layerUnitsOffline">
                       <Properties>
                         <Property name="name" type="java.lang.String" value="Offline" noResource="true"/>
                         <Property name="opaque" type="boolean" value="false"/>
@@ -712,7 +712,7 @@
                         </Container>
                       </SubComponents>
                     </Container>
-                    <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Components.LayerUnits" name="layerUnitsLoading">
+                    <Container class="FrameSystem.Layers.Units.Components.LayerUnits" name="layerUnitsLoading">
                       <Properties>
                         <Property name="name" type="java.lang.String" value="Loading" noResource="true"/>
                         <Property name="opaque" type="boolean" value="false"/>
@@ -823,7 +823,7 @@
                         </Container>
                       </SubComponents>
                     </Container>
-                    <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Components.LayerUnits" name="layerUnitsOnline">
+                    <Container class="FrameSystem.Layers.Units.Components.LayerUnits" name="layerUnitsOnline">
                       <Properties>
                         <Property name="name" type="java.lang.String" value="Online" noResource="true"/>
                         <Property name="opaque" type="boolean" value="false"/>

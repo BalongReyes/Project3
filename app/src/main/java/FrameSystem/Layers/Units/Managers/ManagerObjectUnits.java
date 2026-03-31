@@ -15,6 +15,7 @@ import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
 import FrameSystem.Layers.Units.Module.ModuleUnits;
 import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
+import MainSystem.ExecutorDriver;
 import MainSystem.Manager;
 
 public class ManagerObjectUnits extends Manager{
@@ -103,63 +104,63 @@ public class ManagerObjectUnits extends Manager{
     public static void refreshObjects(ObjectUnit recentObject, boolean refresh) {
         LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
 
-//        ExecutorDriver.execute(() -> {
-//            long startTime = System.currentTimeMillis();
-//            try {
-//                UnitsDataTable[] dataArray = UnitsDataHandler.getAllDataSorted(refresh, filterSort, filterOrder);
-//
-//                long elapsedTime = System.currentTimeMillis() - startTime;
-//                long minLoadingTime = 3000; // 1 second minimum
-//
-//                if (elapsedTime < minLoadingTime) {
-//                    try {
-//                        Thread.sleep(minLoadingTime - elapsedTime);
-//                    } catch (InterruptedException e) {
-//                        Thread.currentThread().interrupt();
-//                    }
-//                }
-//
-//                javax.swing.SwingUtilities.invokeLater(() -> {
-//                    moduleUnits.objectUnitWrapper.removeAll();
-//                    objects.clear();
-//
-//                    for (UnitsDataTable data : dataArray) {
-//                        ObjectUnit o = new ObjectUnit(data);
-//                        objects.add(o);
-//                        moduleUnits.objectUnitWrapper.add(o);
-//                        moduleUnits.objectUnitScrollPane.addInnerListeners(o);
-//                    }
-//
-//                    resizeContainer();
-//                    LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
-//                });
-//
-//            } catch (SQLException e) {
-//                javax.swing.SwingUtilities.invokeLater(() -> {
-//                    Console.errorOut("Gathering object unit error", e);
-//                    ManagerModuleUnits.reconnectMode(() -> refreshObjects(recentObject, true));
-//                });
-//            }
-//        });
+        ExecutorDriver.execute(() -> {
+            long startTime = System.currentTimeMillis();
+            try {
+                UnitsDataTable[] dataArray = UnitsDataHandler.getAllDataSorted(refresh, filterSort, filterOrder);
 
-        try{
-            UnitsDataTable[] dataArray = UnitsDataHandler.getAllDataSorted(refresh, filterSort, filterOrder);
-            moduleUnits.objectUnitWrapper.removeAll();
-            objects.clear();
+                long elapsedTime = System.currentTimeMillis() - startTime;
+                long minLoadingTime = 3000; // 1 second minimum
 
-            for (UnitsDataTable data : dataArray) {
-                ObjectUnit o = new ObjectUnit(data);
-                objects.add(o);
-                moduleUnits.objectUnitWrapper.add(o);
-                moduleUnits.objectUnitScrollPane.addInnerListeners(o);
+                if (elapsedTime < minLoadingTime) {
+                    try {
+                        Thread.sleep(minLoadingTime - elapsedTime);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
+
+                javax.swing.SwingUtilities.invokeLater(() -> {
+                    moduleUnits.objectUnitWrapper.removeAll();
+                    objects.clear();
+
+                    for (UnitsDataTable data : dataArray) {
+                        ObjectUnit o = new ObjectUnit(data);
+                        objects.add(o);
+                        moduleUnits.objectUnitWrapper.add(o);
+                        moduleUnits.objectUnitScrollPane.addInnerListeners(o);
+                    }
+
+                    resizeContainer();
+                    LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
+                });
+
+            } catch (SQLException e) {
+                javax.swing.SwingUtilities.invokeLater(() -> {
+                    Console.errorOut("Gathering object unit error", e);
+                    ManagerModuleUnits.reconnectMode(() -> refreshObjects(recentObject, true));
+                });
             }
+        });
 
-            resizeContainer();
-            LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
-        }catch(SQLException e){
-            Console.errorOut("Gathering object unit error", e);
-            ManagerModuleUnits.reconnectMode(() -> refreshObjects(recentObject, true));
-        }
+//        try{
+//            UnitsDataTable[] dataArray = UnitsDataHandler.getAllDataSorted(refresh, filterSort, filterOrder);
+//            moduleUnits.objectUnitWrapper.removeAll();
+//            objects.clear();
+//
+//            for (UnitsDataTable data : dataArray) {
+//                ObjectUnit o = new ObjectUnit(data);
+//                objects.add(o);
+//                moduleUnits.objectUnitWrapper.add(o);
+//                moduleUnits.objectUnitScrollPane.addInnerListeners(o);
+//            }
+//
+//            resizeContainer();
+//            LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
+//        }catch(SQLException e){
+//            Console.errorOut("Gathering object unit error", e);
+//            ManagerModuleUnits.reconnectMode(() -> refreshObjects(recentObject, true));
+//        }
     }
     
 // Resize ----------------------------------------------------------------------------------------------------

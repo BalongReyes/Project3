@@ -134,7 +134,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Module.ModuleHome" name="moduleHome">
+            <Component class="FrameSystem.Layers.Home.Module.ModuleHome" name="moduleHome">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
