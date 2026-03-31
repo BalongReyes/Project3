@@ -48,7 +48,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Dashboard">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Dashboard">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -79,7 +79,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Units">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Units">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -121,14 +121,14 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Module.ModuleUnits" name="moduleUnits">
+            <Component class="FrameSystem.Layers.Units.Module.ModuleUnits" name="moduleUnits">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Parking">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Parking">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -186,7 +186,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_NewResident">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_NewResident">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -244,7 +244,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Owners">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Owners">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -302,7 +302,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Tenants">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Tenants">
           <Properties>
             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="menuButton_Tenants"/>
@@ -358,7 +358,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Move">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Move">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -416,7 +416,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Visitors">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Visitors">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -474,7 +474,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Concerns">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Concerns">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -532,7 +532,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Accounts">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Accounts">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -590,7 +590,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Settings">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Settings">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -648,7 +648,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Profile">
+        <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Profile">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -708,7 +708,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.SPanelHomeMenu" name="sPanelMenu1">
+    <Container class="FrameSystem.Layers.Home.Components.SPanelHomeMenu" name="sPanelMenu1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -998,7 +998,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Dashboard">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Dashboard">
                       <Properties>
                         <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="7f" green="7f" red="ff" type="rgb"/>
@@ -1018,7 +1018,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/dashboard.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Dashboard"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Dashboard"/>
@@ -1047,7 +1047,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Units">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Units">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -1070,7 +1070,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/units.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Units"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1096,7 +1096,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Parking">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Parking">
                       <Properties>
                         <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="7f" green="7f" red="ff" type="rgb"/>
@@ -1116,7 +1116,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/parking.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Parking"/>
                         </Property>
                         <Property name="notificationCount" type="int" value="23"/>
@@ -1258,7 +1258,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_NewResident">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_NewResident">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -1281,7 +1281,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/newResident.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_NewResident"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1307,7 +1307,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Owners">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Owners">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -1330,7 +1330,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/owners.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Owners"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1356,7 +1356,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Tenants">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Tenants">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -1379,7 +1379,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/tenants.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Tenants"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1405,7 +1405,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Move">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Move">
                       <Properties>
                         <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="7f" green="7f" red="ff" type="rgb"/>
@@ -1425,7 +1425,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/move.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Move"/>
                         </Property>
                         <Property name="notificationCount" type="int" value="6"/>
@@ -1455,7 +1455,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Visitors">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Visitors">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -1478,7 +1478,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/visitors.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Visitors"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1504,7 +1504,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Concerns">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Concerns">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -1527,7 +1527,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/concerns.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Concerns"/>
                         </Property>
                         <Property name="notificationCount" type="int" value="914"/>
@@ -1660,7 +1660,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Accounts">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Accounts">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -1683,7 +1683,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/accounts.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Accounts"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1928,7 +1928,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Profile">
+            <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Profile">
               <Properties>
                 <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="7f" green="7f" red="ff" type="rgb"/>
@@ -1948,7 +1948,7 @@
                 <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/profile.png"/>
                 </Property>
-                <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                   <ComponentRef name="menuMinButton_Profile"/>
                 </Property>
                 <Property name="radius" type="int" value="15"/>
@@ -1961,7 +1961,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Settings">
+            <Component class="FrameSystem.Layers.Home.Components.MenuButton" name="menuButton_Settings">
               <Properties>
                 <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="7f" green="7f" red="ff" type="rgb"/>
@@ -1981,7 +1981,7 @@
                 <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/settings.png"/>
                 </Property>
-                <Property name="manuMinButton" type="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                   <ComponentRef name="menuMinButton_Settings"/>
                 </Property>
                 <Property name="radius" type="int" value="15"/>
@@ -1998,7 +1998,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="FrameSystem.Main.Layers.LayerFolder_Home.Components.SPanelHomeMenu" name="sPanelMenu2">
+    <Container class="FrameSystem.Layers.Home.Components.SPanelHomeMenu" name="sPanelMenu2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2324,7 +2324,7 @@
                     <Property name="axis" type="int" value="3"/>
                   </Layout>
                   <SubComponents>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Dashboard">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Dashboard">
                       <Properties>
                         <Property name="activeIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/dashboardActive.png"/>
@@ -2363,7 +2363,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Units">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Units">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2402,7 +2402,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Parking">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Parking">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2486,7 +2486,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_NewResident">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_NewResident">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2525,7 +2525,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Owners">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Owners">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2564,7 +2564,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Tenants">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Tenants">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2603,7 +2603,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Move">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Move">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2642,7 +2642,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Visitors">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Visitors">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2681,7 +2681,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Concerns">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Concerns">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2762,7 +2762,7 @@
                         <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
                       </AuxValues>
                     </Component>
-                    <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Accounts">
+                    <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Accounts">
                       <Properties>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
@@ -2812,7 +2812,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Profile">
+            <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Profile">
               <Properties>
                 <Property name="activeIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/profileActive.png"/>
@@ -2832,7 +2832,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Settings">
+            <Component class="FrameSystem.Layers.Home.Components.MenuMinButton" name="menuMinButton_Settings">
               <Properties>
                 <Property name="activeIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/settingsActive.png"/>

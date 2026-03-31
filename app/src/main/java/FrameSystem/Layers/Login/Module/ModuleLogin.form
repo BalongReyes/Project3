@@ -91,7 +91,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="FrameSystem.Main.Layers.LayerFolder_Login.Components.LoginPanel" name="sPanelRight">
+    <Container class="FrameSystem.Layers.Login.Components.LoginPanel" name="sPanelRight">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -139,7 +139,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
-            <Container class="FrameSystem.Main.Layers.LayerFolder_Login.Components.LayerLogin" name="layerLogin_Offline">
+            <Container class="FrameSystem.Layers.Login.Components.LayerLogin" name="layerLogin_Offline">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f3" green="f3" red="ff" type="rgb"/>
@@ -254,7 +254,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="FrameSystem.Main.Layers.LayerFolder_Login.Components.LayerLogin" name="layerLogin_Online">
+            <Container class="FrameSystem.Layers.Login.Components.LayerLogin" name="layerLogin_Online">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f3" green="f3" red="ff" type="rgb"/>
@@ -384,7 +384,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
-                <Container class="FrameSystem.Main.Layers.LayerFolder_Login.Components.LoginTextFieldContainer" name="loginTextFieldContainer1">
+                <Container class="FrameSystem.Layers.Login.Components.LoginTextFieldContainer" name="loginTextFieldContainer1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -476,7 +476,7 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
-                <Container class="FrameSystem.Main.Layers.LayerFolder_Login.Components.LoginTextFieldContainer" name="loginTextFieldContainer2">
+                <Container class="FrameSystem.Layers.Login.Components.LoginTextFieldContainer" name="loginTextFieldContainer2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -611,7 +611,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="FrameSystem.Main.Layers.LayerFolder_Login.Components.LayerLogin" name="layerLogin_Loading">
+            <Container class="FrameSystem.Layers.Login.Components.LayerLogin" name="layerLogin_Loading">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f3" green="f3" red="ff" type="rgb"/>
