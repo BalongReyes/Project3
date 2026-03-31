@@ -77,6 +77,12 @@ public class SPanel extends JPanel implements InnerListener{
     public void setBorder(Border border){
         super.setBorder(border);
     }
+
+    @Override
+    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    public void setBackground(Color bg){
+        super.setBackground(bg);
+    }
     
 // ===========================================================================================================
     

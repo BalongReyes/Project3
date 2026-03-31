@@ -1,5 +1,6 @@
 package FrameSystem.SLibrary.SComponents;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.beans.*;
 import java.util.*;
 import javax.swing.JPanel;

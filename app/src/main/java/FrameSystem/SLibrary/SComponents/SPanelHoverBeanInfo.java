@@ -1,5 +1,7 @@
 package FrameSystem.SLibrary.SComponents;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
+import FrameSystem.SLibrary.SComponents.SPanelHover;
 import java.beans.*;
 import java.util.*;
 

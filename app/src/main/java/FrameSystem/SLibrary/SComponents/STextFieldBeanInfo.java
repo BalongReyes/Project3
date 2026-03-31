@@ -1,5 +1,6 @@
 package FrameSystem.SLibrary.SComponents;
 
+import FrameSystem.SLibrary.SComponents.STextField;
 import java.beans.*;
 import java.util.*;
 import javax.swing.JTextField;

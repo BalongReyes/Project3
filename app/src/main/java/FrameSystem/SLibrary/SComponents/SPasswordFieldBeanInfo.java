@@ -1,5 +1,6 @@
 package FrameSystem.SLibrary.SComponents;
 
+import FrameSystem.SLibrary.SComponents.SPasswordField;
 import java.beans.*;
 import java.util.*;
 import javax.swing.JPasswordField;

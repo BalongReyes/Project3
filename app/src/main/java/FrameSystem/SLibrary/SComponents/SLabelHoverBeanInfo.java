@@ -14,10 +14,15 @@ public class SLabelHoverBeanInfo extends SimpleBeanInfo {
 
             for (PropertyDescriptor pd : superDescriptors) {
                 if (pd.getName().equals("background")) {
-                    pd.setHidden(true); // Keeping this explicitly hidden as it relies on hover/default colors
+                    continue; // Skip without mutating
                 }
+                descriptors.add(pd);
             }
-            descriptors.addAll(Arrays.asList(superDescriptors));
+
+            // Explicitly hide background for Hover using a new descriptor
+            PropertyDescriptor background = new PropertyDescriptor("background", SLabelHover.class);
+            background.setHidden(true); 
+            descriptors.add(background);
 
             PropertyDescriptor defaultColor = new PropertyDescriptor("defaultColor", SLabelHover.class);
             PropertyDescriptor hoverColor = new PropertyDescriptor("hoverColor", SLabelHover.class);
