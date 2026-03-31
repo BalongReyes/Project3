@@ -56,8 +56,6 @@
             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="menuButton_Dashboard"/>
             </Property>
-            <Property name="name" type="java.lang.String" value="Dashboard" noResource="true"/>
-            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -71,15 +69,90 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1216" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                      <Component id="sxDivPanel1" min="-2" pref="387" max="-2" attributes="0"/>
+                      <EmptySpace pref="746" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="970" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
+                      <Component id="sxDivPanel1" min="-2" pref="236" max="-2" attributes="0"/>
+                      <EmptySpace pref="532" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Container class="FrameSystem.SxLibrary.UI.SxDivPanel" name="sxDivPanel1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="borderBottomLeftRadius" type="int" value="50"/>
+                <Property name="borderTopRightRadius" type="int" value="50"/>
+                <Property name="boxShadow" type="boolean" value="true"/>
+                <Property name="boxShadowOffsetY" type="int" value="0"/>
+                <Property name="boxShadowOpacity" type="float" value="0.3"/>
+                <Property name="display" type="FrameSystem.SxLibrary.UI.SxDivPanel$Display" editor="org.netbeans.modules.form.editors.EnumEditor">
+                  <Value id="FLEX"/>
+                </Property>
+                <Property name="alignItems" type="FrameSystem.SxLibrary.UI.SxDivPanel$AlignItems" editor="org.netbeans.modules.form.editors.EnumEditor">
+                  <Value id="STRETCH"/>
+                </Property>
+                <Property name="flexWrap" type="FrameSystem.SxLibrary.UI.SxDivPanel$FlexWrap" editor="org.netbeans.modules.form.editors.EnumEditor">
+                  <Value id="WRAP"/>
+                </Property>
+                <Property name="justifyContent" type="FrameSystem.SxLibrary.UI.SxDivPanel$JustifyContent" editor="org.netbeans.modules.form.editors.EnumEditor">
+                  <Value id="SPACE_EVENLY"/>
+                </Property>
+              </Properties>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="true"/>
+              </Layout>
+              <SubComponents>
+                <Container class="FrameSystem.SxLibrary.UI.SxDivPanel" name="sxDivPanel2">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="62" y="8" width="70" height="100"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="true"/>
+                  </Layout>
+                </Container>
+                <Container class="FrameSystem.SxLibrary.UI.SxDivPanel" name="sxDivPanel3">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="99" red="99" type="rgb"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[100, 100]"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="255" y="8" width="-1" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="true"/>
+                  </Layout>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
         </Container>
         <Container class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Units">
           <Properties>
@@ -306,14 +379,12 @@
         </Container>
         <Container class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Tenants">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f7" green="f7" red="ff" type="rgb"/>
-            </Property>
             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="menuButton_Tenants"/>
             </Property>
-            <Property name="name" type="java.lang.String" value="Tenants" noResource="true"/>
-            <Property name="opaque" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f7" green="f7" red="ff" type="rgb"/>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
@@ -760,7 +831,12 @@
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
-            <Property name="opaque" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[260, 928]"/>
             </Property>
@@ -894,9 +970,6 @@
             </Container>
             <Container class="FrameSystem.SLibrary.SComponents.SScrollPane" name="sScrollPane1">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e5" green="e5" red="e5" type="rgb"/>
-                </Property>
                 <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
                 <Property name="hoverColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="49" green="49" red="49" type="rgb"/>
@@ -905,6 +978,9 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e5" green="e5" red="e5" type="rgb"/>
+                </Property>
                 <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[0, 0]"/>
                 </Property>
@@ -999,9 +1075,6 @@
                     </Component>
                     <Component class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Dashboard">
                       <Properties>
-                        <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="f2" green="f2" red="f2" type="rgb"/>
-                        </Property>
                         <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="7f" green="7f" red="ff" type="rgb"/>
                         </Property>
@@ -1023,8 +1096,11 @@
                         <Property name="manuMinButton" type="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Dashboard"/>
                         </Property>
-                        <Property name="radius" type="int" value="15"/>
                         <Property name="text" type="java.lang.String" value="Dashboard"/>
+                        <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                        </Property>
+                        <Property name="radius" type="int" value="15"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
                         </Property>
@@ -1406,9 +1482,6 @@
                     </Component>
                     <Component class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuButton" name="menuButton_Move">
                       <Properties>
-                        <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="f2" green="f2" red="f2" type="rgb"/>
-                        </Property>
                         <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="7f" green="7f" red="ff" type="rgb"/>
                         </Property>
@@ -1431,8 +1504,11 @@
                           <ComponentRef name="menuMinButton_Move"/>
                         </Property>
                         <Property name="notificationCount" type="int" value="6"/>
-                        <Property name="radius" type="int" value="15"/>
                         <Property name="text" type="java.lang.String" value="Move In / Out"/>
+                        <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                        </Property>
+                        <Property name="radius" type="int" value="15"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
                         </Property>
@@ -1743,6 +1819,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/fullscreen.png"/>
                 </Property>
+                <Property name="radius" type="int" value="15"/>
                 <Property name="switchActiveColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="7f" green="7f" red="ff" type="rgb"/>
                 </Property>
@@ -1750,7 +1827,6 @@
                   <Color blue="7a" green="7a" red="7a" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fullscreen"/>
-                <Property name="radius" type="int" value="15"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
@@ -1784,10 +1860,12 @@
             </Container>
             <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel2">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[32767, 20]"/>
                 </Property>
-                <Property name="opaque" type="boolean" value="false"/>
               </Properties>
 
               <Layout>
@@ -1855,14 +1933,14 @@
                 <Property name="hoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="e5" green="e5" red="e5" type="rgb"/>
                 </Property>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[188, 50]"/>
-                </Property>
+                <Property name="radius" type="int" value="15"/>
+                <Property name="rounded" type="boolean" value="true"/>
                 <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f2" green="f2" red="f2" type="rgb"/>
                 </Property>
-                <Property name="radius" type="int" value="15"/>
-                <Property name="rounded" type="boolean" value="true"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[188, 50]"/>
+                </Property>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1948,11 +2026,11 @@
                 <Property name="manuMinButton" type="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                   <ComponentRef name="menuMinButton_Profile"/>
                 </Property>
+                <Property name="radius" type="int" value="15"/>
                 <Property name="text" type="java.lang.String" value="Profile"/>
                 <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f2" green="f2" red="f2" type="rgb"/>
                 </Property>
-                <Property name="radius" type="int" value="15"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
@@ -1981,11 +2059,11 @@
                 <Property name="manuMinButton" type="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                   <ComponentRef name="menuMinButton_Settings"/>
                 </Property>
+                <Property name="radius" type="int" value="15"/>
                 <Property name="text" type="java.lang.String" value="Settings"/>
                 <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f2" green="f2" red="f2" type="rgb"/>
                 </Property>
-                <Property name="radius" type="int" value="15"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
@@ -2000,18 +2078,18 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[90, 100]"/>
-        </Property>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[90, 0]"/>
-        </Property>
         <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="e6" green="e6" red="e6" type="rgb"/>
         </Property>
         <Property name="shadowOpacity" type="float" value="0.3"/>
         <Property name="shadowSize" type="int" value="5"/>
         <Property name="shadowX" type="boolean" value="true"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[90, 100]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[90, 0]"/>
+        </Property>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -2040,7 +2118,9 @@
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
-            <Property name="opaque" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
           </Properties>
 
           <Layout>
@@ -2153,14 +2233,14 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[50, 50]"/>
-                </Property>
+                <Property name="radius" type="int" value="15"/>
+                <Property name="rounded" type="boolean" value="true"/>
                 <Property name="hoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="e5" green="e5" red="e5" type="rgb"/>
                 </Property>
-                <Property name="radius" type="int" value="15"/>
-                <Property name="rounded" type="boolean" value="true"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[50, 50]"/>
+                </Property>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -2266,10 +2346,10 @@
                 <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/fullscreen.png"/>
                 </Property>
+                <Property name="radius" type="int" value="15"/>
                 <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[0, 40]"/>
                 </Property>
-                <Property name="radius" type="int" value="15"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -2277,9 +2357,6 @@
             </Component>
             <Container class="FrameSystem.SLibrary.SComponents.SScrollPane" name="sScrollPane2">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e5" green="e5" red="e5" type="rgb"/>
-                </Property>
                 <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
                 <Property name="hoverColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="49" green="49" red="49" type="rgb"/>
@@ -2288,6 +2365,9 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e5" green="e5" red="e5" type="rgb"/>
+                </Property>
                 <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[0, 0]"/>
                 </Property>
@@ -2818,13 +2898,13 @@
                 <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/profile.png"/>
                 </Property>
-                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[0, 40]"/>
-                </Property>
+                <Property name="radius" type="int" value="15"/>
                 <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f2" green="f2" red="f2" type="rgb"/>
                 </Property>
-                <Property name="radius" type="int" value="15"/>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[0, 40]"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Settings">
@@ -2838,13 +2918,13 @@
                 <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/settings.png"/>
                 </Property>
-                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[0, 40]"/>
-                </Property>
+                <Property name="radius" type="int" value="15"/>
                 <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f2" green="f2" red="f2" type="rgb"/>
                 </Property>
-                <Property name="radius" type="int" value="15"/>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[0, 40]"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>

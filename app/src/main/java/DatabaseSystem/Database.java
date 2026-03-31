@@ -1,16 +1,13 @@
-
 package DatabaseSystem;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
-import EventSystem.Interface.ResultExecute;
-import java.sql.PreparedStatement;
 
 public class Database {
 
@@ -62,47 +59,12 @@ public class Database {
         return true;
     }
 
-    // -----------------------------------------------------------------------------------------------------------
-
-    public static void executeBatch(String... queries) throws SQLException {
-        if (connection == null)
-            throw new SQLException("Database offline");
-        try (
-                Statement statement = connection.createStatement();) {
-            for (String query : queries) {
-                statement.addBatch(query);
-            }
-            statement.executeBatch();
-        }
-    }
-
-    public static void execute(String query) throws SQLException {
-        if (connection == null)
-            throw new SQLException("Database offline");
-        try (
-                Statement statement = connection.createStatement();) {
-            statement.execute(query);
-        }
-    }
-
-    public static void execute(String query, ResultExecute resultExecute) throws SQLException {
-        if (connection == null)
-            throw new SQLException("Database offline");
-        try (
-                Statement statement = connection.createStatement();
-                ResultSet result = statement.executeQuery(query);) {
-            resultExecute.execute(result);
-        }
-    }
-
-// NEW METHOD: For INSERT, UPDATE, DELETE using Prepared Statements ------------------------------------------
+// Secure Methods for INSERT, UPDATE, DELETE =================================================================
     
     public static void executePrepared(String query, Object... parameters) throws SQLException {
         if (connection == null) throw new SQLException("Database offline");
         
-        // The try-with-resources statement automatically closes the PreparedStatement
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            // Loop through the parameters and set them securely
             for (int i = 0; i < parameters.length; i++) {
                 statement.setObject(i + 1, parameters[i]);
             }
@@ -110,7 +72,8 @@ public class Database {
         }
     }
 
-    // NEW METHOD: For SELECT queries using Prepared Statements
+// Secure Methods for SELECT queries =========================================================================
+
     public interface PreparedStatementResult {
         void execute(ResultSet result) throws SQLException;
     }
@@ -127,5 +90,4 @@ public class Database {
             }
         }
     }
-    
 }
