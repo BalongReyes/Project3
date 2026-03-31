@@ -1,16 +1,17 @@
 
 package MainSystem.Managers;
 
+import java.sql.SQLException;
+
 import ConsoleSystem.Console;
 import DatabaseSystem.AccountsData.AccountsDataHandler;
 import DatabaseSystem.AccountsData.AccountsDataTable;
-import FrameSystem.LayerFolder_Main.Components.LayerMain;
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome;
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Managers.ManagerModuleHome;
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome;
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Module.ModuleLogin;
+import FrameSystem.Layers.Home.Components.LayerHome;
+import FrameSystem.Layers.Home.Managers.ManagerModuleHome;
+import FrameSystem.Layers.Home.Module.ModuleHome;
+import FrameSystem.Layers.Login.Module.ModuleLogin;
+import FrameSystem.Layers.Main.Components.LayerMain;
 import MainSystem.Manager;
-import java.sql.SQLException;
 
 public class ManagerLogin extends Manager{
     

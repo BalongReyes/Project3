@@ -1,10 +1,10 @@
 package MainSystem;
 
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Managers.ManagerModuleUnits;
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Managers.ManagerObjectUnits;
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Managers.ManagerModuleHome;
-import FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Managers.ManagerModuleLogin;
-import FrameSystem.LayerFolder_Main.Managers.ManagerFilters;
+import FrameSystem.Layers.Home.Managers.ManagerModuleHome;
+import FrameSystem.Layers.Login.Managers.ManagerModuleLogin;
+import FrameSystem.Layers.Main.Managers.ManagerFilters;
+import FrameSystem.Layers.Units.Managers.ManagerModuleUnits;
+import FrameSystem.Layers.Units.Managers.ManagerObjectUnits;
 import MainSystem.Managers.ManagerLogin;
 
 public class Manager {

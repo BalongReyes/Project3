@@ -9,6 +9,12 @@ plugins {
     id("java")
     id("application")
     id("edu.sc.seis.launch4j") version "4.0.0"
+    id("org.openjfx.javafxplugin") version "0.1.0" // Add JavaFX plugin
+}
+
+javafx {
+    version = "21"
+    modules = listOf("javafx.controls", "javafx.fxml")
 }
 
 repositories {

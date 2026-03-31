@@ -51,7 +51,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Container class="FrameSystem.LayerFolder_Main.Components.LayerMain" name="layerMain_Login">
+        <Container class="FrameSystem.Main.Components.LayerMain" name="layerMain_Login">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -91,14 +91,14 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Module.ModuleLogin" name="moduleLogin">
+            <Component class="FrameSystem.Main.Layers.LayerFolder_Login.Module.ModuleLogin" name="moduleLogin">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
           </SubComponents>
         </Container>
-        <Container class="FrameSystem.LayerFolder_Main.Components.LayerMain" name="layerMain_Home">
+        <Container class="FrameSystem.Main.Components.LayerMain" name="layerMain_Home">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f7" green="f7" red="ff" type="rgb"/>
@@ -134,7 +134,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome" name="moduleHome">
+            <Component class="FrameSystem.Main.Layers.LayerFolder_Home.Module.ModuleHome" name="moduleHome">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>

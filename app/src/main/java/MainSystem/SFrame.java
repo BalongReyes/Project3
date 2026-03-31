@@ -1,18 +1,18 @@
 package MainSystem;
 
-import ConsoleSystem.Console;
-import ConsoleSystem.ConsoleColors;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
+import java.sql.SQLException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
+import ConsoleSystem.Console;
+import ConsoleSystem.ConsoleColors;
 import DatabaseSystem.Database;
 import EventSystem.Interface.ReconnectExecute;
-import FrameSystem.LayerFolder_Main.Components.LayerMain;
-import java.sql.SQLException;
-import javax.swing.Timer;
+import FrameSystem.Layers.Main.Components.LayerMain;
 
 public class SFrame extends JFrame {
 
@@ -108,10 +108,10 @@ public class SFrame extends JFrame {
     private void initComponents() {
 
         layeredPane_Main = new javax.swing.JLayeredPane();
-        layerMain_Login = new FrameSystem.LayerFolder_Main.Components.LayerMain();
-        moduleLogin = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Module.ModuleLogin();
-        layerMain_Home = new FrameSystem.LayerFolder_Main.Components.LayerMain();
-        moduleHome = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome();
+        layerMain_Login = new FrameSystem.Layers.Main.Components.LayerMain();
+        moduleLogin = new FrameSystem.Layers.Login.Module.ModuleLogin();
+        layerMain_Home = new FrameSystem.Layers.Main.Components.LayerMain();
+        moduleHome = new FrameSystem.Layers.Home.Module.ModuleHome();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Avida Prime Taft");
@@ -198,11 +198,11 @@ public class SFrame extends JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public FrameSystem.LayerFolder_Main.Components.LayerMain layerMain_Home;
-    public FrameSystem.LayerFolder_Main.Components.LayerMain layerMain_Login;
+    public FrameSystem.Layers.Main.Components.LayerMain layerMain_Home;
+    public FrameSystem.Layers.Main.Components.LayerMain layerMain_Login;
     private javax.swing.JLayeredPane layeredPane_Main;
-    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Module.ModuleHome moduleHome;
-    public FrameSystem.LayerFolder_Main.Layers.LayerFolder_Login.Module.ModuleLogin moduleLogin;
+    public FrameSystem.Layers.Home.Module.ModuleHome moduleHome;
+    public FrameSystem.Layers.Login.Module.ModuleLogin moduleLogin;
     // End of variables declaration//GEN-END:variables
 
 }
