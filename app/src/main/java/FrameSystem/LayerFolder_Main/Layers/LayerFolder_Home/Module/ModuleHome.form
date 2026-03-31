@@ -50,11 +50,11 @@
       <SubComponents>
         <Container class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome" name="layerHome_Dashboard">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f7" green="f7" red="ff" type="rgb"/>
-            </Property>
             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="menuButton_Dashboard"/>
+            </Property>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f7" green="f7" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -69,80 +69,48 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                      <Component id="sxDivPanel1" min="-2" pref="387" max="-2" attributes="0"/>
-                      <EmptySpace pref="746" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="sxDivPanel1" min="-2" pref="305" max="-2" attributes="0"/>
+                      <EmptySpace pref="859" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
-                      <Component id="sxDivPanel1" min="-2" pref="236" max="-2" attributes="0"/>
-                      <EmptySpace pref="532" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="sxDivPanel1" min="-2" pref="308" max="-2" attributes="0"/>
+                      <EmptySpace pref="574" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="FrameSystem.SxLibrary.UI.SxDivPanel" name="sxDivPanel1">
+            <Container class="FrameSystem.SxLibrary.SxComponent.SxDivPanel" name="sxDivPanel1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="ff" type="rgb"/>
+                  <Color blue="66" green="ff" red="cc" type="rgb"/>
                 </Property>
-                <Property name="borderBottomLeftRadius" type="int" value="50"/>
-                <Property name="borderTopRightRadius" type="int" value="50"/>
-                <Property name="boxShadow" type="boolean" value="true"/>
-                <Property name="boxShadowOffsetY" type="int" value="0"/>
-                <Property name="boxShadowOpacity" type="float" value="0.3"/>
-                <Property name="display" type="FrameSystem.SxLibrary.UI.SxDivPanel$Display" editor="org.netbeans.modules.form.editors.EnumEditor">
-                  <Value id="FLEX"/>
+                <Property name="hoverBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="ff" type="rgb"/>
                 </Property>
-                <Property name="alignItems" type="FrameSystem.SxLibrary.UI.SxDivPanel$AlignItems" editor="org.netbeans.modules.form.editors.EnumEditor">
-                  <Value id="STRETCH"/>
-                </Property>
-                <Property name="flexWrap" type="FrameSystem.SxLibrary.UI.SxDivPanel$FlexWrap" editor="org.netbeans.modules.form.editors.EnumEditor">
-                  <Value id="WRAP"/>
-                </Property>
-                <Property name="justifyContent" type="FrameSystem.SxLibrary.UI.SxDivPanel$JustifyContent" editor="org.netbeans.modules.form.editors.EnumEditor">
-                  <Value id="SPACE_EVENLY"/>
-                </Property>
+                <Property name="hoverEnabled" type="boolean" value="true"/>
+                <Property name="borderRadius" type="int" value="10"/>
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="true"/>
               </Layout>
               <SubComponents>
-                <Container class="FrameSystem.SxLibrary.UI.SxDivPanel" name="sxDivPanel2">
+                <Container class="FrameSystem.SxLibrary.SxComponent.SxDivPanel" name="sxDivPanel2">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="ff" type="rgb"/>
-                    </Property>
+                    <Property name="backgroundOpacity" type="float" value="0.5"/>
+                    <Property name="borderRadius" type="int" value="10"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="62" y="8" width="70" height="100"/>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                    <Property name="useNullLayout" type="boolean" value="true"/>
-                  </Layout>
-                </Container>
-                <Container class="FrameSystem.SxLibrary.UI.SxDivPanel" name="sxDivPanel3">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="99" red="99" type="rgb"/>
-                    </Property>
-                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[100, 100]"/>
-                    </Property>
-                  </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="255" y="8" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="50" y="40" width="140" height="110"/>
                     </Constraint>
                   </Constraints>
 
@@ -1195,11 +1163,11 @@
                           <ComponentRef name="menuMinButton_Parking"/>
                         </Property>
                         <Property name="notificationCount" type="int" value="23"/>
+                        <Property name="radius" type="int" value="15"/>
                         <Property name="text" type="java.lang.String" value="Parking"/>
                         <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f2" green="f2" red="f2" type="rgb"/>
                         </Property>
-                        <Property name="radius" type="int" value="15"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="12" style="1"/>
                         </Property>
@@ -2075,15 +2043,15 @@
     </Container>
     <Container class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.SPanelHomeMenu" name="sPanelMenu2">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="e6" green="e6" red="e6" type="rgb"/>
         </Property>
         <Property name="shadowOpacity" type="float" value="0.3"/>
         <Property name="shadowSize" type="int" value="5"/>
         <Property name="shadowX" type="boolean" value="true"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[90, 100]"/>
         </Property>
@@ -2230,11 +2198,11 @@
             </Container>
             <Container class="FrameSystem.SLibrary.SComponents.SPanelHover" name="sPanelHover2">
               <Properties>
+                <Property name="radius" type="int" value="15"/>
+                <Property name="rounded" type="boolean" value="true"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="radius" type="int" value="15"/>
-                <Property name="rounded" type="boolean" value="true"/>
                 <Property name="hoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="e5" green="e5" red="e5" type="rgb"/>
                 </Property>
@@ -2401,9 +2369,6 @@
                   <SubComponents>
                     <Component class="FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.MenuMinButton" name="menuMinButton_Dashboard">
                       <Properties>
-                        <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="f2" green="f2" red="f2" type="rgb"/>
-                        </Property>
                         <Property name="activeIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/dashboardActive.png"/>
                         </Property>
@@ -2414,6 +2379,9 @@
                           <Image iconType="3" name="/Icons/Menu/dashboard.png"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
+                        <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                        </Property>
                         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[32767, 40]"/>
                         </Property>

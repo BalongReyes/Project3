@@ -1,10 +1,11 @@
-package FrameSystem.SxLibrary.UI;
+package FrameSystem.SxLibrary.SxComponent;
 
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -14,6 +15,9 @@ import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.Stroke;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.geom.Path2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
@@ -24,23 +28,26 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import EventSystem.Interface.InnerListener; // Added InnerListener Import
+
 /**
  * SxDivPanel - A CSS div-like JPanel that supports the full CSS box model
  * via Java Beans getters/setters, ready for the NetBeans Form Editor.
  *
  * Supported CSS concepts:
- *   Box Model  : paddingTop/Right/Bottom/Left
- *   Background : background (inherited), backgroundOpacity
- *   Border     : per-side width, color, style (SOLID/DASHED/DOTTED/NONE)
- *   Radius     : per-corner borderTopLeftRadius, etc.
- *   Box Shadow : offset, blur, spread, color, opacity
- *   Display    : BLOCK (null layout) or FLEX (built-in FlexLayout)
- *   Flex       : flexDirection, justifyContent, alignItems, flexWrap, gap, rowGap, columnGap
- *   Overflow   : VISIBLE or HIDDEN (clips children; respects border-radius)
- *   Opacity    : overall component opacity
+ * Box Model  : paddingTop/Right/Bottom/Left
+ * Background : background (inherited), backgroundOpacity, hoverBackground
+ * Border     : per-side width, color, style (SOLID/DASHED/DOTTED/NONE), hoverBorderColor
+ * Radius     : per-corner borderTopLeftRadius, etc.
+ * Box Shadow : offset, blur, spread, color, opacity
+ * Display    : BLOCK (null layout) or FLEX (built-in FlexLayout)
+ * Flex       : flexDirection, justifyContent, alignItems, flexWrap, gap, rowGap, columnGap
+ * Overflow   : VISIBLE or HIDDEN (clips children; respects border-radius)
+ * Opacity    : overall component opacity
+ * Hover      : hoverEnabled, hoverBackground, hoverBorderColor
  */
 @JavaBean(description = "A CSS div-like JPanel with full styling support")
-public class SxDivPanel extends JPanel {
+public class SxDivPanel extends JPanel implements InnerListener { // Implemented InnerListener
 
 // ======================================================================================================================
 // Enums
@@ -117,6 +124,15 @@ public class SxDivPanel extends JPanel {
 
     // Opacity
     private float opacity = 1f;
+    
+    // Hover State
+    private boolean hoverEnabled = false;
+    private boolean isHovered = false;
+    private Color hoverBackground = null;
+    private Color hoverBorderColor = null;
+
+    // We store the hover listener so we can attach it to children added dynamically
+    private MouseAdapter hoverAdapter;
 
     // Computed shadow insets (updated by syncInsets)
     private int shadowInsetTop    = 0;
@@ -132,7 +148,90 @@ public class SxDivPanel extends JPanel {
         super(null);       // null layout = BLOCK mode
         setOpaque(false);  // we paint ourselves
         syncInsets();
+        
+        // Hover Listener implementation
+        hoverAdapter = new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if (hoverEnabled) {
+                    isHovered = true;
+                    if (getCursor().getType() == Cursor.DEFAULT_CURSOR) {
+                        setCursor(new Cursor(Cursor.HAND_CURSOR));
+                    }
+                    repaint();
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if (hoverEnabled) {
+                    // Make sure the mouse actually left the boundaries of this component and its children
+                    if (!contains(e.getPoint())) {
+                        isHovered = false;
+                        if (getCursor().getType() == Cursor.HAND_CURSOR) {
+                            setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+                        }
+                        repaint();
+                    }
+                }
+            }
+        };
+
+        // Attach listener using InnerListener method
+        addInnerListeners(hoverAdapter);
     }
+
+// ======================================================================================================================
+// InnerListener Implementation
+// ======================================================================================================================
+
+    @Override
+    public void addInnerListeners(MouseListener listener) {
+        super.addMouseListener(listener);
+        synchronized(getTreeLock()) {
+            int i = getComponentCount() - 1;
+            if(i < 0) return;
+            for(; i >= 0; i--) {
+                Component c = getComponent(i);
+                if(c == null) continue;
+                if(c instanceof InnerListener innerListener) {
+                    innerListener.addInnerListeners(listener);
+                } else {
+                    c.addMouseListener(listener);
+                }
+            }
+        }
+    }
+
+    /** * Override addImpl to ensure dynamically added children also get the hover listener.
+     */
+    @Override
+    protected void addImpl(Component comp, Object constraints, int index) {
+        super.addImpl(comp, constraints, index);
+        if (hoverAdapter != null) {
+            if (comp instanceof InnerListener innerListener) {
+                innerListener.addInnerListeners(hoverAdapter);
+            } else {
+                comp.addMouseListener(hoverAdapter);
+            }
+        }
+    }
+
+// ======================================================================================================================
+// Hover Setters & Getters
+// ======================================================================================================================
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Enable hover interactions")
+    public void setHoverEnabled(boolean v) { this.hoverEnabled = v; }
+    public boolean isHoverEnabled() { return hoverEnabled; }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Background color on hover")
+    public void setHoverBackground(Color v) { this.hoverBackground = v; repaint(); }
+    public Color getHoverBackground() { return hoverBackground; }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Border color on hover (applies to all sides)")
+    public void setHoverBorderColor(Color v) { this.hoverBorderColor = v; repaint(); }
+    public Color getHoverBorderColor() { return hoverBorderColor; }
 
 // ======================================================================================================================
 // Shorthand Setters  (mirrors CSS shorthand properties)
@@ -527,8 +626,8 @@ public class SxDivPanel extends JPanel {
             // Draw box shadow first so it sits behind the background
             if (boxShadow) paintBoxShadow(g2, x, y, w, h);
 
-            // Background
-            Color bg = getBackground();
+            // Apply Hover Background
+            Color bg = (isHovered && hoverBackground != null) ? hoverBackground : getBackground();
             if (bg != null && backgroundOpacity > 0f) {
                 g2.setColor(new Color(bg.getRed(), bg.getGreen(), bg.getBlue(), clamp255(backgroundOpacity)));
                 g2.fill(buildRoundedRect(x, y, w, h,
@@ -631,23 +730,29 @@ public class SxDivPanel extends JPanel {
 // ======================================================================================================================
 
     private void paintBorders(Graphics2D g2, int x, int y, int w, int h) {
+        // Swap border colors if we are hovered and a hover border color is defined
+        Color tColor = (isHovered && hoverBorderColor != null) ? hoverBorderColor : borderTopColor;
+        Color rColor = (isHovered && hoverBorderColor != null) ? hoverBorderColor : borderRightColor;
+        Color bColor = (isHovered && hoverBorderColor != null) ? hoverBorderColor : borderBottomColor;
+        Color lColor = (isHovered && hoverBorderColor != null) ? hoverBorderColor : borderLeftColor;
+
         if (borderTopWidth    > 0 && borderTopStyle    != BorderStyle.NONE)
-            paintSide(g2, x, y, w, h, Side.TOP,    borderTopWidth,    borderTopColor,    borderTopStyle);
+            paintSide(g2, x, y, w, h, Side.TOP,    borderTopWidth,    tColor, borderTopStyle);
         if (borderRightWidth  > 0 && borderRightStyle  != BorderStyle.NONE)
-            paintSide(g2, x, y, w, h, Side.RIGHT,  borderRightWidth,  borderRightColor,  borderRightStyle);
+            paintSide(g2, x, y, w, h, Side.RIGHT,  borderRightWidth,  rColor, borderRightStyle);
         if (borderBottomWidth > 0 && borderBottomStyle != BorderStyle.NONE)
-            paintSide(g2, x, y, w, h, Side.BOTTOM, borderBottomWidth, borderBottomColor, borderBottomStyle);
+            paintSide(g2, x, y, w, h, Side.BOTTOM, borderBottomWidth, bColor, borderBottomStyle);
         if (borderLeftWidth   > 0 && borderLeftStyle   != BorderStyle.NONE)
-            paintSide(g2, x, y, w, h, Side.LEFT,   borderLeftWidth,   borderLeftColor,   borderLeftStyle);
+            paintSide(g2, x, y, w, h, Side.LEFT,   borderLeftWidth,   lColor, borderLeftStyle);
     }
 
     private enum Side { TOP, RIGHT, BOTTOM, LEFT }
 
     /**
      * Paints one border side. We:
-     *  1. Clip to the half-panel toward that side so each side's color stays on its own edge.
-     *  2. Configure a Stroke matching the requested style (solid / dashed / dotted).
-     *  3. Draw the full rounded outline inset by half the stroke width.
+     * 1. Clip to the half-panel toward that side so each side's color stays on its own edge.
+     * 2. Configure a Stroke matching the requested style (solid / dashed / dotted).
+     * 3. Draw the full rounded outline inset by half the stroke width.
      */
     private void paintSide(Graphics2D g2, int x, int y, int w, int h,
                             Side side, int bw, Color bc, BorderStyle bs) {
@@ -739,13 +844,6 @@ public class SxDivPanel extends JPanel {
 
     /**
      * A minimal Flexbox layout manager.
-     *
-     * Supported:
-     *   flexDirection  : ROW / COLUMN / ROW_REVERSE / COLUMN_REVERSE
-     *   justifyContent : FLEX_START / FLEX_END / CENTER / SPACE_BETWEEN / SPACE_AROUND / SPACE_EVENLY
-     *   alignItems     : FLEX_START / FLEX_END / CENTER / STRETCH
-     *   flexWrap       : NOWRAP / WRAP
-     *   gap / rowGap / columnGap
      */
     private class DivFlexLayout implements LayoutManager2 {
 

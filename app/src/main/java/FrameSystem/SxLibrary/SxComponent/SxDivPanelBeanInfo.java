@@ -1,4 +1,4 @@
-package FrameSystem.SxLibrary.UI;
+package FrameSystem.SxLibrary.SxComponent;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
@@ -15,18 +15,19 @@ import javax.swing.JPanel;
  * Groups all CSS-mapped properties into logical categories that appear
  * as sections inside the NetBeans Form Editor property sheet:
  *
- *   Shorthand      — convenience setters (padding, borderRadius, …)
- *   Box Model      — paddingTop/Right/Bottom/Left
- *   Background     — background (inherited), backgroundOpacity
- *   Border Radius  — per-corner radii
- *   Border Top/Right/Bottom/Left — per-side width / color / style
- *   Box Shadow     — shadow toggle and all shadow params
- *   Display        — BLOCK vs FLEX
- *   Flex           — flex direction, justify, align, wrap, gap
- *   Overflow       — overflow / overflowX / overflowY
- *   Visual         — opacity
- *   Sizing         — preferredSize / minimumSize / maximumSize (inherited)
- *   Typography     — font (inherited)
+ * Shorthand      — convenience setters (padding, borderRadius, …)
+ * Box Model      — paddingTop/Right/Bottom/Left
+ * Background     — background (inherited), backgroundOpacity
+ * Border Radius  — per-corner radii
+ * Border Top/Right/Bottom/Left — per-side width / color / style
+ * Box Shadow     — shadow toggle and all shadow params
+ * Display        — BLOCK vs FLEX
+ * Flex           — flex direction, justify, align, wrap, gap
+ * Overflow       — overflow / overflowX / overflowY
+ * Visual         — opacity
+ * Sizing         — preferredSize / minimumSize / maximumSize (inherited)
+ * Typography     — font (inherited)
+ * Hover          — hoverEnabled, hoverBackground, hoverBorderColor
  */
 public class SxDivPanelBeanInfo extends SimpleBeanInfo {
 
@@ -150,6 +151,12 @@ public class SxDivPanelBeanInfo extends SimpleBeanInfo {
             // ---- Visual ---------------------------------------------------------------------
 
             descriptors.add(prop("opacity", "Visual"));
+            
+            // ---- Hover ----------------------------------------------------------------------
+
+            descriptors.add(prop("hoverEnabled",     "Hover"));
+            descriptors.add(prop("hoverBackground",  "Hover"));
+            descriptors.add(prop("hoverBorderColor", "Hover"));
 
             return descriptors.toArray(new PropertyDescriptor[0]);
 

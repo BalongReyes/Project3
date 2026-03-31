@@ -577,15 +577,15 @@ public class ModuleUnits extends SPanel{
         sFilterTower3.setPreferredSize(new java.awt.Dimension(100, 50));
 
         sPanelHover2.setBackground(new java.awt.Color(255, 255, 255));
-        sPanelHover2.setHoverBackgroundColor(new java.awt.Color(245, 245, 245));
-        sPanelHover2.setRadius(20);
-        sPanelHover2.setRounded(true);
+        sPanelHover2.setPreferredSize(new java.awt.Dimension(150, 10));
         sPanelHover2.setShadowColor(new java.awt.Color(230, 230, 230));
         sPanelHover2.setShadowOpacity(0.3F);
         sPanelHover2.setShadowSize(5);
         sPanelHover2.setShadowX(true);
         sPanelHover2.setShadowY(true);
-        sPanelHover2.setPreferredSize(new java.awt.Dimension(150, 10));
+        sPanelHover2.setHoverBackgroundColor(new java.awt.Color(245, 245, 245));
+        sPanelHover2.setRadius(20);
+        sPanelHover2.setRounded(true);
 
         sLabel4.setForeground(new java.awt.Color(56, 56, 56));
         sLabel4.setText("Clear Filter");
@@ -610,15 +610,15 @@ public class ModuleUnits extends SPanel{
         );
 
         sTextFieldContainer1.setBackground(new java.awt.Color(255, 255, 255));
-        sTextFieldContainer1.setRadius(20);
-        sTextFieldContainer1.setRounded(true);
+        sTextFieldContainer1.setTextFieldChild(sTextField1);
+        sTextFieldContainer1.setPreferredSize(new java.awt.Dimension(390, 50));
         sTextFieldContainer1.setShadowColor(new java.awt.Color(230, 230, 230));
         sTextFieldContainer1.setShadowOpacity(0.3F);
         sTextFieldContainer1.setShadowSize(5);
         sTextFieldContainer1.setShadowX(true);
         sTextFieldContainer1.setShadowY(true);
-        sTextFieldContainer1.setTextFieldChild(sTextField1);
-        sTextFieldContainer1.setPreferredSize(new java.awt.Dimension(390, 50));
+        sTextFieldContainer1.setRadius(20);
+        sTextFieldContainer1.setRounded(true);
 
         sTextField1.setBackground(new java.awt.Color(255, 255, 255));
         sTextField1.setHint("Search for units");
@@ -651,14 +651,14 @@ public class ModuleUnits extends SPanel{
         );
 
         sPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        sPanel5.setRadius(20);
-        sPanel5.setRounded(true);
+        sPanel5.setPreferredSize(new java.awt.Dimension(150, 50));
         sPanel5.setShadowColor(new java.awt.Color(230, 230, 230));
         sPanel5.setShadowOpacity(0.3F);
         sPanel5.setShadowSize(5);
         sPanel5.setShadowX(true);
         sPanel5.setShadowY(true);
-        sPanel5.setPreferredSize(new java.awt.Dimension(150, 50));
+        sPanel5.setRadius(20);
+        sPanel5.setRounded(true);
 
         sLabel5.setForeground(new java.awt.Color(56, 56, 56));
         sLabel5.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tower.png"))); // NOI18N
@@ -739,13 +739,13 @@ public class ModuleUnits extends SPanel{
     public FrameSystem.SLibrary.SComponents.SPanel objectUnitWrapper;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel2;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel3;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel4;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel5;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel7;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel8;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel2;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel3;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel4;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel5;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel7;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel8;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTower sFilterTower1;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTower sFilterTower2;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTower sFilterTower3;
