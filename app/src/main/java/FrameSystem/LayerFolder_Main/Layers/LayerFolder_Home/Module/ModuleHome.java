@@ -33,7 +33,6 @@ public class ModuleHome extends SPanel{
 
         layeredPane_Main = new javax.swing.JLayeredPane();
         layerHome_Dashboard = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
-        sLabel5 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerHome_Units = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
         moduleUnits = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Layers.LayerFolder_Units.Module.ModuleUnits();
         layerHome_Parking = new FrameSystem.LayerFolder_Main.Layers.LayerFolder_Home.Components.LayerHome();
@@ -153,26 +152,15 @@ public class ModuleHome extends SPanel{
         layerHome_Dashboard.setName("Dashboard"); // NOI18N
         layerHome_Dashboard.setOpaque(false);
 
-        sLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        sLabel5.setText("Dashboard");
-        sLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        sLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-
         javax.swing.GroupLayout layerHome_DashboardLayout = new javax.swing.GroupLayout(layerHome_Dashboard);
         layerHome_Dashboard.setLayout(layerHome_DashboardLayout);
         layerHome_DashboardLayout.setHorizontalGroup(
             layerHome_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layerHome_DashboardLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 1216, Short.MAX_VALUE)
         );
         layerHome_DashboardLayout.setVerticalGroup(
             layerHome_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layerHome_DashboardLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 970, Short.MAX_VALUE)
         );
 
         layeredPane_Main.add(layerHome_Dashboard, "dashbaord");
@@ -1476,7 +1464,6 @@ public class ModuleHome extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel29;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel4;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel5;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel6;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel7;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel8;

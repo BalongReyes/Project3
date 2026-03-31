@@ -45,50 +45,64 @@ public class UnitsDataHandler{
         int index = MethodAlgorithms.initBinarySearch(currentArray, UnitsDataTable.ID, id);
         return index != -1 ? currentArray[index] : null;
     }
+    
+    // Example of a fast, database-level search in UnitsDataHandler
+    public static UnitsDataTable findDataByIdSecure(int id) throws SQLException {
+        UnitsDataTable[] resultHolder = new UnitsDataTable[1];
+        
+        Database.executePreparedQuery("SELECT * FROM units WHERE id = ?", (result) -> {
+            if (result.next()) {
+                resultHolder[0] = new UnitsDataTable(result);
+            }
+        }, id);
+        
+        return resultHolder[0];
+    }
 
 // ===========================================================================================================
     
-    public static void deleteData(int id){
-        try{
-            Database.execute(
-                "DELETE FROM units WHERE id = '" + id + "'"
-            );
-        }catch(SQLException e){
-            Console.errorOut("Deleting data from table items error", e);
+    public static void deleteData(int id) {
+        try {
+            // Secure deletion
+            Database.executePrepared("DELETE FROM units WHERE id = ?", id);
+        } catch (SQLException e) {
+            Console.errorOut("Deleting data from table units error", e);
         }
     }
     
-    public static void insertData(UnitsDataTable data){
-        try{
-            Database.execute(
-                "INSERT INTO units (id, tower, floor, unit, model, balcony, floorarea) VALUES ("
-                + "NULL"
-                + ", '" + data.getTower() + "'"
-                + ", '" + data.getFloor() + "'"
-                + ", '" + data.getUnit() + "'"
-                + ", '" + data.getModel() + "'"
-                + ", '" + data.getBalcony() + "'"
-                + ", '" + data.getFloorArea() + "'"
-                + ")"
+    public static void insertData(UnitsDataTable data) {
+        try {
+            // Use ? placeholders instead of string concatenation
+            String query = "INSERT INTO units (tower, floor, unit, model, balcony, floorarea) VALUES (?, ?, ?, ?, ?, ?)";
+            
+            Database.executePrepared(query, 
+                data.getTower(), 
+                data.getFloor(), 
+                data.getUnit(), 
+                data.getModel(), 
+                data.getBalcony(), 
+                data.getFloorArea()
             );
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Console.errorOut("Inserting data from table units error", e);
         }
     }
     
-    public static void updateData(UnitsDataTable data, int id){
-        try{
-            Database.execute(
-                "UPDATE items SET "
-                + "tower = '" + data.getTower() + "'"
-                + ", floor = '" + data.getFloor() + "'"
-                + ", unit = '" + data.getUnit() + "'"
-                + ", model = '" + data.getModel() + "'"
-                + ", balcony = '" + data.getBalcony() + "'"
-                + ", floorarea = " + data.getFloorArea() + "'"
-                + " WHERE id = " + id
+    public static void updateData(UnitsDataTable data, int id) {
+        try {
+            // Note: Your original code said "UPDATE items", I changed it to "units"
+            String query = "UPDATE units SET tower = ?, floor = ?, unit = ?, model = ?, balcony = ?, floorarea = ? WHERE id = ?";
+            
+            Database.executePrepared(query, 
+                data.getTower(), 
+                data.getFloor(), 
+                data.getUnit(), 
+                data.getModel(), 
+                data.getBalcony(), 
+                data.getFloorArea(),
+                id // The WHERE clause parameter
             );
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Console.errorOut("Updating data from table units error", e);
         }
     }

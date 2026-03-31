@@ -10,6 +10,7 @@ import java.sql.Statement;
 import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
 import EventSystem.Interface.ResultExecute;
+import java.sql.PreparedStatement;
 
 public class Database {
 
@@ -94,4 +95,37 @@ public class Database {
         }
     }
 
+// NEW METHOD: For INSERT, UPDATE, DELETE using Prepared Statements ------------------------------------------
+    
+    public static void executePrepared(String query, Object... parameters) throws SQLException {
+        if (connection == null) throw new SQLException("Database offline");
+        
+        // The try-with-resources statement automatically closes the PreparedStatement
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            // Loop through the parameters and set them securely
+            for (int i = 0; i < parameters.length; i++) {
+                statement.setObject(i + 1, parameters[i]);
+            }
+            statement.executeUpdate();
+        }
+    }
+
+    // NEW METHOD: For SELECT queries using Prepared Statements
+    public interface PreparedStatementResult {
+        void execute(ResultSet result) throws SQLException;
+    }
+
+    public static void executePreparedQuery(String query, PreparedStatementResult resultExecute, Object... parameters) throws SQLException {
+        if (connection == null) throw new SQLException("Database offline");
+        
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            for (int i = 0; i < parameters.length; i++) {
+                statement.setObject(i + 1, parameters[i]);
+            }
+            try (ResultSet result = statement.executeQuery()) {
+                resultExecute.execute(result);
+            }
+        }
+    }
+    
 }

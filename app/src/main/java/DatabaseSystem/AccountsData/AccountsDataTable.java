@@ -1,4 +1,3 @@
-
 package DatabaseSystem.AccountsData;
 
 import DatabaseSystem.DataTable.DataTable;
@@ -8,11 +7,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Holds the values of the table accounts
- * @author SEDIAN
- */
-public class AccountsDataTable implements DataTable{
+public class AccountsDataTable implements DataTable {
 
     public static final int ID = 1;
     public static final int NAME = 2;
@@ -26,30 +21,33 @@ public class AccountsDataTable implements DataTable{
     private String username;
     private int role;
     private String password;
+    private String salt; // NEW: Added salt variable
     private java.sql.Date lastChange;
     
 // Constructor ===============================================================================================
 
-    public AccountsDataTable(Integer id, String name, int userId, String username, String password, int role, Date lastChange){
+    public AccountsDataTable(Integer id, String name, int userId, String username, String password, String salt, int role, Date lastChange) {
         this.id = id;
         this.name = name;
         this.userId = userId;
         this.username = username;
         this.password = password;
+        this.salt = salt; // NEW: Initialize salt
         this.role = role;
         this.lastChange = lastChange;
     }
     
-    public AccountsDataTable(ResultSet results) throws SQLException{
-        try{
+    public AccountsDataTable(ResultSet results) throws SQLException {
+        try {
             id = results.getInt("id");
             name = results.getString("name");
             userId = results.getInt("userID");
             username = results.getString("username");
             password = results.getString("password");
+            salt = results.getString("salt"); // NEW: Pull salt from the database
             role = results.getInt("role");
             lastChange = results.getDate("lastChange");
-        }catch(SQLException e){
+        } catch (SQLException e) {
             error = true;
             throw e;
         }
@@ -59,75 +57,45 @@ public class AccountsDataTable implements DataTable{
     
     private boolean error = false;
     
-    public boolean isError(){
+    public boolean isError() {
         return error;
     }
     
 // Methods ===================================================================================================
 
-    public boolean haveData(String data){
+    public boolean haveData(String data) {
         return 
             MethodString.checkLike(name, data) ||
             MethodString.checkLike(username, data);
     }
     
-    public boolean checkPassword(String password){
-        return this.password.equals(password);
+    public boolean checkPassword(String hashedInputPassword) {
+        return this.password.equals(hashedInputPassword);
     }
     
-    public boolean idEquals(Integer value){
-        if(id != null && value != null){
+    public boolean idEquals(Integer value) {
+        if (id != null && value != null) {
             return id.equals(value);
         }
         return false;
     }
     
-    public AccountsDataTable createNewData(Integer id, String name, int userId, String username, int role, java.sql.Date lastChange){
-        return new AccountsDataTable(id, name, userId, username, password, role, lastChange);
-    }
-    
-    public AccountsDataTable createNewDataUnhashed(Integer id, String name, int userId, String username, int role, String password, java.sql.Date lastChange){
-        if(password == null){
-            return createNewData(id, name, userId, username, role, lastChange);
-        }
-        return new AccountsDataTable(id, name, userId, username, AccountsDataHandler.hashPassword(password), role, lastChange);
-    }
-    
 // Getter ====================================================================================================
     
-    public int getId(){
-        return id;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public int getRole(){
-        return role;
-    }
-
-    public int getUserId(){
-        return userId;
-    }
-
-    public String getUsername(){
-        return username;
-    }
-
-    protected String getPassword(){
-        return password;
-    }
-
-    public Date getLastChange(){
-        return lastChange;
-    }
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public int getRole() { return role; }
+    public int getUserId() { return userId; }
+    public String getUsername() { return username; }
+    public String getPassword() { return password; }
+    public String getSalt() { return salt; } // NEW: Getter for the salt
+    public Date getLastChange() { return lastChange; }
     
 // Implementations ===========================================================================================
 
     @Override
-    public Object getData(int i){
-        return switch(i){
+    public Object getData(int i) {
+        return switch (i) {
             case 1 -> id;
             case 2 -> name;
             case 3 -> userId;
@@ -138,18 +106,11 @@ public class AccountsDataTable implements DataTable{
     }
     
     @Override
-    public DataTableType getDataType(int i){
-        return switch(i){
+    public DataTableType getDataType(int i) {
+        return switch (i) {
             case 2, 4 -> DataTableType.TYPE_STRING;
             case 1, 3, 5 -> DataTableType.TYPE_INTEGER;
             default -> DataTableType.TYPE_NULL;
         };
     }
-    
-// Static Methods ============================================================================================
-
-    public static AccountsDataTable createInstanceUnhashed(Integer id, String name, int userId, String username, int role, String password, java.sql.Date lastChange){
-        return new AccountsDataTable(id, name, userId, username, AccountsDataHandler.hashPassword(password), role, lastChange);
-    }
-    
 }
