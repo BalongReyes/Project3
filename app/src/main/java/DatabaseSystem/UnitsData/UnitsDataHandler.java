@@ -47,6 +47,43 @@ public class UnitsDataHandler {
         return sortedArray.toArray(UnitsDataTable[]::new);
     }
     
+    // NEW METHOD: Handles multiple sorting criteria
+    public static UnitsDataTable[] getDataBatchSortedMulti(boolean refresh, int[] dataIndexes, DataTableOrder[] orders, int limit, int offset) throws SQLException {
+        // Safety check to ensure the arrays match
+        if (dataIndexes.length == 0 || dataIndexes.length != orders.length) {
+            throw new IllegalArgumentException("Data indexes and orders must match in length.");
+        }
+
+        // Build the ORDER BY clause dynamically
+        StringBuilder orderBy = new StringBuilder();
+        for (int i = 0; i < dataIndexes.length; i++) {
+            String columnName = getColumnName(dataIndexes[i]);
+            String orderString = (orders[i] == DataTableOrder.Asc) ? "ASC" : "DESC";
+            
+            orderBy.append(columnName).append(" ").append(orderString);
+            
+            // Add a comma if it is not the last condition
+            if (i < dataIndexes.length - 1) {
+                orderBy.append(", ");
+            }
+        }
+        
+        // Assemble the final query
+        String query = "SELECT * FROM units ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
+        
+        ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
+        
+        // Execute the query
+        Database.executePreparedQuery(query, (result) -> {
+            while (result.next()) {
+                UnitsDataTable data = new UnitsDataTable(result);
+                if (!data.isError()) sortedArray.add(data);
+            }
+        }, limit, offset);
+        
+        return sortedArray.toArray(UnitsDataTable[]::new);
+    }
+    
     // REPLACED: Now uses high-speed SQL sorting instead of Java QuickSort
     public static UnitsDataTable[] getAllDataSorted(boolean refresh, int dataIndex, DataTableOrder order) throws SQLException {
         String query = "SELECT * FROM units ORDER BY " + getColumnName(dataIndex) + " " + order.getString();
