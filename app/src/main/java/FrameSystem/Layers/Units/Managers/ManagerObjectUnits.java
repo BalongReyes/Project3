@@ -1,4 +1,3 @@
-
 package FrameSystem.Layers.Units.Managers;
 
 import java.awt.Dimension;
@@ -24,28 +23,14 @@ public class ManagerObjectUnits extends Manager{
     
     private static ArrayList<ObjectUnit> objects = new ArrayList<>();
     
+    // Variables for Debouncing and Thread Cancellation
+    private static javax.swing.Timer filterDebounceTimer;
+    private static long currentRefreshId = 0;
+    
     public static void initDefault(){
         moduleUnits = frame.moduleHome.moduleUnits;
         
         moduleUnits.objectUnitScrollPane.setObjectContentHeight(60);
-        
-//        frame.sTargetPanel3.addMouseListener((MousePressedAdaptor) evt -> {
-//            if(ManagerItemDetails.isOfflineMode()) return;
-//            filterObjectCategory();
-//        });
-//            
-//        frame.sTargetPanel2.addMouseListener((MousePressedAdaptor) evt -> {
-//            clearFilterObject(true);
-//        });
-//        
-//        frame.sTargetPanel1.addMouseListener((MousePressedAdaptor) evt -> {
-//            if(ManagerItemDetails.isOfflineMode()) return;
-//            addObject();
-//        });
-//        
-//        frame.sTextField1.getDocument().addDocumentListener((DocumentAdapter) evt -> {
-//            filterObjectSearch(frame.sTextField1.getText());
-//        });
         
         moduleUnits.sFilterTitlePanel1.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.TOWER, moduleUnits.sFilterTitlePanel1));
         moduleUnits.sFilterTitlePanel2.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.FLOOR, moduleUnits.sFilterTitlePanel2));
@@ -77,7 +62,18 @@ public class ManagerObjectUnits extends Manager{
             }
             checkFilterActive();
             setCurrentFilterTitlePanel(c);
-            refreshObjects(false);
+            
+            // --- Debounce Implementation ---
+            // Only refresh after the user stops clicking for 300ms
+            if (filterDebounceTimer != null && filterDebounceTimer.isRunning()) {
+                filterDebounceTimer.restart();
+            } else {
+                filterDebounceTimer = new javax.swing.Timer(300, e -> {
+                    refreshObjects(false);
+                });
+                filterDebounceTimer.setRepeats(false);
+                filterDebounceTimer.start();
+            }
         };
     }
     
@@ -105,9 +101,11 @@ public class ManagerObjectUnits extends Manager{
         // Show the loading screen right away
         LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
 
+        // Assign a unique ID to this specific request
+        final long thisRefreshId = ++currentRefreshId;
+
         ExecutorDriver.execute(() -> {
             try {
-                // 1. Start a timer to prevent the "flicker" effect
                 long startTime = System.currentTimeMillis();
                 
                 int limit = 20;  // How many units to fetch per SQL query
@@ -116,14 +114,18 @@ public class ManagerObjectUnits extends Manager{
                 boolean hasMoreData = true;
 
                 while (hasMoreData) {
+                    // Check if a newer refresh has been clicked. If so, abort this old thread.
+                    if (thisRefreshId != currentRefreshId) return;
+
                     UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSorted(
                             refresh, filterSort, filterOrder, limit, offset
                     );
 
-                    // 2. Anti-flicker logic (Apply ONLY to the first batch)
+                    if (thisRefreshId != currentRefreshId) return;
+
                     if (isFirstBatch) {
                         long elapsedTime = System.currentTimeMillis() - startTime;
-                        long minLoadingTime = 1000; // 400ms is long enough to see, but feels fast
+                        long minLoadingTime = 1000; 
                         
                         if (elapsedTime < minLoadingTime) {
                             try {
@@ -134,12 +136,15 @@ public class ManagerObjectUnits extends Manager{
                         }
                     }
 
+                    if (thisRefreshId != currentRefreshId) return;
+
                     // 3. Check if we reached the end of the database
                     if (dataBatch == null || dataBatch.length == 0) {
                         hasMoreData = false;
                         
                         if (isFirstBatch) {
                             javax.swing.SwingUtilities.invokeLater(() -> {
+                                if (thisRefreshId != currentRefreshId) return; // Final UI check
                                 moduleUnits.objectUnitWrapper.removeAll();
                                 objects.clear();
                                 resizeContainer();
@@ -153,6 +158,8 @@ public class ManagerObjectUnits extends Manager{
 
                     // 4. Update the UI with the freshly loaded batch
                     javax.swing.SwingUtilities.invokeLater(() -> {
+                        if (thisRefreshId != currentRefreshId) return; // Final UI check
+
                         if (firstBatchCopy) {
                             moduleUnits.objectUnitWrapper.removeAll();
                             objects.clear();
@@ -173,7 +180,6 @@ public class ManagerObjectUnits extends Manager{
                     isFirstBatch = false;
                     offset += limit; 
 
-                    // Tiny break to paint components smoothly
                     try {
                         Thread.sleep(15); 
                     } catch (InterruptedException e) {
@@ -242,12 +248,7 @@ public class ManagerObjectUnits extends Manager{
     private static DataTableOrder filterOrder = DataTableOrder.Desc;
     
     public static void filterObjectCategory(){
-//        CategoryDialogFilter dialog = new CategoryDialogFilter(frame, filterCategory);
-//        if(!dialog.isConfirmed()) return;
-//        
-//        filterCategory = dialog.getSelectedCategoryId();
-//        checkFilterActive();
-//        refreshObjects(false);
+        // ... omitted
     }
     
     public static void filterObjectSearch(String f){
@@ -257,53 +258,25 @@ public class ManagerObjectUnits extends Manager{
     }
     
     public static void clearFilterObject(boolean reloadObject){
-//        filter = "";
-//        filterCategory = -1;
-//        filterSort = 1;
-//        filterOrder = DataTableOrder.Desc;
-//        
-//        frame.sTextField1.setText("");
-//        frame.sFilterPanel1.setActive(false);
-//        
-//        resetCurrentFilterTitlePanel();
-//        
-//        if(reloadObject) refreshObjects(false);
+        // ... omitted
     }
     
     private static void checkFilterActive(){
-//        if(!filter.equals("") || filterCategory != -1 || filterSort != 1 || filterOrder != DataTableOrder.Desc){
-//            frame.sFilterPanel1.setActive(true);
-//        }else{
-//            frame.sFilterPanel1.setActive(false);
-//        }
+        // ... omitted
     }
     
 // Add Edit Remove -------------------------------------------------------------------------------------------
     
     public static void addObject(){
-//        ItemDetailsDialogUpsert dialog = new ItemDetailsDialogUpsert(frame, null);
-//        if(!dialog.isConfirmed()) return;
-//        
-//        ItemsDataHandler.insertData(dialog.getNewData());
-//        refreshObjects(true);
+        // ... omitted
     }
     
     public static void removeObject(ObjectUnit object){
-//        object.setDanger(true);
-//        ItemDetailsDialogDelete dialog = new ItemDetailsDialogDelete(frame);
-//        object.setDanger(false);
-//        if(!dialog.isConfirmed()) return;
-//        
-//        ItemsDataHandler.deleteData(object.getId());
-//        refreshObjects(true);
+        // ... omitted
     }
     
     public static void editObject(ObjectUnit object){
-//        ItemDetailsDialogUpsert dialog = new ItemDetailsDialogUpsert(frame, object);
-//        if(!dialog.isConfirmed()) return;
-//        
-//        ItemsDataHandler.updateData(dialog.getNewData(), object.getId());
-//        refreshObjects(object, true);
+        // ... omitted
     }
 
 }

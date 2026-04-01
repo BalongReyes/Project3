@@ -34,9 +34,7 @@ public class UnitsDataHandler {
 // Search & Sort Methods =====================================================================================
 
     public static UnitsDataTable[] getDataBatchSorted(boolean refresh, int dataIndex, DataTableOrder order, int limit, int offset) throws SQLException {
-        String columnName = getColumnName(dataIndex);
-        String orderString = (order == DataTableOrder.Asc) ? "ASC" : "DESC";
-        String query = "SELECT * FROM units ORDER BY ? ? LIMIT ? OFFSET ?";
+        String query = "SELECT * FROM units ORDER BY " + getColumnName(dataIndex) + " " + order.getString() + " LIMIT ? OFFSET ?";
         
         ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
         Database.executePreparedQuery(query, (result) -> {
@@ -44,16 +42,14 @@ public class UnitsDataHandler {
                 UnitsDataTable data = new UnitsDataTable(result);
                 if (!data.isError()) sortedArray.add(data);
             }
-        }, columnName, orderString, limit, offset);
+        }, limit, offset);
         
         return sortedArray.toArray(UnitsDataTable[]::new);
     }
     
     // REPLACED: Now uses high-speed SQL sorting instead of Java QuickSort
     public static UnitsDataTable[] getAllDataSorted(boolean refresh, int dataIndex, DataTableOrder order) throws SQLException {
-        String columnName = getColumnName(dataIndex);
-        String orderString = (order == DataTableOrder.Asc) ? "ASC" : "DESC";
-        String query = "SELECT * FROM units ORDER BY " + columnName + " " + orderString;
+        String query = "SELECT * FROM units ORDER BY " + getColumnName(dataIndex) + " " + order.getString();
         
         ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
         Database.executePreparedQuery(query, (result) -> {
