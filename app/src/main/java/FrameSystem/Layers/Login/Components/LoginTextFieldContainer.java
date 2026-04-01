@@ -85,7 +85,7 @@ public class LoginTextFieldContainer extends SPanel{
             g2.fillRoundRect(0, 10, 3, 30, 3, 3);
         }
         
-        super.paint(g);
+        super.paintOverrideAll(g);
     }
     
 }

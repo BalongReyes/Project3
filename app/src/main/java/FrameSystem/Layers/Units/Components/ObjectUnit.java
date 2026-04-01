@@ -138,8 +138,7 @@ public class ObjectUnit extends SPanel{
         sLabel7 = new FrameSystem.SLibrary.SComponents.SLabel();
         sLabel8 = new FrameSystem.SLibrary.SComponents.SLabel();
 
-        setDefaultBackgroundColor(new java.awt.Color(24, 29, 37));
-        setOpaque(false);
+        setPaintBackground(false);
         setPreferredSize(new java.awt.Dimension(1010, 60));
 
         sPanelHighlight1.setHoverBackgroundColor(new java.awt.Color(240, 240, 240));
@@ -155,7 +154,7 @@ public class ObjectUnit extends SPanel{
         sLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sLabel1.setPreferredSize(new java.awt.Dimension(75, 16));
 
-        sPanel1.setOpaque(false);
+        sPanel1.setPaintBackground(false);
         sPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         sLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -185,8 +184,7 @@ public class ObjectUnit extends SPanel{
         sLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sPanel1.add(sLabel10);
 
-        sPanel3.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
-        sPanel3.setOpaque(false);
+        sPanel3.setPaintBackground(false);
         sPanel3.setPreferredSize(new java.awt.Dimension(75, 0));
 
         javax.swing.GroupLayout sPanel3Layout = new javax.swing.GroupLayout(sPanel3);

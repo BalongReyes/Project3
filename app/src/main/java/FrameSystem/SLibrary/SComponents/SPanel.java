@@ -211,15 +211,10 @@ public class SPanel extends JPanel implements InnerListener{
     public Color getDefaultForegroundColor(){
         return defaultForegroundColor;
     }
-
-    /**
-     * @deprecated Use {@link #setDefaultBackgroundColor(Color)} instead to ensure compatibility with custom states.
-     */
+    
     @Override
-    @Deprecated
     @BeanProperty(hidden = true)
     public void setBackground(Color bg){
-        setDefaultBackgroundColor(bg);
     }
 
 // ==== Core SPanel Setters & Getters (Radius, Border, Shadows) ==============================================
