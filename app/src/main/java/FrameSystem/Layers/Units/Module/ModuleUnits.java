@@ -61,6 +61,8 @@ public class ModuleUnits extends SPanel{
         sPanel11 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel7 = new FrameSystem.SLibrary.SComponents.SLabel();
 
+        setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
+
         sPanel1.setRadius(20);
         sPanel1.setRounded(true);
         sPanel1.setShadowColor(new java.awt.Color(230, 230, 230));

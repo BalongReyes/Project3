@@ -102,38 +102,84 @@ public class ManagerObjectUnits extends Manager{
     }
     
     public static void refreshObjects(ObjectUnit recentObject, boolean refresh) {
+        // Show the loading screen right away
         LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
 
         ExecutorDriver.execute(() -> {
-            long startTime = System.currentTimeMillis();
             try {
-                UnitsDataTable[] dataArray = UnitsDataHandler.getAllDataSorted(refresh, filterSort, filterOrder);
+                // 1. Start a timer to prevent the "flicker" effect
+                long startTime = System.currentTimeMillis();
+                
+                int limit = 20;  // How many units to fetch per SQL query
+                int offset = 0;  // Start at the very beginning
+                boolean isFirstBatch = true;
+                boolean hasMoreData = true;
 
-                long elapsedTime = System.currentTimeMillis() - startTime;
-                long minLoadingTime = 3000; // 1 second minimum
+                while (hasMoreData) {
+                    UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSorted(
+                            refresh, filterSort, filterOrder, limit, offset
+                    );
 
-                if (elapsedTime < minLoadingTime) {
+                    // 2. Anti-flicker logic (Apply ONLY to the first batch)
+                    if (isFirstBatch) {
+                        long elapsedTime = System.currentTimeMillis() - startTime;
+                        long minLoadingTime = 1000; // 400ms is long enough to see, but feels fast
+                        
+                        if (elapsedTime < minLoadingTime) {
+                            try {
+                                Thread.sleep(minLoadingTime - elapsedTime);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }
+                    }
+
+                    // 3. Check if we reached the end of the database
+                    if (dataBatch == null || dataBatch.length == 0) {
+                        hasMoreData = false;
+                        
+                        if (isFirstBatch) {
+                            javax.swing.SwingUtilities.invokeLater(() -> {
+                                moduleUnits.objectUnitWrapper.removeAll();
+                                objects.clear();
+                                resizeContainer();
+                                LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
+                            });
+                        }
+                        break; 
+                    }
+
+                    final boolean firstBatchCopy = isFirstBatch;
+
+                    // 4. Update the UI with the freshly loaded batch
+                    javax.swing.SwingUtilities.invokeLater(() -> {
+                        if (firstBatchCopy) {
+                            moduleUnits.objectUnitWrapper.removeAll();
+                            objects.clear();
+                            LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
+                        }
+
+                        for (UnitsDataTable data : dataBatch) {
+                            ObjectUnit o = new ObjectUnit(data);
+                            objects.add(o);
+                            moduleUnits.objectUnitWrapper.add(o);
+                            moduleUnits.objectUnitScrollPane.addInnerListeners(o);
+                        }
+                        
+                        resizeContainer();
+                    });
+
+                    // 5. Prepare for the next round
+                    isFirstBatch = false;
+                    offset += limit; 
+
+                    // Tiny break to paint components smoothly
                     try {
-                        Thread.sleep(minLoadingTime - elapsedTime);
+                        Thread.sleep(15); 
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                     }
                 }
-
-                javax.swing.SwingUtilities.invokeLater(() -> {
-                    moduleUnits.objectUnitWrapper.removeAll();
-                    objects.clear();
-
-                    for (UnitsDataTable data : dataArray) {
-                        ObjectUnit o = new ObjectUnit(data);
-                        objects.add(o);
-                        moduleUnits.objectUnitWrapper.add(o);
-                        moduleUnits.objectUnitScrollPane.addInnerListeners(o);
-                    }
-
-                    resizeContainer();
-                    LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
-                });
 
             } catch (SQLException e) {
                 javax.swing.SwingUtilities.invokeLater(() -> {
@@ -142,25 +188,6 @@ public class ManagerObjectUnits extends Manager{
                 });
             }
         });
-
-//        try{
-//            UnitsDataTable[] dataArray = UnitsDataHandler.getAllDataSorted(refresh, filterSort, filterOrder);
-//            moduleUnits.objectUnitWrapper.removeAll();
-//            objects.clear();
-//
-//            for (UnitsDataTable data : dataArray) {
-//                ObjectUnit o = new ObjectUnit(data);
-//                objects.add(o);
-//                moduleUnits.objectUnitWrapper.add(o);
-//                moduleUnits.objectUnitScrollPane.addInnerListeners(o);
-//            }
-//
-//            resizeContainer();
-//            LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
-//        }catch(SQLException e){
-//            Console.errorOut("Gathering object unit error", e);
-//            ManagerModuleUnits.reconnectMode(() -> refreshObjects(recentObject, true));
-//        }
     }
     
 // Resize ----------------------------------------------------------------------------------------------------
