@@ -185,7 +185,7 @@ public class ObjectUnit extends SPanel{
         sLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sPanel1.add(sLabel10);
 
-        sPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        sPanel3.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel3.setOpaque(false);
         sPanel3.setPreferredSize(new java.awt.Dimension(75, 0));
 
