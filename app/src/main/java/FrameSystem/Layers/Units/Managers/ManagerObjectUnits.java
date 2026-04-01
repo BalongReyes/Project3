@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import ConsoleSystem.Console;
+import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
 import DatabaseSystem.UnitsData.UnitsDataHandler;
 import DatabaseSystem.UnitsData.UnitsDataTable;
@@ -97,6 +98,8 @@ public class ManagerObjectUnits extends Manager{
         refreshObjects(currentObject, refresh);
     }
     
+    private static ArrayList<DataTableFilter> activeFilters = new ArrayList<>();
+    
     public static void refreshObjects(ObjectUnit recentObject, boolean refresh) {
         // Show the loading screen right away
         LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
@@ -117,8 +120,8 @@ public class ManagerObjectUnits extends Manager{
                     // Check if a newer refresh has been clicked. If so, abort this old thread.
                     if (thisRefreshId != currentRefreshId) return;
 
-                    UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSorted(
-                            refresh, filterSort, filterOrder, limit, offset
+                    UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
+                            refresh, activeFilters.toArray(DataTableFilter[]::new), limit, offset
                     );
 
                     if (thisRefreshId != currentRefreshId) return;
