@@ -2,11 +2,11 @@
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
-    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="d1" green="d1" red="ff" type="rgb"/>
-    </Property>
     <Property name="backgroundImage" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
       <Image iconType="3" name="/Icons/wave.png"/>
+    </Property>
+    <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="d1" green="d1" red="ff" type="rgb"/>
     </Property>
     <Property name="radius" type="int" value="30"/>
     <Property name="rounded" type="boolean" value="true"/>
@@ -93,9 +93,6 @@
     </Container>
     <Container class="FrameSystem.Layers.Login.Components.LoginPanel" name="sPanelRight">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="line" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="44" green="40" red="cd" type="rgb"/>
         </Property>
@@ -141,7 +138,7 @@
           <SubComponents>
             <Container class="FrameSystem.Layers.Login.Components.LayerLogin" name="layerLogin_Offline">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f3" green="f3" red="ff" type="rgb"/>
                 </Property>
                 <Property name="radius" type="int" value="30"/>
@@ -256,7 +253,7 @@
             </Container>
             <Container class="FrameSystem.Layers.Login.Components.LayerLogin" name="layerLogin_Online">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f3" green="f3" red="ff" type="rgb"/>
                 </Property>
                 <Property name="radius" type="int" value="30"/>
@@ -386,17 +383,14 @@
                 </Component>
                 <Container class="FrameSystem.Layers.Login.Components.LoginTextFieldContainer" name="loginTextFieldContainer1">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="focusedColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="7f" green="7f" red="ff" type="rgb"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="paintBackground" type="boolean" value="false"/>
                     <Property name="radius" type="int" value="20"/>
+                    <Property name="rounded" type="boolean" value="true"/>
                     <Property name="textFieldChild" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
                       <ComponentRef name="loginUsernameField"/>
                     </Property>
@@ -479,17 +473,14 @@
                 </Component>
                 <Container class="FrameSystem.Layers.Login.Components.LoginTextFieldContainer" name="loginTextFieldContainer2">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
                     <Property name="focusedColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="7f" green="7f" red="ff" type="rgb"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="paintBackground" type="boolean" value="false"/>
                     <Property name="radius" type="int" value="20"/>
+                    <Property name="rounded" type="boolean" value="true"/>
                     <Property name="textFieldChild" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
                       <ComponentRef name="loginPasswordField"/>
                     </Property>
@@ -615,7 +606,7 @@
             </Container>
             <Container class="FrameSystem.Layers.Login.Components.LayerLogin" name="layerLogin_Loading">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f3" green="f3" red="ff" type="rgb"/>
                 </Property>
                 <Property name="radius" type="int" value="30"/>

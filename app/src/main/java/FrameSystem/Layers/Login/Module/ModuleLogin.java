@@ -1,7 +1,5 @@
 package FrameSystem.Layers.Login.Module;
 
-import java.awt.Color;
-import java.beans.BeanProperty;
 import java.sql.SQLException;
 
 import javax.swing.Timer;
@@ -53,14 +51,6 @@ public class ModuleLogin extends LoginPanelContainer {
         });
         refreshTimer.start();
     }
-    
-// Overrided Methods =========================================================================================
-    
-    @Override
-    @BeanProperty(hidden = true)
-    public void setBackground(Color color) {
-        super.setBackground(color);
-    }
 
 // Generated =================================================================================================
     @SuppressWarnings("unchecked")
@@ -91,8 +81,8 @@ public class ModuleLogin extends LoginPanelContainer {
         layerLogin_Loading = new FrameSystem.Layers.Login.Components.LayerLogin();
         FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline2 = new FrameSystem.SLibrary.SAnimated.SAnimatedOffline();
 
-        setBackground(new java.awt.Color(255, 209, 209));
         setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/Icons/wave.png"))); // NOI18N
+        setDefaultBackgroundColor(new java.awt.Color(255, 209, 209));
         setRadius(30);
         setRounded(true);
         setShadowColor(new java.awt.Color(230, 230, 230));
@@ -125,7 +115,6 @@ public class ModuleLogin extends LoginPanelContainer {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        sPanelRight.setBackground(new java.awt.Color(255, 255, 255));
         sPanelRight.setLine(new java.awt.Color(205, 64, 68));
         sPanelRight.setRadius(30);
         sPanelRight.setRounded(true);
@@ -133,7 +122,7 @@ public class ModuleLogin extends LoginPanelContainer {
         layeredPane_Login.setPreferredSize(new java.awt.Dimension(500, 530));
         layeredPane_Login.setLayout(new java.awt.CardLayout());
 
-        layerLogin_Offline.setBackground(new java.awt.Color(255, 243, 243));
+        layerLogin_Offline.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
         layerLogin_Offline.setRadius(30);
         layerLogin_Offline.setRounded(true);
         layerLogin_Offline.setName("Offline"); // NOI18N
@@ -203,7 +192,7 @@ public class ModuleLogin extends LoginPanelContainer {
 
         layeredPane_Login.add(layerLogin_Offline, "card2");
 
-        layerLogin_Online.setBackground(new java.awt.Color(255, 243, 243));
+        layerLogin_Online.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
         layerLogin_Online.setRadius(30);
         layerLogin_Online.setRounded(true);
         layerLogin_Online.setName("Online"); // NOI18N
@@ -222,11 +211,10 @@ public class ModuleLogin extends LoginPanelContainer {
         loginError1.setText("*required");
         loginError1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
 
-        loginTextFieldContainer1.setBackground(new java.awt.Color(255, 255, 255));
         loginTextFieldContainer1.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer1.setForeground(new java.awt.Color(0, 0, 0));
-        loginTextFieldContainer1.setPaintBackground(false);
         loginTextFieldContainer1.setRadius(20);
+        loginTextFieldContainer1.setRounded(true);
         loginTextFieldContainer1.setTextFieldChild(loginUsernameField);
 
         loginUsernameField.setBackground(new java.awt.Color(153, 153, 153));
@@ -263,11 +251,10 @@ public class ModuleLogin extends LoginPanelContainer {
         loginError2.setText("*required");
         loginError2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
 
-        loginTextFieldContainer2.setBackground(new java.awt.Color(255, 255, 255));
         loginTextFieldContainer2.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer2.setForeground(new java.awt.Color(0, 0, 0));
-        loginTextFieldContainer2.setPaintBackground(false);
         loginTextFieldContainer2.setRadius(20);
+        loginTextFieldContainer2.setRounded(true);
         loginTextFieldContainer2.setTextFieldChild(loginPasswordField);
 
         loginPasswordField.setBackground(new java.awt.Color(153, 153, 153));
@@ -380,7 +367,7 @@ public class ModuleLogin extends LoginPanelContainer {
         layeredPane_Login.setLayer(layerLogin_Online, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Login.add(layerLogin_Online, "card1");
 
-        layerLogin_Loading.setBackground(new java.awt.Color(255, 243, 243));
+        layerLogin_Loading.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
         layerLogin_Loading.setRadius(30);
         layerLogin_Loading.setRounded(true);
         layerLogin_Loading.setName("Loading"); // NOI18N

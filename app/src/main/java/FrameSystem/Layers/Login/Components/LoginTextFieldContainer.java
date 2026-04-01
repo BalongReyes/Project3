@@ -75,11 +75,10 @@ public class LoginTextFieldContainer extends SPanel{
 
     @Override
     public void paint(Graphics g){
+        paintSPanel(g);
+        
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
         Dimension s = getSize();
-        
-        g2.setColor(getBackground());
-        g2.fillRoundRect(0, 0, s.width, s.height, radius, radius);
         
         if(focused){
             g2.setColor(focusedColor);

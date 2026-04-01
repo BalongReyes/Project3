@@ -119,12 +119,6 @@ public class SPanelHighlight extends SPanel{
         return inactiveBackgroundColor;
     }
     
-    @Override
-    @BeanProperty(hidden = true)
-    public void setBackground(Color bg){
-        super.setBackground(bg);
-    }
-    
 // -----------------------------------------------------------------------------------------------------------
     
     private Color dangerForegroundColor = Color.white;

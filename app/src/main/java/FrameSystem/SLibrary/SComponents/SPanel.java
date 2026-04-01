@@ -215,8 +215,8 @@ public class SPanel extends JPanel implements InnerListener{
     /**
      * @deprecated Use {@link #setDefaultBackgroundColor(Color)} instead to ensure compatibility with custom states.
      */
-    @Deprecated
     @Override
+    @Deprecated
     @BeanProperty(hidden = true)
     public void setBackground(Color bg){
         setDefaultBackgroundColor(bg);
@@ -428,6 +428,10 @@ public class SPanel extends JPanel implements InnerListener{
     }
     
     protected void paintSPanel(Graphics g){
+        paintSPanel(g, null);
+    }
+    
+    protected void paintSPanel(Graphics g, Color overideBackground){
         int radiusPaint = rounded ? this.radius : 0;
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
 
@@ -472,7 +476,9 @@ public class SPanel extends JPanel implements InnerListener{
         // 4. Draw Inner Body ONLY if paintBackground is True
         if(paintBackground){
             Color currentBgColor;
-            if(danger){
+            if(overideBackground != null){
+                currentBgColor = overideBackground;
+            }else if(danger){
                 currentBgColor = dangerBackgroundColor;
             }else if(active){
                 currentBgColor = activeBackgroundColor;
