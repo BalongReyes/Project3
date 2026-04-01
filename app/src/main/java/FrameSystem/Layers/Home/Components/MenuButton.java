@@ -15,52 +15,22 @@ import javax.swing.ImageIcon;
 import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
 import MainSystem.CustomGraphics;
 import java.awt.FontMetrics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
 
 @JavaBean(description = "A component that displays a jpanel as a layered panel button")
-public class MenuButton extends SLayerButton implements ActionListener{
+public class MenuButton extends SLayerButton{
 
-    private Timer timer;
-    
     public MenuButton(){
         super();
         super.setRounded(true);
         
         initComponents();
         sLabel1.addMouseListener(hoverListener);
-        
-        timer = new Timer(1, this);
-    }
-    
-// ===========================================================================================================
-    
-    private int currentLineHeight = 20;
-    
-    @Override
-    public void actionPerformed(ActionEvent e){
-        if(active){
-            if(currentLineHeight > 9){
-                currentLineHeight--;
-            }else{
-                timer.stop();
-            }
-        }else{
-            if(currentLineHeight < (getHeight()/ 2)){
-                currentLineHeight++;
-            }else{
-                timer.stop();
-            }
-        }
-        repaint();
     }
     
 // Setters and Getters =======================================================================================
 
     @Override
     public void setActive(boolean active){
-        timer.start();
         if(this.active == active) return;
         if(active){
             sLabel1.setForeground(activeForegroundColor);
@@ -295,18 +265,9 @@ public class MenuButton extends SLayerButton implements ActionListener{
         setActive(active);
         if(minButton != null) minButton.setActiveButton(active);
     }
-
-    @Override
-    protected void paintComponent(Graphics g){
-        Graphics2D g2 = CustomGraphics.getGraphics2D(g);
-        Dimension s = getSize();
-        
-        super.paintComponent(g);
-        
-        g2.setColor(activeLineColor);
-        g2.fillRoundRect(8, currentLineHeight, 4, (s.height - (currentLineHeight * 2)), 4, 4);
-    }
     
+    private int lineHeight = 12;
+
     @Override
     public void paint(Graphics g){
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
@@ -320,6 +281,11 @@ public class MenuButton extends SLayerButton implements ActionListener{
             g2.setColor(inactiveBackgroundColor);
         }
         g2.fillRoundRect(0, 0, s.width, s.height, radius, radius);
+        
+        if(active){
+            g2.setColor(activeLineColor);
+            g2.fillRoundRect(8, lineHeight, 4, (s.height - (lineHeight * 2)), 4, 4);
+        }
         
         if(notificationCount != 0){
             g2.setFont(getFont());

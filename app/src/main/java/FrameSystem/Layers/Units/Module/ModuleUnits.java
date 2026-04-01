@@ -61,9 +61,6 @@ public class ModuleUnits extends SPanel{
         sPanel11 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel7 = new FrameSystem.SLibrary.SComponents.SLabel();
 
-        setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
-
-        sPanel1.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel1.setRadius(20);
         sPanel1.setRounded(true);
         sPanel1.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -72,20 +69,17 @@ public class ModuleUnits extends SPanel{
         sPanel1.setShadowX(true);
         sPanel1.setShadowY(true);
 
-        sPanel2.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel2.setPaintBackground(false);
 
-        sPanel3.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
+        sPanel3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel3.setRadius(20);
         sPanel3.setRounded(true);
         sPanel3.setMinimumSize(new java.awt.Dimension(100, 40));
         sPanel3.setPreferredSize(new java.awt.Dimension(100, 40));
 
-        sPanel7.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel7.setPaintBackground(false);
         sPanel7.setPreferredSize(new java.awt.Dimension(75, 30));
 
-        sFilterTitlePanel1.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel1.setForeground(new java.awt.Color(56, 56, 56));
         sFilterTitlePanel1.setPaintBackground(false);
         sFilterTitlePanel1.setText("Tower");
@@ -109,7 +103,6 @@ public class ModuleUnits extends SPanel{
         sPanel8.setPaintBackground(false);
         sPanel8.setPreferredSize(new java.awt.Dimension(75, 30));
 
-        sFilterTitlePanel2.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel2.setForeground(new java.awt.Color(56, 56, 56));
         sFilterTitlePanel2.setPaintBackground(false);
         sFilterTitlePanel2.setText("Floor");
@@ -135,7 +128,6 @@ public class ModuleUnits extends SPanel{
         sPanel9.setPaintBackground(false);
         sPanel9.setPreferredSize(new java.awt.Dimension(75, 30));
 
-        sFilterTitlePanel3.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel3.setForeground(new java.awt.Color(56, 56, 56));
         sFilterTitlePanel3.setPaintBackground(false);
         sFilterTitlePanel3.setText("Unit");
@@ -159,10 +151,9 @@ public class ModuleUnits extends SPanel{
         sPanel6.setPaintBackground(false);
         sPanel6.setLayout(new java.awt.GridLayout(1, 6));
 
-        sPanel10.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
+        sPanel10.setBackground(new java.awt.Color(255, 255, 255));
         sPanel10.setPaintBackground(false);
 
-        sFilterTitlePanel5.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel5.setForeground(new java.awt.Color(56, 56, 56));
         sFilterTitlePanel5.setPaintBackground(false);
         sFilterTitlePanel5.setText("Model");
@@ -190,7 +181,6 @@ public class ModuleUnits extends SPanel{
 
         sPanel12.setPaintBackground(false);
 
-        sFilterTitlePanel4.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel4.setForeground(new java.awt.Color(56, 56, 56));
         sFilterTitlePanel4.setPaintBackground(false);
         sFilterTitlePanel4.setText("Floor Area");
@@ -217,7 +207,6 @@ public class ModuleUnits extends SPanel{
 
         sPanel13.setPaintBackground(false);
 
-        sFilterTitlePanel7.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel7.setForeground(new java.awt.Color(56, 56, 56));
         sFilterTitlePanel7.setPaintBackground(false);
         sFilterTitlePanel7.setText("Occupancy Type");
@@ -240,10 +229,9 @@ public class ModuleUnits extends SPanel{
 
         sPanel6.add(sPanel13);
 
-        sPanel14.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
+        sPanel14.setBackground(new java.awt.Color(255, 255, 255));
         sPanel14.setPaintBackground(false);
 
-        sFilterTitlePanel8.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel8.setForeground(new java.awt.Color(56, 56, 56));
         sFilterTitlePanel8.setPaintBackground(false);
         sFilterTitlePanel8.setText("Unit Status");
@@ -266,7 +254,6 @@ public class ModuleUnits extends SPanel{
 
         sPanel6.add(sPanel14);
 
-        sPanel15.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel15.setPaintBackground(false);
         sPanel15.setPreferredSize(new java.awt.Dimension(75, 30));
 
@@ -466,8 +453,6 @@ public class ModuleUnits extends SPanel{
         objectUnitScrollPane.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
         objectUnitScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        objectUnitContainer.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
-
         objectUnitWrapper.setMinimumSize(new java.awt.Dimension(100, 0));
         objectUnitWrapper.setPreferredSize(new java.awt.Dimension(964, 0));
         objectUnitWrapper.setLayout(new javax.swing.BoxLayout(objectUnitWrapper, javax.swing.BoxLayout.Y_AXIS));
@@ -599,7 +584,6 @@ public class ModuleUnits extends SPanel{
         sFilterTower3.setText("Tower 3");
         sFilterTower3.setPreferredSize(new java.awt.Dimension(100, 50));
 
-        sTextFieldContainer1.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sTextFieldContainer1.setRadius(20);
         sTextFieldContainer1.setRounded(true);
         sTextFieldContainer1.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -613,7 +597,7 @@ public class ModuleUnits extends SPanel{
         sTextField1.setBackground(new java.awt.Color(255, 255, 255));
         sTextField1.setHint("Search for units");
         sTextField1.setHintColor(new java.awt.Color(102, 102, 102));
-        sTextField1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        sTextField1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         sTextField1.setPreferredSize(new java.awt.Dimension(370, 50));
 
         sLabel1.setIconSize(14);
@@ -640,7 +624,6 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
-        sPanel5.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel5.setRadius(20);
         sPanel5.setRounded(true);
         sPanel5.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -673,7 +656,6 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
-        sPanel11.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel11.setCanHover(true);
         sPanel11.setHoverBackgroundColor(new java.awt.Color(245, 245, 245));
         sPanel11.setRadius(20);
