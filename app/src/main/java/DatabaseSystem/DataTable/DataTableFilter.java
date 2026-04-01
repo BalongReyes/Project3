@@ -1,12 +1,12 @@
 
 package DatabaseSystem.DataTable;
 
-public class DataTableOrderFilter{
+public class DataTableFilter{
 
     private int dataIndex;
     private DataTableOrder order;
 
-    public DataTableOrderFilter(int dataIndex, DataTableOrder order){
+    public DataTableFilter(int dataIndex, DataTableOrder order){
         this.dataIndex = dataIndex;
         this.order = order;
     }
