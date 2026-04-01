@@ -1,7 +1,6 @@
 package FrameSystem.SLibrary.SComponents;
 
 import java.awt.Component;
-import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
@@ -16,20 +15,11 @@ import javax.swing.border.EmptyBorder;
 import EventSystem.Interface.InnerListener;
 import MainSystem.CustomGraphics;
 import java.awt.Color;
+import java.awt.Cursor;
 
 @JavaBean(description = "A versatile component that handles shadows, borders, and interactive states (Hover, Active, Danger)")
 public class SPanel extends JPanel implements InnerListener{
 
-    // --- Shadow Properties ---
-    protected boolean shadowX = false;
-    protected boolean shadowY = false;
-    protected int shadowSize;
-    protected float shadowOpacity;
-    protected Color shadowColor = Color.white;
-    protected int shadowOffsetX;
-    protected int shadowOffsetY;
-
-    // --- Listeners ---
     protected MouseAdapter hoverListener;
 
 // ==== Constructor ==========================================================================================
@@ -51,8 +41,40 @@ public class SPanel extends JPanel implements InnerListener{
             }
         };
         applyHoverInnerListener();
-        
-        super.addMouseListener(hoverListener);
+    }
+
+// ==== Controls Setter & Getters ============================================================================
+    
+    protected boolean paintBackground = true;
+    protected boolean canHover = false;
+
+// ---- Background -------------------------------------------------------------------------------------------
+    
+    @BeanProperty(preferred = true, visualUpdate = true, description = "If true, paints the background state colors. Set false for custom painting.")
+    public void setPaintBackground(boolean paintBackground){
+        if(this.paintBackground == paintBackground){
+            return;
+        }
+        this.paintBackground = paintBackground;
+        repaint();
+    }
+
+    public boolean isPaintBackground(){
+        return paintBackground;
+    }
+
+// ---- Hover ------------------------------------------------------------------------------------------------
+    
+    @BeanProperty(preferred = true, visualUpdate = true, description = "If true, the panel can be hovered")
+    public void setCanHover(boolean canHover){
+        this.canHover = canHover;
+        if(canHover && getCursor().getType() == Cursor.DEFAULT_CURSOR){
+            setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        }
+    }
+
+    public boolean isCanHover(){
+        return canHover;
     }
 
 // ==== State Properties Setters & Getters ===================================================================
@@ -60,7 +82,7 @@ public class SPanel extends JPanel implements InnerListener{
     protected boolean active = false;
     protected boolean danger = false;
     protected boolean hovering = false;
-    
+
     protected Color defaultBackgroundColor = Color.white;
     protected Color activeBackgroundColor = Color.white;
     protected Color hoverBackgroundColor = Color.white;
@@ -70,7 +92,7 @@ public class SPanel extends JPanel implements InnerListener{
     protected Color activeForegroundColor = Color.white;
     protected Color hoverForegroundColor = Color.white;
     protected Color dangerForegroundColor = Color.white;
-    
+
 // ---- Hover ------------------------------------------------------------------------------------------------
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "If panel is hovered")
@@ -85,20 +107,16 @@ public class SPanel extends JPanel implements InnerListener{
     public boolean isHovering(){
         return hovering;
     }
-    
+
     @BeanProperty(preferred = true, visualUpdate = true, description = "The hover background color")
     public void setHoverBackgroundColor(Color hoverBackgroundColor){
         this.hoverBackgroundColor = hoverBackgroundColor;
-        // Optionally set cursor to hand if it has a hover effect
-        if(hoverBackgroundColor != null && getCursor().getType() == Cursor.DEFAULT_CURSOR){
-            setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        }
     }
 
     public Color getHoverBackgroundColor(){
         return hoverBackgroundColor;
     }
-    
+
     @BeanProperty(preferred = true, visualUpdate = true, description = "The hover foreground color")
     public void setHoverForegroundColor(Color hoverForegroundColor){
         this.hoverForegroundColor = hoverForegroundColor;
@@ -122,7 +140,7 @@ public class SPanel extends JPanel implements InnerListener{
     public boolean isActive(){
         return active;
     }
-    
+
     @BeanProperty(preferred = true, visualUpdate = true, description = "The active background color")
     public void setActiveBackgroundColor(Color activeBackgroundColor){
         this.activeBackgroundColor = activeBackgroundColor;
@@ -131,7 +149,7 @@ public class SPanel extends JPanel implements InnerListener{
     public Color getActiveBackgroundColor(){
         return activeBackgroundColor;
     }
-    
+
     @BeanProperty(preferred = true, visualUpdate = true, description = "The active foreground color")
     public void setActiveForegroundColor(Color activeForegroundColor){
         this.activeForegroundColor = activeForegroundColor;
@@ -155,7 +173,7 @@ public class SPanel extends JPanel implements InnerListener{
     public boolean isDanger(){
         return danger;
     }
-    
+
     @BeanProperty(preferred = true, description = "The danger background color")
     public void setDangerBackgroundColor(Color dangerBackgroundColor){
         this.dangerBackgroundColor = dangerBackgroundColor;
@@ -164,7 +182,7 @@ public class SPanel extends JPanel implements InnerListener{
     public Color getDangerBackgroundColor(){
         return dangerBackgroundColor;
     }
-    
+
     @BeanProperty(preferred = true, description = "The danger foreground color")
     public void setDangerForegroundColor(Color dangerForegroundColor){
         this.dangerForegroundColor = dangerForegroundColor;
@@ -175,7 +193,7 @@ public class SPanel extends JPanel implements InnerListener{
     }
 
 // ---- Defaults ---------------------------------------------------------------------------------------------   
-
+    
     @BeanProperty(preferred = true, visualUpdate = true, description = "The default background color")
     public void setDefaultBackgroundColor(Color inactiveBackgroundColor){
         this.defaultBackgroundColor = inactiveBackgroundColor;
@@ -194,16 +212,31 @@ public class SPanel extends JPanel implements InnerListener{
         return defaultForegroundColor;
     }
 
+    @Override
+    @Deprecated
+    @BeanProperty(hidden = true)
+    public void setBackground(Color bg){
+        setDefaultBackgroundColor(bg);
+    }
+
 // ==== Core SPanel Setters & Getters (Radius, Border, Shadows) ==============================================
     
     protected int radius = 0;
     protected boolean rounded = false;
-    
+
     protected int borderLine = 0;
     protected Color borderColor = Color.white;
-    
-// ---- Radius -----------------------------------------------------------------------------------------------
 
+    protected boolean shadowX = false;
+    protected boolean shadowY = false;
+    protected int shadowSize;
+    protected float shadowOpacity;
+    protected Color shadowColor = Color.white;
+    protected int shadowOffsetX;
+    protected int shadowOffsetY;
+
+// ---- Radius -----------------------------------------------------------------------------------------------
+    
     @BeanProperty(preferred = true, visualUpdate = true, description = "The corner radius")
     public void setRadius(int radius){
         this.radius = radius;
@@ -338,7 +371,7 @@ public class SPanel extends JPanel implements InnerListener{
     }
 
 // ==== Overrided Methods ====================================================================================
-
+    
     @Override
     public void setEnabled(boolean enabled){
         if(!enabled){
@@ -387,6 +420,11 @@ public class SPanel extends JPanel implements InnerListener{
 
     @Override
     public void paint(Graphics g){
+        paintSPanel(g);
+        paintOverrideAll(g);
+    }
+    
+    protected void paintSPanel(Graphics g){
         int radiusPaint = rounded ? this.radius : 0;
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
 
@@ -411,24 +449,13 @@ public class SPanel extends JPanel implements InnerListener{
             );
         }
 
-        // 2. Draw Outer Border
-        g2.setColor(borderColor);
-        g2.fillRoundRect(x, y, w, h, radiusPaint, radiusPaint);
-
-        // 3. Determine Background Color based on Priority State (Danger > Active > Hover > Inactive)
-        Color currentBgColor;
-        if(danger){
-            currentBgColor = dangerBackgroundColor;
-        }else if(active){
-            currentBgColor = activeBackgroundColor;
-        }else if(hovering && hoverBackgroundColor != null){
-            currentBgColor = hoverBackgroundColor;
-        }else{
-            // Default back to standard backgrounds
-            currentBgColor = getBackground() != null && getBackground() != defaultBackgroundColor ? getBackground() : defaultBackgroundColor;
+        // 2. Draw Outer Border (Only if borderline > 0 so it doesn't paint unnecessarily)
+        if(borderLine > 0){
+            g2.setColor(borderColor);
+            g2.fillRoundRect(x, y, w, h, radiusPaint, radiusPaint);
         }
 
-        // 4. Determine Foreground Color based on Priority State
+        // 3. Determine Foreground Color based on Priority State
         if(danger){
             setForeground(dangerForegroundColor);
         }else if(active){
@@ -439,14 +466,25 @@ public class SPanel extends JPanel implements InnerListener{
             setForeground(defaultForegroundColor);
         }
 
-        // 5. Draw Inner Body
-        g2.setColor(currentBgColor);
-        g2.fillRoundRect(
-                x + borderLine, y + borderLine,
-                w - (borderLine * 2), h - (borderLine * 2),
-                radiusPaint - borderLine, radiusPaint - borderLine
-        );
+        // 4. Draw Inner Body ONLY if paintBackground is True
+        if(paintBackground){
+            Color currentBgColor;
+            if(danger){
+                currentBgColor = dangerBackgroundColor;
+            }else if(active){
+                currentBgColor = activeBackgroundColor;
+            }else if(canHover && hovering && hoverBackgroundColor != null){
+                currentBgColor = hoverBackgroundColor;
+            }else{
+                currentBgColor = defaultBackgroundColor;
+            }
 
-        paintOverrideAll(g);
+            g2.setColor(currentBgColor);
+            g2.fillRoundRect(
+                    x + borderLine, y + borderLine,
+                    w - (borderLine * 2), h - (borderLine * 2),
+                    radiusPaint - borderLine, radiusPaint - borderLine
+            );
+        }
     }
 }

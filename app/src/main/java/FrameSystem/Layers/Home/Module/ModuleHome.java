@@ -106,8 +106,6 @@ public class ModuleHome extends SPanel{
         jPanel2 = new javax.swing.JPanel();
         sLabelHover2 = new FrameSystem.SLibrary.SComponents.SLabelHover();
         sPanel6 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sPanelHover2 = new FrameSystem.SLibrary.SComponents.SPanelHover();
-        sLabel28 = new FrameSystem.SLibrary.SComponents.SLabel();
         logoutButton1 = new FrameSystem.SLibrary.SComponents.SLabelHover();
         sPanel5 = new FrameSystem.SLibrary.SComponents.SPanel();
         menuMinSwitch_Fullscreen = new FrameSystem.Layers.Home.Components.MenuMinSwitch();
@@ -139,12 +137,14 @@ public class ModuleHome extends SPanel{
         sPanel8 = new FrameSystem.SLibrary.SComponents.SPanel();
         menuMinButton_Profile = new FrameSystem.Layers.Home.Components.MenuMinButton();
         menuMinButton_Settings = new FrameSystem.Layers.Home.Components.MenuMinButton();
+        sPanel15 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sLabel30 = new FrameSystem.SLibrary.SComponents.SLabel();
 
-        setBackground(new java.awt.Color(255, 247, 247));
+        setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
 
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
-        layerHome_Dashboard.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Dashboard.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Dashboard.setLayerButton(menuButton_Dashboard);
 
         javax.swing.GroupLayout layerHome_DashboardLayout = new javax.swing.GroupLayout(layerHome_Dashboard);
@@ -160,10 +160,9 @@ public class ModuleHome extends SPanel{
 
         layeredPane_Main.add(layerHome_Dashboard, "dashbaord");
 
-        layerHome_Units.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Units.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Units.setLayerButton(menuButton_Units);
         layerHome_Units.setName("Units"); // NOI18N
-        layerHome_Units.setOpaque(false);
 
         javax.swing.GroupLayout layerHome_UnitsLayout = new javax.swing.GroupLayout(layerHome_Units);
         layerHome_Units.setLayout(layerHome_UnitsLayout);
@@ -185,14 +184,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Units, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Units, "units");
 
-        layerHome_Parking.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Parking.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Parking.setLayerButton(menuButton_Parking);
         layerHome_Parking.setName("Parking"); // NOI18N
-        layerHome_Parking.setOpaque(false);
 
+        sLabel3.setBackground(new java.awt.Color(0, 0, 0));
         sLabel3.setForeground(new java.awt.Color(0, 0, 0));
         sLabel3.setText("Parking");
-        sLabel3.setBackground(new java.awt.Color(0, 0, 0));
         sLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_ParkingLayout = new javax.swing.GroupLayout(layerHome_Parking);
@@ -215,14 +213,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Parking, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Parking, "parking");
 
-        layerHome_NewResident.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_NewResident.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_NewResident.setLayerButton(menuButton_NewResident);
         layerHome_NewResident.setName("NewResident"); // NOI18N
-        layerHome_NewResident.setOpaque(false);
 
+        sLabel9.setBackground(new java.awt.Color(0, 0, 0));
         sLabel9.setForeground(new java.awt.Color(0, 0, 0));
         sLabel9.setText("New Resident");
-        sLabel9.setBackground(new java.awt.Color(0, 0, 0));
         sLabel9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_NewResidentLayout = new javax.swing.GroupLayout(layerHome_NewResident);
@@ -245,14 +242,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_NewResident, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_NewResident, "newResident");
 
-        layerHome_Owners.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Owners.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Owners.setLayerButton(menuButton_Owners);
         layerHome_Owners.setName("Owners"); // NOI18N
-        layerHome_Owners.setOpaque(false);
 
+        sLabel10.setBackground(new java.awt.Color(0, 0, 0));
         sLabel10.setForeground(new java.awt.Color(0, 0, 0));
         sLabel10.setText("Owners");
-        sLabel10.setBackground(new java.awt.Color(0, 0, 0));
         sLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_OwnersLayout = new javax.swing.GroupLayout(layerHome_Owners);
@@ -276,11 +272,11 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.add(layerHome_Owners, "owners");
 
         layerHome_Tenants.setLayerButton(menuButton_Tenants);
-        layerHome_Tenants.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Tenants.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
 
+        sLabel11.setBackground(new java.awt.Color(0, 0, 0));
         sLabel11.setForeground(new java.awt.Color(0, 0, 0));
         sLabel11.setText("Tenants");
-        sLabel11.setBackground(new java.awt.Color(0, 0, 0));
         sLabel11.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_TenantsLayout = new javax.swing.GroupLayout(layerHome_Tenants);
@@ -303,14 +299,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Tenants, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Tenants, "tenants");
 
-        layerHome_Move.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Move.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Move.setLayerButton(menuButton_Move);
         layerHome_Move.setName("Move"); // NOI18N
-        layerHome_Move.setOpaque(false);
 
+        sLabel16.setBackground(new java.awt.Color(0, 0, 0));
         sLabel16.setForeground(new java.awt.Color(0, 0, 0));
         sLabel16.setText("Move in and out");
-        sLabel16.setBackground(new java.awt.Color(0, 0, 0));
         sLabel16.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_MoveLayout = new javax.swing.GroupLayout(layerHome_Move);
@@ -333,14 +328,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Move, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Move, "move");
 
-        layerHome_Visitors.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Visitors.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Visitors.setLayerButton(menuButton_Visitors);
         layerHome_Visitors.setName("Visitors"); // NOI18N
-        layerHome_Visitors.setOpaque(false);
 
+        sLabel12.setBackground(new java.awt.Color(0, 0, 0));
         sLabel12.setForeground(new java.awt.Color(0, 0, 0));
         sLabel12.setText("Visitors");
-        sLabel12.setBackground(new java.awt.Color(0, 0, 0));
         sLabel12.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_VisitorsLayout = new javax.swing.GroupLayout(layerHome_Visitors);
@@ -363,14 +357,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Visitors, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Visitors, "visitors");
 
-        layerHome_Concerns.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Concerns.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Concerns.setLayerButton(menuButton_Concerns);
         layerHome_Concerns.setName("Concerns"); // NOI18N
-        layerHome_Concerns.setOpaque(false);
 
+        sLabel13.setBackground(new java.awt.Color(0, 0, 0));
         sLabel13.setForeground(new java.awt.Color(0, 0, 0));
         sLabel13.setText("Concerns");
-        sLabel13.setBackground(new java.awt.Color(0, 0, 0));
         sLabel13.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_ConcernsLayout = new javax.swing.GroupLayout(layerHome_Concerns);
@@ -393,14 +386,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Concerns, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Concerns, "concerns");
 
-        layerHome_Accounts.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Accounts.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Accounts.setLayerButton(menuButton_Accounts);
         layerHome_Accounts.setName("Accounts"); // NOI18N
-        layerHome_Accounts.setOpaque(false);
 
+        sLabel15.setBackground(new java.awt.Color(0, 0, 0));
         sLabel15.setForeground(new java.awt.Color(0, 0, 0));
         sLabel15.setText("Accounts");
-        sLabel15.setBackground(new java.awt.Color(0, 0, 0));
         sLabel15.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_AccountsLayout = new javax.swing.GroupLayout(layerHome_Accounts);
@@ -423,14 +415,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Accounts, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Accounts, "accounts");
 
-        layerHome_Settings.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Settings.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Settings.setLayerButton(menuButton_Settings);
         layerHome_Settings.setName("Settings"); // NOI18N
-        layerHome_Settings.setOpaque(false);
 
+        sLabel2.setBackground(new java.awt.Color(0, 0, 0));
         sLabel2.setForeground(new java.awt.Color(0, 0, 0));
         sLabel2.setText("Settings");
-        sLabel2.setBackground(new java.awt.Color(0, 0, 0));
         sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_SettingsLayout = new javax.swing.GroupLayout(layerHome_Settings);
@@ -453,14 +444,13 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Settings, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Settings, "settings");
 
-        layerHome_Profile.setBackground(new java.awt.Color(255, 247, 247));
+        layerHome_Profile.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Profile.setLayerButton(menuButton_Profile);
         layerHome_Profile.setName("Profile"); // NOI18N
-        layerHome_Profile.setOpaque(false);
 
+        sLabel4.setBackground(new java.awt.Color(0, 0, 0));
         sLabel4.setForeground(new java.awt.Color(0, 0, 0));
         sLabel4.setText("Profile");
-        sLabel4.setBackground(new java.awt.Color(0, 0, 0));
         sLabel4.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
 
         javax.swing.GroupLayout layerHome_ProfileLayout = new javax.swing.GroupLayout(layerHome_Profile);
@@ -483,7 +473,7 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Profile, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Profile, "profile");
 
-        sPanelMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        sPanelMenu1.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanelMenu1.setShadowColor(new java.awt.Color(230, 230, 230));
         sPanelMenu1.setShadowOpacity(0.3F);
         sPanelMenu1.setShadowSize(5);
@@ -492,8 +482,8 @@ public class ModuleHome extends SPanel{
         sPanelMenu1.setMinimumSize(new java.awt.Dimension(275, 0));
         sPanelMenu1.setPreferredSize(new java.awt.Dimension(275, 0));
 
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setPreferredSize(new java.awt.Dimension(260, 928));
 
         sLabelHover1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -505,7 +495,7 @@ public class ModuleHome extends SPanel{
         sLabelHover1.setMinimumSize(new java.awt.Dimension(29, 50));
         sLabelHover1.setPreferredSize(new java.awt.Dimension(29, 50));
 
-        sPanel3.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel3.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel3.setPreferredSize(new java.awt.Dimension(0, 2));
 
         javax.swing.GroupLayout sPanel3Layout = new javax.swing.GroupLayout(sPanel3);
@@ -519,25 +509,25 @@ public class ModuleHome extends SPanel{
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
+        sScrollPane1.setBackground(new java.awt.Color(229, 229, 229));
         sScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         sScrollPane1.setHoverColor(new java.awt.Color(73, 73, 73));
         sScrollPane1.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
         sScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        sScrollPane1.setBackground(new java.awt.Color(229, 229, 229));
         sScrollPane1.setMinimumSize(new java.awt.Dimension(0, 0));
 
         sLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
         sLayeredPane1.setOpaque(true);
         sLayeredPane1.setLayout(new javax.swing.BoxLayout(sLayeredPane1, javax.swing.BoxLayout.PAGE_AXIS));
 
+        sPanel11.setPaintBackground(false);
         sPanel11.setMaximumSize(new java.awt.Dimension(32767, 16));
         sPanel11.setMinimumSize(new java.awt.Dimension(0, 16));
-        sPanel11.setOpaque(false);
         sPanel11.setPreferredSize(new java.awt.Dimension(0, 16));
 
+        sLabel8.setBackground(new java.awt.Color(255, 255, 255));
         sLabel8.setForeground(new java.awt.Color(112, 112, 112));
         sLabel8.setText("Overall Statistics");
-        sLabel8.setBackground(new java.awt.Color(255, 255, 255));
         sLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout sPanel11Layout = new javax.swing.GroupLayout(sPanel11);
@@ -560,6 +550,7 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(sPanel11);
         sLayeredPane1.add(filler14);
 
+        menuButton_Dashboard.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuButton_Dashboard.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
         menuButton_Dashboard.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboardActive.png"))); // NOI18N
         menuButton_Dashboard.setActiveLineColor(new java.awt.Color(255, 127, 127));
@@ -567,9 +558,8 @@ public class ModuleHome extends SPanel{
         menuButton_Dashboard.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Dashboard.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboard.png"))); // NOI18N
         menuButton_Dashboard.setManuMinButton(menuMinButton_Dashboard);
-        menuButton_Dashboard.setText("Dashboard");
-        menuButton_Dashboard.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuButton_Dashboard.setRadius(15);
+        menuButton_Dashboard.setText("Dashboard");
         menuButton_Dashboard.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sLayeredPane1.add(menuButton_Dashboard);
         sLayeredPane1.add(filler1);
@@ -588,6 +578,7 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(menuButton_Units);
         sLayeredPane1.add(filler2);
 
+        menuButton_Parking.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuButton_Parking.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
         menuButton_Parking.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parkingActive.png"))); // NOI18N
         menuButton_Parking.setActiveLineColor(new java.awt.Color(255, 127, 127));
@@ -598,12 +589,11 @@ public class ModuleHome extends SPanel{
         menuButton_Parking.setNotificationCount(23);
         menuButton_Parking.setRadius(15);
         menuButton_Parking.setText("Parking");
-        menuButton_Parking.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuButton_Parking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sLayeredPane1.add(menuButton_Parking);
         sLayeredPane1.add(filler5);
 
-        sPanel9.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel9.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel9.setMaximumSize(new java.awt.Dimension(32767, 2));
         sPanel9.setMinimumSize(new java.awt.Dimension(0, 2));
         sPanel9.setPreferredSize(new java.awt.Dimension(0, 2));
@@ -622,14 +612,14 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(sPanel9);
         sLayeredPane1.add(filler6);
 
+        sPanel1.setPaintBackground(false);
         sPanel1.setMaximumSize(new java.awt.Dimension(32767, 16));
         sPanel1.setMinimumSize(new java.awt.Dimension(0, 16));
-        sPanel1.setOpaque(false);
         sPanel1.setPreferredSize(new java.awt.Dimension(0, 16));
 
+        sLabel6.setBackground(new java.awt.Color(255, 255, 255));
         sLabel6.setForeground(new java.awt.Color(112, 112, 112));
         sLabel6.setText("Resident Registry");
-        sLabel6.setBackground(new java.awt.Color(255, 255, 255));
         sLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);
@@ -738,7 +728,7 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(menuButton_Concerns);
         sLayeredPane1.add(filler17);
 
-        sPanel12.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel12.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel12.setMaximumSize(new java.awt.Dimension(32767, 2));
         sPanel12.setPreferredSize(new java.awt.Dimension(0, 2));
 
@@ -756,13 +746,13 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(sPanel12);
         sLayeredPane1.add(filler18);
 
+        sPanel13.setPaintBackground(false);
         sPanel13.setMaximumSize(new java.awt.Dimension(32767, 16));
         sPanel13.setMinimumSize(new java.awt.Dimension(0, 16));
-        sPanel13.setOpaque(false);
 
+        sLabel14.setBackground(new java.awt.Color(255, 255, 255));
         sLabel14.setForeground(new java.awt.Color(112, 112, 112));
         sLabel14.setText("Admin Controls");
-        sLabel14.setBackground(new java.awt.Color(255, 255, 255));
         sLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout sPanel13Layout = new javax.swing.GroupLayout(sPanel13);
@@ -801,19 +791,19 @@ public class ModuleHome extends SPanel{
         sScrollPane1.setViewportView(sLayeredPane1);
         sLayeredPane1.setPreferredHeight();
 
+        logoutButton.setDefaultColor(new java.awt.Color(242, 242, 242));
         logoutButton.setForeground(new java.awt.Color(56, 56, 56));
         logoutButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoutButton.setHoverColor(new java.awt.Color(255, 158, 158));
+        logoutButton.setIconSize(15);
+        logoutButton.setRadius(15);
+        logoutButton.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/logout.png"))); // NOI18N
         logoutButton.setText("Logout");
+        logoutButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         logoutButton.setIconTextGap(10);
         logoutButton.setMaximumSize(new java.awt.Dimension(50, 29));
         logoutButton.setMinimumSize(new java.awt.Dimension(50, 29));
         logoutButton.setPreferredSize(new java.awt.Dimension(40, 29));
-        logoutButton.setDefaultColor(new java.awt.Color(242, 242, 242));
-        logoutButton.setHoverColor(new java.awt.Color(255, 158, 158));
-        logoutButton.setIconSize(15);
-        logoutButton.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/logout.png"))); // NOI18N
-        logoutButton.setRadius(15);
-        logoutButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         menuSwitch_Fullscreen.setForegroundColor(new java.awt.Color(56, 56, 56));
         menuSwitch_Fullscreen.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
@@ -824,7 +814,7 @@ public class ModuleHome extends SPanel{
         menuSwitch_Fullscreen.setText("Fullscreen");
         menuSwitch_Fullscreen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        sPanel4.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel4.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel4.setPreferredSize(new java.awt.Dimension(0, 2));
 
         javax.swing.GroupLayout sPanel4Layout = new javax.swing.GroupLayout(sPanel4);
@@ -838,12 +828,12 @@ public class ModuleHome extends SPanel{
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        sPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        sPanel2.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel2.setMaximumSize(new java.awt.Dimension(32767, 20));
 
+        sLabel7.setBackground(new java.awt.Color(255, 255, 255));
         sLabel7.setForeground(new java.awt.Color(112, 112, 112));
         sLabel7.setText("Preferences");
-        sLabel7.setBackground(new java.awt.Color(255, 255, 255));
         sLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout sPanel2Layout = new javax.swing.GroupLayout(sPanel2);
@@ -863,7 +853,7 @@ public class ModuleHome extends SPanel{
                 .addGap(0, 0, 0))
         );
 
-        sPanel7.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel7.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel7.setPreferredSize(new java.awt.Dimension(0, 2));
 
         javax.swing.GroupLayout sPanel7Layout = new javax.swing.GroupLayout(sPanel7);
@@ -877,10 +867,10 @@ public class ModuleHome extends SPanel{
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
+        sLayerPanelButton1.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         sLayerPanelButton1.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sLayerPanelButton1.setRadius(15);
         sLayerPanelButton1.setRounded(true);
-        sLayerPanelButton1.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         sLayerPanelButton1.setPreferredSize(new java.awt.Dimension(188, 50));
 
         sLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -911,6 +901,7 @@ public class ModuleHome extends SPanel{
         userRole2.setText("Role");
         userRole2.setPreferredSize(new java.awt.Dimension(23, 20));
 
+        menuButton_Profile.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuButton_Profile.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
         menuButton_Profile.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/profileActive.png"))); // NOI18N
         menuButton_Profile.setActiveLineColor(new java.awt.Color(255, 127, 127));
@@ -920,9 +911,9 @@ public class ModuleHome extends SPanel{
         menuButton_Profile.setManuMinButton(menuMinButton_Profile);
         menuButton_Profile.setRadius(15);
         menuButton_Profile.setText("Profile");
-        menuButton_Profile.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuButton_Profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
+        menuButton_Settings.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuButton_Settings.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
         menuButton_Settings.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/settingsActive.png"))); // NOI18N
         menuButton_Settings.setActiveLineColor(new java.awt.Color(255, 127, 127));
@@ -932,7 +923,6 @@ public class ModuleHome extends SPanel{
         menuButton_Settings.setManuMinButton(menuMinButton_Settings);
         menuButton_Settings.setRadius(15);
         menuButton_Settings.setText("Settings");
-        menuButton_Settings.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuButton_Settings.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -1016,11 +1006,11 @@ public class ModuleHome extends SPanel{
                 .addGap(0, 0, 0))
         );
 
+        sPanelMenu2.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanelMenu2.setShadowColor(new java.awt.Color(230, 230, 230));
         sPanelMenu2.setShadowOpacity(0.3F);
         sPanelMenu2.setShadowSize(5);
         sPanelMenu2.setShadowX(true);
-        sPanelMenu2.setBackground(new java.awt.Color(255, 255, 255));
         sPanelMenu2.setMinimumSize(new java.awt.Dimension(90, 100));
         sPanelMenu2.setPreferredSize(new java.awt.Dimension(90, 0));
 
@@ -1035,7 +1025,7 @@ public class ModuleHome extends SPanel{
         sLabelHover2.setMinimumSize(new java.awt.Dimension(50, 29));
         sLabelHover2.setPreferredSize(new java.awt.Dimension(50, 29));
 
-        sPanel6.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel6.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel6.setPreferredSize(new java.awt.Dimension(0, 2));
 
         javax.swing.GroupLayout sPanel6Layout = new javax.swing.GroupLayout(sPanel6);
@@ -1047,32 +1037,6 @@ public class ModuleHome extends SPanel{
         sPanel6Layout.setVerticalGroup(
             sPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        sPanelHover2.setRadius(15);
-        sPanelHover2.setRounded(true);
-        sPanelHover2.setBackground(new java.awt.Color(255, 255, 255));
-        sPanelHover2.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        sPanelHover2.setPreferredSize(new java.awt.Dimension(50, 50));
-
-        sLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/mainLogoMinimized.png"))); // NOI18N
-
-        javax.swing.GroupLayout sPanelHover2Layout = new javax.swing.GroupLayout(sPanelHover2);
-        sPanelHover2.setLayout(sPanelHover2Layout);
-        sPanelHover2Layout.setHorizontalGroup(
-            sPanelHover2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanelHover2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        sPanelHover2Layout.setVerticalGroup(
-            sPanelHover2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanelHover2Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(sLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
         );
 
         logoutButton1.setDefaultColor(new java.awt.Color(242, 242, 242));
@@ -1088,7 +1052,7 @@ public class ModuleHome extends SPanel{
         logoutButton1.setMinimumSize(new java.awt.Dimension(40, 50));
         logoutButton1.setPreferredSize(new java.awt.Dimension(40, 50));
 
-        sPanel5.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel5.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel5.setPreferredSize(new java.awt.Dimension(0, 2));
 
         javax.swing.GroupLayout sPanel5Layout = new javax.swing.GroupLayout(sPanel5);
@@ -1108,11 +1072,11 @@ public class ModuleHome extends SPanel{
         menuMinSwitch_Fullscreen.setRadius(15);
         menuMinSwitch_Fullscreen.setMinimumSize(new java.awt.Dimension(0, 40));
 
+        sScrollPane2.setBackground(new java.awt.Color(229, 229, 229));
         sScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         sScrollPane2.setHoverColor(new java.awt.Color(73, 73, 73));
         sScrollPane2.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
         sScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        sScrollPane2.setBackground(new java.awt.Color(229, 229, 229));
         sScrollPane2.setMinimumSize(new java.awt.Dimension(0, 0));
         sScrollPane2.setPreferredSize(new java.awt.Dimension(200, 50));
 
@@ -1121,11 +1085,11 @@ public class ModuleHome extends SPanel{
         sLayeredPane2.setPreferredSize(new java.awt.Dimension(30, 280));
         sLayeredPane2.setLayout(new javax.swing.BoxLayout(sLayeredPane2, javax.swing.BoxLayout.PAGE_AXIS));
 
+        menuMinButton_Dashboard.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Dashboard.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboardActive.png"))); // NOI18N
         menuMinButton_Dashboard.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuMinButton_Dashboard.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboard.png"))); // NOI18N
         menuMinButton_Dashboard.setRadius(15);
-        menuMinButton_Dashboard.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Dashboard.setMaximumSize(new java.awt.Dimension(32767, 40));
         menuMinButton_Dashboard.setMinimumSize(new java.awt.Dimension(0, 40));
         sLayeredPane2.add(menuMinButton_Dashboard);
@@ -1151,7 +1115,7 @@ public class ModuleHome extends SPanel{
         sLayeredPane2.add(menuMinButton_Parking);
         sLayeredPane2.add(filler9);
 
-        sPanel10.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel10.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel10.setMaximumSize(new java.awt.Dimension(32767, 2));
         sPanel10.setMinimumSize(new java.awt.Dimension(0, 2));
         sPanel10.setPreferredSize(new java.awt.Dimension(0, 2));
@@ -1230,7 +1194,7 @@ public class ModuleHome extends SPanel{
         sLayeredPane2.add(menuMinButton_Concerns);
         sLayeredPane2.add(filler19);
 
-        sPanel14.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel14.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel14.setMaximumSize(new java.awt.Dimension(32767, 2));
         sPanel14.setMinimumSize(new java.awt.Dimension(0, 2));
 
@@ -1260,7 +1224,7 @@ public class ModuleHome extends SPanel{
         sScrollPane2.setViewportView(sLayeredPane2);
         sLayeredPane2.setPreferredHeight();
 
-        sPanel8.setBackground(new java.awt.Color(228, 228, 235));
+        sPanel8.setDefaultBackgroundColor(new java.awt.Color(228, 228, 235));
         sPanel8.setPreferredSize(new java.awt.Dimension(0, 2));
 
         javax.swing.GroupLayout sPanel8Layout = new javax.swing.GroupLayout(sPanel8);
@@ -1274,19 +1238,46 @@ public class ModuleHome extends SPanel{
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
+        menuMinButton_Profile.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Profile.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/profileActive.png"))); // NOI18N
         menuMinButton_Profile.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuMinButton_Profile.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/profile.png"))); // NOI18N
         menuMinButton_Profile.setRadius(15);
-        menuMinButton_Profile.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Profile.setMinimumSize(new java.awt.Dimension(0, 40));
 
+        menuMinButton_Settings.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Settings.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/settingsActive.png"))); // NOI18N
         menuMinButton_Settings.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuMinButton_Settings.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/settings.png"))); // NOI18N
         menuMinButton_Settings.setRadius(15);
-        menuMinButton_Settings.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Settings.setMinimumSize(new java.awt.Dimension(0, 40));
+
+        sPanel15.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
+        sPanel15.setCanHover(true);
+        sPanel15.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        sPanel15.setRadius(15);
+        sPanel15.setRounded(true);
+        sPanel15.setPreferredSize(new java.awt.Dimension(55, 35));
+
+        sLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/mainLogoMinimized.png"))); // NOI18N
+
+        javax.swing.GroupLayout sPanel15Layout = new javax.swing.GroupLayout(sPanel15);
+        sPanel15.setLayout(sPanel15Layout);
+        sPanel15Layout.setHorizontalGroup(
+            sPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel15Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        sPanel15Layout.setVerticalGroup(
+            sPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel15Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(sLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1298,24 +1289,24 @@ public class ModuleHome extends SPanel{
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(sScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                         .addGap(10, 10, 10))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(menuMinButton_Settings, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(menuMinButton_Profile, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(sPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                            .addComponent(menuMinSwitch_Fullscreen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(sPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                            .addComponent(logoutButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sPanelHover2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                            .addComponent(sPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                            .addComponent(sLabelHover2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(menuMinButton_Settings, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(menuMinButton_Profile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(sPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                            .addComponent(menuMinSwitch_Fullscreen, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(sPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                            .addComponent(logoutButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                            .addComponent(sLabelHover2, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
                         .addGap(15, 15, 15))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(sPanelHover2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sLabelHover2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1454,9 +1445,9 @@ public class ModuleHome extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel15;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel16;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel28;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel29;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel30;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel4;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel6;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel7;
@@ -1473,6 +1464,7 @@ public class ModuleHome extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel12;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel13;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel14;
+    public FrameSystem.SLibrary.SComponents.SPanel sPanel15;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel2;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel3;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel4;
@@ -1481,7 +1473,6 @@ public class ModuleHome extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel7;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel8;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel9;
-    public FrameSystem.SLibrary.SComponents.SPanelHover sPanelHover2;
     public FrameSystem.Layers.Home.Components.SPanelHomeMenu sPanelMenu1;
     public FrameSystem.Layers.Home.Components.SPanelHomeMenu sPanelMenu2;
     public FrameSystem.SLibrary.SComponents.SScrollPane sScrollPane1;

@@ -1,15 +1,15 @@
 package FrameSystem.SLibrary.SGenericComponents;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.event.MouseListener;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
 
 import javax.swing.ImageIcon;
 
-import FrameSystem.SLibrary.SComponents.SPanelHover;
 
 @JavaBean(description = "")
-public class SFilterTitlePanel extends SPanelHover{
+public class SFilterTitlePanel extends SPanel{
 
     public SFilterTitlePanel(){
         super();

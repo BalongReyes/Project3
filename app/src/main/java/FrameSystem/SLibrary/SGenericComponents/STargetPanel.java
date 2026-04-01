@@ -1,7 +1,6 @@
 package FrameSystem.SLibrary.SGenericComponents;
 
 import FrameSystem.SLibrary.SComponents.SPanel;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -14,11 +13,10 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-import FrameSystem.SLibrary.SComponents.SPanelHover;
 import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A SPanel that targets a SPanel for hovering")
-public class STargetPanel extends SPanelHover{
+public class STargetPanel extends SPanel{
 
     public STargetPanel(){
         super();
@@ -27,19 +25,6 @@ public class STargetPanel extends SPanelHover{
     }
 
 // Setters and Getters =======================================================================================
-    
-    protected Color inactiveBackgroundColor = Color.white;
-
-    @BeanProperty(preferred = true, visualUpdate = true, description = "The inactive background color")
-    public void setInactiveBackgroundColor(Color inactiveBackgroundColor){
-        this.inactiveBackgroundColor = inactiveBackgroundColor;
-    }
-
-    public Color getInactiveBackgroundColor(){
-        return inactiveBackgroundColor;
-    }
-    
-// -----------------------------------------------------------------------------------------------------------
     
     private SPanel targetPanel;
 
@@ -165,15 +150,10 @@ public class STargetPanel extends SPanelHover{
     
     @Override
     public void paint(Graphics g){
+        paintSPanel(g);
+        
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
         Dimension s = getSize();
-        
-        if(hovering){
-            g2.setColor(hoverBackgroundColor);
-        }else{
-            g2.setColor(inactiveBackgroundColor);
-        }
-        g2.fillRoundRect(0, 0, s.width, s.height, radius, radius);
         
         g2.setColor(getBackground());
         g2.fillRoundRect(1, 1, s.width - 2, s.height - 2, getRadius(-1), getRadius(-1));

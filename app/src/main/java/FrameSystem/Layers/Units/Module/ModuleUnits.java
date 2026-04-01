@@ -49,20 +49,21 @@ public class ModuleUnits extends SPanel{
         objectUnitScrollPane = new FrameSystem.SLibrary.SComponents.SScrollPane();
         objectUnitContainer = new FrameSystem.SLibrary.SComponents.SPanel();
         objectUnitWrapper = new FrameSystem.SLibrary.SComponents.SPanel();
+        layerUnitsOffline1 = new FrameSystem.Layers.Units.Components.LayerUnits();
         sFilterTower1 = new FrameSystem.SLibrary.SGenericComponents.SFilterTower();
         sFilterTower2 = new FrameSystem.SLibrary.SGenericComponents.SFilterTower();
         sFilterTower3 = new FrameSystem.SLibrary.SGenericComponents.SFilterTower();
-        sPanelHover2 = new FrameSystem.SLibrary.SComponents.SPanelHover();
-        sLabel4 = new FrameSystem.SLibrary.SComponents.SLabel();
         sTextFieldContainer1 = new FrameSystem.SLibrary.SGenericComponents.STextFieldContainer();
         sTextField1 = new FrameSystem.SLibrary.SComponents.STextField();
         sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
         sPanel5 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel5 = new FrameSystem.SLibrary.SComponents.SLabel();
+        sPanel11 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sLabel7 = new FrameSystem.SLibrary.SComponents.SLabel();
 
-        setBackground(new java.awt.Color(255, 247, 247));
+        setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
 
-        sPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        sPanel1.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         sPanel1.setRadius(20);
         sPanel1.setRounded(true);
         sPanel1.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -71,20 +72,22 @@ public class ModuleUnits extends SPanel{
         sPanel1.setShadowX(true);
         sPanel1.setShadowY(true);
 
-        sPanel2.setOpaque(false);
+        sPanel2.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
+        sPanel2.setPaintBackground(false);
 
-        sPanel3.setBackground(new java.awt.Color(245, 245, 245));
+        sPanel3.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sPanel3.setRadius(20);
         sPanel3.setRounded(true);
         sPanel3.setMinimumSize(new java.awt.Dimension(100, 40));
         sPanel3.setPreferredSize(new java.awt.Dimension(100, 40));
 
-        sPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        sPanel7.setOpaque(false);
+        sPanel7.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
+        sPanel7.setPaintBackground(false);
         sPanel7.setPreferredSize(new java.awt.Dimension(75, 30));
 
-        sFilterTitlePanel1.setBackground(new java.awt.Color(245, 245, 245));
+        sFilterTitlePanel1.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel1.setForeground(new java.awt.Color(56, 56, 56));
+        sFilterTitlePanel1.setPaintBackground(false);
         sFilterTitlePanel1.setText("Tower");
         sFilterTitlePanel1.setMaximumSize(new java.awt.Dimension(400, 32767));
         sFilterTitlePanel1.setPreferredSize(new java.awt.Dimension(50, 30));
@@ -103,11 +106,12 @@ public class ModuleUnits extends SPanel{
             .addComponent(sFilterTitlePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        sPanel8.setOpaque(false);
+        sPanel8.setPaintBackground(false);
         sPanel8.setPreferredSize(new java.awt.Dimension(75, 30));
 
-        sFilterTitlePanel2.setBackground(new java.awt.Color(245, 245, 245));
+        sFilterTitlePanel2.setDefaultBackgroundColor(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel2.setForeground(new java.awt.Color(56, 56, 56));
+        sFilterTitlePanel2.setPaintBackground(false);
         sFilterTitlePanel2.setText("Floor");
         sFilterTitlePanel2.setMaximumSize(new java.awt.Dimension(400, 32767));
         sFilterTitlePanel2.setPreferredSize(new java.awt.Dimension(50, 30));
@@ -128,11 +132,12 @@ public class ModuleUnits extends SPanel{
                 .addComponent(sFilterTitlePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        sPanel9.setOpaque(false);
+        sPanel9.setPaintBackground(false);
         sPanel9.setPreferredSize(new java.awt.Dimension(75, 30));
 
         sFilterTitlePanel3.setBackground(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel3.setForeground(new java.awt.Color(56, 56, 56));
+        sFilterTitlePanel3.setPaintBackground(false);
         sFilterTitlePanel3.setText("Unit");
         sFilterTitlePanel3.setMaximumSize(new java.awt.Dimension(400, 32767));
         sFilterTitlePanel3.setPreferredSize(new java.awt.Dimension(50, 30));
@@ -151,14 +156,15 @@ public class ModuleUnits extends SPanel{
             .addComponent(sFilterTitlePanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        sPanel6.setOpaque(false);
+        sPanel6.setPaintBackground(false);
         sPanel6.setLayout(new java.awt.GridLayout(1, 6));
 
         sPanel10.setBackground(new java.awt.Color(255, 255, 255));
-        sPanel10.setOpaque(false);
+        sPanel10.setPaintBackground(false);
 
         sFilterTitlePanel5.setBackground(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel5.setForeground(new java.awt.Color(56, 56, 56));
+        sFilterTitlePanel5.setPaintBackground(false);
         sFilterTitlePanel5.setText("Model");
         sFilterTitlePanel5.setMaximumSize(new java.awt.Dimension(400, 32767));
         sFilterTitlePanel5.setPreferredSize(new java.awt.Dimension(50, 30));
@@ -182,10 +188,11 @@ public class ModuleUnits extends SPanel{
 
         sPanel6.add(sPanel10);
 
-        sPanel12.setOpaque(false);
+        sPanel12.setPaintBackground(false);
 
         sFilterTitlePanel4.setBackground(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel4.setForeground(new java.awt.Color(56, 56, 56));
+        sFilterTitlePanel4.setPaintBackground(false);
         sFilterTitlePanel4.setText("Floor Area");
         sFilterTitlePanel4.setMaximumSize(new java.awt.Dimension(400, 32767));
         sFilterTitlePanel4.setPreferredSize(new java.awt.Dimension(50, 30));
@@ -208,10 +215,11 @@ public class ModuleUnits extends SPanel{
 
         sPanel6.add(sPanel12);
 
-        sPanel13.setOpaque(false);
+        sPanel13.setPaintBackground(false);
 
         sFilterTitlePanel7.setBackground(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel7.setForeground(new java.awt.Color(56, 56, 56));
+        sFilterTitlePanel7.setPaintBackground(false);
         sFilterTitlePanel7.setText("Occupancy Type");
         sFilterTitlePanel7.setMaximumSize(new java.awt.Dimension(400, 32767));
         sFilterTitlePanel7.setPreferredSize(new java.awt.Dimension(50, 30));
@@ -233,10 +241,11 @@ public class ModuleUnits extends SPanel{
         sPanel6.add(sPanel13);
 
         sPanel14.setBackground(new java.awt.Color(255, 255, 255));
-        sPanel14.setOpaque(false);
+        sPanel14.setPaintBackground(false);
 
         sFilterTitlePanel8.setBackground(new java.awt.Color(245, 245, 245));
         sFilterTitlePanel8.setForeground(new java.awt.Color(56, 56, 56));
+        sFilterTitlePanel8.setPaintBackground(false);
         sFilterTitlePanel8.setText("Unit Status");
         sFilterTitlePanel8.setMaximumSize(new java.awt.Dimension(400, 32767));
         sFilterTitlePanel8.setPreferredSize(new java.awt.Dimension(50, 30));
@@ -258,7 +267,7 @@ public class ModuleUnits extends SPanel{
         sPanel6.add(sPanel14);
 
         sPanel15.setBackground(new java.awt.Color(255, 255, 255));
-        sPanel15.setOpaque(false);
+        sPanel15.setPaintBackground(false);
         sPanel15.setPreferredSize(new java.awt.Dimension(75, 30));
 
         sLabel6.setForeground(new java.awt.Color(56, 56, 56));
@@ -308,12 +317,12 @@ public class ModuleUnits extends SPanel{
             .addComponent(sPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        sPanel4.setOpaque(false);
+        sPanel4.setPaintBackground(false);
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
+        layerUnitsOffline.setPaintBackground(false);
         layerUnitsOffline.setName("Offline"); // NOI18N
-        layerUnitsOffline.setOpaque(false);
 
         jPanel1.setOpaque(false);
 
@@ -324,7 +333,6 @@ public class ModuleUnits extends SPanel{
 
         sAnimatedOffline1.setLineColor(new java.awt.Color(205, 64, 68));
         sAnimatedOffline1.setLineWidth(5.0F);
-        sAnimatedOffline1.setOpaque(false);
         sAnimatedOffline1.setPreferredSize(new java.awt.Dimension(160, 160));
 
         javax.swing.GroupLayout sAnimatedOffline1Layout = new javax.swing.GroupLayout(sAnimatedOffline1);
@@ -381,8 +389,8 @@ public class ModuleUnits extends SPanel{
         jLayeredPane1.setLayer(layerUnitsOffline, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitsOffline, "Offline");
 
+        layerUnitsLoading.setPaintBackground(false);
         layerUnitsLoading.setName("Loading"); // NOI18N
-        layerUnitsLoading.setOpaque(false);
 
         jPanel2.setOpaque(false);
 
@@ -393,7 +401,6 @@ public class ModuleUnits extends SPanel{
 
         sAnimatedOffline4.setLineColor(new java.awt.Color(255, 127, 127));
         sAnimatedOffline4.setLineWidth(5.0F);
-        sAnimatedOffline4.setOpaque(false);
         sAnimatedOffline4.setPreferredSize(new java.awt.Dimension(160, 160));
 
         javax.swing.GroupLayout sAnimatedOffline4Layout = new javax.swing.GroupLayout(sAnimatedOffline4);
@@ -450,8 +457,8 @@ public class ModuleUnits extends SPanel{
         jLayeredPane1.setLayer(layerUnitsLoading, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitsLoading, "Loading");
 
+        layerUnitsOnline.setPaintBackground(false);
         layerUnitsOnline.setName("Online"); // NOI18N
-        layerUnitsOnline.setOpaque(false);
 
         objectUnitScrollPane.setBackground(new java.awt.Color(229, 229, 229));
         objectUnitScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -462,7 +469,6 @@ public class ModuleUnits extends SPanel{
         objectUnitContainer.setBackground(new java.awt.Color(255, 255, 255));
 
         objectUnitWrapper.setMinimumSize(new java.awt.Dimension(100, 0));
-        objectUnitWrapper.setOpaque(false);
         objectUnitWrapper.setPreferredSize(new java.awt.Dimension(964, 0));
         objectUnitWrapper.setLayout(new javax.swing.BoxLayout(objectUnitWrapper, javax.swing.BoxLayout.Y_AXIS));
 
@@ -503,6 +509,23 @@ public class ModuleUnits extends SPanel{
 
         jLayeredPane1.setLayer(layerUnitsOnline, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitsOnline, "Online");
+
+        layerUnitsOffline1.setPaintBackground(false);
+        layerUnitsOffline1.setName("Offline"); // NOI18N
+
+        javax.swing.GroupLayout layerUnitsOffline1Layout = new javax.swing.GroupLayout(layerUnitsOffline1);
+        layerUnitsOffline1.setLayout(layerUnitsOffline1Layout);
+        layerUnitsOffline1Layout.setHorizontalGroup(
+            layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1181, Short.MAX_VALUE)
+        );
+        layerUnitsOffline1Layout.setVerticalGroup(
+            layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 573, Short.MAX_VALUE)
+        );
+
+        jLayeredPane1.setLayer(layerUnitsOffline1, javax.swing.JLayeredPane.PALETTE_LAYER);
+        jLayeredPane1.add(layerUnitsOffline1, "Offline");
 
         javax.swing.GroupLayout sPanel4Layout = new javax.swing.GroupLayout(sPanel4);
         sPanel4.setLayout(sPanel4Layout);
@@ -576,49 +599,16 @@ public class ModuleUnits extends SPanel{
         sFilterTower3.setText("Tower 3");
         sFilterTower3.setPreferredSize(new java.awt.Dimension(100, 50));
 
-        sPanelHover2.setBackground(new java.awt.Color(255, 255, 255));
-        sPanelHover2.setPreferredSize(new java.awt.Dimension(150, 10));
-        sPanelHover2.setShadowColor(new java.awt.Color(230, 230, 230));
-        sPanelHover2.setShadowOpacity(0.3F);
-        sPanelHover2.setShadowSize(5);
-        sPanelHover2.setShadowX(true);
-        sPanelHover2.setShadowY(true);
-        sPanelHover2.setHoverBackgroundColor(new java.awt.Color(245, 245, 245));
-        sPanelHover2.setRadius(20);
-        sPanelHover2.setRounded(true);
-
-        sLabel4.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel4.setText("Clear Filter");
-        sLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        sLabel4.setIconTextGap(10);
-
-        javax.swing.GroupLayout sPanelHover2Layout = new javax.swing.GroupLayout(sPanelHover2);
-        sPanelHover2.setLayout(sPanelHover2Layout);
-        sPanelHover2Layout.setHorizontalGroup(
-            sPanelHover2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanelHover2Layout.createSequentialGroup()
-                .addGap(0, 20, Short.MAX_VALUE)
-                .addComponent(sLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 19, Short.MAX_VALUE))
-        );
-        sPanelHover2Layout.setVerticalGroup(
-            sPanelHover2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanelHover2Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(sLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
-
         sTextFieldContainer1.setBackground(new java.awt.Color(255, 255, 255));
-        sTextFieldContainer1.setTextFieldChild(sTextField1);
-        sTextFieldContainer1.setPreferredSize(new java.awt.Dimension(390, 50));
+        sTextFieldContainer1.setRadius(20);
+        sTextFieldContainer1.setRounded(true);
         sTextFieldContainer1.setShadowColor(new java.awt.Color(230, 230, 230));
         sTextFieldContainer1.setShadowOpacity(0.3F);
         sTextFieldContainer1.setShadowSize(5);
         sTextFieldContainer1.setShadowX(true);
         sTextFieldContainer1.setShadowY(true);
-        sTextFieldContainer1.setRadius(20);
-        sTextFieldContainer1.setRounded(true);
+        sTextFieldContainer1.setTextFieldChild(sTextField1);
+        sTextFieldContainer1.setPreferredSize(new java.awt.Dimension(390, 50));
 
         sTextField1.setBackground(new java.awt.Color(255, 255, 255));
         sTextField1.setHint("Search for units");
@@ -651,14 +641,14 @@ public class ModuleUnits extends SPanel{
         );
 
         sPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        sPanel5.setPreferredSize(new java.awt.Dimension(150, 50));
+        sPanel5.setRadius(20);
+        sPanel5.setRounded(true);
         sPanel5.setShadowColor(new java.awt.Color(230, 230, 230));
         sPanel5.setShadowOpacity(0.3F);
         sPanel5.setShadowSize(5);
         sPanel5.setShadowX(true);
         sPanel5.setShadowY(true);
-        sPanel5.setRadius(20);
-        sPanel5.setRounded(true);
+        sPanel5.setPreferredSize(new java.awt.Dimension(150, 50));
 
         sLabel5.setForeground(new java.awt.Color(56, 56, 56));
         sLabel5.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tower.png"))); // NOI18N
@@ -683,6 +673,41 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
+        sPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        sPanel11.setCanHover(true);
+        sPanel11.setHoverBackgroundColor(new java.awt.Color(245, 245, 245));
+        sPanel11.setRadius(20);
+        sPanel11.setRounded(true);
+        sPanel11.setShadowColor(new java.awt.Color(230, 230, 230));
+        sPanel11.setShadowOpacity(0.3F);
+        sPanel11.setShadowSize(5);
+        sPanel11.setShadowX(true);
+        sPanel11.setShadowY(true);
+        sPanel11.setPreferredSize(new java.awt.Dimension(109, 50));
+
+        sLabel7.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sLabel7.setText("Clear Filter");
+        sLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        sLabel7.setIconTextGap(10);
+
+        javax.swing.GroupLayout sPanel11Layout = new javax.swing.GroupLayout(sPanel11);
+        sPanel11.setLayout(sPanel11Layout);
+        sPanel11Layout.setHorizontalGroup(
+            sPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel11Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(sLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        sPanel11Layout.setVerticalGroup(
+            sPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel11Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(sLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -702,7 +727,7 @@ public class ModuleUnits extends SPanel{
                         .addGap(0, 0, 0)
                         .addComponent(sFilterTower3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(sPanelHover2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(sTextFieldContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -716,12 +741,13 @@ public class ModuleUnits extends SPanel{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sFilterTower1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sFilterTower2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sFilterTower3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sPanelHover2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(sFilterTower1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sFilterTower2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sFilterTower3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(sPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -733,6 +759,7 @@ public class ModuleUnits extends SPanel{
     private javax.swing.JPanel jPanel2;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsLoading;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline;
+    public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline1;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOnline;
     public FrameSystem.SLibrary.SComponents.SPanel objectUnitContainer;
     public FrameSystem.SLibrary.SComponents.SScrollPane objectUnitScrollPane;
@@ -752,11 +779,12 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel4;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel5;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel6;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel7;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel10;
+    public FrameSystem.SLibrary.SComponents.SPanel sPanel11;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel12;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel13;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel14;
@@ -769,7 +797,6 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel7;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel8;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel9;
-    public FrameSystem.SLibrary.SComponents.SPanelHover sPanelHover2;
     public FrameSystem.SLibrary.SComponents.STextField sTextField1;
     private FrameSystem.SLibrary.SGenericComponents.STextFieldContainer sTextFieldContainer1;
     // End of variables declaration//GEN-END:variables

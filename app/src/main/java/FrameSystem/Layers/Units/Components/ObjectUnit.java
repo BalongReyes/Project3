@@ -138,7 +138,7 @@ public class ObjectUnit extends SPanel{
         sLabel7 = new FrameSystem.SLibrary.SComponents.SLabel();
         sLabel8 = new FrameSystem.SLibrary.SComponents.SLabel();
 
-        setBackground(new java.awt.Color(24, 29, 37));
+        setDefaultBackgroundColor(new java.awt.Color(24, 29, 37));
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(1010, 60));
 

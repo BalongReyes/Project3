@@ -123,10 +123,10 @@ public class SFrame extends JFrame {
             }
         });
 
-        layeredPane_Main.setBackground(new java.awt.Color(255, 0, 0));
         layeredPane_Main.setOpaque(true);
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
+        layerMain_Login.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         layerMain_Login.setName("Main"); // NOI18N
 
         javax.swing.GroupLayout layerMain_LoginLayout = new javax.swing.GroupLayout(layerMain_Login);
@@ -149,7 +149,6 @@ public class SFrame extends JFrame {
         layeredPane_Main.add(layerMain_Login, "card1");
         layerMain_Login.getAccessibleContext().setAccessibleName("");
 
-        layerMain_Home.setBackground(new java.awt.Color(255, 247, 247));
         layerMain_Home.setName("Home"); // NOI18N
 
         javax.swing.GroupLayout layerMain_HomeLayout = new javax.swing.GroupLayout(layerMain_Home);

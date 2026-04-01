@@ -21,7 +21,7 @@ public class ManagerModuleHome extends Manager{
             LayerHome.showLayer(moduleHome.layerHome_Dashboard);
         };
         moduleHome.sLayerPanelButton1.addMouseListener(m3);
-        moduleHome.sPanelHover2.addMouseListener(m3);
+        moduleHome.sPanel15.addMouseListener(m3);
         
         // ---------------
         

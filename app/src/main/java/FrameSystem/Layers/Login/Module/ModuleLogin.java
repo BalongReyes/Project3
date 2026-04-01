@@ -103,7 +103,7 @@ public class ModuleLogin extends LoginPanelContainer {
         setMinimumSize(new java.awt.Dimension(830, 540));
         setPreferredSize(new java.awt.Dimension(830, 540));
 
-        sPanelLeft.setOpaque(false);
+        sPanelLeft.setPaintBackground(false);
 
         sLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/mainSmallLogo.png"))); // NOI18N
@@ -147,7 +147,7 @@ public class ModuleLogin extends LoginPanelContainer {
 
         sAnimatedOffline1.setLineColor(new java.awt.Color(205, 64, 68));
         sAnimatedOffline1.setLineWidth(5.0F);
-        sAnimatedOffline1.setOpaque(false);
+        sAnimatedOffline1.setPaintBackground(false);
         sAnimatedOffline1.setPreferredSize(new java.awt.Dimension(160, 160));
 
         javax.swing.GroupLayout sAnimatedOffline1Layout = new javax.swing.GroupLayout(sAnimatedOffline1);
@@ -225,6 +225,7 @@ public class ModuleLogin extends LoginPanelContainer {
         loginTextFieldContainer1.setBackground(new java.awt.Color(255, 255, 255));
         loginTextFieldContainer1.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer1.setForeground(new java.awt.Color(0, 0, 0));
+        loginTextFieldContainer1.setPaintBackground(false);
         loginTextFieldContainer1.setRadius(20);
         loginTextFieldContainer1.setTextFieldChild(loginUsernameField);
 
@@ -265,6 +266,7 @@ public class ModuleLogin extends LoginPanelContainer {
         loginTextFieldContainer2.setBackground(new java.awt.Color(255, 255, 255));
         loginTextFieldContainer2.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer2.setForeground(new java.awt.Color(0, 0, 0));
+        loginTextFieldContainer2.setPaintBackground(false);
         loginTextFieldContainer2.setRadius(20);
         loginTextFieldContainer2.setTextFieldChild(loginPasswordField);
 
@@ -385,7 +387,6 @@ public class ModuleLogin extends LoginPanelContainer {
 
         sAnimatedOffline2.setLineColor(new java.awt.Color(255, 127, 127));
         sAnimatedOffline2.setLineWidth(5.0F);
-        sAnimatedOffline2.setOpaque(false);
         sAnimatedOffline2.setPreferredSize(new java.awt.Dimension(160, 160));
 
         javax.swing.GroupLayout sAnimatedOffline2Layout = new javax.swing.GroupLayout(sAnimatedOffline2);
@@ -460,13 +461,13 @@ public class ModuleLogin extends LoginPanelContainer {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public FrameSystem.Layers.Login.Components.LayerLogin layerLogin_Loading;
     public FrameSystem.Layers.Login.Components.LayerLogin layerLogin_Offline;
-    public FrameSystem.Layers.Login.Components.LayerLogin layerLogin_Online;
+    FrameSystem.Layers.Login.Components.LayerLogin layerLogin_Online;
     public FrameSystem.SLibrary.SComponents.SLabelHover loginButton;
     public FrameSystem.SLibrary.SComponents.SLabel loginError1;
     public FrameSystem.SLibrary.SComponents.SLabel loginError2;
     public FrameSystem.SLibrary.SComponents.SLabel loginError3;
     public FrameSystem.SLibrary.SComponents.SPasswordField loginPasswordField;
-    public FrameSystem.Layers.Login.Components.LoginTextFieldContainer loginTextFieldContainer2;
+    FrameSystem.Layers.Login.Components.LoginTextFieldContainer loginTextFieldContainer2;
     public FrameSystem.SLibrary.SComponents.STextField loginUsernameField;
     // End of variables declaration//GEN-END:variables
 }

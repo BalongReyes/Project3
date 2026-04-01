@@ -28,7 +28,7 @@ public class ManagerModuleUnits extends Manager{
             }
         });
         
-        moduleUnits.sPanelHover2.addMouseListener(new MouseAdapter(){
+        moduleUnits.sPanel11.addMouseListener(new MouseAdapter(){
             @Override
             public void mousePressed(MouseEvent e){
                 super.mousePressed(e);
