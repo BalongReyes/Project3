@@ -141,9 +141,14 @@ public class ObjectUnit extends SPanel{
         setPaintBackground(false);
         setPreferredSize(new java.awt.Dimension(1010, 60));
 
-        sPanelHighlight1.setHoverBackgroundColor(new java.awt.Color(240, 240, 240));
-        sPanelHighlight1.setInactiveForegroundColor(new java.awt.Color(240, 240, 240));
-        sPanelHighlight1.setRadius(10);
+        sPanelHighlight1.setActiveBackgroundColor(new java.awt.Color(255, 245, 245));
+        sPanelHighlight1.setActiveBorderColor(new java.awt.Color(255, 235, 235));
+        sPanelHighlight1.setBorderLine(2);
+        sPanelHighlight1.setCanHover(true);
+        sPanelHighlight1.setDefaultBorderColor(new java.awt.Color(240, 240, 240));
+        sPanelHighlight1.setHoverBackgroundColor(new java.awt.Color(250, 250, 250));
+        sPanelHighlight1.setHoverBorderColor(new java.awt.Color(240, 240, 240));
+        sPanelHighlight1.setRadius(20);
         sPanelHighlight1.setRounded(true);
         sPanelHighlight1.setPreferredSize(new java.awt.Dimension(100, 50));
 

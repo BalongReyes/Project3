@@ -3,7 +3,7 @@
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="f7" green="f7" red="ff" type="rgb"/>
+      <Color blue="f7" green="f7" red="f7" type="rgb"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -50,9 +50,6 @@
       <SubComponents>
         <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Dashboard">
           <Properties>
-            <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f7" green="f7" red="ff" type="rgb"/>
-            </Property>
             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="menuButton_Dashboard"/>
             </Property>
@@ -82,12 +79,10 @@
         </Container>
         <Container class="FrameSystem.Layers.Home.Components.LayerHome" name="layerHome_Units">
           <Properties>
-            <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f7" green="f7" red="ff" type="rgb"/>
-            </Property>
             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="menuButton_Units"/>
             </Property>
+            <Property name="paintBackground" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="Units" noResource="true"/>
           </Properties>
           <AuxValues>

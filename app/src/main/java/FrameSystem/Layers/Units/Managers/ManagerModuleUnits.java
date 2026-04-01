@@ -23,7 +23,7 @@ public class ManagerModuleUnits extends Manager{
             if(!evt.alreadyShowing){
                 moduleUnits.sTextField1.requestFocus();
                 LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
-                ManagerObjectUnits.clearFilterObject(false);
+                ManagerObjectUnits.setDefaultFilters();
                 ManagerObjectUnits.refreshObjects(null, true);
             }
         });

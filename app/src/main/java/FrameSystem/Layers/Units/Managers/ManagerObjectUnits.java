@@ -29,6 +29,8 @@ public class ManagerObjectUnits extends Manager{
     private static long currentRefreshId = 0;
     
     public static void initDefault(){
+        setDefaultFilters();
+                
         moduleUnits = frame.moduleHome.moduleUnits;
         
         moduleUnits.objectUnitScrollPane.setObjectContentHeight(60);
@@ -45,27 +47,43 @@ public class ManagerObjectUnits extends Manager{
 // Filter Title ----------------------------------------------------------------------------------------------
     
     private static MouseListener buildFilterTitleMouseListener(int f, SFilterTitlePanel c){
-        return (MousePressedAdaptor) evt -> {
+        return (MousePressedAdaptor) (var evt) -> {
             if(getCurrentFilterTitlePanel() != c) resetCurrentFilterTitlePanel();
+            
+            setDefaultFilters();
+            
+            // Switch out the active filters based on the click
+            boolean b = true;
             switch(c.setNextArrowDirection()){
                 case 1 -> {
-                    filterSort = f;
-                    filterOrder = DataTableOrder.Desc;
+                    for(DataTableFilter checkFilter : activeFilters.toArray(DataTableFilter[]::new)){
+                        if(checkFilter.getDataIndex() == f){
+                            activeFilters.remove(checkFilter);
+                            activeFilters.add(0, new DataTableFilter(f, DataTableOrder.Desc));
+                            b = false;
+                        }
+                    }
+                    if(b){
+                        activeFilters.add(0, new DataTableFilter(f, DataTableOrder.Desc));
+                    }
                 }
                 case 2 -> {
-                    filterSort = f;
-                    filterOrder = DataTableOrder.Asc;
-                }
-                default -> {
-                    filterSort = 1;
-                    filterOrder = DataTableOrder.Desc;
+                    for(DataTableFilter checkFilter : activeFilters.toArray(DataTableFilter[]::new)){
+                        if(checkFilter.getDataIndex() == f){
+                            activeFilters.remove(checkFilter);
+                            activeFilters.add(0, new DataTableFilter(f, DataTableOrder.Asc));
+                            b = false;
+                        }
+                    }
+                    if(b){
+                        activeFilters.add(0, new DataTableFilter(f, DataTableOrder.Asc));
+                    }
                 }
             }
-            checkFilterActive();
+            
             setCurrentFilterTitlePanel(c);
             
             // --- Debounce Implementation ---
-            // Only refresh after the user stops clicking for 300ms
             if (filterDebounceTimer != null && filterDebounceTimer.isRunning()) {
                 filterDebounceTimer.restart();
             } else {
@@ -98,8 +116,6 @@ public class ManagerObjectUnits extends Manager{
         refreshObjects(currentObject, refresh);
     }
     
-    private static ArrayList<DataTableFilter> activeFilters = new ArrayList<>();
-    
     public static void refreshObjects(ObjectUnit recentObject, boolean refresh) {
         // Show the loading screen right away
         LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
@@ -121,7 +137,10 @@ public class ManagerObjectUnits extends Manager{
                     if (thisRefreshId != currentRefreshId) return;
 
                     UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
-                            refresh, activeFilters.toArray(DataTableFilter[]::new), limit, offset
+                        refresh, 
+                        activeFilters.toArray(DataTableFilter[]::new), 
+                        limit, 
+                        offset
                     );
 
                     if (thisRefreshId != currentRefreshId) return;
@@ -247,25 +266,17 @@ public class ManagerObjectUnits extends Manager{
     
     private static String filter = "";
     private static int filterCategory = -1;
-    private static int filterSort = 1;
-    private static DataTableOrder filterOrder = DataTableOrder.Desc;
     
-    public static void filterObjectCategory(){
-        // ... omitted
-    }
+    // REPLACED: Track multiple active filters instead of just one
+    private static ArrayList<DataTableFilter> activeFilters = new ArrayList<>();
     
-    public static void filterObjectSearch(String f){
-        filter = f;
-        checkFilterActive();
-        refreshObjects(false);
-    }
-    
-    public static void clearFilterObject(boolean reloadObject){
-        // ... omitted
-    }
-    
-    private static void checkFilterActive(){
-        // ... omitted
+    // NEW: Method to set your default sort priority
+    public static void setDefaultFilters() {
+        activeFilters.clear();
+        // Default sort priority: Tower -> Floor -> Unit (Ascending)
+        activeFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Asc));
+        activeFilters.add(new DataTableFilter(UnitsDataTable.FLOOR, DataTableOrder.Asc));
+        activeFilters.add(new DataTableFilter(UnitsDataTable.UNIT, DataTableOrder.Asc));
     }
     
 // Add Edit Remove -------------------------------------------------------------------------------------------

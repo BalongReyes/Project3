@@ -48,46 +48,42 @@ public class UnitsDataHandler {
         return sortedArray.toArray(UnitsDataTable[]::new);
     }
     
-    // NEW METHOD: Handles sorting using an array of DataTableFilter objects
-    public static UnitsDataTable[] getDataBatchSortedMulti(boolean refresh, DataTableFilter[] filters, int limit, int offset) throws SQLException{
-
+    // Handles sorting using an array of DataTableFilter objects
+    public static UnitsDataTable[] getDataBatchSortedMulti(boolean refresh, DataTableFilter[] filters, int limit, int offset) throws SQLException {
         StringBuilder orderBy = new StringBuilder();
-
+        
         // Safety check: If no filters are provided, default to sorting by ID
-        if(filters == null || filters.length == 0){
+        if (filters == null || filters.length == 0) {
             orderBy.append("id DESC");
-        }else{
+        } else {
             // Loop through all provided DataTableFilter objects
-            for(int i = 0; i < filters.length; i++){
+            for (int i = 0; i < filters.length; i++) {
                 DataTableFilter filter = filters[i];
-
+                
                 String columnName = getColumnName(filter.getDataIndex());
                 String orderString = (filter.getOrder() == DataTableOrder.Asc) ? "ASC" : "DESC";
-
+                
                 orderBy.append(columnName).append(" ").append(orderString);
-
+                
                 // Add a comma separator if it is not the very last filter in the array
-                if(i < filters.length - 1){
+                if (i < filters.length - 1) {
                     orderBy.append(", ");
                 }
             }
         }
-
+        
         // Assemble the final query
         String query = "SELECT * FROM units ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
-
+        
         ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
-
-        // Execute the database request
+        
         Database.executePreparedQuery(query, (result) -> {
-            while(result.next()){
+            while (result.next()) {
                 UnitsDataTable data = new UnitsDataTable(result);
-                if(!data.isError()){
-                    sortedArray.add(data);
-                }
+                if (!data.isError()) sortedArray.add(data);
             }
         }, limit, offset);
-
+        
         return sortedArray.toArray(UnitsDataTable[]::new);
     }
     

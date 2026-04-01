@@ -423,10 +423,10 @@ public class SPanel extends JPanel implements InnerListener{
     }
     
     protected void paintSPanel(Graphics g){
-        paintSPanel(g, null);
+        paintSPanel(g, null, null);
     }
     
-    protected void paintSPanel(Graphics g, Color overideBackground){
+    protected void paintSPanel(Graphics g, Color overideBackground, Color overideBorder){
         int radiusPaint = rounded ? this.radius : 0;
         Graphics2D g2 = CustomGraphics.getGraphics2D(g);
 
@@ -453,7 +453,11 @@ public class SPanel extends JPanel implements InnerListener{
 
         // 2. Draw Outer Border (Only if borderline > 0 so it doesn't paint unnecessarily)
         if(borderLine > 0){
-            g2.setColor(borderColor);
+            if(overideBorder != null){
+                g2.setColor(overideBorder);
+            }else{
+                g2.setColor(borderColor);
+            }
             g2.fillRoundRect(x, y, w, h, radiusPaint, radiusPaint);
         }
 

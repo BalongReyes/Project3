@@ -42,13 +42,24 @@
   <SubComponents>
     <Container class="FrameSystem.SLibrary.SComponents.SPanelHighlight" name="sPanelHighlight1">
       <Properties>
+        <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f5" green="f5" red="ff" type="rgb"/>
+        </Property>
+        <Property name="activeBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="eb" green="eb" red="ff" type="rgb"/>
+        </Property>
+        <Property name="borderLine" type="int" value="2"/>
+        <Property name="canHover" type="boolean" value="true"/>
+        <Property name="defaultBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f0" green="f0" red="f0" type="rgb"/>
+        </Property>
         <Property name="hoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fa" green="fa" red="fa" type="rgb"/>
+        </Property>
+        <Property name="hoverBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f0" green="f0" red="f0" type="rgb"/>
         </Property>
-        <Property name="inactiveForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f0" green="f0" red="f0" type="rgb"/>
-        </Property>
-        <Property name="radius" type="int" value="10"/>
+        <Property name="radius" type="int" value="20"/>
         <Property name="rounded" type="boolean" value="true"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[100, 50]"/>

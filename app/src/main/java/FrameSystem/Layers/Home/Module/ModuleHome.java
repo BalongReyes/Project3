@@ -140,11 +140,10 @@ public class ModuleHome extends SPanel{
         sPanel15 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel30 = new FrameSystem.SLibrary.SComponents.SLabel();
 
-        setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
+        setDefaultBackgroundColor(new java.awt.Color(247, 247, 247));
 
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
-        layerHome_Dashboard.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Dashboard.setLayerButton(menuButton_Dashboard);
         layerHome_Dashboard.setPaintBackground(false);
 
@@ -161,8 +160,8 @@ public class ModuleHome extends SPanel{
 
         layeredPane_Main.add(layerHome_Dashboard, "dashbaord");
 
-        layerHome_Units.setDefaultBackgroundColor(new java.awt.Color(255, 247, 247));
         layerHome_Units.setLayerButton(menuButton_Units);
+        layerHome_Units.setPaintBackground(false);
         layerHome_Units.setName("Units"); // NOI18N
 
         moduleUnits.setPaintBackground(false);
