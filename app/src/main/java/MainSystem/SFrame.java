@@ -115,7 +115,7 @@ public class SFrame extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Avida Prime Taft");
-        setBackground(new java.awt.Color(9, 12, 16));
+        setBackground(new java.awt.Color(0, 0, 0));
         setIconImages(null);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -123,9 +123,10 @@ public class SFrame extends JFrame {
             }
         });
 
+        layeredPane_Main.setBackground(new java.awt.Color(255, 0, 0));
+        layeredPane_Main.setOpaque(true);
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
-        layerMain_Login.setBackground(new java.awt.Color(255, 255, 255));
         layerMain_Login.setName("Main"); // NOI18N
 
         javax.swing.GroupLayout layerMain_LoginLayout = new javax.swing.GroupLayout(layerMain_Login);
