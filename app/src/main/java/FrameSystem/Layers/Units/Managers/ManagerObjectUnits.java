@@ -18,6 +18,8 @@ import FrameSystem.Layers.Units.Module.ModuleUnits;
 import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
 import MainSystem.ExecutorDriver;
 import MainSystem.Manager;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ManagerObjectUnits extends Manager{
 
@@ -46,6 +48,30 @@ public class ManagerObjectUnits extends Manager{
         moduleUnits.sFilterTitlePanel3.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.UNIT, moduleUnits.sFilterTitlePanel3));
         moduleUnits.sFilterTitlePanel5.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.MODEL, moduleUnits.sFilterTitlePanel5));
         moduleUnits.sFilterTitlePanel4.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.FLOOR_AREA, moduleUnits.sFilterTitlePanel4));
+        
+        moduleUnits.filterTower1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e){
+                moduleUnits.filterTower1.toggleActive();
+                activeFilterChanged();
+            }
+        });
+        
+        moduleUnits.filterTower2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e){
+                moduleUnits.filterTower2.toggleActive();
+                activeFilterChanged();
+            }
+        });
+        
+        moduleUnits.filterTower3.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e){
+                moduleUnits.filterTower3.toggleActive();
+                activeFilterChanged();
+            }
+        });
     }
 
 // Main Methods ==============================================================================================
@@ -54,51 +80,32 @@ public class ManagerObjectUnits extends Manager{
     
     private static MouseListener buildFilterTitleMouseListener(int f, SFilterTitlePanel c){
         return (MousePressedAdaptor) (var evt) -> {
-            if(getCurrentFilterTitlePanel() != c) resetCurrentFilterTitlePanel();
-            
-            setDefaultFilters();
-            
-            // Switch out the active filters based on the click
-            boolean b = true;
-            switch(c.setNextArrowDirection()){
+            // Reset the previous arrow if clicking a new column
+            if(getCurrentFilterTitlePanel() != c){
+                resetCurrentFilterTitlePanel();
+            }
+
+            int direction = c.setNextArrowDirection();
+
+            // 1. Remove the existing filter for this column so we don't get duplicates
+            for(DataTableFilter checkFilter : activeFilters.toArray(DataTableFilter[]::new)){
+                if(checkFilter.getDataIndex() == f){
+                    removeActiveFilter(checkFilter);
+                }
+            }
+
+            // 2. Add the new filter based on the click direction to the front (index 0) for highest priority
+            switch(direction){
                 case 1 -> {
-                    for(DataTableFilter checkFilter : activeFilters.toArray(DataTableFilter[]::new)){
-                        if(checkFilter.getDataIndex() == f){
-                            removeActiveFilter(checkFilter);
-                            addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Desc));
-                            b = false;
-                        }
-                    }
-                    if(b){
-                        addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Desc));
-                    }
+                    addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Desc));
                 }
                 case 2 -> {
-                    for(DataTableFilter checkFilter : activeFilters.toArray(DataTableFilter[]::new)){
-                        if(checkFilter.getDataIndex() == f){
-                            removeActiveFilter(checkFilter);
-                            addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Asc));
-                            b = false;
-                        }
-                    }
-                    if(b){
-                        addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Asc));
-                    }
+                    addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Asc));
                 }
+                // If direction is 0 (neutral), it just remains removed!
             }
-            
+
             setCurrentFilterTitlePanel(c);
-            
-            // --- Debounce Implementation ---
-            if (filterDebounceTimer != null && filterDebounceTimer.isRunning()) {
-                filterDebounceTimer.restart();
-            } else {
-                filterDebounceTimer = new javax.swing.Timer(300, e -> {
-                    refreshObjects(false);
-                });
-                filterDebounceTimer.setRepeats(false);
-                filterDebounceTimer.start();
-            }
         };
     }
     

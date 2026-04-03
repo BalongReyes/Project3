@@ -3,7 +3,7 @@ package DatabaseSystem.DataTable;
 
 public enum DataTableOrder{
     
-    Desc("Desc"), Asc("Asc");
+    Desc("Desc"), Asc("Asc"), Where("Where");
     
     String s;
     
