@@ -62,10 +62,6 @@ public class ModuleUnits extends SPanel{
         objectUnitFilter4 = new FrameSystem.Layers.Units.Components.ObjectUnitFilter();
         sLabel7 = new FrameSystem.SLibrary.SComponents.SLabel();
         objectUnitFilter5 = new FrameSystem.Layers.Units.Components.ObjectUnitFilter();
-        sLabel12 = new FrameSystem.SLibrary.SComponents.SLabel();
-        objectUnitFilter6 = new FrameSystem.Layers.Units.Components.ObjectUnitFilter();
-        sLabel13 = new FrameSystem.SLibrary.SComponents.SLabel();
-        objectUnitFilter7 = new FrameSystem.Layers.Units.Components.ObjectUnitFilter();
         sPanel11 = new FrameSystem.SLibrary.SComponents.SPanel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
         sPanel23 = new FrameSystem.SLibrary.SComponents.SPanel();
@@ -695,22 +691,8 @@ public class ModuleUnits extends SPanel{
         sLabel7.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/lassThan.png"))); // NOI18N
         sPanel16.add(sLabel7);
 
-        objectUnitFilter5.setText("test2withlongtext");
+        objectUnitFilter5.setText("Test2");
         sPanel16.add(objectUnitFilter5);
-
-        sLabel12.setIconSize(8);
-        sLabel12.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/lassThan.png"))); // NOI18N
-        sPanel16.add(sLabel12);
-
-        objectUnitFilter6.setText("sh");
-        sPanel16.add(objectUnitFilter6);
-
-        sLabel13.setIconSize(8);
-        sLabel13.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/lassThan.png"))); // NOI18N
-        sPanel16.add(sLabel13);
-
-        objectUnitFilter7.setText("nice");
-        sPanel16.add(objectUnitFilter7);
 
         sPanel11.setPaintBackground(false);
         sPanel11.setLayout(new javax.swing.BoxLayout(sPanel11, javax.swing.BoxLayout.LINE_AXIS));
@@ -1119,8 +1101,6 @@ public class ModuleUnits extends SPanel{
     public FrameSystem.SLibrary.SComponents.SPanel objectUnitContainer;
     private FrameSystem.Layers.Units.Components.ObjectUnitFilter objectUnitFilter4;
     private FrameSystem.Layers.Units.Components.ObjectUnitFilter objectUnitFilter5;
-    private FrameSystem.Layers.Units.Components.ObjectUnitFilter objectUnitFilter6;
-    private FrameSystem.Layers.Units.Components.ObjectUnitFilter objectUnitFilter7;
     public FrameSystem.SLibrary.SComponents.SScrollPane objectUnitScrollPane;
     public FrameSystem.SLibrary.SComponents.SPanel objectUnitWrapper;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
@@ -1135,8 +1115,6 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel11;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel12;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel13;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel4;

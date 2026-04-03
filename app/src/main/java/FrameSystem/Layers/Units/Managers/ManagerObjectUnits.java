@@ -295,31 +295,35 @@ public class ManagerObjectUnits extends Manager{
     }
     
     // Updates the visual panel to exactly match the activeFilters array
-    private static void refreshFilterUI() {
-        if (leftFiller == null) return; // Safety check in case it hasn't initialized
-        
+    private static void refreshFilterUI(){
+        if(leftFiller == null){
+            return; // Safety check in case it hasn't initialized
+        }
         moduleUnits.sPanel16.removeAll();
         moduleUnits.sPanel16.add(leftFiller); // 1. Add left spacer
-        
-        // 2. Loop through active filters and build the UI dynamically
-        for (int i = 0; i < activeFilters.size(); i++) {
+
+        // 2. Loop through active filters BACKWARDS to reverse the display order
+        for(int i = activeFilters.size() - 1; i >= 0; i--){
             ObjectUnitFilter filterComponent = new ObjectUnitFilter(activeFilters.get(i));
             moduleUnits.sPanel16.add(filterComponent);
-            
-            // Add the arrow separator (lassThan.png) if it's not the last filter
-            if (i < activeFilters.size() - 1) {
+
+            // Add the arrow separator (lassThan.png) if it's not the last filter being rendered
+            // Since we are counting down to 0, we add an arrow as long as i > 0
+            if(i > 0){
                 FrameSystem.SLibrary.SComponents.SLabel arrow = new FrameSystem.SLibrary.SComponents.SLabel();
                 arrow.setIconSize(8);
                 arrow.setScaledIcon(new javax.swing.ImageIcon(ManagerObjectUnits.class.getResource("/Icons/lassThan.png")));
                 moduleUnits.sPanel16.add(arrow);
             }
         }
-        
-        // 3. Add the trailing fixed UI items back
-        moduleUnits.sPanel16.add(rightFiller);
+
+        if(!activeFilters.isEmpty()){
+            // 3. Add the trailing fixed UI items back
+            moduleUnits.sPanel16.add(rightFiller);
+        }
         moduleUnits.sPanel16.add(addFilterBtn);
         moduleUnits.sPanel16.add(clearFilterBtn);
-        
+
         // 4. Force the panel to update visually
         moduleUnits.sPanel16.revalidate();
         moduleUnits.sPanel16.repaint();
@@ -344,16 +348,31 @@ public class ManagerObjectUnits extends Manager{
             activeFilters.add(dataFilter);    // Fixed logic bug here!
         }
         refreshFilterUI(); // Sync UI
+        activeFilterChanged();
     }
     
     public static void removeActiveFilter(DataTableFilter dataFilter){
         activeFilters.remove(dataFilter);
         refreshFilterUI(); // Sync UI
+        activeFilterChanged();
     }
     
     public static void clearActiveFilter(){
         activeFilters.clear();
         refreshFilterUI(); // Sync UI
+        activeFilterChanged();
+    }
+    
+    public static void activeFilterChanged(){
+        if (filterDebounceTimer != null && filterDebounceTimer.isRunning()) {
+            filterDebounceTimer.restart();
+        } else {
+            filterDebounceTimer = new javax.swing.Timer(300, e -> {
+                refreshObjects(false);
+            });
+            filterDebounceTimer.setRepeats(false);
+            filterDebounceTimer.start();
+        }
     }
     
 // Add Edit Remove -------------------------------------------------------------------------------------------

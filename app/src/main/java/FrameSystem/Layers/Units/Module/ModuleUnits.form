@@ -1150,33 +1150,7 @@
         </Component>
         <Component class="FrameSystem.Layers.Units.Components.ObjectUnitFilter" name="objectUnitFilter5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="test2withlongtext"/>
-          </Properties>
-        </Component>
-        <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel12">
-          <Properties>
-            <Property name="iconSize" type="int" value="8"/>
-            <Property name="scaledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Icons/lassThan.png"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="FrameSystem.Layers.Units.Components.ObjectUnitFilter" name="objectUnitFilter6">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="sh"/>
-          </Properties>
-        </Component>
-        <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel13">
-          <Properties>
-            <Property name="iconSize" type="int" value="8"/>
-            <Property name="scaledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Icons/lassThan.png"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="FrameSystem.Layers.Units.Components.ObjectUnitFilter" name="objectUnitFilter7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="nice"/>
+            <Property name="text" type="java.lang.String" value="Test2"/>
           </Properties>
         </Component>
         <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel11">
