@@ -2,7 +2,6 @@ package MainSystem;
 
 import FrameSystem.Layers.Home.Managers.ManagerModuleHome;
 import FrameSystem.Layers.Login.Managers.ManagerModuleLogin;
-import FrameSystem.Layers.Main.Managers.ManagerFilters;
 import FrameSystem.Layers.Units.Managers.ManagerModuleUnits;
 import FrameSystem.Layers.Units.Managers.ManagerObjectUnits;
 import MainSystem.Managers.ManagerLogin;
@@ -20,7 +19,6 @@ public class Manager {
         
         ManagerModuleUnits.initDefault();
         ManagerObjectUnits.initDefault();
-        ManagerFilters.initDefault();
     }
 
 }

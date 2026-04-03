@@ -153,7 +153,7 @@ public class ObjectUnit extends SPanel{
         sPanelHighlight1.setPreferredSize(new java.awt.Dimension(100, 50));
 
         sLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        sLabel1.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel1.setForeground(new java.awt.Color(70, 70, 70));
         sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sLabel1.setText(String.valueOf(data.getTower()));
         sLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -163,27 +163,27 @@ public class ObjectUnit extends SPanel{
         sPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         sLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        sLabel2.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel2.setForeground(new java.awt.Color(70, 70, 70));
         sLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sLabel2.setText("Model");
         sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sPanel1.add(sLabel2);
 
-        sLabel4.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel4.setForeground(new java.awt.Color(70, 70, 70));
         sLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sLabel4.setText(String.valueOf(data.getFloorArea())
         );
         sLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sPanel1.add(sLabel4);
 
-        sLabel9.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel9.setForeground(new java.awt.Color(70, 70, 70));
         sLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sLabel9.setText("Occupancy Type");
         sLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sPanel1.add(sLabel9);
 
         sLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        sLabel10.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel10.setForeground(new java.awt.Color(70, 70, 70));
         sLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sLabel10.setText("Unit Status");
         sLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -203,13 +203,13 @@ public class ObjectUnit extends SPanel{
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        sLabel7.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel7.setForeground(new java.awt.Color(70, 70, 70));
         sLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sLabel7.setText(String.valueOf(data.getFloor()));
         sLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sLabel7.setPreferredSize(new java.awt.Dimension(75, 16));
 
-        sLabel8.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel8.setForeground(new java.awt.Color(70, 70, 70));
         sLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         sLabel8.setText(String.valueOf(data.getUnit()));
         sLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

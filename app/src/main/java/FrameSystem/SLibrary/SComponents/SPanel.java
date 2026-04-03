@@ -140,6 +140,10 @@ public class SPanel extends JPanel implements InnerListener{
     public boolean isActive(){
         return active;
     }
+    
+    public void toggleActive(){
+        setActive(!active);
+    }
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "The active background color")
     public void setActiveBackgroundColor(Color activeBackgroundColor){
