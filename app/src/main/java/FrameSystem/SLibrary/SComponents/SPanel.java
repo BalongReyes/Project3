@@ -16,11 +16,18 @@ import EventSystem.Interface.InnerListener;
 import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.HeadlessException;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 @JavaBean(description = "A versatile component that handles shadows, borders, and interactive states (Hover, Active, Danger)")
 public class SPanel extends JPanel implements InnerListener{
 
     protected MouseAdapter hoverListener;
+    protected ComponentAdapter componentAdapter;
 
 // ==== Constructor ==========================================================================================
     
@@ -40,6 +47,19 @@ public class SPanel extends JPanel implements InnerListener{
                 setHovering(false);
             }
         };
+        componentAdapter = new ComponentAdapter(){
+            @Override
+            public void componentResized(ComponentEvent e){
+                super.componentResized(e);
+                checkHoverState();
+            }
+            @Override
+            public void componentMoved(ComponentEvent e){
+                super.componentMoved(e);
+                checkHoverState();
+            }
+        };
+        super.addComponentListener(componentAdapter);
         applyHoverInnerListener();
     }
 
@@ -76,7 +96,22 @@ public class SPanel extends JPanel implements InnerListener{
     public boolean isCanHover(){
         return canHover;
     }
-
+    
+    private void checkHoverState() {
+        if (hovering && isShowing()) {
+            try {
+                Point mousePos = MouseInfo.getPointerInfo().getLocation();
+                Point compPos = getLocationOnScreen();
+                Rectangle bounds = new Rectangle(compPos, getSize());
+                if (!bounds.contains(mousePos)) {
+                    setHovering(false);
+                }
+            } catch (HeadlessException ex) {
+                setHovering(false);
+            }
+        }
+    }
+    
 // ==== State Properties Setters & Getters ===================================================================
     
     protected boolean active = false;
@@ -85,11 +120,13 @@ public class SPanel extends JPanel implements InnerListener{
 
     protected Color defaultBackgroundColor = Color.white;
     protected Color activeBackgroundColor = Color.white;
+    protected Color activeHoverBackgroundColor = Color.white;
     protected Color hoverBackgroundColor = Color.white;
     protected Color dangerBackgroundColor = Color.white;
 
     protected Color defaultForegroundColor = Color.white;
     protected Color activeForegroundColor = Color.white;
+    protected Color activeHoverForegroundColor = Color.white;
     protected Color hoverForegroundColor = Color.white;
     protected Color dangerForegroundColor = Color.white;
 
@@ -161,6 +198,27 @@ public class SPanel extends JPanel implements InnerListener{
 
     public Color getActiveForegroundColor(){
         return activeForegroundColor;
+    }
+
+// ---- Active Hover -----------------------------------------------------------------------------------------
+    
+    
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The active hover background color")
+    public void setActiveHoverBackgroundColor(Color activeHoverBackgroundColor){
+        this.activeHoverBackgroundColor = activeHoverBackgroundColor;
+    }
+
+    public Color getActiveHoverBackgroundColor(){
+        return activeHoverBackgroundColor;
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The active foreground color")
+    public void setActiveHoverForegroundColor(Color activeHoverForegroundColor){
+        this.activeHoverForegroundColor = activeHoverForegroundColor;
+    }
+
+    public Color getActiveHoverForegroundColor(){
+        return activeHoverForegroundColor;
     }
 
 // ---- Danger -----------------------------------------------------------------------------------------------
@@ -468,9 +526,11 @@ public class SPanel extends JPanel implements InnerListener{
         // 3. Determine Foreground Color based on Priority State
         if(danger){
             setForeground(dangerForegroundColor);
+        }else if(active && (canHover && hovering && activeHoverForegroundColor != null)){
+            setForeground(activeHoverForegroundColor);
         }else if(active){
             setForeground(activeForegroundColor);
-        }else if(hovering && hoverForegroundColor != null){
+        }else if(canHover && hovering && hoverForegroundColor != null){
             setForeground(hoverForegroundColor);
         }else{
             setForeground(defaultForegroundColor);
@@ -483,6 +543,8 @@ public class SPanel extends JPanel implements InnerListener{
                 currentBgColor = overideBackground;
             }else if(danger){
                 currentBgColor = dangerBackgroundColor;
+            }else if(active && (canHover && hovering && activeHoverBackgroundColor != null)){
+                currentBgColor = activeHoverBackgroundColor;
             }else if(active){
                 currentBgColor = activeBackgroundColor;
             }else if(canHover && hovering && hoverBackgroundColor != null){

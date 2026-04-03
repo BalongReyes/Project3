@@ -143,6 +143,7 @@ public class ObjectUnit extends SPanel{
 
         sPanelHighlight1.setActiveBackgroundColor(new java.awt.Color(255, 245, 245));
         sPanelHighlight1.setActiveBorderColor(new java.awt.Color(255, 235, 235));
+        sPanelHighlight1.setActiveHoverBackgroundColor(new java.awt.Color(255, 245, 245));
         sPanelHighlight1.setBorderLine(2);
         sPanelHighlight1.setCanHover(true);
         sPanelHighlight1.setDefaultBorderColor(new java.awt.Color(240, 240, 240));

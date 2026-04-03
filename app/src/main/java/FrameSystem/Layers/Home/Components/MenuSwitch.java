@@ -1,5 +1,6 @@
 package FrameSystem.Layers.Home.Components;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -12,11 +13,10 @@ import java.beans.JavaBean;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import FrameSystem.SLibrary.SComponents.SPanelActivatableHover;
 import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A component that displays a jpanel as a layered panel button")
-public class MenuSwitch extends SPanelActivatableHover{
+public class MenuSwitch extends SPanel{
 
     public MenuSwitch(){
         super();
@@ -115,6 +115,8 @@ public class MenuSwitch extends SPanelActivatableHover{
 
         sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
 
+        setCanHover(true);
+        setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         setMinimumSize(new java.awt.Dimension(0, 45));
         setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(200, 40));

@@ -164,8 +164,6 @@ public class ModuleHome extends SPanel{
         layerHome_Units.setPaintBackground(false);
         layerHome_Units.setName("Units"); // NOI18N
 
-        moduleUnits.setPaintBackground(false);
-
         javax.swing.GroupLayout layerHome_UnitsLayout = new javax.swing.GroupLayout(layerHome_Units);
         layerHome_Units.setLayout(layerHome_UnitsLayout);
         layerHome_UnitsLayout.setHorizontalGroup(
@@ -806,8 +804,8 @@ public class ModuleHome extends SPanel{
         logoutButton.setMinimumSize(new java.awt.Dimension(50, 29));
         logoutButton.setPreferredSize(new java.awt.Dimension(40, 29));
 
+        menuSwitch_Fullscreen.setActiveHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuSwitch_Fullscreen.setForegroundColor(new java.awt.Color(56, 56, 56));
-        menuSwitch_Fullscreen.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuSwitch_Fullscreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/fullscreen.png"))); // NOI18N
         menuSwitch_Fullscreen.setRadius(15);
         menuSwitch_Fullscreen.setSwitchActiveColor(new java.awt.Color(255, 127, 127));

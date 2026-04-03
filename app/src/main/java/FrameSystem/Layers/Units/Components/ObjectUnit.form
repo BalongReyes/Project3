@@ -48,6 +48,9 @@
         <Property name="activeBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="eb" green="eb" red="ff" type="rgb"/>
         </Property>
+        <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f5" green="f5" red="ff" type="rgb"/>
+        </Property>
         <Property name="borderLine" type="int" value="2"/>
         <Property name="canHover" type="boolean" value="true"/>
         <Property name="defaultBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

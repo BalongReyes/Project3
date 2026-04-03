@@ -117,9 +117,6 @@
           </Layout>
           <SubComponents>
             <Component class="FrameSystem.Layers.Units.Module.ModuleUnits" name="moduleUnits">
-              <Properties>
-                <Property name="paintBackground" type="boolean" value="false"/>
-              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1701,11 +1698,11 @@
             </Component>
             <Component class="FrameSystem.Layers.Home.Components.MenuSwitch" name="menuSwitch_Fullscreen">
               <Properties>
+                <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e5" green="e5" red="e5" type="rgb"/>
+                </Property>
                 <Property name="foregroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="38" green="38" red="38" type="rgb"/>
-                </Property>
-                <Property name="hoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e5" green="e5" red="e5" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/fullscreen.png"/>

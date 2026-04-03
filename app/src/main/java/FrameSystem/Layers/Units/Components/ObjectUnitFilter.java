@@ -23,21 +23,79 @@ public class ObjectUnitFilter extends SPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setPaintBackground(false);
+        sPanel1 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
+        sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
+
+        setRadius(20);
+        setRounded(true);
+        setShadowColor(new java.awt.Color(230, 230, 230));
+        setShadowOpacity(0.3F);
+        setShadowSize(5);
+        setShadowX(true);
+        setShadowY(true);
+        setMaximumSize(new java.awt.Dimension(150, 46));
+        setMinimumSize(new java.awt.Dimension(0, 46));
+        setName(""); // NOI18N
+        setPreferredSize(new java.awt.Dimension(0, 46));
+
+        sPanel1.setCanHover(true);
+        sPanel1.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
+        sPanel1.setRadius(16);
+        sPanel1.setRounded(true);
+        sPanel1.setMaximumSize(new java.awt.Dimension(22, 22));
+        sPanel1.setMinimumSize(new java.awt.Dimension(22, 22));
+        sPanel1.setPreferredSize(new java.awt.Dimension(22, 22));
+
+        sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sLabel1.setIconSize(8);
+        sLabel1.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/close.png"))); // NOI18N
+
+        javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);
+        sPanel1.setLayout(sPanel1Layout);
+        sPanel1Layout.setHorizontalGroup(
+            sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel1Layout.createSequentialGroup()
+                .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        sPanel1Layout.setVerticalGroup(
+            sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+        );
+
+        sLabel2.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sLabel2.setText("sLabel2");
+        sLabel2.setMaximumSize(new java.awt.Dimension(0, 0));
+        sLabel2.setMinimumSize(new java.awt.Dimension(0, 0));
+        sLabel2.setPreferredSize(new java.awt.Dimension(0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 199, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(sPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
     // End of variables declaration//GEN-END:variables
 }
