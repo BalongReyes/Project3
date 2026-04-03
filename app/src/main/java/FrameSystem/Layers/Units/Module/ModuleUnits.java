@@ -60,8 +60,11 @@ public class ModuleUnits extends SPanel{
         sPanel26 = new FrameSystem.SLibrary.SComponents.SPanel();
         filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
         objectUnitFilter4 = new FrameSystem.Layers.Units.Components.ObjectUnitFilter();
+        sLabel7 = new FrameSystem.SLibrary.SComponents.SLabel();
         objectUnitFilter5 = new FrameSystem.Layers.Units.Components.ObjectUnitFilter();
+        sLabel12 = new FrameSystem.SLibrary.SComponents.SLabel();
         objectUnitFilter6 = new FrameSystem.Layers.Units.Components.ObjectUnitFilter();
+        sLabel13 = new FrameSystem.SLibrary.SComponents.SLabel();
         objectUnitFilter7 = new FrameSystem.Layers.Units.Components.ObjectUnitFilter();
         sPanel11 = new FrameSystem.SLibrary.SComponents.SPanel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
@@ -543,7 +546,7 @@ public class ModuleUnits extends SPanel{
             sPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jLayeredPane1)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         sPanel4Layout.setVerticalGroup(
@@ -684,9 +687,29 @@ public class ModuleUnits extends SPanel{
         sPanel19.add(filler5);
 
         sPanel16.add(sPanel19);
+
+        objectUnitFilter4.setText("Test");
         sPanel16.add(objectUnitFilter4);
+
+        sLabel7.setIconSize(8);
+        sLabel7.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/lassThan.png"))); // NOI18N
+        sPanel16.add(sLabel7);
+
+        objectUnitFilter5.setText("test2withlongtext");
         sPanel16.add(objectUnitFilter5);
+
+        sLabel12.setIconSize(8);
+        sLabel12.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/lassThan.png"))); // NOI18N
+        sPanel16.add(sLabel12);
+
+        objectUnitFilter6.setText("sh");
         sPanel16.add(objectUnitFilter6);
+
+        sLabel13.setIconSize(8);
+        sLabel13.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/lassThan.png"))); // NOI18N
+        sPanel16.add(sLabel13);
+
+        objectUnitFilter7.setText("nice");
         sPanel16.add(objectUnitFilter7);
 
         sPanel11.setPaintBackground(false);
@@ -1112,11 +1135,14 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel11;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel12;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel13;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel4;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel5;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel6;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel7;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel8;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel9;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
@@ -1126,7 +1152,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel13;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel14;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel15;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel16;
+    public FrameSystem.SLibrary.SComponents.SPanel sPanel16;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel17;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel18;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel19;

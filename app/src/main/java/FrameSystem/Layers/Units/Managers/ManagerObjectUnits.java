@@ -13,6 +13,7 @@ import DatabaseSystem.UnitsData.UnitsDataTable;
 import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
+import FrameSystem.Layers.Units.Components.ObjectUnitFilter;
 import FrameSystem.Layers.Units.Module.ModuleUnits;
 import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
 import MainSystem.ExecutorDriver;
@@ -58,25 +59,25 @@ public class ManagerObjectUnits extends Manager{
                 case 1 -> {
                     for(DataTableFilter checkFilter : activeFilters.toArray(DataTableFilter[]::new)){
                         if(checkFilter.getDataIndex() == f){
-                            activeFilters.remove(checkFilter);
-                            activeFilters.add(0, new DataTableFilter(f, DataTableOrder.Desc));
+                            removeActiveFilter(checkFilter);
+                            addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Desc));
                             b = false;
                         }
                     }
                     if(b){
-                        activeFilters.add(0, new DataTableFilter(f, DataTableOrder.Desc));
+                        addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Desc));
                     }
                 }
                 case 2 -> {
                     for(DataTableFilter checkFilter : activeFilters.toArray(DataTableFilter[]::new)){
                         if(checkFilter.getDataIndex() == f){
-                            activeFilters.remove(checkFilter);
-                            activeFilters.add(0, new DataTableFilter(f, DataTableOrder.Asc));
+                            removeActiveFilter(checkFilter);
+                            addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Asc));
                             b = false;
                         }
                     }
                     if(b){
-                        activeFilters.add(0, new DataTableFilter(f, DataTableOrder.Asc));
+                        addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Asc));
                     }
                 }
             }
@@ -272,11 +273,32 @@ public class ManagerObjectUnits extends Manager{
     
     // NEW: Method to set your default sort priority
     public static void setDefaultFilters() {
-        activeFilters.clear();
+        clearActiveFilter();
         // Default sort priority: Tower -> Floor -> Unit (Ascending)
-        activeFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Asc));
-        activeFilters.add(new DataTableFilter(UnitsDataTable.FLOOR, DataTableOrder.Asc));
-        activeFilters.add(new DataTableFilter(UnitsDataTable.UNIT, DataTableOrder.Asc));
+        addActiveFilter(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Asc));
+        addActiveFilter(new DataTableFilter(UnitsDataTable.FLOOR, DataTableOrder.Asc));
+        addActiveFilter(new DataTableFilter(UnitsDataTable.UNIT, DataTableOrder.Asc));
+    }
+    
+    public static void addActiveFilter(DataTableFilter dataFilter){
+        addActiveFilter(null, dataFilter);
+    }
+    
+    public static void addActiveFilter(Integer n, DataTableFilter dataFilter){
+        if(n != null){
+            activeFilters.add(dataFilter);
+        }else{
+            activeFilters.add(n, dataFilter);
+        }
+        moduleUnits.sPanel16.add(new ObjectUnitFilter(dataFilter));
+    }
+    
+    public static void removeActiveFilter(DataTableFilter dataFilter){
+        activeFilters.remove(dataFilter);
+    }
+    
+    public static void clearActiveFilter(){
+        activeFilters.clear();
     }
     
 // Add Edit Remove -------------------------------------------------------------------------------------------

@@ -116,7 +116,7 @@ public class UnitsDataHandler {
     }
 
     // Helper method to safely translate DataTable indexes to SQL columns to prevent injection
-    private static String getColumnName(int dataIndex) {
+    public static String getColumnName(int dataIndex) {
         return switch (dataIndex) {
             case UnitsDataTable.ID -> "id";
             case UnitsDataTable.TOWER -> "tower";

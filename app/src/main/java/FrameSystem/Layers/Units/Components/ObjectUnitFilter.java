@@ -1,6 +1,9 @@
 package FrameSystem.Layers.Units.Components;
 
+import DatabaseSystem.DataTable.DataTableFilter;
+import DatabaseSystem.UnitsData.UnitsDataHandler;
 import FrameSystem.SLibrary.SComponents.SPanel;
+import java.beans.BeanProperty;
 
 /**
  *
@@ -14,6 +17,43 @@ public class ObjectUnitFilter extends SPanel{
     public ObjectUnitFilter(){
         initComponents();
     }
+    
+    public DataTableFilter filter;
+    
+    public ObjectUnitFilter(DataTableFilter filter){
+        initComponents();
+        
+        this.filter = filter;
+        setText(UnitsDataHandler.getColumnName(filter.getDataIndex()));
+    }
+    
+    public String text = "";
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The text of panel")
+    public void setText(String text){
+        this.text = text;
+        sLabel2.setText(text);
+        int labelWidth = sLabel2.getPreferredSize().width;
+        
+        // 3. Get the width of the close button panel (sPanel1 is set to 22x22 in your code)
+        int closeButtonWidth = sPanel1.getPreferredSize().width;
+        
+        // 4. Calculate total width. Add any extra padding your layout uses (e.g., 10px left + 4px right)
+        int padding = 29; 
+        int totalWidth = labelWidth + closeButtonWidth + padding;
+        
+        // 5. Apply the calculated maximum dimension to the ObjectUnitFilter (this panel)
+        // Note: You had the height set to 46 in your GUI builder.
+        this.setMaximumSize(new java.awt.Dimension(totalWidth, 46));
+        
+        // 6. Tell the panel to re-layout and redraw itself with the new constraints
+        this.revalidate();
+        this.repaint();
+    }
+
+    public String getText(){
+        return text;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this
@@ -23,9 +63,9 @@ public class ObjectUnitFilter extends SPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
         sPanel1 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
-        sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
 
         setRadius(20);
         setRounded(true);
@@ -35,9 +75,15 @@ public class ObjectUnitFilter extends SPanel{
         setShadowX(true);
         setShadowY(true);
         setMaximumSize(new java.awt.Dimension(150, 46));
-        setMinimumSize(new java.awt.Dimension(0, 46));
+        setMinimumSize(new java.awt.Dimension(150, 46));
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(0, 46));
+        setPreferredSize(new java.awt.Dimension(150, 46));
+
+        sLabel2.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sLabel2.setText(text);
+        sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        sLabel2.setName(""); // NOI18N
 
         sPanel1.setCanHover(true);
         sPanel1.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
@@ -56,39 +102,35 @@ public class ObjectUnitFilter extends SPanel{
         sPanel1Layout.setHorizontalGroup(
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
                 .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         sPanel1Layout.setVerticalGroup(
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+            .addGroup(sPanel1Layout.createSequentialGroup()
+                .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
-
-        sLabel2.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLabel2.setText("sLabel2");
-        sLabel2.setMaximumSize(new java.awt.Dimension(0, 0));
-        sLabel2.setMinimumSize(new java.awt.Dimension(0, 0));
-        sLabel2.setPreferredSize(new java.awt.Dimension(0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                .addGap(0, 0, 0)
+                .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(5, 5, 5)
                 .addComponent(sPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(sPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(sLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
