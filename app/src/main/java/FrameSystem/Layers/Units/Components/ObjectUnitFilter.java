@@ -3,6 +3,7 @@ package FrameSystem.Layers.Units.Components;
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.UnitsData.UnitsDataHandler;
 import FrameSystem.SLibrary.SComponents.SPanel;
+import java.awt.event.MouseAdapter;
 import java.beans.BeanProperty;
 
 /**
@@ -25,6 +26,13 @@ public class ObjectUnitFilter extends SPanel{
         
         this.filter = filter;
         setText(UnitsDataHandler.getColumnName(filter.getDataIndex()));
+        
+        sPanel1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent e) {
+                FrameSystem.Layers.Units.Managers.ManagerObjectUnits.removeActiveFilter(filter);
+            }
+        });
     }
     
     public String text = "";

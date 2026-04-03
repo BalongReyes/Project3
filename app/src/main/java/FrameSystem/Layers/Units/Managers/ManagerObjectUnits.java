@@ -34,6 +34,11 @@ public class ManagerObjectUnits extends Manager{
                 
         moduleUnits = frame.moduleHome.moduleUnits;
         
+        // Grab the layout spacers BEFORE we set default filters
+        initFilterUI(); 
+        
+        setDefaultFilters();
+                
         moduleUnits.objectUnitScrollPane.setObjectContentHeight(60);
         
         moduleUnits.sFilterTitlePanel1.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.TOWER, moduleUnits.sFilterTitlePanel1));
@@ -268,10 +273,58 @@ public class ManagerObjectUnits extends Manager{
     private static String filter = "";
     private static int filterCategory = -1;
     
-    // REPLACED: Track multiple active filters instead of just one
+    // Track multiple active filters
     private static ArrayList<DataTableFilter> activeFilters = new ArrayList<>();
     
-    // NEW: Method to set your default sort priority
+    // UI Elements for sPanel16 tracking
+    private static java.awt.Component leftFiller;
+    private static java.awt.Component rightFiller;
+    private static java.awt.Component addFilterBtn;
+    private static java.awt.Component clearFilterBtn;
+
+    // Call this to initialize the fixed components of your Filter UI layout
+    public static void initFilterUI() {
+        int count = moduleUnits.sPanel16.getComponentCount();
+        if(count >= 4) {
+            // Grab the fixed elements based on your GUI builder layout
+            leftFiller = moduleUnits.sPanel16.getComponent(0);
+            rightFiller = moduleUnits.sPanel16.getComponent(count - 3);
+            addFilterBtn = moduleUnits.sPanel16.getComponent(count - 2);
+            clearFilterBtn = moduleUnits.sPanel16.getComponent(count - 1);
+        }
+    }
+    
+    // Updates the visual panel to exactly match the activeFilters array
+    private static void refreshFilterUI() {
+        if (leftFiller == null) return; // Safety check in case it hasn't initialized
+        
+        moduleUnits.sPanel16.removeAll();
+        moduleUnits.sPanel16.add(leftFiller); // 1. Add left spacer
+        
+        // 2. Loop through active filters and build the UI dynamically
+        for (int i = 0; i < activeFilters.size(); i++) {
+            ObjectUnitFilter filterComponent = new ObjectUnitFilter(activeFilters.get(i));
+            moduleUnits.sPanel16.add(filterComponent);
+            
+            // Add the arrow separator (lassThan.png) if it's not the last filter
+            if (i < activeFilters.size() - 1) {
+                FrameSystem.SLibrary.SComponents.SLabel arrow = new FrameSystem.SLibrary.SComponents.SLabel();
+                arrow.setIconSize(8);
+                arrow.setScaledIcon(new javax.swing.ImageIcon(ManagerObjectUnits.class.getResource("/Icons/lassThan.png")));
+                moduleUnits.sPanel16.add(arrow);
+            }
+        }
+        
+        // 3. Add the trailing fixed UI items back
+        moduleUnits.sPanel16.add(rightFiller);
+        moduleUnits.sPanel16.add(addFilterBtn);
+        moduleUnits.sPanel16.add(clearFilterBtn);
+        
+        // 4. Force the panel to update visually
+        moduleUnits.sPanel16.revalidate();
+        moduleUnits.sPanel16.repaint();
+    }
+
     public static void setDefaultFilters() {
         clearActiveFilter();
         // Default sort priority: Tower -> Floor -> Unit (Ascending)
@@ -286,19 +339,21 @@ public class ManagerObjectUnits extends Manager{
     
     public static void addActiveFilter(Integer n, DataTableFilter dataFilter){
         if(n != null){
-            activeFilters.add(dataFilter);
-        }else{
-            activeFilters.add(n, dataFilter);
+            activeFilters.add(n, dataFilter); // Fixed logic bug here!
+        } else {
+            activeFilters.add(dataFilter);    // Fixed logic bug here!
         }
-        moduleUnits.sPanel16.add(new ObjectUnitFilter(dataFilter));
+        refreshFilterUI(); // Sync UI
     }
     
     public static void removeActiveFilter(DataTableFilter dataFilter){
         activeFilters.remove(dataFilter);
+        refreshFilterUI(); // Sync UI
     }
     
     public static void clearActiveFilter(){
         activeFilters.clear();
+        refreshFilterUI(); // Sync UI
     }
     
 // Add Edit Remove -------------------------------------------------------------------------------------------
