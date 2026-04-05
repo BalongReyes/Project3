@@ -132,7 +132,7 @@ public class ObjectUnit extends SPanel{
         sPanel1 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
         sLabel4 = new FrameSystem.SLibrary.SComponents.SLabel();
-        sLabel9 = new FrameSystem.SLibrary.SComponents.SLabel();
+        objectUnitOccupancy1 = new FrameSystem.Layers.Units.Components.ObjectUnitOccupancy();
         sLabel10 = new FrameSystem.SLibrary.SComponents.SLabel();
         sPanel3 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel7 = new FrameSystem.SLibrary.SComponents.SLabel();
@@ -176,12 +176,7 @@ public class ObjectUnit extends SPanel{
         );
         sLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sPanel1.add(sLabel4);
-
-        sLabel9.setForeground(new java.awt.Color(70, 70, 70));
-        sLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        sLabel9.setText("Occupancy Type");
-        sLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        sPanel1.add(sLabel9);
+        sPanel1.add(objectUnitOccupancy1);
 
         sLabel10.setBackground(new java.awt.Color(255, 255, 255));
         sLabel10.setForeground(new java.awt.Color(70, 70, 70));
@@ -235,7 +230,7 @@ public class ObjectUnit extends SPanel{
         );
         sPanelHighlight1Layout.setVerticalGroup(
             sPanelHighlight1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(sLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(sPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
             .addComponent(sPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(sLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -261,13 +256,13 @@ public class ObjectUnit extends SPanel{
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private FrameSystem.Layers.Units.Components.ObjectUnitOccupancy objectUnitOccupancy1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel4;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel7;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel8;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel9;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel3;
     private FrameSystem.SLibrary.SComponents.SPanelHighlight sPanelHighlight1;

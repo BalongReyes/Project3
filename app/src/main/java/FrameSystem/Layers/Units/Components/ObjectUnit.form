@@ -89,7 +89,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="sLabel1" alignment="1" pref="50" max="32767" attributes="0"/>
+              <Component id="sLabel1" alignment="1" max="32767" attributes="0"/>
               <Component id="sPanel3" alignment="0" pref="50" max="32767" attributes="0"/>
               <Component id="sPanel1" alignment="0" max="32767" attributes="0"/>
               <Component id="sLabel7" alignment="1" max="32767" attributes="0"/>
@@ -157,17 +157,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel9">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="46" green="46" red="46" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Occupancy Type"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
-                </Property>
-              </Properties>
+            <Component class="FrameSystem.Layers.Units.Components.ObjectUnitOccupancy" name="objectUnitOccupancy1">
             </Component>
             <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel10">
               <Properties>
