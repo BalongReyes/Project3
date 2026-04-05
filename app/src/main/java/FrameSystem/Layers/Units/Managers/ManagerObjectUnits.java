@@ -1,7 +1,6 @@
 package FrameSystem.Layers.Units.Managers;
 
 import java.awt.Dimension;
-import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -10,12 +9,10 @@ import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
 import DatabaseSystem.UnitsData.UnitsDataHandler;
 import DatabaseSystem.UnitsData.UnitsDataTable;
-import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
 import FrameSystem.Layers.Units.Components.ObjectUnitFilter;
 import FrameSystem.Layers.Units.Module.ModuleUnits;
-import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
 import MainSystem.ExecutorDriver;
 import MainSystem.Manager;
 import java.awt.event.MouseAdapter;
@@ -26,6 +23,10 @@ public class ManagerObjectUnits extends Manager{
     public static ModuleUnits moduleUnits;
     
     private static ArrayList<ObjectUnit> objects = new ArrayList<>();
+    
+    private static boolean isFilterTower1Active = false;
+    private static boolean isFilterTower2Active = false;
+    private static boolean isFilterTower3Active = false;
     
     // Variables for Debouncing and Thread Cancellation
     private static javax.swing.Timer filterDebounceTimer;
@@ -43,16 +44,11 @@ public class ManagerObjectUnits extends Manager{
                 
         moduleUnits.objectUnitScrollPane.setObjectContentHeight(60);
         
-        moduleUnits.sFilterTitlePanel1.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.TOWER, moduleUnits.sFilterTitlePanel1));
-        moduleUnits.sFilterTitlePanel2.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.FLOOR, moduleUnits.sFilterTitlePanel2));
-        moduleUnits.sFilterTitlePanel3.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.UNIT, moduleUnits.sFilterTitlePanel3));
-        moduleUnits.sFilterTitlePanel5.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.MODEL, moduleUnits.sFilterTitlePanel5));
-        moduleUnits.sFilterTitlePanel4.addMouseListener(buildFilterTitleMouseListener(UnitsDataTable.FLOOR_AREA, moduleUnits.sFilterTitlePanel4));
-        
         moduleUnits.filterTower1.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e){
                 moduleUnits.filterTower1.toggleActive();
+                isFilterTower1Active = moduleUnits.filterTower1.isActive();
                 activeFilterChanged();
             }
         });
@@ -61,6 +57,7 @@ public class ManagerObjectUnits extends Manager{
             @Override
             public void mousePressed(MouseEvent e){
                 moduleUnits.filterTower2.toggleActive();
+                isFilterTower2Active = moduleUnits.filterTower2.isActive();
                 activeFilterChanged();
             }
         });
@@ -69,59 +66,13 @@ public class ManagerObjectUnits extends Manager{
             @Override
             public void mousePressed(MouseEvent e){
                 moduleUnits.filterTower3.toggleActive();
+                isFilterTower3Active = moduleUnits.filterTower3.isActive();
                 activeFilterChanged();
             }
         });
     }
 
 // Main Methods ==============================================================================================
-    
-// Filter Title ----------------------------------------------------------------------------------------------
-    
-    private static MouseListener buildFilterTitleMouseListener(int f, SFilterTitlePanel c){
-        return (MousePressedAdaptor) (var evt) -> {
-            // Reset the previous arrow if clicking a new column
-            if(getCurrentFilterTitlePanel() != c){
-                resetCurrentFilterTitlePanel();
-            }
-
-            int direction = c.setNextArrowDirection();
-
-            // 1. Remove the existing filter for this column so we don't get duplicates
-            for(DataTableFilter checkFilter : activeFilters.toArray(DataTableFilter[]::new)){
-                if(checkFilter.getDataIndex() == f){
-                    removeActiveFilter(checkFilter);
-                }
-            }
-
-            // 2. Add the new filter based on the click direction to the front (index 0) for highest priority
-            switch(direction){
-                case 1 -> {
-                    addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Desc));
-                }
-                case 2 -> {
-                    addActiveFilter(0, new DataTableFilter(f, DataTableOrder.Asc));
-                }
-                // If direction is 0 (neutral), it just remains removed!
-            }
-
-            setCurrentFilterTitlePanel(c);
-        };
-    }
-    
-    private static SFilterTitlePanel currentFilterTitlePanel = null;
-    
-    private static void setCurrentFilterTitlePanel(SFilterTitlePanel c){
-        currentFilterTitlePanel = c;
-    }
-    
-    private static SFilterTitlePanel getCurrentFilterTitlePanel(){
-        return currentFilterTitlePanel;
-    }
-    
-    private static void resetCurrentFilterTitlePanel(){
-        if(currentFilterTitlePanel != null) currentFilterTitlePanel.setArrowDirection(-1);
-    }
     
 // Refresh ---------------------------------------------------------------------------------------------------
     
@@ -149,9 +100,15 @@ public class ManagerObjectUnits extends Manager{
                     // Check if a newer refresh has been clicked. If so, abort this old thread.
                     if (thisRefreshId != currentRefreshId) return;
 
+                    ArrayList<DataTableFilter> combinedFilters = new ArrayList<>(activeFilters);
+                    
+                    if (isFilterTower1Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Where, "1"));
+                    if (isFilterTower2Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Where, "2"));
+                    if (isFilterTower3Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Where, "3"));
+                    
                     UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
                         refresh, 
-                        activeFilters.toArray(DataTableFilter[]::new), 
+                        combinedFilters.toArray(DataTableFilter[]::new), 
                         limit, 
                         offset
                     );

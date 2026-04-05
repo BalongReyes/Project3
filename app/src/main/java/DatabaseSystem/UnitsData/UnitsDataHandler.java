@@ -50,30 +50,64 @@ public class UnitsDataHandler {
     
     // Handles sorting using an array of DataTableFilter objects
     public static UnitsDataTable[] getDataBatchSortedMulti(boolean refresh, DataTableFilter[] filters, int limit, int offset) throws SQLException {
+        StringBuilder whereBy = new StringBuilder();
+        
+        // Safety check: If no filters are provided
+        if (filters == null || filters.length == 0) {
+        } else {
+            // Loop through all provided DataTableFilter objects
+            int n = 0;
+            for (int i = 0; i < filters.length; i++) {
+                DataTableFilter filter = filters[i];
+                if(filter.getOrder() == DataTableOrder.Where){
+                    // Add a comma separator if it is not the very last filter in the array
+                    if (n > 0) {
+                        whereBy.append(" OR ");
+                    }
+                    
+                    String columnName = getColumnName(filter.getDataIndex());
+                    String dataString = filter.getDataWhere();
+
+                    whereBy.append(columnName).append(" = '").append(dataString).append("'");
+
+                    n++;
+                }
+            }
+        }
+        
         StringBuilder orderBy = new StringBuilder();
         
         // Safety check: If no filters are provided, default to sorting by ID
         if (filters == null || filters.length == 0) {
-            orderBy.append("id DESC");
+            orderBy.append("id ASC");
         } else {
             // Loop through all provided DataTableFilter objects
+            int n = 0;
             for (int i = 0; i < filters.length; i++) {
                 DataTableFilter filter = filters[i];
-                
-                String columnName = getColumnName(filter.getDataIndex());
-                String orderString = (filter.getOrder() == DataTableOrder.Asc) ? "ASC" : "DESC";
-                
-                orderBy.append(columnName).append(" ").append(orderString);
-                
-                // Add a comma separator if it is not the very last filter in the array
-                if (i < filters.length - 1) {
-                    orderBy.append(", ");
+                if(filter.getOrder() != DataTableOrder.Where){
+                    // Add a comma separator if it is not the very last filter in the array
+                    if (n > 0) {
+                        orderBy.append(", ");
+                    }
+                    
+                    String columnName = getColumnName(filter.getDataIndex());
+                    String orderString = (filter.getOrder() == DataTableOrder.Asc) ? "ASC" : "DESC";
+
+                    orderBy.append(columnName).append(" ").append(orderString);
+
+                    n++;
                 }
             }
         }
         
         // Assemble the final query
-        String query = "SELECT * FROM units ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
+        String query = "";
+        if(!whereBy.isEmpty()){
+            query = "SELECT * FROM units WHERE " + whereBy.toString() + " ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
+        }else{
+            query = "SELECT * FROM units ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
+        }
         
         ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
         

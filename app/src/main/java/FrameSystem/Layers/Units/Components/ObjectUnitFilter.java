@@ -1,10 +1,13 @@
 package FrameSystem.Layers.Units.Components;
 
 import DatabaseSystem.DataTable.DataTableFilter;
+import static DatabaseSystem.DataTable.DataTableOrder.Asc;
+import static DatabaseSystem.DataTable.DataTableOrder.Desc;
 import DatabaseSystem.UnitsData.UnitsDataHandler;
 import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.event.MouseAdapter;
 import java.beans.BeanProperty;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -49,6 +52,17 @@ public class ObjectUnitFilter extends SPanel{
         // 4. Calculate total width. Add any extra padding your layout uses (e.g., 10px left + 4px right)
         int padding = 29; 
         int totalWidth = labelWidth + closeButtonWidth + padding;
+        
+        if(filter != null) switch(filter.getOrder()){
+            case Desc -> {
+                sLabel2.setScaledIcon(new ImageIcon(getClass().getResource("/Icons/arrowUp.png")));
+                totalWidth += sLabel2.getIconSize() + sLabel2.getIconTextGap();
+            }
+            case Asc -> {
+                sLabel2.setScaledIcon(new ImageIcon(getClass().getResource("/Icons/arrowDown.png")));
+                totalWidth += sLabel2.getIconSize() + sLabel2.getIconTextGap();
+            }
+        }
         
         // 5. Apply the calculated maximum dimension to the ObjectUnitFilter (this panel)
         // Note: You had the height set to 46 in your GUI builder.
