@@ -50,6 +50,13 @@ public class ObjectUnit extends SPanel{
             }
         );
         
+        // Fetch data strings safely
+        String occupancy = "UNKNOWN";
+        String status = "UNKNOWN";
+        
+        // Call our new function
+        setOccupancyAndStatus(occupancy, status);
+        
 //        this.deleteBlocked = deleteBlocked;
 //        if(deleteBlocked){
 //            deleteButton.setEnabled(false);
@@ -92,6 +99,19 @@ public class ObjectUnit extends SPanel{
         return data.getId();
     }
     
+// -----------------------------------------------------------------------------------------------------------
+    
+    private void setOccupancyAndStatus(String occupancy, String status) {
+        // Set the text
+        occupancyType.sLabel1.setText(occupancy);
+        unitStatus.sLabel1.setText(status);
+
+        // Clean strings for logic checking
+        String cleanOccupancy = occupancy.trim().toUpperCase();
+        String cleanStatus = status.trim().toUpperCase().replace("-", " "); 
+
+    }
+
 // -----------------------------------------------------------------------------------------------------------
     
     private void setFocus(){

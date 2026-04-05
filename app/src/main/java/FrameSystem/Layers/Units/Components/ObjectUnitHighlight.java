@@ -81,7 +81,7 @@ public class ObjectUnitHighlight extends SPanel{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
+    public FrameSystem.SLibrary.SComponents.SLabel sLabel1;
+    public FrameSystem.SLibrary.SComponents.SPanel sPanel1;
     // End of variables declaration//GEN-END:variables
 }
