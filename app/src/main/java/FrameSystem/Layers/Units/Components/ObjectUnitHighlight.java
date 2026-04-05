@@ -10,12 +10,12 @@ import FrameSystem.SLibrary.SComponents.SPanel;
  *
  * @author SPPR-LOQ
  */
-public class ObjectUnitOccupancy extends SPanel{
+public class ObjectUnitHighlight extends SPanel{
 
     /**
      * Creates new form ObjectUnitOccupancy
      */
-    public ObjectUnitOccupancy(){
+    public ObjectUnitHighlight(){
         initComponents();
     }
 
