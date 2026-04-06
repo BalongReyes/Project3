@@ -13,11 +13,17 @@ public class UnitsDataHandler {
 
     private static ArrayList<UnitsDataTable> array = new ArrayList<>();
     
+    private static final String BASE_SELECT_QUERY = 
+        "SELECT u.*, " +
+        "EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id) AS has_owner, " +
+        "EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id) AS has_tenant " +
+        "FROM units u";
+    
     public static void refreshData() throws SQLException {
         array.clear();
         
         // SECURED: Now uses executePreparedQuery
-        Database.executePreparedQuery("SELECT * FROM units", (result) -> {
+        Database.executePreparedQuery(BASE_SELECT_QUERY, (result) -> {
             while (result.next()) {
                 UnitsDataTable data = new UnitsDataTable(result);
                 if (!data.isError()) array.add(data);
@@ -35,7 +41,7 @@ public class UnitsDataHandler {
 // Search & Sort Methods =====================================================================================
 
     public static UnitsDataTable[] getDataBatchSorted(boolean refresh, int dataIndex, DataTableOrder order, int limit, int offset) throws SQLException {
-        String query = "SELECT * FROM units ORDER BY " + getColumnName(dataIndex) + " " + order.getString() + " LIMIT ? OFFSET ?";
+        String query = BASE_SELECT_QUERY + " ORDER BY " + getColumnName(dataIndex) + " " + order.getString() + " LIMIT ? OFFSET ?";
         
         ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
         Database.executePreparedQuery(query, (result) -> {
@@ -104,9 +110,9 @@ public class UnitsDataHandler {
         // Assemble the final query
         String query = "";
         if(!whereBy.isEmpty()){
-            query = "SELECT * FROM units WHERE " + whereBy.toString() + " ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
+            query = BASE_SELECT_QUERY + " WHERE " + whereBy.toString() + " ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
         }else{
-            query = "SELECT * FROM units ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
+            query = BASE_SELECT_QUERY + " ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
         }
         
         ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
@@ -123,7 +129,7 @@ public class UnitsDataHandler {
     
     // REPLACED: Now uses high-speed SQL sorting instead of Java QuickSort
     public static UnitsDataTable[] getAllDataSorted(boolean refresh, int dataIndex, DataTableOrder order) throws SQLException {
-        String query = "SELECT * FROM units ORDER BY " + getColumnName(dataIndex) + " " + order.getString();
+        String query = BASE_SELECT_QUERY + " ORDER BY " + getColumnName(dataIndex) + " " + order.getString();
         
         ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
         Database.executePreparedQuery(query, (result) -> {
@@ -140,7 +146,7 @@ public class UnitsDataHandler {
     public static UnitsDataTable findDataById(int id) throws SQLException {
         UnitsDataTable[] resultHolder = new UnitsDataTable[1];
         
-        Database.executePreparedQuery("SELECT * FROM units WHERE id = ?", (result) -> {
+        Database.executePreparedQuery(BASE_SELECT_QUERY + " WHERE id = ?", (result) -> {
             if (result.next()) {
                 resultHolder[0] = new UnitsDataTable(result);
             }

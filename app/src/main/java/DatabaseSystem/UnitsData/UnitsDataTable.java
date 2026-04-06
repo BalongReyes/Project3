@@ -21,6 +21,9 @@ public class UnitsDataTable implements DataTable{
     public static final int BALCONY = 6;
     public static final int FLOOR_AREA = 7;
     
+    public static final int OCCUPANCY = 8;
+    public static final int UNIT_STATUS = 9;
+    
 // -----------------------------------------------------------------------------------------------------------
     
     private Integer id;
@@ -31,9 +34,12 @@ public class UnitsDataTable implements DataTable{
     private Integer balcony;
     private Float floorArea;
     
+    private UnitsDataOccupancy occupancy;
+    private UnitsDataUnitStatus unitStatus;
+    
 // Constructor ===============================================================================================
 
-    public UnitsDataTable(Integer id, Integer tower, Integer floor, Integer unit, Integer model, Integer balcony, Float floorArea){
+    public UnitsDataTable(Integer id, Integer tower, Integer floor, Integer unit, Integer model, Integer balcony, Float floorArea, UnitsDataOccupancy occupancy, UnitsDataUnitStatus unitStatus) {
         this.id = id;
         this.tower = tower;
         this.floor = floor;
@@ -41,10 +47,12 @@ public class UnitsDataTable implements DataTable{
         this.model = model;
         this.balcony = balcony;
         this.floorArea = floorArea;
+        this.occupancy = occupancy;
+        this.unitStatus = unitStatus;
     }
 
-    public UnitsDataTable(ResultSet results) throws SQLException{
-        try{
+    public UnitsDataTable(ResultSet results) throws SQLException {
+        try {
             id = results.getInt("id");
             tower = results.getInt("tower");
             floor = results.getInt("floor");
@@ -52,7 +60,36 @@ public class UnitsDataTable implements DataTable{
             model = results.getInt("model");
             balcony = results.getInt("balcony");
             floorArea = results.getFloat("floorArea");
-        }catch(SQLException e){
+            
+            // Check for Owner and Tenant logic dynamically injected from SQL
+            boolean hasOwner = false;
+            boolean hasTenant = false;
+            
+            // Wrapped in try-catch in case a standard `SELECT * FROM units` is executed elsewhere
+            try {
+                hasOwner = results.getBoolean("has_owner");
+                hasTenant = results.getBoolean("has_tenant");
+            } catch (SQLException ignored) {
+                // If columns don't exist, we fall back to defaults
+            }
+            
+            // Set Unit Status
+            if (hasOwner) {
+                unitStatus = UnitsDataUnitStatus.TurnedOver;
+            } else {
+                unitStatus = UnitsDataUnitStatus.UnturnedOver;
+            }
+            
+            // Set Occupancy Type
+            if (hasTenant) {
+                occupancy = UnitsDataOccupancy.Tenant;
+            } else if (hasOwner) {
+                occupancy = UnitsDataOccupancy.Owner;
+            } else {
+                occupancy = UnitsDataOccupancy.UnturnedOver;
+            }
+            
+        } catch(SQLException e) {
             error = true;
             throw e;
         }
@@ -95,6 +132,8 @@ public class UnitsDataTable implements DataTable{
             case 5 -> model;
             case 6 -> balcony;
             case 7 -> floorArea;
+            case 8 -> occupancy != null ? occupancy.getStringName() : "";
+            case 9 -> unitStatus != null ? unitStatus.getStringName() : "";
             default -> null;
         };
     }
@@ -104,6 +143,7 @@ public class UnitsDataTable implements DataTable{
         return switch(i){
             case 1, 2, 3, 4, 5, 6 -> DataTableType.TYPE_INTEGER;
             case 7 -> DataTableType.TYPE_FLOAT;
+            case 8, 9 -> DataTableType.TYPE_STRING;
             default -> DataTableType.TYPE_NULL;
         };
     }
@@ -134,6 +174,14 @@ public class UnitsDataTable implements DataTable{
 
     public Float getFloorArea(){
         return floorArea;
+    }
+    
+    public UnitsDataOccupancy getOccupancy(){
+        return occupancy;
+    }
+    
+    public UnitsDataUnitStatus getUnitStatus(){
+        return unitStatus;
     }
 
 // Overrided Methods =========================================================================================
