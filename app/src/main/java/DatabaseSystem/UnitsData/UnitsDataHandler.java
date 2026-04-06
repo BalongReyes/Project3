@@ -16,7 +16,9 @@ public class UnitsDataHandler {
     private static final String BASE_SELECT_QUERY = 
         "SELECT u.*, " +
         "EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id) AS has_owner, " +
-        "EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id) AS has_tenant " +
+        "EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id) AS has_tenant, " +
+        "EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id AND o.weekenders = 1) AS is_owner_weekender, " +
+        "EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id AND t.weekenders = 1) AS is_tenant_weekender " +
         "FROM units u";
     
     public static void refreshData() throws SQLException {
@@ -59,9 +61,7 @@ public class UnitsDataHandler {
         StringBuilder whereBy = new StringBuilder();
         
         // Safety check: If no filters are provided
-        if (filters == null || filters.length == 0) {
-        } else {
-            // Loop through all provided DataTableFilter objects
+        if (filters != null && filters.length != 0) {
             int n = 0;
             for (int i = 0; i < filters.length; i++) {
                 DataTableFilter filter = filters[i];
@@ -84,9 +84,7 @@ public class UnitsDataHandler {
         StringBuilder orderBy = new StringBuilder();
         
         // Safety check: If no filters are provided, default to sorting by ID
-        if (filters == null || filters.length == 0) {
-            orderBy.append("id ASC");
-        } else {
+        if (filters != null && filters.length != 0) {
             // Loop through all provided DataTableFilter objects
             int n = 0;
             for (int i = 0; i < filters.length; i++) {
@@ -108,12 +106,16 @@ public class UnitsDataHandler {
         }
         
         // Assemble the final query
-        String query = "";
+        String query = BASE_SELECT_QUERY;
         if(!whereBy.isEmpty()){
-            query = BASE_SELECT_QUERY + " WHERE " + whereBy.toString() + " ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
-        }else{
-            query = BASE_SELECT_QUERY + " ORDER BY " + orderBy.toString() + " LIMIT ? OFFSET ?";
+            query += " WHERE " + whereBy.toString();
         }
+        if(!orderBy.isEmpty()){
+            query += " ORDER BY " + orderBy.toString();
+        }else{
+            query += " ORDER BY id ASC";
+        }
+        query += " LIMIT ? OFFSET ?";
         
         ArrayList<UnitsDataTable> sortedArray = new ArrayList<>();
         

@@ -100,18 +100,20 @@ public class ObjectUnitHighlight extends SPanel{
         sPanel2.setDefaultBackgroundColor(new java.awt.Color(255, 153, 51));
         sPanel2.setRadius(5);
         sPanel2.setRounded(true);
-        sPanel2.setMaximumSize(new java.awt.Dimension(10, 10));
+        sPanel2.setMaximumSize(new java.awt.Dimension(8, 8));
+        sPanel2.setMinimumSize(new java.awt.Dimension(8, 8));
         sPanel2.setName(""); // NOI18N
+        sPanel2.setPreferredSize(new java.awt.Dimension(8, 8));
 
         javax.swing.GroupLayout sPanel2Layout = new javax.swing.GroupLayout(sPanel2);
         sPanel2.setLayout(sPanel2Layout);
         sPanel2Layout.setHorizontalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
         sPanel2Layout.setVerticalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+            .addGap(0, 8, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);
@@ -143,7 +145,7 @@ public class ObjectUnitHighlight extends SPanel{
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(sPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

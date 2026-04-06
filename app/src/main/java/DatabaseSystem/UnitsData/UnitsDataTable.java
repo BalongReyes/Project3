@@ -64,11 +64,15 @@ public class UnitsDataTable implements DataTable{
             // Check for Owner and Tenant logic dynamically injected from SQL
             boolean hasOwner = false;
             boolean hasTenant = false;
+            boolean isOwnerWeekender = false;
+            boolean isTenantWeekender = false;
             
             // Wrapped in try-catch in case a standard `SELECT * FROM units` is executed elsewhere
             try {
                 hasOwner = results.getBoolean("has_owner");
                 hasTenant = results.getBoolean("has_tenant");
+                isOwnerWeekender = results.getBoolean("is_owner_weekender");
+                isTenantWeekender = results.getBoolean("is_tenant_weekender");
             } catch (SQLException ignored) {
                 // If columns don't exist, we fall back to defaults
             }
@@ -82,9 +86,17 @@ public class UnitsDataTable implements DataTable{
             
             // Set Occupancy Type
             if (hasTenant) {
-                occupancy = UnitsDataOccupancy.Tenant;
+                if(isTenantWeekender){
+                    occupancy = UnitsDataOccupancy.TenantWeekenders;
+                }else{
+                    occupancy = UnitsDataOccupancy.Tenant;
+                }
             } else if (hasOwner) {
-                occupancy = UnitsDataOccupancy.Owner;
+                if(isOwnerWeekender){
+                    occupancy = UnitsDataOccupancy.OwnerWeekenders;
+                }else{
+                    occupancy = UnitsDataOccupancy.Owner;
+                }
             } else {
                 occupancy = UnitsDataOccupancy.UnturnedOver;
             }
