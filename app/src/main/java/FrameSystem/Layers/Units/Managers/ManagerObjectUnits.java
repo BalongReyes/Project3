@@ -138,6 +138,7 @@ public class ManagerObjectUnits extends Manager{
                             javax.swing.SwingUtilities.invokeLater(() -> {
                                 if (thisRefreshId != currentRefreshId) return; // Final UI check
                                 moduleUnits.objectUnitWrapper.removeAll();
+                                moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                                 objects.clear();
                                 resizeContainer();
                                 LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
@@ -154,6 +155,7 @@ public class ManagerObjectUnits extends Manager{
 
                         if (firstBatchCopy) {
                             moduleUnits.objectUnitWrapper.removeAll();
+                            moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                             objects.clear();
                             LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
                         }
@@ -191,7 +193,7 @@ public class ManagerObjectUnits extends Manager{
 // Resize ----------------------------------------------------------------------------------------------------
     
     private static void resizeContainer(){
-        int height = (objects.size() * 60);
+        int height = (objects.size() * 60) + 10;
         moduleUnits.objectUnitContainer.setPreferredSize(new Dimension(0, height));
         moduleUnits.objectUnitWrapper.setPreferredSize(new Dimension(0, height));
         moduleUnits.revalidate();

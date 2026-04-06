@@ -1,12 +1,15 @@
 
 package FrameSystem.Layers.Units.Components;
 
+import DatabaseSystem.UnitsData.UnitsDataOccupancy;
+import DatabaseSystem.UnitsData.UnitsDataUnitStatus;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import DatabaseSystem.UnitsData.UnitsDataTable;
 import FrameSystem.Layers.Units.Managers.ManagerObjectUnits;
 import FrameSystem.SLibrary.SComponents.SPanel;
+import java.util.Random;
 
 public class ObjectUnit extends SPanel{
 
@@ -50,12 +53,11 @@ public class ObjectUnit extends SPanel{
             }
         );
         
-        // Fetch data strings safely
-        String occupancy = "UNKNOWN";
-        String status = "UNKNOWN";
-        
+        Random rand = new Random();
         // Call our new function
-        setOccupancyAndStatus(occupancy, status);
+        setOccupancyAndStatus(UnitsDataOccupancy.values()[rand.nextInt((7 - 1) + 1) + 1], 
+                UnitsDataUnitStatus.values()[rand.nextInt((3 - 1) + 1) + 1]
+        );
         
 //        this.deleteBlocked = deleteBlocked;
 //        if(deleteBlocked){
@@ -101,15 +103,10 @@ public class ObjectUnit extends SPanel{
     
 // -----------------------------------------------------------------------------------------------------------
     
-    private void setOccupancyAndStatus(String occupancy, String status) {
+    private void setOccupancyAndStatus(UnitsDataOccupancy occupancy, UnitsDataUnitStatus status) {
         // Set the text
-        occupancyType.sLabel1.setText(occupancy);
-        unitStatus.sLabel1.setText(status);
-
-        // Clean strings for logic checking
-        String cleanOccupancy = occupancy.trim().toUpperCase();
-        String cleanStatus = status.trim().toUpperCase().replace("-", " "); 
-
+        occupancyType.setOccupancy(occupancy);
+        unitStatus.setUnitStatus(status);
     }
 
 // -----------------------------------------------------------------------------------------------------------
@@ -169,7 +166,7 @@ public class ObjectUnit extends SPanel{
         sPanelHighlight1.setDefaultBorderColor(new java.awt.Color(240, 240, 240));
         sPanelHighlight1.setHoverBackgroundColor(new java.awt.Color(250, 250, 250));
         sPanelHighlight1.setHoverBorderColor(new java.awt.Color(240, 240, 240));
-        sPanelHighlight1.setRadius(20);
+        sPanelHighlight1.setRadius(10);
         sPanelHighlight1.setRounded(true);
         sPanelHighlight1.setPreferredSize(new java.awt.Dimension(100, 50));
 

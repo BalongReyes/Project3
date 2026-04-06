@@ -96,6 +96,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel2.setPaintBackground(false);
 
+        sPanel3.setBorderColor(new java.awt.Color(245, 245, 245));
+        sPanel3.setBorderLine(2);
         sPanel3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel3.setRadius(20);
         sPanel3.setRounded(true);
@@ -479,7 +481,7 @@ public class ModuleUnits extends SPanel{
             .addGroup(objectUnitContainerLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(objectUnitWrapper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 554, Short.MAX_VALUE))
+                .addGap(0, 568, Short.MAX_VALUE))
         );
 
         objectUnitScrollPane.setViewportView(objectUnitContainer);
@@ -496,9 +498,9 @@ public class ModuleUnits extends SPanel{
         layerUnitsOnlineLayout.setVerticalGroup(
             layerUnitsOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerUnitsOnlineLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(objectUnitScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
+                .addGap(0, 0, 0)
+                .addComponent(objectUnitScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         jLayeredPane1.setLayer(layerUnitsOnline, javax.swing.JLayeredPane.PALETTE_LAYER);
