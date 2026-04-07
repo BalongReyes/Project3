@@ -4,19 +4,41 @@ import javax.swing.JPanel;
 
 public class ObjectUnitDonutChart extends JPanel{
 
-    private int owners = 0;
-    private int tenants = 0;
-    private int others = 0;
+    public int owners = 0;
+    public int tenants = 0;
+    public int others = 0;
 
     public ObjectUnitDonutChart(){
         setOpaque(false); // Make background transparent
     }
 
-    public void setData(int owners, int tenants, int others){
-        this.owners = owners;
-        this.tenants = tenants;
-        this.others = others;
+    public void addData(int owners, int tenants, int others){
+        this.owners += owners;
+        this.tenants += tenants;
+        this.others += others;
         repaint(); // Redraw the component with new data
+    }
+
+    public void addDataOwner(){
+        this.owners += 1;
+        repaint(); // Redraw the component with new data
+    }
+
+    public void addDataTenants(){
+        this.tenants += 1;
+        repaint(); // Redraw the component with new data
+    }
+
+    public void addDataOthers(){
+        this.others += 1;
+        repaint(); // Redraw the component with new data
+    }
+    
+    public void resetData(){
+        owners = 0;
+        tenants = 0;
+        others = 0;
+        repaint();
     }
 
     @Override

@@ -136,6 +136,7 @@ public class ManagerObjectUnits extends Manager{
                                 moduleUnits.objectUnitWrapper.removeAll();
                                 moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                                 objects.clear();
+                                resetOccupancyData();
                                 resizeContainer();
                                 LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
                             });
@@ -153,6 +154,7 @@ public class ManagerObjectUnits extends Manager{
                             moduleUnits.objectUnitWrapper.removeAll();
                             moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                             objects.clear();
+                            resetOccupancyData();
                             LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
                         }
 
@@ -161,6 +163,7 @@ public class ManagerObjectUnits extends Manager{
                             objects.add(o);
                             moduleUnits.objectUnitWrapper.add(o);
                             moduleUnits.objectUnitScrollPane.addInnerListeners(o);
+                            addOccupancyData(data);
                         }
                         
                         resizeContainer();
@@ -282,17 +285,27 @@ public class ManagerObjectUnits extends Manager{
 
 // -----------------------------------------------------------------------------------------------------------
     
-    public static void updateOccupancyData(int ownerWeekenders, int ownerNoActivity, 
-                                    int tenantWeekenders, int tenantNoActivity, 
-                                    int inventory, int unturnedOver) {
+    public static void resetOccupancyData(){
+        moduleUnits.objectUnitDonutChart1.resetData();
+    }
+    
+    public static void addOccupancyData(UnitsDataTable data) {
         
-        // Group the categories according to your rules
-        int owners = ownerWeekenders + ownerNoActivity;
-        int tenants = tenantWeekenders + tenantNoActivity;
-        int others = inventory + unturnedOver;
+        switch(data.getOccupancy()){
+            case Owner, OwnerWeekenders, OwnerNoActivity -> {
+                moduleUnits.objectUnitDonutChart1.addDataOwner();
+            }
+            case Tenant, TenantWeekenders, TenantNoActivity -> {
+                moduleUnits.objectUnitDonutChart1.addDataTenants();
+            }
+            case Inventory, UnturnedOver -> {
+                moduleUnits.objectUnitDonutChart1.addDataOthers();
+            }
+        }
         
-        // Pass the grouped data to the chart
-        moduleUnits.objectUnitDonutChart1.setData(owners, tenants, others);
+        int owners = moduleUnits.objectUnitDonutChart1.owners;
+        int tenants = moduleUnits.objectUnitDonutChart1.tenants;
+        int others = moduleUnits.objectUnitDonutChart1.others;
         
         // Calculate the percentage of (Owners + Tenants) against the Total
         int total = owners + tenants + others;
