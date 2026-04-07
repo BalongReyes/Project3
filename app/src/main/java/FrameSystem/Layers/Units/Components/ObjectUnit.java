@@ -136,13 +136,11 @@ public class ObjectUnit extends SPanel{
     private void delete(){
         setFocus();
         if(deleteBlocked) return;
-        ManagerObjectUnits.removeObject(this);
     }
     
     private void edit(){
         setFocus();
         if(editBlocked) return;
-        ManagerObjectUnits.editObject(this);
     }
     
 // Generated =================================================================================================

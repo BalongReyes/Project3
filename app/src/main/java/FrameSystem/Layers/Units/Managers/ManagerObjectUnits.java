@@ -91,7 +91,7 @@ public class ManagerObjectUnits extends Manager{
                 int offset = 0;  // Start at the very beginning
                 boolean isFirstBatch = true;
                 boolean hasMoreData = true;
-
+                
                 while (hasMoreData) {
                     // Check if a newer refresh has been clicked. If so, abort this old thread.
                     if (thisRefreshId != currentRefreshId) return;
@@ -176,7 +176,6 @@ public class ManagerObjectUnits extends Manager{
                         Thread.currentThread().interrupt();
                     }
                 }
-
             } catch (SQLException e) {
                 javax.swing.SwingUtilities.invokeLater(() -> {
                     Console.errorOut("Gathering object unit error", e);
@@ -280,24 +279,10 @@ public class ManagerObjectUnits extends Manager{
             filterDebounceTimer.start();
         }
     }
-    
-// Add Edit Remove -------------------------------------------------------------------------------------------
-    
-    public static void addObject(){
-        // ... omitted
-    }
-    
-    public static void removeObject(ObjectUnit object){
-        // ... omitted
-    }
-    
-    public static void editObject(ObjectUnit object){
-        // ... omitted
-    }
 
 // -----------------------------------------------------------------------------------------------------------
     
-    public void updateOccupancyData(int ownerWeekenders, int ownerNoActivity, 
+    public static void updateOccupancyData(int ownerWeekenders, int ownerNoActivity, 
                                     int tenantWeekenders, int tenantNoActivity, 
                                     int inventory, int unturnedOver) {
         
