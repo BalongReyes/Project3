@@ -8,7 +8,6 @@ public enum UnitsDataOccupancy{
     Owner("Owner"),
     Tenant("Tenant"),
     Inventory("Inventory"),
-    NoActivity("No Activity"),
     UnturnedOver("Unturned Over"),
     OwnerWeekenders("Owner - Weekenders"),
     TenantWeekenders("Tenant - Weekenders"),

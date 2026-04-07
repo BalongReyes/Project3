@@ -5,7 +5,6 @@
 package FrameSystem.Layers.Units.Components;
 
 import DatabaseSystem.UnitsData.UnitsDataOccupancy;
-import static DatabaseSystem.UnitsData.UnitsDataOccupancy.NoActivity;
 import DatabaseSystem.UnitsData.UnitsDataUnitStatus;
 import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.Color;
@@ -30,7 +29,7 @@ public class ObjectUnitHighlight extends SPanel{
         Color bgColor = new Color(200, 200, 200);
         
         switch(occupancy){
-            case Null, Inventory, NoActivity -> {
+            case Null, Inventory -> {
                 bgColor = new Color(148, 163, 184);  // Slate Gray Border
             }
             case Owner, OwnerWeekenders, OwnerNoActivity -> {

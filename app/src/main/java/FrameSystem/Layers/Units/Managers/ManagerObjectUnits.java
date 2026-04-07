@@ -295,4 +295,30 @@ public class ManagerObjectUnits extends Manager{
         // ... omitted
     }
 
+// -----------------------------------------------------------------------------------------------------------
+    
+    public void updateOccupancyData(int ownerWeekenders, int ownerNoActivity, 
+                                    int tenantWeekenders, int tenantNoActivity, 
+                                    int inventory, int unturnedOver) {
+        
+        // Group the categories according to your rules
+        int owners = ownerWeekenders + ownerNoActivity;
+        int tenants = tenantWeekenders + tenantNoActivity;
+        int others = inventory + unturnedOver;
+        
+        // Pass the grouped data to the chart
+        moduleUnits.objectUnitDonutChart1.setData(owners, tenants, others);
+        
+        // Calculate the percentage of (Owners + Tenants) against the Total
+        int total = owners + tenants + others;
+        if (total > 0) {
+            double percentage = ((double) (owners + tenants) / total) * 100.0;
+            // Format to show no decimal places and add a '%' sign
+            moduleUnits.sLabel33.setText(String.format("%.0f%%", percentage));
+        } else {
+            // Fallback if there are no units at all
+            moduleUnits.sLabel33.setText("0%"); 
+        }
+    }
+    
 }

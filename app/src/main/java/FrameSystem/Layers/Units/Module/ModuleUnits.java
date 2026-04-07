@@ -88,7 +88,7 @@ public class ModuleUnits extends SPanel{
         sPanel46 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel47 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel48 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sPanel49 = new FrameSystem.SLibrary.SComponents.SPanel();
+        objectUnitDonutChart1 = new FrameSystem.Layers.Units.Components.ObjectUnitDonutChart();
         sPanel50 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel51 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel32 = new FrameSystem.SLibrary.SComponents.SLabel();
@@ -1069,19 +1069,18 @@ public class ModuleUnits extends SPanel{
 
         sPanel48.setPaintBackground(false);
 
-        sPanel49.setRadius(50);
-        sPanel49.setRounded(true);
-        sPanel49.setMaximumSize(new java.awt.Dimension(50, 50));
-        sPanel49.setMinimumSize(new java.awt.Dimension(50, 50));
+        objectUnitDonutChart1.setMaximumSize(new java.awt.Dimension(50, 50));
+        objectUnitDonutChart1.setMinimumSize(new java.awt.Dimension(50, 50));
+        objectUnitDonutChart1.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        javax.swing.GroupLayout sPanel49Layout = new javax.swing.GroupLayout(sPanel49);
-        sPanel49.setLayout(sPanel49Layout);
-        sPanel49Layout.setHorizontalGroup(
-            sPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout objectUnitDonutChart1Layout = new javax.swing.GroupLayout(objectUnitDonutChart1);
+        objectUnitDonutChart1.setLayout(objectUnitDonutChart1Layout);
+        objectUnitDonutChart1Layout.setHorizontalGroup(
+            objectUnitDonutChart1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
-        sPanel49Layout.setVerticalGroup(
-            sPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        objectUnitDonutChart1Layout.setVerticalGroup(
+            objectUnitDonutChart1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
@@ -1091,14 +1090,14 @@ public class ModuleUnits extends SPanel{
             sPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel48Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(sPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(objectUnitDonutChart1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10))
         );
         sPanel48Layout.setVerticalGroup(
             sPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel48Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(objectUnitDonutChart1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -1112,7 +1111,7 @@ public class ModuleUnits extends SPanel{
         sLabel32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         sLabel33.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel33.setText("12");
+        sLabel33.setText("12%");
         sLabel33.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         sLabel33.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
 
@@ -1451,7 +1450,7 @@ public class ModuleUnits extends SPanel{
         );
 
         sLabel7.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel7.setText("High:");
+        sLabel7.setText("High: 2");
 
         javax.swing.GroupLayout sPanel11Layout = new javax.swing.GroupLayout(sPanel11);
         sPanel11.setLayout(sPanel11Layout);
@@ -1493,7 +1492,7 @@ public class ModuleUnits extends SPanel{
         );
 
         sLabel25.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel25.setText("Medium:");
+        sLabel25.setText("Medium: 6");
 
         javax.swing.GroupLayout sPanel37Layout = new javax.swing.GroupLayout(sPanel37);
         sPanel37.setLayout(sPanel37Layout);
@@ -1535,7 +1534,7 @@ public class ModuleUnits extends SPanel{
         );
 
         sLabel27.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel27.setText("Low:");
+        sLabel27.setText("Low: 4");
 
         javax.swing.GroupLayout sPanel39Layout = new javax.swing.GroupLayout(sPanel39);
         sPanel39.setLayout(sPanel39Layout);
@@ -1749,6 +1748,7 @@ public class ModuleUnits extends SPanel{
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline1;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOnline;
     public FrameSystem.SLibrary.SComponents.SPanel objectUnitContainer;
+    public FrameSystem.Layers.Units.Components.ObjectUnitDonutChart objectUnitDonutChart1;
     public FrameSystem.SLibrary.SComponents.SScrollPane objectUnitScrollPane;
     public FrameSystem.SLibrary.SComponents.SPanel objectUnitWrapper;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
@@ -1778,7 +1778,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel30;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel32;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel33;
+    public FrameSystem.SLibrary.SComponents.SLabel sLabel33;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel34;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel35;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel36;
@@ -1830,7 +1830,6 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel46;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel47;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel48;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel49;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel5;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel50;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel51;

@@ -1783,7 +1783,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="sPanel49" min="-2" max="-2" attributes="0"/>
+                              <Component id="objectUnitDonutChart1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -1792,24 +1792,28 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="sPanel49" min="-2" max="-2" attributes="0"/>
+                              <Component id="objectUnitDonutChart1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel49">
+                    <Container class="FrameSystem.Layers.Units.Components.ObjectUnitDonutChart" name="objectUnitDonutChart1">
                       <Properties>
-                        <Property name="radius" type="int" value="50"/>
-                        <Property name="rounded" type="boolean" value="true"/>
                         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[50, 50]"/>
                         </Property>
                         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[50, 50]"/>
                         </Property>
+                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                          <Dimension value="[50, 50]"/>
+                        </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
 
                       <Layout>
                         <DimensionLayout dim="0">
@@ -1891,12 +1895,15 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="38" green="38" red="38" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="12"/>
+                            <Property name="text" type="java.lang.String" value="12%"/>
                             <Property name="verticalAlignment" type="int" value="3"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="16" style="1"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2426,7 +2433,7 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="38" green="38" red="38" type="rgb"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="High:"/>
+                                <Property name="text" type="java.lang.String" value="High: 2"/>
                               </Properties>
                             </Component>
                           </SubComponents>
@@ -2490,7 +2497,7 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="38" green="38" red="38" type="rgb"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Medium:"/>
+                                <Property name="text" type="java.lang.String" value="Medium: 6"/>
                               </Properties>
                             </Component>
                           </SubComponents>
@@ -2554,7 +2561,7 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="38" green="38" red="38" type="rgb"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Low:"/>
+                                <Property name="text" type="java.lang.String" value="Low: 4"/>
                               </Properties>
                             </Component>
                           </SubComponents>
