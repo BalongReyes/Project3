@@ -18,7 +18,9 @@ public class UnitsDataHandler {
         "EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id) AS has_owner, " +
         "EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id) AS has_tenant, " +
         "EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id AND o.weekenders = 1) AS is_owner_weekender, " +
-        "EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id AND t.weekenders = 1) AS is_tenant_weekender " +
+        "EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id AND t.weekenders = 1) AS is_tenant_weekender, " +
+        "EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id AND o.noactivity = 1) AS is_owner_no_activity, " +
+        "EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id AND t.noactivity = 1) AS is_tenant_no_activity " +
         "FROM units u";
     
     public static void refreshData() throws SQLException {

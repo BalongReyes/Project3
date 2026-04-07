@@ -14,12 +14,6 @@ public class SPanelHighlight extends SPanel{
     public SPanelHighlight(){
     }
     
-// Main Methods ==============================================================================================
-
-    public void applyHoverInnerListener(){
-        addInnerListeners(hoverListener);
-    }
-    
 // Setters and Getters =======================================================================================
     
     protected Color defaultBorderColor = Color.white;

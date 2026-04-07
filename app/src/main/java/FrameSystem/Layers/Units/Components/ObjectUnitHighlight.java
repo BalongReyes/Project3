@@ -33,10 +33,10 @@ public class ObjectUnitHighlight extends SPanel{
             case Null, Inventory, NoActivity -> {
                 bgColor = new Color(148, 163, 184);  // Slate Gray Border
             }
-            case Owner, OwnerWeekenders -> {
+            case Owner, OwnerWeekenders, OwnerNoActivity -> {
                 bgColor = new Color(85, 174, 245);   // Blue Border
             }
-            case Tenant, TenantWeekenders -> {
+            case Tenant, TenantWeekenders, TenantNoActivity -> {
                 bgColor = new Color(255,153,51);     // Orange Border
             }
             case UnturnedOver -> {

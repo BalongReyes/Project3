@@ -4,6 +4,7 @@ package DatabaseSystem.UnitsData;
 import DatabaseSystem.DataTable.DataTable;
 import DatabaseSystem.DataTable.DataTableType;
 import MethodsSystem.MethodString;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -20,9 +21,12 @@ public class UnitsDataTable implements DataTable{
     public static final int MODEL = 5;
     public static final int BALCONY = 6;
     public static final int FLOOR_AREA = 7;
+    public static final int STATUS = 8;
+    public static final int TURNED_OVER = 9;
+    public static final int ACCOUNT_NUMBER = 9;
     
-    public static final int OCCUPANCY = 8;
-    public static final int UNIT_STATUS = 9;
+    public static final int OCCUPANCY = 10;
+    public static final int UNIT_STATUS = 11;
     
 // -----------------------------------------------------------------------------------------------------------
     
@@ -34,12 +38,16 @@ public class UnitsDataTable implements DataTable{
     private Integer balcony;
     private Float floorArea;
     
+    private Integer status;
+    private Date turnedOver;
+    private String accountNumber;
+    
     private UnitsDataOccupancy occupancy;
     private UnitsDataUnitStatus unitStatus;
     
 // Constructor ===============================================================================================
 
-    public UnitsDataTable(Integer id, Integer tower, Integer floor, Integer unit, Integer model, Integer balcony, Float floorArea, UnitsDataOccupancy occupancy, UnitsDataUnitStatus unitStatus) {
+    public UnitsDataTable(Integer id, Integer tower, Integer floor, Integer unit, Integer model, Integer balcony, Float floorArea, Integer status, Date turnedOver, String accountNumber, UnitsDataOccupancy occupancy, UnitsDataUnitStatus unitStatus){
         this.id = id;
         this.tower = tower;
         this.floor = floor;
@@ -47,8 +55,11 @@ public class UnitsDataTable implements DataTable{
         this.model = model;
         this.balcony = balcony;
         this.floorArea = floorArea;
+        this.status = status;
+        this.turnedOver = turnedOver;
         this.occupancy = occupancy;
         this.unitStatus = unitStatus;
+        this.accountNumber = accountNumber;
     }
 
     public UnitsDataTable(ResultSet results) throws SQLException {
@@ -60,12 +71,17 @@ public class UnitsDataTable implements DataTable{
             model = results.getInt("model");
             balcony = results.getInt("balcony");
             floorArea = results.getFloat("floorArea");
+            status = results.getInt("status");
+            turnedOver = results.getDate("turnedOver");
+            accountNumber = results.getString("accountnumber");
             
             // Check for Owner and Tenant logic dynamically injected from SQL
             boolean hasOwner = false;
             boolean hasTenant = false;
             boolean isOwnerWeekender = false;
             boolean isTenantWeekender = false;
+            boolean isOwnerNoActivity = false;
+            boolean isTenantNoActivity = false;
             
             // Wrapped in try-catch in case a standard `SELECT * FROM units` is executed elsewhere
             try {
@@ -73,6 +89,8 @@ public class UnitsDataTable implements DataTable{
                 hasTenant = results.getBoolean("has_tenant");
                 isOwnerWeekender = results.getBoolean("is_owner_weekender");
                 isTenantWeekender = results.getBoolean("is_tenant_weekender");
+                isOwnerNoActivity = results.getBoolean("is_owner_no_activity");
+                isTenantNoActivity = results.getBoolean("is_tenant_no_activity");
             } catch (SQLException ignored) {
                 // If columns don't exist, we fall back to defaults
             }
@@ -88,12 +106,16 @@ public class UnitsDataTable implements DataTable{
             if (hasTenant) {
                 if(isTenantWeekender){
                     occupancy = UnitsDataOccupancy.TenantWeekenders;
+                }else if(isTenantNoActivity){
+                    occupancy = UnitsDataOccupancy.TenantNoActivity;
                 }else{
                     occupancy = UnitsDataOccupancy.Tenant;
                 }
             } else if (hasOwner) {
                 if(isOwnerWeekender){
                     occupancy = UnitsDataOccupancy.OwnerWeekenders;
+                }else if(isOwnerNoActivity){
+                    occupancy = UnitsDataOccupancy.OwnerNoActivity;
                 }else{
                     occupancy = UnitsDataOccupancy.Owner;
                 }
@@ -187,6 +209,14 @@ public class UnitsDataTable implements DataTable{
     public Float getFloorArea(){
         return floorArea;
     }
+
+    public Integer getStatus(){
+        return status;
+    }
+
+    public Date getTurnedOver(){
+        return turnedOver;
+    }
     
     public UnitsDataOccupancy getOccupancy(){
         return occupancy;
@@ -194,6 +224,10 @@ public class UnitsDataTable implements DataTable{
     
     public UnitsDataUnitStatus getUnitStatus(){
         return unitStatus;
+    }
+
+    public String getAccountNumber(){
+        return accountNumber;
     }
 
 // Overrided Methods =========================================================================================

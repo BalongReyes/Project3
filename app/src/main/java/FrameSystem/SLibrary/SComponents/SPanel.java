@@ -431,16 +431,8 @@ public class SPanel extends JPanel implements InnerListener{
     }
 
 // ==== Overrided Methods ====================================================================================
-    
-    @Override
-    public void setEnabled(boolean enabled){
-        if(!enabled){
-            setHovering(false);
-        }
-        super.setEnabled(enabled);
-    }
 
-    private void applyHoverInnerListener(){
+    public void applyHoverInnerListener(){
         addInnerListeners(hoverListener);
     }
 
@@ -464,6 +456,16 @@ public class SPanel extends JPanel implements InnerListener{
                 }
             }
         }
+    }
+
+// -----------------------------------------------------------------------------------------------------------
+    
+    @Override
+    public void setEnabled(boolean enabled){
+        if(!enabled){
+            setHovering(false);
+        }
+        super.setEnabled(enabled);
     }
 
     public void paintOverrideAll(Graphics g){

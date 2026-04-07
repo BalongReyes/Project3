@@ -104,7 +104,6 @@ public class ObjectUnitFilter extends SPanel{
         sLabel2.setForeground(new java.awt.Color(56, 56, 56));
         sLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel2.setText(text);
-        sLabel2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         sLabel2.setName(""); // NOI18N
 
         sPanel1.setCanHover(true);
