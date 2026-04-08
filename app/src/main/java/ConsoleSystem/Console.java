@@ -5,82 +5,82 @@ import MethodsSystem.MethodString;
 
 public class Console{
     
-    public static ConsoleNonStatic tab(){
+    public static Console tab(){
         System.out.print("\t");
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
-    public static ConsoleNonStatic gap(){
+    public static Console gap(){
         System.out.println();
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
-    public static ConsoleNonStatic line(){
+    public static Console line(){
         Console.out("-----------------------------------------------------", ConsoleColors.WHITE);
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
-    public static ConsoleNonStatic line(ConsoleColors color){
+    public static Console line(ConsoleColors color){
         Console.out("-----------------------------------------------------", color);
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
 // System console output -------------------------------------------------------------------------------------
     
-    public static <E> ConsoleNonStatic out(E[] arrayOutput){
+    public static <E> Console out(E[] arrayOutput){
         for(E report : arrayOutput) out((String)report, true);
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
-    public static ConsoleNonStatic out(int output){
+    public static Console out(int output){
         return out(String.valueOf(output));
     }
     
-    public static ConsoleNonStatic out(String output){
+    public static Console out(String output){
         System.out.println(output);
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
-    public static ConsoleNonStatic out(int output, boolean line){
+    public static Console out(int output, boolean line){
         return out(String.valueOf(output), line);
     }
     
-    public static ConsoleNonStatic out(String output, boolean line){
+    public static Console out(String output, boolean line){
         if(line){
             System.out.println(output);
         }else{
             System.out.print(output);
         }
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
 // System console output with color --------------------------------------------------------------------------
     
-    public static <E> ConsoleNonStatic out(E[] arrayOutput, ConsoleColors color){
+    public static <E> Console out(E[] arrayOutput, ConsoleColors color){
         for(E report : arrayOutput) out((String)report, color, true);
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
-    public static ConsoleNonStatic out(int output, ConsoleColors color){
+    public static Console out(int output, ConsoleColors color){
         return out(String.valueOf(output), color);
     }
     
-    public static ConsoleNonStatic out(String output, ConsoleColors color){
+    public static Console out(String output, ConsoleColors color){
         System.out.println(color.getString() + output + ConsoleColors.getResetString());
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
-    public static ConsoleNonStatic out(int output, ConsoleColors color, boolean line){
+    public static Console out(int output, ConsoleColors color, boolean line){
         return out(String.valueOf(output), color, line);
     }
     
-    public static ConsoleNonStatic out(String output, ConsoleColors color, boolean line){
+    public static Console out(String output, ConsoleColors color, boolean line){
         if(line){
             System.out.println(color.getString() + output + ConsoleColors.getResetString());
         }else{
             System.out.print(color.getString() + output + ConsoleColors.getResetString());
         }
-        return new ConsoleNonStatic();
+        return new Console();
     }
     
 // Error -----------------------------------------------------------------------------------------------------

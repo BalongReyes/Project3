@@ -61,7 +61,7 @@ public class Database {
 
 // Secure Methods for INSERT, UPDATE, DELETE =================================================================
     
-    public static void executePrepared(String query, Object... parameters) throws SQLException {
+    public static synchronized void executePrepared(String query, Object... parameters) throws SQLException {
         if (connection == null) throw new SQLException("Database offline");
         
         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -72,13 +72,11 @@ public class Database {
         }
     }
 
-// Secure Methods for SELECT queries =========================================================================
-
     public interface PreparedStatementResult {
         void execute(ResultSet result) throws SQLException;
     }
 
-    public static void executePreparedQuery(String query, PreparedStatementResult resultExecute, Object... parameters) throws SQLException {
+    public static synchronized void executePreparedQuery(String query, PreparedStatementResult resultExecute, Object... parameters) throws SQLException {
         if (connection == null) throw new SQLException("Database offline");
         
         try (PreparedStatement statement = connection.prepareStatement(query)) {

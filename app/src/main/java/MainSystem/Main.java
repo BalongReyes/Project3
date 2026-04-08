@@ -1,5 +1,6 @@
 package MainSystem;
 
+import ConsoleSystem.Console;
 import com.formdev.flatlaf.FlatLightLaf;
 
 import DatabaseSystem.Database; // Import FlatLaf
@@ -18,7 +19,7 @@ public class Main {
         try {
             FlatLightLaf.setup();
         } catch (Exception ex) {
-            System.err.println("Failed to initialize FlatLaf");
+            Console.errorOut("Failed to initialize FlatLaf", ex);
         }
         
         SwingUtilities.invokeLater(() -> {
