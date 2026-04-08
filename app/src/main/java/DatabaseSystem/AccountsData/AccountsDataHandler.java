@@ -13,53 +13,68 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.security.SecureRandom;
 import java.security.spec.KeySpec;
+import java.util.ArrayList;
 import java.util.Base64;
-import java.util.concurrent.CopyOnWriteArrayList;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 public class AccountsDataHandler {
     
-    // Prevents concurrent modification exceptions during reads/writes
-    private static CopyOnWriteArrayList<AccountsDataTable> array = new CopyOnWriteArrayList<>();
-    
     public static void refreshData() throws SQLException {
-        array.clear();
+        // We use a simple array for the boolean so we can modify it inside the lambda expression
+        boolean[] isEmpty = {true};
         
         Database.executePreparedQuery("SELECT * FROM accounts", (result) -> {
             while (result.next()) {
+                isEmpty[0] = false; // We found at least one account in the DB!
                 AccountsDataTable data = new AccountsDataTable(result);
+                
+                // Keep the current logged-in session synced with the database
                 if (ManagerLogin.isLoggedIn() && ManagerLogin.getAccountLoggedIn().idEquals(data.getId())) {
                     ManagerLogin.updateAccountLoggedIn(data);
                 }
-                if (!data.isError()) array.add(data);
             }
         });
         
         // --- THIS IS THE FIXED BLOCK ---
-        if (array.isEmpty()) {
+        if (isEmpty[0]) {
             Console.out("No accounts found, inserting default account");
             
-            // 1. Create the default account object. We leave password and salt blank ("") 
-            // because our new insertData method handles generating them securely!
             AccountsDataTable defaultAccount = new AccountsDataTable(
                 null, "SuperAdmin", 1, "SuperAdmin", "", "", 1, java.sql.Date.valueOf(LocalDate.now())
             );
             
-            // 2. Call our updated insertData, passing the object AND the raw password "SuperAdmin"
             insertData(defaultAccount, "SuperAdmin".toCharArray());
             
-            refreshData();
+            refreshData(); // Re-run to update the session if necessary
             return;
         }
         // -------------------------------
         
-        if (Main.debugDataHandlerRefresh) Console.out("AccountsDataHandler refreshed", ConsoleColors.YELLOW);
+        if (Main.debugDataHandlerRefresh) Console.out("AccountsDataHandler synced with DB", ConsoleColors.YELLOW);
     }
     
     public static AccountsDataTable[] getAllData(boolean refresh) throws SQLException {
-        if (refresh || array.isEmpty()) refreshData();
-        return array.toArray(AccountsDataTable[]::new);
+        // The 'refresh' parameter isn't strictly needed anymore since we always pull fresh data,
+        // but we leave it in the method signature so we don't break other parts of your app!
+        
+        ArrayList<AccountsDataTable> freshDataList = new ArrayList<>();
+        
+        Database.executePreparedQuery("SELECT * FROM accounts", (result) -> {
+            while (result.next()) {
+                AccountsDataTable data = new AccountsDataTable(result);
+                if (!data.isError()) freshDataList.add(data);
+            }
+        });
+        
+        // If the table is completely empty, trigger our default account creation logic
+        if (freshDataList.isEmpty()) {
+            refreshData();
+            // Call this method again now that the default account is inserted
+            return getAllData(false); 
+        }
+        
+        return freshDataList.toArray(AccountsDataTable[]::new);
     }
     
 // Find ======================================================================================================
