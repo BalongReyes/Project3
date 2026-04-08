@@ -30,6 +30,10 @@ dependencies {
 
     // FlatLaf for modern Swing look and feel
     implementation("com.formdev:flatlaf:3.4.1")
+
+    // HikariCP connection pool
+    implementation(files("libs/HikariCP-5.1.0.jar"))
+    implementation("org.slf4j:slf4j-simple:2.0.9") // Hikari needs this for logging!
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
