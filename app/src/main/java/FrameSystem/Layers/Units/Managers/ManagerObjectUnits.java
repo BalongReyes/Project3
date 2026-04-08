@@ -136,7 +136,8 @@ public class ManagerObjectUnits extends Manager{
                                 moduleUnits.objectUnitWrapper.removeAll();
                                 moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                                 objects.clear();
-                                resetOccupancyData();
+                                resetOccupancyDataChart();
+                                resetTotalUnitsDataChart();
                                 resizeContainer();
                                 LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
                             });
@@ -154,7 +155,8 @@ public class ManagerObjectUnits extends Manager{
                             moduleUnits.objectUnitWrapper.removeAll();
                             moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                             objects.clear();
-                            resetOccupancyData();
+                            resetOccupancyDataChart();
+                            resetTotalUnitsDataChart();
                             LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
                         }
 
@@ -163,7 +165,8 @@ public class ManagerObjectUnits extends Manager{
                             objects.add(o);
                             moduleUnits.objectUnitWrapper.add(o);
                             moduleUnits.objectUnitScrollPane.addInnerListeners(o);
-                            addOccupancyData(data);
+                            addOccupancyDataChart(data);
+                            addTotalUnitsDataChart();
                         }
                         
                         resizeContainer();
@@ -285,11 +288,22 @@ public class ManagerObjectUnits extends Manager{
 
 // -----------------------------------------------------------------------------------------------------------
     
-    public static void resetOccupancyData(){
+    private static int totalUnits = 0;
+    
+    public static void resetTotalUnitsDataChart(){
+        totalUnits = 0;
+    }
+    
+    public static void addTotalUnitsDataChart(){
+        totalUnits++;
+        moduleUnits.sLabel26.setText(String.valueOf(totalUnits));
+    }
+    
+    public static void resetOccupancyDataChart(){
         moduleUnits.objectUnitDonutChart1.resetData();
     }
     
-    public static void addOccupancyData(UnitsDataTable data) {
+    public static void addOccupancyDataChart(UnitsDataTable data) {
         
         switch(data.getOccupancy()){
             case Owner, OwnerWeekenders, OwnerNoActivity -> {
@@ -312,7 +326,7 @@ public class ManagerObjectUnits extends Manager{
         if (total > 0) {
             double percentage = ((double) (owners + tenants) / total) * 100.0;
             // Format to show no decimal places and add a '%' sign
-            moduleUnits.sLabel33.setText(String.format("%.0f%%", percentage));
+            moduleUnits.sLabel33.setText(String.format("%.2f%%", percentage));
         } else {
             // Fallback if there are no units at all
             moduleUnits.sLabel33.setText("0%"); 

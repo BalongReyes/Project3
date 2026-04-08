@@ -720,7 +720,7 @@ public class ModuleHome extends SPanel{
         menuButton_Concerns.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Concerns.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concerns.png"))); // NOI18N
         menuButton_Concerns.setManuMinButton(menuMinButton_Concerns);
-        menuButton_Concerns.setNotificationCount(914);
+        menuButton_Concerns.setNotificationCount(2);
         menuButton_Concerns.setRadius(15);
         menuButton_Concerns.setText("Concerns");
         menuButton_Concerns.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

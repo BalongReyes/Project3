@@ -1771,7 +1771,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel23;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel24;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel25;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel26;
+    public FrameSystem.SLibrary.SComponents.SLabel sLabel26;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel27;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel28;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel29;
