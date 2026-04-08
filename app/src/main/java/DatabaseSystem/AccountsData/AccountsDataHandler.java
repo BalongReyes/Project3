@@ -11,16 +11,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.security.SecureRandom;
 import java.security.spec.KeySpec;
 import java.util.Base64;
+import java.util.concurrent.CopyOnWriteArrayList;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 public class AccountsDataHandler {
     
-    private static ArrayList<AccountsDataTable> array = new ArrayList<>();
+    // Prevents concurrent modification exceptions during reads/writes
+    private static CopyOnWriteArrayList<AccountsDataTable> array = new CopyOnWriteArrayList<>();
     
     public static void refreshData() throws SQLException {
         array.clear();
@@ -46,7 +47,7 @@ public class AccountsDataHandler {
             );
             
             // 2. Call our updated insertData, passing the object AND the raw password "SuperAdmin"
-            insertData(defaultAccount, "SuperAdmin");
+            insertData(defaultAccount, "SuperAdmin".toCharArray());
             
             refreshData();
             return;
@@ -112,7 +113,6 @@ public class AccountsDataHandler {
 // ===========================================================================================================
     
     public static AccountsDataTable loginAccount(String usernameOrId, char[] charPassword) throws SQLException {
-        String password = String.valueOf(charPassword);
         AccountsDataTable account = null;
         
         // Safely check if the input is entirely numeric using Regex
@@ -129,14 +129,14 @@ public class AccountsDataHandler {
         if (account == null) return null;
         
         // Hash the inputted password USING the account's unique salt
-        String hashedInput = hashPassword(password, account.getSalt());
+        String hashedInput = hashPassword(charPassword, account.getSalt());
         
         if (account.checkPassword(hashedInput)) return account;
         
         return null;
     }
 
-    public static boolean verifyLogin(AccountsDataTable data, String password) {
+    public static boolean verifyLogin(AccountsDataTable data, char[] password) {
         return data.checkPassword(hashPassword(password, data.getSalt()));
     }
     
@@ -151,10 +151,10 @@ public class AccountsDataHandler {
     }
 
     // Hashes the password using PBKDF2 and the unique salt
-    public static String hashPassword(String password, String salt) {
+    public static String hashPassword(char[] password, String salt) {
         try {
             // 65536 iterations slows down hackers significantly
-            KeySpec spec = new PBEKeySpec(password.toCharArray(), Base64.getDecoder().decode(salt), 65536, 256);
+            KeySpec spec = new PBEKeySpec(password, Base64.getDecoder().decode(salt), 65536, 256);
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
             byte[] hash = factory.generateSecret(spec).getEncoded();
             return Base64.getEncoder().encodeToString(hash);
@@ -169,12 +169,13 @@ public class AccountsDataHandler {
     public static void deleteData(int id) {
         try {
             Database.executePrepared("DELETE FROM accounts WHERE id = ?", id);
+            refreshData(); // Synchronize cache
         } catch (SQLException e) {
             Console.errorOut("Deleting data from table accounts error", e);
         }
     }
     
-    public static void insertData(AccountsDataTable data, String rawPassword) {
+    public static void insertData(AccountsDataTable data, char[] rawPassword) {
         // Generate a fresh salt for the new user
         String newSalt = generateSalt();
         String hashedPassword = hashPassword(rawPassword, newSalt);
@@ -213,11 +214,16 @@ public class AccountsDataHandler {
             try { conn.rollback(); } catch (SQLException ex) { } 
             Console.errorOut("Inserting data from table accounts error", e);
         } finally {
-            try { conn.setAutoCommit(true); } catch (SQLException ex) { }
+            try { 
+                conn.setAutoCommit(true); 
+                conn.close(); // IMPORTANT: Release the connection back to the pool
+            } catch (SQLException ex) {
+                Console.errorOut("Closing connection in finally block", ex);
+            }
         }
     }
 
-    public static void updatePassword(String rawPassword, int id) {
+    public static void updatePassword(char[] rawPassword, int id) {
         try {
             // If they change their password, give them a fresh salt too!
             String newSalt = generateSalt();
@@ -234,10 +240,11 @@ public class AccountsDataHandler {
     
     public static void updateData(AccountsDataTable data, int id) {
         try {
-            String query = "UPDATE accounts SET name = ?, userId = ?, username = ?, password = ?, role = ?, lastChange = ? WHERE id = ?";
+            // Removed password and salt from this query to prevent accidental corruption
+            String query = "UPDATE accounts SET name = ?, userId = ?, username = ?, role = ?, lastChange = ? WHERE id = ?";
             Database.executePrepared(query, 
                 data.getName(), data.getUserId(), data.getUsername(), 
-                data.getPassword(), data.getRole(), data.getLastChange(), id
+                data.getRole(), data.getLastChange(), id
             );
         } catch (SQLException e) {
             Console.errorOut("Updating data from table accounts error", e);
