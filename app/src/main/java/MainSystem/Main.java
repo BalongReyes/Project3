@@ -3,6 +3,7 @@ package MainSystem;
 import com.formdev.flatlaf.FlatLightLaf;
 
 import DatabaseSystem.Database; // Import FlatLaf
+import javax.swing.SwingUtilities;
 
 public class Main {
 
@@ -19,13 +20,14 @@ public class Main {
         } catch (Exception ex) {
             System.err.println("Failed to initialize FlatLaf");
         }
-
-        frame = new SFrame();
-        frame.setVisible(true);
-
-        Manager.setDefault(frame);
-        frame.initShowDefaultLayer();
-        frame.setVisible(true);
+        
+        SwingUtilities.invokeLater(() -> {
+            frame = new SFrame();
+            Manager.setDefault(frame);
+            frame.initShowDefaultLayer();
+            
+            frame.setVisible(true);
+        });
     }
 
 }

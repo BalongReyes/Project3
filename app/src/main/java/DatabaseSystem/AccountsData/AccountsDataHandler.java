@@ -5,9 +5,6 @@ import ConsoleSystem.ConsoleColors;
 import DatabaseSystem.Database;
 import MainSystem.Main;
 import MainSystem.Managers.ManagerLogin;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -114,33 +111,33 @@ public class AccountsDataHandler {
     
 // ===========================================================================================================
     
-    private static MessageDigest md;
-    
     public static AccountsDataTable loginAccount(String usernameOrId, char[] charPassword) throws SQLException {
         String password = String.valueOf(charPassword);
-        
         AccountsDataTable account = null;
-        try {
-            account = findDataByUserId(Integer.parseInt(usernameOrId));
-        } catch (NumberFormatException e) {}
         
-        if (account == null) account = findDataByUsername(usernameOrId);
+        // Safely check if the input is entirely numeric using Regex
+        if (usernameOrId.matches("\\d+")) {
+            account = findDataByUserId(Integer.parseInt(usernameOrId));
+        }
+        
+        // If it wasn't an ID, or the ID wasn't found, try treating it as a username
+        if (account == null) {
+            account = findDataByUsername(usernameOrId);
+        }
+        
+        // If no account is found at all, return null
         if (account == null) return null;
         
         // Hash the inputted password USING the account's unique salt
         String hashedInput = hashPassword(password, account.getSalt());
         
         if (account.checkPassword(hashedInput)) return account;
+        
         return null;
     }
 
     public static boolean verifyLogin(AccountsDataTable data, String password) {
         return data.checkPassword(hashPassword(password, data.getSalt()));
-    }
-    
-    protected static String hashPassword(String password) {
-        // I added the '16' parameter here to ensure it correctly generates Hexadecimal output!
-        return new BigInteger(1, md.digest(password.getBytes())).toString(16);
     }
     
 // Security Methods ==========================================================================================
@@ -244,16 +241,6 @@ public class AccountsDataHandler {
             );
         } catch (SQLException e) {
             Console.errorOut("Updating data from table accounts error", e);
-        }
-    }
-    
-// Static Initialization Block ===============================================================================
-
-    static {
-        try {
-            md = MessageDigest.getInstance("SHA-256");
-        } catch (NoSuchAlgorithmException e) {
-            Console.errorOut("Message Digest Error", e);
         }
     }
 }
