@@ -1,43 +1,41 @@
 package DatabaseSystem.AccountsData;
 
-import ConsoleSystem.Console;
-import ConsoleSystem.ConsoleColors;
-import DatabaseSystem.Database;
-import MainSystem.Main;
-import MainSystem.Managers.ManagerLogin;
-import java.sql.Connection;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.security.SecureRandom;
-import java.security.spec.KeySpec;
-import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
+
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+
+import ConsoleSystem.Console;
+import ConsoleSystem.ConsoleColors;
+import DatabaseSystem.Database;
+import MainSystem.Main;
+import MainSystem.Managers.ManagerLogin;
 
 public class AccountsDataHandler {
     
     public static void refreshData() throws SQLException {
-        // We use a simple array for the boolean so we can modify it inside the lambda expression
-        boolean[] isEmpty = {true};
+        List<AccountsDataTable> accounts = Database.queryForList("SELECT * FROM accounts", AccountsDataTable::new);
         
-        Database.executePreparedQuery("SELECT * FROM accounts", (result) -> {
-            while (result.next()) {
-                isEmpty[0] = false; // We found at least one account in the DB!
-                AccountsDataTable data = new AccountsDataTable(result);
-                
-                // Keep the current logged-in session synced with the database
-                if (ManagerLogin.isLoggedIn() && ManagerLogin.getAccountLoggedIn().idEquals(data.getId())) {
+        if (ManagerLogin.isLoggedIn()) {
+            for (AccountsDataTable data : accounts) {
+                if (ManagerLogin.getAccountLoggedIn().idEquals(data.getId())) {
                     ManagerLogin.updateAccountLoggedIn(data);
+                    break;
                 }
             }
-        });
+        }
         
-        // --- THIS IS THE FIXED BLOCK ---
-        if (isEmpty[0]) {
+        if (accounts.isEmpty()) {
             Console.out("No accounts found, inserting default account");
             
             AccountsDataTable defaultAccount = new AccountsDataTable(
@@ -55,17 +53,8 @@ public class AccountsDataHandler {
     }
     
     public static AccountsDataTable[] getAllData(boolean refresh) throws SQLException {
-        // The 'refresh' parameter isn't strictly needed anymore since we always pull fresh data,
-        // but we leave it in the method signature so we don't break other parts of your app!
-        
-        ArrayList<AccountsDataTable> freshDataList = new ArrayList<>();
-        
-        Database.executePreparedQuery("SELECT * FROM accounts", (result) -> {
-            while (result.next()) {
-                AccountsDataTable data = new AccountsDataTable(result);
-                if (!data.isError()) freshDataList.add(data);
-            }
-        });
+        List<AccountsDataTable> freshDataList = Database.queryForList("SELECT * FROM accounts", AccountsDataTable::new);
+        freshDataList.removeIf(AccountsDataTable::isError);
         
         // If the table is completely empty, trigger our default account creation logic
         if (freshDataList.isEmpty()) {
@@ -80,27 +69,15 @@ public class AccountsDataHandler {
 // Find ======================================================================================================
     
     public static AccountsDataTable findDataById(int id) throws SQLException {
-        AccountsDataTable[] resultHolder = new AccountsDataTable[1];
-        Database.executePreparedQuery("SELECT * FROM accounts WHERE id = ?", (result) -> {
-            if (result.next()) resultHolder[0] = new AccountsDataTable(result);
-        }, id);
-        return resultHolder[0];
+        return Database.queryForObject("SELECT * FROM accounts WHERE id = ?", AccountsDataTable::new, id).orElse(null);
     }
     
     public static AccountsDataTable findDataByUserId(int userId) throws SQLException {
-        AccountsDataTable[] resultHolder = new AccountsDataTable[1];
-        Database.executePreparedQuery("SELECT * FROM accounts WHERE userID = ?", (result) -> {
-            if (result.next()) resultHolder[0] = new AccountsDataTable(result);
-        }, userId);
-        return resultHolder[0];
+        return Database.queryForObject("SELECT * FROM accounts WHERE userID = ?", AccountsDataTable::new, userId).orElse(null);
     }
     
     public static AccountsDataTable findDataByUsername(String username) throws SQLException {
-        AccountsDataTable[] resultHolder = new AccountsDataTable[1];
-        Database.executePreparedQuery("SELECT * FROM accounts WHERE username = ?", (result) -> {
-            if (result.next()) resultHolder[0] = new AccountsDataTable(result);
-        }, username);
-        return resultHolder[0];
+        return Database.queryForObject("SELECT * FROM accounts WHERE username = ?", AccountsDataTable::new, username).orElse(null);
     }
     
 // Check Duplicate ===========================================================================================
@@ -173,7 +150,7 @@ public class AccountsDataHandler {
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
             byte[] hash = factory.generateSecret(spec).getEncoded();
             return Base64.getEncoder().encodeToString(hash);
-        } catch (Exception e) {
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             Console.errorOut("Password Hashing Error", e);
             return null;
         }
@@ -195,46 +172,35 @@ public class AccountsDataHandler {
         String newSalt = generateSalt();
         String hashedPassword = hashPassword(rawPassword, newSalt);
 
-        // Make sure to include "salt" in your SQL query!
         String insertAccountSql = "INSERT INTO accounts (name, userID, username, password, salt, role, lastChange) VALUES (?, ?, ?, ?, ?, ?, ?)";
         String insertSettingsSql = "INSERT INTO settings (accountId, autoLogoutTime, preferredDate) VALUES (?, '120', '1')";
         
-        Connection conn = Database.getConnection();
-        if (conn == null) return;
-
         try {
-            conn.setAutoCommit(false); 
-            try (PreparedStatement accStmt = conn.prepareStatement(insertAccountSql, Statement.RETURN_GENERATED_KEYS)) {
-                accStmt.setString(1, data.getName());
-                accStmt.setInt(2, data.getUserId());
-                accStmt.setString(3, data.getUsername());
-                accStmt.setString(4, hashedPassword); // Save the secure hash
-                accStmt.setString(5, newSalt);        // Save the unique salt
-                accStmt.setInt(6, data.getRole());
-                accStmt.setDate(7, data.getLastChange());
-                accStmt.executeUpdate();
-                
-                try (ResultSet generatedKeys = accStmt.getGeneratedKeys()) {
-                    if (generatedKeys.next()) {
-                        int newAccountId = generatedKeys.getInt(1);
-                        try (PreparedStatement setStmt = conn.prepareStatement(insertSettingsSql)) {
-                            setStmt.setInt(1, newAccountId);
-                            setStmt.executeUpdate();
+            Database.executeTransaction(conn -> {
+                try (PreparedStatement accStmt = conn.prepareStatement(insertAccountSql, Statement.RETURN_GENERATED_KEYS)) {
+                    accStmt.setString(1, data.getName());
+                    accStmt.setInt(2, data.getUserId());
+                    accStmt.setString(3, data.getUsername());
+                    accStmt.setString(4, hashedPassword); // Save the secure hash
+                    accStmt.setString(5, newSalt);        // Save the unique salt
+                    accStmt.setInt(6, data.getRole());
+                    accStmt.setDate(7, data.getLastChange());
+                    accStmt.executeUpdate();
+                    
+                    try (ResultSet generatedKeys = accStmt.getGeneratedKeys()) {
+                        if (generatedKeys.next()) {
+                            int newAccountId = generatedKeys.getInt(1);
+                            try (PreparedStatement setStmt = conn.prepareStatement(insertSettingsSql)) {
+                                setStmt.setInt(1, newAccountId);
+                                setStmt.executeUpdate();
+                            }
                         }
                     }
                 }
-            }
-            conn.commit(); 
+                return null; // Signals successful execution inside lambda
+            });
         } catch (SQLException e) {
-            try { conn.rollback(); } catch (SQLException ex) { } 
             Console.errorOut("Inserting data from table accounts error", e);
-        } finally {
-            try { 
-                conn.setAutoCommit(true); 
-                conn.close(); // IMPORTANT: Release the connection back to the pool
-            } catch (SQLException ex) {
-                Console.errorOut("Closing connection in finally block", ex);
-            }
         }
     }
 

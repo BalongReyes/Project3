@@ -34,6 +34,9 @@ dependencies {
     // HikariCP connection pool
     implementation(files("libs/HikariCP-5.1.0.jar"))
     implementation("org.slf4j:slf4j-simple:2.0.9") // Hikari needs this for logging!
+
+    // Dotenv for loading environment variables from a .env file
+    implementation("io.github.cdimascio:dotenv-java:3.0.0")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

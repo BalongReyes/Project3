@@ -1,12 +1,13 @@
 
 package DatabaseSystem.UnitsData;
 
-import DatabaseSystem.DataTable.DataTable;
-import DatabaseSystem.DataTable.DataTableType;
-import MethodsSystem.MethodString;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import DatabaseSystem.DataTable.DataTable;
+import DatabaseSystem.DataTable.DataTableType;
+import MethodsSystem.MethodString;
 
 /**
  * Holds the values of the table items
