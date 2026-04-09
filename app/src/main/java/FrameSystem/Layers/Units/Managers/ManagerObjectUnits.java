@@ -10,6 +10,7 @@ import DatabaseSystem.UnitsData.UnitsDataHandler;
 import DatabaseSystem.UnitsData.UnitsDataTable;
 import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
+import java.util.concurrent.ExecutionException;
 import javax.swing.SwingWorker;
 
 public class ManagerObjectUnits extends ManagerModuleUnits{
@@ -30,10 +31,16 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
         refreshObjects(currentObject);
     }
     
+    private static SwingWorker<Void, Void> activeWorker = null;
+
     public static void refreshObjects(ObjectUnit recentObject) {
+        if (activeWorker != null && !activeWorker.isDone()) {
+            activeWorker.cancel(true); 
+        }
+
         LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
 
-        new SwingWorker<Void, Void>() {
+        activeWorker = new SwingWorker<Void, Void>() {
             @Override
             protected Void doInBackground() throws Exception {
                 loadObject();
@@ -42,11 +49,24 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
 
             @Override
             protected void done() {
+                try {
+                    if (isCancelled()) {
+                        Console.out("Loading was cancelled.");
+                        return;
+                    }
+                    get();
+                } catch (InterruptedException | ExecutionException e) {
+                    Console.errorOut("Error during background loading", e);
+                    ManagerModuleUnits.reconnectMode(() -> refreshObjects());
+                } finally {
+                    activeWorker = null;
+                }
             }
-        }.execute();
+        };
+        activeWorker.execute();
     }
     
-    public static void loadObject(){
+    private static void loadObject(){
         final long thisRefreshId = ++currentRefreshId;
         
         try {
@@ -54,10 +74,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
 
             int limit = 20;  // How many units to fetch per SQL query
             int offset = 0;  // Start at the very beginning
-            boolean isFirstBatch = true;
-            boolean hasMoreData = true;
+            boolean isFirstBatch = true, hasMoreData = true;
 
             while (hasMoreData) {
+                if (Thread.currentThread().isInterrupted()) return;
+                
                 if (thisRefreshId != currentRefreshId) return;
 
                 ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnits.getFilters();
