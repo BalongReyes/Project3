@@ -14,6 +14,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
 import io.github.cdimascio.dotenv.Dotenv;
+import io.github.cdimascio.dotenv.DotenvException;
 
 public class Database {
 
@@ -59,7 +60,7 @@ public class Database {
 
             dataSource = new HikariDataSource(config);
             Console.out("Connection pool initialized successfully");
-        } catch (Exception e) {
+        } catch (DotenvException | IllegalStateException e) {
             Console.errorOut("Connection pool initialization failed", e);
         }
     }
@@ -86,12 +87,11 @@ public class Database {
 
 // Secure Methods for INSERT, UPDATE, DELETE =================================================================
     
-    // Notice the try-with-resources! This safely borrows and returns the connection to the pool.
     public static void executePrepared(String query, Object... parameters) throws SQLException {
         if (dataSource == null) throw new SQLException("Database offline");
         
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
+            PreparedStatement statement = connection.prepareStatement(query)) {
             for (int i = 0; i < parameters.length; i++) {
                 statement.setObject(i + 1, parameters[i]);
             }
@@ -107,7 +107,7 @@ public class Database {
         if (dataSource == null) throw new SQLException("Database offline");
         
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
+            PreparedStatement statement = connection.prepareStatement(query)) {
             for (int i = 0; i < parameters.length; i++) {
                 statement.setObject(i + 1, parameters[i]);
             }
@@ -128,7 +128,7 @@ public class Database {
         
         List<T> results = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
+            PreparedStatement statement = connection.prepareStatement(query)) {
             for (int i = 0; i < parameters.length; i++) {
                 statement.setObject(i + 1, parameters[i]);
             }

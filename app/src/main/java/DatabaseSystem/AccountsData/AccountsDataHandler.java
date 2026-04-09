@@ -28,7 +28,7 @@ public class AccountsDataHandler {
         
         if (ManagerLogin.isLoggedIn()) {
             for (AccountsDataTable data : accounts) {
-                if (ManagerLogin.getAccountLoggedIn().idEquals(data.getId())) {
+                if (ManagerLogin.getAccountLoggedIn().idEquals(data.id())) {
                     ManagerLogin.updateAccountLoggedIn(data);
                     break;
                 }
@@ -54,7 +54,6 @@ public class AccountsDataHandler {
     
     public static AccountsDataTable[] getAllData(boolean refresh) throws SQLException {
         List<AccountsDataTable> freshDataList = Database.queryForList("SELECT * FROM accounts", AccountsDataTable::new);
-        freshDataList.removeIf(AccountsDataTable::isError);
         
         // If the table is completely empty, trigger our default account creation logic
         if (freshDataList.isEmpty()) {
@@ -121,7 +120,7 @@ public class AccountsDataHandler {
         if (account == null) return null;
         
         // Hash the inputted password USING the account's unique salt
-        String hashedInput = hashPassword(charPassword, account.getSalt());
+        String hashedInput = hashPassword(charPassword, account.salt());
         
         if (account.checkPassword(hashedInput)) return account;
         
@@ -129,7 +128,7 @@ public class AccountsDataHandler {
     }
 
     public static boolean verifyLogin(AccountsDataTable data, char[] password) {
-        return data.checkPassword(hashPassword(password, data.getSalt()));
+        return data.checkPassword(hashPassword(password, data.salt()));
     }
     
 // Security Methods ==========================================================================================
@@ -178,13 +177,13 @@ public class AccountsDataHandler {
         try {
             Database.executeTransaction(conn -> {
                 try (PreparedStatement accStmt = conn.prepareStatement(insertAccountSql, Statement.RETURN_GENERATED_KEYS)) {
-                    accStmt.setString(1, data.getName());
-                    accStmt.setInt(2, data.getUserId());
-                    accStmt.setString(3, data.getUsername());
+                    accStmt.setString(1, data.name());
+                    accStmt.setInt(2, data.userId());
+                    accStmt.setString(3, data.username());
                     accStmt.setString(4, hashedPassword); // Save the secure hash
                     accStmt.setString(5, newSalt);        // Save the unique salt
-                    accStmt.setInt(6, data.getRole());
-                    accStmt.setDate(7, data.getLastChange());
+                    accStmt.setInt(6, data.role());
+                    accStmt.setDate(7, data.lastChange());
                     accStmt.executeUpdate();
                     
                     try (ResultSet generatedKeys = accStmt.getGeneratedKeys()) {
@@ -224,8 +223,8 @@ public class AccountsDataHandler {
             // Removed password and salt from this query to prevent accidental corruption
             String query = "UPDATE accounts SET name = ?, userId = ?, username = ?, role = ?, lastChange = ? WHERE id = ?";
             Database.executePrepared(query, 
-                data.getName(), data.getUserId(), data.getUsername(), 
-                data.getRole(), data.getLastChange(), id
+                data.name(), data.userId(), data.username(), 
+                data.role(), data.lastChange(), id
             );
         } catch (SQLException e) {
             Console.errorOut("Updating data from table accounts error", e);

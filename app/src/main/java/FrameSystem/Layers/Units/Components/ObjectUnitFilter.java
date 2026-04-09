@@ -1,13 +1,13 @@
 package FrameSystem.Layers.Units.Components;
 
 import DatabaseSystem.DataTable.DataTableFilter;
-import static DatabaseSystem.DataTable.DataTableOrder.Asc;
-import static DatabaseSystem.DataTable.DataTableOrder.Desc;
 import DatabaseSystem.UnitsData.UnitsDataHandler;
 import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.event.MouseAdapter;
 import java.beans.BeanProperty;
 import javax.swing.ImageIcon;
+import static DatabaseSystem.DataTable.DataTableOrder.DESC;
+import static DatabaseSystem.DataTable.DataTableOrder.ASC;
 
 /**
  *
@@ -28,7 +28,7 @@ public class ObjectUnitFilter extends SPanel{
         initComponents();
         
         this.filter = filter;
-        setText(UnitsDataHandler.getColumnName(filter.getDataIndex()));
+        setText(UnitsDataHandler.getColumnName(filter.dataIndex()));
         
         sPanel1.addMouseListener(new MouseAdapter() {
             @Override
@@ -53,15 +53,16 @@ public class ObjectUnitFilter extends SPanel{
         int padding = 29; 
         int totalWidth = labelWidth + closeButtonWidth + padding;
         
-        if(filter != null) switch(filter.getOrder()){
-            case Desc -> {
+        if(filter != null) switch(filter.order()){
+            case DESC -> {
                 sLabel2.setScaledIcon(new ImageIcon(getClass().getResource("/Icons/arrowUp.png")));
                 totalWidth += sLabel2.getIconSize() + sLabel2.getIconTextGap();
             }
-            case Asc -> {
+            case ASC -> {
                 sLabel2.setScaledIcon(new ImageIcon(getClass().getResource("/Icons/arrowDown.png")));
                 totalWidth += sLabel2.getIconSize() + sLabel2.getIconTextGap();
             }
+
         }
         
         // 5. Apply the calculated maximum dimension to the ObjectUnitFilter (this panel)

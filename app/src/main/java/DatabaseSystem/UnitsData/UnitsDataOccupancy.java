@@ -18,7 +18,7 @@ public enum UnitsDataOccupancy{
         this.stringName = stringName;
     }
     
-    String stringName;
+    private final String stringName;
 
     public String getStringName(){
         return stringName;

@@ -59,7 +59,7 @@ public class ManagerModuleHome extends Manager{
     }
     
     public static void changeAccount(AccountsDataTable user){
-        switch(user.getRole()){
+        switch(user.role()){
             case 1 -> {
                 moduleHome.userRole.setText("Super Admin");
             }

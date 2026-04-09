@@ -3,13 +3,13 @@ package FrameSystem.Layers.Units.Components;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import DatabaseSystem.UnitsData.UnitsDataTable;
 import FrameSystem.Layers.Units.Managers.ManagerObjectUnits;
 import FrameSystem.SLibrary.SComponents.SPanel;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class ObjectUnit extends SPanel{
 
@@ -41,7 +41,7 @@ public class ObjectUnit extends SPanel{
         
         sPanel2.applyHoverInnerListener();
         
-        String accountNumber = data.getAccountNumber();
+        String accountNumber = data.accountNumber();
         if(accountNumber != null){
             sLabel3.setText(String.valueOf(accountNumber));
         }else{
@@ -49,22 +49,22 @@ public class ObjectUnit extends SPanel{
         }
         
         sLabel2.setText(
-            switch(data.getModel()){
+            switch(data.model()){
                 case 1 -> "1 Bedroom";
                 case 2 -> "2 Bedroom";
                 case 3 -> "Studio";
                 default -> "NULL";
             }
             +
-            switch(data.getBalcony()){
+            switch(data.balcony()){
                 case 1 -> "w/ Balcony";
                 default -> "";
             }
         );
         
-        sLabel9.setText(data.getTower() + "-" + data.getFloor() + (data.getUnit() < 10 ? "0" : "") + data.getUnit());
+        sLabel9.setText(data.tower() + "-" + data.floor() + (data.unit() < 10 ? "0" : "") + data.unit());
         
-        Date turnedOver = data.getTurnedOver();
+        Date turnedOver = data.turnedOver();
         if(turnedOver != null){
             LocalDate localDate = turnedOver.toLocalDate();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
@@ -115,7 +115,7 @@ public class ObjectUnit extends SPanel{
     }
     
     public int getId(){
-        return data.getId();
+        return data.id();
     }
     
 // -----------------------------------------------------------------------------------------------------------
@@ -190,7 +190,7 @@ public class ObjectUnit extends SPanel{
         sLabel1.setBackground(new java.awt.Color(255, 255, 255));
         sLabel1.setForeground(new java.awt.Color(70, 70, 70));
         sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLabel1.setText(String.valueOf(data.getTower()));
+        sLabel1.setText(String.valueOf(data.tower()));
         sLabel1.setMaximumSize(new java.awt.Dimension(50, 50));
         sLabel1.setMinimumSize(new java.awt.Dimension(50, 50));
         sLabel1.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -198,7 +198,7 @@ public class ObjectUnit extends SPanel{
 
         sLabel7.setForeground(new java.awt.Color(70, 70, 70));
         sLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLabel7.setText(String.valueOf(data.getFloor()));
+        sLabel7.setText(String.valueOf(data.floor()));
         sLabel7.setMaximumSize(new java.awt.Dimension(50, 50));
         sLabel7.setMinimumSize(new java.awt.Dimension(50, 50));
         sLabel7.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -206,7 +206,7 @@ public class ObjectUnit extends SPanel{
 
         sLabel8.setForeground(new java.awt.Color(70, 70, 70));
         sLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLabel8.setText(String.valueOf(data.getUnit()));
+        sLabel8.setText(String.valueOf(data.unit()));
         sLabel8.setMaximumSize(new java.awt.Dimension(50, 50));
         sLabel8.setMinimumSize(new java.awt.Dimension(50, 50));
         sLabel8.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -238,7 +238,7 @@ public class ObjectUnit extends SPanel{
 
         sLabel4.setForeground(new java.awt.Color(70, 70, 70));
         sLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        sLabel4.setText(String.valueOf(data.getFloorArea())
+        sLabel4.setText(String.valueOf(data.floorArea())
         );
         sPanel1.add(sLabel4);
         sPanel1.add(occupancyType);

@@ -16,7 +16,7 @@ public class MethodAlgorithms{
             case TYPE_STRING -> {if(!(target instanceof String)) return -1;}
             case TYPE_INTEGER -> {if(!(target instanceof Integer)) return -1;}
         }
-        quickSort(array, 0, array.length - 1, dataIndex, DataTableOrder.Desc, type);
+        quickSort(array, 0, array.length - 1, dataIndex, DataTableOrder.DESC, type);
         return binarySearch(array, dataIndex, type, 0, array.length - 1, target);
     }
     
@@ -64,8 +64,8 @@ public class MethodAlgorithms{
                     String value = (String)array[i].getData(dataIndex);
                     if(value == null) value = "";
                     switch(order){
-                        case Desc -> {if(value.compareTo(pivotValueString) >= 0) continue;}
-                        case Asc -> {if(value.compareTo(pivotValueString) < 0) continue;}
+                        case DESC -> {if(value.compareTo(pivotValueString) >= 0) continue;}
+                        case ASC -> {if(value.compareTo(pivotValueString) < 0) continue;}
                     }
                     swap(array, i, index);
                     index++;
@@ -78,8 +78,8 @@ public class MethodAlgorithms{
                     Integer value = (Integer)array[i].getData(dataIndex);
                     if(value == null) value = -1;
                     switch(order){
-                        case Desc -> {if(value < pivotValueInteger) continue;}
-                        case Asc -> {if(value >= pivotValueInteger) continue;}
+                        case DESC -> {if(value < pivotValueInteger) continue;}
+                        case ASC -> {if(value >= pivotValueInteger) continue;}
                     }
                     swap(array, i, index);
                     index++;

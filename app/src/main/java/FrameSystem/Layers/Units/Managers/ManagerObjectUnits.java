@@ -98,9 +98,9 @@ public class ManagerObjectUnits extends Manager{
 
                     ArrayList<DataTableFilter> combinedFilters = new ArrayList<>(activeFilters);
                     
-                    if (isFilterTower1Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Where, "1"));
-                    if (isFilterTower2Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Where, "2"));
-                    if (isFilterTower3Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Where, "3"));
+                    if (isFilterTower1Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.WHERE, "1"));
+                    if (isFilterTower2Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.WHERE, "2"));
+                    if (isFilterTower3Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.WHERE, "3"));
                     
                     UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
                         refresh, 
@@ -246,9 +246,9 @@ public class ManagerObjectUnits extends Manager{
     public static void setDefaultFilters() {
         clearActiveFilter();
         // Default sort priority: Tower -> Floor -> Unit (Ascending)
-        addActiveFilter(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.Asc));
-        addActiveFilter(new DataTableFilter(UnitsDataTable.FLOOR, DataTableOrder.Asc));
-        addActiveFilter(new DataTableFilter(UnitsDataTable.UNIT, DataTableOrder.Asc));
+        addActiveFilter(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.ASC));
+        addActiveFilter(new DataTableFilter(UnitsDataTable.FLOOR, DataTableOrder.ASC));
+        addActiveFilter(new DataTableFilter(UnitsDataTable.UNIT, DataTableOrder.ASC));
     }
     
     public static void addActiveFilter(DataTableFilter dataFilter){

@@ -32,7 +32,7 @@ public class ManagerLogin extends Manager{
     }
 
     public static void updateAccountLoggedIn(AccountsDataTable updateAccountLoggedIn){
-        if(!accountLoggedIn.idEquals(updateAccountLoggedIn.getId())) return;
+        if(!accountLoggedIn.idEquals(updateAccountLoggedIn.id())) return;
         accountLoggedIn = updateAccountLoggedIn;
     }
     

@@ -1,18 +1,19 @@
-
 package DatabaseSystem.DataTable;
 
-public enum DataTableOrder{
+public enum DataTableOrder {
     
-    Desc("Desc"), Asc("Asc"), Where("Where");
+    DESC("Desc"), 
+    ASC("Asc"), 
+    WHERE("Where");
     
-    String s;
+    private final String value;
     
-    private DataTableOrder(String s){
-        this.s = s;
+    DataTableOrder(String value) {
+        this.value = value;
     }
 
-    public String getString(){
-        return s;
+    public String getString() {
+        return value;
     }
     
 }
