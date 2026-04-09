@@ -3,7 +3,6 @@ package MainSystem;
 import FrameSystem.Layers.Home.Managers.ManagerModuleHome;
 import FrameSystem.Layers.Login.Managers.ManagerModuleLogin;
 import FrameSystem.Layers.Units.Managers.ManagerModuleUnits;
-import FrameSystem.Layers.Units.Managers.ManagerObjectUnits;
 import MainSystem.Managers.ManagerLogin;
 
 public class Manager {
@@ -18,7 +17,6 @@ public class Manager {
         ManagerModuleHome.initDefault();
         
         ManagerModuleUnits.initDefault();
-        ManagerObjectUnits.initDefault();
     }
 
 }

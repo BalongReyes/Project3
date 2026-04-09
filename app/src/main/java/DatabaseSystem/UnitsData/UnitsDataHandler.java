@@ -27,7 +27,7 @@ public class UnitsDataHandler {
         return freshDataList.toArray(UnitsDataTable[]::new);
     }
 
-    public static UnitsDataTable[] getDataBatchSortedMulti(boolean refresh, DataTableFilter[] filters, int limit, int offset) throws SQLException {
+    public static UnitsDataTable[] getDataBatchSortedMulti(DataTableFilter[] filters, int limit, int offset) throws SQLException {
         var whereBy = new StringBuilder();
         var orderBy = new StringBuilder();
         

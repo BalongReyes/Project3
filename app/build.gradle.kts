@@ -32,7 +32,7 @@ dependencies {
     implementation("com.formdev:flatlaf:3.4.1")
 
     // HikariCP connection pool
-    implementation(files("libs/HikariCP-5.1.0.jar"))
+    implementation(files("libs/HikariCP-5.1.0.jar")) // Add the HikariCP JAR from the libs directory is required for netbeans to dont have error
     implementation("org.slf4j:slf4j-simple:2.0.9") // Hikari needs this for logging!
 
     // Dotenv for loading environment variables from a .env file

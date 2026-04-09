@@ -1,6 +1,4 @@
-
 package FrameSystem.Layers.Units.Managers;
-
 
 import EventSystem.Interface.ReconnectExecute;
 import FrameSystem.Layers.Home.Module.ModuleHome;
@@ -21,10 +19,12 @@ public class ManagerModuleUnits extends Manager{
             if(!evt.alreadyShowing){
                 moduleUnits.sTextField1.requestFocus();
                 LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
-                ManagerObjectUnits.setDefaultFilters();
-                ManagerObjectUnits.refreshObjects(null, true);
+                ManagerObjectUnits.refreshObjects();
             }
         });
+        
+        ManagerObjectUnits.initDefault();
+        ManagerFilterUnits.initDefault();
     }
     
 // Main Methods ==============================================================================================
@@ -45,5 +45,4 @@ public class ManagerModuleUnits extends Manager{
             if(reconnectExecute != null) reconnectExecute.reconnect();
         });
     }
-
 }

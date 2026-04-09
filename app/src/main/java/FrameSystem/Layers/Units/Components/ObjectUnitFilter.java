@@ -8,6 +8,7 @@ import java.beans.BeanProperty;
 import javax.swing.ImageIcon;
 import static DatabaseSystem.DataTable.DataTableOrder.DESC;
 import static DatabaseSystem.DataTable.DataTableOrder.ASC;
+import FrameSystem.Layers.Units.Managers.ManagerFilterUnits;
 
 /**
  *
@@ -33,7 +34,7 @@ public class ObjectUnitFilter extends SPanel{
         sPanel1.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(java.awt.event.MouseEvent e) {
-                FrameSystem.Layers.Units.Managers.ManagerObjectUnits.removeActiveFilter(filter);
+                ManagerFilterUnits.removeActiveFilter(filter);
             }
         });
     }
