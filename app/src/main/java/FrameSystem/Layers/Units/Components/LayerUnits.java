@@ -8,7 +8,6 @@ import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
 import FrameSystem.SLibrary.SAbstractComponents.SLayer;
 import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
-import MainSystem.Main;
 
 public class LayerUnits extends SLayer{
 
@@ -50,7 +49,7 @@ public class LayerUnits extends SLayer{
             return;
         }
         
-        if(Main.debugDataHandlerRefresh) Console.line().out("SHOWING LAYER " + showLayer.getName(), ConsoleColors.GREEN);
+        Console.line().out("SHOWING LAYER " + showLayer.getName(), ConsoleColors.GREEN);
         
         for(LayerUnits layer : layeredPanels){
             SLayerButton layeredButton = layer.getLayerButton();

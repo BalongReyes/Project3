@@ -5,7 +5,6 @@ import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
 import FrameSystem.SLibrary.SAbstractComponents.SLayer;
 import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
-import MainSystem.Main;
 import java.awt.event.KeyEvent;
 import java.beans.BeanProperty;
 import java.util.ArrayList;
@@ -50,7 +49,7 @@ public class LayerHome extends SLayer{
             return;
         }
         
-        if(Main.debugDataHandlerRefresh) Console.line().out("SHOWING LAYER " + showLayer.getName(), ConsoleColors.GREEN);
+        Console.line().out("SHOWING LAYER " + showLayer.getName(), ConsoleColors.GREEN);
         
         for(LayerHome layer : layeredPanels){
             SLayerButton layeredButton = layer.getLayerButton();

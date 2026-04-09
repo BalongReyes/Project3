@@ -79,7 +79,7 @@ public class SFrame extends JFrame {
             try{
                 Database.openConnection();
                 if(Database.getConnection() != null && !Database.getConnection().isClosed()){
-                    if(Main.debugDataHandlerRefresh) Console.line().out("RECONNECTION OF " + caller, ConsoleColors.GREEN);
+                    Console.line().out("RECONNECTION OF " + caller, ConsoleColors.GREEN);
                     currentReconnectExecute.reconnect();
                     ((Timer)evt.getSource()).stop();
                 }

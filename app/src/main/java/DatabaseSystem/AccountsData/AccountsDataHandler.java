@@ -16,9 +16,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 import ConsoleSystem.Console;
-import ConsoleSystem.ConsoleColors;
 import DatabaseSystem.Database;
-import MainSystem.Main;
 import MainSystem.Managers.ManagerLogin;
 
 public class AccountsDataHandler {
@@ -47,9 +45,7 @@ public class AccountsDataHandler {
             refreshData(); // Re-run to update the session if necessary
             return;
         }
-        // -------------------------------
         
-        if (Main.debugDataHandlerRefresh) Console.out("AccountsDataHandler synced with DB", ConsoleColors.YELLOW);
     }
     
     public static AccountsDataTable[] getAllData(boolean refresh) throws SQLException {

@@ -1,20 +1,15 @@
 package DatabaseSystem.UnitsData;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import ConsoleSystem.Console;
-import ConsoleSystem.ConsoleColors;
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
 import DatabaseSystem.Database;
-import MainSystem.Main;
 
 public class UnitsDataHandler {
 
-    private static final List<UnitsDataTable> array = new ArrayList<>();
-    
     // Modern Text Block for SQL Query
     private static final String BASE_SELECT_QUERY = """
         SELECT u.*, 
@@ -27,20 +22,9 @@ public class UnitsDataHandler {
         FROM units u
         """;
     
-    public static void refreshData() throws SQLException {
-        array.clear();
-        Database.executePreparedQuery(BASE_SELECT_QUERY, (result) -> {
-            while (result.next()) {
-                array.add(new UnitsDataTable(result));
-            }
-        });
-        
-        if (Main.debugDataHandlerRefresh) Console.out("UnitsDataHandler refreshed", ConsoleColors.YELLOW);
-    }
-    
     public static UnitsDataTable[] getAllData(boolean refresh) throws SQLException {
-        if (refresh || array.isEmpty()) refreshData();
-        return array.toArray(UnitsDataTable[]::new);
+        List<UnitsDataTable> freshDataList = Database.queryForList(BASE_SELECT_QUERY, UnitsDataTable::new);
+        return freshDataList.toArray(UnitsDataTable[]::new);
     }
 
     public static UnitsDataTable[] getDataBatchSortedMulti(boolean refresh, DataTableFilter[] filters, int limit, int offset) throws SQLException {
@@ -52,7 +36,7 @@ public class UnitsDataHandler {
             int orderCount = 0;
             
             for (var filter : filters) {
-                var columnName = getColumnName(filter.dataIndex()); // calling record accessor
+                var columnName = getColumnName(filter.dataIndex());
                 
                 if (filter.order() == DataTableOrder.WHERE) {
                     if (whereCount++ > 0) whereBy.append(" OR ");
@@ -69,40 +53,31 @@ public class UnitsDataHandler {
         if (!whereBy.isEmpty()) query.append(" WHERE ").append(whereBy);
         
         if (!orderBy.isEmpty()) query.append(" ORDER BY ").append(orderBy);
-        else query.append(" ORDER BY id ASC");
+        else query.append(" ORDER BY u.id ASC");
         
         query.append(" LIMIT ? OFFSET ?");
         
-        var sortedList = new ArrayList<UnitsDataTable>();
-        Database.executePreparedQuery(query.toString(), (result) -> {
-            while (result.next()) {
-                sortedList.add(new UnitsDataTable(result));
-            }
-        }, limit, offset);
-        
+        // Use queryForList to map the parameterized query automatically
+        List<UnitsDataTable> sortedList = Database.queryForList(query.toString(), UnitsDataTable::new, limit, offset);
         return sortedList.toArray(UnitsDataTable[]::new);
     }
     
     public static UnitsDataTable findDataById(int id) throws SQLException {
-        var resultHolder = new UnitsDataTable[1];
-        Database.executePreparedQuery(BASE_SELECT_QUERY + " WHERE id = ?", (result) -> {
-            if (result.next()) {
-                resultHolder[0] = new UnitsDataTable(result);
-            }
-        }, id);
-        return resultHolder[0];
+        // Uses queryForObject to return the item directly or null if it doesn't exist
+        return Database.queryForObject(BASE_SELECT_QUERY + " WHERE u.id = ?", UnitsDataTable::new, id).orElse(null);
     }
 
     public static String getColumnName(int dataIndex) {
+        // Using the 'u.' alias ensures there are no ambiguous column errors with the subqueries
         return switch (dataIndex) {
-            case UnitsDataTable.ID -> "id";
-            case UnitsDataTable.TOWER -> "tower";
-            case UnitsDataTable.FLOOR -> "floor";
-            case UnitsDataTable.UNIT -> "unit";
-            case UnitsDataTable.MODEL -> "model";
-            case UnitsDataTable.BALCONY -> "balcony";
-            case UnitsDataTable.FLOOR_AREA -> "floorarea";
-            default -> "id";
+            case UnitsDataTable.ID -> "u.id";
+            case UnitsDataTable.TOWER -> "u.tower";
+            case UnitsDataTable.FLOOR -> "u.floor";
+            case UnitsDataTable.UNIT -> "u.unit";
+            case UnitsDataTable.MODEL -> "u.model";
+            case UnitsDataTable.BALCONY -> "u.balcony";
+            case UnitsDataTable.FLOOR_AREA -> "u.floorarea";
+            default -> "u.id";
         };
     }
 

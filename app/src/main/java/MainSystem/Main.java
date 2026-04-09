@@ -8,7 +8,6 @@ import javax.swing.SwingUtilities;
 
 public class Main {
 
-    public static boolean debugDataHandlerRefresh = true;
     public static boolean coloredOutput = true;
 
     public static SFrame frame;
