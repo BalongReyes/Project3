@@ -13,6 +13,8 @@ import ConsoleSystem.ConsoleColors;
 import DatabaseSystem.Database;
 import EventSystem.Interface.ReconnectExecute;
 import FrameSystem.Layers.Main.Components.LayerMain;
+import java.util.concurrent.ExecutionException;
+import javax.swing.SwingWorker;
 
 public class SFrame extends JFrame {
 
@@ -30,9 +32,29 @@ public class SFrame extends JFrame {
     public void initShowDefaultLayer(){
         LayerMain.showLayer(layerMain_Loading);
         
-        // check whether the swing is smooth and not loading anything
+        SwingWorker<Void, Void> loadingWorker = new SwingWorker<Void, Void>() {
+            
+            @Override
+            protected Void doInBackground() throws Exception {
+                Database.openConnection();
+                Manager.initDefaults();
+                return null;
+            }
+
+            @Override
+            protected void done() {
+                try {
+                    get(); // Catch any exceptions that might have happened in the background
+                    LayerMain.showLayer(layerMain_Login);
+                    moduleLogin.initShowDefaultLayer();
+                    
+                } catch (InterruptedException | ExecutionException e) {
+                    ConsoleSystem.Console.errorOut("Error during loading phase", e);
+                }
+            }
+        };
         
-        moduleLogin.initShowDefaultLayer();
+        loadingWorker.execute();
     }
     
     private void setListeners() {

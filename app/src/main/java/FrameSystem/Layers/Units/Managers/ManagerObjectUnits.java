@@ -11,6 +11,7 @@ import DatabaseSystem.UnitsData.UnitsDataTable;
 import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
 import java.util.concurrent.ExecutionException;
+import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
 public class ManagerObjectUnits extends ManagerModuleUnits{
@@ -107,7 +108,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                     hasMoreData = false;
 
                     if (isFirstBatch) {
-                        javax.swing.SwingUtilities.invokeLater(() -> {
+                        SwingUtilities.invokeLater(() -> {
                             if (thisRefreshId != currentRefreshId) return; // Final UI check
                             moduleUnits.objectUnitWrapper.removeAll();
                             moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
@@ -124,7 +125,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                 final boolean firstBatchCopy = isFirstBatch;
 
                 // 4. Update the UI with the freshly loaded batch
-                javax.swing.SwingUtilities.invokeLater(() -> {
+                SwingUtilities.invokeLater(() -> {
                     if (thisRefreshId != currentRefreshId) return; // Final UI check
 
                     if (firstBatchCopy) {

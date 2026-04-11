@@ -25,6 +25,7 @@ public class ModuleLogin extends LoginPanelContainer {
                 offlineMode();
             }else{
                 LayerLogin.showLayer(layerLogin_Online);
+                loginUsernameField.requestFocus();
             }
         }catch(SQLException e){
             Console.errorOut("Initialize show default layer", e);

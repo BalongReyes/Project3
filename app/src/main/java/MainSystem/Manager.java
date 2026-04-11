@@ -11,7 +11,9 @@ public class Manager {
 
     public static void setDefault(SFrame frame) {
         Manager.frame = frame;
-        
+    }
+    
+    public static void initDefaults(){
         ManagerLogin.initDefault();
         ManagerModuleLogin.initDefault();
         ManagerModuleHome.initDefault();
