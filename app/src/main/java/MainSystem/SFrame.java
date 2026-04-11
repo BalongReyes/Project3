@@ -28,7 +28,10 @@ public class SFrame extends JFrame {
 // Methods ===================================================================================================
 
     public void initShowDefaultLayer(){
-        LayerMain.showLayer(layerMain_Login);
+        LayerMain.showLayer(layerMain_Loading);
+        
+        // check whether the swing is smooth and not loading anything
+        
         moduleLogin.initShowDefaultLayer();
     }
     
@@ -112,6 +115,7 @@ public class SFrame extends JFrame {
         moduleLogin = new FrameSystem.Layers.Login.Module.ModuleLogin();
         layerMain_Home = new FrameSystem.Layers.Main.Components.LayerMain();
         moduleHome = new FrameSystem.Layers.Home.Module.ModuleHome();
+        layerMain_Loading = new FrameSystem.Layers.Main.Components.LayerMain();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Avida Prime Taft");
@@ -126,7 +130,6 @@ public class SFrame extends JFrame {
         layeredPane_Main.setOpaque(true);
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
-        layerMain_Login.setDefaultBackgroundColor(new java.awt.Color(255, 255, 255));
         layerMain_Login.setName("Main"); // NOI18N
 
         javax.swing.GroupLayout layerMain_LoginLayout = new javax.swing.GroupLayout(layerMain_Login);
@@ -169,6 +172,22 @@ public class SFrame extends JFrame {
         layeredPane_Main.setLayer(layerMain_Home, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerMain_Home, "card2");
 
+        layerMain_Loading.setName("Main"); // NOI18N
+
+        javax.swing.GroupLayout layerMain_LoadingLayout = new javax.swing.GroupLayout(layerMain_Loading);
+        layerMain_Loading.setLayout(layerMain_LoadingLayout);
+        layerMain_LoadingLayout.setHorizontalGroup(
+            layerMain_LoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2062, Short.MAX_VALUE)
+        );
+        layerMain_LoadingLayout.setVerticalGroup(
+            layerMain_LoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 970, Short.MAX_VALUE)
+        );
+
+        layeredPane_Main.setLayer(layerMain_Loading, javax.swing.JLayeredPane.PALETTE_LAYER);
+        layeredPane_Main.add(layerMain_Loading, "card3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -199,6 +218,7 @@ public class SFrame extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public FrameSystem.Layers.Main.Components.LayerMain layerMain_Home;
+    public FrameSystem.Layers.Main.Components.LayerMain layerMain_Loading;
     public FrameSystem.Layers.Main.Components.LayerMain layerMain_Login;
     private javax.swing.JLayeredPane layeredPane_Main;
     public FrameSystem.Layers.Home.Module.ModuleHome moduleHome;
