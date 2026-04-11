@@ -9,16 +9,10 @@ plugins {
     id("java")
     id("application")
     id("edu.sc.seis.launch4j") version "4.0.0"
-    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 repositories {
     mavenCentral()
-}
-
-javafx {
-    version = "21"
-    modules("javafx.controls", "javafx.fxml", "javafx.graphics")
 }
 
 dependencies {
