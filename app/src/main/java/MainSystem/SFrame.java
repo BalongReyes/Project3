@@ -13,6 +13,7 @@ import ConsoleSystem.ConsoleColors;
 import DatabaseSystem.Database;
 import EventSystem.Interface.ReconnectExecute;
 import FrameSystem.Layers.Main.Components.LayerMain;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
@@ -37,18 +38,26 @@ public class SFrame extends JFrame {
             
             @Override
             protected Void doInBackground() throws Exception {
-                Database.openConnection();
+                CountDownLatch waitLatch1 = new CountDownLatch(1);
                 SwingUtilities.invokeLater(() -> {
-                    sAnimatedLoading1.setProgressPercentage(25);
+                    sAnimatedLoading1.setProgressPercentage(33, 300, waitLatch1);
+                });
+                Database.openConnection();
+                waitLatch1.await();
+                
+                CountDownLatch waitLatch2 = new CountDownLatch(1);
+                SwingUtilities.invokeLater(() -> {
+                    sAnimatedLoading1.setProgressPercentage(66, 300, waitLatch2);
                 });
                 Manager.initDefaults();
+                waitLatch2.await();
+                
+                CountDownLatch waitLatch3 = new CountDownLatch(1);
                 SwingUtilities.invokeLater(() -> {
-                    sAnimatedLoading1.setProgressPercentage(75);
+                    sAnimatedLoading1.setProgressPercentage(100, 1500, waitLatch3);
                 });
-                Thread.sleep(2000);
-                SwingUtilities.invokeLater(() -> {
-                    sAnimatedLoading1.setProgressPercentage(100);
-                });
+                waitLatch3.await();
+                
                 return null;
             }
 
@@ -177,11 +186,11 @@ public class SFrame extends JFrame {
         sAnimatedLoading1.setLayout(sAnimatedLoading1Layout);
         sAnimatedLoading1Layout.setHorizontalGroup(
             sAnimatedLoading1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 429, Short.MAX_VALUE)
         );
         sAnimatedLoading1Layout.setVerticalGroup(
             sAnimatedLoading1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 33, Short.MAX_VALUE)
+            .addGap(0, 11, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout sPanel2Layout = new javax.swing.GroupLayout(sPanel2);
@@ -189,16 +198,16 @@ public class SFrame extends JFrame {
         sPanel2Layout.setHorizontalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sAnimatedLoading1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(21, 21, 21))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sAnimatedLoading1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         sPanel2Layout.setVerticalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel2Layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(sAnimatedLoading1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);

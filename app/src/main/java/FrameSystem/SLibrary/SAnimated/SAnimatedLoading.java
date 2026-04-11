@@ -7,15 +7,16 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.geom.RoundRectangle2D;
 import java.beans.BeanProperty;
+import java.util.concurrent.CountDownLatch;
 
 public class SAnimatedLoading extends SPanelAnimated {
 
     // Progress tracking (0.0f to 1.0f)
-    private float targetProgress = 0.0f;   // The actual progress set by the worker
-    private float currentProgress = 0.0f;  // The currently drawn/animated progress
+    private float targetProgress = 0.0f;   
+    private float currentProgress = 0.0f;  
     
-    // How fast the visual bar catches up to the target progress
-    private final float ANIMATION_SPEED = 0.02f; 
+    // The dynamic speed calculated based on the requested duration
+    private float currentAnimationSpeed = 0.0f;
 
     public SAnimatedLoading() {
         super(15); // 15ms delay for smooth ~60fps rendering
@@ -23,23 +24,28 @@ public class SAnimatedLoading extends SPanelAnimated {
 
 // Implementations ===========================================================================================
     
+    private CountDownLatch currentLatch;
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Smoothly animate the current progress towards the target progress
-        if (currentProgress < targetProgress) {
-            currentProgress += ANIMATION_SPEED;
-            if (currentProgress > targetProgress) {
-                currentProgress = targetProgress; // Snap to target if it overshoots
+        if (currentAnimationSpeed == 0) return; 
+
+        currentProgress += currentAnimationSpeed;
+
+        if ((currentAnimationSpeed > 0 && currentProgress >= targetProgress) || 
+            (currentAnimationSpeed < 0 && currentProgress <= targetProgress)) {
+            
+            currentProgress = targetProgress; 
+            currentAnimationSpeed = 0.0f;     
+            
+            // WAKE UP THE BACKGROUND THREAD!
+            if (currentLatch != null) {
+                currentLatch.countDown(); 
+                currentLatch = null; // Clear it out so we don't call it again
             }
-            repaint();
-        } else if (currentProgress > targetProgress) {
-            // Allows the bar to smoothly shrink back down if progress is reset
-            currentProgress -= ANIMATION_SPEED;
-            if (currentProgress < targetProgress) {
-                currentProgress = targetProgress;
-            }
-            repaint();
         }
+        
+        repaint();
     }
     
 // Setters and Getters =======================================================================================
@@ -84,24 +90,59 @@ public class SAnimatedLoading extends SPanelAnimated {
 // Progress Control ==========================================================================================
 
     /**
-     * Updates the progress of the loading bar.
-     * Call this from your SwingWorker's process() or doInBackground() method.
+     * Updates the progress over a specific duration.
      * @param progress A float representing the percentage (0.0f to 1.0f)
+     * @param durationMs How many milliseconds it should take to visually reach this progress
      */
-    public void setProgress(float progress) {
-        // Clamp the value between 0.0 and 1.0 to prevent drawing errors
+    public void setProgress(float progress, int durationMs) {
         this.targetProgress = Math.max(0.0f, Math.min(1.0f, progress));
+        
+        if (durationMs <= 0) {
+            // If duration is 0, snap instantly without animating
+            this.currentProgress = this.targetProgress;
+            this.currentAnimationSpeed = 0;
+            repaint();
+            return;
+        }
+
+        // Calculate exactly how much to move the bar per 15ms frame to finish on time!
+        float distance = this.targetProgress - this.currentProgress;
+        float totalFrames = durationMs / 15.0f; 
+        this.currentAnimationSpeed = distance / totalFrames;
     }
 
     /**
-     * Overloaded method to accept standard 0-100 integer percentages.
+     * Legacy method: defaults to a smooth 500ms transition
+     * @param progress
      */
-    public void setProgressPercentage(int percentage) {
-        setProgress(percentage / 100.0f);
+    public void setProgress(float progress) {
+        setProgress(progress, 500);
+    }
+
+    public void setProgressPercentage(int percentage, int durationMs, CountDownLatch latch) {
+        this.currentLatch = latch;
+        setProgress(percentage / 100.0f, durationMs); // Calls the existing setProgress logic
     }
     
+    /**
+     * Overloaded method to accept standard 0-100 integer percentages with a duration!
+     * @param percentage
+     * @param durationMs
+     */
+    public void setProgressPercentage(int percentage, int durationMs) {
+        setProgress(percentage / 100.0f, durationMs);
+    }
+    
+    public void setProgressPercentage(int percentage) {
+        setProgress(percentage / 100.0f, 500);
+    }
+
     public float getProgress() {
         return this.targetProgress;
+    }
+    
+    public boolean isFinished() {
+        return this.currentProgress == this.targetProgress;
     }
 
 // Overridden Methods ========================================================================================
@@ -114,22 +155,16 @@ public class SAnimatedLoading extends SPanelAnimated {
         int width = getWidth();
         int height = getHeight();
         
-        // Calculate the actual thickness of the bar. 
-        // Defaults to 80% of panel height if lineWidth is left at 0.
         float actualHeight = (lineWidth != 0) ? lineWidth : height * 0.8f;
-        float arc = actualHeight; // Fully rounded pill shape
+        float arc = actualHeight; 
         
-        // Calculate Y position to perfectly center the bar vertically
         double yPos = (height - actualHeight) / 2.0;
 
-        // 1. Draw the background track
         g2.setColor(trackColor);
         g2.fill(new RoundRectangle2D.Double(0, yPos, width, actualHeight, arc, arc));
 
-        // 2. Draw the foreground progress fill using your requested `lineColor`
         double fillWidth = width * currentProgress;
         
-        // Only draw the progress if it is greater than 0
         if (fillWidth > 0) {
             g2.setColor(lineColor);
             g2.fill(new RoundRectangle2D.Double(0, yPos, fillWidth, actualHeight, arc, arc));
