@@ -14,6 +14,7 @@ import DatabaseSystem.Database;
 import EventSystem.Interface.ReconnectExecute;
 import FrameSystem.Layers.Main.Components.LayerMain;
 import java.util.concurrent.ExecutionException;
+import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
 public class SFrame extends JFrame {
@@ -37,8 +38,17 @@ public class SFrame extends JFrame {
             @Override
             protected Void doInBackground() throws Exception {
                 Database.openConnection();
+                SwingUtilities.invokeLater(() -> {
+                    sAnimatedLoading1.setProgressPercentage(25);
+                });
                 Manager.initDefaults();
+                SwingUtilities.invokeLater(() -> {
+                    sAnimatedLoading1.setProgressPercentage(75);
+                });
                 Thread.sleep(2000);
+                SwingUtilities.invokeLater(() -> {
+                    sAnimatedLoading1.setProgressPercentage(100);
+                });
                 return null;
             }
 
@@ -135,6 +145,8 @@ public class SFrame extends JFrame {
         layerMain_Loading = new FrameSystem.Layers.Main.Components.LayerMain();
         sPanel1 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
+        sPanel2 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sAnimatedLoading1 = new FrameSystem.SLibrary.SAnimated.SAnimatedLoading();
         layerMain_Login = new FrameSystem.Layers.Main.Components.LayerMain();
         moduleLogin = new FrameSystem.Layers.Login.Module.ModuleLogin();
         layerMain_Home = new FrameSystem.Layers.Main.Components.LayerMain();
@@ -155,23 +167,55 @@ public class SFrame extends JFrame {
 
         layerMain_Loading.setName("Main-Loading"); // NOI18N
 
+        sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/mainSmallLogo.png"))); // NOI18N
+
+        sAnimatedLoading1.setLineColor(new java.awt.Color(205, 64, 68));
+        sAnimatedLoading1.setTrackColor(new java.awt.Color(198, 198, 198));
+
+        javax.swing.GroupLayout sAnimatedLoading1Layout = new javax.swing.GroupLayout(sAnimatedLoading1);
+        sAnimatedLoading1.setLayout(sAnimatedLoading1Layout);
+        sAnimatedLoading1Layout.setHorizontalGroup(
+            sAnimatedLoading1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        sAnimatedLoading1Layout.setVerticalGroup(
+            sAnimatedLoading1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 33, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout sPanel2Layout = new javax.swing.GroupLayout(sPanel2);
+        sPanel2.setLayout(sPanel2Layout);
+        sPanel2Layout.setHorizontalGroup(
+            sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(sAnimatedLoading1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+        );
+        sPanel2Layout.setVerticalGroup(
+            sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel2Layout.createSequentialGroup()
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addComponent(sAnimatedLoading1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
 
         javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);
         sPanel1.setLayout(sPanel1Layout);
         sPanel1Layout.setHorizontalGroup(
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel1Layout.createSequentialGroup()
-                .addGap(0, 236, Short.MAX_VALUE)
-                .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 237, Short.MAX_VALUE))
+            .addComponent(sLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
+            .addComponent(sPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sPanel1Layout.setVerticalGroup(
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel1Layout.createSequentialGroup()
-                .addGap(0, 160, Short.MAX_VALUE)
+                .addGap(99, 99, 99)
                 .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 236, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(sPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(160, 160, 160))
         );
 
         javax.swing.GroupLayout layerMain_LoadingLayout = new javax.swing.GroupLayout(layerMain_Loading);
@@ -271,8 +315,10 @@ public class SFrame extends JFrame {
     private javax.swing.JLayeredPane layeredPane_Main;
     public FrameSystem.Layers.Home.Module.ModuleHome moduleHome;
     public FrameSystem.Layers.Login.Module.ModuleLogin moduleLogin;
+    private FrameSystem.SLibrary.SAnimated.SAnimatedLoading sAnimatedLoading1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel2;
     // End of variables declaration//GEN-END:variables
 
 }
