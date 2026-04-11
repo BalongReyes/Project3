@@ -9,17 +9,21 @@ plugins {
     id("java")
     id("application")
     id("edu.sc.seis.launch4j") version "4.0.0"
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
+}
+
+javafx {
+    version = "21"
+    modules("javafx.controls", "javafx.fxml", "javafx.graphics")
 }
 
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
-
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
