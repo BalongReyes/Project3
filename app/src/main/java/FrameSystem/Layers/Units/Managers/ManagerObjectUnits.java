@@ -17,8 +17,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
 
     private static ArrayList<ObjectUnit> objects = new ArrayList<>();
     
-    private static long currentRefreshId = 0;
-    
     public static void initDefault(){
         moduleUnits.objectUnitScrollPane.setObjectContentHeight(60);
     }
@@ -27,13 +25,9 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
     
 // Refresh ---------------------------------------------------------------------------------------------------
     
-    public static void refreshObjects(){
-        refreshObjects(currentObject);
-    }
-    
     private static SwingWorker<Void, Void> activeWorker = null;
 
-    public static void refreshObjects(ObjectUnit recentObject) {
+    public static void refreshObjects() {
         if (activeWorker != null && !activeWorker.isDone()) {
             activeWorker.cancel(true); 
         }
@@ -43,7 +37,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
         activeWorker = new SwingWorker<Void, Void>() {
             @Override
             protected Void doInBackground() throws Exception {
-                loadObject();
+                refreshObjectInBackground();
                 return null;
             }
 
@@ -66,7 +60,9 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
         activeWorker.execute();
     }
     
-    private static void loadObject(){
+    private static long currentRefreshId = 0;
+    
+    private static void refreshObjectInBackground(){
         final long thisRefreshId = ++currentRefreshId;
         
         try {
