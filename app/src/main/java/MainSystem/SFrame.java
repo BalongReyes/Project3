@@ -38,6 +38,7 @@ public class SFrame extends JFrame {
             protected Void doInBackground() throws Exception {
                 Database.openConnection();
                 Manager.initDefaults();
+                Thread.sleep(2000);
                 return null;
             }
 
@@ -46,8 +47,6 @@ public class SFrame extends JFrame {
                 try {
                     get(); // Catch any exceptions that might have happened in the background
                     LayerMain.showLayer(layerMain_Login);
-                    moduleLogin.initShowDefaultLayer();
-                    
                 } catch (InterruptedException | ExecutionException e) {
                     Console.errorOut("Error during loading phase", e);
                 }
@@ -154,26 +153,25 @@ public class SFrame extends JFrame {
         layeredPane_Main.setOpaque(true);
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
-        layerMain_Loading.setName("Loading"); // NOI18N
+        layerMain_Loading.setName("Main-Loading"); // NOI18N
 
         sLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/mainSmallLogo.png"))); // NOI18N
-        sLabel1.setText("sLabel1");
 
         javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);
         sPanel1.setLayout(sPanel1Layout);
         sPanel1Layout.setHorizontalGroup(
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel1Layout.createSequentialGroup()
-                .addGap(0, 163, Short.MAX_VALUE)
+            .addGroup(sPanel1Layout.createSequentialGroup()
+                .addGap(0, 236, Short.MAX_VALUE)
                 .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 164, Short.MAX_VALUE))
+                .addGap(0, 237, Short.MAX_VALUE))
         );
         sPanel1Layout.setVerticalGroup(
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel1Layout.createSequentialGroup()
-                .addGap(116, 116, 116)
+                .addGap(0, 160, Short.MAX_VALUE)
                 .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addGap(0, 236, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layerMain_LoadingLayout = new javax.swing.GroupLayout(layerMain_Loading);
@@ -195,7 +193,7 @@ public class SFrame extends JFrame {
 
         layeredPane_Main.add(layerMain_Loading, "card3");
 
-        layerMain_Login.setName("Main"); // NOI18N
+        layerMain_Login.setName("Main-Login"); // NOI18N
 
         javax.swing.GroupLayout layerMain_LoginLayout = new javax.swing.GroupLayout(layerMain_Login);
         layerMain_Login.setLayout(layerMain_LoginLayout);
@@ -218,7 +216,7 @@ public class SFrame extends JFrame {
         layeredPane_Main.add(layerMain_Login, "card1");
         layerMain_Login.getAccessibleContext().setAccessibleName("");
 
-        layerMain_Home.setName("Home"); // NOI18N
+        layerMain_Home.setName("Main-Home"); // NOI18N
 
         javax.swing.GroupLayout layerMain_HomeLayout = new javax.swing.GroupLayout(layerMain_Home);
         layerMain_Home.setLayout(layerMain_HomeLayout);

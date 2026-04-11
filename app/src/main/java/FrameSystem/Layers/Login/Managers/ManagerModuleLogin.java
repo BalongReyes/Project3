@@ -1,12 +1,16 @@
 
 package FrameSystem.Layers.Login.Managers;
 
+import ConsoleSystem.Console;
+import DatabaseSystem.Database;
 import EventSystem.Listeners.MouseClickedAdaptor;
+import FrameSystem.Layers.Login.Components.LayerLogin;
 import FrameSystem.Layers.Login.Module.ModuleLogin;
 import MainSystem.Manager;
 import MainSystem.Managers.ManagerLogin;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.sql.SQLException;
 
 public class ManagerModuleLogin extends Manager{
     
@@ -15,10 +19,19 @@ public class ManagerModuleLogin extends Manager{
     public static void initDefault(){
         moduleLogin = frame.moduleLogin;
         
-        ManagerLogin.resetUI();
         frame.layerMain_Login.addLayeredPanelShowListener(evt -> {
             ManagerLogin.resetUI();
-            moduleLogin.loginUsernameField.requestFocus();
+            
+            try{
+                if(Database.getConnection() == null || Database.getConnection().isClosed()){
+                    moduleLogin.offlineMode();
+                }else{
+                    LayerLogin.showLayer(moduleLogin.layerLogin_Online);
+                    moduleLogin.loginUsernameField.requestFocus();
+                }
+            }catch(SQLException e){
+                Console.errorOut("Initialize show default layer", e);
+            }
         });
         
         moduleLogin.loginButton.addMouseListener((MouseClickedAdaptor) evt -> {

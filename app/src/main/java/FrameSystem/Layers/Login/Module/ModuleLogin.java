@@ -19,19 +19,6 @@ public class ModuleLogin extends LoginPanelContainer {
 
 // Methods ===================================================================================================
 
-    public void initShowDefaultLayer(){
-        try{
-            if(Database.getConnection() == null || Database.getConnection().isClosed()){
-                offlineMode();
-            }else{
-                LayerLogin.showLayer(layerLogin_Online);
-                loginUsernameField.requestFocus();
-            }
-        }catch(SQLException e){
-            Console.errorOut("Initialize show default layer", e);
-        }
-    }
-    
     private Timer refreshTimer;
     
     public final void offlineMode(){
@@ -449,7 +436,7 @@ public class ModuleLogin extends LoginPanelContainer {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public FrameSystem.Layers.Login.Components.LayerLogin layerLogin_Loading;
     public FrameSystem.Layers.Login.Components.LayerLogin layerLogin_Offline;
-    FrameSystem.Layers.Login.Components.LayerLogin layerLogin_Online;
+    public FrameSystem.Layers.Login.Components.LayerLogin layerLogin_Online;
     public FrameSystem.SLibrary.SComponents.SLabelHover loginButton;
     public FrameSystem.SLibrary.SComponents.SLabel loginError1;
     public FrameSystem.SLibrary.SComponents.SLabel loginError2;
