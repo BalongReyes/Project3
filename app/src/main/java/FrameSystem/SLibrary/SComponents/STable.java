@@ -89,9 +89,13 @@ public class STable extends SPanel{
         scrollPane = new FrameSystem.SLibrary.SComponents.SScrollPane();
         container = new FrameSystem.SLibrary.SComponents.SPanel();
 
+        setDefaultBackgroundColor(new java.awt.Color(255, 51, 51));
         setPaintBackground(false);
         setLayout(new java.awt.BorderLayout());
 
+        scrollPane.setBackground(new java.awt.Color(102, 102, 255));
+
+        container.setDefaultBackgroundColor(new java.awt.Color(51, 255, 51));
         container.setPaintBackground(false);
         container.setLayout(new javax.swing.BoxLayout(container, javax.swing.BoxLayout.Y_AXIS));
         scrollPane.setViewportView(container);

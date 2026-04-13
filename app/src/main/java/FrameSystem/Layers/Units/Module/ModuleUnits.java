@@ -114,6 +114,7 @@ public class ModuleUnits extends SPanel{
         objectUnitContainer = new FrameSystem.SLibrary.SComponents.SPanel();
         objectUnitWrapper = new FrameSystem.SLibrary.SComponents.SPanel();
         layerUnitsOffline1 = new FrameSystem.Layers.Units.Components.LayerUnits();
+        sTable1 = new FrameSystem.SLibrary.SComponents.STable();
         sPanel21 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel34 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel49 = new FrameSystem.SLibrary.SComponents.SPanel();
@@ -1373,17 +1374,8 @@ public class ModuleUnits extends SPanel{
 
         layerUnitsOffline1.setPaintBackground(false);
         layerUnitsOffline1.setName("Offline"); // NOI18N
-
-        javax.swing.GroupLayout layerUnitsOffline1Layout = new javax.swing.GroupLayout(layerUnitsOffline1);
-        layerUnitsOffline1.setLayout(layerUnitsOffline1Layout);
-        layerUnitsOffline1Layout.setHorizontalGroup(
-            layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1437, Short.MAX_VALUE)
-        );
-        layerUnitsOffline1Layout.setVerticalGroup(
-            layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 783, Short.MAX_VALUE)
-        );
+        layerUnitsOffline1.setLayout(new javax.swing.BoxLayout(layerUnitsOffline1, javax.swing.BoxLayout.LINE_AXIS));
+        layerUnitsOffline1.add(sTable1);
 
         jLayeredPane1.add(layerUnitsOffline1, "card5");
 
@@ -1785,9 +1777,7 @@ public class ModuleUnits extends SPanel{
                                 .addComponent(sTextFieldContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(sPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, 0)
-                                        .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(sPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, 0)
@@ -1918,6 +1908,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel7;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel8;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel9;
+    private FrameSystem.SLibrary.SComponents.STable sTable1;
     public FrameSystem.SLibrary.SComponents.STextField sTextField1;
     private FrameSystem.SLibrary.SGenericComponents.STextFieldContainer sTextFieldContainer1;
     // End of variables declaration//GEN-END:variables
