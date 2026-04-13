@@ -7,6 +7,7 @@ package FrameSystem.SLibrary.SComponents;
 import java.awt.Dimension;
 import java.beans.BeanProperty;
 import java.util.ArrayList;
+import javax.swing.JComponent;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  */
 public class STable extends SPanel{
 
-    private ArrayList<SPanel> rows;
+    private ArrayList<SPanel> rows = new ArrayList<>();
     private int rowHeight = 60; // Default height
     
     /**
@@ -22,10 +23,16 @@ public class STable extends SPanel{
      */
     public STable(){
         initComponents();
+        scrollPane.getViewport().setOpaque(false);
     }
 
 // ==== Getters and Setters ==================================================================================
 
+    public void addComponent(JComponent component){
+        container.add(component);
+        resizeTable();
+    }
+    
     /**
      * Adds a row to the table and automatically resizes the container.
      */
@@ -89,13 +96,12 @@ public class STable extends SPanel{
         scrollPane = new FrameSystem.SLibrary.SComponents.SScrollPane();
         container = new FrameSystem.SLibrary.SComponents.SPanel();
 
-        setDefaultBackgroundColor(new java.awt.Color(255, 51, 51));
         setPaintBackground(false);
         setLayout(new java.awt.BorderLayout());
 
-        scrollPane.setBackground(new java.awt.Color(102, 102, 255));
+        scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setOpaque(false);
 
-        container.setDefaultBackgroundColor(new java.awt.Color(51, 255, 51));
         container.setPaintBackground(false);
         container.setLayout(new javax.swing.BoxLayout(container, javax.swing.BoxLayout.Y_AXIS));
         scrollPane.setViewportView(container);

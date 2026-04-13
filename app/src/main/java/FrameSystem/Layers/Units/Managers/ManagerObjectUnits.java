@@ -1,6 +1,5 @@
 package FrameSystem.Layers.Units.Managers;
 
-import java.awt.Dimension;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -19,7 +18,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
     private static ArrayList<ObjectUnit> objects = new ArrayList<>();
     
     public static void initDefault(){
-        moduleUnits.objectUnitScrollPane.setObjectContentHeight(60);
+        moduleUnits.sTable1.setRowHeight(60);
     }
 
 // Main Methods ==============================================================================================
@@ -110,12 +109,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                     if (isFirstBatch) {
                         SwingUtilities.invokeLater(() -> {
                             if (thisRefreshId != currentRefreshId) return; // Final UI check
-                            moduleUnits.objectUnitWrapper.removeAll();
-                            moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
+                            moduleUnits.sTable1.clearRows();
+                            moduleUnits.sTable1.addComponent(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                             objects.clear();
                             resetOccupancyDataChart();
                             resetTotalUnitsDataChart();
-                            resizeContainer();
                             LayerUnits.showLayer(moduleUnits.layerUnitsOffline1);
                         });
                     }
@@ -129,8 +127,8 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                     if (thisRefreshId != currentRefreshId) return; // Final UI check
 
                     if (firstBatchCopy) {
-                        moduleUnits.objectUnitWrapper.removeAll();
-                        moduleUnits.objectUnitWrapper.add(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
+                        moduleUnits.sTable1.clearRows();
+                        moduleUnits.sTable1.addComponent(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                         objects.clear();
                         resetOccupancyDataChart();
                         resetTotalUnitsDataChart();
@@ -140,13 +138,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                     for (UnitsDataTable data : dataBatch) {
                         ObjectUnit o = new ObjectUnit(data);
                         objects.add(o);
-                        moduleUnits.objectUnitWrapper.add(o);
-                        moduleUnits.objectUnitScrollPane.addInnerListeners(o);
+                        moduleUnits.sTable1.addRow(o);
+//                        moduleUnits.objectUnitScrollPane.addInnerListeners(o);
                         addOccupancyDataChart(data);
                         addTotalUnitsDataChart();
                     }
-
-                    resizeContainer();
                 });
 
                 // 5. Prepare for the next round
@@ -167,16 +163,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
         }
     }
     
-// Resize ----------------------------------------------------------------------------------------------------
-    
-    private static void resizeContainer(){
-        int height = (objects.size() * 60) + 10;
-        moduleUnits.objectUnitContainer.setPreferredSize(new Dimension(0, height));
-        moduleUnits.objectUnitWrapper.setPreferredSize(new Dimension(0, height));
-        moduleUnits.revalidate();
-        moduleUnits.repaint();
-    }
-    
 // Current Object --------------------------------------------------------------------------------------------
     
     private static ObjectUnit currentObject = null;
@@ -187,13 +173,13 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
         for(ObjectUnit o : objects){
             o.setActive(false);
             if(o == object){
-                moduleUnits.objectUnitScrollPane.scrollToObjectContent(i + 1);
+//                moduleUnits.objectUnitScrollPane.scrollToObjectContent(i + 1);
             }
             i++;
         }
         object.setActive(true);
         currentObject = object;
-        moduleUnits.objectUnitScrollPane.repaint();
+//        moduleUnits.objectUnitScrollPane.repaint();
     }
     
 // -----------------------------------------------------------------------------------------------------------

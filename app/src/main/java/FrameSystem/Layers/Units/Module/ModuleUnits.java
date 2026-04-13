@@ -8,7 +8,6 @@ public class ModuleUnits extends SPanel{
         initComponents();
         setOpaque(false);
         setDoubleBuffered(true);
-        objectUnitWrapper.setDoubleBuffered(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -1809,10 +1808,10 @@ public class ModuleUnits extends SPanel{
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline1;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOnline;
-    public FrameSystem.SLibrary.SComponents.SPanel objectUnitContainer;
+    private FrameSystem.SLibrary.SComponents.SPanel objectUnitContainer;
     public FrameSystem.Layers.Units.Components.ObjectUnitDonutChart objectUnitDonutChart1;
-    public FrameSystem.SLibrary.SComponents.SScrollPane objectUnitScrollPane;
-    public FrameSystem.SLibrary.SComponents.SPanel objectUnitWrapper;
+    private FrameSystem.SLibrary.SComponents.SScrollPane objectUnitScrollPane;
+    private FrameSystem.SLibrary.SComponents.SPanel objectUnitWrapper;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
@@ -1908,7 +1907,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel7;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel8;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel9;
-    private FrameSystem.SLibrary.SComponents.STable sTable1;
+    public FrameSystem.SLibrary.SComponents.STable sTable1;
     public FrameSystem.SLibrary.SComponents.STextField sTextField1;
     private FrameSystem.SLibrary.SGenericComponents.STextFieldContainer sTextFieldContainer1;
     // End of variables declaration//GEN-END:variables

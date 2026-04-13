@@ -2,9 +2,6 @@
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
-    <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="33" green="33" red="ff" type="rgb"/>
-    </Property>
     <Property name="paintBackground" type="boolean" value="false"/>
   </Properties>
   <AuxValues>
@@ -24,9 +21,8 @@
   <SubComponents>
     <Container class="FrameSystem.SLibrary.SComponents.SScrollPane" name="scrollPane">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="66" type="rgb"/>
-        </Property>
+        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
+        <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -38,9 +34,6 @@
       <SubComponents>
         <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="container">
           <Properties>
-            <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="ff" red="33" type="rgb"/>
-            </Property>
             <Property name="paintBackground" type="boolean" value="false"/>
           </Properties>
 
