@@ -1,4 +1,3 @@
-
 package FrameSystem.SLibrary.SComponents;
 
 import EventSystem.Interface.InnerListener;
@@ -87,7 +86,7 @@ public class SScrollPane extends JScrollPane{
     private ScrollBarUI scrollbarUI = new ScrollBarUI(){
         @Override
         protected void configureScrollBarColors() {
-            this.scrollBarWidth = 7;
+            this.scrollBarWidth = getScrollBarWidth();
         }
 
         @Override
@@ -115,7 +114,7 @@ public class SScrollPane extends JScrollPane{
             if(hovering){
                 g2.setColor(hoverColor);
             }else{
-                g2.setColor(defaultColor);
+                g2.setColor(scrollbarColor); // Updated to use our new independent color variable
             }
             g2.fillRoundRect(2, 0, w - 1 - 2, h - 2, 3, 3);
 
@@ -123,6 +122,17 @@ public class SScrollPane extends JScrollPane{
         }
     };
 
+    private int scrollBarWidth = 7;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    public void setScrollBarWidth(int scrollBarWidth){
+        this.scrollBarWidth = scrollBarWidth;
+    }
+
+    public int getScrollBarWidth(){
+        return scrollBarWidth;
+    }
+    
 // Scroll Key ================================================================================================
     
     private int scrollBarUpperCap = 0, scrollBarLowerCap = 0;
@@ -170,12 +180,15 @@ public class SScrollPane extends JScrollPane{
     
 // -----------------------------------------------------------------------------------------------------------
     
-    private Color defaultColor = Color.white;
+    private Color scrollbarColor = Color.white;
     
-    @Override
-    public void setBackground(Color bg){
-        super.setBackground(bg);
-        defaultColor = bg;
+    @BeanProperty(preferred = true, description = "The default color of the scrollbar thumb")
+    public void setScrollbarColor(Color scrollbarColor){
+        this.scrollbarColor = scrollbarColor;
+    }
+
+    public Color getScrollbarColor(){
+        return scrollbarColor;
     }
 
 // -----------------------------------------------------------------------------------------------------------

@@ -114,7 +114,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                             objects.clear();
                             resetOccupancyDataChart();
                             resetTotalUnitsDataChart();
-                            LayerUnits.showLayer(moduleUnits.layerUnitsOffline1);
+                            LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
                         });
                     }
                     break; 
@@ -132,7 +132,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                         objects.clear();
                         resetOccupancyDataChart();
                         resetTotalUnitsDataChart();
-                        LayerUnits.showLayer(moduleUnits.layerUnitsOffline1);
+                        LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
                     }
 
                     for (UnitsDataTable data : dataBatch) {

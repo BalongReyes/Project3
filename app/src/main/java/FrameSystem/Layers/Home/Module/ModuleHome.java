@@ -512,6 +512,7 @@ public class ModuleHome extends SPanel{
         sScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         sScrollPane1.setHoverColor(new java.awt.Color(73, 73, 73));
         sScrollPane1.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
+        sScrollPane1.setScrollbarColor(new java.awt.Color(229, 229, 229));
         sScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         sScrollPane1.setMinimumSize(new java.awt.Dimension(0, 0));
 
@@ -1074,6 +1075,7 @@ public class ModuleHome extends SPanel{
         sScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         sScrollPane2.setHoverColor(new java.awt.Color(73, 73, 73));
         sScrollPane2.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
+        sScrollPane2.setScrollbarColor(new java.awt.Color(229, 229, 229));
         sScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         sScrollPane2.setMinimumSize(new java.awt.Dimension(0, 0));
         sScrollPane2.setPreferredSize(new java.awt.Dimension(200, 50));

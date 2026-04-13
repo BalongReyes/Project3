@@ -109,14 +109,13 @@ public class ModuleUnits extends SPanel{
         sLabel3 = new FrameSystem.SLibrary.SComponents.SLabel();
         sAnimatedOffline4 = new FrameSystem.SLibrary.SAnimated.SAnimatedOffline();
         layerUnitsOnline = new FrameSystem.Layers.Units.Components.LayerUnits();
-        objectUnitScrollPane = new FrameSystem.SLibrary.SComponents.SScrollPane();
-        objectUnitContainer = new FrameSystem.SLibrary.SComponents.SPanel();
-        objectUnitWrapper = new FrameSystem.SLibrary.SComponents.SPanel();
-        layerUnitsOffline1 = new FrameSystem.Layers.Units.Components.LayerUnits();
         sTable1 = new FrameSystem.SLibrary.SComponents.STable();
+        layerUnitsOffline1 = new FrameSystem.Layers.Units.Components.LayerUnits();
         sPanel21 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel34 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel49 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sPanel46 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sTable2 = new FrameSystem.SLibrary.SComponents.STable();
         sPanel18 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel32 = new FrameSystem.SLibrary.SComponents.SPanel();
         filterTower1 = new FrameSystem.SLibrary.SComponents.SPanel();
@@ -1322,59 +1321,25 @@ public class ModuleUnits extends SPanel{
 
         layerUnitsOnline.setPaintBackground(false);
         layerUnitsOnline.setName("Online"); // NOI18N
-
-        objectUnitScrollPane.setBackground(new java.awt.Color(229, 229, 229));
-        objectUnitScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        objectUnitScrollPane.setHoverColor(new java.awt.Color(73, 73, 73));
-        objectUnitScrollPane.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
-        objectUnitScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        objectUnitWrapper.setMinimumSize(new java.awt.Dimension(100, 0));
-        objectUnitWrapper.setPreferredSize(new java.awt.Dimension(964, 0));
-        objectUnitWrapper.setLayout(new javax.swing.BoxLayout(objectUnitWrapper, javax.swing.BoxLayout.Y_AXIS));
-
-        javax.swing.GroupLayout objectUnitContainerLayout = new javax.swing.GroupLayout(objectUnitContainer);
-        objectUnitContainer.setLayout(objectUnitContainerLayout);
-        objectUnitContainerLayout.setHorizontalGroup(
-            objectUnitContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(objectUnitContainerLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(objectUnitWrapper, javax.swing.GroupLayout.DEFAULT_SIZE, 1499, Short.MAX_VALUE))
-        );
-        objectUnitContainerLayout.setVerticalGroup(
-            objectUnitContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(objectUnitContainerLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(objectUnitWrapper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 783, Short.MAX_VALUE))
-        );
-
-        objectUnitScrollPane.setViewportView(objectUnitContainer);
-
-        javax.swing.GroupLayout layerUnitsOnlineLayout = new javax.swing.GroupLayout(layerUnitsOnline);
-        layerUnitsOnline.setLayout(layerUnitsOnlineLayout);
-        layerUnitsOnlineLayout.setHorizontalGroup(
-            layerUnitsOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layerUnitsOnlineLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(objectUnitScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1422, Short.MAX_VALUE)
-                .addGap(5, 5, 5))
-        );
-        layerUnitsOnlineLayout.setVerticalGroup(
-            layerUnitsOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layerUnitsOnlineLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(objectUnitScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
+        layerUnitsOnline.setLayout(new javax.swing.BoxLayout(layerUnitsOnline, javax.swing.BoxLayout.LINE_AXIS));
+        layerUnitsOnline.add(sTable1);
 
         jLayeredPane1.setLayer(layerUnitsOnline, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitsOnline, "Online");
 
         layerUnitsOffline1.setPaintBackground(false);
         layerUnitsOffline1.setName("Offline"); // NOI18N
-        layerUnitsOffline1.setLayout(new javax.swing.BoxLayout(layerUnitsOffline1, javax.swing.BoxLayout.LINE_AXIS));
-        layerUnitsOffline1.add(sTable1);
+
+        javax.swing.GroupLayout layerUnitsOffline1Layout = new javax.swing.GroupLayout(layerUnitsOffline1);
+        layerUnitsOffline1.setLayout(layerUnitsOffline1Layout);
+        layerUnitsOffline1Layout.setHorizontalGroup(
+            layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1437, Short.MAX_VALUE)
+        );
+        layerUnitsOffline1Layout.setVerticalGroup(
+            layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 783, Short.MAX_VALUE)
+        );
 
         jLayeredPane1.add(layerUnitsOffline1, "card5");
 
@@ -1464,15 +1429,25 @@ public class ModuleUnits extends SPanel{
         sPanel49.setShadowY(true);
         sPanel49.setPreferredSize(new java.awt.Dimension(250, 0));
 
+        sPanel46.setPaintBackground(false);
+        sPanel46.setLayout(new javax.swing.BoxLayout(sPanel46, javax.swing.BoxLayout.LINE_AXIS));
+        sPanel46.add(sTable2);
+
         javax.swing.GroupLayout sPanel49Layout = new javax.swing.GroupLayout(sPanel49);
         sPanel49.setLayout(sPanel49Layout);
         sPanel49Layout.setHorizontalGroup(
             sPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
+            .addGroup(sPanel49Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(sPanel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         sPanel49Layout.setVerticalGroup(
             sPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(sPanel49Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(sPanel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         sPanel21.add(sPanel49);
@@ -1808,10 +1783,7 @@ public class ModuleUnits extends SPanel{
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline1;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOnline;
-    private FrameSystem.SLibrary.SComponents.SPanel objectUnitContainer;
     public FrameSystem.Layers.Units.Components.ObjectUnitDonutChart objectUnitDonutChart1;
-    private FrameSystem.SLibrary.SComponents.SScrollPane objectUnitScrollPane;
-    private FrameSystem.SLibrary.SComponents.SPanel objectUnitWrapper;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
@@ -1889,6 +1861,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel43;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel44;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel45;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel46;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel47;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel48;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel49;
@@ -1908,6 +1881,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel8;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel9;
     public FrameSystem.SLibrary.SComponents.STable sTable1;
+    private FrameSystem.SLibrary.SComponents.STable sTable2;
     public FrameSystem.SLibrary.SComponents.STextField sTextField1;
     private FrameSystem.SLibrary.SGenericComponents.STextFieldContainer sTextFieldContainer1;
     // End of variables declaration//GEN-END:variables
