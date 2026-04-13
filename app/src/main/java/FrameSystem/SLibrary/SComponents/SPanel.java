@@ -20,8 +20,11 @@ import java.awt.HeadlessException;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.Shape;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.geom.Area;
+import java.awt.geom.RoundRectangle2D;
 
 @JavaBean(description = "A versatile component that handles shadows, borders, and interactive states (Hover, Active, Danger)")
 public class SPanel extends JPanel implements InnerListener{
@@ -482,8 +485,38 @@ public class SPanel extends JPanel implements InnerListener{
 
     @Override
     public void paint(Graphics g){
+        // 1. Paint the background, shadows, and borders first
         paintSPanel(g);
+        
+        // 2. Save the original clipping area
+        Shape oldClip = g.getClip();
+        
+        // 3. If the panel is rounded, apply a rounded clip for the children
+        if (rounded && radius > 0) {
+            Graphics2D g2 = CustomGraphics.getGraphics2D(g);
+            int width = getWidth();
+            int height = getHeight();
+
+            int x = isShadowX() ? shadowSize - shadowOffsetX : 0;
+            int y = isShadowY() ? shadowSize - shadowOffsetY : 0;
+            int w = isShadowX() ? width - (shadowSize * 2) : width;
+            int h = isShadowY() ? height - (shadowSize * 2) : height;
+
+            // Create a rounded rectangle shape that matches your background
+            Area clipArea = new Area(new RoundRectangle2D.Double(x, y, w, h, radius, radius));
+            
+            // Intersect it with the existing clip (to respect parent boundaries)
+            if (oldClip != null) {
+                clipArea.intersect(new Area(oldClip));
+            }
+            g2.setClip(clipArea);
+        }
+        
+        // 4. Draw all child components (they will now respect the clip we just set)
         paintOverrideAll(g);
+        
+        // 5. Restore the original clip so we don't mess up the rest of the UI painting
+        g.setClip(oldClip);
     }
     
     protected void paintSPanel(Graphics g){

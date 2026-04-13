@@ -1088,7 +1088,6 @@
                         <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Parking"/>
                         </Property>
-                        <Property name="notificationCount" type="int" value="23"/>
                         <Property name="radius" type="int" value="15"/>
                         <Property name="text" type="java.lang.String" value="Parking"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1397,7 +1396,6 @@
                         <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Move"/>
                         </Property>
-                        <Property name="notificationCount" type="int" value="6"/>
                         <Property name="radius" type="int" value="15"/>
                         <Property name="text" type="java.lang.String" value="Move In / Out"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1496,7 +1494,6 @@
                         <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Concerns"/>
                         </Property>
-                        <Property name="notificationCount" type="int" value="2"/>
                         <Property name="radius" type="int" value="15"/>
                         <Property name="text" type="java.lang.String" value="Concerns"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

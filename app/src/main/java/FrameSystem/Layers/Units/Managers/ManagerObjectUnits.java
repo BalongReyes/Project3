@@ -18,7 +18,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
     private static ArrayList<ObjectUnit> objects = new ArrayList<>();
     
     public static void initDefault(){
-        moduleUnits.sTable1.setRowHeight(60);
     }
 
 // Main Methods ==============================================================================================
@@ -28,6 +27,9 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
     private static SwingWorker<Void, Void> activeWorker = null;
 
     public static void refreshObjects() {
+        if(!moduleHome.layerHome_Units.isShowing()){
+            return;
+        }
         if (activeWorker != null && !activeWorker.isDone()) {
             activeWorker.cancel(true); 
         }
@@ -110,7 +112,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                         SwingUtilities.invokeLater(() -> {
                             if (thisRefreshId != currentRefreshId) return; // Final UI check
                             moduleUnits.sTable1.clearRows();
-                            moduleUnits.sTable1.addComponent(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                             objects.clear();
                             resetOccupancyDataChart();
                             resetTotalUnitsDataChart();
@@ -128,7 +129,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
 
                     if (firstBatchCopy) {
                         moduleUnits.sTable1.clearRows();
-                        moduleUnits.sTable1.addComponent(new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(32767, 10)));
                         objects.clear();
                         resetOccupancyDataChart();
                         resetTotalUnitsDataChart();

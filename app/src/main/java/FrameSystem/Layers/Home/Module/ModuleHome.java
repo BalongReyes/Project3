@@ -586,7 +586,6 @@ public class ModuleHome extends SPanel{
         menuButton_Parking.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Parking.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parking.png"))); // NOI18N
         menuButton_Parking.setManuMinButton(menuMinButton_Parking);
-        menuButton_Parking.setNotificationCount(23);
         menuButton_Parking.setRadius(15);
         menuButton_Parking.setText("Parking");
         menuButton_Parking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -692,7 +691,6 @@ public class ModuleHome extends SPanel{
         menuButton_Move.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Move.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/move.png"))); // NOI18N
         menuButton_Move.setManuMinButton(menuMinButton_Move);
-        menuButton_Move.setNotificationCount(6);
         menuButton_Move.setRadius(15);
         menuButton_Move.setText("Move In / Out");
         menuButton_Move.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -721,7 +719,6 @@ public class ModuleHome extends SPanel{
         menuButton_Concerns.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Concerns.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concerns.png"))); // NOI18N
         menuButton_Concerns.setManuMinButton(menuMinButton_Concerns);
-        menuButton_Concerns.setNotificationCount(2);
         menuButton_Concerns.setRadius(15);
         menuButton_Concerns.setText("Concerns");
         menuButton_Concerns.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

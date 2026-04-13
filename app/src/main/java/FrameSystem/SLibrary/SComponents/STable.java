@@ -60,7 +60,7 @@ public class STable extends SPanel{
      * Automatically calculates the height based on row count and row height.
      */
     public void resizeTable() {
-        int height = (rows.size() * rowHeight) + 10;
+        int height = (rows.size() * rowHeight);
         
         // Automatically resize the container based on its contents
         container.setPreferredSize(new Dimension(container.getWidth(), height));

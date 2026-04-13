@@ -171,18 +171,16 @@ public class ObjectUnit extends SPanel{
         filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(12, 0), new java.awt.Dimension(12, 0), new java.awt.Dimension(12, 32767));
 
         setPaintBackground(false);
-        setPreferredSize(new java.awt.Dimension(1010, 60));
+        setPreferredSize(new java.awt.Dimension(1010, 50));
 
         sPanelHighlight1.setActiveBackgroundColor(new java.awt.Color(255, 245, 245));
         sPanelHighlight1.setActiveBorderColor(new java.awt.Color(255, 235, 235));
         sPanelHighlight1.setActiveHoverBackgroundColor(new java.awt.Color(255, 245, 245));
-        sPanelHighlight1.setBorderLine(2);
+        sPanelHighlight1.setBorderLine(1);
         sPanelHighlight1.setCanHover(true);
         sPanelHighlight1.setDefaultBorderColor(new java.awt.Color(240, 240, 240));
         sPanelHighlight1.setHoverBackgroundColor(new java.awt.Color(250, 250, 250));
         sPanelHighlight1.setHoverBorderColor(new java.awt.Color(240, 240, 240));
-        sPanelHighlight1.setRadius(10);
-        sPanelHighlight1.setRounded(true);
         sPanelHighlight1.setPreferredSize(new java.awt.Dimension(100, 50));
         sPanelHighlight1.setLayout(new javax.swing.BoxLayout(sPanelHighlight1, javax.swing.BoxLayout.LINE_AXIS));
         sPanelHighlight1.add(filler6);
@@ -262,22 +260,22 @@ public class ObjectUnit extends SPanel{
         sPanel2.setHoverBackgroundColor(new java.awt.Color(55, 119, 209));
         sPanel2.setRadius(10);
         sPanel2.setRounded(true);
+        sPanel2.setPreferredSize(new java.awt.Dimension(30, 30));
 
         sLabel6.setForeground(new java.awt.Color(255, 255, 255));
         sLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel6.setIconSize(10);
         sLabel6.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Edit.png"))); // NOI18N
-        sLabel6.setText("Edit");
 
         javax.swing.GroupLayout sPanel2Layout = new javax.swing.GroupLayout(sPanel2);
         sPanel2.setLayout(sPanel2Layout);
         sPanel2Layout.setHorizontalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addComponent(sLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
         sPanel2Layout.setVerticalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(sLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout sPanel3Layout = new javax.swing.GroupLayout(sPanel3);
@@ -285,16 +283,16 @@ public class ObjectUnit extends SPanel{
         sPanel3Layout.setHorizontalGroup(
             sPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel3Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(sPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         sPanel3Layout.setVerticalGroup(
             sPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel3Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(sPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         sPanelHighlight1.add(sPanel3);
@@ -314,7 +312,7 @@ public class ObjectUnit extends SPanel{
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(sPanelHighlight1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+                .addGap(0, 0, 0))
         );
     }// </editor-fold>//GEN-END:initComponents
 
