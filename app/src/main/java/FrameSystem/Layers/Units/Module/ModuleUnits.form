@@ -1610,6 +1610,8 @@
                           <Color blue="f9" green="f9" red="f9" type="rgb"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
+                        <Property name="roundBottomLeft" type="boolean" value="false"/>
+                        <Property name="roundBottomRight" type="boolean" value="false"/>
                         <Property name="rounded" type="boolean" value="true"/>
                         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[100, 40]"/>
@@ -2209,14 +2211,12 @@
                     </Component>
                     <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel63">
                       <Properties>
-                        <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="e0" green="e0" red="e0" type="rgb"/>
-                        </Property>
-                        <Property name="borderLine" type="int" value="1"/>
                         <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f9" green="f9" red="f9" type="rgb"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
+                        <Property name="roundTopLeft" type="boolean" value="false"/>
+                        <Property name="roundTopRight" type="boolean" value="false"/>
                         <Property name="rounded" type="boolean" value="true"/>
                         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[100, 40]"/>

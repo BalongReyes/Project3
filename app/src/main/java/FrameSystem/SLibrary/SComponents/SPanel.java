@@ -24,7 +24,7 @@ import java.awt.Shape;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.geom.Area;
-import java.awt.geom.RoundRectangle2D;
+import java.awt.geom.Path2D;
 
 @JavaBean(description = "A versatile component that handles shadows, borders, and interactive states (Hover, Active, Danger)")
 public class SPanel extends JPanel implements InnerListener{
@@ -286,6 +286,12 @@ public class SPanel extends JPanel implements InnerListener{
     
     protected int radius = 0;
     protected boolean rounded = false;
+    
+    // New variables for customizable corners
+    protected boolean roundTopLeft = true;
+    protected boolean roundTopRight = true;
+    protected boolean roundBottomLeft = true;
+    protected boolean roundBottomRight = true;
 
     protected int borderLine = 0;
     protected Color borderColor = Color.white;
@@ -298,11 +304,12 @@ public class SPanel extends JPanel implements InnerListener{
     protected int shadowOffsetX;
     protected int shadowOffsetY;
 
-// ---- Radius -----------------------------------------------------------------------------------------------
+// ---- Radius & Corners -------------------------------------------------------------------------------------
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "The corner radius")
     public void setRadius(int radius){
         this.radius = radius;
+        repaint();
     }
 
     public int getRadius(){
@@ -319,11 +326,45 @@ public class SPanel extends JPanel implements InnerListener{
         if(rounded){
             setOpaque(false);
         }
+        repaint();
     }
 
     public boolean isRounded(){
         return rounded;
     }
+
+    // New getters and setters for specific corners
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Round Top Left corner")
+    public void setRoundTopLeft(boolean roundTopLeft) {
+        this.roundTopLeft = roundTopLeft;
+        repaint();
+    }
+
+    public boolean isRoundTopLeft() { return roundTopLeft; }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Round Top Right corner")
+    public void setRoundTopRight(boolean roundTopRight) {
+        this.roundTopRight = roundTopRight;
+        repaint();
+    }
+
+    public boolean isRoundTopRight() { return roundTopRight; }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Round Bottom Left corner")
+    public void setRoundBottomLeft(boolean roundBottomLeft) {
+        this.roundBottomLeft = roundBottomLeft;
+        repaint();
+    }
+
+    public boolean isRoundBottomLeft() { return roundBottomLeft; }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Round Bottom Right corner")
+    public void setRoundBottomRight(boolean roundBottomRight) {
+        this.roundBottomRight = roundBottomRight;
+        repaint();
+    }
+
+    public boolean isRoundBottomRight() { return roundBottomRight; }
 
 // ---- Border Line ------------------------------------------------------------------------------------------
     
@@ -483,6 +524,59 @@ public class SPanel extends JPanel implements InnerListener{
         super.paint(g);
     }
 
+    /**
+     * Helper method to generate a shape with specific rounded corners.
+     */
+    private Shape createCustomRoundedShape(int x, int y, int w, int h, int r) {
+        Path2D.Double path = new Path2D.Double();
+        
+        // Prevent negative/oversized radius issues
+        int maxRadius = Math.min(w / 2, h / 2);
+        r = Math.min(r, maxRadius);
+
+        // Top Left
+        if (roundTopLeft && r > 0) {
+            path.moveTo(x + r, y);
+        } else {
+            path.moveTo(x, y);
+        }
+
+        // Top Right
+        if (roundTopRight && r > 0) {
+            path.lineTo(x + w - r, y);
+            path.quadTo(x + w, y, x + w, y + r);
+        } else {
+            path.lineTo(x + w, y);
+        }
+
+        // Bottom Right
+        if (roundBottomRight && r > 0) {
+            path.lineTo(x + w, y + h - r);
+            path.quadTo(x + w, y + h, x + w - r, y + h);
+        } else {
+            path.lineTo(x + w, y + h);
+        }
+
+        // Bottom Left
+        if (roundBottomLeft && r > 0) {
+            path.lineTo(x + r, y + h);
+            path.quadTo(x, y + h, x, y + h - r);
+        } else {
+            path.lineTo(x, y + h);
+        }
+
+        // Close path back to Top Left
+        if (roundTopLeft && r > 0) {
+            path.lineTo(x, y + r);
+            path.quadTo(x, y, x + r, y);
+        } else {
+            path.lineTo(x, y);
+        }
+        
+        path.closePath();
+        return path;
+    }
+
     @Override
     public void paint(Graphics g){
         // 1. Paint the background, shadows, and borders first
@@ -502,8 +596,9 @@ public class SPanel extends JPanel implements InnerListener{
             int w = isShadowX() ? width - (shadowSize * 2) : width;
             int h = isShadowY() ? height - (shadowSize * 2) : height;
 
-            // Create a rounded rectangle shape that matches your background
-            Area clipArea = new Area(new RoundRectangle2D.Double(x, y, w, h, radius, radius));
+            // Use custom rounded shape instead of RoundRectangle2D
+            Shape clipShape = createCustomRoundedShape(x, y, w, h, radius);
+            Area clipArea = new Area(clipShape);
             
             // Intersect it with the existing clip (to respect parent boundaries)
             if (oldClip != null) {
@@ -512,10 +607,10 @@ public class SPanel extends JPanel implements InnerListener{
             g2.setClip(clipArea);
         }
         
-        // 4. Draw all child components (they will now respect the clip we just set)
+        // 4. Draw all child components
         paintOverrideAll(g);
         
-        // 5. Restore the original clip so we don't mess up the rest of the UI painting
+        // 5. Restore the original clip
         g.setClip(oldClip);
     }
     
@@ -538,27 +633,30 @@ public class SPanel extends JPanel implements InnerListener{
         // 1. Draw Shadows
         for(int i = 0; i < shadowSize; i++){
             float opacity = shadowOpacity * (1.0f - ((float) i / shadowSize));
-            g.setColor(new Color(
+            g2.setColor(new Color(
                     shadowColor.getRed(), shadowColor.getGreen(), shadowColor.getBlue(), (int) (opacity * 255)
             ));
-            g.fillRoundRect(
+            
+            Shape shadowShape = createCustomRoundedShape(
                     x - i + shadowOffsetX, y - i + shadowOffsetY,
                     w + (i * 2), h + (i * 2),
-                    radiusPaint + i, radiusPaint + i
+                    radiusPaint + i
             );
+            g2.fill(shadowShape);
         }
 
-        // 2. Draw Outer Border (Only if borderline > 0 so it doesn't paint unnecessarily)
+        // 2. Draw Outer Border
         if(borderLine > 0){
             if(overideBorder != null){
                 g2.setColor(overideBorder);
             }else{
                 g2.setColor(borderColor);
             }
-            g2.fillRoundRect(x, y, w, h, radiusPaint, radiusPaint);
+            Shape borderShape = createCustomRoundedShape(x, y, w, h, radiusPaint);
+            g2.fill(borderShape);
         }
 
-        // 3. Determine Foreground Color based on Priority State
+        // 3. Determine Foreground Color
         if(danger){
             setForeground(dangerForegroundColor);
         }else if(active && (canHover && hovering && activeHoverForegroundColor != null)){
@@ -589,11 +687,15 @@ public class SPanel extends JPanel implements InnerListener{
             }
 
             g2.setColor(currentBgColor);
-            g2.fillRoundRect(
+            
+            // Draw background using custom shape
+            int bgRadius = Math.max(0, radiusPaint - borderLine); // Prevents negative radius on large borders
+            Shape bgShape = createCustomRoundedShape(
                     x + borderLine, y + borderLine,
                     w - (borderLine * 2), h - (borderLine * 2),
-                    radiusPaint - borderLine, radiusPaint - borderLine
+                    bgRadius
             );
+            g2.fill(bgShape);
         }
     }
 }

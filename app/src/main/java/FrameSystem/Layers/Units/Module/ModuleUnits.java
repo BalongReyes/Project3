@@ -1013,6 +1013,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel3.setRadius(15);
+        sPanel3.setRoundBottomLeft(false);
+        sPanel3.setRoundBottomRight(false);
         sPanel3.setRounded(true);
         sPanel3.setMinimumSize(new java.awt.Dimension(100, 40));
         sPanel3.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -1324,10 +1326,10 @@ public class ModuleUnits extends SPanel{
 
         sTable1.setRowHeight(50);
 
-        sPanel63.setBorderColor(new java.awt.Color(224, 224, 224));
-        sPanel63.setBorderLine(1);
         sPanel63.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel63.setRadius(15);
+        sPanel63.setRoundTopLeft(false);
+        sPanel63.setRoundTopRight(false);
         sPanel63.setRounded(true);
         sPanel63.setMinimumSize(new java.awt.Dimension(100, 40));
         sPanel63.setPreferredSize(new java.awt.Dimension(1437, 30));
@@ -1792,7 +1794,6 @@ public class ModuleUnits extends SPanel{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
-    private javax.swing.Box.Filler filler11;
     private javax.swing.Box.Filler filler6;
     private javax.swing.Box.Filler filler7;
     private javax.swing.Box.Filler filler8;
@@ -1834,7 +1835,6 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel29;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel30;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel31;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel32;
     public FrameSystem.SLibrary.SComponents.SLabel sLabel33;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel34;
@@ -1901,9 +1901,6 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel58;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel59;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel6;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel60;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel61;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel62;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel63;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel7;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel8;
