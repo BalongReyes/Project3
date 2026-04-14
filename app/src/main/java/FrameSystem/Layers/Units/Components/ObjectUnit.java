@@ -256,11 +256,11 @@ public class ObjectUnit extends SPanel{
         sPanel3.setPreferredSize(new java.awt.Dimension(75, 50));
 
         sPanel2.setCanHover(true);
-        sPanel2.setDefaultBackgroundColor(new java.awt.Color(72, 130, 213));
-        sPanel2.setHoverBackgroundColor(new java.awt.Color(55, 119, 209));
+        sPanel2.setDefaultBackgroundColor(new java.awt.Color(239, 239, 239));
+        sPanel2.setHoverBackgroundColor(new java.awt.Color(209, 209, 209));
         sPanel2.setRadius(10);
         sPanel2.setRounded(true);
-        sPanel2.setPreferredSize(new java.awt.Dimension(30, 30));
+        sPanel2.setPreferredSize(new java.awt.Dimension(25, 25));
 
         sLabel6.setForeground(new java.awt.Color(255, 255, 255));
         sLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -271,11 +271,11 @@ public class ObjectUnit extends SPanel{
         sPanel2.setLayout(sPanel2Layout);
         sPanel2Layout.setHorizontalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(sLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
         sPanel2Layout.setVerticalGroup(
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(sLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout sPanel3Layout = new javax.swing.GroupLayout(sPanel3);

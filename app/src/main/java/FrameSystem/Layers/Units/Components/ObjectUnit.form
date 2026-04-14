@@ -312,27 +312,27 @@
               <Properties>
                 <Property name="canHover" type="boolean" value="true"/>
                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d5" green="82" red="48" type="rgb"/>
+                  <Color blue="ef" green="ef" red="ef" type="rgb"/>
                 </Property>
                 <Property name="hoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d1" green="77" red="37" type="rgb"/>
+                  <Color blue="d1" green="d1" red="d1" type="rgb"/>
                 </Property>
                 <Property name="radius" type="int" value="10"/>
                 <Property name="rounded" type="boolean" value="true"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[30, 30]"/>
+                  <Dimension value="[25, 25]"/>
                 </Property>
               </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="sLabel6" alignment="0" pref="30" max="32767" attributes="0"/>
+                      <Component id="sLabel6" alignment="0" pref="25" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="sLabel6" alignment="0" pref="30" max="32767" attributes="0"/>
+                      <Component id="sLabel6" alignment="0" pref="25" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
