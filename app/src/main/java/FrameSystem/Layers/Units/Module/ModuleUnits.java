@@ -1011,6 +1011,8 @@ public class ModuleUnits extends SPanel{
         layerUnitsOnline.setPaintBackground(false);
         layerUnitsOnline.setName("Online"); // NOI18N
 
+        sPanel3.setBorderColor(new java.awt.Color(240, 240, 240));
+        sPanel3.setBorderLine(1);
         sPanel3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel3.setRadius(15);
         sPanel3.setRoundBottomLeft(false);
@@ -1326,6 +1328,8 @@ public class ModuleUnits extends SPanel{
 
         sTable1.setRowHeight(50);
 
+        sPanel63.setBorderColor(new java.awt.Color(240, 240, 240));
+        sPanel63.setBorderLine(1);
         sPanel63.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel63.setRadius(15);
         sPanel63.setRoundTopLeft(false);
