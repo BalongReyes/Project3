@@ -7,7 +7,6 @@ package FrameSystem.SLibrary.SComponents;
 import java.awt.Dimension;
 import java.beans.BeanProperty;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 
 /**
@@ -25,7 +24,6 @@ public class STable extends SPanel{
     public STable(){
         initComponents();
         scrollPane.getViewport().setOpaque(false);
-        container.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, scrollPane.getScrollBarWidth()));
     }
 
 // ==== Getters and Setters ==================================================================================
@@ -62,8 +60,8 @@ public class STable extends SPanel{
     public void resizeTable() {
         int height = (rows.size() * rowHeight);
         
-        // Automatically resize the container based on its contents
-        container.setPreferredSize(new Dimension(container.getWidth(), height));
+        // We can pass 0 for the width because getScrollableTracksViewportWidth() overrides it anyway!
+        container.setPreferredSize(new Dimension(0, height));
         
         container.revalidate();
         container.repaint();
@@ -88,6 +86,18 @@ public class STable extends SPanel{
         return rowHeight;
     }
     
+    private int blockIncrement = 60; 
+
+    @BeanProperty(preferred = true, description = "Sets the block scroll speed (when clicking the scrollbar track)")
+    public void setBlockIncrement(int blockIncrement) {
+        this.blockIncrement = blockIncrement;
+        container.setBlockIncrement(blockIncrement);
+    }
+
+    public int getBlockIncrement() {
+        return blockIncrement;
+    }
+    
 // ==== Overrided Methods ====================================================================================
     
     /**
@@ -99,7 +109,7 @@ public class STable extends SPanel{
     private void initComponents() {
 
         scrollPane = new FrameSystem.SLibrary.SComponents.SScrollPane();
-        container = new FrameSystem.SLibrary.SComponents.SPanel();
+        container = new FrameSystem.SLibrary.SComponents.ScrollableSPanel();
 
         setPaintBackground(false);
 
@@ -127,7 +137,7 @@ public class STable extends SPanel{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private FrameSystem.SLibrary.SComponents.SPanel container;
+    private FrameSystem.SLibrary.SComponents.ScrollableSPanel container;
     private FrameSystem.SLibrary.SComponents.SScrollPane scrollPane;
     // End of variables declaration//GEN-END:variables
 }
