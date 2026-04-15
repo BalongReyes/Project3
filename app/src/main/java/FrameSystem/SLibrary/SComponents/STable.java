@@ -102,7 +102,6 @@ public class STable extends SPanel{
         container = new FrameSystem.SLibrary.SComponents.SPanel();
 
         setPaintBackground(false);
-        setLayout(new java.awt.BorderLayout());
 
         scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setHoverColor(new java.awt.Color(73, 73, 73));
@@ -114,7 +113,16 @@ public class STable extends SPanel{
         container.setLayout(new javax.swing.BoxLayout(container, javax.swing.BoxLayout.Y_AXIS));
         scrollPane.setViewportView(container);
 
-        add(scrollPane, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
