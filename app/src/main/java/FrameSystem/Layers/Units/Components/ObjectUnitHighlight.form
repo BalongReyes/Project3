@@ -48,12 +48,12 @@
   <SubComponents>
     <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel1">
       <Properties>
-        <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e6" green="e6" red="e6" type="rgb"/>
-        </Property>
         <Property name="borderLine" type="int" value="2"/>
         <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="fa" green="fa" red="fa" type="rgb"/>
+        </Property>
+        <Property name="defaultBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e6" green="e6" red="e6" type="rgb"/>
         </Property>
         <Property name="radius" type="int" value="10"/>
         <Property name="rounded" type="boolean" value="true"/>

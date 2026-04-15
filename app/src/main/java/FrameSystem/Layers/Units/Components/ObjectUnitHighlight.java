@@ -86,9 +86,9 @@ public class ObjectUnitHighlight extends SPanel{
         setMinimumSize(new java.awt.Dimension(90, 50));
         setPreferredSize(new java.awt.Dimension(90, 50));
 
-        sPanel1.setBorderColor(new java.awt.Color(230, 230, 230));
         sPanel1.setBorderLine(2);
         sPanel1.setDefaultBackgroundColor(new java.awt.Color(250, 250, 250));
+        sPanel1.setDefaultBorderColor(new java.awt.Color(230, 230, 230));
         sPanel1.setRadius(10);
         sPanel1.setRounded(true);
 

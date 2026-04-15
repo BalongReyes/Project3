@@ -379,13 +379,13 @@ public class SPanel extends JPanel implements InnerListener{
     public int getBorderLine(){
         return borderLine;
     }
-
+    
     @BeanProperty(preferred = true, visualUpdate = true, description = "The border color")
-    public void setBorderColor(Color borderColor){
+    public void setDefaultBorderColor(Color borderColor){
         this.borderColor = borderColor;
     }
 
-    public Color getBorderColor(){
+    public Color getDefaultBorderColor(){
         return borderColor;
     }
 
