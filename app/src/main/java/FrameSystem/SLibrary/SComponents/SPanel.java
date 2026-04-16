@@ -23,8 +23,8 @@ import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.awt.geom.Area;
 import java.awt.geom.Path2D;
+import java.awt.geom.RoundRectangle2D;
 
 @JavaBean(description = "A versatile component that handles shadows, borders, and interactive states (Hover, Active, Danger)")
 public class SPanel extends JPanel implements InnerListener{
@@ -528,46 +528,68 @@ public class SPanel extends JPanel implements InnerListener{
      * Helper method to generate a shape with specific rounded corners.
      */
     private Shape createCustomRoundedShape(int x, int y, int w, int h, int r) {
-        Path2D.Double path = new Path2D.Double();
-        
         // Prevent negative/oversized radius issues
         int maxRadius = Math.min(w / 2, h / 2);
         r = Math.min(r, maxRadius);
 
+        // 1. FAST PATH: If all corners are rounded, use standard Java 2D shape.
+        // This completely bypasses the buggy Path2D geometric engine!
+        if (roundTopLeft && roundTopRight && roundBottomLeft && roundBottomRight) {
+            return new RoundRectangle2D.Double(x, y, w, h, r * 2, r * 2);
+        }
+
+        // 2. FAST PATH: If radius is 0, it's just a standard rectangle.
+        if (r <= 0) {
+            return new Rectangle(x, y, w, h);
+        }
+
+        // 3. CUSTOM CORNERS: Build the path safely without zero-length lines.
+        Path2D.Double path = new Path2D.Double();
+
         // Top Left
-        if (roundTopLeft && r > 0) {
+        if (roundTopLeft) {
             path.moveTo(x + r, y);
         } else {
             path.moveTo(x, y);
         }
 
-        // Top Right
-        if (roundTopRight && r > 0) {
-            path.lineTo(x + w - r, y);
+        // Top edge to Top-Right
+        if (roundTopRight) {
+            // ONLY draw the line if there is actual distance between the corners!
+            // This prevents the zero-length line bug that causes the infinite loop.
+            if (w - (roundTopLeft ? r : 0) - r > 0) {
+                path.lineTo(x + w - r, y);
+            }
             path.quadTo(x + w, y, x + w, y + r);
         } else {
             path.lineTo(x + w, y);
         }
 
-        // Bottom Right
-        if (roundBottomRight && r > 0) {
-            path.lineTo(x + w, y + h - r);
+        // Right edge to Bottom-Right
+        if (roundBottomRight) {
+            if (h - (roundTopRight ? r : 0) - r > 0) {
+                path.lineTo(x + w, y + h - r);
+            }
             path.quadTo(x + w, y + h, x + w - r, y + h);
         } else {
             path.lineTo(x + w, y + h);
         }
 
-        // Bottom Left
-        if (roundBottomLeft && r > 0) {
-            path.lineTo(x + r, y + h);
+        // Bottom edge to Bottom-Left
+        if (roundBottomLeft) {
+            if (w - (roundBottomRight ? r : 0) - r > 0) {
+                path.lineTo(x + r, y + h);
+            }
             path.quadTo(x, y + h, x, y + h - r);
         } else {
             path.lineTo(x, y + h);
         }
 
-        // Close path back to Top Left
-        if (roundTopLeft && r > 0) {
-            path.lineTo(x, y + r);
+        // Left edge back to Top-Left
+        if (roundTopLeft) {
+            if (h - (roundBottomLeft ? r : 0) - r > 0) {
+                path.lineTo(x, y + r);
+            }
             path.quadTo(x, y, x + r, y);
         } else {
             path.lineTo(x, y);
@@ -596,15 +618,10 @@ public class SPanel extends JPanel implements InnerListener{
             int w = isShadowX() ? width - (shadowSize * 2) : width;
             int h = isShadowY() ? height - (shadowSize * 2) : height;
 
-            // Use custom rounded shape instead of RoundRectangle2D
-            Shape clipShape = createCustomRoundedShape(x, y, w, h, radius);
-            Area clipArea = new Area(clipShape);
-            
-            // Intersect it with the existing clip (to respect parent boundaries)
-            if (oldClip != null) {
-                clipArea.intersect(new Area(oldClip));
+            if(width != 0 && height != 0){
+                Shape clipShape = createCustomRoundedShape(x, y, w, h, radius);
+                g2.clip(clipShape);
             }
-            g2.setClip(clipArea);
         }
         
         // 4. Draw all child components
