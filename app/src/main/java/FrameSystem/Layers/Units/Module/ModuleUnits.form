@@ -1480,6 +1480,9 @@
                                   <Properties>
                                     <Property name="arrowDirection" type="int" value="0"/>
                                     <Property name="canHover" type="boolean" value="true"/>
+                                    <Property name="dataIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                                      <Connection code="UnitsDataTable.TOWER" type="code"/>
+                                    </Property>
                                     <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="f9" green="f9" red="f9" type="rgb"/>
                                     </Property>
@@ -1490,6 +1493,9 @@
                                     <Property name="rounded" type="boolean" value="true"/>
                                     <Property name="text" type="java.lang.String" value="Tower"/>
                                   </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                                  </AuxValues>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1532,6 +1538,9 @@
                                   <Properties>
                                     <Property name="arrowDirection" type="int" value="0"/>
                                     <Property name="canHover" type="boolean" value="true"/>
+                                    <Property name="dataIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                                      <Connection code="UnitsDataTable.FLOOR" type="code"/>
+                                    </Property>
                                     <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="f9" green="f9" red="f9" type="rgb"/>
                                     </Property>
@@ -1542,6 +1551,9 @@
                                     <Property name="rounded" type="boolean" value="true"/>
                                     <Property name="text" type="java.lang.String" value="Floor"/>
                                   </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                                  </AuxValues>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1584,6 +1596,9 @@
                                   <Properties>
                                     <Property name="arrowDirection" type="int" value="0"/>
                                     <Property name="canHover" type="boolean" value="true"/>
+                                    <Property name="dataIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                                      <Connection code="UnitsDataTable.UNIT" type="code"/>
+                                    </Property>
                                     <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="f9" green="f9" red="f9" type="rgb"/>
                                     </Property>
@@ -1594,6 +1609,9 @@
                                     <Property name="rounded" type="boolean" value="true"/>
                                     <Property name="text" type="java.lang.String" value="Unit"/>
                                   </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                                  </AuxValues>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1662,6 +1680,9 @@
                                     <Property name="rounded" type="boolean" value="true"/>
                                     <Property name="text" type="java.lang.String" value="Unit ID"/>
                                   </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                                  </AuxValues>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -1734,6 +1755,9 @@
                                         <Property name="rounded" type="boolean" value="true"/>
                                         <Property name="text" type="java.lang.String" value="Account Number"/>
                                       </Properties>
+                                      <AuxValues>
+                                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                                      </AuxValues>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -1767,6 +1791,9 @@
                                       <Properties>
                                         <Property name="arrowDirection" type="int" value="0"/>
                                         <Property name="canHover" type="boolean" value="true"/>
+                                        <Property name="dataIndex" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                                          <Connection code="UnitsDataTable.MODEL" type="code"/>
+                                        </Property>
                                         <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="f9" green="f9" red="f9" type="rgb"/>
                                         </Property>
@@ -1777,6 +1804,9 @@
                                         <Property name="rounded" type="boolean" value="true"/>
                                         <Property name="text" type="java.lang.String" value="Model"/>
                                       </Properties>
+                                      <AuxValues>
+                                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                                      </AuxValues>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -1820,6 +1850,9 @@
                                         <Property name="rounded" type="boolean" value="true"/>
                                         <Property name="text" type="java.lang.String" value="Floor Area"/>
                                       </Properties>
+                                      <AuxValues>
+                                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                                      </AuxValues>
                                     </Component>
                                   </SubComponents>
                                 </Container>

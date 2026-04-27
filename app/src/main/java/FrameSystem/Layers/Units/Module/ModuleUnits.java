@@ -1,5 +1,6 @@
 package FrameSystem.Layers.Units.Module;
 
+import DatabaseSystem.UnitsData.UnitsDataTable;
 import FrameSystem.SLibrary.SComponents.SPanel;
 
 public class ModuleUnits extends SPanel{
@@ -903,6 +904,7 @@ public class ModuleUnits extends SPanel{
 
         sFilterTitlePanel1.setArrowDirection(0);
         sFilterTitlePanel1.setCanHover(true);
+        sFilterTitlePanel1.setDataIndex(UnitsDataTable.TOWER);
         sFilterTitlePanel1.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sFilterTitlePanel1.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel1.setRadius(7);
@@ -935,6 +937,7 @@ public class ModuleUnits extends SPanel{
 
         sFilterTitlePanel2.setArrowDirection(0);
         sFilterTitlePanel2.setCanHover(true);
+        sFilterTitlePanel2.setDataIndex(UnitsDataTable.FLOOR);
         sFilterTitlePanel2.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sFilterTitlePanel2.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel2.setRadius(7);
@@ -967,6 +970,7 @@ public class ModuleUnits extends SPanel{
 
         sFilterTitlePanel3.setArrowDirection(0);
         sFilterTitlePanel3.setCanHover(true);
+        sFilterTitlePanel3.setDataIndex(UnitsDataTable.UNIT);
         sFilterTitlePanel3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sFilterTitlePanel3.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel3.setRadius(7);
@@ -1063,6 +1067,7 @@ public class ModuleUnits extends SPanel{
 
         sFilterTitlePanel6.setArrowDirection(0);
         sFilterTitlePanel6.setCanHover(true);
+        sFilterTitlePanel6.setDataIndex(UnitsDataTable.MODEL);
         sFilterTitlePanel6.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sFilterTitlePanel6.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel6.setRadius(7);
@@ -1864,13 +1869,13 @@ public class ModuleUnits extends SPanel{
     public FrameSystem.Layers.Units.Components.ObjectUnitDonutChart objectUnitDonutChart1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel2;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel3;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel4;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel5;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel6;
-    private FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel7;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel2;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel3;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel4;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel5;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel6;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel7;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel11;

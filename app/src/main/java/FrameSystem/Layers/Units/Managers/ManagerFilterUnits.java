@@ -4,7 +4,9 @@ package FrameSystem.Layers.Units.Managers;
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
 import DatabaseSystem.UnitsData.UnitsDataTable;
+import EventSystem.Listeners.MousePressedAdaptor;
 import static FrameSystem.Layers.Units.Managers.ManagerModuleUnits.moduleUnits;
+import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -43,6 +45,36 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
                 isFilterTower3Active = moduleUnits.filterTower3.isActive();
                 ManagerFilterUnits.activeFilterChanged();
             }
+        });
+        
+        setFilterTitle(moduleUnits.sFilterTitlePanel1);
+        setFilterTitle(moduleUnits.sFilterTitlePanel2);
+        setFilterTitle(moduleUnits.sFilterTitlePanel3);
+        setFilterTitle(moduleUnits.sFilterTitlePanel4);
+        setFilterTitle(moduleUnits.sFilterTitlePanel5);
+        setFilterTitle(moduleUnits.sFilterTitlePanel6);
+        setFilterTitle(moduleUnits.sFilterTitlePanel7);
+    }
+    
+    public static void setFilterTitle(SFilterTitlePanel filterTitle){
+        filterTitle.addMouseListener((MousePressedAdaptor) (MouseEvent e) -> {
+            int direction = filterTitle.setNextArrowDirection();
+
+            DataTableOrder order = null;
+            if(direction == 1){
+                order = DataTableOrder.DESC;
+            }else if(direction == 2){
+                order = DataTableOrder.ASC;
+            }
+
+            int dataIndex = filterTitle.getDataIndex(); // Replace this with the actual column index this panel represents
+
+            if(order != null){
+                DataTableFilter activeFilter = new DataTableFilter(dataIndex, order);
+            }else{
+            }
+
+            activeFilterChanged();
         });
     }
     

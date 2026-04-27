@@ -73,6 +73,19 @@ public class SFilterTitlePanel extends SPanel{
         }
     }
     
+// ---- Data Index -------------------------------------------------------------------------------------------
+    
+    private int dataIndex;
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    public void setDataIndex(int dataIndex){
+        this.dataIndex = dataIndex;
+    }
+
+    public int getDataIndex(){
+        return dataIndex;
+    }
+    
 // Overrided Methods =========================================================================================
 
     @Override
