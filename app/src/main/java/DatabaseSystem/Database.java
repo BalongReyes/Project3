@@ -18,51 +18,65 @@ import io.github.cdimascio.dotenv.DotenvException;
 
 public class Database {
 
-    protected static String databaseName = "avidadatabase";
-    protected static String username = "root";
-    protected static String ip = "localhost";
-    protected static String port = "3306";
-
     private static HikariDataSource dataSource;
 
     public static void openConnection() {
-        Console.line().out("INITIALIZING CONNECTION POOL FOR '" + databaseName + "'", ConsoleColors.GREEN);
         try {
             Dotenv dotenv = Dotenv.configure().load();
-            String dbPassword = dotenv.get("DB_PASSWORD");
-            
-            if (dbPassword == null || dbPassword.trim().isEmpty()) {
-                throw new IllegalStateException("DB_PASSWORD is not set or empty in the .env file.");
-            }
+
+            // Required — will throw if missing
+            String dbPassword = getRequired(dotenv, "DB_PASSWORD");
+            String dbName = getRequired(dotenv, "DB_NAME");
+            String dbUser = getRequired(dotenv, "DB_USER");
+            String dbIp   = getRequired(dotenv, "DB_HOST");
+            String dbPort = getRequired(dotenv, "DB_PORT");
+
+            Console.line().out("INITIALIZING CONNECTION POOL FOR '" + dbName + "'", ConsoleColors.GREEN);
 
             HikariConfig config = new HikariConfig();
-            config.setJdbcUrl("jdbc:mysql://" + ip + ":" + port + "/" + databaseName);
-            config.setUsername(username);
+            config.setJdbcUrl("jdbc:mysql://" + dbIp + ":" + dbPort + "/" + dbName);
+            config.setUsername(dbUser);
             config.setPassword(dbPassword);
 
             // Recommended HikariCP Performance Settings for MySQL
-            config.addDataSourceProperty("cachePrepStmts", "true");
-            config.addDataSourceProperty("prepStmtCacheSize", "250");
-            config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-            config.addDataSourceProperty("useServerPrepStmts", "true");
-            config.addDataSourceProperty("useLocalSessionState", "true");
+            config.addDataSourceProperty("cachePrepStmts",          "true");
+            config.addDataSourceProperty("prepStmtCacheSize",        "250");
+            config.addDataSourceProperty("prepStmtCacheSqlLimit",    "2048");
+            config.addDataSourceProperty("useServerPrepStmts",       "true");
+            config.addDataSourceProperty("useLocalSessionState",     "true");
             config.addDataSourceProperty("rewriteBatchedStatements", "true");
-            config.addDataSourceProperty("cacheResultSetMetadata", "true");
+            config.addDataSourceProperty("cacheResultSetMetadata",   "true");
             config.addDataSourceProperty("cacheServerConfiguration", "true");
-            config.addDataSourceProperty("elideSetAutoCommits", "true");
-            config.addDataSourceProperty("maintainTimeStats", "false");
+            config.addDataSourceProperty("elideSetAutoCommits",      "true");
+            config.addDataSourceProperty("maintainTimeStats",        "false");
 
             // Pool Size Configuration
-            config.setMaximumPoolSize(10); // Adjust this based on your app's concurrent users
+            config.setMaximumPoolSize(10);
             config.setMinimumIdle(2);
             config.setIdleTimeout(30000);
             config.setConnectionTimeout(10000);
 
             dataSource = new HikariDataSource(config);
             Console.out("Connection pool initialized successfully");
+
         } catch (DotenvException | IllegalStateException e) {
             Console.errorOut("Connection pool initialization failed", e);
         }
+    }
+
+    /** Reads a required .env key — throws if missing or blank. */
+    private static String getRequired(Dotenv dotenv, String key) {
+        String value = dotenv.get(key);
+        if (value == null || value.trim().isEmpty()) {
+            throw new IllegalStateException("'" + key + "' is not set or empty in the .env file.");
+        }
+        return value;
+    }
+
+    /** Reads an optional .env key — returns the defaultValue if missing or blank. */
+    private static String getOptional(Dotenv dotenv, String key, String defaultValue) {
+        String value = dotenv.get(key);
+        return (value != null && !value.trim().isEmpty()) ? value : defaultValue;
     }
 
     public static void closeConnection() {

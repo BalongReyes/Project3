@@ -2,6 +2,7 @@ package FrameSystem.Layers.Units.Managers;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicLong;
 
 import ConsoleSystem.Console;
 import DatabaseSystem.DataTable.DataTableFilter;
@@ -13,25 +14,27 @@ import java.util.concurrent.ExecutionException;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
-public class ManagerObjectUnits extends ManagerModuleUnits{
+public class ManagerObjectUnits extends ManagerModuleUnits {
 
     private static ArrayList<ObjectUnit> objects = new ArrayList<>();
     
-    public static void initDefault(){
+    public static void initDefault() {
     }
 
 // Main Methods ==============================================================================================
     
 // Refresh ---------------------------------------------------------------------------------------------------
-    
+
+    // activeWorker is only ever read and written on the EDT (refreshObjects and done()),
+    // so no extra synchronization is needed here.
     private static SwingWorker<Void, Void> activeWorker = null;
 
     public static void refreshObjects() {
-        if(!moduleHome.layerHome_Units.isShowing()){
+        if (!moduleHome.layerHome_Units.isShowing()) {
             return;
         }
         if (activeWorker != null && !activeWorker.isDone()) {
-            activeWorker.cancel(true); 
+            activeWorker.cancel(true);
         }
 
         LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
@@ -61,12 +64,16 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
         };
         activeWorker.execute();
     }
-    
-    private static long currentRefreshId = 0;
-    
-    private static void refreshObjectInBackground(){
-        final long thisRefreshId = ++currentRefreshId;
-        
+
+    // FIX #6: Use AtomicLong so the increment and reads are safe across threads.
+    // The background thread increments this value; both the EDT and background
+    // threads read it to detect stale refreshes.
+    private static final AtomicLong currentRefreshId = new AtomicLong(0);
+
+    private static void refreshObjectInBackground() {
+        // Atomically bump and capture the ID for this particular refresh run.
+        final long thisRefreshId = currentRefreshId.incrementAndGet();
+
         try {
             long startTime = System.currentTimeMillis();
 
@@ -76,22 +83,22 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
 
             while (hasMoreData) {
                 if (Thread.currentThread().isInterrupted()) return;
-                
-                if (thisRefreshId != currentRefreshId) return;
+
+                if (thisRefreshId != currentRefreshId.get()) return;
 
                 ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnits.getFilters();
 
                 UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
-                    combinedFilters.toArray(DataTableFilter[]::new), 
-                    limit, 
+                    combinedFilters.toArray(DataTableFilter[]::new),
+                    limit,
                     offset
                 );
 
-                if (thisRefreshId != currentRefreshId) return;
+                if (thisRefreshId != currentRefreshId.get()) return;
 
                 if (isFirstBatch) {
                     long elapsedTime = System.currentTimeMillis() - startTime;
-                    long minLoadingTime = 1000; 
+                    long minLoadingTime = 1000;
 
                     if (elapsedTime < minLoadingTime) {
                         try {
@@ -102,15 +109,15 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                     }
                 }
 
-                if (thisRefreshId != currentRefreshId) return;
+                if (thisRefreshId != currentRefreshId.get()) return;
 
-                // 3. Check if we reached the end of the database
+                // Check if we reached the end of the database
                 if (dataBatch == null || dataBatch.length == 0) {
                     hasMoreData = false;
 
                     if (isFirstBatch) {
                         SwingUtilities.invokeLater(() -> {
-                            if (thisRefreshId != currentRefreshId) return; // Final UI check
+                            if (thisRefreshId != currentRefreshId.get()) return; // Final UI check
                             moduleUnits.sTable1.clearRows();
                             objects.clear();
                             resetOccupancyDataChart();
@@ -118,14 +125,14 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                             LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
                         });
                     }
-                    break; 
+                    break;
                 }
 
                 final boolean firstBatchCopy = isFirstBatch;
 
-                // 4. Update the UI with the freshly loaded batch
+                // Update the UI with the freshly loaded batch
                 SwingUtilities.invokeLater(() -> {
-                    if (thisRefreshId != currentRefreshId) return; // Final UI check
+                    if (thisRefreshId != currentRefreshId.get()) return; // Final UI check
 
                     if (firstBatchCopy) {
                         moduleUnits.sTable1.clearRows();
@@ -139,69 +146,67 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
                         ObjectUnit o = new ObjectUnit(data);
                         objects.add(o);
                         moduleUnits.sTable1.addRow(o);
-//                        moduleUnits.objectUnitScrollPane.addInnerListeners(o);
                         addOccupancyDataChart(data);
                         addTotalUnitsDataChart();
                     }
                 });
 
-                // 5. Prepare for the next round
+                // Prepare for the next round
                 isFirstBatch = false;
-                offset += limit; 
+                offset += limit;
 
                 try {
-                    Thread.sleep(15); 
+                    Thread.sleep(15);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
             }
         } catch (SQLException e) {
-            javax.swing.SwingUtilities.invokeLater(() -> {
+            SwingUtilities.invokeLater(() -> {
                 Console.errorOut("Gathering object unit error", e);
                 ManagerModuleUnits.reconnectMode(() -> refreshObjects());
             });
         }
     }
-    
+
 // Current Object --------------------------------------------------------------------------------------------
     
     private static ObjectUnit currentObject = null;
     
-    public static void changeCurrentObject(ObjectUnit object){
-        if(object == null) return;
+    public static void changeCurrentObject(ObjectUnit object) {
+        if (object == null) return;
         int i = 0;
-        for(ObjectUnit o : objects){
+        for (ObjectUnit o : objects) {
             o.setActive(false);
-            if(o == object){
-//                moduleUnits.objectUnitScrollPane.scrollToObjectContent(i + 1);
+            if (o == object) {
+                // moduleUnits.objectUnitScrollPane.scrollToObjectContent(i + 1);
             }
             i++;
         }
         object.setActive(true);
         currentObject = object;
-//        moduleUnits.objectUnitScrollPane.repaint();
+        // moduleUnits.objectUnitScrollPane.repaint();
     }
-    
+
 // -----------------------------------------------------------------------------------------------------------
     
     private static int totalUnits = 0;
     
-    public static void resetTotalUnitsDataChart(){
+    public static void resetTotalUnitsDataChart() {
         totalUnits = 0;
     }
     
-    public static void addTotalUnitsDataChart(){
+    public static void addTotalUnitsDataChart() {
         totalUnits++;
         moduleUnits.sLabel26.setText(String.valueOf(totalUnits));
     }
     
-    public static void resetOccupancyDataChart(){
+    public static void resetOccupancyDataChart() {
         moduleUnits.objectUnitDonutChart1.resetData();
     }
     
     public static void addOccupancyDataChart(UnitsDataTable data) {
-        
-        switch(data.getOccupancy()){
+        switch (data.getOccupancy()) {
             case Owner, OwnerWeekenders, OwnerNoActivity -> {
                 moduleUnits.objectUnitDonutChart1.addDataOwner();
             }
@@ -213,20 +218,16 @@ public class ManagerObjectUnits extends ManagerModuleUnits{
             }
         }
         
-        int owners = moduleUnits.objectUnitDonutChart1.owners;
+        int owners  = moduleUnits.objectUnitDonutChart1.owners;
         int tenants = moduleUnits.objectUnitDonutChart1.tenants;
-        int others = moduleUnits.objectUnitDonutChart1.others;
+        int others  = moduleUnits.objectUnitDonutChart1.others;
         
-        // Calculate the percentage of (Owners + Tenants) against the Total
         int total = owners + tenants + others;
         if (total > 0) {
             double percentage = ((double) (owners + tenants) / total) * 100.0;
-            // Format to show no decimal places and add a '%' sign
             moduleUnits.sLabel33.setText(String.format("%.2f%%", percentage));
         } else {
-            // Fallback if there are no units at all
-            moduleUnits.sLabel33.setText("0%"); 
+            moduleUnits.sLabel33.setText("0%");
         }
     }
-    
 }
