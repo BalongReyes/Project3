@@ -2699,7 +2699,10 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="FrameSystem.Layers.Units.Components.LayerUnits_Main" name="layerUnits_Main2">
+            <Container class="FrameSystem.Layers.Units.Components.LayerUnits_Main" name="layerUnitsView">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="Units-View" noResource="true"/>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
               </AuxValues>
