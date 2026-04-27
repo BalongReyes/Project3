@@ -11,27 +11,37 @@ import java.util.ArrayList;
 
 public class ManagerFilterUnits extends ManagerModuleUnits{
 
+    private static boolean isFilterTower1Active = false;
+    private static boolean isFilterTower2Active = false;
+    private static boolean isFilterTower3Active = false;
+    
     public static void initDefault(){
         setDefaultFilters();
         
         moduleUnits.filterTower1.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e){
-                toggleFilterTower(1);
+                moduleUnits.filterTower1.toggleActive();
+                isFilterTower1Active = moduleUnits.filterTower1.isActive();
+                ManagerFilterUnits.activeFilterChanged();
             }
         });
         
         moduleUnits.filterTower2.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e){
-                toggleFilterTower(2);
+                moduleUnits.filterTower2.toggleActive();
+                isFilterTower2Active = moduleUnits.filterTower2.isActive();
+                ManagerFilterUnits.activeFilterChanged();
             }
         });
         
         moduleUnits.filterTower3.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e){
-                toggleFilterTower(3);
+                moduleUnits.filterTower3.toggleActive();
+                isFilterTower3Active = moduleUnits.filterTower3.isActive();
+                ManagerFilterUnits.activeFilterChanged();
             }
         });
     }
@@ -46,30 +56,6 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
         if (isFilterTower3Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.WHERE, "3"));
         
         return combinedFilters;
-    }
-    
-// ---- Tower Filters ----------------------------------------------------------------------------------------
-    
-    private static boolean isFilterTower1Active = false;
-    private static boolean isFilterTower2Active = false;
-    private static boolean isFilterTower3Active = false;
-    
-    public static void toggleFilterTower(int tower){
-        switch(tower){
-            case 1 -> {
-                moduleUnits.filterTower1.toggleActive();
-                isFilterTower1Active = moduleUnits.filterTower1.isActive();
-            }
-            case 2 -> {
-                moduleUnits.filterTower2.toggleActive();
-                isFilterTower2Active = moduleUnits.filterTower2.isActive();
-            }
-            case 3 -> {
-                moduleUnits.filterTower3.toggleActive();
-                isFilterTower3Active = moduleUnits.filterTower3.isActive();
-            }
-        }
-        ManagerFilterUnits.activeFilterChanged();
     }
     
 // ---- Filters ----------------------------------------------------------------------------------------------

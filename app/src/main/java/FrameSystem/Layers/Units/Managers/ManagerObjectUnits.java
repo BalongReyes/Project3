@@ -9,6 +9,7 @@ import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.UnitsData.UnitsDataHandler;
 import DatabaseSystem.UnitsData.UnitsDataTable;
 import FrameSystem.Layers.Units.Components.LayerUnits;
+import FrameSystem.Layers.Units.Components.LayerUnits_Main;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
 import java.util.concurrent.ExecutionException;
 import javax.swing.SwingUtilities;
@@ -19,11 +20,14 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
     private static ArrayList<ObjectUnit> objects = new ArrayList<>();
     
     public static void initDefault() {
+        moduleHome.layerHome_Units.addLayeredPanelShowListener((evt) -> {
+            LayerUnits_Main.showLayer(moduleUnits.layerUnitsData);
+        });
     }
 
 // Main Methods ==============================================================================================
     
-// Refresh ---------------------------------------------------------------------------------------------------
+// ---- Refresh ----------------------------------------------------------------------------------------------
 
     // activeWorker is only ever read and written on the EDT (refreshObjects and done()),
     // so no extra synchronization is needed here.
@@ -144,6 +148,9 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
 
                     for (UnitsDataTable data : dataBatch) {
                         ObjectUnit o = new ObjectUnit(data);
+                        o.setOnViewClick(()->{
+                            showLayerUnitsView();
+                        });
                         objects.add(o);
                         moduleUnits.sTable1.addRow(o);
                         addOccupancyDataChart(data);
@@ -169,7 +176,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         }
     }
 
-// Current Object --------------------------------------------------------------------------------------------
+// ---- Current Object ---------------------------------------------------------------------------------------
     
     private static ObjectUnit currentObject = null;
     
@@ -230,4 +237,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             moduleUnits.sLabel33.setText("0%");
         }
     }
+    
+// ---- View -------------------------------------------------------------------------------------------------
+    
+    public static void showLayerUnitsView() {
+        LayerUnits_Main.showLayer(moduleUnits.layerUnitsView);
+    }
+    
 }

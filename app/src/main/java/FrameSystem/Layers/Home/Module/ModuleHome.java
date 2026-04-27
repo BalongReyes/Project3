@@ -551,9 +551,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler14);
 
         menuButton_Dashboard.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Dashboard.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Dashboard.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Dashboard.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboardActive.png"))); // NOI18N
-        menuButton_Dashboard.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Dashboard.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Dashboard.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Dashboard.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Dashboard.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboard.png"))); // NOI18N
@@ -565,9 +565,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler1);
 
         menuButton_Units.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Units.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Units.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Units.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/unitsActive.png"))); // NOI18N
-        menuButton_Units.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Units.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Units.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Units.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Units.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/units.png"))); // NOI18N
@@ -579,9 +579,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler2);
 
         menuButton_Parking.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Parking.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Parking.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Parking.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parkingActive.png"))); // NOI18N
-        menuButton_Parking.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Parking.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Parking.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Parking.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Parking.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parking.png"))); // NOI18N
@@ -642,9 +642,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler13);
 
         menuButton_NewResident.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_NewResident.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_NewResident.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_NewResident.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/newResidentActive.png"))); // NOI18N
-        menuButton_NewResident.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_NewResident.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_NewResident.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_NewResident.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_NewResident.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/newResident.png"))); // NOI18N
@@ -656,9 +656,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler7);
 
         menuButton_Owners.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Owners.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Owners.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Owners.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/ownersActive.png"))); // NOI18N
-        menuButton_Owners.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Owners.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Owners.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Owners.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Owners.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/owners.png"))); // NOI18N
@@ -670,9 +670,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler8);
 
         menuButton_Tenants.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Tenants.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Tenants.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Tenants.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tenantsActive.png"))); // NOI18N
-        menuButton_Tenants.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Tenants.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Tenants.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Tenants.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Tenants.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tenants.png"))); // NOI18N
@@ -684,9 +684,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler24);
 
         menuButton_Move.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Move.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Move.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Move.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/moveActive.png"))); // NOI18N
-        menuButton_Move.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Move.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Move.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Move.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Move.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/move.png"))); // NOI18N
@@ -698,9 +698,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler15);
 
         menuButton_Visitors.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Visitors.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Visitors.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Visitors.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/visitorsActive.png"))); // NOI18N
-        menuButton_Visitors.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Visitors.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Visitors.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Visitors.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Visitors.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/visitors.png"))); // NOI18N
@@ -712,9 +712,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler20);
 
         menuButton_Concerns.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Concerns.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Concerns.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Concerns.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concernsActive.png"))); // NOI18N
-        menuButton_Concerns.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Concerns.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Concerns.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Concerns.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Concerns.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concerns.png"))); // NOI18N
@@ -773,9 +773,9 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(filler21);
 
         menuButton_Accounts.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Accounts.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Accounts.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Accounts.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/accountsActive.png"))); // NOI18N
-        menuButton_Accounts.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Accounts.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Accounts.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Accounts.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Accounts.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/accounts.png"))); // NOI18N
@@ -806,7 +806,7 @@ public class ModuleHome extends SPanel{
         menuSwitch_Fullscreen.setForegroundColor(new java.awt.Color(56, 56, 56));
         menuSwitch_Fullscreen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/fullscreen.png"))); // NOI18N
         menuSwitch_Fullscreen.setRadius(15);
-        menuSwitch_Fullscreen.setSwitchActiveColor(new java.awt.Color(255, 127, 127));
+        menuSwitch_Fullscreen.setSwitchActiveColor(new java.awt.Color(205, 64, 68));
         menuSwitch_Fullscreen.setSwitchInactiveColor(new java.awt.Color(122, 122, 122));
         menuSwitch_Fullscreen.setText("Fullscreen");
         menuSwitch_Fullscreen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -898,9 +898,9 @@ public class ModuleHome extends SPanel{
         userRole2.setPreferredSize(new java.awt.Dimension(23, 20));
 
         menuButton_Profile.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Profile.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Profile.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Profile.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/profileActive.png"))); // NOI18N
-        menuButton_Profile.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Profile.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Profile.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Profile.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Profile.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/profile.png"))); // NOI18N
@@ -910,9 +910,9 @@ public class ModuleHome extends SPanel{
         menuButton_Profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         menuButton_Settings.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Settings.setActiveForegroundColor(new java.awt.Color(255, 127, 127));
+        menuButton_Settings.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Settings.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/settingsActive.png"))); // NOI18N
-        menuButton_Settings.setActiveLineColor(new java.awt.Color(255, 127, 127));
+        menuButton_Settings.setActiveLineColor(new java.awt.Color(205, 64, 68));
         menuButton_Settings.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Settings.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Settings.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/settings.png"))); // NOI18N

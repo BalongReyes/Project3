@@ -519,7 +519,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="sPanel12" min="-2" max="-2" attributes="0"/>
+                      <Component id="view" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -528,14 +528,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
-                      <Component id="sPanel12" min="-2" max="-2" attributes="0"/>
+                      <Component id="view" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel12">
+            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="view">
               <Properties>
                 <Property name="canHover" type="boolean" value="true"/>
                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -550,6 +550,9 @@
                   <Dimension value="[25, 25]"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -612,7 +615,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="sPanel14" min="-2" max="-2" attributes="0"/>
+                      <Component id="edit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -621,14 +624,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
-                      <Component id="sPanel14" min="-2" max="-2" attributes="0"/>
+                      <Component id="edit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel14">
+            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="edit">
               <Properties>
                 <Property name="canHover" type="boolean" value="true"/>
                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

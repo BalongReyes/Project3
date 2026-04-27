@@ -1855,12 +1855,12 @@ public class ModuleUnits extends SPanel{
     public javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private FrameSystem.Layers.Units.Components.LayerUnits_Main layerUnitsData;
+    public FrameSystem.Layers.Units.Components.LayerUnits_Main layerUnitsData;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsLoading;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline1;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOnline;
-    private FrameSystem.Layers.Units.Components.LayerUnits_Main layerUnitsView;
+    public FrameSystem.Layers.Units.Components.LayerUnits_Main layerUnitsView;
     public FrameSystem.Layers.Units.Components.ObjectUnitDonutChart objectUnitDonutChart1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
