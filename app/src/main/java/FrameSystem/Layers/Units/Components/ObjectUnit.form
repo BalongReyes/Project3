@@ -12,6 +12,8 @@
       <Color blue="fa" green="fa" red="fa" type="rgb"/>
     </Property>
     <Property name="borderLine" type="int" value="1"/>
+    <Property name="borderSideLeft" type="boolean" value="false"/>
+    <Property name="borderSideRight" type="boolean" value="false"/>
     <Property name="canHover" type="boolean" value="true"/>
     <Property name="defaultBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="f0" green="f0" red="f0" type="rgb"/>

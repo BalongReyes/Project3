@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.beans.BeanProperty;
 import java.util.ArrayList;
 import javax.swing.JComponent;
+import java.awt.Color;
 
 /**
  *
@@ -75,7 +76,7 @@ public class STable extends SPanel{
         return scrollPane;
     }
     
-// -----------------------------------------------------------------------------------------------------------
+// ==== STable Properties ====================================================================================
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "")
     public void setRowHeight(int rowHeight) {
@@ -96,6 +97,35 @@ public class STable extends SPanel{
 
     public int getBlockIncrement() {
         return blockIncrement;
+    }
+
+// ==== ScrollPane Delegated Properties ======================================================================
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The background color of the scrollbar track")
+    public void setScrollbarBackgroundColor(Color color) {
+        scrollPane.setScrollbarBackgroundColor(color);
+    }
+
+    public Color getScrollbarBackgroundColor() {
+        return scrollPane.getScrollbarBackgroundColor();
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The default color of the scrollbar thumb")
+    public void setScrollbarColor(Color color) {
+        scrollPane.setScrollbarColor(color);
+    }
+
+    public Color getScrollbarColor() {
+        return scrollPane.getScrollbarColor();
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The hover color of the scrollbar thumb")
+    public void setScrollbarHoverColor(Color color) {
+        scrollPane.setHoverColor(color);
+    }
+
+    public Color getScrollbarHoverColor() {
+        return scrollPane.getHoverColor();
     }
     
 // ==== Overrided Methods ====================================================================================

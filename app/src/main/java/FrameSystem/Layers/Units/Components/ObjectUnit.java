@@ -186,6 +186,8 @@ public class ObjectUnit extends SPanel{
         setActiveHoverBackgroundColor(new java.awt.Color(255, 245, 245));
         setActiveHoverForegroundColor(new java.awt.Color(250, 250, 250));
         setBorderLine(1);
+        setBorderSideLeft(false);
+        setBorderSideRight(false);
         setCanHover(true);
         setDefaultBorderColor(new java.awt.Color(240, 240, 240));
         setHoverBackgroundColor(new java.awt.Color(250, 250, 250));

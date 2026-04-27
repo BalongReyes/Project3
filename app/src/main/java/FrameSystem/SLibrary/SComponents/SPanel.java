@@ -296,6 +296,11 @@ public class SPanel extends JPanel implements InnerListener{
     protected int borderLine = 0;
     protected Color borderColor = Color.white;
 
+    protected boolean borderSideTop = true;
+    protected boolean borderSideBottom = true;
+    protected boolean borderSideLeft = true;
+    protected boolean borderRSideight = true;
+
     protected boolean shadowX = false;
     protected boolean shadowY = false;
     protected int shadowSize;
@@ -366,7 +371,7 @@ public class SPanel extends JPanel implements InnerListener{
 
     public boolean isRoundBottomRight() { return roundBottomRight; }
 
-// ---- Border Line ------------------------------------------------------------------------------------------
+// ---- Border Line & Visibility -----------------------------------------------------------------------------
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "The border line width")
     public void setBorderLine(int borderLine){
@@ -387,6 +392,46 @@ public class SPanel extends JPanel implements InnerListener{
 
     public Color getDefaultBorderColor(){
         return borderColor;
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Draw top border")
+    public void setBorderSideTop(boolean borderTop){
+        this.borderSideTop = borderTop;
+        repaint();
+    }
+
+    public boolean isBorderSideTop(){
+        return borderSideTop;
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Draw bottom border")
+    public void setBorderSideBottom(boolean borderBottom){
+        this.borderSideBottom = borderBottom;
+        repaint();
+    }
+
+    public boolean isBorderSideBottom(){
+        return borderSideBottom;
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Draw left border")
+    public void setBorderSideLeft(boolean borderLeft){
+        this.borderSideLeft = borderLeft;
+        repaint();
+    }
+
+    public boolean isBorderSideLeft(){
+        return borderSideLeft;
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Draw right border")
+    public void setBorderSideRight(boolean borderRight){
+        this.borderRSideight = borderRight;
+        repaint();
+    }
+
+    public boolean isBorderSideRight(){
+        return borderRSideight;
     }
 
 // ---- Shadow -----------------------------------------------------------------------------------------------
@@ -663,7 +708,7 @@ public class SPanel extends JPanel implements InnerListener{
         }
 
         // 2. Draw Outer Border
-        if(borderLine > 0){
+        if(borderLine > 0 && (borderSideTop || borderSideBottom || borderSideLeft || borderRSideight)){
             if(overideBorder != null){
                 g2.setColor(overideBorder);
             }else{
@@ -705,11 +750,17 @@ public class SPanel extends JPanel implements InnerListener{
 
             g2.setColor(currentBgColor);
             
+            // Determine active offsets for the inner body
+            int bTop = borderSideTop ? borderLine : 0;
+            int bBot = borderSideBottom ? borderLine : 0;
+            int bLeft = borderSideLeft ? borderLine : 0;
+            int bRight = borderRSideight ? borderLine : 0;
+            
             // Draw background using custom shape
             int bgRadius = Math.max(0, radiusPaint - borderLine); // Prevents negative radius on large borders
             Shape bgShape = createCustomRoundedShape(
-                    x + borderLine, y + borderLine,
-                    w - (borderLine * 2), h - (borderLine * 2),
+                    x + bLeft, y + bTop,
+                    w - bLeft - bRight, h - bTop - bBot,
                     bgRadius
             );
             g2.fill(bgShape);

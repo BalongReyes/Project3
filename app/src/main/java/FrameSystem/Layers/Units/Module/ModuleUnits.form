@@ -32,7 +32,7 @@
                               <Component id="sPanel42" min="-2" pref="123" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="362" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="sPanel35" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="sPanel47" min="-2" max="-2" attributes="0"/>
@@ -1292,7 +1292,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="jLayeredPane2" pref="937" max="32767" attributes="0"/>
+                  <Component id="jLayeredPane2" max="32767" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -1320,7 +1320,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="sPanel2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLayeredPane1" pref="1437" max="32767" attributes="0"/>
+                      <Component id="jLayeredPane1" max="32767" attributes="0"/>
                       <Component id="sPanel63" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
@@ -1330,7 +1330,7 @@
                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                           <Component id="sPanel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="jLayeredPane1" pref="862" max="32767" attributes="0"/>
+                          <Component id="jLayeredPane1" max="32767" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="sPanel63" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
@@ -1368,6 +1368,9 @@
                     <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel3">
                       <Properties>
                         <Property name="borderLine" type="int" value="1"/>
+                        <Property name="borderSideLeft" type="boolean" value="false"/>
+                        <Property name="borderSideRight" type="boolean" value="false"/>
+                        <Property name="borderSideTop" type="boolean" value="false"/>
                         <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f9" green="f9" red="f9" type="rgb"/>
                         </Property>
@@ -2282,6 +2285,12 @@
                         <Component class="FrameSystem.SLibrary.SComponents.STable" name="sTable1">
                           <Properties>
                             <Property name="rowHeight" type="int" value="50"/>
+                            <Property name="scrollbarBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                            </Property>
+                            <Property name="scrollbarColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="9b" green="9b" red="9b" type="rgb"/>
+                            </Property>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -2321,6 +2330,9 @@
                 <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel63">
                   <Properties>
                     <Property name="borderLine" type="int" value="1"/>
+                    <Property name="borderSideBottom" type="boolean" value="false"/>
+                    <Property name="borderSideLeft" type="boolean" value="false"/>
+                    <Property name="borderSideRight" type="boolean" value="false"/>
                     <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="f9" green="f9" red="f9" type="rgb"/>
                     </Property>
