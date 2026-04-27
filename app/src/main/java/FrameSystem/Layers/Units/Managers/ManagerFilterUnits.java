@@ -67,14 +67,36 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
                 order = DataTableOrder.ASC;
             }
 
-            int dataIndex = filterTitle.getDataIndex(); // Replace this with the actual column index this panel represents
+            int dataIndex = filterTitle.getDataIndex(); 
 
-            if(order != null){
-                DataTableFilter activeFilter = new DataTableFilter(dataIndex, order);
-            }else{
+            // Make sure no other filtertitle is set to 1 or 2 (reset to neutral: -1)
+            SFilterTitlePanel[] allFilterPanels = {
+                moduleUnits.sFilterTitlePanel1, moduleUnits.sFilterTitlePanel2,
+                moduleUnits.sFilterTitlePanel3, moduleUnits.sFilterTitlePanel4,
+                moduleUnits.sFilterTitlePanel5, moduleUnits.sFilterTitlePanel6,
+                moduleUnits.sFilterTitlePanel7
+            };
+            
+            for (SFilterTitlePanel panel : allFilterPanels) {
+                if (panel != null && panel != filterTitle) {
+                    panel.setArrowDirection(-1);
+                }
             }
 
-            activeFilterChanged();
+            // Remove ONLY the previously active dynamic header sort.
+            // This safely protects your default Tower -> Floor -> Unit filters!
+            if (activeHeaderSortFilter != null) {
+                activeFilters.remove(activeHeaderSortFilter);
+                activeHeaderSortFilter = null;
+            }
+
+            // Add the new filter to index 0, so it takes priority over the defaults
+            if(order != null){
+                activeHeaderSortFilter = new DataTableFilter(dataIndex, order);
+                addActiveFilter(0, activeHeaderSortFilter);
+            }else{
+                activeFilterChanged();
+            }
         });
     }
     
@@ -96,6 +118,8 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
     
     // Track multiple active filters
     private static ArrayList<DataTableFilter> activeFilters = new ArrayList<>();
+    
+    private static DataTableFilter activeHeaderSortFilter = null;
     
     public static void setDefaultFilters() {
         clearActiveFilter();

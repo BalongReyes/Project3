@@ -1038,6 +1038,7 @@ public class ModuleUnits extends SPanel{
 
         sFilterTitlePanel5.setArrowDirection(0);
         sFilterTitlePanel5.setCanHover(true);
+        sFilterTitlePanel5.setDataIndex(UnitsDataTable.ACCOUNT_NUMBER);
         sFilterTitlePanel5.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sFilterTitlePanel5.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel5.setRadius(7);
@@ -1097,6 +1098,7 @@ public class ModuleUnits extends SPanel{
 
         sFilterTitlePanel7.setArrowDirection(0);
         sFilterTitlePanel7.setCanHover(true);
+        sFilterTitlePanel7.setDataIndex(UnitsDataTable.FLOOR_AREA);
         sFilterTitlePanel7.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sFilterTitlePanel7.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel7.setRadius(7);

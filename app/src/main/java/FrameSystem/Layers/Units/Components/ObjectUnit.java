@@ -59,7 +59,7 @@ public class ObjectUnit extends SPanel{
             }
             +
             switch(data.balcony()){
-                case 1 -> "w/ Balcony";
+                case 1 -> " w/ Balcony";
                 default -> "";
             }
         );

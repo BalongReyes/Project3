@@ -15,7 +15,7 @@ public record UnitsDataTable(
     int unit,
     int model,
     int balcony,
-    int floorArea,
+    float floorArea,
     
     int status,
     Date turnedOver,
@@ -37,6 +37,9 @@ public record UnitsDataTable(
     public static final int MODEL = 5;
     public static final int BALCONY = 6;
     public static final int FLOOR_AREA = 7;
+    public static final int STATUS = 8;
+    public static final int TURNED_OVER = 9;
+    public static final int ACCOUNT_NUMBER = 10;
 
     public UnitsDataTable(ResultSet results) throws SQLException {
         this(
@@ -46,7 +49,7 @@ public record UnitsDataTable(
             results.getInt("unit"),
             results.getInt("model"),
             results.getInt("balcony"),
-            results.getInt("floorarea"),
+            results.getFloat("floorarea"),
             
             results.getInt("status"),
             results.getDate("turnedOver"),
@@ -77,6 +80,9 @@ public record UnitsDataTable(
             case MODEL -> model;
             case BALCONY -> balcony;
             case FLOOR_AREA -> floorArea;
+            case STATUS -> status;
+            case TURNED_OVER -> turnedOver;
+            case ACCOUNT_NUMBER -> accountNumber;
             default -> null;
         };
     }
@@ -84,8 +90,10 @@ public record UnitsDataTable(
     @Override
     public DataTableType getDataType(int i) {
         return switch (i) {
-            case TOWER, UNIT, MODEL, BALCONY -> DataTableType.TYPE_STRING;
-            case ID, FLOOR, FLOOR_AREA -> DataTableType.TYPE_INTEGER;
+            case TOWER, UNIT, MODEL, BALCONY, ACCOUNT_NUMBER -> DataTableType.TYPE_STRING;
+            case ID, FLOOR, STATUS -> DataTableType.TYPE_INTEGER;
+            case TURNED_OVER -> DataTableType.TYPE_DATE;
+            case FLOOR_AREA -> DataTableType.TYPE_FLOAT;
             default -> DataTableType.TYPE_NULL;
         };
     }
