@@ -13,8 +13,8 @@ import java.sql.SQLException;
  */
 public record UnitOwnersDataTable(
         // 'unitowners' fields
-        long id,
-        long residentsId,
+        int id,
+        int residentsId,
         int unitsId,
         int weekenders,
         int noActivity,
@@ -65,8 +65,8 @@ public record UnitOwnersDataTable(
      */
     public UnitOwnersDataTable(ResultSet results) throws SQLException {
         this(
-            results.getLong("id"), 
-            results.getLong("residents_id"),
+            results.getInt("id"), 
+            results.getInt("residents_id"),
             results.getInt("units_id"),
             results.getInt("weekenders"),
             results.getInt("noactivity"),
