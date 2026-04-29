@@ -37,9 +37,9 @@ public class ModuleHome extends SPanel{
         layerHome_NewResident = new FrameSystem.Layers.Home.Components.LayerHome();
         sLabel9 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerHome_Owners = new FrameSystem.Layers.Home.Components.LayerHome();
-        sLabel10 = new FrameSystem.SLibrary.SComponents.SLabel();
+        moduleUnitOwners = new FrameSystem.Layers.Owners.Module.ModuleUnitOwners();
         layerHome_Tenants = new FrameSystem.Layers.Home.Components.LayerHome();
-        sLabel11 = new FrameSystem.SLibrary.SComponents.SLabel();
+        moduleUnitTenants = new FrameSystem.Layers.Tenants.Module.ModuleUnitTenants();
         layerHome_Move = new FrameSystem.Layers.Home.Components.LayerHome();
         sLabel16 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerHome_Visitors = new FrameSystem.Layers.Home.Components.LayerHome();
@@ -151,11 +151,11 @@ public class ModuleHome extends SPanel{
         layerHome_Dashboard.setLayout(layerHome_DashboardLayout);
         layerHome_DashboardLayout.setHorizontalGroup(
             layerHome_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1241, Short.MAX_VALUE)
+            .addGap(0, 1746, Short.MAX_VALUE)
         );
         layerHome_DashboardLayout.setVerticalGroup(
             layerHome_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 970, Short.MAX_VALUE)
+            .addGap(0, 1091, Short.MAX_VALUE)
         );
 
         layeredPane_Main.add(layerHome_Dashboard, "dashbaord");
@@ -177,7 +177,7 @@ public class ModuleHome extends SPanel{
             layerHome_UnitsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerHome_UnitsLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(moduleUnits, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+                .addComponent(moduleUnits, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -246,26 +246,21 @@ public class ModuleHome extends SPanel{
         layerHome_Owners.setPaintBackground(false);
         layerHome_Owners.setName("Owners"); // NOI18N
 
-        sLabel10.setBackground(new java.awt.Color(0, 0, 0));
-        sLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        sLabel10.setText("Owners");
-        sLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-
         javax.swing.GroupLayout layerHome_OwnersLayout = new javax.swing.GroupLayout(layerHome_Owners);
         layerHome_Owners.setLayout(layerHome_OwnersLayout);
         layerHome_OwnersLayout.setHorizontalGroup(
             layerHome_OwnersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerHome_OwnersLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(moduleUnitOwners, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layerHome_OwnersLayout.setVerticalGroup(
             layerHome_OwnersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerHome_OwnersLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(moduleUnitOwners, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         layeredPane_Main.setLayer(layerHome_Owners, javax.swing.JLayeredPane.PALETTE_LAYER);
@@ -274,26 +269,21 @@ public class ModuleHome extends SPanel{
         layerHome_Tenants.setLayerButton(menuButton_Tenants);
         layerHome_Tenants.setPaintBackground(false);
 
-        sLabel11.setBackground(new java.awt.Color(0, 0, 0));
-        sLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        sLabel11.setText("Tenants");
-        sLabel11.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-
         javax.swing.GroupLayout layerHome_TenantsLayout = new javax.swing.GroupLayout(layerHome_Tenants);
         layerHome_Tenants.setLayout(layerHome_TenantsLayout);
         layerHome_TenantsLayout.setHorizontalGroup(
             layerHome_TenantsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerHome_TenantsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(moduleUnitTenants, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layerHome_TenantsLayout.setVerticalGroup(
             layerHome_TenantsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerHome_TenantsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(moduleUnitTenants, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         layeredPane_Main.setLayer(layerHome_Tenants, javax.swing.JLayeredPane.PALETTE_LAYER);
@@ -998,7 +988,7 @@ public class ModuleHome extends SPanel{
             sPanelMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanelMenu1Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -1337,7 +1327,7 @@ public class ModuleHome extends SPanel{
             sPanelMenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanelMenu2Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -1357,8 +1347,8 @@ public class ModuleHome extends SPanel{
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(layeredPane_Main)
-            .addComponent(sPanelMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
-            .addComponent(sPanelMenu2, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+            .addComponent(sPanelMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
+            .addComponent(sPanelMenu2, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1432,9 +1422,9 @@ public class ModuleHome extends SPanel{
     private FrameSystem.Layers.Home.Components.MenuMinButton menuMinButton_Visitors;
     public FrameSystem.Layers.Home.Components.MenuMinSwitch menuMinSwitch_Fullscreen;
     public FrameSystem.Layers.Home.Components.MenuSwitch menuSwitch_Fullscreen;
+    public FrameSystem.Layers.Owners.Module.ModuleUnitOwners moduleUnitOwners;
+    public FrameSystem.Layers.Tenants.Module.ModuleUnitTenants moduleUnitTenants;
     public FrameSystem.Layers.Units.Module.ModuleUnits moduleUnits;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel11;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel12;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel13;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel14;
