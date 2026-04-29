@@ -1648,6 +1648,8 @@ public class ModuleUnits extends SPanel{
         sLabel8.setForeground(new java.awt.Color(56, 56, 56));
         sLabel8.setText("Rows per page:");
 
+        jSpinner1.setOpaque(false);
+
         javax.swing.GroupLayout sPanel46Layout = new javax.swing.GroupLayout(sPanel46);
         sPanel46.setLayout(sPanel46Layout);
         sPanel46Layout.setHorizontalGroup(

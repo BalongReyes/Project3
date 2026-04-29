@@ -11,7 +11,10 @@ import DatabaseSystem.UnitsData.UnitsDataTable;
 import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.LayerUnits_Main;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.concurrent.ExecutionException;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 
@@ -21,12 +24,50 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
     
     // Add these variables for pagination
     public static int currentPage = 0; 
-    public static int pageSize = 20;   // The controlled page size
+    public static int pageSize = 20;   // Default, will be overridden by jSpinner1
     
     public static void initDefault() {
         moduleHome.layerHome_Units.addLayeredPanelShowListener((evt) -> {
             LayerUnits_Main.showLayer(moduleUnits.layerUnitsData);
         });
+        
+        initPaginationControls();
+    }
+    
+    public static void initPaginationControls() {
+        // 1. Setup Spinner (Start at 20, Min 10, Max 500, Step by 10)
+        SpinnerNumberModel spinnerModel = new SpinnerNumberModel(pageSize, 10, 500, 10);
+        moduleUnits.jSpinner1.setModel(spinnerModel);
+        
+        moduleUnits.jSpinner1.addChangeListener(e -> {
+            pageSize = (int) moduleUnits.jSpinner1.getValue();
+            currentPage = 0; // Reset to the first page when size changes
+            refreshObjects();
+        });
+
+        // 2. Setup Previous Page (sPanel67)
+        moduleUnits.sPanel67.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (currentPage > 0) {
+                    currentPage--;
+                    refreshObjects();
+                }
+            }
+        });
+
+        // 3. Setup Next Page (sPanel68)
+        moduleUnits.sPanel68.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // You can add a check here to ensure you aren't on the last page
+                currentPage++;
+                refreshObjects();
+            }
+        });
+        
+        // Initial setup for the labels
+        updatePaginationLabels();
     }
 
 // Main Methods ==============================================================================================
@@ -112,11 +153,21 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             SwingUtilities.invokeLater(() -> {
                 if (thisRefreshId != currentRefreshId.get()) return; 
 
-                // Always clear the table before loading the new page
                 moduleUnits.sTable1.clearRows();
                 objects.clear();
                 resetOccupancyDataChart();
                 resetTotalUnitsDataChart();
+
+                // Update the UI labels here!
+                updatePaginationLabels(); 
+
+                // Disable NEXT button if the batch is smaller than the page size (meaning it's the last page)
+                if (dataBatch == null || dataBatch.length < pageSize) {
+                    moduleUnits.sPanel68.setEnabled(false); 
+                    // Note: You might need to adjust alpha/colors manually depending on your custom SPanel
+                } else {
+                    moduleUnits.sPanel68.setEnabled(true);
+                }
 
                 if (dataBatch != null && dataBatch.length > 0) {
                     for (UnitsDataTable data : dataBatch) {
@@ -162,6 +213,24 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
     }
 
 // ---- Page control -----------------------------------------------------------------------------------------
+    
+    public static void updatePaginationLabels() {
+        int displayPage = currentPage + 1; // UI shows 1-based index (1, 2, 3...)
+        
+        // Calculate the starting number so the active page is visible
+        // E.g., if you are on page 3, it might show 2, 3, 4, 5
+        int startNum = Math.max(1, displayPage - 1); 
+
+        // Update the labels
+        moduleUnits.sLabel13.setText(String.valueOf(startNum));
+        moduleUnits.sLabel14.setText(String.valueOf(startNum + 1));
+        moduleUnits.sLabel15.setText(String.valueOf(startNum + 2));
+        moduleUnits.sLabel16.setText(String.valueOf(startNum + 3));
+
+        // (Optional) Visual Highlight
+        // You can change the text color or background of the label that matches 'displayPage'
+        // to indicate which page the user is currently looking at.
+    }
     
     public static void nextPage() {
         currentPage++;
