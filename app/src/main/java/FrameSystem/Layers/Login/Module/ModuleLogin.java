@@ -201,7 +201,7 @@ public class ModuleLogin extends LoginPanelContainer {
 
         loginTextFieldContainer1.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer1.setForeground(new java.awt.Color(0, 0, 0));
-        loginTextFieldContainer1.setRadius(20);
+        loginTextFieldContainer1.setRadius(10);
         loginTextFieldContainer1.setRounded(true);
         loginTextFieldContainer1.setTextFieldChild(loginUsernameField);
 
@@ -241,7 +241,7 @@ public class ModuleLogin extends LoginPanelContainer {
 
         loginTextFieldContainer2.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer2.setForeground(new java.awt.Color(0, 0, 0));
-        loginTextFieldContainer2.setRadius(20);
+        loginTextFieldContainer2.setRadius(10);
         loginTextFieldContainer2.setRounded(true);
         loginTextFieldContainer2.setTextFieldChild(loginPasswordField);
 
@@ -292,7 +292,6 @@ public class ModuleLogin extends LoginPanelContainer {
         loginButton.setHoverColor(new java.awt.Color(193, 193, 193));
         loginButton.setRadius(10);
         loginButton.setText("Login");
-        loginButton.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         loginButton.setPreferredSize(new java.awt.Dimension(87, 38));
 
         javax.swing.GroupLayout layerLogin_OnlineLayout = new javax.swing.GroupLayout(layerLogin_Online);

@@ -19,6 +19,10 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
 
     private static ArrayList<ObjectUnit> objects = new ArrayList<>();
     
+    // Add these variables for pagination
+    public static int currentPage = 0; 
+    public static int pageSize = 20;   // The controlled page size
+    
     public static void initDefault() {
         moduleHome.layerHome_Units.addLayeredPanelShowListener((evt) -> {
             LayerUnits_Main.showLayer(moduleUnits.layerUnitsData);
@@ -69,83 +73,52 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         activeWorker.execute();
     }
 
-    // FIX #6: Use AtomicLong so the increment and reads are safe across threads.
-    // The background thread increments this value; both the EDT and background
-    // threads read it to detect stale refreshes.
     private static final AtomicLong currentRefreshId = new AtomicLong(0);
 
     private static void refreshObjectInBackground() {
-        // Atomically bump and capture the ID for this particular refresh run.
         final long thisRefreshId = currentRefreshId.incrementAndGet();
 
         try {
             long startTime = System.currentTimeMillis();
 
-            int limit = 20;  // How many units to fetch per SQL query
-            int offset = 0;  // Start at the very beginning
-            boolean isFirstBatch = true, hasMoreData = true;
+            // 1. Calculate offset based on current page
+            int limit = pageSize;
+            int offset = currentPage * pageSize; 
 
-            while (hasMoreData) {
-                if (Thread.currentThread().isInterrupted()) return;
+            // 2. Fetch only a single page of data
+            ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnits.getFilters();
+            UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
+                combinedFilters.toArray(new DataTableFilter[0]),
+                limit,
+                offset
+            );
 
-                if (thisRefreshId != currentRefreshId.get()) return;
+            if (thisRefreshId != currentRefreshId.get()) return;
 
-                ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnits.getFilters();
-
-                UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
-                    combinedFilters.toArray(DataTableFilter[]::new),
-                    limit,
-                    offset
-                );
-
-                if (thisRefreshId != currentRefreshId.get()) return;
-
-                if (isFirstBatch) {
-                    long elapsedTime = System.currentTimeMillis() - startTime;
-                    long minLoadingTime = 1000;
-
-                    if (elapsedTime < minLoadingTime) {
-                        try {
-                            Thread.sleep(minLoadingTime - elapsedTime);
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
-                        }
-                    }
+            // Artificial loading delay
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            long minLoadingTime = 1000;
+            if (elapsedTime < minLoadingTime) {
+                try {
+                    Thread.sleep(minLoadingTime - elapsedTime);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                 }
+            }
 
-                if (thisRefreshId != currentRefreshId.get()) return;
+            if (thisRefreshId != currentRefreshId.get()) return;
 
-                // Check if we reached the end of the database
-                if (dataBatch == null || dataBatch.length == 0) {
-                    hasMoreData = false;
+            // 3. Update the UI with the single fetched page
+            SwingUtilities.invokeLater(() -> {
+                if (thisRefreshId != currentRefreshId.get()) return; 
 
-                    if (isFirstBatch) {
-                        SwingUtilities.invokeLater(() -> {
-                            if (thisRefreshId != currentRefreshId.get()) return; // Final UI check
-                            moduleUnits.sTable1.clearRows();
-                            objects.clear();
-                            resetOccupancyDataChart();
-                            resetTotalUnitsDataChart();
-                            LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
-                        });
-                    }
-                    break;
-                }
+                // Always clear the table before loading the new page
+                moduleUnits.sTable1.clearRows();
+                objects.clear();
+                resetOccupancyDataChart();
+                resetTotalUnitsDataChart();
 
-                final boolean firstBatchCopy = isFirstBatch;
-
-                // Update the UI with the freshly loaded batch
-                SwingUtilities.invokeLater(() -> {
-                    if (thisRefreshId != currentRefreshId.get()) return; // Final UI check
-
-                    if (firstBatchCopy) {
-                        moduleUnits.sTable1.clearRows();
-                        objects.clear();
-                        resetOccupancyDataChart();
-                        resetTotalUnitsDataChart();
-                        LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
-                    }
-
+                if (dataBatch != null && dataBatch.length > 0) {
                     for (UnitsDataTable data : dataBatch) {
                         ObjectUnit o = new ObjectUnit(data);
                         o.setOnViewClick(()->{
@@ -156,18 +129,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                         addOccupancyDataChart(data);
                         addTotalUnitsDataChart();
                     }
-                });
-
-                // Prepare for the next round
-                isFirstBatch = false;
-                offset += limit;
-
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
                 }
-            }
+
+                LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
+            });
+
         } catch (SQLException e) {
             SwingUtilities.invokeLater(() -> {
                 Console.errorOut("Gathering object unit error", e);
@@ -195,6 +161,25 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         // moduleUnits.objectUnitScrollPane.repaint();
     }
 
+// ---- Page control -----------------------------------------------------------------------------------------
+    
+    public static void nextPage() {
+        currentPage++;
+        refreshObjects(); // triggers the background worker again
+    }
+
+    public static void previousPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            refreshObjects();
+        }
+    }
+
+    public static void resetPage() {
+        currentPage = 0;
+        refreshObjects();
+    }
+    
 // -----------------------------------------------------------------------------------------------------------
     
     private static int totalUnits = 0;
