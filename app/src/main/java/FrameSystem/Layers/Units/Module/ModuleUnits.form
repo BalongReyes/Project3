@@ -2930,6 +2930,12 @@
                           <SubComponents>
                             <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage1">
                               <Properties>
+                                <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
+                                <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -3015,6 +3021,12 @@
                           <SubComponents>
                             <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage2">
                               <Properties>
+                                <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
+                                <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -3100,6 +3112,12 @@
                           <SubComponents>
                             <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage3">
                               <Properties>
+                                <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
+                                <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -3185,6 +3203,12 @@
                           <SubComponents>
                             <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage4">
                               <Properties>
+                                <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
+                                <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -3270,6 +3294,12 @@
                           <SubComponents>
                             <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage5">
                               <Properties>
+                                <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
+                                <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -3355,6 +3385,12 @@
                           <SubComponents>
                             <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage6">
                               <Properties>
+                                <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
+                                <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -3440,6 +3476,12 @@
                           <SubComponents>
                             <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage7">
                               <Properties>
+                                <Property name="activeBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
+                                <Property name="activeHoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                                </Property>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="f9" green="f9" red="f9" type="rgb"/>

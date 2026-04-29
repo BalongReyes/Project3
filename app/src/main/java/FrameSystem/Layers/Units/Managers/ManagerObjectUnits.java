@@ -11,6 +11,9 @@ import DatabaseSystem.UnitsData.UnitsDataTable;
 import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.LayerUnits_Main;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
+import FrameSystem.SLibrary.SComponents.SLabel;
+import FrameSystem.SLibrary.SComponents.SPanel;
+import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.concurrent.ExecutionException;
@@ -298,26 +301,30 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             }
         }
 
-        // Apply text to the 7 designated panels
-        setPanelText(moduleUnits.sPanelPage1, slots[0]);
-        setPanelText(moduleUnits.sPanelPage2, slots[1]);
-        setPanelText(moduleUnits.sPanelPage3, slots[2]);
-        setPanelText(moduleUnits.sPanelPage4, slots[3]);
-        setPanelText(moduleUnits.sPanelPage5, slots[4]);
-        setPanelText(moduleUnits.sPanelPage6, slots[5]);
-        setPanelText(moduleUnits.sPanelPage7, slots[6]);
+        // Apply text and active state to the 7 designated panels
+        setPanelText(moduleUnits.sPanelPage1, slots[0], displayPage);
+        setPanelText(moduleUnits.sPanelPage2, slots[1], displayPage);
+        setPanelText(moduleUnits.sPanelPage3, slots[2], displayPage);
+        setPanelText(moduleUnits.sPanelPage4, slots[3], displayPage);
+        setPanelText(moduleUnits.sPanelPage5, slots[4], displayPage);
+        setPanelText(moduleUnits.sPanelPage6, slots[5], displayPage);
+        setPanelText(moduleUnits.sPanelPage7, slots[6], displayPage);
     }
     
     // Helper to extract the label from inside the SPanel and set text
-    private static void setPanelText(javax.swing.JPanel panel, String text) {
-        for (java.awt.Component c : panel.getComponents()) {
-            if (c instanceof javax.swing.JLabel) {
-                ((javax.swing.JLabel) c).setText(text);
+    private static void setPanelText(SPanel panel, String text, int displayPage) {
+        for (Component c : panel.getComponents()) {
+            if (c instanceof SLabel label) {
+                label.setText(text);
                 break;
             }
         }
+        
         panel.setVisible(!text.isEmpty()); // Hide if the slot is unused
-        panel.setEnabled(!text.equals("...")); // Disable clicking on ellipses
+        panel.setCanHover(!text.equals("...")); // Disable clicking on ellipses
+        
+        boolean isCurrentPage = text.equals(String.valueOf(displayPage));
+        panel.setActive(isCurrentPage);
     }
     
     public static void nextPage() {
