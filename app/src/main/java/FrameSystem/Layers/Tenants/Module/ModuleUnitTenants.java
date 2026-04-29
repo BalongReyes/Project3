@@ -1706,11 +1706,11 @@ public class ModuleUnitTenants extends SPanel{
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JSpinner jSpinner1;
-    private FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main layerUnitTenantsData;
-    private FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsLoading;
-    private FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main layerUnitTenantsMain;
-    private FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsOffline;
-    private FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsOnline;
+    public FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main layerUnitTenantsData;
+    public FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsLoading;
+    public FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main layerUnitTenantsMain;
+    public FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsOffline;
+    public FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsOnline;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;

@@ -1,8 +1,6 @@
 
 package FrameSystem.Layers.Tenants.Components;
 
-import FrameSystem.Layers.Owners.Components.*;
-import FrameSystem.Layers.Units.Components.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 

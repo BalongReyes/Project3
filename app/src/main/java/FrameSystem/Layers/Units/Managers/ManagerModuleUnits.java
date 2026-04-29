@@ -39,7 +39,7 @@ public class ManagerModuleUnits extends Manager{
         LayerUnits.showLayer(moduleUnits.layerUnitsOffline);
         offlineMode = true;
         
-        frame.reconnectMode("ManagerItemDetails", () -> {
+        frame.reconnectMode("ManagerModuleUnits", () -> {
             LayerUnits.showLayer(moduleUnits.layerUnitsLoading);
             offlineMode = false;
             if(reconnectExecute != null) reconnectExecute.reconnect();

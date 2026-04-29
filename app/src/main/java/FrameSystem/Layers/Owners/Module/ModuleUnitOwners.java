@@ -1712,11 +1712,11 @@ public class ModuleUnitOwners extends SPanel{
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JSpinner jSpinner1;
-    private FrameSystem.Layers.Owners.Components.LayerUnitOwners_Main layerUnitOwnersData;
-    private FrameSystem.Layers.Owners.Components.LayerUnitOwners layerUnitOwnersLoading;
-    private FrameSystem.Layers.Owners.Components.LayerUnitOwners layerUnitOwnersOffline;
-    private FrameSystem.Layers.Owners.Components.LayerUnitOwners layerUnitOwnersOnline;
-    private FrameSystem.Layers.Owners.Components.LayerUnitOwners_Main layerUnitOwnersView;
+    public FrameSystem.Layers.Owners.Components.LayerUnitOwners_Main layerUnitOwnersData;
+    public FrameSystem.Layers.Owners.Components.LayerUnitOwners layerUnitOwnersLoading;
+    public FrameSystem.Layers.Owners.Components.LayerUnitOwners layerUnitOwnersOffline;
+    public FrameSystem.Layers.Owners.Components.LayerUnitOwners layerUnitOwnersOnline;
+    public FrameSystem.Layers.Owners.Components.LayerUnitOwners_Main layerUnitOwnersView;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;

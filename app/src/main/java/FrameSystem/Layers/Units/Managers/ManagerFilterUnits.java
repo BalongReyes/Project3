@@ -5,7 +5,6 @@ import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
 import DatabaseSystem.UnitsData.UnitsDataTable;
 import EventSystem.Listeners.MousePressedAdaptor;
-import static FrameSystem.Layers.Units.Managers.ManagerModuleUnits.moduleUnits;
 import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

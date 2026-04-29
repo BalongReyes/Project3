@@ -485,6 +485,9 @@
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
             <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main" name="layerUnitTenantsData">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card6"/>
@@ -1234,6 +1237,9 @@
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
                   <SubComponents>
                     <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants" name="layerUnitTenantsOffline">
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                           <CardConstraints cardName="card1"/>
@@ -1338,6 +1344,7 @@
                     <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants" name="layerUnitTenantsLoading">
                       <AuxValues>
                         <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -1443,6 +1450,7 @@
                     <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants" name="layerUnitTenantsOnline">
                       <AuxValues>
                         <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -2783,6 +2791,7 @@
             <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main" name="layerUnitTenantsMain">
               <AuxValues>
                 <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
