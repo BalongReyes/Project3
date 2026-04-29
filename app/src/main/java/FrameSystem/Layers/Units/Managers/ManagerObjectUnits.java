@@ -24,7 +24,8 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
     
     // Add these variables for pagination
     public static int currentPage = 0; 
-    public static int pageSize = 20;   // Default, will be overridden by jSpinner1
+    public static int pageSize = 100;   // Default, will be overridden by jSpinner1
+    public static int totalPages = 1;
     
     public static void initDefault() {
         moduleHome.layerHome_Units.addLayeredPanelShowListener((evt) -> {
@@ -65,6 +66,40 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                 refreshObjects();
             }
         });
+        
+        // Array of all 7 page panels
+        javax.swing.JPanel[] pagePanels = {
+            moduleUnits.sPanelPage1, moduleUnits.sPanelPage2, moduleUnits.sPanelPage3, 
+            moduleUnits.sPanelPage4, moduleUnits.sPanelPage5, moduleUnits.sPanelPage6, 
+            moduleUnits.sPanelPage7
+        };
+
+        // Attach a click listener to all of them
+        for (javax.swing.JPanel p : pagePanels) {
+            p.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mousePressed(java.awt.event.MouseEvent e) {
+                    if (!p.isEnabled() || !p.isVisible()) return;
+                    
+                    String text = "";
+                    for (java.awt.Component c : p.getComponents()) {
+                        if (c instanceof javax.swing.JLabel) {
+                            text = ((javax.swing.JLabel) c).getText();
+                            break;
+                        }
+                    }
+                    
+                    // Proceed only if the slot contains a valid number (and not the ellipsis)
+                    if (!text.isEmpty() && !text.equals("...")) {
+                        int targetPage = Integer.parseInt(text) - 1; // Convert UI text back to 0-based code index
+                        if (currentPage != targetPage) {
+                            currentPage = targetPage;
+                            refreshObjects(); // Triggers your background UI update
+                        }
+                    }
+                }
+            });
+        }
         
         // Initial setup for the labels
         updatePaginationLabels();
@@ -128,6 +163,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
 
             // 2. Fetch only a single page of data
             ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnits.getFilters();
+            
+            int totalItems = UnitsDataHandler.getDataCountMulti(combinedFilters.toArray(DataTableFilter[]::new));
+            totalPages = (int) Math.ceil((double) totalItems / pageSize);
+            if (totalPages == 0) totalPages = 1;
+            
             UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
                 combinedFilters.toArray(new DataTableFilter[0]),
                 limit,
@@ -215,21 +255,69 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
 // ---- Page control -----------------------------------------------------------------------------------------
     
     public static void updatePaginationLabels() {
-        int displayPage = currentPage + 1; // UI shows 1-based index (1, 2, 3...)
-        
-        // Calculate the starting number so the active page is visible
-        // E.g., if you are on page 3, it might show 2, 3, 4, 5
-        int startNum = Math.max(1, displayPage - 1); 
+        int displayPage = currentPage + 1; // 1-based index for UI
+        String[] slots = new String[7];
 
-        // Update the labels
-//        moduleUnits.sLabel13.setText(String.valueOf(startNum));
-//        moduleUnits.sLabel14.setText(String.valueOf(startNum + 1));
-//        moduleUnits.sLabel15.setText(String.valueOf(startNum + 2));
-//        moduleUnits.sLabel16.setText(String.valueOf(startNum + 3));
+        if (totalPages <= 7) {
+            // Less than or equal to 7 pages: Display them sequentially
+            slots[0] = totalPages >= 1 ? "1" : "";
+            slots[1] = totalPages >= 2 ? "2" : "";
+            slots[2] = totalPages >= 3 ? "3" : "";
+            slots[3] = totalPages >= 4 ? "4" : "";
+            slots[4] = totalPages >= 5 ? "5" : "";
+            slots[5] = totalPages >= 6 ? "6" : "";
+            slots[6] = totalPages >= 7 ? "7" : "";
+        } else {
+            if (displayPage <= 4) {
+                // Near beginning: 1 2 3 4 5 ... Last
+                slots[0] = "1";
+                slots[1] = "2";
+                slots[2] = "3";
+                slots[3] = "4";
+                slots[4] = "5";
+                slots[5] = "...";
+                slots[6] = String.valueOf(totalPages);
+            } else if (displayPage >= totalPages - 3) {
+                // Near end: 1 ... Last-4 Last-3 Last-2 Last-1 Last
+                slots[0] = "1";
+                slots[1] = "...";
+                slots[2] = String.valueOf(totalPages - 4);
+                slots[3] = String.valueOf(totalPages - 3);
+                slots[4] = String.valueOf(totalPages - 2);
+                slots[5] = String.valueOf(totalPages - 1);
+                slots[6] = String.valueOf(totalPages);
+            } else {
+                // In the middle: 1 ... Current-1 Current Current+1 ... Last
+                slots[0] = "1";
+                slots[1] = "...";
+                slots[2] = String.valueOf(displayPage - 1);
+                slots[3] = String.valueOf(displayPage);
+                slots[4] = String.valueOf(displayPage + 1);
+                slots[5] = "...";
+                slots[6] = String.valueOf(totalPages);
+            }
+        }
 
-        // (Optional) Visual Highlight
-        // You can change the text color or background of the label that matches 'displayPage'
-        // to indicate which page the user is currently looking at.
+        // Apply text to the 7 designated panels
+        setPanelText(moduleUnits.sPanelPage1, slots[0]);
+        setPanelText(moduleUnits.sPanelPage2, slots[1]);
+        setPanelText(moduleUnits.sPanelPage3, slots[2]);
+        setPanelText(moduleUnits.sPanelPage4, slots[3]);
+        setPanelText(moduleUnits.sPanelPage5, slots[4]);
+        setPanelText(moduleUnits.sPanelPage6, slots[5]);
+        setPanelText(moduleUnits.sPanelPage7, slots[6]);
+    }
+    
+    // Helper to extract the label from inside the SPanel and set text
+    private static void setPanelText(javax.swing.JPanel panel, String text) {
+        for (java.awt.Component c : panel.getComponents()) {
+            if (c instanceof javax.swing.JLabel) {
+                ((javax.swing.JLabel) c).setText(text);
+                break;
+            }
+        }
+        panel.setVisible(!text.isEmpty()); // Hide if the slot is unused
+        panel.setEnabled(!text.equals("...")); // Disable clicking on ellipses
     }
     
     public static void nextPage() {

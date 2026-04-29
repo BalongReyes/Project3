@@ -62,6 +62,26 @@ public class UnitsDataHandler {
         return sortedList.toArray(UnitsDataTable[]::new);
     }
     
+    public static int getDataCountMulti(DataTableFilter[] filters) throws SQLException {
+        var whereBy = new StringBuilder();
+        
+        if (filters != null && filters.length > 0) {
+            int whereCount = 0;
+            for (var filter : filters) {
+                var columnName = getColumnName(filter.dataIndex());
+                if (filter.order() == DataTableOrder.WHERE) {
+                    if (whereCount++ > 0) whereBy.append(" OR ");
+                    whereBy.append(columnName).append(" = '").append(filter.dataWhere()).append("'");
+                }
+            }
+        }
+        
+        var query = new StringBuilder("SELECT COUNT(*) FROM units u");
+        if (!whereBy.isEmpty()) query.append(" WHERE ").append(whereBy);
+        
+        return Database.queryForObject(query.toString(), rs -> rs.getInt(1)).orElse(0);
+    }
+    
     public static UnitsDataTable findDataById(int id) throws SQLException {
         // Uses queryForObject to return the item directly or null if it doesn't exist
         return Database.queryForObject(BASE_SELECT_QUERY + " WHERE u.id = ?", UnitsDataTable::new, id).orElse(null);

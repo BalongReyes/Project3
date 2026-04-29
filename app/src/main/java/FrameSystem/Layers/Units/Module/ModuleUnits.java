@@ -1705,7 +1705,7 @@ public class ModuleUnits extends SPanel{
         sPanel67.setPreferredSize(new java.awt.Dimension(25, 25));
 
         sLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLabel9.setIconSize(10);
+        sLabel9.setIconSize(7);
         sLabel9.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/previousPage.png"))); // NOI18N
 
         javax.swing.GroupLayout sPanel67Layout = new javax.swing.GroupLayout(sPanel67);
@@ -2107,7 +2107,7 @@ public class ModuleUnits extends SPanel{
         sPanel68.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sLabel12.setIconSize(10);
+        sLabel12.setIconSize(7);
         sLabel12.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/nextPage.png"))); // NOI18N
 
         javax.swing.GroupLayout sPanel68Layout = new javax.swing.GroupLayout(sPanel68);
