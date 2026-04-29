@@ -222,10 +222,10 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         int startNum = Math.max(1, displayPage - 1); 
 
         // Update the labels
-        moduleUnits.sLabel13.setText(String.valueOf(startNum));
-        moduleUnits.sLabel14.setText(String.valueOf(startNum + 1));
-        moduleUnits.sLabel15.setText(String.valueOf(startNum + 2));
-        moduleUnits.sLabel16.setText(String.valueOf(startNum + 3));
+//        moduleUnits.sLabel13.setText(String.valueOf(startNum));
+//        moduleUnits.sLabel14.setText(String.valueOf(startNum + 1));
+//        moduleUnits.sLabel15.setText(String.valueOf(startNum + 2));
+//        moduleUnits.sLabel16.setText(String.valueOf(startNum + 3));
 
         // (Optional) Visual Highlight
         // You can change the text color or background of the label that matches 'displayPage'
