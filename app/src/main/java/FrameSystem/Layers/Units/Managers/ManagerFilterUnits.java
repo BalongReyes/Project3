@@ -155,7 +155,7 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
             filterDebounceTimer.restart();
         } else {
             filterDebounceTimer = new javax.swing.Timer(300, e -> {
-                ManagerObjectUnits.refreshObjects();
+                ManagerObjectUnits.resetPage(); 
             });
             filterDebounceTimer.setRepeats(false);
             filterDebounceTimer.start();

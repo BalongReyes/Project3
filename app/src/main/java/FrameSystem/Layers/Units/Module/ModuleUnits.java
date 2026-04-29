@@ -1745,8 +1745,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel60.setPaintBackground(false);
 
-        sPanelPage1.setActiveBackgroundColor(new java.awt.Color(216, 216, 216));
-        sPanelPage1.setActiveHoverBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelPage1.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
+        sPanelPage1.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage1.setCanHover(true);
         sPanelPage1.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanelPage1.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
@@ -1797,8 +1797,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel62.setPaintBackground(false);
 
-        sPanelPage2.setActiveBackgroundColor(new java.awt.Color(216, 216, 216));
-        sPanelPage2.setActiveHoverBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelPage2.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
+        sPanelPage2.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage2.setCanHover(true);
         sPanelPage2.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanelPage2.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
@@ -1849,8 +1849,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel64.setPaintBackground(false);
 
-        sPanelPage3.setActiveBackgroundColor(new java.awt.Color(216, 216, 216));
-        sPanelPage3.setActiveHoverBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelPage3.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
+        sPanelPage3.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage3.setCanHover(true);
         sPanelPage3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanelPage3.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
@@ -1901,8 +1901,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel65.setPaintBackground(false);
 
-        sPanelPage4.setActiveBackgroundColor(new java.awt.Color(216, 216, 216));
-        sPanelPage4.setActiveHoverBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelPage4.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
+        sPanelPage4.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage4.setCanHover(true);
         sPanelPage4.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanelPage4.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
@@ -1953,8 +1953,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel66.setPaintBackground(false);
 
-        sPanelPage5.setActiveBackgroundColor(new java.awt.Color(216, 216, 216));
-        sPanelPage5.setActiveHoverBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelPage5.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
+        sPanelPage5.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage5.setCanHover(true);
         sPanelPage5.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanelPage5.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
@@ -2005,8 +2005,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel74.setPaintBackground(false);
 
-        sPanelPage6.setActiveBackgroundColor(new java.awt.Color(216, 216, 216));
-        sPanelPage6.setActiveHoverBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelPage6.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
+        sPanelPage6.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage6.setCanHover(true);
         sPanelPage6.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanelPage6.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
@@ -2057,8 +2057,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel76.setPaintBackground(false);
 
-        sPanelPage7.setActiveBackgroundColor(new java.awt.Color(216, 216, 216));
-        sPanelPage7.setActiveHoverBackgroundColor(new java.awt.Color(216, 216, 216));
+        sPanelPage7.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
+        sPanelPage7.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage7.setCanHover(true);
         sPanelPage7.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanelPage7.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
