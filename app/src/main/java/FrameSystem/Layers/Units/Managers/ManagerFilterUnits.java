@@ -50,7 +50,6 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
         setFilterTitle(moduleUnits.sFilterTitlePanel1);
         setFilterTitle(moduleUnits.sFilterTitlePanel2);
         setFilterTitle(moduleUnits.sFilterTitlePanel3);
-        setFilterTitle(moduleUnits.sFilterTitlePanel4);
         setFilterTitle(moduleUnits.sFilterTitlePanel5);
         setFilterTitle(moduleUnits.sFilterTitlePanel6);
         setFilterTitle(moduleUnits.sFilterTitlePanel7);
@@ -72,9 +71,8 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
             // Make sure no other filtertitle is set to 1 or 2 (reset to neutral: -1)
             SFilterTitlePanel[] allFilterPanels = {
                 moduleUnits.sFilterTitlePanel1, moduleUnits.sFilterTitlePanel2,
-                moduleUnits.sFilterTitlePanel3, moduleUnits.sFilterTitlePanel4,
-                moduleUnits.sFilterTitlePanel5, moduleUnits.sFilterTitlePanel6,
-                moduleUnits.sFilterTitlePanel7
+                moduleUnits.sFilterTitlePanel3, moduleUnits.sFilterTitlePanel5,
+                moduleUnits.sFilterTitlePanel6, moduleUnits.sFilterTitlePanel7
             };
             
             for (SFilterTitlePanel panel : allFilterPanels) {

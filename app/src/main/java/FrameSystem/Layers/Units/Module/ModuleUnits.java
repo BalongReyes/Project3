@@ -82,7 +82,7 @@ public class ModuleUnits extends SPanel{
         sFilterTitlePanel3 = new FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel();
         filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
         sPanel22 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sFilterTitlePanel4 = new FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel();
+        sLabel21 = new FrameSystem.SLibrary.SComponents.SLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 32767));
         sPanel6 = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel29 = new FrameSystem.SLibrary.SComponents.SPanel();
@@ -1002,29 +1002,23 @@ public class ModuleUnits extends SPanel{
         sPanel22.setMinimumSize(new java.awt.Dimension(80, 40));
         sPanel22.setPreferredSize(new java.awt.Dimension(80, 40));
 
-        sFilterTitlePanel4.setArrowDirection(0);
-        sFilterTitlePanel4.setCanHover(true);
-        sFilterTitlePanel4.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
-        sFilterTitlePanel4.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        sFilterTitlePanel4.setRadius(7);
-        sFilterTitlePanel4.setRounded(true);
-        sFilterTitlePanel4.setText("Unit ID");
+        sLabel21.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel21.setText("Unit ID");
 
         javax.swing.GroupLayout sPanel22Layout = new javax.swing.GroupLayout(sPanel22);
         sPanel22.setLayout(sPanel22Layout);
         sPanel22Layout.setHorizontalGroup(
             sPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel22Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(sFilterTitlePanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(sLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sPanel22Layout.setVerticalGroup(
             sPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel22Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(sFilterTitlePanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(5, 5, 5))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel22Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(sLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         sPanel20.add(sPanel22);
@@ -1874,7 +1868,6 @@ public class ModuleUnits extends SPanel{
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel2;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel3;
-    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel4;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel5;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel6;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel7;
@@ -1886,6 +1879,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel19;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel20;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel21;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel22;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel24;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel25;
