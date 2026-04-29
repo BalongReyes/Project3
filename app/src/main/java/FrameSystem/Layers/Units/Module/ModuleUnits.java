@@ -1676,6 +1676,8 @@ public class ModuleUnits extends SPanel{
         sPanel27.setLayout(new javax.swing.BoxLayout(sPanel27, javax.swing.BoxLayout.X_AXIS));
 
         sPanel4.setPaintBackground(false);
+        sPanel4.setMaximumSize(new java.awt.Dimension(40, 35));
+        sPanel4.setMinimumSize(new java.awt.Dimension(40, 35));
         sPanel4.setPreferredSize(new java.awt.Dimension(40, 35));
 
         sPanel67.setCanHover(true);
@@ -1827,6 +1829,8 @@ public class ModuleUnits extends SPanel{
         sPanel27.add(sPanel65);
 
         sPanel66.setPaintBackground(false);
+        sPanel66.setMaximumSize(new java.awt.Dimension(40, 35));
+        sPanel66.setMinimumSize(new java.awt.Dimension(40, 35));
         sPanel66.setPreferredSize(new java.awt.Dimension(40, 35));
 
         sPanel68.setCanHover(true);
@@ -2115,7 +2119,7 @@ public class ModuleUnits extends SPanel{
     public javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSpinner jSpinner1;
+    public javax.swing.JSpinner jSpinner1;
     public FrameSystem.Layers.Units.Components.LayerUnits_Main layerUnitsData;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsLoading;
     public FrameSystem.Layers.Units.Components.LayerUnits layerUnitsOffline;
@@ -2135,10 +2139,10 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel11;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel12;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel13;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel14;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel15;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel16;
+    public FrameSystem.SLibrary.SComponents.SLabel sLabel13;
+    public FrameSystem.SLibrary.SComponents.SLabel sLabel14;
+    public FrameSystem.SLibrary.SComponents.SLabel sLabel15;
+    public FrameSystem.SLibrary.SComponents.SLabel sLabel16;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel17;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel18;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel19;
@@ -2230,8 +2234,8 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel64;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel65;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel66;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel67;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel68;
+    public FrameSystem.SLibrary.SComponents.SPanel sPanel67;
+    public FrameSystem.SLibrary.SComponents.SPanel sPanel68;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel7;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel8;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel9;

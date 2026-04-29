@@ -2778,6 +2778,9 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JSpinner" name="jSpinner1">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2805,6 +2808,12 @@
                         <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel4">
                           <Properties>
                             <Property name="paintBackground" type="boolean" value="false"/>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[40, 35]"/>
+                            </Property>
+                            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[40, 35]"/>
+                            </Property>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[40, 35]"/>
                             </Property>
@@ -2852,6 +2861,9 @@
                                   <Dimension value="[25, 25]"/>
                                 </Property>
                               </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                              </AuxValues>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -2920,6 +2932,9 @@
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="?"/>
                               </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                              </AuxValues>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2957,6 +2972,9 @@
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="?"/>
                               </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                              </AuxValues>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -2994,6 +3012,9 @@
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="?"/>
                               </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                              </AuxValues>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -3031,12 +3052,21 @@
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="?"/>
                               </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                              </AuxValues>
                             </Component>
                           </SubComponents>
                         </Container>
                         <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel66">
                           <Properties>
                             <Property name="paintBackground" type="boolean" value="false"/>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[40, 35]"/>
+                            </Property>
+                            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[40, 35]"/>
+                            </Property>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[40, 35]"/>
                             </Property>
@@ -3081,6 +3111,9 @@
                                   <Dimension value="[25, 25]"/>
                                 </Property>
                               </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                              </AuxValues>
 
                               <Layout>
                                 <DimensionLayout dim="0">
