@@ -272,7 +272,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="hint" type="java.lang.String" value="Search for owners"/>
+            <Property name="hint" type="java.lang.String" value="Search for tenants"/>
             <Property name="hintColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
@@ -484,10 +484,10 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
-            <Container class="FrameSystem.Layers.Owners.Components.LayerUnitOwners_Main" name="layerUnitOwnersData">
+            <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main" name="layerUnitTenantsData">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card4"/>
+                  <CardConstraints cardName="card6"/>
                 </Constraint>
               </Constraints>
 
@@ -1233,10 +1233,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
                   <SubComponents>
-                    <Container class="FrameSystem.Layers.Owners.Components.LayerUnitOwners" name="layerUnitOwnersOffline">
-                      <Properties>
-                        <Property name="paintBackground" type="boolean" value="false"/>
-                      </Properties>
+                    <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants" name="layerUnitTenantsOffline">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                           <CardConstraints cardName="card1"/>
@@ -1338,10 +1335,7 @@
                         </Container>
                       </SubComponents>
                     </Container>
-                    <Container class="FrameSystem.Layers.Owners.Components.LayerUnitOwners" name="layerUnitOwnersLoading">
-                      <Properties>
-                        <Property name="paintBackground" type="boolean" value="false"/>
-                      </Properties>
+                    <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants" name="layerUnitTenantsLoading">
                       <AuxValues>
                         <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                       </AuxValues>
@@ -1446,10 +1440,7 @@
                         </Container>
                       </SubComponents>
                     </Container>
-                    <Container class="FrameSystem.Layers.Owners.Components.LayerUnitOwners" name="layerUnitOwnersOnline">
-                      <Properties>
-                        <Property name="paintBackground" type="boolean" value="false"/>
-                      </Properties>
+                    <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants" name="layerUnitTenantsOnline">
                       <AuxValues>
                         <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                       </AuxValues>
@@ -2789,13 +2780,13 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="FrameSystem.Layers.Owners.Components.LayerUnitOwners_Main" name="layerUnitOwnersView">
+            <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main" name="layerUnitTenantsMain">
               <AuxValues>
                 <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card5"/>
+                  <CardConstraints cardName="card7"/>
                 </Constraint>
               </Constraints>
 
