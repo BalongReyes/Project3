@@ -2399,10 +2399,8 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="sPanel18" alignment="1" pref="35" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="sPanel46" max="32767" attributes="0"/>
-                              <Component id="sPanel27" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="sPanel46" max="32767" attributes="0"/>
+                          <Component id="sPanel27" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -2914,7 +2912,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sPanel69" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sPanelPage1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2923,14 +2921,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="sPanel69" max="32767" attributes="0"/>
+                                      <Component id="sPanelPage1" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel69">
+                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage1">
                               <Properties>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2999,7 +2997,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sPanel70" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sPanelPage2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3008,14 +3006,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="sPanel70" max="32767" attributes="0"/>
+                                      <Component id="sPanelPage2" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel70">
+                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage2">
                               <Properties>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3084,7 +3082,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sPanel71" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sPanelPage3" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3093,14 +3091,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="sPanel71" max="32767" attributes="0"/>
+                                      <Component id="sPanelPage3" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel71">
+                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage3">
                               <Properties>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3169,7 +3167,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sPanel72" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sPanelPage4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3178,14 +3176,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="sPanel72" max="32767" attributes="0"/>
+                                      <Component id="sPanelPage4" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel72">
+                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage4">
                               <Properties>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3254,7 +3252,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sPanel73" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sPanelPage5" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3263,14 +3261,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="sPanel73" max="32767" attributes="0"/>
+                                      <Component id="sPanelPage5" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel73">
+                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage5">
                               <Properties>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3339,7 +3337,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sPanel75" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sPanelPage6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3348,14 +3346,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="sPanel75" max="32767" attributes="0"/>
+                                      <Component id="sPanelPage6" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel75">
+                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage6">
                               <Properties>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3424,7 +3422,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sPanel77" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sPanelPage7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3433,14 +3431,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Component id="sPanel77" max="32767" attributes="0"/>
+                                      <Component id="sPanelPage7" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel77">
+                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanelPage7">
                               <Properties>
                                 <Property name="canHover" type="boolean" value="true"/>
                                 <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
