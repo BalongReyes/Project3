@@ -22,7 +22,7 @@ public class MenuMinSwitch extends SPanelActivatableHover{
         sLabel1.addMouseListener(hoverListener);
     }
         
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
     
     @Override
     public void setActive(boolean active){
@@ -37,7 +37,7 @@ public class MenuMinSwitch extends SPanelActivatableHover{
         super.setActive(active);
     }
 
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
     
     private Color activeForegroundColor = Color.white;
 
@@ -146,7 +146,7 @@ public class MenuMinSwitch extends SPanelActivatableHover{
         super.setRounded(rounded);
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public final void addMouseListener(MouseListener l){
@@ -154,7 +154,7 @@ public class MenuMinSwitch extends SPanelActivatableHover{
         sLabel1.addMouseListener(l);
     }
     
-// Generated =================================================================================================
+// ==== Generated ============================================================================================
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

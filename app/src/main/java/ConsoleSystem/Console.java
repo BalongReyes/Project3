@@ -25,7 +25,7 @@ public class Console{
         return new Console();
     }
     
-// System console output -------------------------------------------------------------------------------------
+// ---- System console output --------------------------------------------------------------------------------
     
     public static <E> Console out(E[] arrayOutput){
         for(E report : arrayOutput) out((String)report, true);
@@ -54,7 +54,7 @@ public class Console{
         return new Console();
     }
     
-// System console output with color --------------------------------------------------------------------------
+// ---- System console output with color ---------------------------------------------------------------------
     
     public static <E> Console out(E[] arrayOutput, ConsoleColors color){
         for(E report : arrayOutput) out((String)report, color, true);
@@ -83,7 +83,7 @@ public class Console{
         return new Console();
     }
     
-// Error -----------------------------------------------------------------------------------------------------
+// ---- Error ------------------------------------------------------------------------------------------------
     
     public static void errorOut(String errorMessage, Exception e){
         Console.line();

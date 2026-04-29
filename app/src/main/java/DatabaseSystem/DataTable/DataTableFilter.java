@@ -8,7 +8,6 @@ public record DataTableFilter(
         
 ){
     
-    // Overloaded constructor for when 'dataWhere' is not needed
     public DataTableFilter(int dataIndex, DataTableOrder order) {
         this(dataIndex, order, null);
     }

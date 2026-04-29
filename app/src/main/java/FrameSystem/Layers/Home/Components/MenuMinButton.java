@@ -26,7 +26,7 @@ public class MenuMinButton extends SLayerButton{
         sLabel1.addMouseListener(hoverListener);
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     @Override
     public void setActive(boolean active){
@@ -178,7 +178,7 @@ public class MenuMinButton extends SLayerButton{
         );
     }// </editor-fold>//GEN-END:initComponents
 
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
     
     @Override
     public void paint(Graphics g){

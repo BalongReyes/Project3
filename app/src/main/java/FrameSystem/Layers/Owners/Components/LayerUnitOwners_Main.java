@@ -1,19 +1,20 @@
 
-package FrameSystem.Layers.Home.Components;
+package FrameSystem.Layers.Owners.Components;
+
+import FrameSystem.Layers.Units.Components.*;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
 import FrameSystem.SLibrary.SAbstractComponents.SLayer;
 import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
-import java.awt.event.KeyEvent;
-import java.beans.BeanProperty;
-import java.util.ArrayList;
 
-public class LayerHome extends SLayer{
+public class LayerUnitOwners_Main extends SLayer{
 
-// ==== Constructor ==========================================================================================
+// Constructor ===============================================================================================
     
-    public LayerHome(){
+    public LayerUnitOwners_Main(){
         addLayer();
     }
 
@@ -21,27 +22,27 @@ public class LayerHome extends SLayer{
         addLayer(this);
     }
     
-// ==== Implementations ======================================================================================
+// Implementations ===========================================================================================
     
     @Override
     protected void showLayeredPanel(){
         showLayer(this);
     }
 
-// ==== Static Methods =======================================================================================
+// Static Methods ============================================================================================
 
-    private static ArrayList<LayerHome> layeredPanels = new ArrayList<>();
-    private static LayerHome currentLayeredPanel = null;
+    private static ArrayList<LayerUnitOwners_Main> layeredPanels = new ArrayList<>();
+    private static LayerUnitOwners_Main currentLayeredPanel = null;
     
-    private static void addLayer(LayerHome layer){
+    private static void addLayer(LayerUnitOwners_Main layer){
         layeredPanels.add(layer);
     }
     
-    public static LayerHome getCurrentLayeredPanel(){
+    public static LayerUnitOwners_Main getCurrentLayeredPanel(){
         return currentLayeredPanel;
     }
     
-    public static void showLayer(LayerHome showLayer){
+    public static void showLayer(LayerUnitOwners_Main showLayer){
         if(currentLayeredPanel != null && (!currentLayeredPanel.fireLayeredPanelHideListener(showLayer.getAccessibleContext().getAccessibleName()))){
             return;
         }
@@ -51,7 +52,7 @@ public class LayerHome extends SLayer{
         
         Console.line().out("SHOWING LAYER " + showLayer.getName(), ConsoleColors.GREEN);
         
-        for(LayerHome layer : layeredPanels){
+        for(LayerUnitOwners_Main layer : layeredPanels){
             SLayerButton layeredButton = layer.getLayerButton();
             
             layer.setVisible(layer == showLayer);
@@ -64,18 +65,6 @@ public class LayerHome extends SLayer{
     public static void keyPressed(KeyEvent evt){
         if(currentLayeredPanel == null) return;
         currentLayeredPanel.fireLayeredPanelKeyPressedListener(evt);
-    }
-    
-// ==== Overrided Methods ====================================================================================
-
-    @BeanProperty(preferred = true, visualUpdate = true, description = "The button that will show this panel")
-    public void setLayerButton(MenuButton button){
-        super.setLayerButton(button);
-    }
-
-    @Override
-    @BeanProperty(hidden = true)
-    public void setLayerButton(SLayerButton button){
     }
 
 }

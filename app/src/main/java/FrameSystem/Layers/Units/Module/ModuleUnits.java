@@ -15,6 +15,13 @@ public class ModuleUnits extends SPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        sPanel21 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sPanel34 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sLabel38 = new FrameSystem.SLibrary.SComponents.SLabel();
+        sPanel49 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sLabel37 = new FrameSystem.SLibrary.SComponents.SLabel();
+        sPanel61 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sLabel31 = new FrameSystem.SLibrary.SComponents.SLabel();
         sTextFieldContainer1 = new FrameSystem.SLibrary.SGenericComponents.STextFieldContainer();
         sTextField1 = new FrameSystem.SLibrary.SComponents.STextField();
         sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
@@ -156,13 +163,109 @@ public class ModuleUnits extends SPanel{
         sPanel68 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel12 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnitsView = new FrameSystem.Layers.Units.Components.LayerUnits_Main();
-        sPanel21 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sPanel34 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sLabel38 = new FrameSystem.SLibrary.SComponents.SLabel();
-        sPanel49 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sLabel37 = new FrameSystem.SLibrary.SComponents.SLabel();
-        sPanel61 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sLabel31 = new FrameSystem.SLibrary.SComponents.SLabel();
+
+        sPanel21.setPaintBackground(false);
+        sPanel21.setPreferredSize(new java.awt.Dimension(250, 0));
+        sPanel21.setLayout(new javax.swing.BoxLayout(sPanel21, javax.swing.BoxLayout.PAGE_AXIS));
+
+        sPanel34.setRadius(15);
+        sPanel34.setRounded(true);
+        sPanel34.setShadowColor(new java.awt.Color(230, 230, 230));
+        sPanel34.setShadowOpacity(0.3F);
+        sPanel34.setShadowSize(5);
+        sPanel34.setShadowX(true);
+        sPanel34.setShadowY(true);
+        sPanel34.setPreferredSize(new java.awt.Dimension(250, 0));
+
+        sLabel38.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel38.setText("Filters");
+        sLabel38.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        sLabel38.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        javax.swing.GroupLayout sPanel34Layout = new javax.swing.GroupLayout(sPanel34);
+        sPanel34.setLayout(sPanel34Layout);
+        sPanel34Layout.setHorizontalGroup(
+            sPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel34Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(sLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(161, 161, 161))
+        );
+        sPanel34Layout.setVerticalGroup(
+            sPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel34Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(sLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(308, Short.MAX_VALUE))
+        );
+
+        sPanel21.add(sPanel34);
+
+        sPanel49.setRadius(15);
+        sPanel49.setRounded(true);
+        sPanel49.setShadowColor(new java.awt.Color(230, 230, 230));
+        sPanel49.setShadowOpacity(0.3F);
+        sPanel49.setShadowSize(5);
+        sPanel49.setShadowX(true);
+        sPanel49.setShadowY(true);
+        sPanel49.setPreferredSize(new java.awt.Dimension(250, 0));
+
+        sLabel37.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel37.setText("Quick Actions");
+        sLabel37.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        sLabel37.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        javax.swing.GroupLayout sPanel49Layout = new javax.swing.GroupLayout(sPanel49);
+        sPanel49.setLayout(sPanel49Layout);
+        sPanel49Layout.setHorizontalGroup(
+            sPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel49Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(sLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(161, 161, 161))
+        );
+        sPanel49Layout.setVerticalGroup(
+            sPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel49Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(sLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(308, Short.MAX_VALUE))
+        );
+
+        sPanel21.add(sPanel49);
+
+        sPanel61.setRadius(15);
+        sPanel61.setRounded(true);
+        sPanel61.setShadowColor(new java.awt.Color(230, 230, 230));
+        sPanel61.setShadowOpacity(0.3F);
+        sPanel61.setShadowSize(5);
+        sPanel61.setShadowX(true);
+        sPanel61.setShadowY(true);
+        sPanel61.setPreferredSize(new java.awt.Dimension(250, 0));
+
+        sLabel31.setForeground(new java.awt.Color(56, 56, 56));
+        sLabel31.setText("Recent Concerns");
+        sLabel31.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        sLabel31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        javax.swing.GroupLayout sPanel61Layout = new javax.swing.GroupLayout(sPanel61);
+        sPanel61.setLayout(sPanel61Layout);
+        sPanel61Layout.setHorizontalGroup(
+            sPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel61Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(sLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(161, 161, 161))
+        );
+        sPanel61Layout.setVerticalGroup(
+            sPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel61Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(sLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(308, Short.MAX_VALUE))
+        );
+
+        sPanel21.add(sPanel61);
 
         setPaintBackground(false);
 
@@ -347,7 +450,7 @@ public class ModuleUnits extends SPanel{
         sLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         sLabel29.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel29.setText("12");
+        sLabel29.setText("0");
         sLabel29.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         sLabel29.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
 
@@ -409,7 +512,7 @@ public class ModuleUnits extends SPanel{
         );
 
         sLabel7.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel7.setText("High: 2");
+        sLabel7.setText("High: 0");
 
         javax.swing.GroupLayout sPanel11Layout = new javax.swing.GroupLayout(sPanel11);
         sPanel11.setLayout(sPanel11Layout);
@@ -451,7 +554,7 @@ public class ModuleUnits extends SPanel{
         );
 
         sLabel25.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel25.setText("Medium: 6");
+        sLabel25.setText("Medium: 0");
 
         javax.swing.GroupLayout sPanel37Layout = new javax.swing.GroupLayout(sPanel37);
         sPanel37.setLayout(sPanel37Layout);
@@ -493,7 +596,7 @@ public class ModuleUnits extends SPanel{
         );
 
         sLabel27.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel27.setText("Low: 4");
+        sLabel27.setText("Low: 0");
 
         javax.swing.GroupLayout sPanel39Layout = new javax.swing.GroupLayout(sPanel39);
         sPanel39.setLayout(sPanel39Layout);
@@ -1183,7 +1286,7 @@ public class ModuleUnits extends SPanel{
             sPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel14Layout.createSequentialGroup()
                 .addComponent(sLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         sPanel14Layout.setVerticalGroup(
             sPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1206,7 +1309,7 @@ public class ModuleUnits extends SPanel{
             sPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel28Layout.createSequentialGroup()
                 .addComponent(sLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         sPanel28Layout.setVerticalGroup(
             sPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1276,7 +1379,7 @@ public class ModuleUnits extends SPanel{
             sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(sPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1437, Short.MAX_VALUE)
+                .addComponent(sPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1687, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         sPanel2Layout.setVerticalGroup(
@@ -1455,7 +1558,7 @@ public class ModuleUnits extends SPanel{
         layerUnitsOffline1.setLayout(layerUnitsOffline1Layout);
         layerUnitsOffline1Layout.setHorizontalGroup(
             layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1437, Short.MAX_VALUE)
+            .addGap(0, 1687, Short.MAX_VALUE)
         );
         layerUnitsOffline1Layout.setVerticalGroup(
             layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1759,6 +1862,7 @@ public class ModuleUnits extends SPanel{
         sLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel23.setIconSize(10);
         sLabel23.setText("?");
+        sLabel23.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout sPanelPage1Layout = new javax.swing.GroupLayout(sPanelPage1);
         sPanelPage1.setLayout(sPanelPage1Layout);
@@ -1811,6 +1915,7 @@ public class ModuleUnits extends SPanel{
         sLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel39.setIconSize(10);
         sLabel39.setText("?");
+        sLabel39.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout sPanelPage2Layout = new javax.swing.GroupLayout(sPanelPage2);
         sPanelPage2.setLayout(sPanelPage2Layout);
@@ -1863,6 +1968,7 @@ public class ModuleUnits extends SPanel{
         sLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel40.setIconSize(10);
         sLabel40.setText("?");
+        sLabel40.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout sPanelPage3Layout = new javax.swing.GroupLayout(sPanelPage3);
         sPanelPage3.setLayout(sPanelPage3Layout);
@@ -1915,6 +2021,7 @@ public class ModuleUnits extends SPanel{
         sLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel41.setIconSize(10);
         sLabel41.setText("?");
+        sLabel41.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout sPanelPage4Layout = new javax.swing.GroupLayout(sPanelPage4);
         sPanelPage4.setLayout(sPanelPage4Layout);
@@ -1967,6 +2074,7 @@ public class ModuleUnits extends SPanel{
         sLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel42.setIconSize(10);
         sLabel42.setText("?");
+        sLabel42.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout sPanelPage5Layout = new javax.swing.GroupLayout(sPanelPage5);
         sPanelPage5.setLayout(sPanelPage5Layout);
@@ -2019,6 +2127,7 @@ public class ModuleUnits extends SPanel{
         sLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel43.setIconSize(10);
         sLabel43.setText("?");
+        sLabel43.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout sPanelPage6Layout = new javax.swing.GroupLayout(sPanelPage6);
         sPanelPage6.setLayout(sPanelPage6Layout);
@@ -2071,6 +2180,7 @@ public class ModuleUnits extends SPanel{
         sLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel44.setIconSize(10);
         sLabel44.setText("?");
+        sLabel44.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout sPanelPage7Layout = new javax.swing.GroupLayout(sPanelPage7);
         sPanelPage7.setLayout(sPanelPage7Layout);
@@ -2185,7 +2295,7 @@ public class ModuleUnits extends SPanel{
             layerUnitsDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLayeredPane1)
-            .addComponent(sPanel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sPanel63, javax.swing.GroupLayout.DEFAULT_SIZE, 1687, Short.MAX_VALUE)
         );
         layerUnitsDataLayout.setVerticalGroup(
             layerUnitsDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2207,7 +2317,7 @@ public class ModuleUnits extends SPanel{
         layerUnitsView.setLayout(layerUnitsViewLayout);
         layerUnitsViewLayout.setHorizontalGroup(
             layerUnitsViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1437, Short.MAX_VALUE)
+            .addGap(0, 1687, Short.MAX_VALUE)
         );
         layerUnitsViewLayout.setVerticalGroup(
             layerUnitsViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2234,109 +2344,6 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
-        sPanel21.setPaintBackground(false);
-        sPanel21.setPreferredSize(new java.awt.Dimension(250, 0));
-        sPanel21.setLayout(new javax.swing.BoxLayout(sPanel21, javax.swing.BoxLayout.PAGE_AXIS));
-
-        sPanel34.setRadius(15);
-        sPanel34.setRounded(true);
-        sPanel34.setShadowColor(new java.awt.Color(230, 230, 230));
-        sPanel34.setShadowOpacity(0.3F);
-        sPanel34.setShadowSize(5);
-        sPanel34.setShadowX(true);
-        sPanel34.setShadowY(true);
-        sPanel34.setPreferredSize(new java.awt.Dimension(250, 0));
-
-        sLabel38.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel38.setText("Filters");
-        sLabel38.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        sLabel38.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        javax.swing.GroupLayout sPanel34Layout = new javax.swing.GroupLayout(sPanel34);
-        sPanel34.setLayout(sPanel34Layout);
-        sPanel34Layout.setHorizontalGroup(
-            sPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel34Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(sLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(161, 161, 161))
-        );
-        sPanel34Layout.setVerticalGroup(
-            sPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel34Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(sLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(303, Short.MAX_VALUE))
-        );
-
-        sPanel21.add(sPanel34);
-
-        sPanel49.setRadius(15);
-        sPanel49.setRounded(true);
-        sPanel49.setShadowColor(new java.awt.Color(230, 230, 230));
-        sPanel49.setShadowOpacity(0.3F);
-        sPanel49.setShadowSize(5);
-        sPanel49.setShadowX(true);
-        sPanel49.setShadowY(true);
-        sPanel49.setPreferredSize(new java.awt.Dimension(250, 0));
-
-        sLabel37.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel37.setText("Quick Actions");
-        sLabel37.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        sLabel37.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        javax.swing.GroupLayout sPanel49Layout = new javax.swing.GroupLayout(sPanel49);
-        sPanel49.setLayout(sPanel49Layout);
-        sPanel49Layout.setHorizontalGroup(
-            sPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel49Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(sLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(161, 161, 161))
-        );
-        sPanel49Layout.setVerticalGroup(
-            sPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel49Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(sLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(303, Short.MAX_VALUE))
-        );
-
-        sPanel21.add(sPanel49);
-
-        sPanel61.setRadius(15);
-        sPanel61.setRounded(true);
-        sPanel61.setShadowColor(new java.awt.Color(230, 230, 230));
-        sPanel61.setShadowOpacity(0.3F);
-        sPanel61.setShadowSize(5);
-        sPanel61.setShadowX(true);
-        sPanel61.setShadowY(true);
-        sPanel61.setPreferredSize(new java.awt.Dimension(250, 0));
-
-        sLabel31.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel31.setText("Recent Concerns");
-        sLabel31.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        sLabel31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        javax.swing.GroupLayout sPanel61Layout = new javax.swing.GroupLayout(sPanel61);
-        sPanel61.setLayout(sPanel61Layout);
-        sPanel61Layout.setHorizontalGroup(
-            sPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel61Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(sLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(161, 161, 161))
-        );
-        sPanel61Layout.setVerticalGroup(
-            sPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel61Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(sLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(303, Short.MAX_VALUE))
-        );
-
-        sPanel21.add(sPanel61);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -2358,7 +2365,6 @@ public class ModuleUnits extends SPanel{
                         .addComponent(sPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(sPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addComponent(sPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
@@ -2366,19 +2372,16 @@ public class ModuleUnits extends SPanel{
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(sTextFieldContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(sPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(sPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, 0)
-                        .addComponent(sPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(sPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(sTextFieldContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(sPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(sPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(10, 10, 10))
         );
     }// </editor-fold>//GEN-END:initComponents

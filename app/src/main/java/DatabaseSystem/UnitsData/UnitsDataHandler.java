@@ -10,7 +10,6 @@ import DatabaseSystem.Database;
 
 public class UnitsDataHandler {
 
-    // Modern Text Block for SQL Query
     private static final String BASE_SELECT_QUERY = """
         SELECT u.*, 
         EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id) AS has_owner, 
@@ -57,7 +56,6 @@ public class UnitsDataHandler {
         
         query.append(" LIMIT ? OFFSET ?");
         
-        // Use queryForList to map the parameterized query automatically
         List<UnitsDataTable> sortedList = Database.queryForList(query.toString(), UnitsDataTable::new, limit, offset);
         return sortedList.toArray(UnitsDataTable[]::new);
     }
@@ -83,12 +81,10 @@ public class UnitsDataHandler {
     }
     
     public static UnitsDataTable findDataById(int id) throws SQLException {
-        // Uses queryForObject to return the item directly or null if it doesn't exist
         return Database.queryForObject(BASE_SELECT_QUERY + " WHERE u.id = ?", UnitsDataTable::new, id).orElse(null);
     }
 
     public static String getColumnName(int dataIndex) {
-        // Using the 'u.' alias ensures there are no ambiguous column errors with the subqueries
         return switch (dataIndex) {
             case UnitsDataTable.ID -> "u.id";
             case UnitsDataTable.TOWER -> "u.tower";

@@ -26,7 +26,6 @@ public record AccountsDataTable(
     public static final int USERNAME = 4;
     public static final int ROLE = 5;    
 
-    // Secondary constructor for mapping ResultSet
     public AccountsDataTable(ResultSet results) throws SQLException {
         this(
             results.getInt("id"),

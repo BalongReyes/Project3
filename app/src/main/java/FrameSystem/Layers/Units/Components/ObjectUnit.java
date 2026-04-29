@@ -47,7 +47,7 @@ public class ObjectUnit extends SPanel{
         if(accountNumber != null){
             sLabel3.setText(String.valueOf(accountNumber));
         }else{
-            sLabel3.setText("");
+            sLabel3.setText("-");
         }
         
         sLabel2.setText(
@@ -72,7 +72,7 @@ public class ObjectUnit extends SPanel{
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
             sLabel5.setText(localDate.format(formatter));
         }else{
-            sLabel5.setText("");
+            sLabel5.setText("-");
         }
         
         occupancyType.setOccupancy(data.getOccupancy());

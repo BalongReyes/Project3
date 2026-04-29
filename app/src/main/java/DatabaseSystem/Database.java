@@ -24,7 +24,6 @@ public class Database {
         try {
             Dotenv dotenv = Dotenv.configure().load();
 
-            // Required — will throw if missing
             String dbPassword = getRequired(dotenv, "DB_PASSWORD");
             String dbName = getRequired(dotenv, "DB_NAME");
             String dbUser = getRequired(dotenv, "DB_USER");
@@ -38,7 +37,6 @@ public class Database {
             config.setUsername(dbUser);
             config.setPassword(dbPassword);
 
-            // Recommended HikariCP Performance Settings for MySQL
             config.addDataSourceProperty("cachePrepStmts",          "true");
             config.addDataSourceProperty("prepStmtCacheSize",        "250");
             config.addDataSourceProperty("prepStmtCacheSqlLimit",    "2048");
@@ -50,7 +48,6 @@ public class Database {
             config.addDataSourceProperty("elideSetAutoCommits",      "true");
             config.addDataSourceProperty("maintainTimeStats",        "false");
 
-            // Pool Size Configuration
             config.setMaximumPoolSize(10);
             config.setMinimumIdle(2);
             config.setIdleTimeout(30000);
@@ -64,19 +61,12 @@ public class Database {
         }
     }
 
-    /** Reads a required .env key — throws if missing or blank. */
     private static String getRequired(Dotenv dotenv, String key) {
         String value = dotenv.get(key);
         if (value == null || value.trim().isEmpty()) {
             throw new IllegalStateException("'" + key + "' is not set or empty in the .env file.");
         }
         return value;
-    }
-
-    /** Reads an optional .env key — returns the defaultValue if missing or blank. */
-    private static String getOptional(Dotenv dotenv, String key, String defaultValue) {
-        String value = dotenv.get(key);
-        return (value != null && !value.trim().isEmpty()) ? value : defaultValue;
     }
 
     public static void closeConnection() {
@@ -87,7 +77,6 @@ public class Database {
         }
     }
 
-    // Fetches a connection from the pool. Callers must call close() on this connection to return it!
     public static Connection getConnection() throws SQLException {
         if (dataSource == null) {
             throw new SQLException("DataSource is not initialized.");
@@ -99,7 +88,7 @@ public class Database {
         return dataSource != null && !dataSource.isClosed() && dataSource.isRunning();
     }
 
-// Secure Methods for INSERT, UPDATE, DELETE =================================================================
+// ==== Secure Methods for INSERT, UPDATE, DELETE ============================================================
     
     public static void executePrepared(String query, Object... parameters) throws SQLException {
         if (dataSource == null) throw new SQLException("Database offline");
@@ -131,7 +120,7 @@ public class Database {
         }
     }
 
-// Modern Generic Data Access Methods ========================================================================
+// ==== Modern Generic Data Access Methods ===================================================================
 
     public interface RowMapper<T> {
         T map(ResultSet rs) throws SQLException;
@@ -172,7 +161,7 @@ public class Database {
         return Optional.empty();
     }
 
-// Modern Transaction Management =============================================================================
+// ==== Modern Transaction Management ========================================================================
 
     public interface TransactionCallback<T> {
         T execute(Connection conn) throws SQLException;

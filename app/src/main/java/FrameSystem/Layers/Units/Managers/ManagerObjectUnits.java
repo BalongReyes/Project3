@@ -39,7 +39,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
     }
     
     public static void initPaginationControls() {
-        // 1. Setup Spinner (Start at 20, Min 10, Max 500, Step by 10)
         SpinnerNumberModel spinnerModel = new SpinnerNumberModel(pageSize, 10, 500, 10);
         moduleUnits.jSpinner1.setModel(spinnerModel);
         
@@ -49,7 +48,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             refreshObjects();
         });
 
-        // 2. Setup Previous Page (sPanel67)
         moduleUnits.sPanel67.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -60,13 +58,14 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             }
         });
 
-        // 3. Setup Next Page (sPanel68)
-        moduleUnits.sPanel68.addMouseListener(new MouseAdapter() {
+        moduleUnits.sPanel68.addMouseListener(new MouseAdapter(){
             @Override
-            public void mousePressed(MouseEvent e) {
-                // You can add a check here to ensure you aren't on the last page
-                currentPage++;
-                refreshObjects();
+            public void mousePressed(MouseEvent e){
+                // Prevent going past the last page!
+                if(currentPage < totalPages - 1){
+                    currentPage++;
+                    refreshObjects();
+                }
             }
         });
         
@@ -108,7 +107,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         updatePaginationLabels();
     }
 
-// Main Methods ==============================================================================================
+// ==== Main Methods =========================================================================================
     
 // ---- Refresh ----------------------------------------------------------------------------------------------
 
@@ -164,20 +163,30 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             int limit = pageSize;
             int offset = currentPage * pageSize; 
 
-            // 2. Fetch only a single page of data
+            // 2. Fetch ALL matching data so charts can calculate the full filtered set
             ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnits.getFilters();
             
-            int totalItems = UnitsDataHandler.getDataCountMulti(combinedFilters.toArray(DataTableFilter[]::new));
-            totalPages = (int) Math.ceil((double) totalItems / pageSize);
-            if (totalPages == 0) totalPages = 1;
-            
-            UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(
+            UnitsDataTable[] fullDataBatch = UnitsDataHandler.getDataBatchSortedMulti(
                 combinedFilters.toArray(new DataTableFilter[0]),
-                limit,
-                offset
+                999999, // Use a high limit to get all records for the charts
+                0
             );
 
             if (thisRefreshId != currentRefreshId.get()) return;
+
+            // Calculate total pages based on full filtered results
+            int totalItems = fullDataBatch != null ? fullDataBatch.length : 0;
+            totalPages = (int) Math.ceil((double) totalItems / pageSize);
+            if (totalPages == 0) totalPages = 1;
+
+            // 3. Manually slice the data to grab ONLY the current page for the table
+            ArrayList<UnitsDataTable> pageDataList = new ArrayList<>();
+            if (fullDataBatch != null) {
+                for (int i = offset; i < Math.min(offset + limit, fullDataBatch.length); i++) {
+                    pageDataList.add(fullDataBatch[i]);
+                }
+            }
+            UnitsDataTable[] dataBatch = pageDataList.toArray(new UnitsDataTable[0]);
 
             // Artificial loading delay
             long elapsedTime = System.currentTimeMillis() - startTime;
@@ -192,7 +201,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
 
             if (thisRefreshId != currentRefreshId.get()) return;
 
-            // 3. Update the UI with the single fetched page
+            // 4. Update the UI
             SwingUtilities.invokeLater(() -> {
                 if (thisRefreshId != currentRefreshId.get()) return; 
 
@@ -207,11 +216,19 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                 // Disable NEXT button if the batch is smaller than the page size (meaning it's the last page)
                 if (dataBatch == null || dataBatch.length < pageSize) {
                     moduleUnits.sPanel68.setEnabled(false); 
-                    // Note: You might need to adjust alpha/colors manually depending on your custom SPanel
                 } else {
                     moduleUnits.sPanel68.setEnabled(true);
                 }
 
+                // A) Feed the charts with the FULL dataset
+                if (fullDataBatch != null && fullDataBatch.length > 0) {
+                    for (UnitsDataTable data : fullDataBatch) {
+                        addOccupancyDataChart(data);
+                        addTotalUnitsDataChart();
+                    }
+                }
+
+                // B) Populate the Table with ONLY the paginated slice
                 if (dataBatch != null && dataBatch.length > 0) {
                     for (UnitsDataTable data : dataBatch) {
                         ObjectUnit o = new ObjectUnit(data);
@@ -220,8 +237,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                         });
                         objects.add(o);
                         moduleUnits.sTable1.addRow(o);
-                        addOccupancyDataChart(data);
-                        addTotalUnitsDataChart();
                     }
                 }
 
@@ -327,9 +342,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         panel.setActive(isCurrentPage);
     }
     
-    public static void nextPage() {
-        currentPage++;
-        refreshObjects(); // triggers the background worker again
+    public static void nextPage(){
+        if(currentPage < totalPages - 1){
+            currentPage++;
+            refreshObjects();
+        }
     }
 
     public static void previousPage() {

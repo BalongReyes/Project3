@@ -99,7 +99,7 @@ public record UnitsDataTable(
     }
     
     public UnitsDataOccupancy getOccupancy(){
-        if (hasTenant) {
+        if(hasTenant){
             if(isTenantWeekender){
                 return UnitsDataOccupancy.TenantWeekenders;
             }else if(isTenantNoActivity){
@@ -107,7 +107,7 @@ public record UnitsDataTable(
             }else{
                 return UnitsDataOccupancy.Tenant;
             }
-        } else if (hasOwner) {
+        }else if(hasOwner){
             if(isOwnerWeekender){
                 return UnitsDataOccupancy.OwnerWeekenders;
             }else if(isOwnerNoActivity){
@@ -115,15 +115,15 @@ public record UnitsDataTable(
             }else{
                 return UnitsDataOccupancy.Owner;
             }
-        } else {
+        }else{
             return UnitsDataOccupancy.UnturnedOver;
         }
     }
     
     public UnitsDataUnitStatus getUnitStatus(){
-        if (hasOwner) {
+        if(hasOwner){
             return UnitsDataUnitStatus.TurnedOver;
-        } else {
+        }else{
             return UnitsDataUnitStatus.UnturnedOver;
         }
     }
