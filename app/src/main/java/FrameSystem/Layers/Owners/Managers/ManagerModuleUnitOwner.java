@@ -6,7 +6,7 @@ import FrameSystem.Layers.Owners.Components.LayerUnitOwners;
 import FrameSystem.Layers.Owners.Module.ModuleUnitOwners;
 import MainSystem.Manager;
 
-public class ManagerModuleUnitOwner extends Manager{
+public class ManagerModuleUnitOwner extends Manager {
 
     public static ModuleHome moduleHome;
     public static ModuleUnitOwners moduleUnitOwners;
@@ -19,7 +19,7 @@ public class ManagerModuleUnitOwner extends Manager{
             if(!evt.alreadyShowing){
                 moduleUnitOwners.sTextField1.requestFocus();
                 LayerUnitOwners.showLayer(moduleUnitOwners.layerUnitOwnersLoading);
-//                ManagerObjectUnitOwner.refreshObjects(); FIX
+                ManagerObjectUnitOwner.refreshObjects();
             }
         });
         

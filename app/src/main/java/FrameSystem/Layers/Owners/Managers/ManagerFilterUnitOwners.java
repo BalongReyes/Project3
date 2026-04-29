@@ -1,17 +1,95 @@
-
 package FrameSystem.Layers.Owners.Managers;
 
 import DatabaseSystem.DataTable.DataTableFilter;
+import DatabaseSystem.DataTable.DataTableOrder;
+import DatabaseSystem.UnitOwnersData.UnitOwnersDataTable;
+import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class ManagerFilterUnitOwners extends ManagerModuleUnitOwner{
+public class ManagerFilterUnitOwners extends ManagerModuleUnitOwner {
 
+    private static boolean isFilterTower1Active = false;
+    private static boolean isFilterTower2Active = false;
+    private static boolean isFilterTower3Active = false;
     
     public static void initDefault(){
+        setDefaultFilters();
+        
+        moduleUnitOwners.filterTower1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e){
+                moduleUnitOwners.filterTower1.toggleActive();
+                isFilterTower1Active = moduleUnitOwners.filterTower1.isActive();
+                ManagerFilterUnitOwners.activeFilterChanged();
+            }
+        });
+        
+        moduleUnitOwners.filterTower2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e){
+                moduleUnitOwners.filterTower2.toggleActive();
+                isFilterTower2Active = moduleUnitOwners.filterTower2.isActive();
+                ManagerFilterUnitOwners.activeFilterChanged();
+            }
+        });
+        
+        moduleUnitOwners.filterTower3.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e){
+                moduleUnitOwners.filterTower3.toggleActive();
+                isFilterTower3Active = moduleUnitOwners.filterTower3.isActive();
+                ManagerFilterUnitOwners.activeFilterChanged();
+            }
+        });
+        
+        setFilterTitle(moduleUnitOwners.sFilterTitlePanel1);
+        setFilterTitle(moduleUnitOwners.sFilterTitlePanel2);
+        setFilterTitle(moduleUnitOwners.sFilterTitlePanel3);
+        setFilterTitle(moduleUnitOwners.sFilterTitlePanel5);
+        setFilterTitle(moduleUnitOwners.sFilterTitlePanel6);
+        setFilterTitle(moduleUnitOwners.sFilterTitlePanel7);
     }
     
     public static void setFilterTitle(SFilterTitlePanel filterTitle){
+        filterTitle.addMouseListener((MousePressedAdaptor) (MouseEvent e) -> {
+            int direction = filterTitle.setNextArrowDirection();
+
+            DataTableOrder order = null;
+            if(direction == 1){
+                order = DataTableOrder.DESC;
+            }else if(direction == 2){
+                order = DataTableOrder.ASC;
+            }
+
+            int dataIndex = filterTitle.getDataIndex(); 
+
+            SFilterTitlePanel[] allFilterPanels = {
+                moduleUnitOwners.sFilterTitlePanel1, moduleUnitOwners.sFilterTitlePanel2,
+                moduleUnitOwners.sFilterTitlePanel3, moduleUnitOwners.sFilterTitlePanel5,
+                moduleUnitOwners.sFilterTitlePanel6, moduleUnitOwners.sFilterTitlePanel7
+            };
+            
+            for (SFilterTitlePanel panel : allFilterPanels) {
+                if (panel != null && panel != filterTitle) {
+                    panel.setArrowDirection(-1);
+                }
+            }
+
+            if (activeHeaderSortFilter != null) {
+                activeFilters.remove(activeHeaderSortFilter);
+                activeHeaderSortFilter = null;
+            }
+
+            if(order != null){
+                activeHeaderSortFilter = new DataTableFilter(dataIndex, order);
+                addActiveFilter(0, activeHeaderSortFilter);
+            }else{
+                activeFilterChanged();
+            }
+        });
     }
     
 // -----------------------------------------------------------------------------------------------------------
@@ -19,6 +97,11 @@ public class ManagerFilterUnitOwners extends ManagerModuleUnitOwner{
     public static ArrayList<DataTableFilter> getFilters(){
         ArrayList<DataTableFilter> combinedFilters = new ArrayList<>(activeFilters);
                 
+        // Ensure your UnitOwnersDataTable has the TOWER index defined if you are filtering by tower
+        if (isFilterTower1Active) combinedFilters.add(new DataTableFilter(UnitOwnersDataTable.TOWER, DataTableOrder.WHERE, "1"));
+        if (isFilterTower2Active) combinedFilters.add(new DataTableFilter(UnitOwnersDataTable.TOWER, DataTableOrder.WHERE, "2"));
+        if (isFilterTower3Active) combinedFilters.add(new DataTableFilter(UnitOwnersDataTable.TOWER, DataTableOrder.WHERE, "3"));
+        
         return combinedFilters;
     }
     
@@ -26,13 +109,15 @@ public class ManagerFilterUnitOwners extends ManagerModuleUnitOwner{
     
     private static javax.swing.Timer filterDebounceTimer;
     
-    // Track multiple active filters
     private static ArrayList<DataTableFilter> activeFilters = new ArrayList<>();
     
     private static DataTableFilter activeHeaderSortFilter = null;
     
     public static void setDefaultFilters() {
         clearActiveFilter();
+        addActiveFilter(new DataTableFilter(UnitOwnersDataTable.TOWER, DataTableOrder.ASC));
+        addActiveFilter(new DataTableFilter(UnitOwnersDataTable.FLOOR, DataTableOrder.ASC));
+        addActiveFilter(new DataTableFilter(UnitOwnersDataTable.UNIT, DataTableOrder.ASC));
     }
     
     public static void addActiveFilter(DataTableFilter dataFilter){
@@ -63,11 +148,10 @@ public class ManagerFilterUnitOwners extends ManagerModuleUnitOwner{
             filterDebounceTimer.restart();
         } else {
             filterDebounceTimer = new javax.swing.Timer(300, e -> {
-//                ManagerObjectUnitOwner.resetPage(); FIX
+                ManagerObjectUnitOwner.resetPage(); 
             });
             filterDebounceTimer.setRepeats(false);
             filterDebounceTimer.start();
         }
     }
-
 }

@@ -116,7 +116,7 @@ public class ModuleUnitTenants extends SPanel{
         sPanelNext = new FrameSystem.SLibrary.SComponents.SPanel();
         sPanel68 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel12 = new FrameSystem.SLibrary.SComponents.SLabel();
-        layerUnitTenantsMain = new FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main();
+        layerUnitTenantsView = new FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main();
 
         sPanel21.setPaintBackground(false);
         sPanel21.setPreferredSize(new java.awt.Dimension(250, 0));
@@ -1628,19 +1628,19 @@ public class ModuleUnitTenants extends SPanel{
 
         jLayeredPane2.add(layerUnitTenantsData, "card6");
 
-        javax.swing.GroupLayout layerUnitTenantsMainLayout = new javax.swing.GroupLayout(layerUnitTenantsMain);
-        layerUnitTenantsMain.setLayout(layerUnitTenantsMainLayout);
-        layerUnitTenantsMainLayout.setHorizontalGroup(
-            layerUnitTenantsMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout layerUnitTenantsViewLayout = new javax.swing.GroupLayout(layerUnitTenantsView);
+        layerUnitTenantsView.setLayout(layerUnitTenantsViewLayout);
+        layerUnitTenantsViewLayout.setHorizontalGroup(
+            layerUnitTenantsViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1687, Short.MAX_VALUE)
         );
-        layerUnitTenantsMainLayout.setVerticalGroup(
-            layerUnitTenantsMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        layerUnitTenantsViewLayout.setVerticalGroup(
+            layerUnitTenantsViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 937, Short.MAX_VALUE)
         );
 
-        jLayeredPane2.setLayer(layerUnitTenantsMain, javax.swing.JLayeredPane.PALETTE_LAYER);
-        jLayeredPane2.add(layerUnitTenantsMain, "card7");
+        jLayeredPane2.setLayer(layerUnitTenantsView, javax.swing.JLayeredPane.PALETTE_LAYER);
+        jLayeredPane2.add(layerUnitTenantsView, "card7");
 
         javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);
         sPanel1.setLayout(sPanel1Layout);
@@ -1708,9 +1708,9 @@ public class ModuleUnitTenants extends SPanel{
     public javax.swing.JSpinner jSpinner1;
     public FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main layerUnitTenantsData;
     public FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsLoading;
-    public FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main layerUnitTenantsMain;
     public FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsOffline;
     public FrameSystem.Layers.Tenants.Components.LayerUnitTenants layerUnitTenantsOnline;
+    public FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main layerUnitTenantsView;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;

@@ -6,7 +6,7 @@ import FrameSystem.Layers.Tenants.Components.LayerUnitTenants;
 import FrameSystem.Layers.Tenants.Module.ModuleUnitTenants;
 import MainSystem.Manager;
 
-public class ManagerModuleUnitTenants extends Manager{
+public class ManagerModuleUnitTenants extends Manager {
 
     public static ModuleHome moduleHome;
     public static ModuleUnitTenants moduleUnitTenants;
@@ -19,7 +19,7 @@ public class ManagerModuleUnitTenants extends Manager{
             if(!evt.alreadyShowing){
                 moduleUnitTenants.sTextField1.requestFocus();
                 LayerUnitTenants.showLayer(moduleUnitTenants.layerUnitTenantsLoading);
-//                ManagerObjectUnitTenant.refreshObjects(); FIX
+                ManagerObjectUnitTenants.refreshObjects();
             }
         });
         
@@ -39,7 +39,7 @@ public class ManagerModuleUnitTenants extends Manager{
         LayerUnitTenants.showLayer(moduleUnitTenants.layerUnitTenantsOffline);
         offlineMode = true;
         
-        frame.reconnectMode("ManagerModuleUnitOwner", () -> {
+        frame.reconnectMode("ManagerModuleUnitTenants", () -> {
             LayerUnitTenants.showLayer(moduleUnitTenants.layerUnitTenantsLoading);
             offlineMode = false;
             if(reconnectExecute != null) reconnectExecute.reconnect();

@@ -2788,7 +2788,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main" name="layerUnitTenantsMain">
+            <Container class="FrameSystem.Layers.Tenants.Components.LayerUnitTenants_Main" name="layerUnitTenantsView">
               <AuxValues>
                 <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
