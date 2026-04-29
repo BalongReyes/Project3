@@ -7,10 +7,6 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * UnitOwnersDataTable represents a complete joined record of a Unit Owner.
- * Combines all fields from 'unitowners' and 'residents' tables.
- */
 public record UnitOwnersDataTable(
         // 'unitowners' fields
         int id,
@@ -34,7 +30,12 @@ public record UnitOwnersDataTable(
         int taxNo,
         Date created,
         Date modified,
-        String mobileNos
+        String mobileNos,
+        
+        // NEW: 'units' fields
+        String tower,
+        int floor,
+        int unit
 ) implements DataTable {
 
     // Constants for column indexing
@@ -59,10 +60,12 @@ public record UnitOwnersDataTable(
     public static final int CREATED = 18;
     public static final int MODIFIED = 19;
     public static final int MOBILE_NOS = 20;
+    
+    // NEW: Constants for unit fields
+    public static final int TOWER = 21;
+    public static final int FLOOR = 22;
+    public static final int UNIT = 23;
 
-    /**
-     * Constructor that automatically populates the record from a ResultSet.
-     */
     public UnitOwnersDataTable(ResultSet results) throws SQLException {
         this(
             results.getInt("id"), 
@@ -74,7 +77,7 @@ public record UnitOwnersDataTable(
             results.getString("lastName"),
             results.getString("firstName"),
             results.getString("middleName"),
-            results.getString("autorizedRepresentative"), // Mapped to ERD spelling
+            results.getString("autorizedRepresentative"),
             results.getDate("birthdate"),
             results.getString("civilStatus"),
             results.getInt("gender"),
@@ -85,18 +88,23 @@ public record UnitOwnersDataTable(
             results.getInt("taxNo"),
             results.getDate("created"),
             results.getDate("modified"),
-            results.getString("mobileNos")
+            results.getString("mobileNos"),
+            
+            // NEW: Fetching unit data
+            results.getString("tower"),
+            results.getInt("floor"),
+            results.getInt("unit")
         );
     }
 
-    /**
-     * Search filter logic checking against primary identification fields.
-     */
     public boolean haveData(String data) {
         return MethodString.checkLike(firstName, data) || 
                MethodString.checkLike(lastName, data) || 
                MethodString.checkLike(middleName, data) ||
-               MethodString.checkLike(mobileNos, data);
+               MethodString.checkLike(mobileNos, data) ||
+               MethodString.checkLike(tower, data) || 
+               MethodString.checkLike(String.valueOf(floor), data) || 
+               MethodString.checkLike(String.valueOf(unit), data);
     }
 
     @Override
@@ -122,6 +130,10 @@ public record UnitOwnersDataTable(
             case CREATED -> created;
             case MODIFIED -> modified;
             case MOBILE_NOS -> mobileNos;
+            // NEW: Mapping for switch
+            case TOWER -> tower;
+            case FLOOR -> floor;
+            case UNIT -> unit;
             default -> null;
         };
     }
@@ -130,16 +142,13 @@ public record UnitOwnersDataTable(
     public DataTableType getDataType(int i) {
         return switch (i) {
             case LAST_NAME, FIRST_NAME, MIDDLE_NAME, AUTHORIZED_REPRESENTATIVE, 
-                 CIVIL_STATUS, NATIONALITY, ACR_NO, EMPLOYER_NAME, PROFESSION, MOBILE_NOS -> DataTableType.TYPE_STRING;
-            case ID, RESIDENTS_ID, UNITS_ID, WEEKENDERS, NO_ACTIVITY, GENDER, TAX_NO -> DataTableType.TYPE_INTEGER;
+                 CIVIL_STATUS, NATIONALITY, ACR_NO, EMPLOYER_NAME, PROFESSION, MOBILE_NOS, TOWER -> DataTableType.TYPE_STRING;
+            case ID, RESIDENTS_ID, UNITS_ID, WEEKENDERS, NO_ACTIVITY, GENDER, TAX_NO, FLOOR, UNIT -> DataTableType.TYPE_INTEGER;
             case BIRTHDATE, CREATED, MODIFIED -> DataTableType.TYPE_DATE;
             default -> DataTableType.TYPE_NULL;
         };
     }
 
-    /**
-     * Helper method to format the full name for UI components.
-     */
     public String getFullName() {
         String middle = (middleName != null && !middleName.isEmpty()) ? middleName + " " : "";
         return firstName + " " + middle + lastName;
