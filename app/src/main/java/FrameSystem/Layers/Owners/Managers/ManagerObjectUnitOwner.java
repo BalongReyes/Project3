@@ -17,6 +17,7 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.concurrent.ExecutionException;
+import javax.swing.JLabel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
@@ -81,8 +82,8 @@ public class ManagerObjectUnitOwner extends ManagerModuleUnitOwner {
                     
                     String text = "";
                     for (java.awt.Component c : p.getComponents()) {
-                        if (c instanceof javax.swing.JLabel) {
-                            text = ((javax.swing.JLabel) c).getText();
+                        if (c instanceof JLabel jLabel) {
+                            text = jLabel.getText();
                             break;
                         }
                     }

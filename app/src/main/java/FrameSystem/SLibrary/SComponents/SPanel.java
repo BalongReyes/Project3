@@ -1,11 +1,22 @@
 package FrameSystem.SLibrary.SComponents;
 
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.HeadlessException;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.Path2D;
+import java.awt.geom.RoundRectangle2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
 
@@ -14,17 +25,6 @@ import javax.swing.border.EmptyBorder;
 
 import EventSystem.Interface.InnerListener;
 import MainSystem.CustomGraphics;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.HeadlessException;
-import java.awt.MouseInfo;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.Shape;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.geom.Path2D;
-import java.awt.geom.RoundRectangle2D;
 
 @JavaBean(description = "A versatile component that handles shadows, borders, and interactive states (Hover, Active, Danger)")
 public class SPanel extends JPanel implements InnerListener{
@@ -299,7 +299,7 @@ public class SPanel extends JPanel implements InnerListener{
     protected boolean borderSideTop = true;
     protected boolean borderSideBottom = true;
     protected boolean borderSideLeft = true;
-    protected boolean borderRSideight = true;
+    protected boolean borderSideRight = true;
 
     protected boolean shadowX = false;
     protected boolean shadowY = false;
@@ -426,12 +426,12 @@ public class SPanel extends JPanel implements InnerListener{
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "Draw right border")
     public void setBorderSideRight(boolean borderRight){
-        this.borderRSideight = borderRight;
+        this.borderSideRight = borderRight;
         repaint();
     }
 
     public boolean isBorderSideRight(){
-        return borderRSideight;
+        return borderSideRight;
     }
 
 // ---- Shadow -----------------------------------------------------------------------------------------------
@@ -547,7 +547,7 @@ public class SPanel extends JPanel implements InnerListener{
         }
     }
 
-// -----------------------------------------------------------------------------------------------------------
+// ---- Component Operations ---------------------------------------------------------------------------------
     
     @Override
     public void setEnabled(boolean enabled){
@@ -708,7 +708,7 @@ public class SPanel extends JPanel implements InnerListener{
         }
 
         // 2. Draw Outer Border
-        if(borderLine > 0 && (borderSideTop || borderSideBottom || borderSideLeft || borderRSideight)){
+        if(borderLine > 0 && (borderSideTop || borderSideBottom || borderSideLeft || borderSideRight)){
             if(overideBorder != null){
                 g2.setColor(overideBorder);
             }else{
@@ -754,7 +754,7 @@ public class SPanel extends JPanel implements InnerListener{
             int bTop = borderSideTop ? borderLine : 0;
             int bBot = borderSideBottom ? borderLine : 0;
             int bLeft = borderSideLeft ? borderLine : 0;
-            int bRight = borderRSideight ? borderLine : 0;
+            int bRight = borderSideRight ? borderLine : 0;
             
             // Draw background using custom shape
             int bgRadius = Math.max(0, radiusPaint - borderLine); // Prevents negative radius on large borders

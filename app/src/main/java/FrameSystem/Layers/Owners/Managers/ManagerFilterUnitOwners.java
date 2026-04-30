@@ -1,13 +1,14 @@
 package FrameSystem.Layers.Owners.Managers;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
 import DatabaseSystem.UnitOwnersData.UnitOwnersDataTable;
 import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 public class ManagerFilterUnitOwners extends ManagerModuleUnitOwner {
 
@@ -92,7 +93,7 @@ public class ManagerFilterUnitOwners extends ManagerModuleUnitOwner {
         });
     }
     
-// -----------------------------------------------------------------------------------------------------------
+// ---- Filter Retrievals ------------------------------------------------------------------------------------
     
     public static ArrayList<DataTableFilter> getFilters(){
         ArrayList<DataTableFilter> combinedFilters = new ArrayList<>(activeFilters);

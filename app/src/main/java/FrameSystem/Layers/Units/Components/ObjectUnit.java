@@ -42,6 +42,7 @@ public class ObjectUnit extends SPanel{
         applyHoverInnerListener();
         view.applyHoverInnerListener();
         edit.applyHoverInnerListener();
+        concern.applyHoverInnerListener();
         
         String accountNumber = data.accountNumber();
         if(accountNumber != null){
@@ -184,6 +185,10 @@ public class ObjectUnit extends SPanel{
         edit = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel11 = new FrameSystem.SLibrary.SComponents.SLabel();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        sPanel14 = new FrameSystem.SLibrary.SComponents.SPanel();
+        concern = new FrameSystem.SLibrary.SComponents.SPanel();
+        sLabel12 = new FrameSystem.SLibrary.SComponents.SLabel();
+        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
 
         setActiveBackgroundColor(new java.awt.Color(255, 245, 245));
         setActiveHoverBackgroundColor(new java.awt.Color(255, 245, 245));
@@ -412,9 +417,9 @@ public class ObjectUnit extends SPanel{
 
         sPanel3.setDefaultBackgroundColor(new java.awt.Color(51, 255, 51));
         sPanel3.setPaintBackground(false);
-        sPanel3.setMaximumSize(new java.awt.Dimension(90, 50));
-        sPanel3.setMinimumSize(new java.awt.Dimension(90, 50));
-        sPanel3.setPreferredSize(new java.awt.Dimension(90, 50));
+        sPanel3.setMaximumSize(new java.awt.Dimension(130, 50));
+        sPanel3.setMinimumSize(new java.awt.Dimension(130, 50));
+        sPanel3.setPreferredSize(new java.awt.Dimension(130, 50));
         sPanel3.setLayout(new javax.swing.BoxLayout(sPanel3, javax.swing.BoxLayout.LINE_AXIS));
         sPanel3.add(filler2);
 
@@ -433,7 +438,7 @@ public class ObjectUnit extends SPanel{
         sLabel10.setForeground(new java.awt.Color(255, 255, 255));
         sLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel10.setIconSize(12);
-        sLabel10.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/view.png"))); // NOI18N
+        sLabel10.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/view.png"))); // NOI18N
 
         javax.swing.GroupLayout viewLayout = new javax.swing.GroupLayout(view);
         view.setLayout(viewLayout);
@@ -482,7 +487,7 @@ public class ObjectUnit extends SPanel{
         sLabel11.setForeground(new java.awt.Color(255, 255, 255));
         sLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel11.setIconSize(10);
-        sLabel11.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/Edit.png"))); // NOI18N
+        sLabel11.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/Edit.png"))); // NOI18N
 
         javax.swing.GroupLayout editLayout = new javax.swing.GroupLayout(edit);
         edit.setLayout(editLayout);
@@ -515,22 +520,73 @@ public class ObjectUnit extends SPanel{
         sPanel3.add(sPanel13);
         sPanel3.add(filler3);
 
+        sPanel14.setDefaultBackgroundColor(new java.awt.Color(51, 255, 51));
+        sPanel14.setPaintBackground(false);
+        sPanel14.setMaximumSize(new java.awt.Dimension(25, 50));
+        sPanel14.setMinimumSize(new java.awt.Dimension(25, 50));
+
+        concern.setCanHover(true);
+        concern.setDefaultBackgroundColor(new java.awt.Color(239, 239, 239));
+        concern.setHoverBackgroundColor(new java.awt.Color(209, 209, 209));
+        concern.setRadius(10);
+        concern.setRounded(true);
+        concern.setPreferredSize(new java.awt.Dimension(25, 25));
+
+        sLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        sLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sLabel12.setIconSize(12);
+        sLabel12.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/concernsSmall.png"))); // NOI18N
+
+        javax.swing.GroupLayout concernLayout = new javax.swing.GroupLayout(concern);
+        concern.setLayout(concernLayout);
+        concernLayout.setHorizontalGroup(
+            concernLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+        );
+        concernLayout.setVerticalGroup(
+            concernLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout sPanel14Layout = new javax.swing.GroupLayout(sPanel14);
+        sPanel14.setLayout(sPanel14Layout);
+        sPanel14Layout.setHorizontalGroup(
+            sPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel14Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(concern, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        sPanel14Layout.setVerticalGroup(
+            sPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel14Layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(concern, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 13, Short.MAX_VALUE))
+        );
+
+        sPanel3.add(sPanel14);
+        sPanel3.add(filler5);
+
         add(sPanel3);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private FrameSystem.SLibrary.SComponents.SPanel concern;
     private FrameSystem.SLibrary.SComponents.SPanel edit;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
+    private javax.swing.Box.Filler filler5;
     private javax.swing.Box.Filler filler6;
     private javax.swing.Box.Filler filler8;
     private FrameSystem.Layers.Units.Components.ObjectUnitHighlight occupancyType;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel11;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel12;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel4;
@@ -542,6 +598,7 @@ public class ObjectUnit extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel10;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel11;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel13;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel14;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel3;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel4;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel5;

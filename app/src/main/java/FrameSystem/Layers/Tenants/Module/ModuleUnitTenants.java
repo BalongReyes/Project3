@@ -53,12 +53,12 @@ public class ModuleUnitTenants extends SPanel{
         sFilterTitlePanel6 = new FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel();
         sPanel12 = new FrameSystem.SLibrary.SComponents.SPanel();
         sFilterTitlePanel7 = new FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel();
-        sPanel13 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sLabel17 = new FrameSystem.SLibrary.SComponents.SLabel();
-        sPanel14 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sLabel18 = new FrameSystem.SLibrary.SComponents.SLabel();
-        sPanel28 = new FrameSystem.SLibrary.SComponents.SPanel();
-        sLabel22 = new FrameSystem.SLibrary.SComponents.SLabel();
+        sPanel16 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sFilterTitlePanel8 = new FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel();
+        sPanel17 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sFilterTitlePanel9 = new FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel();
+        sPanel19 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sFilterTitlePanel10 = new FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel();
         filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(6, 0), new java.awt.Dimension(6, 0), new java.awt.Dimension(6, 32767));
         sPanel15 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel6 = new FrameSystem.SLibrary.SComponents.SLabel();
@@ -278,7 +278,7 @@ public class ModuleUnitTenants extends SPanel{
         sLabel19.setForeground(new java.awt.Color(56, 56, 56));
         sLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel19.setIconSize(13);
-        sLabel19.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/file.png"))); // NOI18N
+        sLabel19.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/file.png"))); // NOI18N
         sLabel19.setText("Export");
         sLabel19.setIconTextGap(10);
         sLabel19.setMaximumSize(new java.awt.Dimension(69, 30));
@@ -317,7 +317,7 @@ public class ModuleUnitTenants extends SPanel{
         sLabel20.setForeground(new java.awt.Color(56, 56, 56));
         sLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel20.setIconSize(12);
-        sLabel20.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/activity.png"))); // NOI18N
+        sLabel20.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/activity.png"))); // NOI18N
         sLabel20.setText("Activity Log");
         sLabel20.setIconTextGap(10);
         sLabel20.setMaximumSize(new java.awt.Dimension(69, 30));
@@ -514,7 +514,7 @@ public class ModuleUnitTenants extends SPanel{
         sFilterTitlePanel5.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel5.setRadius(7);
         sFilterTitlePanel5.setRounded(true);
-        sFilterTitlePanel5.setText("Account Number");
+        sFilterTitlePanel5.setText("Last Name");
 
         javax.swing.GroupLayout sPanel29Layout = new javax.swing.GroupLayout(sPanel29);
         sPanel29.setLayout(sPanel29Layout);
@@ -544,7 +544,7 @@ public class ModuleUnitTenants extends SPanel{
         sFilterTitlePanel6.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel6.setRadius(7);
         sFilterTitlePanel6.setRounded(true);
-        sFilterTitlePanel6.setText("Model");
+        sFilterTitlePanel6.setText("First Name");
 
         javax.swing.GroupLayout sPanel10Layout = new javax.swing.GroupLayout(sPanel10);
         sPanel10.setLayout(sPanel10Layout);
@@ -574,7 +574,7 @@ public class ModuleUnitTenants extends SPanel{
         sFilterTitlePanel7.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel7.setRadius(7);
         sFilterTitlePanel7.setRounded(true);
-        sFilterTitlePanel7.setText("Floor Area");
+        sFilterTitlePanel7.setText("Middle Name");
 
         javax.swing.GroupLayout sPanel12Layout = new javax.swing.GroupLayout(sPanel12);
         sPanel12.setLayout(sPanel12Layout);
@@ -595,88 +595,109 @@ public class ModuleUnitTenants extends SPanel{
 
         sPanel6.add(sPanel12);
 
-        sPanel13.setPaintBackground(false);
+        sPanel16.setPaintBackground(false);
 
-        sLabel17.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel17.setText("Occupancy Type");
+        sFilterTitlePanel8.setArrowDirection(0);
+        sFilterTitlePanel8.setCanHover(true);
+        sFilterTitlePanel8.setDataIndex(UnitsDataTable.FLOOR_AREA);
+        sFilterTitlePanel8.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel8.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        sFilterTitlePanel8.setRadius(7);
+        sFilterTitlePanel8.setRounded(true);
+        sFilterTitlePanel8.setText("Contact No.");
 
-        javax.swing.GroupLayout sPanel13Layout = new javax.swing.GroupLayout(sPanel13);
-        sPanel13.setLayout(sPanel13Layout);
-        sPanel13Layout.setHorizontalGroup(
-            sPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel13Layout.createSequentialGroup()
-                .addComponent(sLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        sPanel13Layout.setVerticalGroup(
-            sPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel13Layout.createSequentialGroup()
+        javax.swing.GroupLayout sPanel16Layout = new javax.swing.GroupLayout(sPanel16);
+        sPanel16.setLayout(sPanel16Layout);
+        sPanel16Layout.setHorizontalGroup(
+            sPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel16Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(sLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(sFilterTitlePanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        sPanel16Layout.setVerticalGroup(
+            sPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel16Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(sFilterTitlePanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(5, 5, 5))
         );
 
-        sPanel6.add(sPanel13);
+        sPanel6.add(sPanel16);
 
-        sPanel14.setPaintBackground(false);
+        sPanel17.setPaintBackground(false);
 
-        sLabel18.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel18.setText("Unit Status");
+        sFilterTitlePanel9.setArrowDirection(0);
+        sFilterTitlePanel9.setCanHover(true);
+        sFilterTitlePanel9.setDataIndex(UnitsDataTable.FLOOR_AREA);
+        sFilterTitlePanel9.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel9.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        sFilterTitlePanel9.setRadius(7);
+        sFilterTitlePanel9.setRounded(true);
+        sFilterTitlePanel9.setText("Move In");
 
-        javax.swing.GroupLayout sPanel14Layout = new javax.swing.GroupLayout(sPanel14);
-        sPanel14.setLayout(sPanel14Layout);
-        sPanel14Layout.setHorizontalGroup(
-            sPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel14Layout.createSequentialGroup()
-                .addComponent(sLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
-        );
-        sPanel14Layout.setVerticalGroup(
-            sPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel14Layout.createSequentialGroup()
+        javax.swing.GroupLayout sPanel17Layout = new javax.swing.GroupLayout(sPanel17);
+        sPanel17.setLayout(sPanel17Layout);
+        sPanel17Layout.setHorizontalGroup(
+            sPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel17Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(sLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(sFilterTitlePanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        sPanel17Layout.setVerticalGroup(
+            sPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel17Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(sFilterTitlePanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(5, 5, 5))
         );
 
-        sPanel6.add(sPanel14);
+        sPanel6.add(sPanel17);
 
-        sPanel28.setPaintBackground(false);
+        sPanel19.setPaintBackground(false);
 
-        sLabel22.setForeground(new java.awt.Color(56, 56, 56));
-        sLabel22.setText("T.O. Date");
+        sFilterTitlePanel10.setArrowDirection(0);
+        sFilterTitlePanel10.setCanHover(true);
+        sFilterTitlePanel10.setDataIndex(UnitsDataTable.FLOOR_AREA);
+        sFilterTitlePanel10.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel10.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        sFilterTitlePanel10.setRadius(7);
+        sFilterTitlePanel10.setRounded(true);
+        sFilterTitlePanel10.setText("Move Out");
 
-        javax.swing.GroupLayout sPanel28Layout = new javax.swing.GroupLayout(sPanel28);
-        sPanel28.setLayout(sPanel28Layout);
-        sPanel28Layout.setHorizontalGroup(
-            sPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sPanel28Layout.createSequentialGroup()
-                .addComponent(sLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
-        );
-        sPanel28Layout.setVerticalGroup(
-            sPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel28Layout.createSequentialGroup()
+        javax.swing.GroupLayout sPanel19Layout = new javax.swing.GroupLayout(sPanel19);
+        sPanel19.setLayout(sPanel19Layout);
+        sPanel19Layout.setHorizontalGroup(
+            sPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel19Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(sLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(sFilterTitlePanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        sPanel19Layout.setVerticalGroup(
+            sPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel19Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(sFilterTitlePanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(5, 5, 5))
         );
 
-        sPanel6.add(sPanel28);
+        sPanel6.add(sPanel19);
 
         sPanel20.add(sPanel6);
         sPanel20.add(filler8);
 
         sPanel15.setDefaultBackgroundColor(new java.awt.Color(51, 255, 51));
         sPanel15.setPaintBackground(false);
-        sPanel15.setMaximumSize(new java.awt.Dimension(90, 40));
-        sPanel15.setMinimumSize(new java.awt.Dimension(90, 40));
-        sPanel15.setPreferredSize(new java.awt.Dimension(90, 40));
+        sPanel15.setMaximumSize(new java.awt.Dimension(130, 40));
+        sPanel15.setMinimumSize(new java.awt.Dimension(130, 40));
+        sPanel15.setPreferredSize(new java.awt.Dimension(130, 40));
 
         sLabel6.setForeground(new java.awt.Color(56, 56, 56));
         sLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel6.setText("Actions");
-        sLabel6.setMaximumSize(new java.awt.Dimension(75, 40));
+        sLabel6.setMaximumSize(new java.awt.Dimension(130, 40));
         sLabel6.setMinimumSize(new java.awt.Dimension(75, 40));
         sLabel6.setPreferredSize(new java.awt.Dimension(75, 40));
 
@@ -1126,7 +1147,7 @@ public class ModuleUnitTenants extends SPanel{
 
         sLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel9.setIconSize(7);
-        sLabel9.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/previousPage.png"))); // NOI18N
+        sLabel9.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/previousPage.png"))); // NOI18N
 
         javax.swing.GroupLayout sPanel67Layout = new javax.swing.GroupLayout(sPanel67);
         sPanel67.setLayout(sPanel67Layout);
@@ -1549,7 +1570,7 @@ public class ModuleUnitTenants extends SPanel{
 
         sLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel12.setIconSize(7);
-        sLabel12.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/nextPage.png"))); // NOI18N
+        sLabel12.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/nextPage.png"))); // NOI18N
 
         javax.swing.GroupLayout sPanel68Layout = new javax.swing.GroupLayout(sPanel68);
         sPanel68.setLayout(sPanel68Layout);
@@ -1714,22 +1735,22 @@ public class ModuleUnitTenants extends SPanel{
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel10;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel2;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel3;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel5;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel6;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel7;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel8;
+    public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel9;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel11;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel12;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel17;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel18;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel19;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel20;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel21;
-    private FrameSystem.SLibrary.SComponents.SLabel sLabel22;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel23;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel31;
@@ -1748,16 +1769,16 @@ public class ModuleUnitTenants extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel1;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel10;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel12;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel13;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel14;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel15;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel16;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel17;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel18;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel19;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel2;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel20;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel21;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel22;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel27;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel28;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel29;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel3;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel30;

@@ -26,7 +26,7 @@ public class SLayerEventMulticaster implements SLayerShowListener, SLayerHideLis
         return addInternal(a2, b2);
     }
     
-// ===========================================================================================================
+// ==== Event Dispatching ====================================================================================
 
     @Override
     public void layeredPanelShow(SLayerShowEvent evt){
@@ -54,7 +54,7 @@ public class SLayerEventMulticaster implements SLayerShowListener, SLayerHideLis
         ((SLayerKeyPressedListener)b).layeredPanelKeyPressed(evt);
     }
     
-// ===========================================================================================================
+// ==== Add Listeners ========================================================================================
     
     public static SLayerShowListener add(SLayerShowListener a, SLayerShowListener b) {
         return (SLayerShowListener)addInternal(a, b);
@@ -72,7 +72,7 @@ public class SLayerEventMulticaster implements SLayerShowListener, SLayerHideLis
         return (SLayerKeyPressedListener)addInternal(a, b);
     }
     
-// ===========================================================================================================
+// ==== Remove Listeners =====================================================================================
     
     public static SLayerShowListener remove(SLayerShowListener l, SLayerShowListener oldl) {
         return (SLayerShowListener)removeInternal(l, oldl);
@@ -90,7 +90,7 @@ public class SLayerEventMulticaster implements SLayerShowListener, SLayerHideLis
         return (SLayerKeyPressedListener)removeInternal(l, oldl);
     }
     
-// ===========================================================================================================
+// ==== Internal Operations ==================================================================================
 
     protected static EventListener addInternal(EventListener a, EventListener b) {
         if(a == null) return b;

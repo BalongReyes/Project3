@@ -1,6 +1,5 @@
 package FrameSystem.SLibrary.SAnimated;
 
-import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -8,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.geom.RoundRectangle2D;
 import java.beans.BeanProperty;
 import java.util.concurrent.CountDownLatch;
+
+import MainSystem.CustomGraphics;
 
 public class SAnimatedLoading extends SPanelAnimated {
 
@@ -22,7 +23,7 @@ public class SAnimatedLoading extends SPanelAnimated {
         super(15); // 15ms delay for smooth ~60fps rendering
     }
 
-// Implementations ===========================================================================================
+// ==== Implementations ======================================================================================
     
     private CountDownLatch currentLatch;
 
@@ -48,7 +49,7 @@ public class SAnimatedLoading extends SPanelAnimated {
         repaint();
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
     
     protected Color lineColor = Color.WHITE;
 
@@ -61,7 +62,7 @@ public class SAnimatedLoading extends SPanelAnimated {
         return lineColor;
     }
     
-// -----------------------------------------------------------------------------------------------------------
+// ---- Line Width -------------------------------------------------------------------------------------------
     
     protected float lineWidth = 0;
 
@@ -74,7 +75,7 @@ public class SAnimatedLoading extends SPanelAnimated {
         return lineWidth;
     }
 
-// -----------------------------------------------------------------------------------------------------------
+// ---- Track Color ------------------------------------------------------------------------------------------
 
     protected Color trackColor = new Color(255, 255, 255, 50); // Semi-transparent background track
 
@@ -87,7 +88,7 @@ public class SAnimatedLoading extends SPanelAnimated {
         return trackColor;
     }
 
-// Progress Control ==========================================================================================
+// ==== Progress Control =====================================================================================
 
     /**
      * Updates the progress over a specific duration.
@@ -145,7 +146,7 @@ public class SAnimatedLoading extends SPanelAnimated {
         return this.currentProgress == this.targetProgress;
     }
 
-// Overridden Methods ========================================================================================
+// ==== Overridden Methods ===================================================================================
 
     @Override
     protected void paintComponent(Graphics g) {

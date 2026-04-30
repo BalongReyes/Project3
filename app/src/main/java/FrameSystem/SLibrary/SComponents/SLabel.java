@@ -1,7 +1,6 @@
 
 package FrameSystem.SLibrary.SComponents;
 
-import MainSystem.CustomGraphics;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -9,28 +8,31 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
 
+import MainSystem.CustomGraphics;
+
 @JavaBean(description = "A component that displays a jlabel that renders with RenderingHints")
 public class SLabel extends JLabel{
 
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public SLabel(){
         super();
         setDefault();
     }
     
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
     
     private void setDefault(){
         setFont(new java.awt.Font("Segoe UI", 1, 11));
     }
     
-// Getters And Setters =======================================================================================
+// ==== Getters And Setters ==================================================================================
     
     protected ImageIcon scaledIcon = null;
     protected ImageIcon scaledImageIcon = null;
@@ -63,7 +65,7 @@ public class SLabel extends JLabel{
         return scaledIcon;
     }
 
-// -----------------------------------------------------------------------------------------------------------
+// ---- Icon Size --------------------------------------------------------------------------------------------
     
     protected int iconSize = 16;
 
@@ -83,7 +85,7 @@ public class SLabel extends JLabel{
         return iconSize;
     }
     
-// -----------------------------------------------------------------------------------------------------------
+// ---- Component Properties ---------------------------------------------------------------------------------
     
     @Override
     @BeanProperty(hidden = true)
@@ -97,7 +99,7 @@ public class SLabel extends JLabel{
         super.setBorder(border);
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
     
     @Override
     public void setCursor(Cursor cursor){
@@ -116,7 +118,7 @@ public class SLabel extends JLabel{
         super.paint(g);
     }
     
-// -----------------------------------------------------------------------------------------------------------
+// ---- Painting & Font --------------------------------------------------------------------------------------
     
     @Override
     @BeanProperty(preferred = true)

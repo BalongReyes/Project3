@@ -324,7 +324,7 @@ public class ModuleUnits extends SPanel{
         sLabel19.setForeground(new java.awt.Color(56, 56, 56));
         sLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel19.setIconSize(13);
-        sLabel19.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/file.png"))); // NOI18N
+        sLabel19.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/file.png"))); // NOI18N
         sLabel19.setText("Export");
         sLabel19.setIconTextGap(10);
         sLabel19.setMaximumSize(new java.awt.Dimension(69, 30));
@@ -363,7 +363,7 @@ public class ModuleUnits extends SPanel{
         sLabel20.setForeground(new java.awt.Color(56, 56, 56));
         sLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel20.setIconSize(12);
-        sLabel20.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/activity.png"))); // NOI18N
+        sLabel20.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/activity.png"))); // NOI18N
         sLabel20.setText("Activity Log");
         sLabel20.setIconTextGap(10);
         sLabel20.setMaximumSize(new java.awt.Dimension(69, 30));
@@ -1286,7 +1286,7 @@ public class ModuleUnits extends SPanel{
             sPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel14Layout.createSequentialGroup()
                 .addComponent(sLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         sPanel14Layout.setVerticalGroup(
             sPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1309,7 +1309,7 @@ public class ModuleUnits extends SPanel{
             sPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel28Layout.createSequentialGroup()
                 .addComponent(sLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         sPanel28Layout.setVerticalGroup(
             sPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1326,9 +1326,9 @@ public class ModuleUnits extends SPanel{
 
         sPanel15.setDefaultBackgroundColor(new java.awt.Color(51, 255, 51));
         sPanel15.setPaintBackground(false);
-        sPanel15.setMaximumSize(new java.awt.Dimension(90, 40));
-        sPanel15.setMinimumSize(new java.awt.Dimension(90, 40));
-        sPanel15.setPreferredSize(new java.awt.Dimension(90, 40));
+        sPanel15.setMaximumSize(new java.awt.Dimension(130, 40));
+        sPanel15.setMinimumSize(new java.awt.Dimension(130, 40));
+        sPanel15.setPreferredSize(new java.awt.Dimension(130, 40));
 
         sLabel6.setForeground(new java.awt.Color(56, 56, 56));
         sLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1809,7 +1809,7 @@ public class ModuleUnits extends SPanel{
 
         sLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel9.setIconSize(7);
-        sLabel9.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/previousPage.png"))); // NOI18N
+        sLabel9.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/previousPage.png"))); // NOI18N
 
         javax.swing.GroupLayout sPanel67Layout = new javax.swing.GroupLayout(sPanel67);
         sPanel67.setLayout(sPanel67Layout);
@@ -2232,7 +2232,7 @@ public class ModuleUnits extends SPanel{
 
         sLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel12.setIconSize(7);
-        sLabel12.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/moduleUnits/nextPage.png"))); // NOI18N
+        sLabel12.setScaledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/modules/nextPage.png"))); // NOI18N
 
         javax.swing.GroupLayout sPanel68Layout = new javax.swing.GroupLayout(sPanel68);
         sPanel68.setLayout(sPanel68Layout);

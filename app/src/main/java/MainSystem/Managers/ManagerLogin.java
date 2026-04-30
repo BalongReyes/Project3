@@ -27,7 +27,7 @@ public class ManagerLogin extends Manager {
     public static ModuleLogin getModuleLogin() { return moduleLogin; }
     public static ModuleHome  getModuleHome()  { return moduleHome;  }
 
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
 
     private static AccountsDataTable accountLoggedIn = null;
 
@@ -44,7 +44,7 @@ public class ManagerLogin extends Manager {
         return accountLoggedIn != null;
     }
 
-// -----------------------------------------------------------------------------------------------------------
+// ---- Actions ----------------------------------------------------------------------------------------------
 
     public static void resetUI() {
         moduleLogin.loginError1.setVisible(false);
