@@ -1,16 +1,15 @@
 package FrameSystem.Layers.Tenants.Managers;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
 import DatabaseSystem.UnitTenantsData.UnitTenantsDataTable;
 import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ManagerFilterUnitTenants extends ManagerModuleUnitTenants {
 
@@ -50,12 +49,12 @@ public class ManagerFilterUnitTenants extends ManagerModuleUnitTenants {
             }
         });
         
-        setFilterTitle(moduleUnitTenants.sFilterTitlePanel1);
-        setFilterTitle(moduleUnitTenants.sFilterTitlePanel2);
-        setFilterTitle(moduleUnitTenants.sFilterTitlePanel3);
-        setFilterTitle(moduleUnitTenants.sFilterTitlePanel5);
-        setFilterTitle(moduleUnitTenants.sFilterTitlePanel6);
-        setFilterTitle(moduleUnitTenants.sFilterTitlePanel7);
+        setFilterTitle(moduleUnitTenants.sFilterTitlePanel_Tower);
+        setFilterTitle(moduleUnitTenants.sFilterTitlePanel_Floor);
+        setFilterTitle(moduleUnitTenants.sFilterTitlePanel_Unit);
+        setFilterTitle(moduleUnitTenants.sFilterTitlePanel_LastName);
+        setFilterTitle(moduleUnitTenants.sFilterTitlePanel_FirstName);
+        setFilterTitle(moduleUnitTenants.sFilterTitlePanel_MiddleName);
     }
     
     public static void setFilterTitle(SFilterTitlePanel filterTitle){
@@ -72,9 +71,9 @@ public class ManagerFilterUnitTenants extends ManagerModuleUnitTenants {
             int dataIndex = filterTitle.getDataIndex(); 
 
             SFilterTitlePanel[] allFilterPanels = {
-                moduleUnitTenants.sFilterTitlePanel1, moduleUnitTenants.sFilterTitlePanel2,
-                moduleUnitTenants.sFilterTitlePanel3, moduleUnitTenants.sFilterTitlePanel5,
-                moduleUnitTenants.sFilterTitlePanel6, moduleUnitTenants.sFilterTitlePanel7
+                moduleUnitTenants.sFilterTitlePanel_Tower, moduleUnitTenants.sFilterTitlePanel_Floor,
+                moduleUnitTenants.sFilterTitlePanel_Unit, moduleUnitTenants.sFilterTitlePanel_LastName,
+                moduleUnitTenants.sFilterTitlePanel_FirstName, moduleUnitTenants.sFilterTitlePanel_MiddleName
             };
             
             for (SFilterTitlePanel panel : allFilterPanels) {

@@ -222,10 +222,23 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
 
                 // A) Feed the charts with the FULL dataset
                 if (fullDataBatch != null && fullDataBatch.length > 0) {
+                    int localOwners = 0;
+                    int localTenants = 0;
+                    int localOthers = 0;
+                    
                     for (UnitsDataTable data : fullDataBatch) {
-                        addOccupancyDataChart(data);
-                        addTotalUnitsDataChart();
+                        switch (data.getOccupancy()) {
+                            case Owner, OwnerWeekenders, OwnerNoActivity -> localOwners++;
+                            case Tenant, TenantWeekenders, TenantNoActivity -> localTenants++;
+                            case Inventory, UnturnedOver -> localOthers++;
+                        }
                     }
+                    
+                    totalUnits = fullDataBatch.length;
+                    moduleUnits.sLabel26.setText(String.valueOf(totalUnits));
+                    
+                    moduleUnits.objectUnitDonutChart1.addData(localOwners, localTenants, localOthers);
+                    updateOccupancyPercentage(localOwners, localTenants, localOthers);
                 }
 
                 // B) Populate the Table with ONLY the paginated slice
@@ -369,32 +382,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         totalUnits = 0;
     }
     
-    public static void addTotalUnitsDataChart() {
-        totalUnits++;
-        moduleUnits.sLabel26.setText(String.valueOf(totalUnits));
-    }
-    
     public static void resetOccupancyDataChart() {
         moduleUnits.objectUnitDonutChart1.resetData();
     }
     
-    public static void addOccupancyDataChart(UnitsDataTable data) {
-        switch (data.getOccupancy()) {
-            case Owner, OwnerWeekenders, OwnerNoActivity -> {
-                moduleUnits.objectUnitDonutChart1.addDataOwner();
-            }
-            case Tenant, TenantWeekenders, TenantNoActivity -> {
-                moduleUnits.objectUnitDonutChart1.addDataTenants();
-            }
-            case Inventory, UnturnedOver -> {
-                moduleUnits.objectUnitDonutChart1.addDataOthers();
-            }
-        }
-        
-        int owners  = moduleUnits.objectUnitDonutChart1.owners;
-        int tenants = moduleUnits.objectUnitDonutChart1.tenants;
-        int others  = moduleUnits.objectUnitDonutChart1.others;
-        
+    private static void updateOccupancyPercentage(int owners, int tenants, int others) {
         int total = owners + tenants + others;
         if (total > 0) {
             double percentage = ((double) (owners + tenants) / total) * 100.0;

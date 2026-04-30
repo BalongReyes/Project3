@@ -18,6 +18,8 @@ public record UnitTenantsDataTable(
         int unitsId,
         int weekenders,
         int noActivity,
+        Date move_in,
+        Date move_out,
 
         // 'residents' fields
         String lastName,
@@ -48,27 +50,29 @@ public record UnitTenantsDataTable(
     public static final int UNITS_ID = 3;
     public static final int WEEKENDERS = 4;
     public static final int NO_ACTIVITY = 5;
+    public static final int MOVE_IN = 6;
+    public static final int MOVE_OUT = 7;
     
-    public static final int LAST_NAME = 6;
-    public static final int FIRST_NAME = 7;
-    public static final int MIDDLE_NAME = 8;
-    public static final int AUTHORIZED_REPRESENTATIVE = 9;
-    public static final int BIRTHDATE = 10;
-    public static final int CIVIL_STATUS = 11;
-    public static final int GENDER = 12;
-    public static final int NATIONALITY = 13;
-    public static final int ACR_NO = 14;
-    public static final int EMPLOYER_NAME = 15;
-    public static final int PROFESSION = 16;
-    public static final int TAX_NO = 17;
-    public static final int CREATED = 18;
-    public static final int MODIFIED = 19;
-    public static final int MOBILE_NOS = 20;
+    public static final int LAST_NAME = 8;
+    public static final int FIRST_NAME = 9;
+    public static final int MIDDLE_NAME = 10;
+    public static final int AUTHORIZED_REPRESENTATIVE = 11;
+    public static final int BIRTHDATE = 12;
+    public static final int CIVIL_STATUS = 13;
+    public static final int GENDER = 14;
+    public static final int NATIONALITY = 15;
+    public static final int ACR_NO = 16;
+    public static final int EMPLOYER_NAME = 17;
+    public static final int PROFESSION = 18;
+    public static final int TAX_NO = 19;
+    public static final int CREATED = 20;
+    public static final int MODIFIED = 21;
+    public static final int MOBILE_NOS = 22;
     
     // NEW: Unit specific constants
-    public static final int TOWER = 21;
-    public static final int FLOOR = 22;
-    public static final int UNIT = 23;
+    public static final int TOWER = 23;
+    public static final int FLOOR = 24;
+    public static final int UNIT = 25;
 
     public UnitTenantsDataTable(ResultSet results) throws SQLException {
         this(
@@ -77,6 +81,8 @@ public record UnitTenantsDataTable(
             results.getInt("units_id"),
             results.getInt("weekenders"),
             results.getInt("noactivity"),
+            results.getDate("move_in"),
+            results.getDate("move_out"),
             
             results.getString("lastName"),
             results.getString("firstName"),
@@ -119,6 +125,8 @@ public record UnitTenantsDataTable(
             case UNITS_ID -> unitsId;
             case WEEKENDERS -> weekenders;
             case NO_ACTIVITY -> noActivity;
+            case MOVE_IN -> move_in;
+            case MOVE_OUT -> move_out;
             case LAST_NAME -> lastName;
             case FIRST_NAME -> firstName;
             case MIDDLE_NAME -> middleName;
@@ -147,7 +155,7 @@ public record UnitTenantsDataTable(
             case LAST_NAME, FIRST_NAME, MIDDLE_NAME, AUTHORIZED_REPRESENTATIVE, 
                  CIVIL_STATUS, NATIONALITY, ACR_NO, EMPLOYER_NAME, PROFESSION, MOBILE_NOS, TOWER -> DataTableType.TYPE_STRING;
             case ID, RESIDENTS_ID, UNITS_ID, WEEKENDERS, NO_ACTIVITY, GENDER, TAX_NO, FLOOR, UNIT -> DataTableType.TYPE_INTEGER;
-            case BIRTHDATE, CREATED, MODIFIED -> DataTableType.TYPE_DATE;
+            case BIRTHDATE, CREATED, MODIFIED, MOVE_IN, MOVE_OUT -> DataTableType.TYPE_DATE;
             default -> DataTableType.TYPE_NULL;
         };
     }

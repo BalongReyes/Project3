@@ -19,7 +19,7 @@ public class UnitTenantsDataHandler {
 
     // BASE_SELECT_QUERY joins unittenants with residents and units[cite: 7].
     private static final String BASE_SELECT_QUERY = """
-        SELECT ut.id, ut.residents_id, ut.units_id, ut.weekenders, ut.noactivity, 
+        SELECT ut.id, ut.residents_id, ut.units_id, ut.weekenders, ut.noactivity, ut.move_in, ut.move_out, 
         r.lastName, r.firstName, r.middleName, r.autorizedRepresentative, 
         r.birthdate, r.civilStatus, r.gender, r.nationality, r.acrNo, 
         r.employerName, r.profession, r.taxNo, r.created, r.modified, r.mobileNos, 
@@ -79,18 +79,34 @@ public class UnitTenantsDataHandler {
         List<UnitTenantsDataTable> sortedList = Database.queryForList(query.toString(), UnitTenantsDataTable::new, limit, offset);
         return sortedList.toArray(UnitTenantsDataTable[]::new);
     }
-
-    /**
-     * Maps DataTable indices to database column names for dynamic queries[cite: 7].
-     */
+    
     public static String getColumnName(int dataIndex) {
         return switch (dataIndex) {
             case UnitTenantsDataTable.ID -> "ut.id";
+            case UnitTenantsDataTable.RESIDENTS_ID -> "ut.residents_id";
+            case UnitTenantsDataTable.UNITS_ID -> "ut.units_id";
+            case UnitTenantsDataTable.WEEKENDERS -> "ut.weekenders";
+            case UnitTenantsDataTable.NO_ACTIVITY -> "ut.noactivity";
+            case UnitTenantsDataTable.MOVE_IN -> "ut.move_in";
+            case UnitTenantsDataTable.MOVE_OUT -> "ut.move_out";
+            case UnitTenantsDataTable.LAST_NAME -> "r.lastName";
+            case UnitTenantsDataTable.FIRST_NAME -> "r.firstName";
+            case UnitTenantsDataTable.MIDDLE_NAME -> "r.middleName";
+            case UnitTenantsDataTable.AUTHORIZED_REPRESENTATIVE -> "r.autorizedRepresentative";
+            case UnitTenantsDataTable.BIRTHDATE -> "r.birthdate";
+            case UnitTenantsDataTable.CIVIL_STATUS -> "r.civilStatus";
+            case UnitTenantsDataTable.GENDER -> "r.gender";
+            case UnitTenantsDataTable.NATIONALITY -> "r.nationality";
+            case UnitTenantsDataTable.ACR_NO -> "r.acrNo";
+            case UnitTenantsDataTable.EMPLOYER_NAME -> "r.employerName";
+            case UnitTenantsDataTable.PROFESSION -> "r.profession";
+            case UnitTenantsDataTable.TAX_NO -> "r.taxNo";
+            case UnitTenantsDataTable.CREATED -> "r.created";
+            case UnitTenantsDataTable.MODIFIED -> "r.modified";
+            case UnitTenantsDataTable.MOBILE_NOS -> "r.mobileNos";
             case UnitTenantsDataTable.TOWER -> "u.tower";
             case UnitTenantsDataTable.FLOOR -> "u.floor";
             case UnitTenantsDataTable.UNIT -> "u.unit";
-            case UnitTenantsDataTable.LAST_NAME -> "r.lastName";
-            case UnitTenantsDataTable.FIRST_NAME -> "r.firstName";
             default -> "ut.id";
         };
     }

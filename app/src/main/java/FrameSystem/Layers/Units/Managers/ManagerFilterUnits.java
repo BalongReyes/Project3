@@ -9,6 +9,8 @@ import FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ManagerFilterUnits extends ManagerModuleUnits{
 
@@ -100,7 +102,10 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
 // -----------------------------------------------------------------------------------------------------------
     
     public static ArrayList<DataTableFilter> getFilters(){
-        ArrayList<DataTableFilter> combinedFilters = new ArrayList<>(activeFilters);
+        ArrayList<DataTableFilter> combinedFilters;
+        synchronized(activeFilters) {
+            combinedFilters = new ArrayList<>(activeFilters);
+        }
                 
         if (isFilterTower1Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.WHERE, "1"));
         if (isFilterTower2Active) combinedFilters.add(new DataTableFilter(UnitsDataTable.TOWER, DataTableOrder.WHERE, "2"));
@@ -114,7 +119,7 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
     private static javax.swing.Timer filterDebounceTimer;
     
     // Track multiple active filters
-    private static ArrayList<DataTableFilter> activeFilters = new ArrayList<>();
+    private static final List<DataTableFilter> activeFilters = Collections.synchronizedList(new ArrayList<>());
     
     private static DataTableFilter activeHeaderSortFilter = null;
     

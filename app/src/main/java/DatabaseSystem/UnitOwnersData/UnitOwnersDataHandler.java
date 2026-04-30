@@ -73,16 +73,32 @@ public class UnitOwnersDataHandler {
         List<UnitOwnersDataTable> sortedList = Database.queryForList(query.toString(), UnitOwnersDataTable::new, limit, offset);
         return sortedList.toArray(UnitOwnersDataTable[]::new);
     }
-
-    // NEW: Helper mapping for dynamic filtering
+    
     public static String getColumnName(int dataIndex) {
         return switch (dataIndex) {
             case UnitOwnersDataTable.ID -> "uo.id";
+            case UnitOwnersDataTable.RESIDENTS_ID -> "uo.residents_id";
+            case UnitOwnersDataTable.UNITS_ID -> "uo.units_id";
+            case UnitOwnersDataTable.WEEKENDERS -> "uo.weekenders";
+            case UnitOwnersDataTable.NO_ACTIVITY -> "uo.noactivity";
+            case UnitOwnersDataTable.LAST_NAME -> "r.lastName";
+            case UnitOwnersDataTable.FIRST_NAME -> "r.firstName";
+            case UnitOwnersDataTable.MIDDLE_NAME -> "r.middleName";
+            case UnitOwnersDataTable.AUTHORIZED_REPRESENTATIVE -> "r.autorizedRepresentative";
+            case UnitOwnersDataTable.BIRTHDATE -> "r.birthdate";
+            case UnitOwnersDataTable.CIVIL_STATUS -> "r.civilStatus";
+            case UnitOwnersDataTable.GENDER -> "r.gender";
+            case UnitOwnersDataTable.NATIONALITY -> "r.nationality";
+            case UnitOwnersDataTable.ACR_NO -> "r.acrNo";
+            case UnitOwnersDataTable.EMPLOYER_NAME -> "r.employerName";
+            case UnitOwnersDataTable.PROFESSION -> "r.profession";
+            case UnitOwnersDataTable.TAX_NO -> "r.taxNo";
+            case UnitOwnersDataTable.CREATED -> "r.created";
+            case UnitOwnersDataTable.MODIFIED -> "r.modified";
+            case UnitOwnersDataTable.MOBILE_NOS -> "r.mobileNos";
             case UnitOwnersDataTable.TOWER -> "u.tower";
             case UnitOwnersDataTable.FLOOR -> "u.floor";
             case UnitOwnersDataTable.UNIT -> "u.unit";
-            case UnitOwnersDataTable.LAST_NAME -> "r.lastName";
-            case UnitOwnersDataTable.FIRST_NAME -> "r.firstName";
             default -> "uo.id";
         };
     }
