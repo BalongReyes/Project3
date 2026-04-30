@@ -3,6 +3,8 @@ package FrameSystem.Layers.Tenants.Managers;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
@@ -16,6 +18,8 @@ public class ManagerFilterUnitTenants extends ManagerModuleUnitTenants {
     private static boolean isFilterTower2Active = false;
     private static boolean isFilterTower3Active = false;
     
+// ==== Initialization =======================================================================================
+
     public static void initDefault(){
         setDefaultFilters();
         
@@ -96,7 +100,10 @@ public class ManagerFilterUnitTenants extends ManagerModuleUnitTenants {
 // ---- Filter Retrievals ------------------------------------------------------------------------------------
     
     public static ArrayList<DataTableFilter> getFilters(){
-        ArrayList<DataTableFilter> combinedFilters = new ArrayList<>(activeFilters);
+        ArrayList<DataTableFilter> combinedFilters;
+        synchronized(activeFilters) {
+            combinedFilters = new ArrayList<>(activeFilters);
+        }
                 
         // Ensure your UnitTenantsDataTable has the TOWER index defined if you are filtering by tower
         if (isFilterTower1Active) combinedFilters.add(new DataTableFilter(UnitTenantsDataTable.TOWER, DataTableOrder.WHERE, "1"));
@@ -110,7 +117,7 @@ public class ManagerFilterUnitTenants extends ManagerModuleUnitTenants {
     
     private static javax.swing.Timer filterDebounceTimer;
     
-    private static ArrayList<DataTableFilter> activeFilters = new ArrayList<>();
+    private static final List<DataTableFilter> activeFilters = Collections.synchronizedList(new ArrayList<>());
     
     private static DataTableFilter activeHeaderSortFilter = null;
     

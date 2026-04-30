@@ -19,6 +19,8 @@ public class ManagerLogin extends Manager {
     private static ModuleLogin moduleLogin;
     private static ModuleHome  moduleHome;
 
+// ==== Initialization =======================================================================================
+
     public static void initDefault() {
         moduleLogin = frame.moduleLogin;
         moduleHome  = frame.moduleHome;
@@ -87,6 +89,8 @@ public class ManagerLogin extends Manager {
         } catch (SQLException e) {
             Console.errorOut("Login error", e);
             moduleLogin.offlineMode();
+        } finally {
+            java.util.Arrays.fill(password, '\0');
         }
 
         if (accountSuccessLogin != null) {

@@ -8,9 +8,17 @@ public class ObjectUnitDonutChart extends JPanel{
     public int tenants = 0;
     public int others = 0;
 
+    private static final java.awt.Color COLOR_OWNERS = new java.awt.Color(85, 174, 245);
+    private static final java.awt.Color COLOR_TENANTS = new java.awt.Color(255, 153, 51);
+    private static final java.awt.Color COLOR_OTHERS = new java.awt.Color(148, 163, 184);
+
+// ==== Constructor ==========================================================================================
+
     public ObjectUnitDonutChart(){
         setOpaque(false); // Make background transparent
     }
+
+// ==== Data Management ======================================================================================
 
     public void addData(int owners, int tenants, int others){
         this.owners += owners;
@@ -40,6 +48,8 @@ public class ObjectUnitDonutChart extends JPanel{
         others = 0;
         repaint();
     }
+
+// ==== Rendering ============================================================================================
 
     @Override
     protected void paintComponent(java.awt.Graphics g){
@@ -76,19 +86,19 @@ public class ObjectUnitDonutChart extends JPanel{
 
             // 1. Draw Owners (Blue: 85, 174, 245)
             int ownersAngle = (int) Math.round((owners * 360.0) / total);
-            g2d.setColor(new java.awt.Color(85, 174, 245));
+            g2d.setColor(COLOR_OWNERS);
             g2d.drawArc(x, y, size, size, startAngle, -ownersAngle); 
             startAngle -= ownersAngle;
 
             // 2. Draw Tenants (Orange: 255, 153, 51)
             int tenantsAngle = (int) Math.round((tenants * 360.0) / total);
-            g2d.setColor(new java.awt.Color(255, 153, 51));
+            g2d.setColor(COLOR_TENANTS);
             g2d.drawArc(x, y, size, size, startAngle, -tenantsAngle);
             startAngle -= tenantsAngle;
 
             // 3. Draw Others (Gray: 148, 163, 184)
             int othersAngle = 360 - (ownersAngle + tenantsAngle); 
-            g2d.setColor(new java.awt.Color(148, 163, 184));
+            g2d.setColor(COLOR_OTHERS);
             g2d.drawArc(x, y, size, size, startAngle, -othersAngle);
         }
 

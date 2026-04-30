@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
-import java.awt.geom.RoundRectangle2D;
 import java.beans.BeanProperty;
 import java.util.concurrent.CountDownLatch;
 
@@ -159,16 +158,16 @@ public class SAnimatedLoading extends SPanelAnimated {
         float actualHeight = (lineWidth != 0) ? lineWidth : height * 0.8f;
         float arc = actualHeight; 
         
-        double yPos = (height - actualHeight) / 2.0;
+        int yPos = (int) ((height - actualHeight) / 2.0);
 
         g2.setColor(trackColor);
-        g2.fill(new RoundRectangle2D.Double(0, yPos, width, actualHeight, arc, arc));
+        g2.fillRoundRect(0, yPos, width, (int) actualHeight, (int) arc, (int) arc);
 
-        double fillWidth = width * currentProgress;
+        int fillWidth = (int) (width * currentProgress);
         
         if (fillWidth > 0) {
             g2.setColor(lineColor);
-            g2.fill(new RoundRectangle2D.Double(0, yPos, fillWidth, actualHeight, arc, arc));
+            g2.fillRoundRect(0, yPos, fillWidth, (int) actualHeight, (int) arc, (int) arc);
         }
     }
 }
