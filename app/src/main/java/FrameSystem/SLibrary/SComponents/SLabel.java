@@ -5,7 +5,6 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
 
@@ -51,7 +50,7 @@ public class SLabel extends JLabel{
             scaledImageIcon = this.scaledIcon;
 
             if(iconSize > 0){
-                scaledImageIcon = new ImageIcon(this.scaledIcon.getImage().getScaledInstance(iconSize, iconSize, Image.SCALE_SMOOTH));
+                scaledImageIcon = new ImageIcon(CustomGraphics.getSmoothScaledImage(this.scaledIcon.getImage(), iconSize, iconSize));
             }
             setIcon(scaledImageIcon);
         }else{
@@ -75,7 +74,7 @@ public class SLabel extends JLabel{
         if(scaledIcon != null){
             scaledImageIcon = scaledIcon;
             if(iconSize > 0){
-                scaledImageIcon = new ImageIcon(scaledIcon.getImage().getScaledInstance(iconSize, iconSize, Image.SCALE_SMOOTH));
+                scaledImageIcon = new ImageIcon(CustomGraphics.getSmoothScaledImage(scaledIcon.getImage(), iconSize, iconSize));
             }
             setIcon(scaledImageIcon);
         }
@@ -84,7 +83,7 @@ public class SLabel extends JLabel{
     public int getIconSize(){
         return iconSize;
     }
-    
+
 // ---- Component Properties ---------------------------------------------------------------------------------
     
     @Override

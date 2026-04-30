@@ -64,7 +64,7 @@ public class STextField extends JTextField{
 
     @Override
     public void paint(Graphics g){
-        if(getText().isEmpty()){
+        if(getDocument().getLength() == 0){
             g.setFont(hintFont);
             g.setColor(hintColor);
             g.drawString(hint, 0, hintOffest);

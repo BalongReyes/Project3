@@ -3,7 +3,9 @@ package MainSystem;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
 
 public class CustomGraphics{
 
@@ -18,6 +20,28 @@ public class CustomGraphics{
         Graphics2D g2 = (Graphics2D)g;
         g2.setRenderingHints(qualityHints);
         return g2;
+    }
+
+    public static Image getSmoothScaledImage(Image srcImg, int w, int h) {
+        if (w <= 0 || h <= 0) {
+            // Return the original image if target dimensions are invalid to avoid exceptions
+            return srcImg;
+        }
+
+        // Use a BufferedImage for hardware-accelerated drawing
+        BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = resizedImg.createGraphics();
+
+        // Apply high-quality rendering hints for smooth scaling
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+        g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        // Draw the source image onto the new, resized image canvas
+        g2.drawImage(srcImg, 0, 0, w, h, null);
+        g2.dispose();
+
+        return resizedImg;
     }
 
 }

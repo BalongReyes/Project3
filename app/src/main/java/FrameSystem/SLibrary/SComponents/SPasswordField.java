@@ -77,7 +77,7 @@ public class SPasswordField extends JPasswordField{
 
     @Override
     public void paint(Graphics g){
-        if(String.valueOf(getPassword()).isEmpty()){
+        if(getDocument().getLength() == 0){
             g.setColor(hintColor);
             g.drawString(hint, 0, offsetHint);
         }

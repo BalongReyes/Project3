@@ -1,8 +1,9 @@
 package DatabaseSystem.UnitTenantsData;
 
-import DatabaseSystem.Database;
+import ConsoleSystem.Console;
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
+import DatabaseSystem.Database;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,7 +38,7 @@ public class UnitTenantsDataHandler {
                 tenantList.add(new UnitTenantsDataTable(rs));
             }
         } catch (SQLException e) {
-            System.err.println("Error fetching unit tenants: " + e.getMessage());
+            Console.errorOut("Error fetching unit tenants", e);
         }
         return tenantList;
     }

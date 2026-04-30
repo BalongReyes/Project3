@@ -1,8 +1,9 @@
 package DatabaseSystem.UnitOwnersData;
 
-import DatabaseSystem.Database;
+import ConsoleSystem.Console;
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
+import DatabaseSystem.Database;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,8 +34,7 @@ public class UnitOwnersDataHandler {
                 ownerList.add(new UnitOwnersDataTable(rs));
             }
         } catch (SQLException e) {
-            System.err.println("Error fetching unit owners: " + e.getMessage());
-            e.printStackTrace();
+            Console.errorOut("Error fetching unit owners", e);
         }
         return ownerList;
     }
