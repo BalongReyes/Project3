@@ -537,8 +537,8 @@ public class ModuleHome extends SPanel{
         menuButton_Dashboard.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Dashboard.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboardActive.png"))); // NOI18N
         menuButton_Dashboard.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Dashboard.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Dashboard.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Dashboard.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Dashboard.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboard.png"))); // NOI18N
         menuButton_Dashboard.setManuMinButton(menuMinButton_Dashboard);
         menuButton_Dashboard.setRadius(15);
@@ -551,8 +551,8 @@ public class ModuleHome extends SPanel{
         menuButton_Units.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Units.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/unitsActive.png"))); // NOI18N
         menuButton_Units.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Units.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Units.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Units.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Units.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/units.png"))); // NOI18N
         menuButton_Units.setManuMinButton(menuMinButton_Units);
         menuButton_Units.setRadius(15);
@@ -565,8 +565,8 @@ public class ModuleHome extends SPanel{
         menuButton_Parking.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Parking.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parkingActive.png"))); // NOI18N
         menuButton_Parking.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Parking.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Parking.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Parking.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Parking.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parking.png"))); // NOI18N
         menuButton_Parking.setManuMinButton(menuMinButton_Parking);
         menuButton_Parking.setRadius(15);
@@ -628,8 +628,8 @@ public class ModuleHome extends SPanel{
         menuButton_NewResident.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_NewResident.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/newResidentActive.png"))); // NOI18N
         menuButton_NewResident.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_NewResident.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_NewResident.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_NewResident.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_NewResident.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/newResident.png"))); // NOI18N
         menuButton_NewResident.setManuMinButton(menuMinButton_NewResident);
         menuButton_NewResident.setRadius(15);
@@ -642,8 +642,8 @@ public class ModuleHome extends SPanel{
         menuButton_Owners.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Owners.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/ownersActive.png"))); // NOI18N
         menuButton_Owners.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Owners.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Owners.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Owners.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Owners.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/owners.png"))); // NOI18N
         menuButton_Owners.setManuMinButton(menuMinButton_Owners);
         menuButton_Owners.setRadius(15);
@@ -656,8 +656,8 @@ public class ModuleHome extends SPanel{
         menuButton_Tenants.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Tenants.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tenantsActive.png"))); // NOI18N
         menuButton_Tenants.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Tenants.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Tenants.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Tenants.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Tenants.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tenants.png"))); // NOI18N
         menuButton_Tenants.setManuMinButton(menuMinButton_Tenants);
         menuButton_Tenants.setRadius(15);
@@ -670,8 +670,8 @@ public class ModuleHome extends SPanel{
         menuButton_Move.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Move.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/moveActive.png"))); // NOI18N
         menuButton_Move.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Move.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Move.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Move.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Move.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/move.png"))); // NOI18N
         menuButton_Move.setManuMinButton(menuMinButton_Move);
         menuButton_Move.setRadius(15);
@@ -684,8 +684,8 @@ public class ModuleHome extends SPanel{
         menuButton_Visitors.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Visitors.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/visitorsActive.png"))); // NOI18N
         menuButton_Visitors.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Visitors.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Visitors.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Visitors.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Visitors.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/visitors.png"))); // NOI18N
         menuButton_Visitors.setManuMinButton(menuMinButton_Visitors);
         menuButton_Visitors.setRadius(15);
@@ -698,8 +698,8 @@ public class ModuleHome extends SPanel{
         menuButton_Concerns.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Concerns.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concernsActive.png"))); // NOI18N
         menuButton_Concerns.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Concerns.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Concerns.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Concerns.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Concerns.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concerns.png"))); // NOI18N
         menuButton_Concerns.setManuMinButton(menuMinButton_Concerns);
         menuButton_Concerns.setRadius(15);
@@ -759,8 +759,8 @@ public class ModuleHome extends SPanel{
         menuButton_Accounts.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Accounts.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/accountsActive.png"))); // NOI18N
         menuButton_Accounts.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Accounts.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Accounts.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Accounts.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Accounts.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/accounts.png"))); // NOI18N
         menuButton_Accounts.setManuMinButton(menuMinButton_Accounts);
         menuButton_Accounts.setRadius(15);
@@ -884,8 +884,8 @@ public class ModuleHome extends SPanel{
         menuButton_Profile.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Profile.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/profileActive.png"))); // NOI18N
         menuButton_Profile.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Profile.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Profile.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Profile.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Profile.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/profile.png"))); // NOI18N
         menuButton_Profile.setManuMinButton(menuMinButton_Profile);
         menuButton_Profile.setRadius(15);
@@ -896,8 +896,8 @@ public class ModuleHome extends SPanel{
         menuButton_Settings.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Settings.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/settingsActive.png"))); // NOI18N
         menuButton_Settings.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Settings.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Settings.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
-        menuButton_Settings.setInactiveForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Settings.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/settings.png"))); // NOI18N
         menuButton_Settings.setManuMinButton(menuMinButton_Settings);
         menuButton_Settings.setRadius(15);

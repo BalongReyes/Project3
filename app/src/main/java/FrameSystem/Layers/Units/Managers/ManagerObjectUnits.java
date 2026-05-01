@@ -411,7 +411,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         UnitsDataTable data = currentObject.getData();
         
         moduleUnits.unitsView_Title.setText("Unit " + data.tower() + "-" + data.floor() + (data.unit() < 10 ? "0" : "") + data.unit());
-        moduleUnits.unitsView_Highlight.setOccupancy(data.getOccupancy());
+        moduleUnits.unitsView_Highlight.setUnitStatus(data.getUnitStatus());
         
         int index = objects.indexOf(currentObject);
         moduleUnits.unitsView_Previous.setVisible(index > 0 || currentPage > 0);

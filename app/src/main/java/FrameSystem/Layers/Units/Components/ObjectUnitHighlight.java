@@ -14,45 +14,71 @@ public class ObjectUnitHighlight extends SPanel{
     public void setOccupancy(UnitsDataOccupancy occupancy){
         sLabel1.setText(occupancy.getStringName());
         
-        Color bgColor = new Color(200, 200, 200);
+        Color bgColor = new Color(250, 250, 250);
+        Color borderColor = new Color(230, 230, 230);
+        Color textColor = new Color(70, 70, 70);
         
         switch(occupancy){
             case Null, Inventory -> {
-                bgColor = new Color(148, 163, 184);  
+                bgColor = new Color(241, 245, 249);
+                borderColor = new Color(203, 213, 225);
+                textColor = new Color(71, 85, 105);
             }
             case Owner, OwnerWeekenders, OwnerNoActivity -> {
-                bgColor = new Color(85, 174, 245);   
+                bgColor = new Color(239, 246, 255);
+                borderColor = new Color(191, 219, 254);
+                textColor = new Color(30, 64, 175);
             }
             case Tenant, TenantWeekenders, TenantNoActivity -> {
-                bgColor = new Color(255,153,51);     
+                bgColor = new Color(255, 247, 237);
+                borderColor = new Color(254, 215, 170);
+                textColor = new Color(154, 52, 18);
             }
             case UnturnedOver -> {
-                bgColor = new Color(248, 113, 113);  
+                bgColor = new Color(254, 242, 242);
+                borderColor = new Color(254, 202, 202);
+                textColor = new Color(153, 27, 27);
             }
         }
         
-        sPanel2.setDefaultBackgroundColor(bgColor);
+        sPanel1.setDefaultBackgroundColor(bgColor);
+        sPanel1.setDefaultBorderColor(borderColor);
+        sLabel1.setForeground(textColor);
         sPanel1.repaint();
     }
     
     public void setUnitStatus(UnitsDataUnitStatus unitStatus){
         sLabel1.setText(unitStatus.getStringName());
         
-        Color bgColor = new Color(200, 200, 200);
+        Color dotColor = new Color(200, 200, 200);
+        Color bgColor = new Color(250, 250, 250);
+        Color borderColor = new Color(230, 230, 230);
+        Color textColor = new Color(70, 70, 70);
         
         switch(unitStatus){
             case Null, Inventory -> {
-                bgColor = new Color(148, 163, 184);  
+                dotColor = new Color(148, 163, 184);
+                bgColor = new Color(241, 245, 249);
+                borderColor = new Color(203, 213, 225);
+                textColor = new Color(71, 85, 105);
             }
             case TurnedOver -> {
-                bgColor = new Color(74, 222, 128);   
+                dotColor = new Color(74, 222, 128);
+                bgColor = new Color(240, 253, 244);
+                borderColor = new Color(134, 239, 172);
+                textColor = new Color(22, 101, 52);
             }
             case UnturnedOver -> {
-                bgColor = new Color(248, 113, 113);  
+                dotColor = new Color(248, 113, 113);
+                bgColor = new Color(254, 242, 242);
+                borderColor = new Color(254, 202, 202);
+                textColor = new Color(153, 27, 27);
             }
         }
         
-        sPanel2.setDefaultBackgroundColor(bgColor);
+        sPanel1.setDefaultBackgroundColor(bgColor);
+        sPanel1.setDefaultBorderColor(borderColor);
+        sLabel1.setForeground(textColor);
         sPanel1.repaint();
     }
     
@@ -66,7 +92,6 @@ public class ObjectUnitHighlight extends SPanel{
 
         sPanel1 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel1 = new FrameSystem.SLibrary.SComponents.SLabel();
-        sPanel2 = new FrameSystem.SLibrary.SComponents.SPanel();
 
         setPaintBackground(false);
         setMaximumSize(new java.awt.Dimension(90, 50));
@@ -76,40 +101,19 @@ public class ObjectUnitHighlight extends SPanel{
         sPanel1.setBorderLine(2);
         sPanel1.setDefaultBackgroundColor(new java.awt.Color(250, 250, 250));
         sPanel1.setDefaultBorderColor(new java.awt.Color(230, 230, 230));
-        sPanel1.setRadius(10);
+        sPanel1.setRadius(26);
         sPanel1.setRounded(true);
 
         sLabel1.setForeground(new java.awt.Color(70, 70, 70));
         sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel1.setText("Owner");
 
-        sPanel2.setDefaultBackgroundColor(new java.awt.Color(255, 153, 51));
-        sPanel2.setRadius(5);
-        sPanel2.setRounded(true);
-        sPanel2.setMaximumSize(new java.awt.Dimension(8, 8));
-        sPanel2.setMinimumSize(new java.awt.Dimension(8, 8));
-        sPanel2.setName(""); // NOI18N
-        sPanel2.setPreferredSize(new java.awt.Dimension(8, 8));
-
-        javax.swing.GroupLayout sPanel2Layout = new javax.swing.GroupLayout(sPanel2);
-        sPanel2.setLayout(sPanel2Layout);
-        sPanel2Layout.setHorizontalGroup(
-            sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 8, Short.MAX_VALUE)
-        );
-        sPanel2Layout.setVerticalGroup(
-            sPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 8, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout sPanel1Layout = new javax.swing.GroupLayout(sPanel1);
         sPanel1.setLayout(sPanel1Layout);
         sPanel1Layout.setHorizontalGroup(
             sPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(sPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(15, 15, 15)
                 .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
@@ -118,10 +122,6 @@ public class ObjectUnitHighlight extends SPanel{
             .addGroup(sPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(sLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, sPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(sPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -131,7 +131,7 @@ public class ObjectUnitHighlight extends SPanel{
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(sPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,6 +146,5 @@ public class ObjectUnitHighlight extends SPanel{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public FrameSystem.SLibrary.SComponents.SLabel sLabel1;
     public FrameSystem.SLibrary.SComponents.SPanel sPanel1;
-    private FrameSystem.SLibrary.SComponents.SPanel sPanel2;
     // End of variables declaration//GEN-END:variables
 }

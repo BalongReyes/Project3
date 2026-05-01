@@ -34,7 +34,7 @@ public class MenuButton extends SLayerButton{
             sLabel1.setForeground(activeForegroundColor);
             sLabel1.setIcon(activeIcon);
         }else{
-            sLabel1.setForeground(inactiveForegroundColor);
+            sLabel1.setForeground(defaultForegroundColor);
             sLabel1.setIcon(inactiveIcon);
         }
         super.setActive(active);
@@ -54,37 +54,15 @@ public class MenuButton extends SLayerButton{
     }
     
 // -----------------------------------------------------------------------------------------------------------
-    
-    private Color activeForegroundColor = Color.white;
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "The active foreground color")
-    public void setActiveForegroundColor(Color activeForegroundColor){
-        this.activeForegroundColor = activeForegroundColor;
-        if(active){
-            setForeground(activeForegroundColor);
-            sLabel1.setForeground(activeForegroundColor);
-        }
-    }
-
-    public Color getActiveForegroundColor(){
-        return activeForegroundColor;
-    }
-
-    private Color inactiveForegroundColor = Color.white;
-
-    @BeanProperty(preferred = true, visualUpdate = true, description = "The inactive foreground color")
-    public void setInactiveForegroundColor(Color inactiveForegroundColor){
-        this.inactiveForegroundColor = inactiveForegroundColor;
+    @Override
+    public void setDefaultForegroundColor(Color defaultForegroundColor){
+        super.setDefaultForegroundColor(defaultForegroundColor);
         if(!active){
-            setForeground(inactiveForegroundColor);
-            sLabel1.setForeground(inactiveForegroundColor);
+            sLabel1.setForeground(defaultForegroundColor);
         }
     }
 
-    public Color getInactiveForegroundColor(){
-        return inactiveForegroundColor;
-    }
-    
     @Override
     @BeanProperty(hidden = true)
     public void setForeground(Color fg){

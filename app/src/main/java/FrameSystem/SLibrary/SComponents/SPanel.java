@@ -258,8 +258,8 @@ public class SPanel extends JPanel implements InnerListener{
 // ---- Defaults ---------------------------------------------------------------------------------------------
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "The default background color")
-    public void setDefaultBackgroundColor(Color inactiveBackgroundColor){
-        this.defaultBackgroundColor = inactiveBackgroundColor;
+    public void setDefaultBackgroundColor(Color defaultBackgroundColor){
+        this.defaultBackgroundColor = defaultBackgroundColor;
     }
 
     public Color getDefaultBackgroundColor(){
@@ -267,8 +267,8 @@ public class SPanel extends JPanel implements InnerListener{
     }
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "The default foreground color")
-    public void setDefaultForegroundColor(Color inactiveForegroundColor){
-        this.defaultForegroundColor = inactiveForegroundColor;
+    public void setDefaultForegroundColor(Color defaultForegroundColor){
+        this.defaultForegroundColor = defaultForegroundColor;
     }
 
     public Color getDefaultForegroundColor(){
