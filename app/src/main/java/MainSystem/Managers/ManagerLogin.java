@@ -14,8 +14,6 @@ import MainSystem.Manager;
 
 public class ManagerLogin extends Manager {
 
-    // FIX #9: Made private so no other class can accidentally reassign these references.
-    // Use the getters below to access them where needed.
     private static ModuleLogin moduleLogin;
     private static ModuleHome  moduleHome;
 
@@ -77,8 +75,6 @@ public class ManagerLogin extends Manager {
             return;
         }
 
-        // Capture the password into a local char[] so we can pass it to loginAccount,
-        // which will zero it out in its finally block (FIX #8).
         char[] password = moduleLogin.loginPasswordField.getPassword();
 
         AccountsDataTable accountSuccessLogin = null;

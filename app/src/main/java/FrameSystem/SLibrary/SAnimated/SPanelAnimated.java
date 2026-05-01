@@ -16,11 +16,11 @@ public class SPanelAnimated extends SPanel implements ActionListener{
         timer.start();
     }
 
-// Implementations ===========================================================================================
+// ==== Implementations ======================================================================================
     
     @Override
     public void actionPerformed(ActionEvent e){
-        repaint(); // Request a redraw
+        repaint(); 
     }
 
 }

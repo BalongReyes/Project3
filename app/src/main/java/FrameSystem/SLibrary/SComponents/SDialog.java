@@ -11,7 +11,7 @@ public class SDialog extends JDialog{
     private SDialog childDialog, parentDialog;
     private JFrame parentJFrame;
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public SDialog(JFrame parent, SDialog parentDialog){
         this(parent);
@@ -29,7 +29,7 @@ public class SDialog extends JDialog{
         getRootPane().putClientProperty("JRootPane.titleBarForeground", Color.white);
     }
 
-// Main Methods ==============================================================================================
+// ==== Main Methods =========================================================================================
 
     private void addToParentDialog(SDialog parentDialog){
         parentDialog.childDialog = this;
@@ -57,7 +57,7 @@ public class SDialog extends JDialog{
         super.dispose();
     }
 
-// Static Methods ============================================================================================
+// ==== Static Methods =======================================================================================
 
     private static SDialog visibleDialog = null;
     

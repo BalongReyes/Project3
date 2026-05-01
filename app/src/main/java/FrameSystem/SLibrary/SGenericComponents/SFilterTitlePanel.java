@@ -4,7 +4,6 @@ import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.event.MouseListener;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.ImageIcon;
 
 
@@ -39,10 +38,10 @@ public class SFilterTitlePanel extends SPanel{
     public void setArrowDirection(int n){
         arrowDirection = n;
         switch(n){
-            case 1 -> { // down
+            case 1 -> { 
                 sLabel2.setScaledIcon(new ImageIcon(getClass().getResource("/Icons/arrowDown.png")));
             }
-            case 2 -> { // up
+            case 2 -> { 
                 sLabel2.setScaledIcon(new ImageIcon(getClass().getResource("/Icons/arrowUp.png")));
             }
             default -> {

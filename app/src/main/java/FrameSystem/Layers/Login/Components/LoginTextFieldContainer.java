@@ -1,6 +1,9 @@
 
 package FrameSystem.Layers.Login.Components;
 
+import EventSystem.Listeners.MouseClickedAdaptor;
+import FrameSystem.SLibrary.SComponents.SPanel;
+import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -9,12 +12,7 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.JTextField;
-
-import EventSystem.Listeners.MouseClickedAdaptor;
-import FrameSystem.SLibrary.SComponents.SPanel;
-import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A component that displays a jpanel with corner radius")
 public class LoginTextFieldContainer extends SPanel{
@@ -24,14 +22,14 @@ public class LoginTextFieldContainer extends SPanel{
     private boolean focused = false;
     private Color focusedColor = Color.white;
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public LoginTextFieldContainer(){
         setOpaque(false);
         setPreferredSize(new Dimension(50, 50));
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     @BeanProperty(preferred = true, description = "Setup listener to the child")
     public void setTextFieldChild(JTextField textFieldChild){
@@ -71,7 +69,7 @@ public class LoginTextFieldContainer extends SPanel{
         return focusedColor;
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public void paint(Graphics g){

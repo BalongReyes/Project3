@@ -17,14 +17,14 @@ public class STextFieldContainer extends SPanel{
     
     private boolean focused = false;
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public STextFieldContainer(){
         setOpaque(false);
         setPreferredSize(new Dimension(50, 50));
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     @BeanProperty(preferred = true, description = "Setup listener to the child")
     public void setTextFieldChild(JTextField textFieldChild){

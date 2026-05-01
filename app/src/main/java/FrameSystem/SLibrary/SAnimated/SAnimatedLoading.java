@@ -1,5 +1,6 @@
 package FrameSystem.SLibrary.SAnimated;
 
+import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -7,19 +8,15 @@ import java.awt.event.ActionEvent;
 import java.beans.BeanProperty;
 import java.util.concurrent.CountDownLatch;
 
-import MainSystem.CustomGraphics;
-
 public class SAnimatedLoading extends SPanelAnimated {
 
-    // Progress tracking (0.0f to 1.0f)
     private float targetProgress = 0.0f;   
     private float currentProgress = 0.0f;  
     
-    // The dynamic speed calculated based on the requested duration
     private float currentAnimationSpeed = 0.0f;
 
     public SAnimatedLoading() {
-        super(15); // 15ms delay for smooth ~60fps rendering
+        super(15); 
     }
 
 // ==== Implementations ======================================================================================
@@ -38,10 +35,9 @@ public class SAnimatedLoading extends SPanelAnimated {
             currentProgress = targetProgress; 
             currentAnimationSpeed = 0.0f;     
             
-            // WAKE UP THE BACKGROUND THREAD!
             if (currentLatch != null) {
                 currentLatch.countDown(); 
-                currentLatch = null; // Clear it out so we don't call it again
+                currentLatch = null; 
             }
         }
         
@@ -76,7 +72,7 @@ public class SAnimatedLoading extends SPanelAnimated {
 
 // ---- Track Color ------------------------------------------------------------------------------------------
 
-    protected Color trackColor = new Color(255, 255, 255, 50); // Semi-transparent background track
+    protected Color trackColor = new Color(255, 255, 255, 50); 
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "Sets the background track color")
     public void setTrackColor(Color trackColor){
@@ -89,46 +85,30 @@ public class SAnimatedLoading extends SPanelAnimated {
 
 // ==== Progress Control =====================================================================================
 
-    /**
-     * Updates the progress over a specific duration.
-     * @param progress A float representing the percentage (0.0f to 1.0f)
-     * @param durationMs How many milliseconds it should take to visually reach this progress
-     */
     public void setProgress(float progress, int durationMs) {
         this.targetProgress = Math.max(0.0f, Math.min(1.0f, progress));
         
         if (durationMs <= 0) {
-            // If duration is 0, snap instantly without animating
             this.currentProgress = this.targetProgress;
             this.currentAnimationSpeed = 0;
             repaint();
             return;
         }
 
-        // Calculate exactly how much to move the bar per 15ms frame to finish on time!
         float distance = this.targetProgress - this.currentProgress;
         float totalFrames = durationMs / 15.0f; 
         this.currentAnimationSpeed = distance / totalFrames;
     }
 
-    /**
-     * Legacy method: defaults to a smooth 500ms transition
-     * @param progress
-     */
     public void setProgress(float progress) {
         setProgress(progress, 500);
     }
 
     public void setProgressPercentage(int percentage, int durationMs, CountDownLatch latch) {
         this.currentLatch = latch;
-        setProgress(percentage / 100.0f, durationMs); // Calls the existing setProgress logic
+        setProgress(percentage / 100.0f, durationMs); 
     }
     
-    /**
-     * Overloaded method to accept standard 0-100 integer percentages with a duration!
-     * @param percentage
-     * @param durationMs
-     */
     public void setProgressPercentage(int percentage, int durationMs) {
         setProgress(percentage / 100.0f, durationMs);
     }

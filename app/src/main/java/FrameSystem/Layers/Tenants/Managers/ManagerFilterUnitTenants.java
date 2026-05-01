@@ -104,7 +104,6 @@ public class ManagerFilterUnitTenants extends ManagerModuleUnitTenants {
             combinedFilters = new ArrayList<>(activeFilters);
         }
                 
-        // Ensure your UnitTenantsDataTable has the TOWER index defined if you are filtering by tower
         if (isFilterTower1Active) combinedFilters.add(new DataTableFilter(UnitTenantsDataTable.TOWER, DataTableOrder.WHERE, "1"));
         if (isFilterTower2Active) combinedFilters.add(new DataTableFilter(UnitTenantsDataTable.TOWER, DataTableOrder.WHERE, "2"));
         if (isFilterTower3Active) combinedFilters.add(new DataTableFilter(UnitTenantsDataTable.TOWER, DataTableOrder.WHERE, "3"));

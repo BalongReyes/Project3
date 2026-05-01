@@ -154,26 +154,16 @@ public class ManagerObjectUnitOwner extends ManagerModuleUnitOwner {
             int offset = currentPage * pageSize; 
 
             ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnitOwners.getFilters();
+            DataTableFilter[] filtersArray = combinedFilters.toArray(new DataTableFilter[0]);
             
-            UnitOwnersDataTable[] fullDataBatch = UnitOwnersDataHandler.getDataBatchSortedMulti(
-                combinedFilters.toArray(new DataTableFilter[0]),
-                999999, 
-                0
-            );
+            int totalItems = UnitOwnersDataHandler.getDataCountMulti(filtersArray);
 
             if (thisRefreshId != currentRefreshId.get()) return;
 
-            int totalItems = fullDataBatch != null ? fullDataBatch.length : 0;
             totalPages = (int) Math.ceil((double) totalItems / pageSize);
             if (totalPages == 0) totalPages = 1;
 
-            ArrayList<UnitOwnersDataTable> pageDataList = new ArrayList<>();
-            if (fullDataBatch != null) {
-                for (int i = offset; i < Math.min(offset + limit, fullDataBatch.length); i++) {
-                    pageDataList.add(fullDataBatch[i]);
-                }
-            }
-            UnitOwnersDataTable[] dataBatch = pageDataList.toArray(new UnitOwnersDataTable[0]);
+            UnitOwnersDataTable[] dataBatch = UnitOwnersDataHandler.getDataBatchSortedMulti(filtersArray, limit, offset);
 
             long elapsedTime = System.currentTimeMillis() - startTime;
             long minLoadingTime = 1000;
@@ -202,11 +192,7 @@ public class ManagerObjectUnitOwner extends ManagerModuleUnitOwner {
                     moduleUnitOwners.sPanel68.setEnabled(true);
                 }
 
-                if (fullDataBatch != null && fullDataBatch.length > 0) {
-                    for (UnitOwnersDataTable data : fullDataBatch) {
-                        addTotalOwnersDataChart();
-                    }
-                }
+                totalOwners = totalItems;
 
                 if (dataBatch != null && dataBatch.length > 0) {
                     for (UnitOwnersDataTable data : dataBatch) {

@@ -1,16 +1,14 @@
 
 package FrameSystem.Layers.Home.Components;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
+import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.border.EmptyBorder;
-
-import FrameSystem.SLibrary.SComponents.SPanel;
-import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A component that displays a jpanel in hero menu bar")
 public class SPanelHomeMenu extends SPanel{
@@ -37,7 +35,6 @@ public class SPanelHomeMenu extends SPanel{
     
     @Override
     protected void setBorderPadding(){
-        // Top, Left, Bottom, Right
         setBorder(new EmptyBorder(
             0,
             0,
@@ -60,7 +57,6 @@ public class SPanelHomeMenu extends SPanel{
         int w = width - shadowSize + shadowOffsetX;
         int h = height;
         
-        // Draw the drop shadow
         for (int i = 0; i < shadowSize; i++) {
             float opacity = shadowOpacity * (1.0f - ((float) i / shadowSize));
             g.setColor(new Color(
@@ -70,7 +66,6 @@ public class SPanelHomeMenu extends SPanel{
                 (int) (opacity * 255)
             ));
 
-            // Draw shadow rectangles that expand relative to the main body's position
             g.fillRoundRect(
                 x - i + shadowOffsetX, 
                 y, 
@@ -81,7 +76,6 @@ public class SPanelHomeMenu extends SPanel{
             );
         }
 
-        // Draw Background (Inner Body)
         g2.setColor(getBackground());
         g2.fillRoundRect(
             x, 

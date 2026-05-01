@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package FrameSystem.Layers.Units.Components;
 
 import DatabaseSystem.UnitsData.UnitsDataOccupancy;
@@ -9,15 +5,8 @@ import DatabaseSystem.UnitsData.UnitsDataUnitStatus;
 import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.Color;
 
-/**
- *
- * @author SPPR-LOQ
- */
 public class ObjectUnitHighlight extends SPanel{
 
-    /**
-     * Creates new form ObjectUnitOccupancy
-     */
     public ObjectUnitHighlight(){
         initComponents();
     }
@@ -25,21 +14,20 @@ public class ObjectUnitHighlight extends SPanel{
     public void setOccupancy(UnitsDataOccupancy occupancy){
         sLabel1.setText(occupancy.getStringName());
         
-        // Default Colors (Neutral Gray)
         Color bgColor = new Color(200, 200, 200);
         
         switch(occupancy){
             case Null, Inventory -> {
-                bgColor = new Color(148, 163, 184);  // Slate Gray Border
+                bgColor = new Color(148, 163, 184);  
             }
             case Owner, OwnerWeekenders, OwnerNoActivity -> {
-                bgColor = new Color(85, 174, 245);   // Blue Border
+                bgColor = new Color(85, 174, 245);   
             }
             case Tenant, TenantWeekenders, TenantNoActivity -> {
-                bgColor = new Color(255,153,51);     // Orange Border
+                bgColor = new Color(255,153,51);     
             }
             case UnturnedOver -> {
-                bgColor = new Color(248, 113, 113);  // Red Border
+                bgColor = new Color(248, 113, 113);  
             }
         }
         
@@ -50,18 +38,17 @@ public class ObjectUnitHighlight extends SPanel{
     public void setUnitStatus(UnitsDataUnitStatus unitStatus){
         sLabel1.setText(unitStatus.getStringName());
         
-        // Default Colors (Neutral Gray)
         Color bgColor = new Color(200, 200, 200);
         
         switch(unitStatus){
             case Null, Inventory -> {
-                bgColor = new Color(148, 163, 184);  // Slate Gray Border
+                bgColor = new Color(148, 163, 184);  
             }
             case TurnedOver -> {
-                bgColor = new Color(74, 222, 128);   // Green Border
+                bgColor = new Color(74, 222, 128);   
             }
             case UnturnedOver -> {
-                bgColor = new Color(248, 113, 113);  // Red Border
+                bgColor = new Color(248, 113, 113);  
             }
         }
         

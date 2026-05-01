@@ -1,5 +1,7 @@
 package FrameSystem.SLibrary.SComponents;
 
+import EventSystem.Interface.InnerListener;
+import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
@@ -19,12 +21,8 @@ import java.awt.geom.Path2D;
 import java.awt.geom.RoundRectangle2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import EventSystem.Interface.InnerListener;
-import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A versatile component that handles shadows, borders, and interactive states (Hover, Active, Danger)")
 public class SPanel extends JPanel implements InnerListener{
@@ -287,7 +285,6 @@ public class SPanel extends JPanel implements InnerListener{
     protected int radius = 0;
     protected boolean rounded = false;
     
-    // New variables for customizable corners
     protected boolean roundTopLeft = true;
     protected boolean roundTopRight = true;
     protected boolean roundBottomLeft = true;
@@ -573,35 +570,26 @@ public class SPanel extends JPanel implements InnerListener{
      * Helper method to generate a shape with specific rounded corners.
      */
     private Shape createCustomRoundedShape(int x, int y, int w, int h, int r) {
-        // Prevent negative/oversized radius issues
         int maxRadius = Math.min(w / 2, h / 2);
         r = Math.min(r, maxRadius);
 
-        // 1. FAST PATH: If all corners are rounded, use standard Java 2D shape.
-        // This completely bypasses the buggy Path2D geometric engine!
         if (roundTopLeft && roundTopRight && roundBottomLeft && roundBottomRight) {
             return new RoundRectangle2D.Double(x, y, w, h, r * 2, r * 2);
         }
 
-        // 2. FAST PATH: If radius is 0, it's just a standard rectangle.
         if (r <= 0) {
             return new Rectangle(x, y, w, h);
         }
 
-        // 3. CUSTOM CORNERS: Build the path safely without zero-length lines.
         Path2D.Double path = new Path2D.Double();
 
-        // Top Left
         if (roundTopLeft) {
             path.moveTo(x + r, y);
         } else {
             path.moveTo(x, y);
         }
 
-        // Top edge to Top-Right
         if (roundTopRight) {
-            // ONLY draw the line if there is actual distance between the corners!
-            // This prevents the zero-length line bug that causes the infinite loop.
             if (w - (roundTopLeft ? r : 0) - r > 0) {
                 path.lineTo(x + w - r, y);
             }
@@ -610,7 +598,6 @@ public class SPanel extends JPanel implements InnerListener{
             path.lineTo(x + w, y);
         }
 
-        // Right edge to Bottom-Right
         if (roundBottomRight) {
             if (h - (roundTopRight ? r : 0) - r > 0) {
                 path.lineTo(x + w, y + h - r);
@@ -620,7 +607,6 @@ public class SPanel extends JPanel implements InnerListener{
             path.lineTo(x + w, y + h);
         }
 
-        // Bottom edge to Bottom-Left
         if (roundBottomLeft) {
             if (w - (roundBottomRight ? r : 0) - r > 0) {
                 path.lineTo(x + r, y + h);
@@ -630,7 +616,6 @@ public class SPanel extends JPanel implements InnerListener{
             path.lineTo(x, y + h);
         }
 
-        // Left edge back to Top-Left
         if (roundTopLeft) {
             if (h - (roundBottomLeft ? r : 0) - r > 0) {
                 path.lineTo(x, y + r);
@@ -646,13 +631,10 @@ public class SPanel extends JPanel implements InnerListener{
 
     @Override
     public void paint(Graphics g){
-        // 1. Paint the background, shadows, and borders first
         paintSPanel(g);
         
-        // 2. Save the original clipping area
         Shape oldClip = g.getClip();
         
-        // 3. If the panel is rounded, apply a rounded clip for the children
         if (rounded && radius > 0) {
             Graphics2D g2 = CustomGraphics.getGraphics2D(g);
             int width = getWidth();
@@ -669,10 +651,8 @@ public class SPanel extends JPanel implements InnerListener{
             }
         }
         
-        // 4. Draw all child components
         paintOverrideAll(g);
         
-        // 5. Restore the original clip
         g.setClip(oldClip);
     }
     
@@ -692,7 +672,6 @@ public class SPanel extends JPanel implements InnerListener{
         int w = isShadowX() ? width - (shadowSize * 2) : width;
         int h = isShadowY() ? height - (shadowSize * 2) : height;
 
-        // 1. Draw Shadows
         for(int i = 0; i < shadowSize; i++){
             float opacity = shadowOpacity * (1.0f - ((float) i / shadowSize));
             g2.setColor(new Color(
@@ -707,7 +686,6 @@ public class SPanel extends JPanel implements InnerListener{
             g2.fill(shadowShape);
         }
 
-        // 2. Draw Outer Border
         if(borderLine > 0 && (borderSideTop || borderSideBottom || borderSideLeft || borderSideRight)){
             if(overideBorder != null){
                 g2.setColor(overideBorder);
@@ -718,7 +696,6 @@ public class SPanel extends JPanel implements InnerListener{
             g2.fill(borderShape);
         }
 
-        // 3. Determine Foreground Color
         if(danger){
             setForeground(dangerForegroundColor);
         }else if(active && (canHover && hovering && activeHoverForegroundColor != null)){
@@ -731,7 +708,6 @@ public class SPanel extends JPanel implements InnerListener{
             setForeground(defaultForegroundColor);
         }
 
-        // 4. Draw Inner Body ONLY if paintBackground is True
         if(paintBackground){
             Color currentBgColor;
             if(overideBackground != null){
@@ -750,14 +726,12 @@ public class SPanel extends JPanel implements InnerListener{
 
             g2.setColor(currentBgColor);
             
-            // Determine active offsets for the inner body
             int bTop = borderSideTop ? borderLine : 0;
             int bBot = borderSideBottom ? borderLine : 0;
             int bLeft = borderSideLeft ? borderLine : 0;
             int bRight = borderSideRight ? borderLine : 0;
             
-            // Draw background using custom shape
-            int bgRadius = Math.max(0, radiusPaint - borderLine); // Prevents negative radius on large borders
+            int bgRadius = Math.max(0, radiusPaint - borderLine); 
             Shape bgShape = createCustomRoundedShape(
                     x + bLeft, y + bTop,
                     w - bLeft - bRight, h - bTop - bBot,

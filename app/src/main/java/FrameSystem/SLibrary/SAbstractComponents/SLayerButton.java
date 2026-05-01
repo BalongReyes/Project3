@@ -13,12 +13,12 @@ public abstract class SLayerButton extends SPanelActivatableHover{
         super();
     }
     
-// Abstract Methods ==========================================================================================
+// ==== Abstract Methods =====================================================================================
     
     public abstract void addLayeredPanelMouseListener(MouseListener m);
     public abstract void setActiveButton(boolean active);
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public void paintOverrideAll(Graphics g){

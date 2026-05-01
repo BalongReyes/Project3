@@ -1,12 +1,11 @@
 package DatabaseSystem.UnitsData;
 
-import java.sql.SQLException;
-import java.util.List;
-
 import ConsoleSystem.Console;
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.DataTable.DataTableOrder;
 import DatabaseSystem.Database;
+import java.sql.SQLException;
+import java.util.List;
 
 public class UnitsDataHandler {
 
@@ -30,6 +29,8 @@ public class UnitsDataHandler {
         var whereBy = new StringBuilder();
         var orderBy = new StringBuilder();
         
+        java.util.List<Object> params = new java.util.ArrayList<>();
+
         if (filters != null && filters.length > 0) {
             int whereCount = 0;
             int orderCount = 0;
@@ -39,7 +40,8 @@ public class UnitsDataHandler {
                 
                 if (filter.order() == DataTableOrder.WHERE) {
                     if (whereCount++ > 0) whereBy.append(" OR ");
-                    whereBy.append(columnName).append(" = '").append(filter.dataWhere()).append("'");
+                    whereBy.append(columnName).append(" = ?");
+                    params.add(filter.dataWhere());
                 } else {
                     if (orderCount++ > 0) orderBy.append(", ");
                     String orderStr = (filter.order() == DataTableOrder.ASC) ? "ASC" : "DESC";
@@ -55,13 +57,16 @@ public class UnitsDataHandler {
         else query.append(" ORDER BY u.id ASC");
         
         query.append(" LIMIT ? OFFSET ?");
+        params.add(limit);
+        params.add(offset);
         
-        List<UnitsDataTable> sortedList = Database.queryForList(query.toString(), UnitsDataTable::new, limit, offset);
+        List<UnitsDataTable> sortedList = Database.queryForList(query.toString(), UnitsDataTable::new, params.toArray());
         return sortedList.toArray(UnitsDataTable[]::new);
     }
     
     public static int getDataCountMulti(DataTableFilter[] filters) throws SQLException {
         var whereBy = new StringBuilder();
+        java.util.List<Object> params = new java.util.ArrayList<>();
         
         if (filters != null && filters.length > 0) {
             int whereCount = 0;
@@ -69,7 +74,8 @@ public class UnitsDataHandler {
                 var columnName = getColumnName(filter.dataIndex());
                 if (filter.order() == DataTableOrder.WHERE) {
                     if (whereCount++ > 0) whereBy.append(" OR ");
-                    whereBy.append(columnName).append(" = '").append(filter.dataWhere()).append("'");
+                    whereBy.append(columnName).append(" = ?");
+                    params.add(filter.dataWhere());
                 }
             }
         }
@@ -77,7 +83,37 @@ public class UnitsDataHandler {
         var query = new StringBuilder("SELECT COUNT(*) FROM units u");
         if (!whereBy.isEmpty()) query.append(" WHERE ").append(whereBy);
         
-        return Database.queryForObject(query.toString(), rs -> rs.getInt(1)).orElse(0);
+        return Database.queryForObject(query.toString(), rs -> rs.getInt(1), params.toArray()).orElse(0);
+    }
+    
+    public static int[] getOccupancyTotals(DataTableFilter[] filters) throws SQLException {
+        var whereBy = new StringBuilder();
+        java.util.List<Object> params = new java.util.ArrayList<>();
+        
+        if (filters != null && filters.length > 0) {
+            int whereCount = 0;
+            for (var filter : filters) {
+                var columnName = getColumnName(filter.dataIndex());
+                if (filter.order() == DataTableOrder.WHERE) {
+                    if (whereCount++ > 0) whereBy.append(" OR ");
+                    whereBy.append(columnName).append(" = ?");
+                    params.add(filter.dataWhere());
+                }
+            }
+        }
+        
+        var query = new StringBuilder("""
+            SELECT 
+                SUM(CASE WHEN EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id) THEN 1 ELSE 0 END) as tenants,
+                SUM(CASE WHEN EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id) AND NOT EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id) THEN 1 ELSE 0 END) as owners,
+                SUM(CASE WHEN NOT EXISTS(SELECT 1 FROM unitowners o WHERE o.units_id = u.id) AND NOT EXISTS(SELECT 1 FROM unittenants t WHERE t.units_id = u.id) THEN 1 ELSE 0 END) as others
+            FROM units u
+            """);
+        if (!whereBy.isEmpty()) query.append(" WHERE ").append(whereBy);
+        
+        return Database.queryForObject(query.toString(), rs -> new int[]{
+            rs.getInt("owners"), rs.getInt("tenants"), rs.getInt("others")
+        }, params.toArray()).orElse(new int[]{0, 0, 0});
     }
     
     public static UnitsDataTable findDataById(int id) throws SQLException {

@@ -8,14 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public record UnitOwnersDataTable(
-        // 'unitowners' fields
         int id,
         int residentsId,
         int unitsId,
         int weekenders,
         int noActivity,
 
-        // 'residents' fields
         String lastName,
         String firstName,
         String middleName,
@@ -32,13 +30,11 @@ public record UnitOwnersDataTable(
         Date modified,
         String mobileNos,
         
-        // NEW: 'units' fields
         String tower,
         int floor,
         int unit
 ) implements DataTable {
 
-    // Constants for column indexing
     public static final int ID = 1;
     public static final int RESIDENTS_ID = 2;
     public static final int UNITS_ID = 3;
@@ -61,7 +57,6 @@ public record UnitOwnersDataTable(
     public static final int MODIFIED = 19;
     public static final int MOBILE_NOS = 20;
     
-    // NEW: Constants for unit fields
     public static final int TOWER = 21;
     public static final int FLOOR = 22;
     public static final int UNIT = 23;
@@ -90,7 +85,6 @@ public record UnitOwnersDataTable(
             results.getDate("modified"),
             results.getString("mobileNos"),
             
-            // NEW: Fetching unit data
             results.getString("tower"),
             results.getInt("floor"),
             results.getInt("unit")
@@ -130,7 +124,6 @@ public record UnitOwnersDataTable(
             case CREATED -> created;
             case MODIFIED -> modified;
             case MOBILE_NOS -> mobileNos;
-            // NEW: Mapping for switch
             case TOWER -> tower;
             case FLOOR -> floor;
             case UNIT -> unit;

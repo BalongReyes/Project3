@@ -153,26 +153,16 @@ public class ManagerObjectUnitTenants extends ManagerModuleUnitTenants {
             int offset = currentPage * pageSize; 
 
             ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnitTenants.getFilters();
+            DataTableFilter[] filtersArray = combinedFilters.toArray(new DataTableFilter[0]);
             
-            UnitTenantsDataTable[] fullDataBatch = UnitTenantsDataHandler.getDataBatchSortedMulti(
-                combinedFilters.toArray(new DataTableFilter[0]),
-                999999, 
-                0
-            );
+            int totalItems = UnitTenantsDataHandler.getDataCountMulti(filtersArray);
 
             if (thisRefreshId != currentRefreshId.get()) return;
 
-            int totalItems = fullDataBatch != null ? fullDataBatch.length : 0;
             totalPages = (int) Math.ceil((double) totalItems / pageSize);
             if (totalPages == 0) totalPages = 1;
 
-            ArrayList<UnitTenantsDataTable> pageDataList = new ArrayList<>();
-            if (fullDataBatch != null) {
-                for (int i = offset; i < Math.min(offset + limit, fullDataBatch.length); i++) {
-                    pageDataList.add(fullDataBatch[i]);
-                }
-            }
-            UnitTenantsDataTable[] dataBatch = pageDataList.toArray(new UnitTenantsDataTable[0]);
+            UnitTenantsDataTable[] dataBatch = UnitTenantsDataHandler.getDataBatchSortedMulti(filtersArray, limit, offset);
 
             long elapsedTime = System.currentTimeMillis() - startTime;
             long minLoadingTime = 1000;
@@ -201,11 +191,7 @@ public class ManagerObjectUnitTenants extends ManagerModuleUnitTenants {
                     moduleUnitTenants.sPanel68.setEnabled(true);
                 }
 
-                if (fullDataBatch != null && fullDataBatch.length > 0) {
-                    for (UnitTenantsDataTable data : fullDataBatch) {
-                        addTotalTenantsDataChart();
-                    }
-                }
+                totalTenants = totalItems;
 
                 if (dataBatch != null && dataBatch.length > 0) {
                     for (UnitTenantsDataTable data : dataBatch) {

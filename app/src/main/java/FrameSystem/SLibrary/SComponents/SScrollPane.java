@@ -28,7 +28,7 @@ public class SScrollPane extends JScrollPane{
 
     private boolean hovering = false;
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public SScrollPane(){
         this.getViewport().setScrollMode(JViewport.SIMPLE_SCROLL_MODE);
@@ -42,7 +42,7 @@ public class SScrollPane extends JScrollPane{
         addMouseListener(listener);
     }
     
-// Main Methods ==============================================================================================
+// ==== Main Methods =========================================================================================
 
     public void applyInnerListeners(){
         JViewport viewPort = getViewport();
@@ -114,7 +114,7 @@ public class SScrollPane extends JScrollPane{
             if(hovering){
                 g2.setColor(hoverColor);
             }else{
-                g2.setColor(scrollbarColor); // Updated to use our new independent color variable
+                g2.setColor(scrollbarColor); 
             }
             g2.fillRoundRect(2, 0, w - 1 - 2, h - 2, 3, 3);
 
@@ -133,7 +133,7 @@ public class SScrollPane extends JScrollPane{
         return scrollBarWidth;
     }
     
-// Scroll Key ================================================================================================
+// ---- Scroll Key -------------------------------------------------------------------------------------------
     
     private int scrollBarUpperCap = 0, scrollBarLowerCap = 0;
     private int scrollBarVisibleCount = 0, scrollBarMod = 0;
@@ -151,7 +151,7 @@ public class SScrollPane extends JScrollPane{
         }
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
     
     public void setObjectContentHeight(int objectContentHeight){
         this.getVerticalScrollBar().addAdjustmentListener((AdjustmentEvent e) -> {
@@ -169,7 +169,6 @@ public class SScrollPane extends JScrollPane{
             scrollBarLowerCap = (int)Math.floor(v2 / objectContentHeight);
         });
         
-        // To prevent scrolling by arrow key
         AbstractAction nullAction = new AbstractAction(){
             @Override
             public void actionPerformed(ActionEvent e){}
@@ -246,7 +245,7 @@ public class SScrollPane extends JScrollPane{
     
 }
 
-// Classes ===================================================================================================
+// ==== Classes ==============================================================================================
 
 class ScrollBarUI extends BasicScrollBarUI{
 

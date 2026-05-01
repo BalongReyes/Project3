@@ -3,15 +3,8 @@ package FrameSystem.Layers.Home.Module;
 
 import FrameSystem.SLibrary.SComponents.SPanel;
 
-/**
- *
- * @author SPPR-LOQ
- */
 public class ModuleHome extends SPanel{
 
-    /**
-     * Creates new form ModuleHome
-     */
     public ModuleHome(){
         initComponents();
         setOpaque(false);

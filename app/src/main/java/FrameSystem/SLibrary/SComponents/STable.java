@@ -1,27 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package FrameSystem.SLibrary.SComponents;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.beans.BeanProperty;
 import java.util.ArrayList;
 import javax.swing.JComponent;
-import java.awt.Color;
 
-/**
- *
- * @author SPPR-LOQ
- */
 public class STable extends SPanel{
 
     private ArrayList<SPanel> rows = new ArrayList<>();
-    private int rowHeight = 60; // Default height
+    private int rowHeight = 60; 
     
-    /**
-     * Creates new form STable
-     */
     public STable(){
         initComponents();
         scrollPane.getViewport().setOpaque(false);
@@ -35,10 +24,6 @@ public class STable extends SPanel{
         resizeTable();
     }
     
-    /**
-     * Adds a row to the table and automatically resizes the container.
-     * @param rowComponent
-     */
     public void addRow(SPanel rowComponent) {
         rows.add(rowComponent);
         container.add(rowComponent);
@@ -46,22 +31,15 @@ public class STable extends SPanel{
         resizeTable();
     }
 
-    /**
-     * Clears all rows from the table.
-     */
     public void clearRows() {
         rows.clear();
         container.removeAll();
         resizeTable();
     }
 
-    /**
-     * Automatically calculates the height based on row count and row height.
-     */
     public void resizeTable() {
         int height = (rows.size() * rowHeight);
         
-        // We can pass 0 for the width because getScrollableTracksViewportWidth() overrides it anyway!
         container.setPreferredSize(new Dimension(0, height));
         
         container.revalidate();

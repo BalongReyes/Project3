@@ -25,7 +25,7 @@ public class SPanelActivatableHover extends SPanelActivatable{
     protected MouseListener hoverListener;
     protected ComponentAdapter componentAdapter;
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
 
     public SPanelActivatableHover(){
         super();
@@ -58,7 +58,7 @@ public class SPanelActivatableHover extends SPanelActivatable{
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
     
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
 
     protected boolean hovering = false;
     
@@ -88,7 +88,7 @@ public class SPanelActivatableHover extends SPanelActivatable{
         }
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     protected Color hoverBackgroundColor = Color.white;
     
@@ -101,7 +101,7 @@ public class SPanelActivatableHover extends SPanelActivatable{
         return hoverBackgroundColor;
     }
 
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public void paintOverride(Graphics g, int n){
@@ -142,8 +142,6 @@ public class SPanelActivatableHover extends SPanelActivatable{
         int width = getWidth();
         int height = getHeight();
 
-        // The main panel's body position, adjusted by shadow size and offsets
-        // This must match the EmptyBorder logic in setBorderPadding()
         int x = 0;
         int y = 0;
         int w = width;
@@ -158,7 +156,6 @@ public class SPanelActivatableHover extends SPanelActivatable{
             h = height - (shadowSize * 2);
         }
 
-        // Draw the drop shadow
         for (int i = 0; i < shadowSize; i++) {
             float opacity = shadowOpacity * (1.0f - ((float) i / shadowSize));
             g.setColor(new Color(
@@ -168,7 +165,6 @@ public class SPanelActivatableHover extends SPanelActivatable{
                 (int) (opacity * 255)
             ));
 
-            // Draw shadow rectangles that expand relative to the main body's position
             g.fillRoundRect(
                 x - i + shadowOffsetX, 
                 y - i + shadowOffsetY, 
@@ -179,7 +175,6 @@ public class SPanelActivatableHover extends SPanelActivatable{
             );
         }
 
-        // Draw Background (Inner Body)
         if(hovering){
             g2.setColor(hoverBackgroundColor);
         }else if(active){

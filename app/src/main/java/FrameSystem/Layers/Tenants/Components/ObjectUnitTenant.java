@@ -4,16 +4,16 @@ package FrameSystem.Layers.Tenants.Components;
 import DatabaseSystem.UnitTenantsData.UnitTenantsDataTable;
 import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.Layers.Tenants.Managers.ManagerObjectUnitTenants;
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import FrameSystem.SLibrary.SComponents.SPanel;
 
 public class ObjectUnitTenant extends SPanel{
 
     private UnitTenantsDataTable data;
     private boolean deleteBlocked = false, editBlocked = false;
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public ObjectUnitTenant(UnitTenantsDataTable data){
         this.data = data;
@@ -44,12 +44,12 @@ public class ObjectUnitTenant extends SPanel{
         
         view.addInnerListeners((MousePressedAdaptor) (MouseEvent evt) -> {
             if (onViewClick != null) {
-                onViewClick.run(); // Trigger the callback when clicked
+                onViewClick.run(); 
             }
         });
     }
     
-// Main Methods ==============================================================================================
+// ==== Main Methods =========================================================================================
 
     public UnitTenantsDataTable getData(){
         return data;
@@ -91,7 +91,7 @@ public class ObjectUnitTenant extends SPanel{
         this.onViewClick = onViewClick;
     }
     
-// Generated =================================================================================================
+// ==== Generated ============================================================================================
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

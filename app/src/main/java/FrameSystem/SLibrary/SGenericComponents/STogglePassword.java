@@ -1,13 +1,11 @@
 package FrameSystem.SLibrary.SGenericComponents;
 
-import java.beans.BeanProperty;
-import java.beans.JavaBean;
-
-import javax.swing.ImageIcon;
-
 import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.SLibrary.SComponents.SLabelHover;
 import FrameSystem.SLibrary.SComponents.SPasswordField;
+import java.beans.BeanProperty;
+import java.beans.JavaBean;
+import javax.swing.ImageIcon;
 
 @JavaBean(description = "A component that will toggle password field to show or hide")
 public class STogglePassword extends SLabelHover {
@@ -15,7 +13,8 @@ public class STogglePassword extends SLabelHover {
     private boolean show = false;
     private SPasswordField sPasswordField = null;
 
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
+
     public STogglePassword() {
         super();
         addMouseListener((MousePressedAdaptor) evt -> {
@@ -30,7 +29,8 @@ public class STogglePassword extends SLabelHover {
         setScaledIcon(new ImageIcon(getClass().getResource("/Icons/showPassword.png")));
     }
 
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
+
     @BeanProperty(preferred = true, description = "set SPasswordField to toggle")
     public void setPasswordField(SPasswordField sPasswordField) {
         this.sPasswordField = sPasswordField;
@@ -40,7 +40,7 @@ public class STogglePassword extends SLabelHover {
         return sPasswordField;
     }
 
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
     public void showPassword(boolean show) {
         if (sPasswordField == null) {
             return;

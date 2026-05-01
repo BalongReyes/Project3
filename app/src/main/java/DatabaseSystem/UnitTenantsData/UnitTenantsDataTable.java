@@ -7,12 +7,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Updated UnitTenantsDataTable includes unit reference fields (Tower, Floor, Unit)
- * to support advanced filtering in the UI.
- */
 public record UnitTenantsDataTable(
-        // 'unittenants' fields
         int id,
         int residentsId,
         int unitsId,
@@ -21,7 +16,6 @@ public record UnitTenantsDataTable(
         Date move_in,
         Date move_out,
 
-        // 'residents' fields
         String lastName,
         String firstName,
         String middleName,
@@ -38,13 +32,11 @@ public record UnitTenantsDataTable(
         Date modified,
         String mobileNos,
         
-        // NEW: 'units' fields for filtering
         String tower,
         int floor,
         int unit
 ) implements DataTable {
 
-    // Constants for column indexing
     public static final int ID = 1;
     public static final int RESIDENTS_ID = 2;
     public static final int UNITS_ID = 3;
@@ -69,7 +61,6 @@ public record UnitTenantsDataTable(
     public static final int MODIFIED = 21;
     public static final int MOBILE_NOS = 22;
     
-    // NEW: Unit specific constants
     public static final int TOWER = 23;
     public static final int FLOOR = 24;
     public static final int UNIT = 25;
@@ -100,7 +91,6 @@ public record UnitTenantsDataTable(
             results.getDate("modified"),
             results.getString("mobileNos"),
             
-            // NEW: Mapping unit columns from the joined query
             results.getString("tower"),
             results.getInt("floor"),
             results.getInt("unit")

@@ -1,17 +1,16 @@
 
 package FrameSystem.Layers.Main.Components;
 
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-
 import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
 import FrameSystem.SLibrary.SAbstractComponents.SLayer;
 import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class LayerMain extends SLayer{
 
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public LayerMain(){
         addLayer();
@@ -21,14 +20,14 @@ public class LayerMain extends SLayer{
         addLayer(this);
     }
     
-// Implementations ===========================================================================================
+// ==== Implementations ======================================================================================
     
     @Override
     protected void showLayeredPanel(){
         showLayer(this);
     }
 
-// Static Methods ============================================================================================
+// ==== Static Methods =======================================================================================
 
     private static ArrayList<LayerMain> layeredPanels = new ArrayList<>();
     private static LayerMain currentLayeredPanel = null;

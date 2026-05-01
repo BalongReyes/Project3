@@ -64,7 +64,7 @@ public class SFrame extends JFrame {
             @Override
             protected void done() {
                 try {
-                    get(); // Catch any exceptions that might have happened in the background
+                    get(); 
                     LayerMain.showLayer(layerMain_Login);
                 } catch (InterruptedException | ExecutionException e) {
                     Console.errorOut("Error during loading phase", e);
@@ -118,7 +118,7 @@ public class SFrame extends JFrame {
         currentReconnectExecute = reconnectExecute;
         
         if(refreshTimer != null && refreshTimer.isRunning()) return;
-        refreshTimer = new Timer(5000, (evt) -> { // refreshing connection every 5 seconds
+        refreshTimer = new Timer(5000, (evt) -> { 
             try{
                 Database.openConnection();
                 if(Database.getConnection() != null && !Database.getConnection().isClosed()){
@@ -146,6 +146,7 @@ public class SFrame extends JFrame {
     }
 
 // Generated =================================================================================================
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

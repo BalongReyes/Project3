@@ -22,7 +22,7 @@ public class SPasswordField extends JPasswordField{
         super.setBorder(null);
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "The hint that will be displayed")
     public void setHint(String hint){
@@ -73,7 +73,7 @@ public class SPasswordField extends JPasswordField{
         super.setBorder(border);
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public void paint(Graphics g){

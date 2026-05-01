@@ -11,13 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * UnitTenantsDataHandler handles database operations for Tenants,
- * joining residents and units tables for comprehensive data retrieval.
- */
 public class UnitTenantsDataHandler {
 
-    // BASE_SELECT_QUERY joins unittenants with residents and units[cite: 7].
     private static final String BASE_SELECT_QUERY = """
         SELECT ut.id, ut.residents_id, ut.units_id, ut.weekenders, ut.noactivity, ut.move_in, ut.move_out, 
         r.lastName, r.firstName, r.middleName, r.autorizedRepresentative, 
@@ -43,13 +38,12 @@ public class UnitTenantsDataHandler {
         return tenantList;
     }
 
-    /**
-     * Fetches a sorted and filtered batch of tenant data[cite: 7].
-     */
     public static UnitTenantsDataTable[] getDataBatchSortedMulti(DataTableFilter[] filters, int limit, int offset) throws SQLException {
         var whereBy = new StringBuilder();
         var orderBy = new StringBuilder();
         
+        java.util.List<Object> params = new java.util.ArrayList<>();
+
         if (filters != null && filters.length > 0) {
             int whereCount = 0;
             int orderCount = 0;
@@ -59,7 +53,8 @@ public class UnitTenantsDataHandler {
                 
                 if (filter.order() == DataTableOrder.WHERE) {
                     if (whereCount++ > 0) whereBy.append(" OR ");
-                    whereBy.append(columnName).append(" = '").append(filter.dataWhere()).append("'");
+                    whereBy.append(columnName).append(" = ?");
+                    params.add(filter.dataWhere());
                 } else {
                     if (orderCount++ > 0) orderBy.append(", ");
                     String orderStr = (filter.order() == DataTableOrder.ASC) ? "ASC" : "DESC";
@@ -75,9 +70,33 @@ public class UnitTenantsDataHandler {
         else query.append(" ORDER BY ut.id ASC");
         
         query.append(" LIMIT ? OFFSET ?");
+        params.add(limit);
+        params.add(offset);
         
-        List<UnitTenantsDataTable> sortedList = Database.queryForList(query.toString(), UnitTenantsDataTable::new, limit, offset);
+        List<UnitTenantsDataTable> sortedList = Database.queryForList(query.toString(), UnitTenantsDataTable::new, params.toArray());
         return sortedList.toArray(UnitTenantsDataTable[]::new);
+    }
+    
+    public static int getDataCountMulti(DataTableFilter[] filters) throws SQLException {
+        var whereBy = new StringBuilder();
+        java.util.List<Object> params = new java.util.ArrayList<>();
+        
+        if (filters != null && filters.length > 0) {
+            int whereCount = 0;
+            for (var filter : filters) {
+                var columnName = getColumnName(filter.dataIndex());
+                if (filter.order() == DataTableOrder.WHERE) {
+                    if (whereCount++ > 0) whereBy.append(" OR ");
+                    whereBy.append(columnName).append(" = ?");
+                    params.add(filter.dataWhere());
+                }
+            }
+        }
+        
+        var query = new StringBuilder("SELECT COUNT(*) FROM unittenants ut INNER JOIN residents r ON ut.residents_id = r.id INNER JOIN units u ON ut.units_id = u.id");
+        if (!whereBy.isEmpty()) query.append(" WHERE ").append(whereBy);
+        
+        return Database.queryForObject(query.toString(), rs -> rs.getInt(1), params.toArray()).orElse(0);
     }
     
     public static String getColumnName(int dataIndex) {

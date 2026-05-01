@@ -13,7 +13,6 @@ import java.util.List;
 
 public class UnitOwnersDataHandler {
 
-    // NEW: Base query now joins the 'units' table to get tower, floor, and unit
     private static final String BASE_SELECT_QUERY = """
         SELECT uo.id, uo.residents_id, uo.units_id, uo.weekenders, uo.noactivity, 
         r.lastName, r.firstName, r.middleName, r.autorizedRepresentative, 
@@ -39,11 +38,12 @@ public class UnitOwnersDataHandler {
         return ownerList;
     }
 
-    // NEW: Implementing the multi-sort/filter method needed by ManagerObjectUnitOwner
     public static UnitOwnersDataTable[] getDataBatchSortedMulti(DataTableFilter[] filters, int limit, int offset) throws SQLException {
         var whereBy = new StringBuilder();
         var orderBy = new StringBuilder();
         
+        java.util.List<Object> params = new java.util.ArrayList<>();
+
         if (filters != null && filters.length > 0) {
             int whereCount = 0;
             int orderCount = 0;
@@ -53,7 +53,8 @@ public class UnitOwnersDataHandler {
                 
                 if (filter.order() == DataTableOrder.WHERE) {
                     if (whereCount++ > 0) whereBy.append(" OR ");
-                    whereBy.append(columnName).append(" = '").append(filter.dataWhere()).append("'");
+                    whereBy.append(columnName).append(" = ?");
+                    params.add(filter.dataWhere());
                 } else {
                     if (orderCount++ > 0) orderBy.append(", ");
                     String orderStr = (filter.order() == DataTableOrder.ASC) ? "ASC" : "DESC";
@@ -69,9 +70,33 @@ public class UnitOwnersDataHandler {
         else query.append(" ORDER BY uo.id ASC");
         
         query.append(" LIMIT ? OFFSET ?");
+        params.add(limit);
+        params.add(offset);
         
-        List<UnitOwnersDataTable> sortedList = Database.queryForList(query.toString(), UnitOwnersDataTable::new, limit, offset);
+        List<UnitOwnersDataTable> sortedList = Database.queryForList(query.toString(), UnitOwnersDataTable::new, params.toArray());
         return sortedList.toArray(UnitOwnersDataTable[]::new);
+    }
+    
+    public static int getDataCountMulti(DataTableFilter[] filters) throws SQLException {
+        var whereBy = new StringBuilder();
+        java.util.List<Object> params = new java.util.ArrayList<>();
+        
+        if (filters != null && filters.length > 0) {
+            int whereCount = 0;
+            for (var filter : filters) {
+                var columnName = getColumnName(filter.dataIndex());
+                if (filter.order() == DataTableOrder.WHERE) {
+                    if (whereCount++ > 0) whereBy.append(" OR ");
+                    whereBy.append(columnName).append(" = ?");
+                    params.add(filter.dataWhere());
+                }
+            }
+        }
+        
+        var query = new StringBuilder("SELECT COUNT(*) FROM unitowners uo INNER JOIN residents r ON uo.residents_id = r.id INNER JOIN units u ON uo.units_id = u.id");
+        if (!whereBy.isEmpty()) query.append(" WHERE ").append(whereBy);
+        
+        return Database.queryForObject(query.toString(), rs -> rs.getInt(1), params.toArray()).orElse(0);
     }
     
     public static String getColumnName(int dataIndex) {

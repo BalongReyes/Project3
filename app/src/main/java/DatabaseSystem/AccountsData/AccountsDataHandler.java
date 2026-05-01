@@ -1,5 +1,8 @@
 package DatabaseSystem.AccountsData;
 
+import ConsoleSystem.Console;
+import DatabaseSystem.Database;
+import MainSystem.Managers.ManagerLogin;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
@@ -12,13 +15,8 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
-
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
-
-import ConsoleSystem.Console;
-import DatabaseSystem.Database;
-import MainSystem.Managers.ManagerLogin;
 
 public class AccountsDataHandler {
     
@@ -158,7 +156,7 @@ public class AccountsDataHandler {
     public static void deleteData(int id) {
         try {
             Database.executePrepared("DELETE FROM accounts WHERE id = ?", id);
-            refreshData(); // Synchronize cache
+            refreshData(); 
         } catch (SQLException e) {
             Console.errorOut("Deleting data from table accounts error", e);
         }

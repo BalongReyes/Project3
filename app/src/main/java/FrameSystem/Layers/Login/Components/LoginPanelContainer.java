@@ -1,16 +1,14 @@
 
 package FrameSystem.Layers.Login.Components;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
-import FrameSystem.SLibrary.SComponents.SPanel;
 
 @JavaBean(description = "A component that displays the login panel")
 public class LoginPanelContainer extends SPanel{
@@ -18,12 +16,12 @@ public class LoginPanelContainer extends SPanel{
     private Icon backgroundIcon;
     private Image backgroundImage;
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public LoginPanelContainer(){
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "The icon this component will display.")
     public void setBackgroundImage(Icon backgroundIcon){
@@ -35,7 +33,7 @@ public class LoginPanelContainer extends SPanel{
         return backgroundIcon;
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
     
     @Override
     public void paint(Graphics g){

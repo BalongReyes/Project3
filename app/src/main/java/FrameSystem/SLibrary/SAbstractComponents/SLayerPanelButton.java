@@ -10,7 +10,7 @@ public class SLayerPanelButton extends SLayerButton{
         super.setBorder(null);
     }
 
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
     
     @Override
     public void addLayeredPanelMouseListener(MouseListener m){

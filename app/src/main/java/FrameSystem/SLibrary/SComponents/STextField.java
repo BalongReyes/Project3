@@ -21,7 +21,7 @@ public class STextField extends JTextField{
         setBorder(null);
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "The hint that will be displayed")
     public void setHint(String hint){
@@ -50,7 +50,7 @@ public class STextField extends JTextField{
         return hintOffest;
     }
 
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
 
     private Font hintFont;
     
@@ -60,7 +60,7 @@ public class STextField extends JTextField{
         hintFont = f;
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public void paint(Graphics g){

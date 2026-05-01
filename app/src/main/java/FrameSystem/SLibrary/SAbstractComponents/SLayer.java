@@ -20,11 +20,11 @@ import java.util.EventListener;
 @JavaBean(description = "A component built for JLayeredPane")
 public abstract class SLayer extends SPanel{
     
-// Abstract Methods ==========================================================================================
+// ==== Abstract Methods =====================================================================================
     
     protected abstract void showLayeredPanel();
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
     
     private SLayerButton button = null;
     
@@ -40,7 +40,7 @@ public abstract class SLayer extends SPanel{
         return button;
     }
     
-// Event =====================================================================================================
+// ==== Event ================================================================================================
     
     transient SLayerShowListener showListener;
 
@@ -145,7 +145,7 @@ public abstract class SLayer extends SPanel{
         return SLayerEventMulticaster.getListeners(l, listenerType);
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public void paintOverrideAll(Graphics g){

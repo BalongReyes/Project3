@@ -1,18 +1,16 @@
 
 package FrameSystem.Layers.Owners.Components;
 
-import FrameSystem.Layers.Units.Components.*;
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-
 import ConsoleSystem.Console;
 import ConsoleSystem.ConsoleColors;
 import FrameSystem.SLibrary.SAbstractComponents.SLayer;
 import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class LayerUnitOwners extends SLayer{
 
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public LayerUnitOwners(){
         addLayer();
@@ -22,14 +20,14 @@ public class LayerUnitOwners extends SLayer{
         addLayer(this);
     }
     
-// Implementations ===========================================================================================
+// ==== Implementations ======================================================================================
     
     @Override
     protected void showLayeredPanel(){
         showLayer(this);
     }
 
-// Static Methods ============================================================================================
+// ==== Static Methods =======================================================================================
 
     private static ArrayList<LayerUnitOwners> layeredPanels = new ArrayList<>();
     private static LayerUnitOwners currentLayeredPanel = null;

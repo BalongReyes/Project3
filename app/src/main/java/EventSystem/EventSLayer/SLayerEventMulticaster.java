@@ -21,7 +21,7 @@ public class SLayerEventMulticaster implements SLayerShowListener, SLayerHideLis
         EventListener a2 = removeInternal(a, oldl);
         EventListener b2 = removeInternal(b, oldl);
         if (a2 == a && b2 == b) {
-            return this;        // it's not here
+            return this;        
         }
         return addInternal(a2, b2);
     }
@@ -104,7 +104,7 @@ public class SLayerEventMulticaster implements SLayerShowListener, SLayerHideLis
         }else if(l instanceof SLayerEventMulticaster bm){
             return bm.remove(oldl);
         }else{
-            return l;           // it's not here
+            return l;           
         }
     }
     
@@ -112,7 +112,6 @@ public class SLayerEventMulticaster implements SLayerShowListener, SLayerHideLis
         if(l instanceof SLayerEventMulticaster bm) {
             return getListenerCount(bm.a, listenerType) + getListenerCount(bm.b, listenerType);
         }else{
-            // Only count listeners of correct type
             return listenerType.isInstance(l) ? 1 : 0;
         }
     }
@@ -125,7 +124,6 @@ public class SLayerEventMulticaster implements SLayerShowListener, SLayerHideLis
             a[index] = l;
             return index + 1;
         }
-        // Skip nulls, instances of wrong class
         else {
             return index;
         }

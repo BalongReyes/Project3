@@ -1,13 +1,11 @@
 package FrameSystem.Layers.Login.Module;
 
-import java.sql.SQLException;
-
-import javax.swing.Timer;
-
 import ConsoleSystem.Console;
 import DatabaseSystem.Database;
 import FrameSystem.Layers.Login.Components.LayerLogin;
 import FrameSystem.Layers.Login.Components.LoginPanelContainer;
+import java.sql.SQLException;
+import javax.swing.Timer;
 
 
 
@@ -17,14 +15,14 @@ public class ModuleLogin extends LoginPanelContainer {
         initComponents();
     }
 
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
 
     private Timer refreshTimer;
     
     public final void offlineMode(){
         LayerLogin.showLayer(layerLogin_Offline);
         if(refreshTimer != null && refreshTimer.isRunning()) return;
-        refreshTimer = new Timer(5000, (evt) -> { // refreshing connection every 5 seconds
+        refreshTimer = new Timer(5000, (evt) -> { 
             try{
                 Database.openConnection();
                 if(Database.getConnection() != null && !Database.getConnection().isClosed()){
@@ -40,7 +38,7 @@ public class ModuleLogin extends LoginPanelContainer {
         refreshTimer.start();
     }
 
-// Generated =================================================================================================
+// ==== Generated ============================================================================================
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

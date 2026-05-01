@@ -1,6 +1,8 @@
 
 package FrameSystem.Layers.Login.Components;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
+import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -8,19 +10,16 @@ import java.awt.Graphics2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
 
-import FrameSystem.SLibrary.SComponents.SPanel;
-import MainSystem.CustomGraphics;
-
 @JavaBean(description = "A component that displays the login panel")
 public class LoginPanel extends SPanel{
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public LoginPanel(){
         super();
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     private Color line = new Color(255, 255, 255);
 
@@ -33,7 +32,7 @@ public class LoginPanel extends SPanel{
         return line;
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
     
     @Override
     public void paint(Graphics g){

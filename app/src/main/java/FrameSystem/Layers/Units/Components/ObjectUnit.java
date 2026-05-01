@@ -1,23 +1,22 @@
 
 package FrameSystem.Layers.Units.Components;
 
+import DatabaseSystem.UnitsData.UnitsDataTable;
+import EventSystem.Listeners.MousePressedAdaptor;
+import FrameSystem.Layers.Units.Managers.ManagerObjectUnits;
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import DatabaseSystem.UnitsData.UnitsDataTable;
-import EventSystem.Listeners.MousePressedAdaptor;
-import FrameSystem.Layers.Units.Managers.ManagerObjectUnits;
-import FrameSystem.SLibrary.SComponents.SPanel;
-
 public class ObjectUnit extends SPanel{
 
     private UnitsDataTable data;
     private boolean deleteBlocked = false, editBlocked = false;
     
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
     
     public ObjectUnit(UnitsDataTable data){
         this.data = data;
@@ -81,31 +80,13 @@ public class ObjectUnit extends SPanel{
         
         view.addInnerListeners((MousePressedAdaptor) (MouseEvent evt) -> {
             if (onViewClick != null) {
-                onViewClick.run(); // Trigger the callback when clicked
+                onViewClick.run(); 
             }
         });
         
-//        this.deleteBlocked = deleteBlocked;
-//        if(deleteBlocked){
-//            deleteButton.setEnabled(false);
-//            deleteButton.overrideColor = new Color(32, 33, 43);
-//        }
-//        
-//        this.editBlocked = editBlocked;
-//        if(editBlocked){
-//            editButton.setEnabled(false);
-//            editButton.overrideColor = new Color(32, 33, 43);
-//        }
-        
-//        deleteButton.addMouseListener((MousePressedAdaptor) evt -> {
-//            delete();
-//        });
-//        editButton.addMouseListener((MousePressedAdaptor) evt -> {
-//            edit();
-//        });
     }
     
-// Main Methods ==============================================================================================
+// ==== Main Methods =========================================================================================
 
     public UnitsDataTable getData(){
         return data;
@@ -147,7 +128,7 @@ public class ObjectUnit extends SPanel{
         this.onViewClick = onViewClick;
     }
     
-// Generated =================================================================================================
+// ==== Generated ============================================================================================
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
