@@ -532,11 +532,10 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         moduleUnits.unitsView_Previous.setVisible(index > 0 || currentPage > 0);
         moduleUnits.unitsView_Next.setVisible((index >= 0 && index < objects.size() - 1) || currentPage < totalPages - 1);
         
-        LayerUnits_Main.showLayer(moduleUnits.layerUnitsView);
+        moduleUnits.buttonUnits_ViewTabTenant.setVisible(data.hasTenant());
         
-        if (LayerUnits_View.getCurrentLayeredPanel() == moduleUnits.layerUnits_ViewLoading || LayerUnits_View.getCurrentLayeredPanel() == null) {
-            LayerUnits_View.showLayer(moduleUnits.layerUnits_ViewOverview);
-        }
+        LayerUnits_Main.showLayer(moduleUnits.layerUnitsView);
+        LayerUnits_View.showLayer(moduleUnits.layerUnits_ViewOverview);
     }
     
 }

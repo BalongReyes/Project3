@@ -31,6 +31,8 @@ public class SAnimatedOffline extends SPanelAnimated{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (!isShowing()) return;
+
         if (growing) {
             if (currentHeadSweep < SWEEP_SPEED) currentHeadSweep += ACCELERATION;
             if (currentHeadSweep > SWEEP_SPEED) currentHeadSweep = SWEEP_SPEED;

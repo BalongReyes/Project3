@@ -20,7 +20,9 @@ public class SPanelAnimated extends SPanel implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e){
-        repaint(); 
+        if (isShowing()) {
+            repaint(); 
+        }
     }
 
 }

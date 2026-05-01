@@ -41,7 +41,9 @@ public class SAnimatedLoading extends SPanelAnimated {
             }
         }
         
-        repaint();
+        if (isShowing()) {
+            repaint();
+        }
     }
     
 // ==== Setters and Getters ==================================================================================

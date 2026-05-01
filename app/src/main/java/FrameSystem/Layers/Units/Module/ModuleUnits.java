@@ -312,6 +312,7 @@ public class ModuleUnits extends SPanel{
 
         setPaintBackground(false);
 
+        sTextFieldContainer1.setTextFieldChild(sTextField1);
         sTextFieldContainer1.setRadius(15);
         sTextFieldContainer1.setRounded(true);
         sTextFieldContainer1.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -319,7 +320,6 @@ public class ModuleUnits extends SPanel{
         sTextFieldContainer1.setShadowSize(5);
         sTextFieldContainer1.setShadowX(true);
         sTextFieldContainer1.setShadowY(true);
-        sTextFieldContainer1.setTextFieldChild(sTextField1);
 
         sTextField1.setBackground(new java.awt.Color(255, 255, 255));
         sTextField1.setHint("Search for units");
@@ -429,6 +429,7 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
+        sPanel33.setPreferredSize(new java.awt.Dimension(262, 100));
         sPanel33.setRadius(15);
         sPanel33.setRounded(true);
         sPanel33.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -436,7 +437,6 @@ public class ModuleUnits extends SPanel{
         sPanel33.setShadowSize(5);
         sPanel33.setShadowX(true);
         sPanel33.setShadowY(true);
-        sPanel33.setPreferredSize(new java.awt.Dimension(262, 100));
         sPanel33.setLayout(new javax.swing.BoxLayout(sPanel33, javax.swing.BoxLayout.LINE_AXIS));
 
         sPanel43.setPaintBackground(false);
@@ -536,12 +536,12 @@ public class ModuleUnits extends SPanel{
 
         sPanel41.setLayout(new javax.swing.BoxLayout(sPanel41, javax.swing.BoxLayout.PAGE_AXIS));
 
-        sPanel24.setDefaultBackgroundColor(new java.awt.Color(182, 30, 39));
-        sPanel24.setRadius(5);
-        sPanel24.setRounded(true);
         sPanel24.setMaximumSize(new java.awt.Dimension(8, 8));
         sPanel24.setMinimumSize(new java.awt.Dimension(8, 8));
         sPanel24.setName(""); // NOI18N
+        sPanel24.setDefaultBackgroundColor(new java.awt.Color(182, 30, 39));
+        sPanel24.setRadius(5);
+        sPanel24.setRounded(true);
 
         javax.swing.GroupLayout sPanel24Layout = new javax.swing.GroupLayout(sPanel24);
         sPanel24.setLayout(sPanel24Layout);
@@ -578,12 +578,12 @@ public class ModuleUnits extends SPanel{
 
         sPanel41.add(sPanel11);
 
-        sPanel38.setDefaultBackgroundColor(new java.awt.Color(212, 147, 63));
-        sPanel38.setRadius(5);
-        sPanel38.setRounded(true);
         sPanel38.setMaximumSize(new java.awt.Dimension(8, 8));
         sPanel38.setMinimumSize(new java.awt.Dimension(8, 8));
         sPanel38.setName(""); // NOI18N
+        sPanel38.setDefaultBackgroundColor(new java.awt.Color(212, 147, 63));
+        sPanel38.setRadius(5);
+        sPanel38.setRounded(true);
 
         javax.swing.GroupLayout sPanel38Layout = new javax.swing.GroupLayout(sPanel38);
         sPanel38.setLayout(sPanel38Layout);
@@ -620,12 +620,12 @@ public class ModuleUnits extends SPanel{
 
         sPanel41.add(sPanel37);
 
-        sPanel40.setDefaultBackgroundColor(new java.awt.Color(90, 184, 124));
-        sPanel40.setRadius(5);
-        sPanel40.setRounded(true);
         sPanel40.setMaximumSize(new java.awt.Dimension(8, 8));
         sPanel40.setMinimumSize(new java.awt.Dimension(8, 8));
         sPanel40.setName(""); // NOI18N
+        sPanel40.setDefaultBackgroundColor(new java.awt.Color(90, 184, 124));
+        sPanel40.setRadius(5);
+        sPanel40.setRounded(true);
 
         javax.swing.GroupLayout sPanel40Layout = new javax.swing.GroupLayout(sPanel40);
         sPanel40.setLayout(sPanel40Layout);
@@ -681,6 +681,7 @@ public class ModuleUnits extends SPanel{
 
         sPanel33.add(sPanel45);
 
+        sPanel47.setPreferredSize(new java.awt.Dimension(293, 100));
         sPanel47.setRadius(15);
         sPanel47.setRounded(true);
         sPanel47.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -688,7 +689,6 @@ public class ModuleUnits extends SPanel{
         sPanel47.setShadowSize(5);
         sPanel47.setShadowX(true);
         sPanel47.setShadowY(true);
-        sPanel47.setPreferredSize(new java.awt.Dimension(293, 100));
         sPanel47.setLayout(new javax.swing.BoxLayout(sPanel47, javax.swing.BoxLayout.LINE_AXIS));
 
         sPanel48.setPaintBackground(false);
@@ -778,12 +778,12 @@ public class ModuleUnits extends SPanel{
 
         sPanel53.setLayout(new javax.swing.BoxLayout(sPanel53, javax.swing.BoxLayout.PAGE_AXIS));
 
-        sPanel55.setDefaultBackgroundColor(new java.awt.Color(85, 174, 245));
-        sPanel55.setRadius(5);
-        sPanel55.setRounded(true);
         sPanel55.setMaximumSize(new java.awt.Dimension(8, 8));
         sPanel55.setMinimumSize(new java.awt.Dimension(8, 8));
         sPanel55.setName(""); // NOI18N
+        sPanel55.setDefaultBackgroundColor(new java.awt.Color(85, 174, 245));
+        sPanel55.setRadius(5);
+        sPanel55.setRounded(true);
 
         javax.swing.GroupLayout sPanel55Layout = new javax.swing.GroupLayout(sPanel55);
         sPanel55.setLayout(sPanel55Layout);
@@ -820,12 +820,12 @@ public class ModuleUnits extends SPanel{
 
         sPanel53.add(sPanel54);
 
-        sPanel57.setDefaultBackgroundColor(new java.awt.Color(255, 153, 51));
-        sPanel57.setRadius(5);
-        sPanel57.setRounded(true);
         sPanel57.setMaximumSize(new java.awt.Dimension(8, 8));
         sPanel57.setMinimumSize(new java.awt.Dimension(8, 8));
         sPanel57.setName(""); // NOI18N
+        sPanel57.setDefaultBackgroundColor(new java.awt.Color(255, 153, 51));
+        sPanel57.setRadius(5);
+        sPanel57.setRounded(true);
 
         javax.swing.GroupLayout sPanel57Layout = new javax.swing.GroupLayout(sPanel57);
         sPanel57.setLayout(sPanel57Layout);
@@ -862,12 +862,12 @@ public class ModuleUnits extends SPanel{
 
         sPanel53.add(sPanel56);
 
-        sPanel59.setDefaultBackgroundColor(new java.awt.Color(148, 163, 184));
-        sPanel59.setRadius(5);
-        sPanel59.setRounded(true);
         sPanel59.setMaximumSize(new java.awt.Dimension(8, 8));
         sPanel59.setMinimumSize(new java.awt.Dimension(8, 8));
         sPanel59.setName(""); // NOI18N
+        sPanel59.setDefaultBackgroundColor(new java.awt.Color(148, 163, 184));
+        sPanel59.setRadius(5);
+        sPanel59.setRounded(true);
 
         javax.swing.GroupLayout sPanel59Layout = new javax.swing.GroupLayout(sPanel59);
         sPanel59.setLayout(sPanel59Layout);
@@ -923,6 +923,8 @@ public class ModuleUnits extends SPanel{
 
         sPanel47.add(sPanel52);
 
+        sPanel35.setMinimumSize(new java.awt.Dimension(50, 100));
+        sPanel35.setPreferredSize(new java.awt.Dimension(181, 100));
         sPanel35.setRadius(15);
         sPanel35.setRounded(true);
         sPanel35.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -930,8 +932,6 @@ public class ModuleUnits extends SPanel{
         sPanel35.setShadowSize(5);
         sPanel35.setShadowX(true);
         sPanel35.setShadowY(true);
-        sPanel35.setMinimumSize(new java.awt.Dimension(50, 100));
-        sPanel35.setPreferredSize(new java.awt.Dimension(181, 100));
         sPanel35.setLayout(new javax.swing.BoxLayout(sPanel35, javax.swing.BoxLayout.LINE_AXIS));
 
         sPanel25.setPaintBackground(false);
@@ -1052,25 +1052,25 @@ public class ModuleUnits extends SPanel{
 
         layerUnitsData.setName("Units-Data"); // NOI18N
 
-        sPanel2.setBorderLine(1);
         sPanel2.setPaintBackground(false);
+        sPanel2.setBorderLine(1);
 
+        sPanel3.setMinimumSize(new java.awt.Dimension(100, 40));
+        sPanel3.setPreferredSize(new java.awt.Dimension(100, 40));
+        sPanel3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel3.setBorderLine(1);
         sPanel3.setBorderSideLeft(false);
         sPanel3.setBorderSideRight(false);
         sPanel3.setBorderSideTop(false);
-        sPanel3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel3.setDefaultBorderColor(new java.awt.Color(240, 240, 240));
         sPanel3.setRadius(15);
         sPanel3.setRoundBottomLeft(false);
         sPanel3.setRoundBottomRight(false);
         sPanel3.setRounded(true);
-        sPanel3.setMinimumSize(new java.awt.Dimension(100, 40));
-        sPanel3.setPreferredSize(new java.awt.Dimension(100, 40));
 
-        sPanel20.setPaintBackground(false);
         sPanel20.setMinimumSize(new java.awt.Dimension(100, 40));
         sPanel20.setPreferredSize(new java.awt.Dimension(100, 40));
+        sPanel20.setPaintBackground(false);
         sPanel20.setLayout(new javax.swing.BoxLayout(sPanel20, javax.swing.BoxLayout.LINE_AXIS));
         sPanel20.add(filler6);
 
@@ -1080,13 +1080,13 @@ public class ModuleUnits extends SPanel{
         sPanel7.setPreferredSize(new java.awt.Dimension(70, 40));
 
         sFilterTitlePanel1.setArrowDirection(0);
-        sFilterTitlePanel1.setCanHover(true);
         sFilterTitlePanel1.setDataIndex(UnitsDataTable.TOWER);
+        sFilterTitlePanel1.setText("Tower");
         sFilterTitlePanel1.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel1.setCanHover(true);
         sFilterTitlePanel1.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel1.setRadius(7);
         sFilterTitlePanel1.setRounded(true);
-        sFilterTitlePanel1.setText("Tower");
 
         javax.swing.GroupLayout sPanel7Layout = new javax.swing.GroupLayout(sPanel7);
         sPanel7.setLayout(sPanel7Layout);
@@ -1113,13 +1113,13 @@ public class ModuleUnits extends SPanel{
         sPanel8.setPreferredSize(new java.awt.Dimension(70, 40));
 
         sFilterTitlePanel2.setArrowDirection(0);
-        sFilterTitlePanel2.setCanHover(true);
         sFilterTitlePanel2.setDataIndex(UnitsDataTable.FLOOR);
+        sFilterTitlePanel2.setText("Floor");
         sFilterTitlePanel2.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel2.setCanHover(true);
         sFilterTitlePanel2.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel2.setRadius(7);
         sFilterTitlePanel2.setRounded(true);
-        sFilterTitlePanel2.setText("Floor");
 
         javax.swing.GroupLayout sPanel8Layout = new javax.swing.GroupLayout(sPanel8);
         sPanel8.setLayout(sPanel8Layout);
@@ -1146,13 +1146,13 @@ public class ModuleUnits extends SPanel{
         sPanel9.setPreferredSize(new java.awt.Dimension(70, 40));
 
         sFilterTitlePanel3.setArrowDirection(0);
-        sFilterTitlePanel3.setCanHover(true);
         sFilterTitlePanel3.setDataIndex(UnitsDataTable.UNIT);
+        sFilterTitlePanel3.setText("Unit");
         sFilterTitlePanel3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel3.setCanHover(true);
         sFilterTitlePanel3.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel3.setRadius(7);
         sFilterTitlePanel3.setRounded(true);
-        sFilterTitlePanel3.setText("Unit");
 
         javax.swing.GroupLayout sPanel9Layout = new javax.swing.GroupLayout(sPanel9);
         sPanel9.setLayout(sPanel9Layout);
@@ -1174,10 +1174,10 @@ public class ModuleUnits extends SPanel{
         sPanel20.add(sPanel9);
         sPanel20.add(filler9);
 
-        sPanel22.setPaintBackground(false);
         sPanel22.setMaximumSize(new java.awt.Dimension(80, 40));
         sPanel22.setMinimumSize(new java.awt.Dimension(80, 40));
         sPanel22.setPreferredSize(new java.awt.Dimension(80, 40));
+        sPanel22.setPaintBackground(false);
 
         sLabel21.setForeground(new java.awt.Color(56, 56, 56));
         sLabel21.setText("Unit ID");
@@ -1208,13 +1208,13 @@ public class ModuleUnits extends SPanel{
         sPanel29.setPaintBackground(false);
 
         sFilterTitlePanel5.setArrowDirection(0);
-        sFilterTitlePanel5.setCanHover(true);
         sFilterTitlePanel5.setDataIndex(UnitsDataTable.ACCOUNT_NUMBER);
+        sFilterTitlePanel5.setText("Account Number");
         sFilterTitlePanel5.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel5.setCanHover(true);
         sFilterTitlePanel5.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel5.setRadius(7);
         sFilterTitlePanel5.setRounded(true);
-        sFilterTitlePanel5.setText("Account Number");
 
         javax.swing.GroupLayout sPanel29Layout = new javax.swing.GroupLayout(sPanel29);
         sPanel29.setLayout(sPanel29Layout);
@@ -1238,13 +1238,13 @@ public class ModuleUnits extends SPanel{
         sPanel10.setPaintBackground(false);
 
         sFilterTitlePanel6.setArrowDirection(0);
-        sFilterTitlePanel6.setCanHover(true);
         sFilterTitlePanel6.setDataIndex(UnitsDataTable.MODEL);
+        sFilterTitlePanel6.setText("Model");
         sFilterTitlePanel6.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel6.setCanHover(true);
         sFilterTitlePanel6.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel6.setRadius(7);
         sFilterTitlePanel6.setRounded(true);
-        sFilterTitlePanel6.setText("Model");
 
         javax.swing.GroupLayout sPanel10Layout = new javax.swing.GroupLayout(sPanel10);
         sPanel10.setLayout(sPanel10Layout);
@@ -1268,13 +1268,13 @@ public class ModuleUnits extends SPanel{
         sPanel12.setPaintBackground(false);
 
         sFilterTitlePanel7.setArrowDirection(0);
-        sFilterTitlePanel7.setCanHover(true);
         sFilterTitlePanel7.setDataIndex(UnitsDataTable.FLOOR_AREA);
+        sFilterTitlePanel7.setText("Floor Area");
         sFilterTitlePanel7.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sFilterTitlePanel7.setCanHover(true);
         sFilterTitlePanel7.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         sFilterTitlePanel7.setRadius(7);
         sFilterTitlePanel7.setRounded(true);
-        sFilterTitlePanel7.setText("Floor Area");
 
         javax.swing.GroupLayout sPanel12Layout = new javax.swing.GroupLayout(sPanel12);
         sPanel12.setLayout(sPanel12Layout);
@@ -1434,8 +1434,8 @@ public class ModuleUnits extends SPanel{
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
-        layerUnitsOffline.setPaintBackground(false);
         layerUnitsOffline.setName("Units-Data-Offline"); // NOI18N
+        layerUnitsOffline.setPaintBackground(false);
 
         jPanel1.setOpaque(false);
 
@@ -1502,8 +1502,8 @@ public class ModuleUnits extends SPanel{
         jLayeredPane1.setLayer(layerUnitsOffline, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitsOffline, "Offline");
 
-        layerUnitsLoading.setPaintBackground(false);
         layerUnitsLoading.setName("Units-Data-Loading"); // NOI18N
+        layerUnitsLoading.setPaintBackground(false);
 
         jPanel2.setOpaque(false);
 
@@ -1570,8 +1570,8 @@ public class ModuleUnits extends SPanel{
         jLayeredPane1.setLayer(layerUnitsLoading, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitsLoading, "Loading");
 
-        layerUnitsOnline.setPaintBackground(false);
         layerUnitsOnline.setName("Units-Data-Online"); // NOI18N
+        layerUnitsOnline.setPaintBackground(false);
 
         sTable1.setRowHeight(50);
         sTable1.setScrollbarBackgroundColor(new java.awt.Color(250, 250, 250));
@@ -1587,15 +1587,15 @@ public class ModuleUnits extends SPanel{
             layerUnitsOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layerUnitsOnlineLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(sTable1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+                .addComponent(sTable1, javax.swing.GroupLayout.DEFAULT_SIZE, 1030, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
         jLayeredPane1.setLayer(layerUnitsOnline, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitsOnline, "Online");
 
-        layerUnitsOffline1.setPaintBackground(false);
         layerUnitsOffline1.setName("Units-Data-Offline"); // NOI18N
+        layerUnitsOffline1.setPaintBackground(false);
 
         javax.swing.GroupLayout layerUnitsOffline1Layout = new javax.swing.GroupLayout(layerUnitsOffline1);
         layerUnitsOffline1.setLayout(layerUnitsOffline1Layout);
@@ -1605,23 +1605,23 @@ public class ModuleUnits extends SPanel{
         );
         layerUnitsOffline1Layout.setVerticalGroup(
             layerUnitsOffline1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addGap(0, 1030, Short.MAX_VALUE)
         );
 
         jLayeredPane1.add(layerUnitsOffline1, "card5");
 
+        sPanel63.setMinimumSize(new java.awt.Dimension(100, 35));
+        sPanel63.setPreferredSize(new java.awt.Dimension(1437, 35));
+        sPanel63.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel63.setBorderLine(1);
         sPanel63.setBorderSideBottom(false);
         sPanel63.setBorderSideLeft(false);
         sPanel63.setBorderSideRight(false);
-        sPanel63.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
         sPanel63.setDefaultBorderColor(new java.awt.Color(240, 240, 240));
         sPanel63.setRadius(15);
         sPanel63.setRoundTopLeft(false);
         sPanel63.setRoundTopRight(false);
         sPanel63.setRounded(true);
-        sPanel63.setMinimumSize(new java.awt.Dimension(100, 35));
-        sPanel63.setPreferredSize(new java.awt.Dimension(1437, 35));
 
         sPanel18.setPaintBackground(false);
         sPanel18.setShadowColor(new java.awt.Color(230, 230, 230));
@@ -1636,16 +1636,16 @@ public class ModuleUnits extends SPanel{
         sPanel32.setMinimumSize(new java.awt.Dimension(90, 0));
         sPanel32.setPreferredSize(new java.awt.Dimension(90, 30));
 
+        filterTower1.setMaximumSize(new java.awt.Dimension(70, 32767));
+        filterTower1.setPreferredSize(new java.awt.Dimension(0, 0));
         filterTower1.setActiveBackgroundColor(new java.awt.Color(255, 230, 230));
         filterTower1.setActiveHoverBackgroundColor(new java.awt.Color(255, 220, 220));
         filterTower1.setBorderLine(1);
-        filterTower1.setCanHover(true);
         filterTower1.setDefaultBorderColor(new java.awt.Color(221, 221, 221));
+        filterTower1.setCanHover(true);
         filterTower1.setHoverBackgroundColor(new java.awt.Color(240, 240, 240));
         filterTower1.setRadius(7);
         filterTower1.setRounded(true);
-        filterTower1.setMaximumSize(new java.awt.Dimension(70, 32767));
-        filterTower1.setPreferredSize(new java.awt.Dimension(0, 0));
 
         sLabel4.setForeground(new java.awt.Color(56, 56, 56));
         sLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1693,15 +1693,15 @@ public class ModuleUnits extends SPanel{
         sPanel30.setMinimumSize(new java.awt.Dimension(90, 0));
         sPanel30.setPreferredSize(new java.awt.Dimension(90, 30));
 
+        filterTower2.setMaximumSize(new java.awt.Dimension(70, 32767));
         filterTower2.setActiveBackgroundColor(new java.awt.Color(255, 230, 230));
         filterTower2.setActiveHoverBackgroundColor(new java.awt.Color(255, 220, 220));
         filterTower2.setBorderLine(1);
-        filterTower2.setCanHover(true);
         filterTower2.setDefaultBorderColor(new java.awt.Color(221, 221, 221));
+        filterTower2.setCanHover(true);
         filterTower2.setHoverBackgroundColor(new java.awt.Color(240, 240, 240));
         filterTower2.setRadius(7);
         filterTower2.setRounded(true);
-        filterTower2.setMaximumSize(new java.awt.Dimension(70, 32767));
 
         sLabel10.setForeground(new java.awt.Color(56, 56, 56));
         sLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1749,15 +1749,15 @@ public class ModuleUnits extends SPanel{
         sPanel31.setMinimumSize(new java.awt.Dimension(90, 0));
         sPanel31.setPreferredSize(new java.awt.Dimension(90, 30));
 
+        filterTower3.setMaximumSize(new java.awt.Dimension(70, 32767));
         filterTower3.setActiveBackgroundColor(new java.awt.Color(255, 230, 230));
         filterTower3.setActiveHoverBackgroundColor(new java.awt.Color(255, 220, 220));
         filterTower3.setBorderLine(1);
-        filterTower3.setCanHover(true);
         filterTower3.setDefaultBorderColor(new java.awt.Color(221, 221, 221));
+        filterTower3.setCanHover(true);
         filterTower3.setHoverBackgroundColor(new java.awt.Color(240, 240, 240));
         filterTower3.setRadius(7);
         filterTower3.setRounded(true);
-        filterTower3.setMaximumSize(new java.awt.Dimension(70, 32767));
 
         sLabel11.setForeground(new java.awt.Color(56, 56, 56));
         sLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1799,10 +1799,10 @@ public class ModuleUnits extends SPanel{
 
         sPanel18.add(sPanel31);
 
-        sPanel46.setPaintBackground(false);
-        sPanel46.setShadowColor(new java.awt.Color(230, 230, 230));
         sPanel46.setMaximumSize(new java.awt.Dimension(0, 30));
         sPanel46.setMinimumSize(new java.awt.Dimension(0, 30));
+        sPanel46.setPaintBackground(false);
+        sPanel46.setShadowColor(new java.awt.Color(230, 230, 230));
 
         sLabel8.setForeground(new java.awt.Color(56, 56, 56));
         sLabel8.setText("Rows per page:");
@@ -1891,15 +1891,15 @@ public class ModuleUnits extends SPanel{
 
         sPanel60.setPaintBackground(false);
 
+        sPanelPage1.setMaximumSize(new java.awt.Dimension(25, 25));
+        sPanelPage1.setMinimumSize(new java.awt.Dimension(25, 25));
         sPanelPage1.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage1.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
-        sPanelPage1.setCanHover(true);
         sPanelPage1.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sPanelPage1.setCanHover(true);
         sPanelPage1.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage1.setRadius(15);
         sPanelPage1.setRounded(true);
-        sPanelPage1.setMaximumSize(new java.awt.Dimension(25, 25));
-        sPanelPage1.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel23.setForeground(new java.awt.Color(56, 56, 56));
         sLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1944,15 +1944,15 @@ public class ModuleUnits extends SPanel{
 
         sPanel62.setPaintBackground(false);
 
+        sPanelPage2.setMaximumSize(new java.awt.Dimension(25, 25));
+        sPanelPage2.setMinimumSize(new java.awt.Dimension(25, 25));
         sPanelPage2.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage2.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
-        sPanelPage2.setCanHover(true);
         sPanelPage2.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sPanelPage2.setCanHover(true);
         sPanelPage2.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage2.setRadius(15);
         sPanelPage2.setRounded(true);
-        sPanelPage2.setMaximumSize(new java.awt.Dimension(25, 25));
-        sPanelPage2.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel39.setForeground(new java.awt.Color(56, 56, 56));
         sLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1997,15 +1997,15 @@ public class ModuleUnits extends SPanel{
 
         sPanel64.setPaintBackground(false);
 
+        sPanelPage3.setMaximumSize(new java.awt.Dimension(25, 25));
+        sPanelPage3.setMinimumSize(new java.awt.Dimension(25, 25));
         sPanelPage3.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage3.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
-        sPanelPage3.setCanHover(true);
         sPanelPage3.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sPanelPage3.setCanHover(true);
         sPanelPage3.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage3.setRadius(15);
         sPanelPage3.setRounded(true);
-        sPanelPage3.setMaximumSize(new java.awt.Dimension(25, 25));
-        sPanelPage3.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel40.setForeground(new java.awt.Color(56, 56, 56));
         sLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2050,15 +2050,15 @@ public class ModuleUnits extends SPanel{
 
         sPanel65.setPaintBackground(false);
 
+        sPanelPage4.setMaximumSize(new java.awt.Dimension(25, 25));
+        sPanelPage4.setMinimumSize(new java.awt.Dimension(25, 25));
         sPanelPage4.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage4.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
-        sPanelPage4.setCanHover(true);
         sPanelPage4.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sPanelPage4.setCanHover(true);
         sPanelPage4.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage4.setRadius(15);
         sPanelPage4.setRounded(true);
-        sPanelPage4.setMaximumSize(new java.awt.Dimension(25, 25));
-        sPanelPage4.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel41.setForeground(new java.awt.Color(56, 56, 56));
         sLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2103,15 +2103,15 @@ public class ModuleUnits extends SPanel{
 
         sPanel66.setPaintBackground(false);
 
+        sPanelPage5.setMaximumSize(new java.awt.Dimension(25, 25));
+        sPanelPage5.setMinimumSize(new java.awt.Dimension(25, 25));
         sPanelPage5.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage5.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
-        sPanelPage5.setCanHover(true);
         sPanelPage5.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sPanelPage5.setCanHover(true);
         sPanelPage5.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage5.setRadius(15);
         sPanelPage5.setRounded(true);
-        sPanelPage5.setMaximumSize(new java.awt.Dimension(25, 25));
-        sPanelPage5.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel42.setForeground(new java.awt.Color(56, 56, 56));
         sLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2156,15 +2156,15 @@ public class ModuleUnits extends SPanel{
 
         sPanel74.setPaintBackground(false);
 
+        sPanelPage6.setMaximumSize(new java.awt.Dimension(25, 25));
+        sPanelPage6.setMinimumSize(new java.awt.Dimension(25, 25));
         sPanelPage6.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage6.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
-        sPanelPage6.setCanHover(true);
         sPanelPage6.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sPanelPage6.setCanHover(true);
         sPanelPage6.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage6.setRadius(15);
         sPanelPage6.setRounded(true);
-        sPanelPage6.setMaximumSize(new java.awt.Dimension(25, 25));
-        sPanelPage6.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel43.setForeground(new java.awt.Color(56, 56, 56));
         sLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2209,15 +2209,15 @@ public class ModuleUnits extends SPanel{
 
         sPanel76.setPaintBackground(false);
 
+        sPanelPage7.setMaximumSize(new java.awt.Dimension(25, 25));
+        sPanelPage7.setMinimumSize(new java.awt.Dimension(25, 25));
         sPanelPage7.setActiveBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage7.setActiveHoverBackgroundColor(new java.awt.Color(230, 230, 230));
-        sPanelPage7.setCanHover(true);
         sPanelPage7.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sPanelPage7.setCanHover(true);
         sPanelPage7.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanelPage7.setRadius(15);
         sPanelPage7.setRounded(true);
-        sPanelPage7.setMaximumSize(new java.awt.Dimension(25, 25));
-        sPanelPage7.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel44.setForeground(new java.awt.Color(56, 56, 56));
         sLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2265,13 +2265,13 @@ public class ModuleUnits extends SPanel{
         sPanelNext.setMinimumSize(new java.awt.Dimension(40, 35));
         sPanelNext.setPreferredSize(new java.awt.Dimension(40, 35));
 
-        sPanel68.setCanHover(true);
+        sPanel68.setMaximumSize(new java.awt.Dimension(25, 25));
+        sPanel68.setMinimumSize(new java.awt.Dimension(25, 25));
         sPanel68.setDefaultBackgroundColor(new java.awt.Color(249, 249, 249));
+        sPanel68.setCanHover(true);
         sPanel68.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanel68.setRadius(15);
         sPanel68.setRounded(true);
-        sPanel68.setMaximumSize(new java.awt.Dimension(25, 25));
-        sPanel68.setMinimumSize(new java.awt.Dimension(25, 25));
 
         sLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel12.setIconSize(7);
@@ -2356,25 +2356,25 @@ public class ModuleUnits extends SPanel{
 
         layerUnitsView.setName("Units-View"); // NOI18N
 
-        sPanel17.setPaintBackground(false);
         sPanel17.setPreferredSize(new java.awt.Dimension(1687, 60));
+        sPanel17.setPaintBackground(false);
 
         unitsView_Title.setForeground(new java.awt.Color(56, 56, 56));
         unitsView_Title.setText("Unit 1-101");
-        unitsView_Title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        unitsView_Title.setFont(new java.awt.Font("Segoe UI", 1, 19)); // NOI18N
 
         sPanel70.setPaintBackground(false);
 
+        unitsView_Previous.setMaximumSize(new java.awt.Dimension(70, 32767));
+        unitsView_Previous.setPreferredSize(new java.awt.Dimension(111, 30));
         unitsView_Previous.setActiveBackgroundColor(new java.awt.Color(255, 230, 230));
         unitsView_Previous.setActiveHoverBackgroundColor(new java.awt.Color(255, 220, 220));
         unitsView_Previous.setBorderLine(1);
-        unitsView_Previous.setCanHover(true);
         unitsView_Previous.setDefaultBorderColor(new java.awt.Color(221, 221, 221));
+        unitsView_Previous.setCanHover(true);
         unitsView_Previous.setHoverBackgroundColor(new java.awt.Color(240, 240, 240));
         unitsView_Previous.setRadius(7);
         unitsView_Previous.setRounded(true);
-        unitsView_Previous.setMaximumSize(new java.awt.Dimension(70, 32767));
-        unitsView_Previous.setPreferredSize(new java.awt.Dimension(111, 30));
 
         sLabel13.setForeground(new java.awt.Color(56, 56, 56));
         sLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2400,16 +2400,16 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
+        unitsView_Next.setMaximumSize(new java.awt.Dimension(70, 32767));
+        unitsView_Next.setPreferredSize(new java.awt.Dimension(111, 30));
         unitsView_Next.setActiveBackgroundColor(new java.awt.Color(255, 230, 230));
         unitsView_Next.setActiveHoverBackgroundColor(new java.awt.Color(255, 220, 220));
         unitsView_Next.setBorderLine(1);
-        unitsView_Next.setCanHover(true);
         unitsView_Next.setDefaultBorderColor(new java.awt.Color(221, 221, 221));
+        unitsView_Next.setCanHover(true);
         unitsView_Next.setHoverBackgroundColor(new java.awt.Color(240, 240, 240));
         unitsView_Next.setRadius(7);
         unitsView_Next.setRounded(true);
-        unitsView_Next.setMaximumSize(new java.awt.Dimension(70, 32767));
-        unitsView_Next.setPreferredSize(new java.awt.Dimension(111, 30));
 
         sLabel14.setForeground(new java.awt.Color(56, 56, 56));
         sLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2436,16 +2436,16 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
+        unitsView_Close.setMaximumSize(new java.awt.Dimension(70, 32767));
+        unitsView_Close.setPreferredSize(new java.awt.Dimension(30, 30));
         unitsView_Close.setActiveBackgroundColor(new java.awt.Color(255, 230, 230));
         unitsView_Close.setActiveHoverBackgroundColor(new java.awt.Color(255, 220, 220));
         unitsView_Close.setBorderLine(1);
-        unitsView_Close.setCanHover(true);
         unitsView_Close.setDefaultBorderColor(new java.awt.Color(221, 221, 221));
+        unitsView_Close.setCanHover(true);
         unitsView_Close.setHoverBackgroundColor(new java.awt.Color(240, 240, 240));
         unitsView_Close.setRadius(7);
         unitsView_Close.setRounded(true);
-        unitsView_Close.setMaximumSize(new java.awt.Dimension(70, 32767));
-        unitsView_Close.setPreferredSize(new java.awt.Dimension(30, 30));
 
         sLabel15.setForeground(new java.awt.Color(56, 56, 56));
         sLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2517,49 +2517,48 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
+        sPanel69.setPreferredSize(new java.awt.Dimension(1675, 40));
         sPanel69.setBorderLine(2);
         sPanel69.setBorderSideLeft(false);
         sPanel69.setBorderSideRight(false);
         sPanel69.setBorderSideTop(false);
         sPanel69.setDefaultBorderColor(new java.awt.Color(240, 240, 240));
-        sPanel69.setPreferredSize(new java.awt.Dimension(1675, 40));
 
-        buttonUnits_ViewTabOverview.setActive(true);
-        buttonUnits_ViewTabOverview.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         buttonUnits_ViewTabOverview.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        buttonUnits_ViewTabOverview.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         buttonUnits_ViewTabOverview.setText("Overview");
         buttonUnits_ViewTabOverview.setToolTipText("");
+        buttonUnits_ViewTabOverview.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabOverview.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
 
-        buttonUnits_ViewTabOwner.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         buttonUnits_ViewTabOwner.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        buttonUnits_ViewTabOwner.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         buttonUnits_ViewTabOwner.setText("Owner");
         buttonUnits_ViewTabOwner.setToolTipText("");
+        buttonUnits_ViewTabOwner.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabOwner.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
 
-        buttonUnits_ViewTabTenant.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         buttonUnits_ViewTabTenant.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        buttonUnits_ViewTabTenant.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         buttonUnits_ViewTabTenant.setText("Tenant");
         buttonUnits_ViewTabTenant.setToolTipText("");
+        buttonUnits_ViewTabTenant.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabTenant.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
 
-        buttonUnits_ViewTabDocuments.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         buttonUnits_ViewTabDocuments.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        buttonUnits_ViewTabDocuments.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         buttonUnits_ViewTabDocuments.setText("Documents");
         buttonUnits_ViewTabDocuments.setToolTipText("");
+        buttonUnits_ViewTabDocuments.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabDocuments.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
 
-        buttonUnits_ViewTabConcerns.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         buttonUnits_ViewTabConcerns.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        buttonUnits_ViewTabConcerns.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         buttonUnits_ViewTabConcerns.setText("Concerns");
         buttonUnits_ViewTabConcerns.setToolTipText("");
+        buttonUnits_ViewTabConcerns.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabConcerns.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
 
-        buttonUnits_ViewTabActivityLog.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         buttonUnits_ViewTabActivityLog.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        buttonUnits_ViewTabActivityLog.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         buttonUnits_ViewTabActivityLog.setText("Activity Log");
         buttonUnits_ViewTabActivityLog.setToolTipText("");
+        buttonUnits_ViewTabActivityLog.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabActivityLog.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
 
         javax.swing.GroupLayout sPanel69Layout = new javax.swing.GroupLayout(sPanel69);
         sPanel69.setLayout(sPanel69Layout);
@@ -2590,8 +2589,8 @@ public class ModuleUnits extends SPanel{
             .addComponent(buttonUnits_ViewTabActivityLog, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        sPanel4.setDangerBackgroundColor(new java.awt.Color(51, 51, 255));
         sPanel4.setPaintBackground(false);
+        sPanel4.setDangerBackgroundColor(new java.awt.Color(51, 51, 255));
 
         jLayeredPane3.setLayout(new java.awt.CardLayout());
 
@@ -2904,7 +2903,7 @@ public class ModuleUnits extends SPanel{
         );
         layerUnits_ViewActivityLog1Layout.setVerticalGroup(
             layerUnits_ViewActivityLog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 857, Short.MAX_VALUE)
+            .addGap(0, 1005, Short.MAX_VALUE)
         );
 
         jLayeredPane3.setLayer(layerUnits_ViewActivityLog1, javax.swing.JLayeredPane.PALETTE_LAYER);
@@ -3011,12 +3010,12 @@ public class ModuleUnits extends SPanel{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabActivityLog;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabConcerns;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabDocuments;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabOverview;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabOwner;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabTenant;
+    public FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabActivityLog;
+    public FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabConcerns;
+    public FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabDocuments;
+    public FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabOverview;
+    public FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabOwner;
+    public FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabTenant;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler6;
