@@ -23,7 +23,7 @@ public class LoginPanel extends SPanel{
 
     private Color line = new Color(255, 255, 255);
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The color of the decorative line")
     public void setLine(Color line){
         this.line = line;
     }

@@ -124,7 +124,7 @@ public class SScrollPane extends JScrollPane{
 
     private int scrollBarWidth = 7;
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The width of the scroll bar")
     public void setScrollBarWidth(int scrollBarWidth){
         this.scrollBarWidth = scrollBarWidth;
     }

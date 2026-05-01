@@ -15,7 +15,7 @@ import java.beans.JavaBean;
 @JavaBean(description = "A component that displays a jlabel that change color when hovered")
 public class SLabelHover extends SLabel{
 
-// Constructor ===============================================================================================
+// ==== Constructor ==========================================================================================
 
     public SLabelHover(){
         super();
@@ -37,7 +37,7 @@ public class SLabelHover extends SLabel{
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
     
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
 
     private boolean hovering = false;
     
@@ -59,7 +59,7 @@ public class SLabelHover extends SLabel{
         super.setEnabled(enabled);
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     private Color defaultColor = Color.white;
     
@@ -101,7 +101,7 @@ public class SLabelHover extends SLabel{
         super.setBackground(bg);
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public void paintOverrideAll(Graphics g){

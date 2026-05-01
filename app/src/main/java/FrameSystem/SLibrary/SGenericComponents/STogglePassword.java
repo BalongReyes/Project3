@@ -41,6 +41,7 @@ public class STogglePassword extends SLabelHover {
     }
 
 // ==== Methods ==============================================================================================
+
     public void showPassword(boolean show) {
         if (sPasswordField == null) {
             return;

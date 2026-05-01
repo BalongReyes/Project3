@@ -56,7 +56,7 @@ public class STable extends SPanel{
     
 // ==== STable Properties ====================================================================================
     
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The height of each row in the table")
     public void setRowHeight(int rowHeight) {
         this.rowHeight = rowHeight;
     }
@@ -106,7 +106,7 @@ public class STable extends SPanel{
         return scrollPane.getHoverColor();
     }
     
-// ==== Overrided Methods ====================================================================================
+// ==== Generated ============================================================================================
     
     /**
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this

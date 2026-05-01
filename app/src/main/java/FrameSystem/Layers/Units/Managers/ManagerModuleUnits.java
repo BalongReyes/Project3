@@ -27,7 +27,7 @@ public class ManagerModuleUnits extends Manager{
         ManagerFilterUnits.initDefault();
     }
     
-// Main Methods ==============================================================================================
+// ==== Main Methods =========================================================================================
     
     private static boolean offlineMode = false;
     

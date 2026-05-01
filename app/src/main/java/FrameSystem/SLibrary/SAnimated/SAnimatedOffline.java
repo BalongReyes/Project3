@@ -64,11 +64,11 @@ public class SAnimatedOffline extends SPanelAnimated{
         repaint();
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
     
     protected Color lineColor = Color.white;
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The color of the animated line")
     public void setLineColor(Color lineColor){
         this.lineColor = lineColor;
     }
@@ -81,7 +81,7 @@ public class SAnimatedOffline extends SPanelAnimated{
     
     protected float lineWidth = 0;
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The width of the animated line")
     public void setLineWidth(float lineWidth){
         this.lineWidth = lineWidth;
     }
@@ -90,7 +90,7 @@ public class SAnimatedOffline extends SPanelAnimated{
         return lineWidth;
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     protected void paintComponent(Graphics g) {

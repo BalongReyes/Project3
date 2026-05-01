@@ -125,7 +125,7 @@ public class SAnimatedLoading extends SPanelAnimated {
         return this.currentProgress == this.targetProgress;
     }
 
-// ==== Overridden Methods ===================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     protected void paintComponent(Graphics g) {

@@ -39,6 +39,7 @@ public class ModuleLogin extends LoginPanelContainer {
     }
 
 // ==== Generated ============================================================================================
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

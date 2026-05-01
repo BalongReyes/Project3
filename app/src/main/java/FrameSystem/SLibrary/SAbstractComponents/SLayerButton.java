@@ -1,13 +1,13 @@
 
 package FrameSystem.SLibrary.SAbstractComponents;
 
-import FrameSystem.SLibrary.SComponents.SPanelActivatableHover;
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.Graphics;
 import java.awt.event.MouseListener;
 import java.beans.JavaBean;
 
 @JavaBean(description = "A component that displays a jpanel acts as a button for layered panel")
-public abstract class SLayerButton extends SPanelActivatableHover{
+public abstract class SLayerButton extends SPanel{
 
     public SLayerButton(){
         super();

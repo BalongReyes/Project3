@@ -1,18 +1,16 @@
 package FrameSystem.Layers.Home.Components;
 
+import FrameSystem.SLibrary.SComponents.SPanel;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.MouseListener;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import FrameSystem.SLibrary.SComponents.SPanelActivatableHover;
-
 @JavaBean(description = "A component that displays a jpanel as a layered panel button")
-public class MenuMinSwitch extends SPanelActivatableHover{
+public class MenuMinSwitch extends SPanel{
 
     public MenuMinSwitch(){
         super();

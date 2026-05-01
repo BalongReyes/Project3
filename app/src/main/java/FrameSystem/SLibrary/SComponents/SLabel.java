@@ -1,19 +1,17 @@
 
 package FrameSystem.SLibrary.SComponents;
 
+import MainSystem.CustomGraphics;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
-
-import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A component that displays a jlabel that renders with RenderingHints")
 public class SLabel extends JLabel{
@@ -37,14 +35,13 @@ public class SLabel extends JLabel{
     protected ImageIcon scaledImageIcon = null;
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "Scaled icon")
-    public void setScaledIcon(Icon icon){ // Changed parameter to Icon to match getter
+    public void setScaledIcon(Icon icon){
         if(icon == null){
             this.scaledIcon = null;
             setIcon(null);
             return;
         }
 
-        // Check if the passed Icon is an ImageIcon so we can scale it
         if(icon instanceof ImageIcon imageIcon){
             this.scaledIcon = imageIcon;
             scaledImageIcon = this.scaledIcon;
@@ -54,7 +51,6 @@ public class SLabel extends JLabel{
             }
             setIcon(scaledImageIcon);
         }else{
-            // If it's a different type of Icon, just set it normally without scaling
             this.scaledIcon = null;
             setIcon(icon);
         }

@@ -1,6 +1,7 @@
 package FrameSystem.Layers.Home.Components;
 
 import FrameSystem.SLibrary.SComponents.SPanel;
+import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -9,11 +10,8 @@ import java.awt.Image;
 import java.awt.event.MouseListener;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
-import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A component that displays a jpanel as a layered panel button")
 public class MenuSwitch extends SPanel{
@@ -26,7 +24,7 @@ public class MenuSwitch extends SPanel{
         sLabel1.addMouseListener(hoverListener);
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     private Color foregroundColor = Color.white;
 
@@ -107,7 +105,7 @@ public class MenuSwitch extends SPanel{
         super.setRounded(rounded);
     }
     
-// ===========================================================================================================
+// ==== Generated ============================================================================================
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -144,7 +142,7 @@ public class MenuSwitch extends SPanel{
         );
     }// </editor-fold>//GEN-END:initComponents
 
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
     
     @Override
     public final void addMouseListener(MouseListener l){

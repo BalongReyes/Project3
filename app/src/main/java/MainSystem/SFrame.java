@@ -29,7 +29,7 @@ public class SFrame extends JFrame {
         setListeners();
     }
 
-// Methods ===================================================================================================
+// ==== Methods ==============================================================================================
 
     public void initShowDefaultLayer(){
         LayerMain.showLayer(layerMain_Loading);
@@ -133,7 +133,7 @@ public class SFrame extends JFrame {
         refreshTimer.start();
     }
     
-// Static Methods ============================================================================================
+// ==== Static Methods =======================================================================================
     
     private static boolean keyLock = false;
 
@@ -145,7 +145,7 @@ public class SFrame extends JFrame {
         return keyLock;
     }
 
-// Generated =================================================================================================
+// ==== Generated ============================================================================================
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -59,7 +59,7 @@ public class STextFieldContainer extends SPanel{
     
     private int lineGap = 0;
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The line gap size")
     public void setLineGap(int lineGap){
         this.lineGap = lineGap;
     }

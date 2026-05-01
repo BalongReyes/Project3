@@ -17,10 +17,10 @@ public class SPanelHomeMenu extends SPanel{
         setOpaque(false);
     }
     
-// Drop Shadow ===============================================================================================
+// ==== Drop Shadow ==========================================================================================
     
     @Override
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Enable shadow on the X axis")
     public void setShadowX(boolean shadowX){
         this.shadowX = shadowX;
         setBorderPadding();
@@ -28,7 +28,7 @@ public class SPanelHomeMenu extends SPanel{
     }
     
     @Override
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The offset of the drop shadow on the X axis")
     public void setShadowOffsetX(int shadowOffsetX){
         this.shadowOffsetX = shadowOffsetX;
     }
@@ -43,7 +43,7 @@ public class SPanelHomeMenu extends SPanel{
         ));
     }
 
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
     
     @Override
     public void paint(Graphics g){

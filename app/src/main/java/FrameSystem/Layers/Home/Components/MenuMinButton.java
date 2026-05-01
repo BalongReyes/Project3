@@ -1,5 +1,7 @@
 package FrameSystem.Layers.Home.Components;
 
+import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
+import MainSystem.CustomGraphics;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -8,12 +10,8 @@ import java.awt.Image;
 import java.awt.event.MouseListener;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
-import FrameSystem.SLibrary.SAbstractComponents.SLayerButton;
-import MainSystem.CustomGraphics;
 
 @JavaBean(description = "A component that displays a jpanel as a layered panel button")
 public class MenuMinButton extends SLayerButton{
@@ -143,7 +141,7 @@ public class MenuMinButton extends SLayerButton{
         super.setRounded(rounded);
     }
     
-// ===========================================================================================================
+// ==== Generated ============================================================================================
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -190,7 +188,7 @@ public class MenuMinButton extends SLayerButton{
         }else if(active){
             g2.setColor(activeBackgroundColor);
         }else{
-            g2.setColor(inactiveBackgroundColor);
+            g2.setColor(defaultBackgroundColor);
         }
         g2.fillRoundRect(0, 0, s.width, s.height, radius, radius);
         

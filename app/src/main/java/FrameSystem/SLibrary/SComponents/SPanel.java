@@ -255,7 +255,7 @@ public class SPanel extends JPanel implements InnerListener{
         return dangerForegroundColor;
     }
 
-// ---- Defaults ---------------------------------------------------------------------------------------------   
+// ---- Defaults ---------------------------------------------------------------------------------------------
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "The default background color")
     public void setDefaultBackgroundColor(Color inactiveBackgroundColor){
@@ -433,7 +433,7 @@ public class SPanel extends JPanel implements InnerListener{
 
 // ---- Shadow -----------------------------------------------------------------------------------------------
     
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Enable shadow on the X axis")
     public void setShadowX(boolean shadowX){
         this.shadowX = shadowX;
         setBorderPadding();
@@ -446,7 +446,7 @@ public class SPanel extends JPanel implements InnerListener{
         return shadowX;
     }
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "Enable shadow on the Y axis")
     public void setShadowY(boolean shadowY){
         this.shadowY = shadowY;
         setBorderPadding();
@@ -459,7 +459,7 @@ public class SPanel extends JPanel implements InnerListener{
         return shadowY;
     }
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The size of the drop shadow")
     public void setShadowSize(int shadowSize){
         this.shadowSize = shadowSize;
         setBorderPadding();
@@ -469,7 +469,7 @@ public class SPanel extends JPanel implements InnerListener{
         return shadowSize;
     }
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The opacity of the drop shadow")
     public void setShadowOpacity(float shadowOpacity){
         this.shadowOpacity = shadowOpacity;
     }
@@ -478,7 +478,7 @@ public class SPanel extends JPanel implements InnerListener{
         return shadowOpacity;
     }
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The color of the drop shadow")
     public void setShadowColor(Color shadowColor){
         this.shadowColor = shadowColor;
     }
@@ -487,7 +487,7 @@ public class SPanel extends JPanel implements InnerListener{
         return shadowColor;
     }
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The offset of the drop shadow on the X axis")
     public void setShadowOffsetX(int shadowOffsetX){
         this.shadowOffsetX = shadowOffsetX;
         setBorderPadding();
@@ -497,7 +497,7 @@ public class SPanel extends JPanel implements InnerListener{
         return shadowOffsetX;
     }
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The offset of the drop shadow on the Y axis")
     public void setShadowOffsetY(int shadowOffsetY){
         this.shadowOffsetY = shadowOffsetY;
         setBorderPadding();

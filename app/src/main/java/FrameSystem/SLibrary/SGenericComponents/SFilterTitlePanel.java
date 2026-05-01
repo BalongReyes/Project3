@@ -18,11 +18,11 @@ public class SFilterTitlePanel extends SPanel{
         sLabel2.addMouseListener(hoverListener);
     }
     
-// Setters and Getters =======================================================================================
+// ==== Setters and Getters ==================================================================================
 
     private String text = "";
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The title text of the filter")
     public void setText(String text){
         this.text = text;
         sLabel1.setText(text);
@@ -34,7 +34,7 @@ public class SFilterTitlePanel extends SPanel{
     
     private int arrowDirection = -1;
     
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The direction of the arrow indicator")
     public void setArrowDirection(int n){
         arrowDirection = n;
         switch(n){
@@ -76,7 +76,7 @@ public class SFilterTitlePanel extends SPanel{
     
     private int dataIndex;
 
-    @BeanProperty(preferred = true, visualUpdate = true, description = "")
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The data index associated with this filter")
     public void setDataIndex(int dataIndex){
         this.dataIndex = dataIndex;
     }
@@ -85,14 +85,14 @@ public class SFilterTitlePanel extends SPanel{
         return dataIndex;
     }
     
-// Overrided Methods =========================================================================================
+// ==== Overrided Methods ====================================================================================
 
     @Override
     public synchronized void addMouseListener(MouseListener l){
         addInnerListeners(l);
     }
     
-// Generated =================================================================================================
+// ==== Generated ============================================================================================
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

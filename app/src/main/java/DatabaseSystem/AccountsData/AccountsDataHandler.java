@@ -100,7 +100,7 @@ public class AccountsDataHandler {
         return true;
     }
     
-// ===========================================================================================================
+// ==== Login Authentication =================================================================================
     
     public static AccountsDataTable loginAccount(String usernameOrId, char[] charPassword) throws SQLException {
         try {

@@ -1,14 +1,13 @@
 
 package FrameSystem.Layers.Home.Managers;
 
-import java.awt.event.MouseListener;
-
 import DatabaseSystem.AccountsData.AccountsDataTable;
 import EventSystem.Listeners.MouseClickedAdaptor;
 import FrameSystem.Layers.Home.Components.LayerHome;
 import FrameSystem.Layers.Home.Module.ModuleHome;
 import MainSystem.Manager;
 import MainSystem.Managers.ManagerLogin;
+import java.awt.event.MouseListener;
 
 public class ManagerModuleHome extends Manager{
 
