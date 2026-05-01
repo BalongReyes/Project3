@@ -69,16 +69,16 @@ public class ModuleLogin extends LoginPanelContainer {
         FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline2 = new FrameSystem.SLibrary.SAnimated.SAnimatedOffline();
 
         setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/Icons/wave.png"))); // NOI18N
+        setMinimumSize(new java.awt.Dimension(830, 540));
+        setPreferredSize(new java.awt.Dimension(830, 540));
         setDefaultBackgroundColor(new java.awt.Color(255, 209, 209));
-        setRadius(30);
+        setRadius(20);
         setRounded(true);
         setShadowColor(new java.awt.Color(230, 230, 230));
         setShadowOpacity(0.3F);
         setShadowSize(5);
         setShadowX(true);
         setShadowY(true);
-        setMinimumSize(new java.awt.Dimension(830, 540));
-        setPreferredSize(new java.awt.Dimension(830, 540));
 
         sPanelLeft.setPaintBackground(false);
 
@@ -103,16 +103,16 @@ public class ModuleLogin extends LoginPanelContainer {
         );
 
         sPanelRight.setLine(new java.awt.Color(205, 64, 68));
-        sPanelRight.setRadius(30);
+        sPanelRight.setRadius(20);
         sPanelRight.setRounded(true);
 
         layeredPane_Login.setPreferredSize(new java.awt.Dimension(500, 530));
         layeredPane_Login.setLayout(new java.awt.CardLayout());
 
-        layerLogin_Offline.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
-        layerLogin_Offline.setRadius(30);
-        layerLogin_Offline.setRounded(true);
         layerLogin_Offline.setName("Offline"); // NOI18N
+        layerLogin_Offline.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
+        layerLogin_Offline.setRadius(20);
+        layerLogin_Offline.setRounded(true);
 
         jPanel1.setOpaque(false);
 
@@ -123,8 +123,8 @@ public class ModuleLogin extends LoginPanelContainer {
 
         sAnimatedOffline1.setLineColor(new java.awt.Color(205, 64, 68));
         sAnimatedOffline1.setLineWidth(5.0F);
-        sAnimatedOffline1.setPaintBackground(false);
         sAnimatedOffline1.setPreferredSize(new java.awt.Dimension(160, 160));
+        sAnimatedOffline1.setPaintBackground(false);
 
         javax.swing.GroupLayout sAnimatedOffline1Layout = new javax.swing.GroupLayout(sAnimatedOffline1);
         sAnimatedOffline1.setLayout(sAnimatedOffline1Layout);
@@ -179,10 +179,10 @@ public class ModuleLogin extends LoginPanelContainer {
 
         layeredPane_Login.add(layerLogin_Offline, "card2");
 
-        layerLogin_Online.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
-        layerLogin_Online.setRadius(30);
-        layerLogin_Online.setRounded(true);
         layerLogin_Online.setName("Online"); // NOI18N
+        layerLogin_Online.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
+        layerLogin_Online.setRadius(20);
+        layerLogin_Online.setRounded(true);
 
         sLabel1.setForeground(new java.awt.Color(0, 0, 0));
         sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -200,9 +200,9 @@ public class ModuleLogin extends LoginPanelContainer {
 
         loginTextFieldContainer1.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer1.setForeground(new java.awt.Color(0, 0, 0));
+        loginTextFieldContainer1.setTextFieldChild(loginUsernameField);
         loginTextFieldContainer1.setRadius(10);
         loginTextFieldContainer1.setRounded(true);
-        loginTextFieldContainer1.setTextFieldChild(loginUsernameField);
 
         loginUsernameField.setBackground(new java.awt.Color(153, 153, 153));
         loginUsernameField.setForeground(new java.awt.Color(0, 0, 0));
@@ -240,9 +240,9 @@ public class ModuleLogin extends LoginPanelContainer {
 
         loginTextFieldContainer2.setFocusedColor(new java.awt.Color(255, 127, 127));
         loginTextFieldContainer2.setForeground(new java.awt.Color(0, 0, 0));
+        loginTextFieldContainer2.setTextFieldChild(loginPasswordField);
         loginTextFieldContainer2.setRadius(10);
         loginTextFieldContainer2.setRounded(true);
-        loginTextFieldContainer2.setTextFieldChild(loginPasswordField);
 
         loginPasswordField.setBackground(new java.awt.Color(153, 153, 153));
         loginPasswordField.setForeground(new java.awt.Color(0, 0, 0));
@@ -353,14 +353,15 @@ public class ModuleLogin extends LoginPanelContainer {
         layeredPane_Login.setLayer(layerLogin_Online, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Login.add(layerLogin_Online, "card1");
 
-        layerLogin_Loading.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
-        layerLogin_Loading.setRadius(30);
-        layerLogin_Loading.setRounded(true);
         layerLogin_Loading.setName("Loading"); // NOI18N
+        layerLogin_Loading.setDefaultBackgroundColor(new java.awt.Color(255, 243, 243));
+        layerLogin_Loading.setRadius(20);
+        layerLogin_Loading.setRounded(true);
 
         sAnimatedOffline2.setLineColor(new java.awt.Color(255, 127, 127));
         sAnimatedOffline2.setLineWidth(5.0F);
         sAnimatedOffline2.setPreferredSize(new java.awt.Dimension(160, 160));
+        sAnimatedOffline2.setPaintBackground(false);
 
         javax.swing.GroupLayout sAnimatedOffline2Layout = new javax.swing.GroupLayout(sAnimatedOffline2);
         sAnimatedOffline2.setLayout(sAnimatedOffline2Layout);

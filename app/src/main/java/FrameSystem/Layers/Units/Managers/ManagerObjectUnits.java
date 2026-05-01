@@ -532,8 +532,6 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         moduleUnits.unitsView_Previous.setVisible(index > 0 || currentPage > 0);
         moduleUnits.unitsView_Next.setVisible((index >= 0 && index < objects.size() - 1) || currentPage < totalPages - 1);
         
-        moduleUnits.buttonUnits_ViewTabTenant.setVisible(data.hasTenant());
-        
         LayerUnits_Main.showLayer(moduleUnits.layerUnitsView);
         LayerUnits_View.showLayer(moduleUnits.layerUnits_ViewOverview);
     }
