@@ -11,6 +11,7 @@ import DatabaseSystem.UnitsData.UnitsDataTable;
 import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.LayerUnits_Main;
+import FrameSystem.Layers.Units.Components.LayerUnits_View;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
 import FrameSystem.SLibrary.SComponents.SLabel;
 import FrameSystem.SLibrary.SComponents.SPanel;
@@ -29,6 +30,9 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
     public static int currentPage = 0; 
     public static int pageSize = 100;   
     public static int totalPages = 1;
+    
+    private static boolean selectFirstOnLoad = false;
+    private static boolean selectLastOnLoad = false;
     
     public static void initDefault() {
         moduleHome.layerHome_Units.addLayeredPanelShowListener((evt) -> {
@@ -114,6 +118,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             if (index > 0) {
                 changeCurrentObject(objects.get(index - 1));
                 showLayerUnitsView();
+            } else if (currentPage > 0) {
+                selectLastOnLoad = true;
+                currentPage--;
+                LayerUnits_View.showLayer(moduleUnits.layerUnits_ViewLoading);
+                refreshObjects();
             }
         });
         
@@ -123,6 +132,11 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             if (index >= 0 && index < objects.size() - 1) {
                 changeCurrentObject(objects.get(index + 1));
                 showLayerUnitsView();
+            } else if (currentPage < totalPages - 1) {
+                selectFirstOnLoad = true;
+                currentPage++;
+                LayerUnits_View.showLayer(moduleUnits.layerUnits_ViewLoading);
+                refreshObjects();
             }
         });
     }
@@ -246,6 +260,16 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                         moduleUnits.sTable1.addRow(o);
                     }
                 }
+                
+                if (selectFirstOnLoad && !objects.isEmpty()) {
+                    changeCurrentObject(objects.get(0));
+                    showLayerUnitsView();
+                } else if (selectLastOnLoad && !objects.isEmpty()) {
+                    changeCurrentObject(objects.get(objects.size() - 1));
+                    showLayerUnitsView();
+                }
+                selectFirstOnLoad = false;
+                selectLastOnLoad = false;
 
                 LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
             });
@@ -390,10 +414,14 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         moduleUnits.unitsView_Highlight.setOccupancy(data.getOccupancy());
         
         int index = objects.indexOf(currentObject);
-        moduleUnits.unitsView_Previous.setVisible(index > 0);
-        moduleUnits.unitsView_Next.setVisible(index >= 0 && index < objects.size() - 1);
+        moduleUnits.unitsView_Previous.setVisible(index > 0 || currentPage > 0);
+        moduleUnits.unitsView_Next.setVisible((index >= 0 && index < objects.size() - 1) || currentPage < totalPages - 1);
         
         LayerUnits_Main.showLayer(moduleUnits.layerUnitsView);
+        
+        if (LayerUnits_View.getCurrentLayeredPanel() == moduleUnits.layerUnits_ViewLoading || LayerUnits_View.getCurrentLayeredPanel() == null) {
+            LayerUnits_View.showLayer(moduleUnits.layerUnits_ViewOverview);
+        }
     }
     
 }

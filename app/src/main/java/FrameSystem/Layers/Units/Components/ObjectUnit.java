@@ -33,7 +33,9 @@ public class ObjectUnit extends SPanel{
             public void mouseClicked(MouseEvent evt){
                 if(evt.getClickCount() == 2 && !evt.isConsumed()){
                     evt.consume();
-                    edit();
+                    if (onViewClick != null) {
+                        onViewClick.run(); 
+                    }
                 }
             }
         });
@@ -106,18 +108,6 @@ public class ObjectUnit extends SPanel{
     @Override
     public void setActive(boolean active){
         super.setActive(active);
-    }
-    
-// -----------------------------------------------------------------------------------------------------------
-    
-    private void delete(){
-        setFocus();
-        if(deleteBlocked) return;
-    }
-    
-    private void edit(){
-        setFocus();
-        if(editBlocked) return;
     }
     
 // ---- View -------------------------------------------------------------------------------------------------
