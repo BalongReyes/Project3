@@ -22,8 +22,6 @@ public class ManagerModuleHome extends Manager{
         moduleHome.sLayerPanelButton1.addMouseListener(m3);
         moduleHome.sPanel15.addMouseListener(m3);
         
-        // ---------------
-        
         MouseListener m1 = (MouseClickedAdaptor) evt -> {
             frame.toggleFullscreen();
         };
@@ -33,15 +31,11 @@ public class ManagerModuleHome extends Manager{
         moduleHome.sScrollPane1.applyInnerListeners();
         moduleHome.sScrollPane2.applyInnerListeners();
         
-        // ---------------
-
         MouseListener m2 = (MouseClickedAdaptor) evt -> {
             ManagerLogin.logoutAccount();
         };
         moduleHome.logoutButton.addMouseListener(m2);
         moduleHome.logoutButton1.addMouseListener(m2);
-        
-        // ---------------
         
         moduleHome.sPanelMenu2.setVisible(false);
 

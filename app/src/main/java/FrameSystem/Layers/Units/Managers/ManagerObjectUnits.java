@@ -8,6 +8,7 @@ import ConsoleSystem.Console;
 import DatabaseSystem.DataTable.DataTableFilter;
 import DatabaseSystem.UnitsData.UnitsDataHandler;
 import DatabaseSystem.UnitsData.UnitsDataTable;
+import EventSystem.Listeners.MousePressedAdaptor;
 import FrameSystem.Layers.Units.Components.LayerUnits;
 import FrameSystem.Layers.Units.Components.LayerUnits_Main;
 import FrameSystem.Layers.Units.Components.ObjectUnit;
@@ -35,6 +36,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         });
         
         initPaginationControls();
+        initViewControls();
     }
     
     public static void initPaginationControls() {
@@ -99,6 +101,30 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         }
         
         updatePaginationLabels();
+    }
+
+    public static void initViewControls() {
+        moduleUnits.unitsView_Close.addMouseListener((MousePressedAdaptor) evt -> {
+            LayerUnits_Main.showLayer(moduleUnits.layerUnitsData);
+        });
+        
+        moduleUnits.unitsView_Previous.addMouseListener((MousePressedAdaptor) evt -> {
+            if (currentObject == null) return;
+            int index = objects.indexOf(currentObject);
+            if (index > 0) {
+                changeCurrentObject(objects.get(index - 1));
+                showLayerUnitsView();
+            }
+        });
+        
+        moduleUnits.unitsView_Next.addMouseListener((MousePressedAdaptor) evt -> {
+            if (currentObject == null) return;
+            int index = objects.indexOf(currentObject);
+            if (index >= 0 && index < objects.size() - 1) {
+                changeCurrentObject(objects.get(index + 1));
+                showLayerUnitsView();
+            }
+        });
     }
 
 // ==== Main Methods =========================================================================================
@@ -213,6 +239,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                     for (UnitsDataTable data : dataBatch) {
                         ObjectUnit o = new ObjectUnit(data);
                         o.setOnViewClick(()->{
+                            changeCurrentObject(o);
                             showLayerUnitsView();
                         });
                         objects.add(o);
@@ -356,6 +383,16 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
 // ---- View -------------------------------------------------------------------------------------------------
     
     public static void showLayerUnitsView() {
+        if (currentObject == null) return;
+        UnitsDataTable data = currentObject.getData();
+        
+        moduleUnits.unitsView_Title.setText("Unit " + data.tower() + "-" + data.floor() + (data.unit() < 10 ? "0" : "") + data.unit());
+        moduleUnits.unitsView_Highlight.setOccupancy(data.getOccupancy());
+        
+        int index = objects.indexOf(currentObject);
+        moduleUnits.unitsView_Previous.setVisible(index > 0);
+        moduleUnits.unitsView_Next.setVisible(index >= 0 && index < objects.size() - 1);
+        
         LayerUnits_Main.showLayer(moduleUnits.layerUnitsView);
     }
     
