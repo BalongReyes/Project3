@@ -174,12 +174,12 @@ public class ModuleUnits extends SPanel{
         unitsView_Close = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel15 = new FrameSystem.SLibrary.SComponents.SLabel();
         sPanel69 = new FrameSystem.SLibrary.SComponents.SPanel();
-        buttonUnits_ViewTab1 = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
-        buttonUnits_ViewTab2 = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
-        buttonUnits_ViewTab3 = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
-        buttonUnits_ViewTab4 = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
-        buttonUnits_ViewTab6 = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
-        buttonUnits_ViewTab5 = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
+        buttonUnits_ViewTabOverview = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
+        buttonUnits_ViewTabOwner = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
+        buttonUnits_ViewTabTenant = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
+        buttonUnits_ViewTabDocuments = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
+        buttonUnits_ViewTabConcerns = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
+        buttonUnits_ViewTabActivityLog = new FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab();
         sPanel4 = new FrameSystem.SLibrary.SComponents.SPanel();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         layerUnits_ViewLoading = new FrameSystem.Layers.Units.Components.LayerUnits_View();
@@ -196,10 +196,15 @@ public class ModuleUnits extends SPanel{
         sPanel75 = new FrameSystem.SLibrary.SComponents.SPanel();
         sLabel48 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnits_ViewOwner = new FrameSystem.Layers.Units.Components.LayerUnits_View();
+        sLabel49 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnits_ViewTenant = new FrameSystem.Layers.Units.Components.LayerUnits_View();
+        sLabel50 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnits_ViewDocuments = new FrameSystem.Layers.Units.Components.LayerUnits_View();
+        sLabel51 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnits_ViewConcerns = new FrameSystem.Layers.Units.Components.LayerUnits_View();
+        sLabel52 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnits_ViewActivityLog = new FrameSystem.Layers.Units.Components.LayerUnits_View();
+        sLabel53 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnits_ViewActivityLog1 = new FrameSystem.Layers.Units.Components.LayerUnits_View();
 
         sPanel21.setPaintBackground(false);
@@ -2517,31 +2522,44 @@ public class ModuleUnits extends SPanel{
         sPanel69.setBorderSideRight(false);
         sPanel69.setBorderSideTop(false);
         sPanel69.setDefaultBorderColor(new java.awt.Color(240, 240, 240));
-        sPanel69.setPreferredSize(new java.awt.Dimension(1675, 50));
+        sPanel69.setPreferredSize(new java.awt.Dimension(1675, 40));
 
-        buttonUnits_ViewTab1.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        buttonUnits_ViewTab1.setText("Overview");
-        buttonUnits_ViewTab1.setToolTipText("");
+        buttonUnits_ViewTabOverview.setActive(true);
+        buttonUnits_ViewTabOverview.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabOverview.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabOverview.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        buttonUnits_ViewTabOverview.setText("Overview");
+        buttonUnits_ViewTabOverview.setToolTipText("");
 
-        buttonUnits_ViewTab2.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        buttonUnits_ViewTab2.setText("Owner");
-        buttonUnits_ViewTab2.setToolTipText("");
+        buttonUnits_ViewTabOwner.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabOwner.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabOwner.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        buttonUnits_ViewTabOwner.setText("Owner");
+        buttonUnits_ViewTabOwner.setToolTipText("");
 
-        buttonUnits_ViewTab3.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        buttonUnits_ViewTab3.setText("Tenant");
-        buttonUnits_ViewTab3.setToolTipText("");
+        buttonUnits_ViewTabTenant.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabTenant.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabTenant.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        buttonUnits_ViewTabTenant.setText("Tenant");
+        buttonUnits_ViewTabTenant.setToolTipText("");
 
-        buttonUnits_ViewTab4.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        buttonUnits_ViewTab4.setText("Documents");
-        buttonUnits_ViewTab4.setToolTipText("");
+        buttonUnits_ViewTabDocuments.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabDocuments.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabDocuments.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        buttonUnits_ViewTabDocuments.setText("Documents");
+        buttonUnits_ViewTabDocuments.setToolTipText("");
 
-        buttonUnits_ViewTab6.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        buttonUnits_ViewTab6.setText("Concerns");
-        buttonUnits_ViewTab6.setToolTipText("");
+        buttonUnits_ViewTabConcerns.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabConcerns.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabConcerns.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        buttonUnits_ViewTabConcerns.setText("Concerns");
+        buttonUnits_ViewTabConcerns.setToolTipText("");
 
-        buttonUnits_ViewTab5.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        buttonUnits_ViewTab5.setText("Activity Log");
-        buttonUnits_ViewTab5.setToolTipText("");
+        buttonUnits_ViewTabActivityLog.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabActivityLog.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        buttonUnits_ViewTabActivityLog.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        buttonUnits_ViewTabActivityLog.setText("Activity Log");
+        buttonUnits_ViewTabActivityLog.setToolTipText("");
 
         javax.swing.GroupLayout sPanel69Layout = new javax.swing.GroupLayout(sPanel69);
         sPanel69.setLayout(sPanel69Layout);
@@ -2549,30 +2567,27 @@ public class ModuleUnits extends SPanel{
             sPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sPanel69Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(buttonUnits_ViewTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonUnits_ViewTabOverview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonUnits_ViewTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonUnits_ViewTabOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonUnits_ViewTab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonUnits_ViewTabTenant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonUnits_ViewTab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonUnits_ViewTabDocuments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonUnits_ViewTab6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonUnits_ViewTabConcerns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonUnits_ViewTab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonUnits_ViewTabActivityLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sPanel69Layout.setVerticalGroup(
             sPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buttonUnits_ViewTab1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(buttonUnits_ViewTab2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(buttonUnits_ViewTab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(buttonUnits_ViewTab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(buttonUnits_ViewTab6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sPanel69Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(buttonUnits_ViewTab5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(buttonUnits_ViewTabOverview, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(buttonUnits_ViewTabOwner, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(buttonUnits_ViewTabTenant, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(buttonUnits_ViewTabDocuments, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(buttonUnits_ViewTabConcerns, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(buttonUnits_ViewTabActivityLog, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         sPanel4.setDangerBackgroundColor(new java.awt.Color(51, 51, 255));
@@ -2644,6 +2659,7 @@ public class ModuleUnits extends SPanel{
 
         jLayeredPane3.add(layerUnits_ViewLoading, "card1");
 
+        layerUnits_ViewOverview.setLayerButton(buttonUnits_ViewTabOverview);
         layerUnits_ViewOverview.setLayout(new javax.swing.BoxLayout(layerUnits_ViewOverview, javax.swing.BoxLayout.LINE_AXIS));
 
         sPanel71.setDefaultBackgroundColor(new java.awt.Color(153, 255, 255));
@@ -2745,71 +2761,136 @@ public class ModuleUnits extends SPanel{
         jLayeredPane3.setLayer(layerUnits_ViewOverview, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane3.add(layerUnits_ViewOverview, "card2");
 
+        layerUnits_ViewOwner.setLayerButton(buttonUnits_ViewTabOwner);
+
+        sLabel49.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel49.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel49.setText("Owner");
+        sLabel49.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+
         javax.swing.GroupLayout layerUnits_ViewOwnerLayout = new javax.swing.GroupLayout(layerUnits_ViewOwner);
         layerUnits_ViewOwner.setLayout(layerUnits_ViewOwnerLayout);
         layerUnits_ViewOwnerLayout.setHorizontalGroup(
             layerUnits_ViewOwnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2025, Short.MAX_VALUE)
+            .addGroup(layerUnits_ViewOwnerLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layerUnits_ViewOwnerLayout.setVerticalGroup(
             layerUnits_ViewOwnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 847, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerUnits_ViewOwnerLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLayeredPane3.setLayer(layerUnits_ViewOwner, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane3.add(layerUnits_ViewOwner, "card3");
 
+        layerUnits_ViewTenant.setLayerButton(buttonUnits_ViewTabTenant);
+
+        sLabel50.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel50.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel50.setText("Tenant");
+        sLabel50.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+
         javax.swing.GroupLayout layerUnits_ViewTenantLayout = new javax.swing.GroupLayout(layerUnits_ViewTenant);
         layerUnits_ViewTenant.setLayout(layerUnits_ViewTenantLayout);
         layerUnits_ViewTenantLayout.setHorizontalGroup(
             layerUnits_ViewTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2025, Short.MAX_VALUE)
+            .addGroup(layerUnits_ViewTenantLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layerUnits_ViewTenantLayout.setVerticalGroup(
             layerUnits_ViewTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 847, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerUnits_ViewTenantLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLayeredPane3.setLayer(layerUnits_ViewTenant, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane3.add(layerUnits_ViewTenant, "card4");
 
+        layerUnits_ViewDocuments.setLayerButton(buttonUnits_ViewTabDocuments);
+
+        sLabel51.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel51.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel51.setText("Documents");
+        sLabel51.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+
         javax.swing.GroupLayout layerUnits_ViewDocumentsLayout = new javax.swing.GroupLayout(layerUnits_ViewDocuments);
         layerUnits_ViewDocuments.setLayout(layerUnits_ViewDocumentsLayout);
         layerUnits_ViewDocumentsLayout.setHorizontalGroup(
             layerUnits_ViewDocumentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2025, Short.MAX_VALUE)
+            .addGroup(layerUnits_ViewDocumentsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layerUnits_ViewDocumentsLayout.setVerticalGroup(
             layerUnits_ViewDocumentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 847, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerUnits_ViewDocumentsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLayeredPane3.setLayer(layerUnits_ViewDocuments, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane3.add(layerUnits_ViewDocuments, "card5");
 
+        layerUnits_ViewConcerns.setLayerButton(buttonUnits_ViewTabConcerns);
+
+        sLabel52.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel52.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel52.setText("Concerns");
+        sLabel52.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+
         javax.swing.GroupLayout layerUnits_ViewConcernsLayout = new javax.swing.GroupLayout(layerUnits_ViewConcerns);
         layerUnits_ViewConcerns.setLayout(layerUnits_ViewConcernsLayout);
         layerUnits_ViewConcernsLayout.setHorizontalGroup(
             layerUnits_ViewConcernsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2025, Short.MAX_VALUE)
+            .addGroup(layerUnits_ViewConcernsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layerUnits_ViewConcernsLayout.setVerticalGroup(
             layerUnits_ViewConcernsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 847, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerUnits_ViewConcernsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLayeredPane3.setLayer(layerUnits_ViewConcerns, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane3.add(layerUnits_ViewConcerns, "card6");
 
+        layerUnits_ViewActivityLog.setLayerButton(buttonUnits_ViewTabActivityLog);
+
+        sLabel53.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel53.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel53.setText("Activity Log");
+        sLabel53.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+
         javax.swing.GroupLayout layerUnits_ViewActivityLogLayout = new javax.swing.GroupLayout(layerUnits_ViewActivityLog);
         layerUnits_ViewActivityLog.setLayout(layerUnits_ViewActivityLogLayout);
         layerUnits_ViewActivityLogLayout.setHorizontalGroup(
             layerUnits_ViewActivityLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2025, Short.MAX_VALUE)
+            .addGroup(layerUnits_ViewActivityLogLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layerUnits_ViewActivityLogLayout.setVerticalGroup(
             layerUnits_ViewActivityLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 847, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerUnits_ViewActivityLogLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLayeredPane3.setLayer(layerUnits_ViewActivityLog, javax.swing.JLayeredPane.PALETTE_LAYER);
@@ -2823,7 +2904,7 @@ public class ModuleUnits extends SPanel{
         );
         layerUnits_ViewActivityLog1Layout.setVerticalGroup(
             layerUnits_ViewActivityLog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 847, Short.MAX_VALUE)
+            .addGap(0, 857, Short.MAX_VALUE)
         );
 
         jLayeredPane3.setLayer(layerUnits_ViewActivityLog1, javax.swing.JLayeredPane.PALETTE_LAYER);
@@ -2930,12 +3011,12 @@ public class ModuleUnits extends SPanel{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTab1;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTab2;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTab3;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTab4;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTab5;
-    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTab6;
+    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabActivityLog;
+    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabConcerns;
+    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabDocuments;
+    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabOverview;
+    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabOwner;
+    private FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab buttonUnits_ViewTabTenant;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler6;
@@ -3018,7 +3099,12 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SComponents.SLabel sLabel46;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel47;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel48;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel49;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel5;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel50;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel51;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel52;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel53;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel6;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel7;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel8;

@@ -969,7 +969,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/dashboard.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Dashboard"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1018,7 +1018,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/units.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Units"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1067,7 +1067,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/parking.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Parking"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1228,7 +1228,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/newResident.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_NewResident"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1277,7 +1277,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/owners.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Owners"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1326,7 +1326,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/tenants.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Tenants"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1375,7 +1375,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/move.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Move"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1424,7 +1424,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/visitors.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Visitors"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1473,7 +1473,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/concerns.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Concerns"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1628,7 +1628,7 @@
                         <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Icons/Menu/accounts.png"/>
                         </Property>
-                        <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                        <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                           <ComponentRef name="menuMinButton_Accounts"/>
                         </Property>
                         <Property name="radius" type="int" value="15"/>
@@ -1893,7 +1893,7 @@
                 <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/profile.png"/>
                 </Property>
-                <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                   <ComponentRef name="menuMinButton_Profile"/>
                 </Property>
                 <Property name="radius" type="int" value="15"/>
@@ -1926,7 +1926,7 @@
                 <Property name="inactiveIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Icons/Menu/settings.png"/>
                 </Property>
-                <Property name="manuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                <Property name="menuMinButton" type="FrameSystem.Layers.Home.Components.MenuMinButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                   <ComponentRef name="menuMinButton_Settings"/>
                 </Property>
                 <Property name="radius" type="int" value="15"/>

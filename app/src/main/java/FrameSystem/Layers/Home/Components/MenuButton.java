@@ -120,7 +120,7 @@ public class MenuButton extends SLayerButton{
     private MenuMinButton minButton = null;
     
     @BeanProperty(preferred = true, visualUpdate = true, description = "The minimize button of itself")
-    public void setManuMinButton(MenuMinButton minButton){
+    public void setMenuMinButton(MenuMinButton minButton){
         this.minButton = minButton;
         if(layerPanelMouseListener != null){
             minButton.addLayeredPanelMouseListener(layerPanelMouseListener);

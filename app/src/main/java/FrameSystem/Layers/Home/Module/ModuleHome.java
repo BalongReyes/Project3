@@ -540,7 +540,7 @@ public class ModuleHome extends SPanel{
         menuButton_Dashboard.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Dashboard.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Dashboard.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/dashboard.png"))); // NOI18N
-        menuButton_Dashboard.setManuMinButton(menuMinButton_Dashboard);
+        menuButton_Dashboard.setMenuMinButton(menuMinButton_Dashboard);
         menuButton_Dashboard.setRadius(15);
         menuButton_Dashboard.setText("Dashboard");
         menuButton_Dashboard.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -554,7 +554,7 @@ public class ModuleHome extends SPanel{
         menuButton_Units.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Units.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Units.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/units.png"))); // NOI18N
-        menuButton_Units.setManuMinButton(menuMinButton_Units);
+        menuButton_Units.setMenuMinButton(menuMinButton_Units);
         menuButton_Units.setRadius(15);
         menuButton_Units.setText("Units");
         menuButton_Units.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -568,7 +568,7 @@ public class ModuleHome extends SPanel{
         menuButton_Parking.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Parking.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Parking.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parking.png"))); // NOI18N
-        menuButton_Parking.setManuMinButton(menuMinButton_Parking);
+        menuButton_Parking.setMenuMinButton(menuMinButton_Parking);
         menuButton_Parking.setRadius(15);
         menuButton_Parking.setText("Parking");
         menuButton_Parking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -631,7 +631,7 @@ public class ModuleHome extends SPanel{
         menuButton_NewResident.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_NewResident.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_NewResident.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/newResident.png"))); // NOI18N
-        menuButton_NewResident.setManuMinButton(menuMinButton_NewResident);
+        menuButton_NewResident.setMenuMinButton(menuMinButton_NewResident);
         menuButton_NewResident.setRadius(15);
         menuButton_NewResident.setText("New Resident");
         menuButton_NewResident.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -645,7 +645,7 @@ public class ModuleHome extends SPanel{
         menuButton_Owners.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Owners.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Owners.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/owners.png"))); // NOI18N
-        menuButton_Owners.setManuMinButton(menuMinButton_Owners);
+        menuButton_Owners.setMenuMinButton(menuMinButton_Owners);
         menuButton_Owners.setRadius(15);
         menuButton_Owners.setText("Owners");
         menuButton_Owners.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -659,7 +659,7 @@ public class ModuleHome extends SPanel{
         menuButton_Tenants.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Tenants.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Tenants.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tenants.png"))); // NOI18N
-        menuButton_Tenants.setManuMinButton(menuMinButton_Tenants);
+        menuButton_Tenants.setMenuMinButton(menuMinButton_Tenants);
         menuButton_Tenants.setRadius(15);
         menuButton_Tenants.setText("Tenants");
         menuButton_Tenants.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -673,7 +673,7 @@ public class ModuleHome extends SPanel{
         menuButton_Move.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Move.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Move.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/move.png"))); // NOI18N
-        menuButton_Move.setManuMinButton(menuMinButton_Move);
+        menuButton_Move.setMenuMinButton(menuMinButton_Move);
         menuButton_Move.setRadius(15);
         menuButton_Move.setText("Move In / Out");
         menuButton_Move.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -687,7 +687,7 @@ public class ModuleHome extends SPanel{
         menuButton_Visitors.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Visitors.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Visitors.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/visitors.png"))); // NOI18N
-        menuButton_Visitors.setManuMinButton(menuMinButton_Visitors);
+        menuButton_Visitors.setMenuMinButton(menuMinButton_Visitors);
         menuButton_Visitors.setRadius(15);
         menuButton_Visitors.setText("Visitors");
         menuButton_Visitors.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -701,7 +701,7 @@ public class ModuleHome extends SPanel{
         menuButton_Concerns.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Concerns.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Concerns.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concerns.png"))); // NOI18N
-        menuButton_Concerns.setManuMinButton(menuMinButton_Concerns);
+        menuButton_Concerns.setMenuMinButton(menuMinButton_Concerns);
         menuButton_Concerns.setRadius(15);
         menuButton_Concerns.setText("Concerns");
         menuButton_Concerns.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -762,7 +762,7 @@ public class ModuleHome extends SPanel{
         menuButton_Accounts.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Accounts.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Accounts.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/accounts.png"))); // NOI18N
-        menuButton_Accounts.setManuMinButton(menuMinButton_Accounts);
+        menuButton_Accounts.setMenuMinButton(menuMinButton_Accounts);
         menuButton_Accounts.setRadius(15);
         menuButton_Accounts.setText("Accounts");
         menuButton_Accounts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -887,7 +887,7 @@ public class ModuleHome extends SPanel{
         menuButton_Profile.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Profile.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Profile.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/profile.png"))); // NOI18N
-        menuButton_Profile.setManuMinButton(menuMinButton_Profile);
+        menuButton_Profile.setMenuMinButton(menuMinButton_Profile);
         menuButton_Profile.setRadius(15);
         menuButton_Profile.setText("Profile");
         menuButton_Profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -899,7 +899,7 @@ public class ModuleHome extends SPanel{
         menuButton_Settings.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         menuButton_Settings.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Settings.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/settings.png"))); // NOI18N
-        menuButton_Settings.setManuMinButton(menuMinButton_Settings);
+        menuButton_Settings.setMenuMinButton(menuMinButton_Settings);
         menuButton_Settings.setRadius(15);
         menuButton_Settings.setText("Settings");
         menuButton_Settings.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

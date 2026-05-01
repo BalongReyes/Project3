@@ -34,13 +34,18 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
     private static boolean selectFirstOnLoad = false;
     private static boolean selectLastOnLoad = false;
     
+    private static boolean selectFirstRowOnLoad = false;
+    private static boolean selectLastRowOnLoad = false;
+    
     public static void initDefault() {
         moduleHome.layerHome_Units.addLayeredPanelShowListener((evt) -> {
             LayerUnits_Main.showLayer(moduleUnits.layerUnitsData);
+            scrollToCurrentObject();
         });
         
         initPaginationControls();
         initViewControls();
+        initKeyBindings();
     }
     
     public static void initPaginationControls() {
@@ -110,6 +115,8 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
     public static void initViewControls() {
         moduleUnits.unitsView_Close.addMouseListener((MousePressedAdaptor) evt -> {
             LayerUnits_Main.showLayer(moduleUnits.layerUnitsData);
+            scrollToCurrentObject();
+            currentObject.requestFocusInWindow();
         });
         
         moduleUnits.unitsView_Previous.addMouseListener((MousePressedAdaptor) evt -> {
@@ -139,6 +146,91 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                 refreshObjects();
             }
         });
+    }
+
+    public static void initKeyBindings() {
+        javax.swing.InputMap im = moduleUnits.layerUnitsOnline.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW);
+        javax.swing.ActionMap am = moduleUnits.layerUnitsOnline.getActionMap();
+
+        im.put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_UP, 0), "selectPreviousRow");
+        im.put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DOWN, 0), "selectNextRow");
+        im.put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, 0), "viewCurrentRow");
+
+        javax.swing.AbstractAction prevAction = new javax.swing.AbstractAction() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                if (!moduleUnits.layerUnitsOnline.isShowing()) return;
+                Component focusOwner = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+                if (focusOwner instanceof javax.swing.text.JTextComponent) return; 
+                selectPreviousRow();
+            }
+        };
+
+        javax.swing.AbstractAction nextAction = new javax.swing.AbstractAction() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                if (!moduleUnits.layerUnitsOnline.isShowing()) return;
+                Component focusOwner = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+                if (focusOwner instanceof javax.swing.text.JTextComponent) return; 
+                selectNextRow();
+            }
+        };
+
+        javax.swing.AbstractAction enterAction = new javax.swing.AbstractAction() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                if (!moduleUnits.layerUnitsOnline.isShowing()) return;
+                Component focusOwner = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+                if (focusOwner instanceof javax.swing.text.JTextComponent) return; 
+                if (currentObject != null) {
+                    showLayerUnitsView();
+                }
+            }
+        };
+
+        am.put("selectPreviousRow", prevAction);
+        am.put("selectNextRow", nextAction);
+        am.put("viewCurrentRow", enterAction);
+
+        javax.swing.ActionMap scrollAm = moduleUnits.sTable1.getScrollPane().getActionMap();
+        scrollAm.put("unitScrollUp", prevAction);
+        scrollAm.put("unitScrollDown", nextAction);
+    }
+
+    public static void selectPreviousRow() {
+        if (objects.isEmpty()) return;
+        if (currentObject == null) {
+            changeCurrentObject(objects.get(0));
+            scrollToCurrentObject();
+            return;
+        }
+        int index = objects.indexOf(currentObject);
+        if (index > 0) {
+            changeCurrentObject(objects.get(index - 1));
+            scrollToCurrentObject();
+        } else if (currentPage > 0) {
+            selectLastRowOnLoad = true;
+            currentPage--;
+            refreshObjects();
+        }
+    }
+
+    public static void selectNextRow() {
+        if (objects.isEmpty()) return;
+        if (currentObject == null) {
+            changeCurrentObject(objects.get(0));
+            scrollToCurrentObject();
+            return;
+        }
+        int index = objects.indexOf(currentObject);
+        if (index >= 0 && index < objects.size() - 1) {
+            changeCurrentObject(objects.get(index + 1));
+            scrollToCurrentObject();
+        } else if (currentPage < totalPages - 1) {
+            selectFirstRowOnLoad = true;
+            currentPage++;
+            refreshObjects();
+        }
     }
 
 // ==== Main Methods =========================================================================================
@@ -267,11 +359,26 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                 } else if (selectLastOnLoad && !objects.isEmpty()) {
                     changeCurrentObject(objects.get(objects.size() - 1));
                     showLayerUnitsView();
+                } else if (selectFirstRowOnLoad && !objects.isEmpty()) {
+                    changeCurrentObject(objects.get(0));
+                    scrollToCurrentObject();
+                } else if (selectLastRowOnLoad && !objects.isEmpty()) {
+                    changeCurrentObject(objects.get(objects.size() - 1));
+                    scrollToCurrentObject();
                 }
+                
+                boolean requestFocus = selectFirstRowOnLoad || selectLastRowOnLoad;
+                
                 selectFirstOnLoad = false;
                 selectLastOnLoad = false;
+                selectFirstRowOnLoad = false;
+                selectLastRowOnLoad = false;
 
                 LayerUnits.showLayer(moduleUnits.layerUnitsOnline);
+                
+                if (requestFocus && currentObject != null) {
+                    currentObject.requestFocusInWindow();
+                }
             });
 
         } catch (SQLException e) {
@@ -295,6 +402,14 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         }
         object.setActive(true);
         currentObject = object;
+    }
+
+    public static void scrollToCurrentObject() {
+        if (currentObject != null) {
+            SwingUtilities.invokeLater(() -> {
+                currentObject.scrollRectToVisible(new java.awt.Rectangle(0, 0, currentObject.getWidth(), currentObject.getHeight()));
+            });
+        }
     }
 
 // ---- Page control -----------------------------------------------------------------------------------------

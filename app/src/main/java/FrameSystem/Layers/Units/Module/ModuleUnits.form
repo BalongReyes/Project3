@@ -4159,7 +4159,7 @@
                       <Color blue="f0" green="f0" red="f0" type="rgb"/>
                     </Property>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[1675, 50]"/>
+                      <Dimension value="[1675, 40]"/>
                     </Property>
                   </Properties>
 
@@ -4168,39 +4168,42 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="buttonUnits_ViewTab1" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonUnits_ViewTabOverview" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="buttonUnits_ViewTab2" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonUnits_ViewTabOwner" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="buttonUnits_ViewTab3" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonUnits_ViewTabTenant" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="buttonUnits_ViewTab4" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonUnits_ViewTabDocuments" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="buttonUnits_ViewTab6" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonUnits_ViewTabConcerns" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="buttonUnits_ViewTab5" min="-2" max="-2" attributes="0"/>
+                              <Component id="buttonUnits_ViewTabActivityLog" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="buttonUnits_ViewTab1" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="buttonUnits_ViewTab2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="buttonUnits_ViewTab3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="buttonUnits_ViewTab4" alignment="0" max="32767" attributes="0"/>
-                          <Component id="buttonUnits_ViewTab6" alignment="1" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="buttonUnits_ViewTab5" max="32767" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="buttonUnits_ViewTabOverview" alignment="0" pref="40" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabOwner" alignment="0" pref="40" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabTenant" alignment="0" pref="40" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabDocuments" alignment="0" pref="40" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabConcerns" alignment="1" pref="40" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabActivityLog" alignment="1" pref="40" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTab1">
+                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTabOverview">
                       <Properties>
+                        <Property name="active" type="boolean" value="true"/>
+                        <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="activeLineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
                         <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="38" green="38" red="38" type="rgb"/>
                         </Property>
@@ -4208,8 +4211,14 @@
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
-                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTab2">
+                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTabOwner">
                       <Properties>
+                        <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="activeLineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
                         <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="38" green="38" red="38" type="rgb"/>
                         </Property>
@@ -4217,8 +4226,14 @@
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
-                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTab3">
+                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTabTenant">
                       <Properties>
+                        <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="activeLineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
                         <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="38" green="38" red="38" type="rgb"/>
                         </Property>
@@ -4226,8 +4241,14 @@
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
-                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTab4">
+                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTabDocuments">
                       <Properties>
+                        <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="activeLineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
                         <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="38" green="38" red="38" type="rgb"/>
                         </Property>
@@ -4235,8 +4256,14 @@
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
-                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTab6">
+                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTabConcerns">
                       <Properties>
+                        <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="activeLineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
                         <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="38" green="38" red="38" type="rgb"/>
                         </Property>
@@ -4244,8 +4271,14 @@
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
-                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTab5">
+                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTabActivityLog">
                       <Properties>
+                        <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="activeLineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
                         <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="38" green="38" red="38" type="rgb"/>
                         </Property>
@@ -4394,6 +4427,11 @@
                           </SubComponents>
                         </Container>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewOverview">
+                          <Properties>
+                            <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="buttonUnits_ViewTabOverview"/>
+                            </Property>
+                          </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -4561,6 +4599,11 @@
                           </SubComponents>
                         </Container>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewOwner">
+                          <Properties>
+                            <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="buttonUnits_ViewTabOwner"/>
+                            </Property>
+                          </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -4574,17 +4617,46 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="2025" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel49" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="847" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel49" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
+                          <SubComponents>
+                            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel49">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Owner"/>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="13" style="1"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
                         </Container>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewTenant">
+                          <Properties>
+                            <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="buttonUnits_ViewTabTenant"/>
+                            </Property>
+                          </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -4598,17 +4670,46 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="2025" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel50" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="847" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel50" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
+                          <SubComponents>
+                            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel50">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Tenant"/>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="13" style="1"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
                         </Container>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewDocuments">
+                          <Properties>
+                            <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="buttonUnits_ViewTabDocuments"/>
+                            </Property>
+                          </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -4622,17 +4723,46 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="2025" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel51" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="847" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel51" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
+                          <SubComponents>
+                            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel51">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Documents"/>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="13" style="1"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
                         </Container>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewConcerns">
+                          <Properties>
+                            <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="buttonUnits_ViewTabConcerns"/>
+                            </Property>
+                          </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -4646,17 +4776,46 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="2025" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel52" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="847" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel52" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
+                          <SubComponents>
+                            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel52">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Concerns"/>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="13" style="1"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
                         </Container>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewActivityLog">
+                          <Properties>
+                            <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="buttonUnits_ViewTabActivityLog"/>
+                            </Property>
+                          </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -4670,15 +4829,39 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="2025" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel53" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="847" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel53" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
+                          <SubComponents>
+                            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel53">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Activity Log"/>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="13" style="1"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
                         </Container>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewActivityLog1">
                           <AuxValues>
@@ -4699,7 +4882,7 @@
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="847" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="857" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
