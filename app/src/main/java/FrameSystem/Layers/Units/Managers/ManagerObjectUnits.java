@@ -46,6 +46,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         initPaginationControls();
         initViewControls();
         initKeyBindings();
+        initSearchControls();
     }
     
     public static void initPaginationControls() {
@@ -197,6 +198,30 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
         scrollAm.put("unitScrollDown", nextAction);
     }
 
+    public static void initSearchControls() {
+        moduleUnits.sTextField1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+            private javax.swing.Timer timer = new javax.swing.Timer(300, e -> {
+                currentPage = 0;
+                refreshObjects();
+            });
+
+            { timer.setRepeats(false); }
+
+            @Override
+            public void insertUpdate(javax.swing.event.DocumentEvent e) {
+                timer.restart();
+            }
+            @Override
+            public void removeUpdate(javax.swing.event.DocumentEvent e) {
+                timer.restart();
+            }
+            @Override
+            public void changedUpdate(javax.swing.event.DocumentEvent e) {
+                timer.restart();
+            }
+        });
+    }
+
     public static void selectPreviousRow() {
         if (objects.isEmpty()) return;
         if (currentObject == null) {
@@ -289,14 +314,16 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
             ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnits.getFilters();
             DataTableFilter[] filtersArray = combinedFilters.toArray(new DataTableFilter[0]);
             
-            int totalItems = UnitsDataHandler.getDataCountMulti(filtersArray);
+            String search = moduleUnits.sTextField1.getText();
+            
+            int totalItems = UnitsDataHandler.getDataCountMulti(filtersArray, search);
 
             if (thisRefreshId != currentRefreshId.get()) return;
 
             totalPages = (int) Math.ceil((double) totalItems / pageSize);
             if (totalPages == 0) totalPages = 1;
 
-            UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(filtersArray, limit, offset);
+            UnitsDataTable[] dataBatch = UnitsDataHandler.getDataBatchSortedMulti(filtersArray, search, limit, offset);
 
             long elapsedTime = System.currentTimeMillis() - startTime;
             long minLoadingTime = 1000;
@@ -327,7 +354,7 @@ public class ManagerObjectUnits extends ManagerModuleUnits {
                 }
 
                 try {
-                    int[] occupancyTotals = UnitsDataHandler.getOccupancyTotals(filtersArray);
+                    int[] occupancyTotals = UnitsDataHandler.getOccupancyTotals(filtersArray, search);
                     int localOwners = occupancyTotals[0];
                     int localTenants = occupancyTotals[1];
                     int localOthers = occupancyTotals[2];

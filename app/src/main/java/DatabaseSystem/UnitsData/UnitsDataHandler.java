@@ -25,7 +25,7 @@ public class UnitsDataHandler {
         return freshDataList.toArray(UnitsDataTable[]::new);
     }
 
-    public static UnitsDataTable[] getDataBatchSortedMulti(DataTableFilter[] filters, int limit, int offset) throws SQLException {
+    public static UnitsDataTable[] getDataBatchSortedMulti(DataTableFilter[] filters, String search, int limit, int offset) throws SQLException {
         var whereBy = new StringBuilder();
         var orderBy = new StringBuilder();
         
@@ -35,12 +35,14 @@ public class UnitsDataHandler {
             int whereCount = 0;
             int orderCount = 0;
             
+            StringBuilder filterWhere = new StringBuilder();
+            
             for (var filter : filters) {
                 var columnName = getColumnName(filter.dataIndex());
                 
                 if (filter.order() == DataTableOrder.WHERE) {
-                    if (whereCount++ > 0) whereBy.append(" OR ");
-                    whereBy.append(columnName).append(" = ?");
+                    if (whereCount++ > 0) filterWhere.append(" OR ");
+                    filterWhere.append(columnName).append(" = ?");
                     params.add(filter.dataWhere());
                 } else {
                     if (orderCount++ > 0) orderBy.append(", ");
@@ -48,6 +50,23 @@ public class UnitsDataHandler {
                     orderBy.append(columnName).append(" ").append(orderStr);
                 }
             }
+            if (whereCount > 0) {
+                whereBy.append("(").append(filterWhere).append(")");
+            }
+        }
+        
+        if (search != null && !search.trim().isEmpty()) {
+            if (!whereBy.isEmpty()) whereBy.append(" AND ");
+            whereBy.append("(u.tower LIKE ? OR u.floor LIKE ? OR u.unit LIKE ? OR u.model LIKE ? OR u.accountnumber = ? OR u.floorarea = ? OR CONCAT(u.tower, '-', u.floor, CASE WHEN u.unit < 10 THEN '0' ELSE '' END, u.unit) LIKE ?)");
+            String searchTrimmed = search.trim();
+            String likeQuery = "%" + searchTrimmed + "%";
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(searchTrimmed);
+            params.add(searchTrimmed);
+            params.add(likeQuery);
         }
         
         var query = new StringBuilder(BASE_SELECT_QUERY);
@@ -64,20 +83,38 @@ public class UnitsDataHandler {
         return sortedList.toArray(UnitsDataTable[]::new);
     }
     
-    public static int getDataCountMulti(DataTableFilter[] filters) throws SQLException {
+    public static int getDataCountMulti(DataTableFilter[] filters, String search) throws SQLException {
         var whereBy = new StringBuilder();
         java.util.List<Object> params = new java.util.ArrayList<>();
         
         if (filters != null && filters.length > 0) {
             int whereCount = 0;
+            StringBuilder filterWhere = new StringBuilder();
             for (var filter : filters) {
                 var columnName = getColumnName(filter.dataIndex());
                 if (filter.order() == DataTableOrder.WHERE) {
-                    if (whereCount++ > 0) whereBy.append(" OR ");
-                    whereBy.append(columnName).append(" = ?");
+                    if (whereCount++ > 0) filterWhere.append(" OR ");
+                    filterWhere.append(columnName).append(" = ?");
                     params.add(filter.dataWhere());
                 }
             }
+            if (whereCount > 0) {
+                whereBy.append("(").append(filterWhere).append(")");
+            }
+        }
+        
+        if (search != null && !search.trim().isEmpty()) {
+            if (!whereBy.isEmpty()) whereBy.append(" AND ");
+            whereBy.append("(u.tower LIKE ? OR u.floor LIKE ? OR u.unit LIKE ? OR u.model LIKE ? OR u.accountnumber = ? OR u.floorarea = ? OR CONCAT(u.tower, '-', u.floor, CASE WHEN u.unit < 10 THEN '0' ELSE '' END, u.unit) LIKE ?)");
+            String searchTrimmed = search.trim();
+            String likeQuery = "%" + searchTrimmed + "%";
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(searchTrimmed);
+            params.add(searchTrimmed);
+            params.add(likeQuery);
         }
         
         var query = new StringBuilder("SELECT COUNT(*) FROM units u");
@@ -86,20 +123,38 @@ public class UnitsDataHandler {
         return Database.queryForObject(query.toString(), rs -> rs.getInt(1), params.toArray()).orElse(0);
     }
     
-    public static int[] getOccupancyTotals(DataTableFilter[] filters) throws SQLException {
+    public static int[] getOccupancyTotals(DataTableFilter[] filters, String search) throws SQLException {
         var whereBy = new StringBuilder();
         java.util.List<Object> params = new java.util.ArrayList<>();
         
         if (filters != null && filters.length > 0) {
             int whereCount = 0;
+            StringBuilder filterWhere = new StringBuilder();
             for (var filter : filters) {
                 var columnName = getColumnName(filter.dataIndex());
                 if (filter.order() == DataTableOrder.WHERE) {
-                    if (whereCount++ > 0) whereBy.append(" OR ");
-                    whereBy.append(columnName).append(" = ?");
+                    if (whereCount++ > 0) filterWhere.append(" OR ");
+                    filterWhere.append(columnName).append(" = ?");
                     params.add(filter.dataWhere());
                 }
             }
+            if (whereCount > 0) {
+                whereBy.append("(").append(filterWhere).append(")");
+            }
+        }
+        
+        if (search != null && !search.trim().isEmpty()) {
+            if (!whereBy.isEmpty()) whereBy.append(" AND ");
+            whereBy.append("(u.tower LIKE ? OR u.floor LIKE ? OR u.unit LIKE ? OR u.model LIKE ? OR u.accountnumber = ? OR u.floorarea = ? OR CONCAT(u.tower, '-', u.floor, CASE WHEN u.unit < 10 THEN '0' ELSE '' END, u.unit) LIKE ?)");
+            String searchTrimmed = search.trim();
+            String likeQuery = "%" + searchTrimmed + "%";
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(likeQuery);
+            params.add(searchTrimmed);
+            params.add(searchTrimmed);
+            params.add(likeQuery);
         }
         
         var query = new StringBuilder("""

@@ -35,6 +35,7 @@ public class ManagerObjectUnitTenants extends ManagerModuleUnitTenants {
         });
         
         initPaginationControls();
+        initSearchControls();
     }
     
     public static void initPaginationControls() {
@@ -101,6 +102,30 @@ public class ManagerObjectUnitTenants extends ManagerModuleUnitTenants {
         updatePaginationLabels();
     }
 
+    public static void initSearchControls() {
+        moduleUnitTenants.sTextField1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+            private javax.swing.Timer timer = new javax.swing.Timer(300, e -> {
+                currentPage = 0;
+                refreshObjects();
+            });
+
+            { timer.setRepeats(false); }
+
+            @Override
+            public void insertUpdate(javax.swing.event.DocumentEvent e) {
+                timer.restart();
+            }
+            @Override
+            public void removeUpdate(javax.swing.event.DocumentEvent e) {
+                timer.restart();
+            }
+            @Override
+            public void changedUpdate(javax.swing.event.DocumentEvent e) {
+                timer.restart();
+            }
+        });
+    }
+
 // ==== Main Methods =========================================================================================
 
     private static SwingWorker<Void, Void> activeWorker = null;
@@ -155,14 +180,16 @@ public class ManagerObjectUnitTenants extends ManagerModuleUnitTenants {
             ArrayList<DataTableFilter> combinedFilters = ManagerFilterUnitTenants.getFilters();
             DataTableFilter[] filtersArray = combinedFilters.toArray(new DataTableFilter[0]);
             
-            int totalItems = UnitTenantsDataHandler.getDataCountMulti(filtersArray);
+            String search = moduleUnitTenants.sTextField1.getText();
+            
+            int totalItems = UnitTenantsDataHandler.getDataCountMulti(filtersArray, search);
 
             if (thisRefreshId != currentRefreshId.get()) return;
 
             totalPages = (int) Math.ceil((double) totalItems / pageSize);
             if (totalPages == 0) totalPages = 1;
 
-            UnitTenantsDataTable[] dataBatch = UnitTenantsDataHandler.getDataBatchSortedMulti(filtersArray, limit, offset);
+            UnitTenantsDataTable[] dataBatch = UnitTenantsDataHandler.getDataBatchSortedMulti(filtersArray, search, limit, offset);
 
             long elapsedTime = System.currentTimeMillis() - startTime;
             long minLoadingTime = 1000;
