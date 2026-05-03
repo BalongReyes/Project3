@@ -352,6 +352,8 @@ public class ModuleUnitTenants extends SPanel{
 
         jLayeredPane2.setLayout(new java.awt.CardLayout());
 
+        layerUnitTenantsData.setName("Data"); // NOI18N
+
         sPanel2.setBorderLine(1);
         sPanel2.setPaintBackground(false);
 
@@ -755,6 +757,8 @@ public class ModuleUnitTenants extends SPanel{
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
+        layerUnitTenantsOffline.setName("Offline"); // NOI18N
+
         jPanel1.setOpaque(false);
 
         sLabel2.setForeground(new java.awt.Color(205, 64, 68));
@@ -818,6 +822,8 @@ public class ModuleUnitTenants extends SPanel{
         );
 
         jLayeredPane1.add(layerUnitTenantsOffline, "card1");
+
+        layerUnitTenantsLoading.setName("Loading"); // NOI18N
 
         jPanel2.setOpaque(false);
 
@@ -883,6 +889,8 @@ public class ModuleUnitTenants extends SPanel{
 
         jLayeredPane1.setLayer(layerUnitTenantsLoading, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitTenantsLoading, "card2");
+
+        layerUnitTenantsOnline.setName("Online"); // NOI18N
 
         sTable1.setRowHeight(50);
         sTable1.setScrollbarBackgroundColor(new java.awt.Color(250, 250, 250));
@@ -1648,6 +1656,8 @@ public class ModuleUnitTenants extends SPanel{
         );
 
         jLayeredPane2.add(layerUnitTenantsData, "card6");
+
+        layerUnitTenantsView.setName("View"); // NOI18N
 
         javax.swing.GroupLayout layerUnitTenantsViewLayout = new javax.swing.GroupLayout(layerUnitTenantsView);
         layerUnitTenantsView.setLayout(layerUnitTenantsViewLayout);

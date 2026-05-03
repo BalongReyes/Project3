@@ -56,7 +56,7 @@
       <SubComponents>
         <Container class="FrameSystem.Layers.Main.Components.LayerMain" name="layerMain_Loading">
           <Properties>
-            <Property name="name" type="java.lang.String" value="Main-Loading" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="Loading" noResource="true"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -151,7 +151,7 @@
         </Container>
         <Container class="FrameSystem.Layers.Main.Components.LayerMain" name="layerMain_Login">
           <Properties>
-            <Property name="name" type="java.lang.String" value="Main-Login" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="Login" noResource="true"/>
           </Properties>
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
@@ -196,7 +196,7 @@
         </Container>
         <Container class="FrameSystem.Layers.Main.Components.LayerMain" name="layerMain_Home">
           <Properties>
-            <Property name="name" type="java.lang.String" value="Main-Home" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="Home" noResource="true"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>

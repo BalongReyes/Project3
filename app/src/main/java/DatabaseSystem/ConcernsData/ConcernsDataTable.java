@@ -3,9 +3,9 @@ package DatabaseSystem.ConcernsData;
 import DatabaseSystem.DataTable.DataTable;
 import DatabaseSystem.DataTable.DataTableType;
 import MethodsSystem.MethodString;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 public record ConcernsDataTable(
         int id,
@@ -16,8 +16,8 @@ public record ConcernsDataTable(
         String description,
         String category,
         int priority,
-        Date dateReported,
-        Date dateFinished,
+        Timestamp dateReported,
+        Timestamp dateFinished,
         String status,
         String assignedTo
 ) implements DataTable {
@@ -45,8 +45,8 @@ public record ConcernsDataTable(
             results.getString("description"),
             results.getString("category"),
             results.getInt("priority"),
-            results.getDate("datereported"),
-            results.getDate("datefinished"),
+            results.getTimestamp("datereported"),
+            results.getTimestamp("datefinished"),
             results.getString("status"),
             results.getString("assignedto")
         );

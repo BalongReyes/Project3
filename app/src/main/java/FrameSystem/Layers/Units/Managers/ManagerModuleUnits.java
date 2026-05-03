@@ -25,6 +25,7 @@ public class ManagerModuleUnits extends Manager{
         
         ManagerObjectUnits.initDefault();
         ManagerFilterUnits.initDefault();
+        ManagerViewUnits.initDefault();
     }
     
 // ==== Main Methods =========================================================================================

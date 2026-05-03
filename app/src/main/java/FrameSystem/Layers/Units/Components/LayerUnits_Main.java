@@ -48,7 +48,7 @@ public class LayerUnits_Main extends SLayer{
             return;
         }
         
-        Console.line().out("SHOWING LAYER " + showLayer.getName(), ConsoleColors.GREEN);
+        Console.line().out("SHOWING LAYER " + showLayer.getLayerPath(), ConsoleColors.GREEN);
         
         for(LayerUnits_Main layer : layeredPanels){
             SLayerButton layeredButton = layer.getLayerButton();

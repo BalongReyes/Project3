@@ -6,6 +6,7 @@ import MethodsSystem.MethodString;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 public record UnitTenantsDataTable(
         int id,
@@ -13,8 +14,8 @@ public record UnitTenantsDataTable(
         int unitsId,
         int weekenders,
         int noActivity,
-        Date move_in,
-        Date move_out,
+        Timestamp move_in,
+        Timestamp move_out,
 
         String lastName,
         String firstName,
@@ -72,8 +73,8 @@ public record UnitTenantsDataTable(
             results.getInt("units_id"),
             results.getInt("weekenders"),
             results.getInt("noactivity"),
-            results.getDate("move_in"),
-            results.getDate("move_out"),
+            results.getTimestamp("move_in"),
+            results.getTimestamp("move_out"),
             
             results.getString("lastName"),
             results.getString("firstName"),

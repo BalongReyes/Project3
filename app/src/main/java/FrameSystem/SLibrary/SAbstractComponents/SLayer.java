@@ -63,6 +63,27 @@ public abstract class SLayer extends SPanel{
         showListener.layeredPanelShow(new SLayerShowEvent(this, showing, recent));
     }
     
+// ==== Utility ==============================================================================================
+
+    public String getLayerPath() {
+        StringBuilder path = new StringBuilder();
+        java.awt.Component current = this;
+        while (current != null) {
+            if (current instanceof SLayer) {
+                if (path.length() > 0) {
+                    path.insert(0, " > ");
+                }
+                String name = current.getName();
+                if (name == null || name.trim().isEmpty()) {
+                    name = current.getClass().getSimpleName();
+                }
+                path.insert(0, name);
+            }
+            current = current.getParent();
+        }
+        return path.toString();
+    }
+
 // -----------------------------------------------------------------------------------------------------------
     
     transient SLayerHideListener hideListener;

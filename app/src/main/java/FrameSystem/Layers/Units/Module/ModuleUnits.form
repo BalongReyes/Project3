@@ -1474,7 +1474,7 @@
           <SubComponents>
             <Container class="FrameSystem.Layers.Units.Components.LayerUnits_Main" name="layerUnitsData">
               <Properties>
-                <Property name="name" type="java.lang.String" value="Units-Data" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="Data" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -2229,7 +2229,7 @@
                   <SubComponents>
                     <Container class="FrameSystem.Layers.Units.Components.LayerUnits" name="layerUnitsOffline">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="Units-Data-Offline" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="Offline" noResource="true"/>
                         <Property name="paintBackground" type="boolean" value="false"/>
                       </Properties>
                       <AuxValues>
@@ -2339,7 +2339,7 @@
                     </Container>
                     <Container class="FrameSystem.Layers.Units.Components.LayerUnits" name="layerUnitsLoading">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="Units-Data-Loading" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="Loading" noResource="true"/>
                         <Property name="paintBackground" type="boolean" value="false"/>
                       </Properties>
                       <AuxValues>
@@ -2449,7 +2449,7 @@
                     </Container>
                     <Container class="FrameSystem.Layers.Units.Components.LayerUnits" name="layerUnitsOnline">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="Units-Data-Online" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="Online" noResource="true"/>
                         <Property name="paintBackground" type="boolean" value="false"/>
                       </Properties>
                       <AuxValues>
@@ -2495,9 +2495,8 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Container class="FrameSystem.Layers.Units.Components.LayerUnits" name="layerUnitsOffline1">
+                    <Container class="FrameSystem.Layers.Units.Components.LayerUnits" name="layerUnitsNull">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="Units-Data-Offline" noResource="true"/>
                         <Property name="paintBackground" type="boolean" value="false"/>
                       </Properties>
                       <AuxValues>
@@ -3821,7 +3820,7 @@
             </Container>
             <Container class="FrameSystem.Layers.Units.Components.LayerUnits_Main" name="layerUnitsView">
               <Properties>
-                <Property name="name" type="java.lang.String" value="Units-View" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="View" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
@@ -4177,6 +4176,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="buttonUnits_ViewTabConcerns" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="buttonUnits_ViewTabVisitors" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="buttonUnits_ViewTabActivityLog" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -4184,10 +4185,11 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="buttonUnits_ViewTabOverview" alignment="0" pref="40" max="32767" attributes="0"/>
-                          <Component id="buttonUnits_ViewTabDocuments" alignment="0" pref="40" max="32767" attributes="0"/>
-                          <Component id="buttonUnits_ViewTabConcerns" alignment="1" pref="40" max="32767" attributes="0"/>
-                          <Component id="buttonUnits_ViewTabActivityLog" alignment="1" pref="40" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabOverview" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabDocuments" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabConcerns" alignment="1" pref="0" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabActivityLog" alignment="1" pref="0" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabVisitors" alignment="0" pref="40" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -4234,6 +4236,24 @@
                           <Color blue="44" green="40" red="cd" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Concerns"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
+                        <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="38" green="38" red="38" type="rgb"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTabVisitors">
+                      <Properties>
+                        <Property name="activeLineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Visitors"/>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                         <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="44" green="40" red="cd" type="rgb"/>
@@ -4300,6 +4320,9 @@
                       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
                       <SubComponents>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewLoading">
+                          <Properties>
+                            <Property name="name" type="java.lang.String" value="Loading" noResource="true"/>
+                          </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                           </AuxValues>
@@ -4409,6 +4432,7 @@
                             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="buttonUnits_ViewTabOverview"/>
                             </Property>
+                            <Property name="name" type="java.lang.String" value="Overview" noResource="true"/>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
@@ -7488,6 +7512,7 @@
                             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="buttonUnits_ViewTabDocuments"/>
                             </Property>
+                            <Property name="name" type="java.lang.String" value="Documents" noResource="true"/>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
@@ -7495,7 +7520,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                              <CardConstraints cardName="card5"/>
+                              <CardConstraints cardName="card3"/>
                             </Constraint>
                           </Constraints>
 
@@ -7541,6 +7566,7 @@
                             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="buttonUnits_ViewTabConcerns"/>
                             </Property>
+                            <Property name="name" type="java.lang.String" value="Concerns" noResource="true"/>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
@@ -7548,7 +7574,62 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                              <CardConstraints cardName="card6"/>
+                              <CardConstraints cardName="card4"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="sPanel137" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="sPanel137" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="710" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                          <SubComponents>
+                            <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel137">
+
+                              <Layout>
+                                <DimensionLayout dim="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="1180" max="32767" attributes="0"/>
+                                  </Group>
+                                </DimensionLayout>
+                                <DimensionLayout dim="1">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
+                                  </Group>
+                                </DimensionLayout>
+                              </Layout>
+                            </Container>
+                          </SubComponents>
+                        </Container>
+                        <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewVisitors">
+                          <Properties>
+                            <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="buttonUnits_ViewTabVisitors"/>
+                            </Property>
+                            <Property name="name" type="java.lang.String" value="Visitors" noResource="true"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                              <CardConstraints cardName="card5"/>
                             </Constraint>
                           </Constraints>
 
@@ -7557,7 +7638,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sLabel52" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sLabel99" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -7566,14 +7647,14 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="sLabel52" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sLabel99" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel52">
+                            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel99">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -7581,7 +7662,7 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="0" red="0" type="rgb"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Concerns"/>
+                                <Property name="text" type="java.lang.String" value="Visitors"/>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Segoe UI" size="13" style="1"/>
                                 </Property>
@@ -7594,6 +7675,7 @@
                             <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="buttonUnits_ViewTabActivityLog"/>
                             </Property>
+                            <Property name="name" type="java.lang.String" value="Activity Log" noResource="true"/>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
@@ -7601,7 +7683,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                              <CardConstraints cardName="card7"/>
+                              <CardConstraints cardName="card6"/>
                             </Constraint>
                           </Constraints>
 
@@ -7642,14 +7724,14 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewActivityLog1">
+                        <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewNull">
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                              <CardConstraints cardName="card8"/>
+                              <CardConstraints cardName="card7"/>
                             </Constraint>
                           </Constraints>
 

@@ -348,6 +348,8 @@ public class ModuleUnitOwners extends SPanel{
 
         jLayeredPane2.setLayout(new java.awt.CardLayout());
 
+        layerUnitOwnersData.setName("Data"); // NOI18N
+
         sPanel2.setBorderLine(1);
         sPanel2.setPaintBackground(false);
 
@@ -691,6 +693,7 @@ public class ModuleUnitOwners extends SPanel{
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
+        layerUnitOwnersOffline.setName("Offline"); // NOI18N
         layerUnitOwnersOffline.setPaintBackground(false);
 
         jPanel1.setOpaque(false);
@@ -757,6 +760,7 @@ public class ModuleUnitOwners extends SPanel{
 
         jLayeredPane1.add(layerUnitOwnersOffline, "card1");
 
+        layerUnitOwnersLoading.setName("Loading"); // NOI18N
         layerUnitOwnersLoading.setPaintBackground(false);
 
         jPanel2.setOpaque(false);
@@ -824,6 +828,7 @@ public class ModuleUnitOwners extends SPanel{
         jLayeredPane1.setLayer(layerUnitOwnersLoading, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.add(layerUnitOwnersLoading, "card2");
 
+        layerUnitOwnersOnline.setName("Online"); // NOI18N
         layerUnitOwnersOnline.setPaintBackground(false);
 
         sTable1.setRowHeight(50);
@@ -1590,6 +1595,8 @@ public class ModuleUnitOwners extends SPanel{
         );
 
         jLayeredPane2.add(layerUnitOwnersData, "card4");
+
+        layerUnitOwnersView.setName("View"); // NOI18N
 
         javax.swing.GroupLayout layerUnitOwnersViewLayout = new javax.swing.GroupLayout(layerUnitOwnersView);
         layerUnitOwnersView.setLayout(layerUnitOwnersViewLayout);

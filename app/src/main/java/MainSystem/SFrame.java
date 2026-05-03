@@ -174,7 +174,7 @@ public class SFrame extends JFrame {
         layeredPane_Main.setOpaque(true);
         layeredPane_Main.setLayout(new java.awt.CardLayout());
 
-        layerMain_Loading.setName("Main-Loading"); // NOI18N
+        layerMain_Loading.setName("Loading"); // NOI18N
 
         sLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/mainSmallLogo.png"))); // NOI18N
@@ -232,7 +232,7 @@ public class SFrame extends JFrame {
 
         layeredPane_Main.add(layerMain_Loading, "card3");
 
-        layerMain_Login.setName("Main-Login"); // NOI18N
+        layerMain_Login.setName("Login"); // NOI18N
 
         javax.swing.GroupLayout layerMain_LoginLayout = new javax.swing.GroupLayout(layerMain_Login);
         layerMain_Login.setLayout(layerMain_LoginLayout);
@@ -255,7 +255,7 @@ public class SFrame extends JFrame {
         layeredPane_Main.add(layerMain_Login, "card1");
         layerMain_Login.getAccessibleContext().setAccessibleName("");
 
-        layerMain_Home.setName("Main-Home"); // NOI18N
+        layerMain_Home.setName("Home"); // NOI18N
 
         javax.swing.GroupLayout layerMain_HomeLayout = new javax.swing.GroupLayout(layerMain_Home);
         layerMain_Home.setLayout(layerMain_HomeLayout);
