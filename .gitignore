@@ -3,3 +3,6 @@
 
 # Ignore Gradle build output directory
 build
+app/src/.aiexclude
+app/src/.geminiignore
+app/src/GEMINI.md

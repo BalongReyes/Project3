@@ -9,6 +9,11 @@ public class ModuleUnits extends SPanel{
         initComponents();
         setOpaque(false);
         setDoubleBuffered(true);
+        
+        sComboBox1.addItem("Test1");
+        sComboBox1.addItem("Test2");
+        sComboBox1.addItem("Test3");
+        sComboBox1.addItem("Test4");
     }
 
     @SuppressWarnings("unchecked")
@@ -355,6 +360,7 @@ public class ModuleUnits extends SPanel{
         layerUnits_ViewActivityLog = new FrameSystem.Layers.Units.Components.LayerUnits_View();
         sLabel53 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerUnits_ViewNull = new FrameSystem.Layers.Units.Components.LayerUnits_View();
+        sComboBox1 = new FrameSystem.SLibrary.SComponents.SComboBox();
 
         sPanel21.setPaintBackground(false);
         sPanel21.setPreferredSize(new java.awt.Dimension(250, 0));
@@ -540,6 +546,9 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
+        sPanel42.setMaximumSize(new java.awt.Dimension(100, 32767));
+        sPanel42.setMinimumSize(new java.awt.Dimension(100, 0));
+        sPanel42.setPreferredSize(new java.awt.Dimension(100, 45));
         sPanel42.setCanHover(true);
         sPanel42.setHoverBackgroundColor(new java.awt.Color(230, 230, 230));
         sPanel42.setRadius(15);
@@ -549,9 +558,6 @@ public class ModuleUnits extends SPanel{
         sPanel42.setShadowSize(5);
         sPanel42.setShadowX(true);
         sPanel42.setShadowY(true);
-        sPanel42.setMaximumSize(new java.awt.Dimension(100, 32767));
-        sPanel42.setMinimumSize(new java.awt.Dimension(100, 0));
-        sPanel42.setPreferredSize(new java.awt.Dimension(100, 45));
 
         sLabel20.setForeground(new java.awt.Color(56, 56, 56));
         sLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2722,11 +2728,11 @@ public class ModuleUnits extends SPanel{
         );
         sPanel69Layout.setVerticalGroup(
             sPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buttonUnits_ViewTabOverview, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(buttonUnits_ViewTabOverview, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
             .addComponent(buttonUnits_ViewTabDocuments, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(buttonUnits_ViewTabConcerns, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(buttonUnits_ViewTabActivityLog, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(buttonUnits_ViewTabVisitors, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(buttonUnits_ViewTabVisitors, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         sPanel4.setPaintBackground(false);
@@ -4620,6 +4626,18 @@ public class ModuleUnits extends SPanel{
                 .addGap(0, 0, 0))
         );
 
+        sComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        sComboBox1.setItemDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        sComboBox1.setItemFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        sComboBox1.setItemHoverForegroundColor(new java.awt.Color(56, 56, 56));
+        sComboBox1.setItemRoundCorner(6);
+        sComboBox1.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        sComboBox1.setShadowColor(new java.awt.Color(230, 230, 230));
+        sComboBox1.setShadowOpacity(0.3F);
+        sComboBox1.setShadowSize(5);
+        sComboBox1.setShadowX(true);
+        sComboBox1.setShadowY(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -4634,7 +4652,9 @@ public class ModuleUnits extends SPanel{
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(sPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(sComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(sPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
@@ -4653,7 +4673,8 @@ public class ModuleUnits extends SPanel{
                         .addComponent(sTextFieldContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(sPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(sPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
@@ -4710,6 +4731,7 @@ public class ModuleUnits extends SPanel{
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline1;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline4;
     private FrameSystem.SLibrary.SAnimated.SAnimatedOffline sAnimatedOffline5;
+    private FrameSystem.SLibrary.SComponents.SComboBox sComboBox1;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel1;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel2;
     public FrameSystem.SLibrary.SGenericComponents.SFilterTitlePanel sFilterTitlePanel3;
