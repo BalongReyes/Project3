@@ -30,7 +30,7 @@ public class SComboBox extends SPanel {
     
     private JPopupMenu popupMenu;
     private SPanel popupContainer;
-    private JScrollPane scrollPane;
+    private SScrollPane scrollPane;
     
     private List<Object> items = new ArrayList<>();
     private Object selectedItem = null;
@@ -49,6 +49,10 @@ public class SComboBox extends SPanel {
 
     private javax.swing.ImageIcon arrowIcon;
     private int arrowIconSize = 12;
+
+    private Color scrollbarBackgroundColor = new Color(245, 245, 245);
+    private Color scrollbarColor = new Color(200, 200, 200);
+    private Color scrollbarHoverColor = new Color(180, 180, 180);
 
 // ==== Constructor ==========================================================================================
 
@@ -125,12 +129,17 @@ public class SComboBox extends SPanel {
         popupContainer.setLayout(new BoxLayout(popupContainer, BoxLayout.Y_AXIS));
         popupContainer.setPaintBackground(false);
 
-        scrollPane = new JScrollPane(popupContainer);
+        scrollPane = new SScrollPane();
+        scrollPane.setViewportView(popupContainer);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
         scrollPane.setOpaque(false);
         scrollPane.getViewport().setOpaque(false);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
+
+        scrollPane.setScrollbarBackgroundColor(scrollbarBackgroundColor);
+        scrollPane.setScrollbarColor(scrollbarColor);
+        scrollPane.setScrollbarHoverColor(scrollbarHoverColor);
 
         popupOuter.add(scrollPane, BorderLayout.CENTER);
         popupMenu.add(popupOuter);
@@ -195,6 +204,13 @@ public class SComboBox extends SPanel {
                 fireActionEvent();
             }
         });
+        
+        // Forward the scrollPane's mouse listeners to the item so SScrollPane detects hover states
+        if (scrollPane != null) {
+            for (java.awt.event.MouseListener listener : scrollPane.getMouseListeners()) {
+                panelItem.addInnerListeners(listener);
+            }
+        }
         
         popupContainer.add(panelItem);
         
@@ -333,6 +349,44 @@ public class SComboBox extends SPanel {
 
     public int getItemRoundCorner() {
         return itemRoundCorner;
+    }
+
+// ==== Scrollbar Setters & Getters ========================================================================
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The background color of the scrollbar track")
+    public void setScrollbarBackgroundColor(Color scrollbarBackgroundColor) {
+        this.scrollbarBackgroundColor = scrollbarBackgroundColor;
+        if (scrollPane != null) {
+            scrollPane.setScrollbarBackgroundColor(scrollbarBackgroundColor);
+        }
+    }
+
+    public Color getScrollbarBackgroundColor() {
+        return scrollbarBackgroundColor;
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The color of the scrollbar thumb")
+    public void setScrollbarColor(Color scrollbarColor) {
+        this.scrollbarColor = scrollbarColor;
+        if (scrollPane != null) {
+            scrollPane.setScrollbarColor(scrollbarColor);
+        }
+    }
+
+    public Color getScrollbarColor() {
+        return scrollbarColor;
+    }
+
+    @BeanProperty(preferred = true, visualUpdate = true, description = "The color of the scrollbar thumb when hovered")
+    public void setScrollbarHoverColor(Color scrollbarHoverColor) {
+        this.scrollbarHoverColor = scrollbarHoverColor;
+        if (scrollPane != null) {
+            scrollPane.setScrollbarHoverColor(scrollbarHoverColor);
+        }
+    }
+
+    public Color getScrollbarHoverColor() {
+        return scrollbarHoverColor;
     }
 
 // ==== Arrow Icon Setters & Getters =========================================================================

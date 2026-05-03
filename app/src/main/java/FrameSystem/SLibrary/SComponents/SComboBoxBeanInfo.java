@@ -30,6 +30,11 @@ public class SComboBoxBeanInfo extends SimpleBeanInfo {
                     case "arrowIconSize":
                         pd.setValue("category", "SComboBox - Arrow Icon");
                         break;
+                    case "scrollbarBackgroundColor":
+                    case "scrollbarColor":
+                    case "scrollbarHoverColor":
+                        pd.setValue("category", "SComboBox - Scrollbar");
+                        break;
                 }
             }
             return descriptors;

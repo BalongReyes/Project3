@@ -112,7 +112,7 @@ public class SScrollPane extends JScrollPane{
             Graphics2D g2 = CustomGraphics.getGraphics2D(g);
 
             if(hovering){
-                g2.setColor(hoverColor);
+                g2.setColor(scrollbarHoverColor);
             }else{
                 g2.setColor(scrollbarColor); 
             }
@@ -192,15 +192,15 @@ public class SScrollPane extends JScrollPane{
 
 // -----------------------------------------------------------------------------------------------------------
     
-    private Color hoverColor = Color.white;
+    private Color scrollbarHoverColor = Color.white;
     
     @BeanProperty(preferred = true, description = "The hover color")
-    public void setHoverColor(Color hoverColor){
-        this.hoverColor = hoverColor;
+    public void setScrollbarHoverColor(Color hoverColor){
+        this.scrollbarHoverColor = hoverColor;
     }
 
-    public Color getHoverColor(){
-        return hoverColor;
+    public Color getScrollbarHoverColor(){
+        return scrollbarHoverColor;
     }
 
 // -----------------------------------------------------------------------------------------------------------

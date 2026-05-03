@@ -99,11 +99,11 @@ public class STable extends SPanel{
 
     @BeanProperty(preferred = true, visualUpdate = true, description = "The hover color of the scrollbar thumb")
     public void setScrollbarHoverColor(Color color) {
-        scrollPane.setHoverColor(color);
+        scrollPane.setScrollbarHoverColor(color);
     }
 
     public Color getScrollbarHoverColor() {
-        return scrollPane.getHoverColor();
+        return scrollPane.getScrollbarHoverColor();
     }
     
 // ==== Generated ============================================================================================
@@ -122,9 +122,9 @@ public class STable extends SPanel{
         setPaintBackground(false);
 
         scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setHoverColor(new java.awt.Color(73, 73, 73));
         scrollPane.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
         scrollPane.setScrollbarColor(new java.awt.Color(229, 229, 229));
+        scrollPane.setScrollbarHoverColor(new java.awt.Color(73, 73, 73));
         scrollPane.setOpaque(false);
 
         container.setPaintBackground(false);

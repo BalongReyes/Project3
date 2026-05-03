@@ -495,9 +495,9 @@ public class ModuleHome extends SPanel{
 
         sScrollPane1.setBackground(new java.awt.Color(229, 229, 229));
         sScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        sScrollPane1.setHoverColor(new java.awt.Color(73, 73, 73));
         sScrollPane1.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
         sScrollPane1.setScrollbarColor(new java.awt.Color(229, 229, 229));
+        sScrollPane1.setScrollbarHoverColor(new java.awt.Color(73, 73, 73));
         sScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         sScrollPane1.setMinimumSize(new java.awt.Dimension(0, 0));
 
@@ -563,17 +563,17 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(menuButton_Units);
         sLayeredPane1.add(filler2);
 
-        menuButton_Parking.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Parking.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Parking.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parkingActive.png"))); // NOI18N
         menuButton_Parking.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        menuButton_Parking.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        menuButton_Parking.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Parking.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/parking.png"))); // NOI18N
         menuButton_Parking.setMenuMinButton(menuMinButton_Parking);
-        menuButton_Parking.setRadius(15);
         menuButton_Parking.setText("Parking");
         menuButton_Parking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuButton_Parking.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuButton_Parking.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        menuButton_Parking.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        menuButton_Parking.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuButton_Parking.setRadius(15);
         sLayeredPane1.add(menuButton_Parking);
         sLayeredPane1.add(filler5);
 
@@ -1055,9 +1055,9 @@ public class ModuleHome extends SPanel{
 
         sScrollPane2.setBackground(new java.awt.Color(229, 229, 229));
         sScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        sScrollPane2.setHoverColor(new java.awt.Color(73, 73, 73));
         sScrollPane2.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
         sScrollPane2.setScrollbarColor(new java.awt.Color(229, 229, 229));
+        sScrollPane2.setScrollbarHoverColor(new java.awt.Color(73, 73, 73));
         sScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         sScrollPane2.setMinimumSize(new java.awt.Dimension(0, 0));
         sScrollPane2.setPreferredSize(new java.awt.Dimension(200, 50));
@@ -1077,13 +1077,13 @@ public class ModuleHome extends SPanel{
         sLayeredPane2.add(menuMinButton_Dashboard);
         sLayeredPane2.add(filler3);
 
-        menuMinButton_Units.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Units.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/unitsActive.png"))); // NOI18N
-        menuMinButton_Units.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuMinButton_Units.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/units.png"))); // NOI18N
-        menuMinButton_Units.setRadius(15);
         menuMinButton_Units.setMaximumSize(new java.awt.Dimension(32767, 40));
         menuMinButton_Units.setMinimumSize(new java.awt.Dimension(0, 40));
+        menuMinButton_Units.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuMinButton_Units.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuMinButton_Units.setRadius(15);
         sLayeredPane2.add(menuMinButton_Units);
         sLayeredPane2.add(filler4);
 

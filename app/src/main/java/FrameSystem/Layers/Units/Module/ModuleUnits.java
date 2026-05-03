@@ -10,10 +10,9 @@ public class ModuleUnits extends SPanel{
         setOpaque(false);
         setDoubleBuffered(true);
         
-        sComboBox1.addItem("Test1");
-        sComboBox1.addItem("Test2");
-        sComboBox1.addItem("Test3");
-        sComboBox1.addItem("Test4");
+        for(int i = 1; i <= 20; i++){
+            sComboBox1.addItem("Test " + i);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -4631,6 +4630,9 @@ public class ModuleUnits extends SPanel{
         sComboBox1.setItemFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         sComboBox1.setItemHoverForegroundColor(new java.awt.Color(56, 56, 56));
         sComboBox1.setItemRoundCorner(6);
+        sComboBox1.setScrollbarBackgroundColor(new java.awt.Color(255, 255, 255));
+        sComboBox1.setScrollbarColor(new java.awt.Color(229, 229, 229));
+        sComboBox1.setScrollbarHoverColor(new java.awt.Color(73, 73, 73));
         sComboBox1.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
         sComboBox1.setShadowColor(new java.awt.Color(230, 230, 230));
         sComboBox1.setShadowOpacity(0.3F);
@@ -4653,7 +4655,7 @@ public class ModuleUnits extends SPanel{
                                 .addComponent(sPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
                                 .addComponent(sPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)
+                                .addGap(23, 23, 23)
                                 .addComponent(sComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(sPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

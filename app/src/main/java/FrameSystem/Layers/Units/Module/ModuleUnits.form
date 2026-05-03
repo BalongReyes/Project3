@@ -202,7 +202,7 @@
                               <Component id="sPanel36" min="-2" pref="95" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="sPanel42" min="-2" pref="123" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="sComboBox1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -7776,6 +7776,15 @@
           <Color blue="38" green="38" red="38" type="rgb"/>
         </Property>
         <Property name="itemRoundCorner" type="int" value="6"/>
+        <Property name="scrollbarBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="scrollbarColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e5" green="e5" red="e5" type="rgb"/>
+        </Property>
+        <Property name="scrollbarHoverColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="49" green="49" red="49" type="rgb"/>
+        </Property>
         <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="38" green="38" red="38" type="rgb"/>
         </Property>
