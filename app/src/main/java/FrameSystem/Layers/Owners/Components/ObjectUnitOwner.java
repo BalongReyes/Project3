@@ -36,8 +36,6 @@ public class ObjectUnitOwner extends SPanel{
         });
         
         applyHoverInnerListener();
-        view.applyHoverInnerListener();
-        edit.applyHoverInnerListener();
         
         sLabel9.setText(data.tower() + "-" + data.floor() + (data.unit() < 10 ? "0" : "") + data.unit());
         

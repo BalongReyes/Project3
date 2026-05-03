@@ -21,7 +21,7 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
     public static void initDefault(){
         setDefaultFilters();
         
-        moduleUnits.filterTower1.addMouseListener(new MouseAdapter() {
+        moduleUnits.filterTower1.addInnerListeners(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e){
                 moduleUnits.filterTower1.toggleActive();
@@ -30,7 +30,7 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
             }
         });
         
-        moduleUnits.filterTower2.addMouseListener(new MouseAdapter() {
+        moduleUnits.filterTower2.addInnerListeners(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e){
                 moduleUnits.filterTower2.toggleActive();
@@ -39,7 +39,7 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
             }
         });
         
-        moduleUnits.filterTower3.addMouseListener(new MouseAdapter() {
+        moduleUnits.filterTower3.addInnerListeners(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e){
                 moduleUnits.filterTower3.toggleActive();
@@ -57,7 +57,7 @@ public class ManagerFilterUnits extends ManagerModuleUnits{
     }
     
     public static void setFilterTitle(SFilterTitlePanel filterTitle){
-        filterTitle.addMouseListener((MousePressedAdaptor) (MouseEvent e) -> {
+        filterTitle.addInnerListeners((MousePressedAdaptor) (MouseEvent e) -> {
             int direction = filterTitle.setNextArrowDirection();
 
             DataTableOrder order = null;

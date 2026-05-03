@@ -41,9 +41,6 @@ public class ObjectUnit extends SPanel{
         });
         
         applyHoverInnerListener();
-        view.applyHoverInnerListener();
-        edit.applyHoverInnerListener();
-        concern.applyHoverInnerListener();
         
         String accountNumber = data.accountNumber();
         if(accountNumber != null){

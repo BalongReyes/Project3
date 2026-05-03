@@ -14,6 +14,8 @@ import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.ContainerAdapter;
+import java.awt.event.ContainerEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -21,6 +23,8 @@ import java.awt.geom.Path2D;
 import java.awt.geom.RoundRectangle2D;
 import java.beans.BeanProperty;
 import java.beans.JavaBean;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -29,6 +33,7 @@ public class SPanel extends JPanel implements InnerListener{
 
     protected MouseAdapter hoverListener;
     protected ComponentAdapter componentAdapter;
+    protected List<MouseListener> innerListeners = new ArrayList<>();
 
 // ==== Constructor ==========================================================================================
     
@@ -61,6 +66,30 @@ public class SPanel extends JPanel implements InnerListener{
             }
         };
         super.addComponentListener(componentAdapter);
+        
+        super.addContainerListener(new ContainerAdapter() {
+            @Override
+            public void componentAdded(ContainerEvent e) {
+                Component c = e.getChild();
+                for (MouseListener listener : innerListeners) {
+                    if (c instanceof InnerListener innerListener) {
+                        innerListener.addInnerListeners(listener);
+                    } else {
+                        boolean exists = false;
+                        for (MouseListener ml : c.getMouseListeners()) {
+                            if (ml == listener) {
+                                exists = true;
+                                break;
+                            }
+                        }
+                        if (!exists) {
+                            c.addMouseListener(listener);
+                        }
+                    }
+                }
+            }
+        });
+        
         applyHoverInnerListener();
     }
 
@@ -524,7 +553,10 @@ public class SPanel extends JPanel implements InnerListener{
 
     @Override
     public void addInnerListeners(MouseListener listener){
-        super.addMouseListener(listener);
+        if (!innerListeners.contains(listener)) {
+            innerListeners.add(listener);
+            super.addMouseListener(listener);
+        }
         synchronized(getTreeLock()){
             int i = getComponentCount() - 1;
             if(i < 0){
@@ -538,7 +570,16 @@ public class SPanel extends JPanel implements InnerListener{
                 if(c instanceof InnerListener innerListener){
                     innerListener.addInnerListeners(listener);
                 }else{
-                    c.addMouseListener(listener);
+                    boolean exists = false;
+                    for (MouseListener ml : c.getMouseListeners()) {
+                        if (ml == listener) {
+                            exists = true;
+                            break;
+                        }
+                    }
+                    if (!exists) {
+                        c.addMouseListener(listener);
+                    }
                 }
             }
         }

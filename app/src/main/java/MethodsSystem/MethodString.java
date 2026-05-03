@@ -9,6 +9,23 @@ public class MethodString{
         return s.replaceAll("(?m)^[ \t]*\r?\n", "");
     }
     
+    public static String capitalizeWords(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        char[] chars = str.toLowerCase().toCharArray();
+        boolean capitalizeNext = true;
+        for (int i = 0; i < chars.length; i++) {
+            if (Character.isWhitespace(chars[i])) {
+                capitalizeNext = true;
+            } else if (capitalizeNext) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                capitalizeNext = false;
+            }
+        }
+        return new String(chars);
+    }
+
 // ==== Check Like ===========================================================================================
 
     public static boolean checkLike(Object value, String like){
