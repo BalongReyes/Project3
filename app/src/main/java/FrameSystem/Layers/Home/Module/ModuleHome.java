@@ -45,6 +45,8 @@ public class ModuleHome extends SPanel{
         sLabel2 = new FrameSystem.SLibrary.SComponents.SLabel();
         layerHome_Profile = new FrameSystem.Layers.Home.Components.LayerHome();
         sLabel4 = new FrameSystem.SLibrary.SComponents.SLabel();
+        layerHome_Violations = new FrameSystem.Layers.Home.Components.LayerHome();
+        sLabel17 = new FrameSystem.SLibrary.SComponents.SLabel();
         sPanelMenu1 = new FrameSystem.Layers.Home.Components.SPanelHomeMenu();
         jPanel1 = new javax.swing.JPanel();
         sLabelHover1 = new FrameSystem.SLibrary.SComponents.SLabelHover();
@@ -72,10 +74,17 @@ public class ModuleHome extends SPanel{
         menuButton_Tenants = new FrameSystem.Layers.Home.Components.MenuButton();
         filler24 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
         menuButton_Move = new FrameSystem.Layers.Home.Components.MenuButton();
-        filler15 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
+        filler28 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 12), new java.awt.Dimension(0, 12), new java.awt.Dimension(32767, 12));
+        sPanel16 = new FrameSystem.SLibrary.SComponents.SPanel();
+        filler29 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 12), new java.awt.Dimension(0, 12), new java.awt.Dimension(32767, 12));
+        sPanel17 = new FrameSystem.SLibrary.SComponents.SPanel();
+        sLabel10 = new FrameSystem.SLibrary.SComponents.SLabel();
+        filler30 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
         menuButton_Visitors = new FrameSystem.Layers.Home.Components.MenuButton();
         filler20 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
         menuButton_Concerns = new FrameSystem.Layers.Home.Components.MenuButton();
+        filler26 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
+        menuButton_Violations = new FrameSystem.Layers.Home.Components.MenuButton();
         filler17 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 12), new java.awt.Dimension(0, 12), new java.awt.Dimension(32767, 12));
         sPanel12 = new FrameSystem.SLibrary.SComponents.SPanel();
         filler18 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 12), new java.awt.Dimension(0, 12), new java.awt.Dimension(32767, 12));
@@ -119,10 +128,14 @@ public class ModuleHome extends SPanel{
         menuMinButton_Tenants = new FrameSystem.Layers.Home.Components.MenuMinButton();
         filler25 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
         menuMinButton_Move = new FrameSystem.Layers.Home.Components.MenuMinButton();
-        filler16 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
+        filler15 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 12), new java.awt.Dimension(0, 12), new java.awt.Dimension(32767, 12));
+        sPanel18 = new FrameSystem.SLibrary.SComponents.SPanel();
+        filler31 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 12), new java.awt.Dimension(0, 12), new java.awt.Dimension(32767, 12));
         menuMinButton_Visitors = new FrameSystem.Layers.Home.Components.MenuMinButton();
         filler22 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
         menuMinButton_Concerns = new FrameSystem.Layers.Home.Components.MenuMinButton();
+        filler27 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 6), new java.awt.Dimension(0, 6), new java.awt.Dimension(32767, 6));
+        menuMinButton_Violations = new FrameSystem.Layers.Home.Components.MenuMinButton();
         filler19 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 12), new java.awt.Dimension(0, 12), new java.awt.Dimension(32767, 12));
         sPanel14 = new FrameSystem.SLibrary.SComponents.SPanel();
         filler23 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 12), new java.awt.Dimension(0, 12), new java.awt.Dimension(32767, 12));
@@ -458,6 +471,35 @@ public class ModuleHome extends SPanel{
         layeredPane_Main.setLayer(layerHome_Profile, javax.swing.JLayeredPane.PALETTE_LAYER);
         layeredPane_Main.add(layerHome_Profile, "profile");
 
+        layerHome_Violations.setLayerButton(menuButton_Violations);
+        layerHome_Violations.setName("Concerns"); // NOI18N
+        layerHome_Violations.setPaintBackground(false);
+
+        sLabel17.setBackground(new java.awt.Color(0, 0, 0));
+        sLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        sLabel17.setText("Violations");
+        sLabel17.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+
+        javax.swing.GroupLayout layerHome_ViolationsLayout = new javax.swing.GroupLayout(layerHome_Violations);
+        layerHome_Violations.setLayout(layerHome_ViolationsLayout);
+        layerHome_ViolationsLayout.setHorizontalGroup(
+            layerHome_ViolationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layerHome_ViolationsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layerHome_ViolationsLayout.setVerticalGroup(
+            layerHome_ViolationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layerHome_ViolationsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(sLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        layeredPane_Main.setLayer(layerHome_Violations, javax.swing.JLayeredPane.PALETTE_LAYER);
+        layeredPane_Main.add(layerHome_Violations, "concerns");
+
         sPanelMenu1.setMaximumSize(new java.awt.Dimension(275, 32767));
         sPanelMenu1.setMinimumSize(new java.awt.Dimension(275, 0));
         sPanelMenu1.setPreferredSize(new java.awt.Dimension(260, 0));
@@ -577,10 +619,10 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(menuButton_Parking);
         sLayeredPane1.add(filler5);
 
-        sPanel9.setDefaultBackgroundColor(new java.awt.Color(240, 240, 240));
         sPanel9.setMaximumSize(new java.awt.Dimension(32767, 2));
         sPanel9.setMinimumSize(new java.awt.Dimension(0, 2));
         sPanel9.setPreferredSize(new java.awt.Dimension(0, 2));
+        sPanel9.setDefaultBackgroundColor(new java.awt.Color(240, 240, 240));
 
         javax.swing.GroupLayout sPanel9Layout = new javax.swing.GroupLayout(sPanel9);
         sPanel9.setLayout(sPanel9Layout);
@@ -596,10 +638,10 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(sPanel9);
         sLayeredPane1.add(filler6);
 
-        sPanel1.setPaintBackground(false);
         sPanel1.setMaximumSize(new java.awt.Dimension(32767, 16));
         sPanel1.setMinimumSize(new java.awt.Dimension(0, 16));
         sPanel1.setPreferredSize(new java.awt.Dimension(0, 16));
+        sPanel1.setPaintBackground(false);
 
         sLabel6.setBackground(new java.awt.Color(255, 255, 255));
         sLabel6.setForeground(new java.awt.Color(112, 112, 112));
@@ -626,88 +668,149 @@ public class ModuleHome extends SPanel{
         sLayeredPane1.add(sPanel1);
         sLayeredPane1.add(filler13);
 
-        menuButton_NewResident.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_NewResident.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_NewResident.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/newResidentActive.png"))); // NOI18N
         menuButton_NewResident.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        menuButton_NewResident.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        menuButton_NewResident.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_NewResident.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/newResident.png"))); // NOI18N
         menuButton_NewResident.setMenuMinButton(menuMinButton_NewResident);
-        menuButton_NewResident.setRadius(15);
         menuButton_NewResident.setText("New Resident");
         menuButton_NewResident.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuButton_NewResident.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuButton_NewResident.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        menuButton_NewResident.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        menuButton_NewResident.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuButton_NewResident.setRadius(15);
         sLayeredPane1.add(menuButton_NewResident);
         sLayeredPane1.add(filler7);
 
-        menuButton_Owners.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Owners.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Owners.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/ownersActive.png"))); // NOI18N
         menuButton_Owners.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        menuButton_Owners.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        menuButton_Owners.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Owners.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/owners.png"))); // NOI18N
         menuButton_Owners.setMenuMinButton(menuMinButton_Owners);
-        menuButton_Owners.setRadius(15);
         menuButton_Owners.setText("Owners");
         menuButton_Owners.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuButton_Owners.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuButton_Owners.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        menuButton_Owners.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        menuButton_Owners.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuButton_Owners.setRadius(15);
         sLayeredPane1.add(menuButton_Owners);
         sLayeredPane1.add(filler8);
 
-        menuButton_Tenants.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Tenants.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Tenants.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tenantsActive.png"))); // NOI18N
         menuButton_Tenants.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        menuButton_Tenants.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        menuButton_Tenants.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Tenants.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/tenants.png"))); // NOI18N
         menuButton_Tenants.setMenuMinButton(menuMinButton_Tenants);
-        menuButton_Tenants.setRadius(15);
         menuButton_Tenants.setText("Tenants");
         menuButton_Tenants.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuButton_Tenants.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuButton_Tenants.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        menuButton_Tenants.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        menuButton_Tenants.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuButton_Tenants.setRadius(15);
         sLayeredPane1.add(menuButton_Tenants);
         sLayeredPane1.add(filler24);
 
-        menuButton_Move.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Move.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Move.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/moveActive.png"))); // NOI18N
         menuButton_Move.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        menuButton_Move.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        menuButton_Move.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Move.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/move.png"))); // NOI18N
         menuButton_Move.setMenuMinButton(menuMinButton_Move);
-        menuButton_Move.setRadius(15);
         menuButton_Move.setText("Move In / Out");
         menuButton_Move.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuButton_Move.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuButton_Move.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        menuButton_Move.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        menuButton_Move.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuButton_Move.setRadius(15);
         sLayeredPane1.add(menuButton_Move);
-        sLayeredPane1.add(filler15);
+        sLayeredPane1.add(filler28);
 
-        menuButton_Visitors.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Visitors.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        sPanel16.setMaximumSize(new java.awt.Dimension(32767, 2));
+        sPanel16.setMinimumSize(new java.awt.Dimension(0, 2));
+        sPanel16.setDefaultBackgroundColor(new java.awt.Color(240, 240, 240));
+
+        javax.swing.GroupLayout sPanel16Layout = new javax.swing.GroupLayout(sPanel16);
+        sPanel16.setLayout(sPanel16Layout);
+        sPanel16Layout.setHorizontalGroup(
+            sPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        sPanel16Layout.setVerticalGroup(
+            sPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        sLayeredPane1.add(sPanel16);
+        sLayeredPane1.add(filler29);
+
+        sPanel17.setMaximumSize(new java.awt.Dimension(32767, 16));
+        sPanel17.setMinimumSize(new java.awt.Dimension(0, 16));
+        sPanel17.setPaintBackground(false);
+
+        sLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        sLabel10.setForeground(new java.awt.Color(112, 112, 112));
+        sLabel10.setText("Units");
+        sLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        javax.swing.GroupLayout sPanel17Layout = new javax.swing.GroupLayout(sPanel17);
+        sPanel17.setLayout(sPanel17Layout);
+        sPanel17Layout.setHorizontalGroup(
+            sPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel17Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(sLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        sPanel17Layout.setVerticalGroup(
+            sPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sPanel17Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(sLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+
+        sLayeredPane1.add(sPanel17);
+        sLayeredPane1.add(filler30);
+
         menuButton_Visitors.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/visitorsActive.png"))); // NOI18N
         menuButton_Visitors.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        menuButton_Visitors.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        menuButton_Visitors.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Visitors.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/visitors.png"))); // NOI18N
         menuButton_Visitors.setMenuMinButton(menuMinButton_Visitors);
-        menuButton_Visitors.setRadius(15);
         menuButton_Visitors.setText("Visitors");
         menuButton_Visitors.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuButton_Visitors.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuButton_Visitors.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        menuButton_Visitors.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        menuButton_Visitors.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuButton_Visitors.setRadius(15);
         sLayeredPane1.add(menuButton_Visitors);
         sLayeredPane1.add(filler20);
 
-        menuButton_Concerns.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
-        menuButton_Concerns.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
         menuButton_Concerns.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concernsActive.png"))); // NOI18N
         menuButton_Concerns.setActiveLineColor(new java.awt.Color(205, 64, 68));
-        menuButton_Concerns.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
-        menuButton_Concerns.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuButton_Concerns.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concerns.png"))); // NOI18N
         menuButton_Concerns.setMenuMinButton(menuMinButton_Concerns);
-        menuButton_Concerns.setRadius(15);
         menuButton_Concerns.setText("Concerns");
         menuButton_Concerns.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuButton_Concerns.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuButton_Concerns.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        menuButton_Concerns.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        menuButton_Concerns.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuButton_Concerns.setRadius(15);
         sLayeredPane1.add(menuButton_Concerns);
+        sLayeredPane1.add(filler26);
+
+        menuButton_Violations.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/violationActive.png"))); // NOI18N
+        menuButton_Violations.setActiveLineColor(new java.awt.Color(205, 64, 68));
+        menuButton_Violations.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/violation.png"))); // NOI18N
+        menuButton_Violations.setMenuMinButton(menuMinButton_Violations);
+        menuButton_Violations.setText("Violation");
+        menuButton_Violations.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        menuButton_Violations.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuButton_Violations.setActiveForegroundColor(new java.awt.Color(205, 64, 68));
+        menuButton_Violations.setDefaultForegroundColor(new java.awt.Color(56, 56, 56));
+        menuButton_Violations.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuButton_Violations.setRadius(15);
+        sLayeredPane1.add(menuButton_Violations);
         sLayeredPane1.add(filler17);
 
         sPanel12.setDefaultBackgroundColor(new java.awt.Color(240, 240, 240));
@@ -1097,10 +1200,10 @@ public class ModuleHome extends SPanel{
         sLayeredPane2.add(menuMinButton_Parking);
         sLayeredPane2.add(filler9);
 
-        sPanel10.setDefaultBackgroundColor(new java.awt.Color(240, 240, 240));
         sPanel10.setMaximumSize(new java.awt.Dimension(32767, 2));
         sPanel10.setMinimumSize(new java.awt.Dimension(0, 2));
         sPanel10.setPreferredSize(new java.awt.Dimension(0, 2));
+        sPanel10.setDefaultBackgroundColor(new java.awt.Color(240, 240, 240));
 
         javax.swing.GroupLayout sPanel10Layout = new javax.swing.GroupLayout(sPanel10);
         sPanel10.setLayout(sPanel10Layout);
@@ -1154,7 +1257,25 @@ public class ModuleHome extends SPanel{
         menuMinButton_Move.setMaximumSize(new java.awt.Dimension(32767, 40));
         menuMinButton_Move.setMinimumSize(new java.awt.Dimension(0, 40));
         sLayeredPane2.add(menuMinButton_Move);
-        sLayeredPane2.add(filler16);
+        sLayeredPane2.add(filler15);
+
+        sPanel18.setMaximumSize(new java.awt.Dimension(32767, 2));
+        sPanel18.setMinimumSize(new java.awt.Dimension(0, 2));
+        sPanel18.setDefaultBackgroundColor(new java.awt.Color(240, 240, 240));
+
+        javax.swing.GroupLayout sPanel18Layout = new javax.swing.GroupLayout(sPanel18);
+        sPanel18.setLayout(sPanel18Layout);
+        sPanel18Layout.setHorizontalGroup(
+            sPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        sPanel18Layout.setVerticalGroup(
+            sPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        sLayeredPane2.add(sPanel18);
+        sLayeredPane2.add(filler31);
 
         menuMinButton_Visitors.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Visitors.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/visitorsActive.png"))); // NOI18N
@@ -1166,14 +1287,24 @@ public class ModuleHome extends SPanel{
         sLayeredPane2.add(menuMinButton_Visitors);
         sLayeredPane2.add(filler22);
 
-        menuMinButton_Concerns.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
         menuMinButton_Concerns.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concernsActive.png"))); // NOI18N
-        menuMinButton_Concerns.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
         menuMinButton_Concerns.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/concerns.png"))); // NOI18N
-        menuMinButton_Concerns.setRadius(15);
         menuMinButton_Concerns.setMaximumSize(new java.awt.Dimension(32767, 40));
         menuMinButton_Concerns.setMinimumSize(new java.awt.Dimension(0, 40));
+        menuMinButton_Concerns.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuMinButton_Concerns.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuMinButton_Concerns.setRadius(15);
         sLayeredPane2.add(menuMinButton_Concerns);
+        sLayeredPane2.add(filler27);
+
+        menuMinButton_Violations.setActiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/violationActive.png"))); // NOI18N
+        menuMinButton_Violations.setInactiveIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Menu/violation.png"))); // NOI18N
+        menuMinButton_Violations.setMaximumSize(new java.awt.Dimension(32767, 40));
+        menuMinButton_Violations.setMinimumSize(new java.awt.Dimension(0, 40));
+        menuMinButton_Violations.setActiveBackgroundColor(new java.awt.Color(242, 242, 242));
+        menuMinButton_Violations.setHoverBackgroundColor(new java.awt.Color(229, 229, 229));
+        menuMinButton_Violations.setRadius(15);
+        sLayeredPane2.add(menuMinButton_Violations);
         sLayeredPane2.add(filler19);
 
         sPanel14.setDefaultBackgroundColor(new java.awt.Color(240, 240, 240));
@@ -1356,7 +1487,6 @@ public class ModuleHome extends SPanel{
     private javax.swing.Box.Filler filler13;
     private javax.swing.Box.Filler filler14;
     private javax.swing.Box.Filler filler15;
-    private javax.swing.Box.Filler filler16;
     private javax.swing.Box.Filler filler17;
     private javax.swing.Box.Filler filler18;
     private javax.swing.Box.Filler filler19;
@@ -1367,7 +1497,13 @@ public class ModuleHome extends SPanel{
     private javax.swing.Box.Filler filler23;
     private javax.swing.Box.Filler filler24;
     private javax.swing.Box.Filler filler25;
+    private javax.swing.Box.Filler filler26;
+    private javax.swing.Box.Filler filler27;
+    private javax.swing.Box.Filler filler28;
+    private javax.swing.Box.Filler filler29;
     private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler30;
+    private javax.swing.Box.Filler filler31;
     private javax.swing.Box.Filler filler4;
     private javax.swing.Box.Filler filler5;
     private javax.swing.Box.Filler filler6;
@@ -1387,6 +1523,7 @@ public class ModuleHome extends SPanel{
     public FrameSystem.Layers.Home.Components.LayerHome layerHome_Settings;
     public FrameSystem.Layers.Home.Components.LayerHome layerHome_Tenants;
     public FrameSystem.Layers.Home.Components.LayerHome layerHome_Units;
+    public FrameSystem.Layers.Home.Components.LayerHome layerHome_Violations;
     public FrameSystem.Layers.Home.Components.LayerHome layerHome_Visitors;
     public javax.swing.JLayeredPane layeredPane_Main;
     public FrameSystem.SLibrary.SComponents.SLabelHover logoutButton;
@@ -1402,6 +1539,7 @@ public class ModuleHome extends SPanel{
     private FrameSystem.Layers.Home.Components.MenuButton menuButton_Settings;
     private FrameSystem.Layers.Home.Components.MenuButton menuButton_Tenants;
     private FrameSystem.Layers.Home.Components.MenuButton menuButton_Units;
+    private FrameSystem.Layers.Home.Components.MenuButton menuButton_Violations;
     private FrameSystem.Layers.Home.Components.MenuButton menuButton_Visitors;
     private FrameSystem.Layers.Home.Components.MenuMinButton menuMinButton_Accounts;
     private FrameSystem.Layers.Home.Components.MenuMinButton menuMinButton_Concerns;
@@ -1414,17 +1552,20 @@ public class ModuleHome extends SPanel{
     private FrameSystem.Layers.Home.Components.MenuMinButton menuMinButton_Settings;
     private FrameSystem.Layers.Home.Components.MenuMinButton menuMinButton_Tenants;
     private FrameSystem.Layers.Home.Components.MenuMinButton menuMinButton_Units;
+    private FrameSystem.Layers.Home.Components.MenuMinButton menuMinButton_Violations;
     private FrameSystem.Layers.Home.Components.MenuMinButton menuMinButton_Visitors;
     public FrameSystem.Layers.Home.Components.MenuMinSwitch menuMinSwitch_Fullscreen;
     public FrameSystem.Layers.Home.Components.MenuSwitch menuSwitch_Fullscreen;
     public FrameSystem.Layers.Owners.Module.ModuleUnitOwners moduleUnitOwners;
     public FrameSystem.Layers.Tenants.Module.ModuleUnitTenants moduleUnitTenants;
     public FrameSystem.Layers.Units.Module.ModuleUnits moduleUnits;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel10;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel12;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel13;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel14;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel15;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel16;
+    private FrameSystem.SLibrary.SComponents.SLabel sLabel17;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel2;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel29;
     private FrameSystem.SLibrary.SComponents.SLabel sLabel3;
@@ -1446,6 +1587,9 @@ public class ModuleHome extends SPanel{
     private FrameSystem.SLibrary.SComponents.SPanel sPanel13;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel14;
     public FrameSystem.SLibrary.SComponents.SPanel sPanel15;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel16;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel17;
+    private FrameSystem.SLibrary.SComponents.SPanel sPanel18;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel2;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel3;
     private FrameSystem.SLibrary.SComponents.SPanel sPanel4;

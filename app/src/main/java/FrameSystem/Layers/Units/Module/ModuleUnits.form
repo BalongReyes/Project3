@@ -2,172 +2,35 @@
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
-    <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel21">
+    <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel138">
       <Properties>
-        <Property name="paintBackground" type="boolean" value="false"/>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[250, 0]"/>
+        <Property name="borderLine" type="int" value="1"/>
+        <Property name="defaultBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f0" green="f0" red="f0" type="rgb"/>
         </Property>
+        <Property name="radius" type="int" value="15"/>
+        <Property name="rounded" type="boolean" value="true"/>
+        <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e6" green="e6" red="e6" type="rgb"/>
+        </Property>
+        <Property name="shadowOpacity" type="float" value="0.3"/>
+        <Property name="shadowSize" type="int" value="5"/>
+        <Property name="shadowX" type="boolean" value="true"/>
+        <Property name="shadowY" type="boolean" value="true"/>
       </Properties>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
-        <Property name="axis" type="int" value="3"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
       </Layout>
-      <SubComponents>
-        <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel34">
-          <Properties>
-            <Property name="radius" type="int" value="15"/>
-            <Property name="rounded" type="boolean" value="true"/>
-            <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="e6" green="e6" red="e6" type="rgb"/>
-            </Property>
-            <Property name="shadowOpacity" type="float" value="0.3"/>
-            <Property name="shadowSize" type="int" value="5"/>
-            <Property name="shadowX" type="boolean" value="true"/>
-            <Property name="shadowY" type="boolean" value="true"/>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[250, 0]"/>
-            </Property>
-          </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="sLabel38" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="sLabel38" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="308" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel38">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="38" green="38" red="38" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Filters"/>
-                <Property name="verticalAlignment" type="int" value="3"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel49">
-          <Properties>
-            <Property name="radius" type="int" value="15"/>
-            <Property name="rounded" type="boolean" value="true"/>
-            <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="e6" green="e6" red="e6" type="rgb"/>
-            </Property>
-            <Property name="shadowOpacity" type="float" value="0.3"/>
-            <Property name="shadowSize" type="int" value="5"/>
-            <Property name="shadowX" type="boolean" value="true"/>
-            <Property name="shadowY" type="boolean" value="true"/>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[250, 0]"/>
-            </Property>
-          </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="sLabel37" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="sLabel37" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="308" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel37">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="38" green="38" red="38" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Quick Actions"/>
-                <Property name="verticalAlignment" type="int" value="3"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel61">
-          <Properties>
-            <Property name="radius" type="int" value="15"/>
-            <Property name="rounded" type="boolean" value="true"/>
-            <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="e6" green="e6" red="e6" type="rgb"/>
-            </Property>
-            <Property name="shadowOpacity" type="float" value="0.3"/>
-            <Property name="shadowSize" type="int" value="5"/>
-            <Property name="shadowX" type="boolean" value="true"/>
-            <Property name="shadowY" type="boolean" value="true"/>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[250, 0]"/>
-            </Property>
-          </Properties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="sLabel31" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="sLabel31" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="308" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel31">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="38" green="38" red="38" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Recent Concerns"/>
-                <Property name="verticalAlignment" type="int" value="3"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-      </SubComponents>
     </Container>
   </NonVisualComponents>
   <Properties>
@@ -214,6 +77,8 @@
                       <Component id="sPanel33" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="sPanel21" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -235,9 +100,13 @@
                   <Component id="sPanel47" min="-2" max="-2" attributes="0"/>
                   <Component id="sPanel35" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Component id="sPanel1" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="sPanel21" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -1452,7 +1321,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="jLayeredPane2" max="32767" attributes="0"/>
+                  <Component id="jLayeredPane2" pref="0" max="32767" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -1493,7 +1362,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="sPanel2" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLayeredPane1" max="32767" attributes="0"/>
-                      <Component id="sPanel63" alignment="0" pref="1180" max="32767" attributes="0"/>
+                      <Component id="sPanel63" alignment="0" pref="1081" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -1522,7 +1391,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="sPanel3" pref="1180" max="32767" attributes="0"/>
+                              <Component id="sPanel3" pref="1081" max="32767" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2514,7 +2383,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="1180" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="1081" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -3839,8 +3708,8 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="sPanel4" alignment="1" max="32767" attributes="0"/>
-                      <Component id="sPanel17" alignment="1" pref="1180" max="32767" attributes="0"/>
-                      <Component id="sPanel69" alignment="0" pref="1180" max="32767" attributes="0"/>
+                      <Component id="sPanel17" alignment="1" pref="1081" max="32767" attributes="0"/>
+                      <Component id="sPanel69" alignment="0" pref="1081" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -4179,6 +4048,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="buttonUnits_ViewTabConcerns" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="buttonUnits_ViewTabViolations" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="buttonUnits_ViewTabVisitors" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="buttonUnits_ViewTabActivityLog" min="-2" max="-2" attributes="0"/>
@@ -4188,11 +4059,12 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="buttonUnits_ViewTabOverview" alignment="0" pref="40" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabOverview" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Component id="buttonUnits_ViewTabDocuments" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Component id="buttonUnits_ViewTabConcerns" alignment="1" pref="0" max="32767" attributes="0"/>
                           <Component id="buttonUnits_ViewTabActivityLog" alignment="1" pref="0" max="32767" attributes="0"/>
                           <Component id="buttonUnits_ViewTabVisitors" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="buttonUnits_ViewTabViolations" alignment="1" pref="40" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -4275,6 +4147,24 @@
                           <Color blue="44" green="40" red="cd" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Activity Log"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
+                        <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="defaultForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="38" green="38" red="38" type="rgb"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="FrameSystem.Layers.Units.Components.ButtonUnits_ViewTab" name="buttonUnits_ViewTabViolations">
+                      <Properties>
+                        <Property name="activeLineColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="44" green="40" red="cd" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Violations"/>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                         <Property name="activeForegroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="44" green="40" red="cd" type="rgb"/>
@@ -4452,7 +4342,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="sPanel86" pref="1160" max="32767" attributes="0"/>
+                                      <Component id="sPanel86" pref="1061" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -4514,8 +4404,8 @@
                                       <Layout>
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sPanel88" pref="366" max="32767" attributes="0"/>
-                                              <Component id="sPanel81" alignment="0" pref="366" max="32767" attributes="0"/>
+                                              <Component id="sPanel88" pref="333" max="32767" attributes="0"/>
+                                              <Component id="sPanel81" alignment="0" pref="333" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
@@ -4550,7 +4440,7 @@
                                                       <Component id="sPanel87" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                                       <Component id="sLabel57" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace pref="95" max="32767" attributes="0"/>
+                                                      <EmptySpace pref="62" max="32767" attributes="0"/>
                                                       <Component id="unitsViewOverview_Edit" min="-2" pref="72" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                                   </Group>
@@ -5122,8 +5012,8 @@
                                       <Layout>
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sPanel89" pref="366" max="32767" attributes="0"/>
-                                              <Component id="sPanel91" pref="366" max="32767" attributes="0"/>
+                                              <Component id="sPanel89" pref="333" max="32767" attributes="0"/>
+                                              <Component id="sPanel91" pref="333" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
@@ -5158,7 +5048,7 @@
                                                       <Component id="sPanel90" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                                       <Component id="sLabel62" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace pref="168" max="32767" attributes="0"/>
+                                                      <EmptySpace pref="135" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -5546,8 +5436,8 @@
                                       <Layout>
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sPanel92" pref="366" max="32767" attributes="0"/>
-                                              <Component id="sPanel94" pref="366" max="32767" attributes="0"/>
+                                              <Component id="sPanel92" pref="333" max="32767" attributes="0"/>
+                                              <Component id="sPanel94" pref="333" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
@@ -5581,7 +5471,7 @@
                                                       <Component id="sPanel93" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                                       <Component id="sLabel73" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="179" max="32767" attributes="0"/>
+                                                      <EmptySpace min="0" pref="146" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -6083,8 +5973,8 @@
                                       <Layout>
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sPanel103" pref="366" max="32767" attributes="0"/>
-                                              <Component id="sPanel96" alignment="0" pref="366" max="32767" attributes="0"/>
+                                              <Component id="sPanel103" pref="333" max="32767" attributes="0"/>
+                                              <Component id="sPanel96" alignment="0" pref="333" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
@@ -6404,7 +6294,7 @@
                                                   <Layout>
                                                     <DimensionLayout dim="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <EmptySpace min="0" pref="366" max="32767" attributes="0"/>
+                                                          <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
                                                       </Group>
                                                     </DimensionLayout>
                                                     <DimensionLayout dim="1">
@@ -6461,8 +6351,8 @@
                                       <Layout>
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sPanel107" alignment="0" pref="366" max="32767" attributes="0"/>
-                                              <Component id="sPanel102" alignment="0" pref="366" max="32767" attributes="0"/>
+                                              <Component id="sPanel107" alignment="0" pref="333" max="32767" attributes="0"/>
+                                              <Component id="sPanel102" alignment="0" pref="333" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
@@ -6612,7 +6502,7 @@
                                                   <Layout>
                                                     <DimensionLayout dim="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <EmptySpace min="0" pref="366" max="32767" attributes="0"/>
+                                                          <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
                                                       </Group>
                                                     </DimensionLayout>
                                                     <DimensionLayout dim="1">
@@ -6839,8 +6729,8 @@
                                       <Layout>
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="sPanel109" alignment="0" pref="366" max="32767" attributes="0"/>
-                                              <Component id="sPanel125" alignment="0" pref="366" max="32767" attributes="0"/>
+                                              <Component id="sPanel109" alignment="0" pref="333" max="32767" attributes="0"/>
+                                              <Component id="sPanel125" alignment="0" pref="333" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
@@ -6875,7 +6765,7 @@
                                                       <Component id="sPanel126" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                                       <Component id="sLabel77" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace pref="211" max="32767" attributes="0"/>
+                                                      <EmptySpace pref="178" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                             </DimensionLayout>
@@ -7024,7 +6914,7 @@
                                                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                                               <Component id="sPanel98" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                                              <Component id="sLabel79" pref="234" max="32767" attributes="0"/>
+                                                              <Component id="sLabel79" pref="201" max="32767" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                                               <Component id="sLabel81" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -7154,7 +7044,7 @@
                                                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                                               <Component id="sPanel100" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                                              <Component id="sLabel86" pref="234" max="32767" attributes="0"/>
+                                                              <Component id="sLabel86" pref="201" max="32767" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                                               <Component id="sLabel87" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -7284,7 +7174,7 @@
                                                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                                               <Component id="sPanel101" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                                              <Component id="sLabel89" pref="234" max="32767" attributes="0"/>
+                                                              <Component id="sLabel89" pref="201" max="32767" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                                               <Component id="sLabel90" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -7414,7 +7304,7 @@
                                                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                                               <Component id="sPanel141" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                                              <Component id="sLabel95" pref="234" max="32767" attributes="0"/>
+                                                              <Component id="sLabel95" pref="201" max="32767" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                                               <Component id="sLabel97" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -7486,6 +7376,136 @@
                                                       </Properties>
                                                     </Component>
                                                     <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel97">
+                                                      <Properties>
+                                                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                                          <Color blue="38" green="38" red="38" type="rgb"/>
+                                                        </Property>
+                                                        <Property name="iconSize" type="int" value="10"/>
+                                                        <Property name="scaledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                                                          <Image iconType="3" name="/Icons/moduleUnits/quickActionNext.png"/>
+                                                        </Property>
+                                                      </Properties>
+                                                    </Component>
+                                                  </SubComponents>
+                                                </Container>
+                                                <Component class="javax.swing.Box$Filler" name="filler5">
+                                                  <Properties>
+                                                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                                      <Dimension value="[0, 5]"/>
+                                                    </Property>
+                                                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                                      <Dimension value="[0, 5]"/>
+                                                    </Property>
+                                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                                      <Dimension value="[0, 5]"/>
+                                                    </Property>
+                                                  </Properties>
+                                                  <AuxValues>
+                                                    <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalGlue"/>
+                                                  </AuxValues>
+                                                </Component>
+                                                <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="unitsViewOverview_ReportViolation">
+                                                  <Properties>
+                                                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                                      <Dimension value="[32767, 40]"/>
+                                                    </Property>
+                                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                                      <Dimension value="[362, 40]"/>
+                                                    </Property>
+                                                    <Property name="borderLine" type="int" value="2"/>
+                                                    <Property name="defaultBorderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                                      <Color blue="f0" green="f0" red="f0" type="rgb"/>
+                                                    </Property>
+                                                    <Property name="canHover" type="boolean" value="true"/>
+                                                    <Property name="hoverBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                                      <Color blue="fa" green="fa" red="fa" type="rgb"/>
+                                                    </Property>
+                                                    <Property name="radius" type="int" value="7"/>
+                                                    <Property name="rounded" type="boolean" value="true"/>
+                                                  </Properties>
+                                                  <AuxValues>
+                                                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                                                  </AuxValues>
+
+                                                  <Layout>
+                                                    <DimensionLayout dim="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                                              <Component id="sPanel142" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                                              <Component id="sLabel105" pref="201" max="32767" attributes="0"/>
+                                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                                              <Component id="sLabel107" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                    </DimensionLayout>
+                                                    <DimensionLayout dim="1">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="sLabel107" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="sLabel105" alignment="0" max="32767" attributes="0"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                              <Component id="sPanel142" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                    </DimensionLayout>
+                                                  </Layout>
+                                                  <SubComponents>
+                                                    <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel142">
+                                                      <Properties>
+                                                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                                          <Dimension value="[22, 22]"/>
+                                                        </Property>
+                                                        <Property name="defaultBackgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                                          <Color blue="d9" green="d9" red="f0" type="rgb"/>
+                                                        </Property>
+                                                        <Property name="radius" type="int" value="7"/>
+                                                        <Property name="rounded" type="boolean" value="true"/>
+                                                      </Properties>
+
+                                                      <Layout>
+                                                        <DimensionLayout dim="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                                                  <Component id="sLabel103" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                        </DimensionLayout>
+                                                        <DimensionLayout dim="1">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                                                                  <Component id="sLabel103" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                        </DimensionLayout>
+                                                      </Layout>
+                                                      <SubComponents>
+                                                        <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel103">
+                                                          <Properties>
+                                                            <Property name="iconSize" type="int" value="11"/>
+                                                            <Property name="scaledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                                                              <Image iconType="3" name="/Icons/moduleUnits/violation.png"/>
+                                                            </Property>
+                                                          </Properties>
+                                                        </Component>
+                                                      </SubComponents>
+                                                    </Container>
+                                                    <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel105">
+                                                      <Properties>
+                                                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                                          <Color blue="38" green="38" red="38" type="rgb"/>
+                                                        </Property>
+                                                        <Property name="text" type="java.lang.String" value="Report Violation"/>
+                                                      </Properties>
+                                                    </Component>
+                                                    <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel107">
                                                       <Properties>
                                                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                                           <Color blue="38" green="38" red="38" type="rgb"/>
@@ -7607,7 +7627,7 @@
                               <Layout>
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <EmptySpace min="0" pref="1180" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="1081" max="32767" attributes="0"/>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
@@ -7727,6 +7747,60 @@
                             </Component>
                           </SubComponents>
                         </Container>
+                        <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewViolations">
+                          <Properties>
+                            <Property name="layerButton" type="FrameSystem.SLibrary.SAbstractComponents.SLayerButton" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                              <ComponentRef name="buttonUnits_ViewTabViolations"/>
+                            </Property>
+                            <Property name="name" type="java.lang.String" value="Activity Log" noResource="true"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                          </AuxValues>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                              <CardConstraints cardName="card6"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel101" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="sLabel101" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel101">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Violations"/>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="13" style="1"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
                         <Container class="FrameSystem.Layers.Units.Components.LayerUnits_View" name="layerUnits_ViewNull">
                           <AuxValues>
                             <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="100"/>
@@ -7741,7 +7815,7 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="1180" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="1081" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
@@ -7797,5 +7871,172 @@
         <Property name="shadowY" type="boolean" value="true"/>
       </Properties>
     </Component>
+    <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel21">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[250, 0]"/>
+        </Property>
+        <Property name="paintBackground" type="boolean" value="false"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
+        <Property name="axis" type="int" value="3"/>
+      </Layout>
+      <SubComponents>
+        <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel34">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[250, 0]"/>
+            </Property>
+            <Property name="radius" type="int" value="15"/>
+            <Property name="rounded" type="boolean" value="true"/>
+            <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e6" green="e6" red="e6" type="rgb"/>
+            </Property>
+            <Property name="shadowOpacity" type="float" value="0.3"/>
+            <Property name="shadowSize" type="int" value="5"/>
+            <Property name="shadowX" type="boolean" value="true"/>
+            <Property name="shadowY" type="boolean" value="true"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="sLabel38" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="sLabel38" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="308" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel38">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="38" green="38" red="38" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Filters"/>
+                <Property name="verticalAlignment" type="int" value="3"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel49">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[250, 0]"/>
+            </Property>
+            <Property name="radius" type="int" value="15"/>
+            <Property name="rounded" type="boolean" value="true"/>
+            <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e6" green="e6" red="e6" type="rgb"/>
+            </Property>
+            <Property name="shadowOpacity" type="float" value="0.3"/>
+            <Property name="shadowSize" type="int" value="5"/>
+            <Property name="shadowX" type="boolean" value="true"/>
+            <Property name="shadowY" type="boolean" value="true"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="sLabel37" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="sLabel37" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="308" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel37">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="38" green="38" red="38" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Quick Actions"/>
+                <Property name="verticalAlignment" type="int" value="3"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="FrameSystem.SLibrary.SComponents.SPanel" name="sPanel61">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[250, 0]"/>
+            </Property>
+            <Property name="radius" type="int" value="15"/>
+            <Property name="rounded" type="boolean" value="true"/>
+            <Property name="shadowColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e6" green="e6" red="e6" type="rgb"/>
+            </Property>
+            <Property name="shadowOpacity" type="float" value="0.3"/>
+            <Property name="shadowSize" type="int" value="5"/>
+            <Property name="shadowX" type="boolean" value="true"/>
+            <Property name="shadowY" type="boolean" value="true"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="sLabel31" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="sLabel31" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="308" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="FrameSystem.SLibrary.SComponents.SLabel" name="sLabel31">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="38" green="38" red="38" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Recent Concerns"/>
+                <Property name="verticalAlignment" type="int" value="3"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
