@@ -6,3 +6,6 @@ build
 app/src/.aiexclude
 app/src/.geminiignore
 app/src/GEMINI.md
+
+# Ignore weekly reports directory
+weekly-reports/

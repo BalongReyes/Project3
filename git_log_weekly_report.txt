@@ -1,0 +1,706 @@
+﻿Git Log Report - Weekly File Changes
+================================================================================
+
+Week 1: 2026-03-02 to 2026-03-08
+--------------------------------------------------------------------------------
+No commits found for this period
+
+
+Week 2: 2026-03-09 to 2026-03-15
+--------------------------------------------------------------------------------
+0a93051 2026-03-13 18:05:18 +0800 Version 0.1.0
+
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/SPanelHomeMenu.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerHome.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.form
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.java
+M	app/src/main/java/MainSystem/SFrame.form
+M	app/src/main/java/MainSystem/SFrame.java
+D	app/src/main/resources/Icons/Category/categoryCannedGoods.png
+D	app/src/main/resources/Icons/Category/categoryCigarette.png
+D	app/src/main/resources/Icons/Category/categoryCleaningSupplies.png
+D	app/src/main/resources/Icons/Category/categoryDairy.png
+D	app/src/main/resources/Icons/Category/categoryFish.png
+D	app/src/main/resources/Icons/Category/categoryFrozen.png
+D	app/src/main/resources/Icons/Category/categoryFruitsAndVegtables.png
+D	app/src/main/resources/Icons/Category/categoryLiquor.png
+D	app/src/main/resources/Icons/Category/categoryMeat.png
+D	app/src/main/resources/Icons/Category/categoryMedicine.png
+D	app/src/main/resources/Icons/Category/categoryPersonalCare.png
+D	app/src/main/resources/Icons/Category/categorySnacks.png
+D	app/src/main/resources/Icons/Category/categorySpices.png
+D	app/src/main/resources/Icons/Category/condiments.png
+R076	app/src/main/resources/Icons/Category/categoryBeverages.png	app/src/main/resources/Icons/Menu/collapse.png
+R076	app/src/main/resources/Icons/Category/categoryBread.png	app/src/main/resources/Icons/Menu/expand.png
+A	app/src/main/resources/Icons/Menu/mainLogo.png
+R058	app/src/main/resources/Icons/Category/categoryCandy.png	app/src/main/resources/Icons/Menu/mainLogoMinimized.png
+D	app/src/main/resources/Icons/SalesRevenue/icons8-favorite-50.png
+D	app/src/main/resources/Icons/SalesRevenue/more.png
+D	app/src/main/resources/Icons/SalesRevenue/mostItemSold.png
+D	app/src/main/resources/Icons/SalesRevenue/totalItemsSold.png
+D	app/src/main/resources/Icons/SalesRevenue/totalRevenue.png
+D	app/src/main/resources/Icons/SalesRevenue/totalTransaction.png
+D	app/src/main/resources/Icons/mainLogo.png
+52ff950 2026-03-13 11:16:42 +0800 Version 0.0.2
+
+M	app/build.gradle.kts
+M	gradle.properties
+8296116 2026-03-13 09:51:13 +0800 Version 0.0.1
+
+A	.vscode/settings.json
+M	app/build.gradle.kts
+M	app/src/test/java/project3/AppTest.java
+A	cpp/app.jar
+12359ef 2026-03-13 09:22:32 +0800 Initial commit
+
+A	.gitattributes
+A	.gitignore
+A	app/build.gradle.kts
+A	app/src/main/java/ConsoleSystem/Console.java
+A	app/src/main/java/ConsoleSystem/ConsoleColors.java
+A	app/src/main/java/ConsoleSystem/ConsoleNonStatic.java
+A	app/src/main/java/DatabaseSystem/AccountsData/AccountsDataHandler.java
+A	app/src/main/java/DatabaseSystem/AccountsData/AccountsDataTable.java
+A	app/src/main/java/DatabaseSystem/DataTable/DataTable.java
+A	app/src/main/java/DatabaseSystem/DataTable/DataTableOrder.java
+A	app/src/main/java/DatabaseSystem/DataTable/DataTableType.java
+A	app/src/main/java/DatabaseSystem/Database.java
+A	app/src/main/java/EventSystem/EventSLayer/SLayerBeforeShowEvent.java
+A	app/src/main/java/EventSystem/EventSLayer/SLayerBeforeShowListener.java
+A	app/src/main/java/EventSystem/EventSLayer/SLayerEventMulticaster.java
+A	app/src/main/java/EventSystem/EventSLayer/SLayerHideEvent.java
+A	app/src/main/java/EventSystem/EventSLayer/SLayerHideListener.java
+A	app/src/main/java/EventSystem/EventSLayer/SLayerKeyPressedListener.java
+A	app/src/main/java/EventSystem/EventSLayer/SLayerShowEvent.java
+A	app/src/main/java/EventSystem/EventSLayer/SLayerShowListener.java
+A	app/src/main/java/EventSystem/Interface/InnerListener.java
+A	app/src/main/java/EventSystem/Interface/ReconnectExecute.java
+A	app/src/main/java/EventSystem/Interface/ResultExecute.java
+A	app/src/main/java/EventSystem/Listeners/DocumentAdapter.java
+A	app/src/main/java/EventSystem/Listeners/MouseClickedAdaptor.java
+A	app/src/main/java/EventSystem/Listeners/MousePressedAdaptor.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Components/LayerMain.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Components/LayerLogin.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Components/LoginPanel.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Components/LoginPanelContainer.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Components/LoginTextFieldContainer.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Managers/ManagerModuleLogin.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Module/ModuleLogin.form
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Module/ModuleLogin.java
+A	app/src/main/java/FrameSystem/SLibrary/SAbstractComponents/SLayer.java
+A	app/src/main/java/FrameSystem/SLibrary/SAbstractComponents/SLayerButton.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SDialog.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabel.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelHover.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelActivatable.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelActivatableHover.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelHover.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPasswordField.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SScrollPane.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/STextField.java
+A	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/STextFieldContainer.java
+A	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/STogglePassword.java
+A	app/src/main/java/MainSystem/CustomGraphics.java
+A	app/src/main/java/MainSystem/ExecutorDriver.java
+A	app/src/main/java/MainSystem/Main.java
+A	app/src/main/java/MainSystem/Manager.java
+A	app/src/main/java/MainSystem/SFrame.form
+A	app/src/main/java/MainSystem/SFrame.java
+A	app/src/main/java/MethodsSystem/MethodAlgorithms.java
+
+
+Week 3: 2026-03-16 to 2026-03-22
+--------------------------------------------------------------------------------
+60c996b 2026-03-18 18:07:48 +0800 Version 0.1.5
+
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLayeredPane.java
+M	app/src/main/resources/Icons/Menu/concerns.png
+M	app/src/main/resources/Icons/Menu/concerns.psd
+M	app/src/main/resources/Icons/Menu/concernsActive.png
+M	app/src/main/resources/Icons/Menu/concernsActive.psd
+A	app/src/main/resources/Icons/Menu/move.png
+A	app/src/main/resources/Icons/Menu/move.psd
+A	app/src/main/resources/Icons/Menu/moveActive.png
+A	app/src/main/resources/Icons/Menu/moveActive.psd
+79eef85 2026-03-18 17:04:24 +0800 Version 0.1.4
+
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuButton.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuMinButton.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SLayeredPane.java
+A	app/src/main/resources/Icons/Menu/accounts.png
+A	app/src/main/resources/Icons/Menu/accounts.psd
+A	app/src/main/resources/Icons/Menu/accountsActive.png
+A	app/src/main/resources/Icons/Menu/accountsActive.psd
+A	app/src/main/resources/Icons/Menu/concerns.png
+A	app/src/main/resources/Icons/Menu/concerns.psd
+A	app/src/main/resources/Icons/Menu/concernsActive.png
+A	app/src/main/resources/Icons/Menu/concernsActive.psd
+A	app/src/main/resources/Icons/Menu/history.png
+A	app/src/main/resources/Icons/Menu/history.psd
+A	app/src/main/resources/Icons/Menu/historyActive.png
+A	app/src/main/resources/Icons/Menu/historyActive.psd
+A	app/src/main/resources/Icons/Menu/newResident.png
+A	app/src/main/resources/Icons/Menu/newResident.psd
+A	app/src/main/resources/Icons/Menu/newResidentActive.png
+A	app/src/main/resources/Icons/Menu/newResidentActive.psd
+A	app/src/main/resources/Icons/Menu/owners.png
+A	app/src/main/resources/Icons/Menu/owners.psd
+A	app/src/main/resources/Icons/Menu/ownersActive.png
+A	app/src/main/resources/Icons/Menu/ownersActive.psd
+A	app/src/main/resources/Icons/Menu/tenants.png
+A	app/src/main/resources/Icons/Menu/tenants.psd
+A	app/src/main/resources/Icons/Menu/tenantsActive.png
+A	app/src/main/resources/Icons/Menu/tenantsActive.psd
+A	app/src/main/resources/Icons/Menu/visitors.png
+A	app/src/main/resources/Icons/Menu/visitors.psd
+A	app/src/main/resources/Icons/Menu/visitorsActive.png
+A	app/src/main/resources/Icons/Menu/visitorsActive.psd
+e4b2531 2026-03-18 14:15:09 +0800 Version 0.1.3
+
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/LayerHome.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuButton.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuButton.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Module/ModuleLogin.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Module/ModuleLogin.java
+A	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SPanelHighlight.java
+A	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SPanelHighlight2.java
+A	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SPanelTarget.form
+A	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SPanelTarget.java
+M	app/src/main/resources/Icons/Menu/dashboard.psd
+A	app/src/main/resources/Icons/Menu/profile.png
+A	app/src/main/resources/Icons/Menu/profile.psd
+A	app/src/main/resources/Icons/Menu/profileActive.png
+A	app/src/main/resources/Icons/Menu/profileActive.psd
+6f0e861 2026-03-17 16:47:57 +0800 Version 0.1.2
+
+R095	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerHome.java	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/LayerHome.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.form
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Managers/ManagerModuleHome.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelActivatableHover.java
+M	app/src/main/java/MainSystem/Managers/ManagerLogin.java
+eb39446 2026-03-17 16:01:53 +0800 Version 0.1.1
+
+M	app/src/main/java/DatabaseSystem/AccountsData/AccountsDataHandler.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuButton.form
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuButton.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuMinButton.form
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuMinButton.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuMinSwitch.form
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuMinSwitch.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuSwitch.form
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuSwitch.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Managers/ManagerModuleHome.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Managers/ManagerModuleLogin.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Module/ModuleLogin.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Module/ModuleLogin.java
+A	app/src/main/java/FrameSystem/SLibrary/SAbstractComponents/SLayerPanelButton.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelActivatableHover.java
+M	app/src/main/java/MainSystem/Manager.java
+A	app/src/main/java/MainSystem/Managers/ManagerLogin.java
+M	app/src/main/java/MainSystem/SFrame.form
+
+
+Week 4: 2026-03-23 to 2026-03-29
+--------------------------------------------------------------------------------
+b1ca3a4 2026-03-28 11:45:08 +0800 Version 0.2.7
+
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelHoverBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelActivatableBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelHoverBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPasswordFieldBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/STextFieldBeanInfo.java
+02f1ba0 2026-03-28 11:10:21 +0800 Version 0.2.6
+
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelHoverBeanInfo.java
+3da8aec 2026-03-28 10:59:54 +0800 Version 0.2.5
+
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+a7e6a62 2026-03-28 10:56:30 +0800 Version 0.2.4
+
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelHoverBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelActivatableBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelBeanInfo.java
+f150e2b 2026-03-28 10:45:12 +0800 Version 0.2.3
+
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelBeanInfo.java
+7d2a905 2026-03-28 10:12:40 +0800 Version 0.2.2
+
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelHoverBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelBeanInfo.java
+e6e939c 2026-03-28 09:45:23 +0800 Version 0.2.1
+
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelHoverBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelActivatableBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelBeanInfo.java
+4c0cac8 2026-03-28 08:49:15 +0800 Version 0.2.0
+
+D	app/src/main/java/FrameSystem/SLibrary/SBean/SPanelBeanInfo.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabel.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelBeanInfo.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SLabelHoverBeanInfo.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelActivatableBeanInfo.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelBeanInfo.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelHoverBeanInfo.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPasswordFieldBeanInfo.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/STextFieldBeanInfo.java
+5db796b 2026-03-27 18:00:34 +0800 Version 0.1.18 (end of day)
+
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterTitlePanel.form
+M	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterTitlePanel.java
+d3dac69 2026-03-27 17:07:07 +0800 Version 0.1.17
+
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Managers/ManagerModuleUnits.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.java
+2c63d09 2026-03-27 16:29:41 +0800 Version 0.1.16
+
+M	.vscode/settings.json
+M	app/src/main/java/DatabaseSystem/DataTable/DataTableType.java
+A	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataHandler.java
+A	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataTable.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuButton.java
+R098	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Layers/LayerUnits.java	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Components/LayerUnits.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Components/ObjectUnit.form
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Managers/ManagerModuleUnits.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelHighlight.java
+M	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterTitlePanel.form
+M	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterTitlePanel.java
+M	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/STextFieldContainer.java
+M	app/src/main/java/MainSystem/Manager.java
+M	app/src/main/resources/Icons/arrowDown.png
+A	app/src/main/resources/Icons/arrowDown.psd
+M	app/src/main/resources/Icons/arrowNeutral.png
+M	app/src/main/resources/Icons/arrowUp.png
+D	app/src/main/resources/Icons/main2.png
+M	app/src/main/resources/Icons/search.png
+A	app/src/main/resources/Icons/search.psd
+D	app/src/main/resources/Icons/searchActive.png
+dd7f687 2026-03-27 11:23:50 +0800 Version 0.1.15
+
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Components/MenuButton.java
+A	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Managers/ManagerModuleUnits.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Layers/LayerFolder_Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Managers/ManagerModuleHome.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.form
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Home/Module/ModuleHome.java
+M	app/src/main/java/FrameSystem/LayerFolder_Main/Layers/LayerFolder_Login/Managers/ManagerModuleLogin.java
+
+
+Week 5: 2026-03-30 to 2026-04-05
+--------------------------------------------------------------------------------
+9663035 2026-04-05 17:16:53 +0800 Version 0.3.23.3
+
+A	app/src/main/java/DatabaseSystem/DataTable/DataTableOccupancy.java
+A	app/src/main/java/DatabaseSystem/DataTable/DataTableUnitStatus.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitHighlight.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitHighlight.java
+c1cec52 2026-04-05 17:07:36 +0800 Version 0.3.23.2
+
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+f3b3459 2026-04-05 17:02:07 +0800 Version 0.3.23.1
+
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+R100	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitOccupancy.form	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitHighlight.form
+R097	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitOccupancy.java	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitHighlight.java
+08d93fe 2026-04-05 17:00:44 +0800 Version 0.3.23
+
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+A	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitOccupancy.form
+A	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitOccupancy.java
+0f21f3b 2026-04-05 14:02:25 +0800 Version 0.3.22
+
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataHandler.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+e92fb2c 2026-04-03 23:15:16 +0800 Version 0.3.21
+
+M	app/src/main/java/DatabaseSystem/DataTable/DataTableFilter.java
+4f78292 2026-04-03 23:08:35 +0800 Version 0.3.20
+
+M	app/src/main/java/DatabaseSystem/DataTable/DataTableOrder.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerModuleUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+0cab39f 2026-04-03 22:56:37 +0800 Version 0.3.19
+
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+ef49be8 2026-04-03 22:39:04 +0800 Version 0.3.18
+
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+3b8d2d5 2026-04-03 22:28:34 +0800 Version 0.3.17
+
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataHandler.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+A	app/src/main/resources/Icons/lassThan.png
+A	app/src/main/resources/Icons/lassThan.psd
+a93f742 2026-04-03 20:37:01 +0800 Version 0.3.16
+
+M	app/src/main/java/FrameSystem/Layers/Home/Components/MenuSwitch.form
+M	app/src/main/java/FrameSystem/Layers/Home/Components/MenuSwitch.java
+M	app/src/main/java/FrameSystem/Layers/Home/Module/ModuleHome.form
+M	app/src/main/java/FrameSystem/Layers/Home/Module/ModuleHome.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+M	app/src/main/resources/Icons/close.png
+A	app/src/main/resources/Icons/close.psd
+4268de5 2026-04-03 18:24:35 +0800 Version 0.3.15
+
+D	app/src/main/java/FrameSystem/Layers/Main/Managers/ManagerFilters.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerModuleUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+M	app/src/main/java/MainSystem/Manager.java
+M	app/src/main/resources/Icons/add.png
+A	app/src/main/resources/Icons/add.psd
+A	app/src/main/resources/Icons/remove.png
+A	app/src/main/resources/Icons/remove.psd
+2572121 2026-04-02 00:20:54 +0800 Version 0.3.14
+
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataHandler.java
+M	app/src/main/java/FrameSystem/Layers/Home/Module/ModuleHome.form
+M	app/src/main/java/FrameSystem/Layers/Home/Module/ModuleHome.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+A	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.form
+A	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerModuleUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+
+
+Week 6: 2026-04-06 to 2026-04-12
+--------------------------------------------------------------------------------
+13f36ce 2026-04-12 01:33:54 +0800 Version 0.5.7.5
+
+M	app/src/main/java/MainSystem/SFrame.form
+M	app/src/main/java/MainSystem/SFrame.java
+c539fca 2026-04-12 01:26:23 +0800 Version 0.5.7.4
+
+M	app/src/main/java/FrameSystem/SLibrary/SAnimated/SAnimatedLoading.java
+M	app/src/main/java/MainSystem/SFrame.form
+M	app/src/main/java/MainSystem/SFrame.java
+d7aa06e 2026-04-12 00:59:16 +0800 Version 0.5.7.3
+
+A	app/src/main/java/FrameSystem/SLibrary/SAnimated/SAnimatedLoading.java
+M	app/src/main/java/MainSystem/SFrame.form
+M	app/src/main/java/MainSystem/SFrame.java
+193d8c3 2026-04-12 00:46:50 +0800 Version 0.5.7.2
+
+M	app/src/main/java/FrameSystem/Layers/Login/Managers/ManagerModuleLogin.java
+M	app/src/main/java/FrameSystem/Layers/Login/Module/ModuleLogin.form
+M	app/src/main/java/FrameSystem/Layers/Login/Module/ModuleLogin.java
+M	app/src/main/java/MainSystem/SFrame.form
+M	app/src/main/java/MainSystem/SFrame.java
+7b1f5c0 2026-04-12 00:00:02 +0800 Version 0.5.7.1
+
+M	app/src/main/java/MainSystem/SFrame.form
+M	app/src/main/java/MainSystem/SFrame.java
+19d6974 2026-04-11 23:47:46 +0800 Version 0.5.7
+
+M	app/src/main/java/FrameSystem/Layers/Login/Module/ModuleLogin.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/MainSystem/Main.java
+M	app/src/main/java/MainSystem/Manager.java
+M	app/src/main/java/MainSystem/SFrame.java
+a974991 2026-04-11 23:35:57 +0800 Version 0.5.6.1
+
+M	app/src/main/java/MainSystem/SFrame.form
+M	app/src/main/java/MainSystem/SFrame.java
+43f6cf9 2026-04-11 23:30:14 +0800 Version 0.5.6
+
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+A	app/src/main/resources/Icons/moduleUnits/activity.png
+A	app/src/main/resources/Icons/moduleUnits/activity.psd
+A	app/src/main/resources/Icons/moduleUnits/file.png
+A	app/src/main/resources/Icons/moduleUnits/file.psd
+398cacb 2026-04-11 22:19:16 +0800 Version 0.5.5
+
+M	app/build.gradle.kts
+D	app/src/main/java/MainSystem/SFrameNext.java
+2c45c07 2026-04-11 20:50:17 +0800 Version 0.5.4
+
+M	app/build.gradle.kts
+A	app/src/main/java/MainSystem/SFrameNext.java
+a6effa8 2026-04-09 21:10:16 +0800 Version 0.5.3
+
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+6b192cb 2026-04-09 20:51:48 +0800 Version 0.5.2
+
+M	app/build.gradle.kts
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataHandler.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.java
+A	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerFilterUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerModuleUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/MainSystem/Manager.java
+cd390c4 2026-04-09 17:02:28 +0800 Version 0.5.1
+
+M	app/src/main/java/DatabaseSystem/AccountsData/AccountsDataHandler.java
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataHandler.java
+M	app/src/main/java/FrameSystem/Layers/Home/Components/LayerHome.java
+M	app/src/main/java/FrameSystem/Layers/Login/Components/LayerLogin.java
+M	app/src/main/java/FrameSystem/Layers/Main/Components/LayerMain.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/LayerUnits.java
+M	app/src/main/java/MainSystem/Main.java
+M	app/src/main/java/MainSystem/SFrame.java
+d608803 2026-04-09 16:16:53 +0800 Version 0.5.0
+
+M	app/src/main/java/DatabaseSystem/AccountsData/AccountsDataHandler.java
+M	app/src/main/java/DatabaseSystem/AccountsData/AccountsDataTable.java
+M	app/src/main/java/DatabaseSystem/DataTable/DataTableFilter.java
+M	app/src/main/java/DatabaseSystem/DataTable/DataTableOrder.java
+M	app/src/main/java/DatabaseSystem/Database.java
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataHandler.java
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataOccupancy.java
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataTable.java
+M	app/src/main/java/FrameSystem/Layers/Home/Managers/ManagerModuleHome.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitFilter.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/MainSystem/Managers/ManagerLogin.java
+M	app/src/main/java/MethodsSystem/MethodAlgorithms.java
+5e9451c 2026-04-08 23:05:01 +0800 Version 0.4.4.5
+
+A	app/.env
+M	app/build.gradle.kts
+M	app/src/main/java/DatabaseSystem/AccountsData/AccountsDataHandler.java
+M	app/src/main/java/DatabaseSystem/Database.java
+D	app/src/main/java/DatabaseSystem/DatabaseManager.java
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataHandler.java
+M	app/src/main/java/DatabaseSystem/UnitsData/UnitsDataTable.java
+
+
+Week 7: 2026-04-13 to 2026-04-19
+--------------------------------------------------------------------------------
+12678d3 2026-04-17 02:53:23 +0800 Version 0.6.7
+
+A	app/src/main/java/FrameSystem/Layers/Units/Components/LayerUnits_Main.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+818b736 2026-04-16 16:28:30 +0800 Version 0.6.6
+
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+af792b7 2026-04-16 00:59:17 +0800 Version 0.6.5
+
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/STable.form
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/STable.java
+A	app/src/main/java/FrameSystem/SLibrary/SComponents/ScrollableSPanel.java
+1fe98d2 2026-04-15 23:42:37 +0800 Version 0.6.4
+
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/STable.form
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/STable.java
+D	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterPanel.java
+M	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterTitlePanel.form
+M	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterTitlePanel.java
+D	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterTower.form
+D	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/SFilterTower.java
+D	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/STargetPanel.form
+D	app/src/main/java/FrameSystem/SLibrary/SGenericComponents/STargetPanel.java
+M	app/src/main/resources/Icons/arrowNeutral.png
+A	app/src/main/resources/Icons/arrowNeutral.psd
+M	app/src/main/resources/Icons/arrowUp.png
+A	app/src/main/resources/Icons/arrowUp.psd
+A	app/src/main/resources/Icons/moduleUnits/Edit.png
+A	app/src/main/resources/Icons/moduleUnits/Edit.psd
+A	app/src/main/resources/Icons/moduleUnits/view.png
+A	app/src/main/resources/Icons/moduleUnits/view.psd
+b6c8a6b 2026-04-15 19:19:14 +0800 Version 0.6.3
+
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitHighlight.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnitHighlight.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+D	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanelHighlight.java
+5440e39 2026-04-15 17:04:00 +0800 Version 0.6.2
+
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+9102606 2026-04-14 18:07:59 +0800 Version 0.6.1
+
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+97c541e 2026-04-14 12:07:15 +0800 Version 0.6.0
+
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.form
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/resources/Icons/Edit.png
+M	app/src/main/resources/Icons/Edit.psd
+
+
+Week 8: 2026-04-20 to 2026-04-26
+--------------------------------------------------------------------------------
+No commits found for this period
+
+
+Week 9: 2026-04-27 to 2026-05-03
+--------------------------------------------------------------------------------
+72761da 2026-05-03 22:47:42 +0800 Version 0.8.16
+
+A	app/src/main/java/DatabaseSystem/ConcernsData/ConcernsDataHandler.java
+A	app/src/main/java/DatabaseSystem/ConcernsData/ConcernsDataTable.java
+A	app/src/main/java/DatabaseSystem/DependentData/DependentDataHandler.java
+A	app/src/main/java/DatabaseSystem/DependentData/DependentDataTable.java
+A	app/src/main/java/DatabaseSystem/EmergencyContactData/EmergencyContactDataHandler.java
+A	app/src/main/java/DatabaseSystem/EmergencyContactData/EmergencyContactDataTable.java
+A	app/src/main/java/DatabaseSystem/PersonStayingData/PersonStayingDataHandler.java
+A	app/src/main/java/DatabaseSystem/PersonStayingData/PersonStayingDataTable.java
+A	app/src/main/java/DatabaseSystem/ResidentData/ResidentDataHandler.java
+A	app/src/main/java/DatabaseSystem/ResidentData/ResidentDataTable.java
+A	app/src/main/java/DatabaseSystem/SpouseData/SpouseDataHandler.java
+A	app/src/main/java/DatabaseSystem/SpouseData/SpouseDataTable.java
+M	app/src/main/java/DatabaseSystem/UnitOwnersData/UnitOwnersDataTable.java
+M	app/src/main/java/DatabaseSystem/UnitTenantsData/UnitTenantsDataTable.java
+M	app/src/main/java/FrameSystem/Layers/Owners/Components/ObjectUnitOwner.java
+M	app/src/main/java/FrameSystem/Layers/Tenants/Components/ObjectUnitTenant.java
+A	app/src/main/java/FrameSystem/Layers/Units/Components/LayerUnits_ConcernsSummary.java
+A	app/src/main/java/FrameSystem/Layers/Units/Components/LayerUnits_Notes.java
+M	app/src/main/java/FrameSystem/Layers/Units/Components/ObjectUnit.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerFilterUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Managers/ManagerObjectUnits.java
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.form
+M	app/src/main/java/FrameSystem/Layers/Units/Module/ModuleUnits.java
+M	app/src/main/java/FrameSystem/SLibrary/SComponents/SPanel.java
+M	app/src/main/java/MethodsSystem/MethodString.java
+D	app/src/main/resources/Icons/Sidebar/accounts.png
+D	app/src/main/resources/Icons/Sidebar/accountsActive.png
+D	app/src/main/resources/Icons/Sidebar/collapse.png
+D	app/src/main/resources/Icons/Sidebar/creditPayment.PNG
+D	app/src/main/resources/Icons/Sidebar/creditPaymentActive.PNG
+D	app/src/main/resources/Icons/Sidebar/dashboard.png
+D	app/src/main/resources/Icons/Sidebar/defaultAccount.png
+D	app/src/main/resources/Icons/Sidebar/history.png
+D	app/src/main/resources/Icons/Sidebar/historyActive.png
+D	app/src/main/resources/Icons/Sidebar/icons8-credit-24.png
+D	app/src/main/resources/Icons/Sidebar/icons8-credit-64.png
+D	app/src/main/resources/Icons/Sidebar/icons8-credit-card-50.png
+D	app/src/main/resources/Icons/Sidebar/icons8-time-to-pay-24.png
+D	app/src/main/resources/Icons/Sidebar/inventory.png
+D	app/src/main/resources/Icons/Sidebar/inventoryActive.png
+D	app/src/main/resources/Icons/Sidebar/itemDetails.png
+D	app/src/main/resources/Icons/Sidebar/itemDetailsActive.png
+D	app/src/main/resources/Icons/Sidebar/itemIn.png
+D	app/src/main/resources/Icons/Sidebar/itemInActive.png
+D	app/src/main/resources/Icons/Sidebar/itemOut.png
+D	app/src/main/resources/Icons/Sidebar/itemOutActive.png
+D	app/src/main/resources/Icons/Sidebar/itemPacks.png
+D	app/src/main/resources/Icons/Sidebar/itemPacksActive.png
+D	app/src/main/resources/Icons/Sidebar/outcome.png
+D	app/src/main/resources/Icons/Sidebar/outcomeActive.png
+D	app/src/main/resources/Icons/Sidebar/password.png
+D	app/src/main/resources/Icons/Sidebar/passwordActive.png
+D	app/src/main/resources/Icons/Sidebar/revenueActive.png
+D	app/src/main/resources/Icons/Sidebar/sales.png
+D	app/src/main/resources/Icons/Sidebar/salesActive.png
+D	app/src/main/resources/Icons/Sidebar/sessions.png
+D	app/src/main/resources/Icons/Sidebar/sessionsActive.png
+D	app/src/main/resources/Icons/Sidebar/stock.png
+D	app/src/main/resources/Icons/Sidebar/stockActive.png
+D	app/src/main/resources/Icons/addActive.png
+D	app/src/main/resources/Icons/barcodeInvalid.png
+D	app/src/main/resources/Icons/barcodeValid.png
+D	app/src/main/resources/Icons/calendarActive.png
+D	app/src/main/resources/Icons/filterActive.png
+D	app/src/main/resources/Icons/filterActiveRed.png
+D	app/src/main/resources/Icons/lassThan.png
+R088	app/src/main/resources/Icons/Sidebar/creditAccounts.png	app/src/main/resources/Icons/moduleUnits/Edit.png
+A	app/src/main/resources/Icons/moduleUnits/Edit.psd
+R093	app/src/main/resources/Icons/barcodeStatus.png	app/src/main/resources/Icons/moduleUnits/accountInformation.png
+A	app/src/main/resources/Icons/moduleUnits/accountInformation.psd
+A	app/src/main/resources/Icons/moduleUnits/nextUnit.psd
+R090	app/src/main/resources/Icons/Sidebar/dashboardActive.png	app/src/main/resources/Icons/moduleUnits/occupationDetails.png
+A	app/src/main/resources/Icons/moduleUnits/occupationDetails.psd
+R078	app/src/main/resources/Icons/lassThan.psd	app/src/main/resources/Icons/moduleUnits/previousUnit.psd
+R079	app/src/main/resources/Icons/Sidebar/expand.png	app/src/main/resources/Icons/moduleUnits/quickActionNext.png
+A	app/src/main/resources/Icons/moduleUnits/quickActionNext.psd
+R081	app/src/main/resources/Icons/Sidebar/logout.png	app/src/main/resources/Icons/moduleUnits/quickActions.png
+A	app/src/main/resources/Icons/moduleUnits/quickActions.psd
+R084	app/src/main/resources/Icons/Sidebar/analyticsActive.png	app/src/main/resources/Icons/moduleUnits/tenants.png
+M	app/src/main/resources/Icons/moduleUnits/tower.png
+M	app/src/main/resources/Icons/moduleUnits/tower.psd
+R088	app/src/main/resources/Icons/Sidebar/revenue.png	app/src/main/resources/Icons/moduleUnits/unitInformation.png
+A	app/src/main/resources/Icons/moduleUnits/unitInformation.psd
+A	app/src/main/resources/Icons/moduleUnits/unitNotes.png
+A	app/src/main/resources/Icons/moduleUnits/unitNotes.psd
+R086	app/src/main/resources/Icons/Sidebar/creditAccountsActive.png	app/src/main/resources/Icons/moduleUnits/uploadDocument.png
+A	app/src/main/resources/Icons/moduleUnits/uploadDocument.psd
+R086	app/src/main/resources/Icons/Sidebar/analytics.png	app/src/main/resources/Icons/moduleUnits/viewOwners.png
+A	app/src/main/resources/Icons/moduleUnits/viewOwners.psd
+A	app/src/main/resources/Icons/moduleUnits/viewTenants.png
+A	app/src/main/resources/Icons/moduleUnits/viewTenants.psd
+M	app/src/main/resources/Icons/modules/file.png
+M	app/src/main/resources/Icons/modules/file.psd
+R086	app/src/main/resources/Icons/info.png	app/src/main/resources/Icons/modules/info.png
+A	app/src/main/resources/Icons/modules/info.psd
+D	app/src/main/resources/Icons/packsStatus.png
+3b44952 2026-05-03 16:17:15 +0800 Version 0.8.15.1
+
+
+
